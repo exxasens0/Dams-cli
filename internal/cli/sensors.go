@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	damcli "github.com/exxasens0/Dams-cli/internal"
-	"github.com/exxasens0/gDams-cli/internal/api"
+	"github.com/exxasens0/Dams-cli/internal/api"
 	"github.com/spf13/cobra"
 )
 
