@@ -1,4 +1,4 @@
-package damscli
+package structs
 
 // Beer representation of beer into data struct
 type Dam struct {
@@ -7,17 +7,17 @@ type Dam struct {
 		Provider   string `json:"provider"`
 		Sensors    []struct {
 			AdditionalInfo struct {
-				Rang_màxim          string `json:"Rang màxim"`
-				Rang_mínim          string `json:"Rang mínim"`
+				Rang_maxim          string `json:"Rang màxim"`
+				Rang_minim          string `json:"Rang mínim"`
 				Temps_mostreig__min string `json:"Temps mostreig (min)"`
 			} `json:"additionalInfo"`
 			Component               string `json:"component"`
 			ComponentAdditionalInfo struct {
-				Capacitat_màxima_embassament string `json:"Capacitat màxima embassament"`
+				Capacitat_maxima_embassament string `json:"Capacitat màxima embassament"`
 				Comarca                      string `json:"Comarca"`
 				Conca                        string `json:"Conca"`
 				Districte_fluvial            string `json:"Districte fluvial"`
-				Província                    string `json:"Província"`
+				Provincia                    string `json:"Província"`
 				Riu                          string `json:"Riu"`
 				Subconca                     string `json:"Subconca"`
 				Terme_municipal              string `json:"Terme municipal"`
@@ -69,16 +69,4 @@ type SensorData struct {
 	Description string `json:"description"`
 	Value       string `json:"value"`
 	Timestamp   string `json:"timestamp"`
-}
-
-// DamsRepo definiton of methods to access a data
-type DamsRepo interface {
-	FetchSensorValuesByDesc(string) ([]SensorData, error)
-	FetchSensorValuesBySensorName(string) ([]SensorData, error)
-	FetchSensorDataBySensorName(string) ([]SensorData, error)
-	FetchSensorDataByRiverName(string) ([]SensorData, error)
-	PrintSensorValues([]SensorData) error
-	PrintSensorData([]SensorData) error
-	SaveSensorValuesToCSV([]SensorData, string) error
-	SaveSensorDataToCSV([]SensorData, string) error
 }

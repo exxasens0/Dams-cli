@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	damscli "github.com/exxasens0/Dams-cli/internal"
 	"github.com/exxasens0/Dams-cli/internal/cli"
 	"github.com/exxasens0/Dams-cli/internal/server/csv"
 	"github.com/exxasens0/Dams-cli/internal/server/http"
@@ -14,7 +13,7 @@ func main() {
 	csvData := flag.Bool("csv", false, "load data from csv")
 	flag.Parse()
 
-	var repo damscli.DamsRepo
+	var repo http.DamsRepo
 
 	if *csvData {
 		repo = csv.NewCSVRepository()
