@@ -13,17 +13,17 @@ import (
 )
 
 type Service interface {
-	FetchSensorValuesByDesc(damscli.DamsRepo, string) ([]structs.SensorData, error)
-	FetchSensorDataBySensorName(damscli.DamsRepo, string) ([]structs.SensorData, error)
-	FetchSensorDataByRiverName(damscli.DamsRepo, string) ([]structs.SensorData, error)
-	FetchAndShowValuesBySensorName(damscli.DamsRepo, string, string, string) error
+	//FetchSensorValuesByDesc(damscli.DamsRepo, string) ([]structs.SensorData, error)
+	//FetchSensorDataBySensorName(damscli.DamsRepo, string) ([]structs.SensorData, error)
+	//etchSensorDataByRiverName(damscli.DamsRepo, string) ([]structs.SensorData, error)
+	FetchAndShowValuesBySensorName(damscli.DamsRepo, damscli.SensorRepo, string, string, string) error
+	FetchAndShowValuesByDesc(damscli.DamsRepo, damscli.SensorRepo, string, string, string) error
 	FetchAndShowDataByRiverName(damscli.DamsRepo, string, string, string) error
-	FetchAndShowValuesByDesc(damscli.DamsRepo, string, string, string) error
 }
 
-func FetchSensorValuesByDesc(repository damscli.DamsRepo, desc string) (sensordata []structs.SensorData, err error) {
-	dams, _ := repository.JSONToStructDamData()
-	values, _ := repository.JSONToStructSensorData()
+func FetchSensorValuesByDesc(reposDam damscli.DamsRepo, repoSensor damscli.SensorRepo, desc string) (sensordata []structs.SensorData, err error) {
+	dams, _ := reposDam.JSONToStructDamData()
+	values, _ := repoSensor.JSONToStructSensorData()
 
 	//iterates on sensors struct
 	for _, value := range values {
@@ -89,9 +89,9 @@ func FetchSensorDataByRiverName(repository damscli.DamsRepo, river string) (sens
 	return
 }
 
-func FetchSensorValuesBySensorName(repository damscli.DamsRepo, desc string) (sensordata []structs.SensorData, err error) {
-	dams, _ := repository.JSONToStructDamData()
-	values, _ := repository.JSONToStructSensorData()
+func FetchSensorValuesBySensorName(reposDam damscli.DamsRepo, repoSensor damscli.SensorRepo, desc string) (sensordata []structs.SensorData, err error) {
+	dams, _ := reposDam.JSONToStructDamData()
+	values, _ := repoSensor.JSONToStructSensorData()
 
 	//iterates on sensors struct
 	for _, value := range values {
@@ -119,9 +119,9 @@ func FetchSensorValuesBySensorName(repository damscli.DamsRepo, desc string) (se
 	return
 }
 
-func FetchAndShowValuesBySensorName(repository damscli.DamsRepo, filter string, flagSaveToCSV string, flagCreateEndpoint string) (err error) {
+func FetchAndShowValuesBySensorName(repoDam damscli.DamsRepo, repoSensor damscli.SensorRepo, filter string, flagSaveToCSV string, flagCreateEndpoint string) (err error) {
 	//show sensor which contains "percentatge" string on its description
-	sensordata, _ := FetchSensorValuesBySensorName(repository, filter)
+	sensordata, _ := FetchSensorValuesBySensorName(repoDam, repoSensor, filter)
 	//print values in the screen
 	displaying.PrintSensorValues(sensordata)
 	//check if save to csv option is set
@@ -159,9 +159,9 @@ func FetchAndShowDataByRiverName(repository damscli.DamsRepo, filter string, fla
 
 }
 
-func FetchAndShowValuesByDesc(repository damscli.DamsRepo, filter string, flagSaveToCSV string, flagCreateEndpoint string) (err error) {
+func FetchAndShowValuesByDesc(reposDam damscli.DamsRepo, repoSensor damscli.SensorRepo, filter string, flagSaveToCSV string, flagCreateEndpoint string) (err error) {
 	//show sensor which contains "percentatge" string on its description
-	sensordata, _ := FetchSensorValuesByDesc(repository, filter)
+	sensordata, _ := FetchSensorValuesByDesc(reposDam, repoSensor, filter)
 	//print values in the screen
 	displaying.PrintSensorValues(sensordata)
 	//check if save to csv option is set

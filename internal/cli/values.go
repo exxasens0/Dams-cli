@@ -7,11 +7,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func InitValuesCmd(repository damscli.DamsRepo) *cobra.Command {
+func InitValuesCmd(repoDam damscli.DamsRepo, repoSensor damscli.SensorRepo) *cobra.Command {
 	var valuesCmd = &cobra.Command{
 		Use:   "values",
 		Short: "Imprime los valores por embalse de volumen o nivel",
-		Run:   runValuesFn(repository),
+		Run:   runValuesFn(repoDam, repoSensor),
 	}
 	//flags defined
 	valuesCmd.Flags().BoolP("volum", "v", false, "valor de volumen")
@@ -24,7 +24,7 @@ func InitValuesCmd(repository damscli.DamsRepo) *cobra.Command {
 	return valuesCmd
 }
 
-func runValuesFn(repository damscli.DamsRepo) func(cmd *cobra.Command, args []string) {
+func runValuesFn(repoDam damscli.DamsRepo, repoSensor damscli.SensorRepo) func(cmd *cobra.Command, args []string) {
 	return func(cmd *cobra.Command, args []string) {
 
 		savetoCSV, _ := cmd.Flags().GetString("save") //savetoCSV contains csv name
@@ -33,14 +33,14 @@ func runValuesFn(repository damscli.DamsRepo) func(cmd *cobra.Command, args []st
 		//show all sensor data
 		flagS, _ := cmd.Flags().GetString("sensor")
 		if flagS != "" {
-			fetching.FetchAndShowValuesBySensorName(repository, flagS, savetoCSV, endpoint)
+			fetching.FetchAndShowValuesBySensorName(repoDam, repoSensor, flagS, savetoCSV, endpoint)
 			return
 		}
 		//show all  data
 		flag, _ := cmd.Flags().GetBool("all")
 
 		if flag {
-			fetching.FetchAndShowValuesBySensorName(repository, "all", savetoCSV, endpoint)
+			fetching.FetchAndShowValuesBySensorName(repoDam, repoSensor, "all", savetoCSV, endpoint)
 			return
 		}
 
@@ -48,7 +48,7 @@ func runValuesFn(repository damscli.DamsRepo) func(cmd *cobra.Command, args []st
 		flag, _ = cmd.Flags().GetBool("volum")
 
 		if flag {
-			fetching.FetchAndShowValuesByDesc(repository, "volum", savetoCSV, endpoint)
+			fetching.FetchAndShowValuesByDesc(repoDam, repoSensor, "volum", savetoCSV, endpoint)
 			return
 		}
 
@@ -56,7 +56,7 @@ func runValuesFn(repository damscli.DamsRepo) func(cmd *cobra.Command, args []st
 		flag, _ = cmd.Flags().GetBool("nivel")
 
 		if flag {
-			fetching.FetchAndShowValuesByDesc(repository, "nivel", savetoCSV, endpoint)
+			fetching.FetchAndShowValuesByDesc(repoDam, repoSensor, "nivel", savetoCSV, endpoint)
 			return
 		}
 

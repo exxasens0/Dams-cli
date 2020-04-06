@@ -13,18 +13,20 @@ func main() {
 	csvData := flag.Bool("csv", false, "load data from csv")
 	flag.Parse()
 
-	var repo http.DamsRepo
+	var repoDam http.DamsRepo
+	var repoSensor http.SensorRepo
 
 	if *csvData {
-		repo = csv.NewCSVRepository()
+		repoDam = csv.NewCSVRepository()
 	} else {
-		repo = http.NewWWWRepository()
+		repoDam = http.NewDamRepositoryFromHttp()
+		repoSensor = http.NewSensorepositoryFromHttp()
 	}
 
 	rootCmd := &cobra.Command{Use: "dam-cli"}
-	rootCmd.AddCommand(cli.InitSensoresCmd(repo))
-	rootCmd.AddCommand(cli.InitRiosCmd(repo))
-	rootCmd.AddCommand(cli.InitValuesCmd(repo))
+	rootCmd.AddCommand(cli.InitSensoresCmd(repoDam))
+	rootCmd.AddCommand(cli.InitRiosCmd(repoDam))
+	rootCmd.AddCommand(cli.InitValuesCmd(repoDam, repoSensor)) //Dam data + Sensor Data
 	rootCmd.Execute()
 
 }
