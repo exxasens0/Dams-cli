@@ -232,7 +232,7 @@ def build() -> str:
 {links([
  ("Wikipedia Déroc", WIKI['deroc']['wiki'], "p"),
  ("Lozère Tourisme Déroc", "https://www.lozere-tourisme.com/patrimoine-naturel/cascade-du-deroc/", "w"),
- ("AllTrails boucle Déroc", "https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc", "w"),
+ ("AllTrails bucle Déroc", "https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc", "w"),
  ("PNR Aubrac", "https://www.parc-naturel-aubrac.fr/", "w"),
 ])}
 </div>
@@ -280,7 +280,7 @@ def build() -> str:
 ])}
 """))
 
-    parts.append(day_shell("d2", "Día 2 · Viernes 7 — Bosques Ax / Orgeix (dog-friendly)",
+    parts.append(day_shell("d2", "Día 2 · Viernes 7 — Bosques Ax / Orgeix (apto con perras)",
         ["Local", "P4N #22287", "Orlu CANCELADO"],
         f"""
 {img('ladres','Ax y alrededores')}
@@ -465,8 +465,8 @@ def build() -> str:
     parts.append(day_shell("d10", "Día 10 · Sábado 15 — Hacia el Aubrac",
         ["~100–130 km", "P4N #5073", "#98143 CANCELADO"],
         f"""
-{img('aubrac','Plateau de l\'Aubrac')}
-<p>Dejáis volcanes por el plateau. El paisaje se abre: menos árboles, más viento, más silencio. Es el tramo más lonely del viaje — siempre con las perras.</p>
+{img('aubrac','Meseta del Aubrac')}
+<p>Dejáis volcanes por la meseta. El paisaje se abre: menos árboles, más viento, más silencio. Es el tramo más solitario del viaje — siempre con las perras.</p>
 <div class="warn"><strong>#98143 cancelado:</strong> comentario 18/07/2026 — propiedad privada / prohibido acampar y furgonetas; además perros prohibidos. No ir.</div>
 <h4>Dónde dormir</h4>
 <p><strong>#5073 Cascada del Déroc</strong>. Llegad tarde (el parking se vacía cuando se van los visitantes de día). Apto con perros según reseñas.</p>
@@ -486,19 +486,19 @@ def build() -> str:
 <div class="photo-grid">{img('deroc','Cascada del Déroc')}{img('nasbinals','Nasbinals')}</div>
 <p>Día de meseta. La cascada del Déroc merece la pena cuando la luz es buena: órganos basálticos, cueva detrás del agua, vistas al valle de la Gambaïse. El GR65 pasa cerca de Nasbinals.</p>
 <div class="trail">
-<h4>Plan A · Boucle Déroc (moderada, perros OK con correa)</h4>
+<h4>Plan A · Bucle Déroc (moderado, perros OK con correa)</h4>
 <p>AllTrails y el PR «Del Déroc a la Peyrade» ofrecen bucles de ~9 km / ~2–2h30 desde Nasbinals o desde el parking de la cascada. Variante corta: solo cascada + lago Salhiens 6–8 km.</p>
 {links([
- ("AllTrails Cascade du Déroc Loop","https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc","w"),
+ ("AllTrails bucle Cascada del Déroc","https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc","w"),
  ("PDF PR Déroc–Peyrade (PNR)","https://admin-pnrgca.openig.org/api/fr/treks/51051/du-deroc-a-la-peyrade.pdf","w"),
- ("Lozère Tourisme","https://www.lozere-tourisme.com/patrimoine-naturel/cascade-du-deroc/","w"),
- ("Wikiloc Cascade du Déroc","https://es.wikiloc.com/wikiloc/view.do?q=Cascade+du+D%C3%A9roc+Nasbinals","w"),
- ("Decathlon Outdoor ideas","https://www.decathlon-outdoor.com/fr-fr/inspire/france/randonnee-cascade-du-deroc-lozere","w"),
+ ("Turismo Lozère","https://www.lozere-tourisme.com/patrimoine-naturel/cascade-du-deroc/","w"),
+ ("Wikiloc Cascada del Déroc","https://es.wikiloc.com/wikiloc/view.do?q=Cascade+du+D%C3%A9roc+Nasbinals","w"),
+ ("Ideas Decathlon Outdoor","https://www.decathlon-outdoor.com/fr-fr/inspire/france/randonnee-cascade-du-deroc-lozere","w"),
 ])}
 </div>
 <div class="trail">
 <h4>Plan B · viento / patous densos</h4>
-<p>Pueblo Nasbinals + descanso. Abortar si tormenta eléctrica (no hay abrigo en plateau).</p>
+<p>Pueblo Nasbinals + descanso. Abortar si tormenta eléctrica (no hay abrigo en la meseta).</p>
 </div>
 {links([("P4N #5073","https://park4night.com/es/place/5073","o"),("Google Nasbinals","https://www.google.com/maps/search/?api=1&query=Nasbinals","g")])}
 """))
@@ -522,21 +522,21 @@ def build() -> str:
     parts.append(day_shell("d13", "Día 13 · Martes 18 — Capcir / Camporells o lago",
         ["Local", "día colchón", "P4N #2547"],
         f"""
-{img('matemale','Lac de Matemale')}
-<p>Último día pleno con perras. Camporells (site classé): <strong>perros con correa</strong>. Si un tramo hacia Carlit entra en réserve naturelle → cancelar y volver al lago.</p>
+{img('matemale','Lago de Matemale')}
+<p>Último día pleno con perras. Camporells (espacio natural clasificado): <strong>perros con correa</strong>. Si un tramo hacia Carlit entra en reserva natural → cancelar y volver al lago.</p>
 <div class="trail">
 <h4>Plan A · Camporells (si estáis enteros)</h4>
-<p>Lagos bajo los Péric, refuge, pinares de altura. Variantes de 3–5 h+. Hay bucles largos y duros (Lladure); no hace falta el más exigente.</p>
+<p>Lagos bajo los Péric, refugio, pinares de altura. Variantes de 3–5 h+. Hay bucles largos y duros (Lladure); no hace falta el más exigente.</p>
 {links([
  ("Visorando Camporells por Lladure","https://www.visorando.com/randonnee-boucle-des-camporells-par-la-vallee-de-l/","w"),
  ("Visorando Esposolla–Camporells","https://www.visorando.com/randonnee-d-esposolla-aux-lacs-des-camporells/","w"),
- ("Wikiloc Formiguères lac Olive","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","w"),
- ("Wikiloc view 111344412","https://es.wikiloc.com/wikiloc/view.do?id=111344412","w"),
+ ("Wikiloc Formiguères lago Olive","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","w"),
+ ("Wikiloc vista 111344412","https://es.wikiloc.com/wikiloc/view.do?id=111344412","w"),
  ("Google Camporells","https://www.google.com/maps/search/?api=1&query=%C3%89tangs+des+Camporells","g"),
 ])}
 </div>
 <div class="trail">
-<h4>Plan B · Lac de Matemale / bosques Formiguères</h4>
+<h4>Plan B · Lago de Matemale / bosques Formiguères</h4>
 <p>8–10 km casi llanos alrededor del lago o pinares. Perfecto si necesitáis suavidad. Verificar altura de barrera antes de entrar con la Sunlight.</p>
 {links([
  ("Google Matemale","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
