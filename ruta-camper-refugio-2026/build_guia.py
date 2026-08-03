@@ -34,12 +34,34 @@ def quote(who: str, when: str, text: str, source: str = "Park4Night") -> str:
 
 
 def links(items: list[tuple[str, str, str]]) -> str:
-    """items: (label, url, kind)"""
+    """items: (label, url, kind) — kind: g|o|w|p|wiki"""
     btns = []
     for label, url, kind in items:
-        cls = {"g": "btn btn-g", "o": "btn btn-o", "w": "btn btn-w", "p": "btn btn-p"}.get(kind, "btn")
+        cls = {
+            "g": "btn btn-g",
+            "o": "btn btn-o",
+            "w": "btn btn-w",
+            "p": "btn btn-p",
+            "wiki": "btn btn-wiki",
+        }.get(kind, "btn")
         btns.append(f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>')
     return '<div class="btns">' + "".join(btns) + "</div>"
+
+
+def wikiloc_box(items: list[tuple[str, str]]) -> str:
+    """Dedicated visible Wikiloc button row."""
+    if not items:
+        return ""
+    btns = "".join(
+        f'<a class="btn btn-wiki" href="{esc(url)}" target="_blank" rel="noopener">Wikiloc · {esc(label)}</a>'
+        for label, url in items
+    )
+    return (
+        '<div class="wikiloc-box">'
+        "<strong>Tracks Wikiloc (fácil/moderado)</strong>"
+        f'<div class="btns">{btns}</div>'
+        "</div>"
+    )
 
 
 CSS = r"""
@@ -57,6 +79,10 @@ a{color:var(--pine)}.wrap{width:min(980px,calc(100% - 1.2rem));margin:0 auto}
 .btn{display:inline-flex;align-items:center;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.48rem .9rem;font-size:.84rem;font-weight:700}
 .btn-p{background:var(--pine);border-color:var(--pine);color:#fff}.btn-g{background:#e8f0fe;border-color:#c6d7f5;color:#1a4f9c}
 .btn-o{background:#fff1e6;border-color:#efd0b5;color:var(--clay)}.btn-w{background:#e7f6ef;border-color:#b9dccb;color:#146247}
+.btn-wiki{background:#ff6a00;border-color:#e85e00;color:#fff;box-shadow:0 2px 0 rgba(180,70,0,.25)}
+.btn-wiki:hover{filter:brightness(1.05)}
+.wikiloc-box{margin:.85rem 0;padding:.85rem 1rem;border:2px solid #ff6a00;border-radius:14px;background:#fff7f0}
+.wikiloc-box strong{display:block;color:#c24e00;font-size:.92rem;margin-bottom:.35rem}
 .hero{padding:1.4rem 0 1rem}.hero h1{font-size:clamp(1.85rem,5.5vw,2.85rem);max-width:18ch}
 .lead{color:var(--muted);font-size:1.08rem;max-width:62ch}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0}.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.25rem .7rem;font-size:.78rem;color:var(--muted)}
@@ -114,7 +140,7 @@ def build() -> str:
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet</small></div>
+<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-03c (Wikiloc)</small></div>
 <div class="btns">
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
@@ -200,7 +226,7 @@ def build() -> str:
 {links([
  ("Wikipedia Cagateille", WIKI['cagateille']['wiki'], "p"),
  ("OT Couserans", "https://www.tourisme-couserans-pyrenees.com/", "w"),
- ("Wikiloc Cagateille (Moderado)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","w"),
+ ("Wikiloc Cagateille (Moderado)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","wiki"),
  ("Visorando Cagateille", "https://www.visorando.com/randonnee-cirque-de-cagateille/", "w"),
  ("Komoot Cagateille", "https://www.komoot.com/es-es/highlight/6134573", "w"),
 ])}
@@ -219,7 +245,7 @@ def build() -> str:
 <p>El <strong>Puy Mary</strong> (1.783 m) es el belvedere famoso; no hace falta coronarlo si el parking es un caos — el Bec de l'Aigle ya da la experiencia volcánica.</p>
 {links([
  ("Wikipedia Lioran", WIKI['lioran']['wiki'], "p"),
- ("Wikiloc Bec + Téton (Moderado)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","w"),
+ ("Wikiloc Bec + Téton (Moderado)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
  ("Topo Bec de l'Aigle (Moyenne)","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
  ("Wikipedia Salers", WIKI['salers']['wiki'], "p"),
  ("OT Salers", "https://www.salers-tourisme.fr/", "w"),
@@ -233,7 +259,7 @@ def build() -> str:
 <p>Patous frecuentes: protocolo estricto. El GR 65 (Compostela) cruza Nasbinals: usad trozos bonitos, no hace falta “hacer el camino”.</p>
 {links([
  ("Wikipedia Déroc", WIKI['deroc']['wiki'], "p"),
- ("Wikiloc Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","w"),
+ ("Wikiloc Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","wiki"),
  ("Turismo Lozère Déroc", "https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/", "w"),
  ("Visorando Cascada del Déroc", "https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/", "w"),
  ("PNR Aubrac", "https://www.parc-naturel-aubrac.fr/", "w"),
@@ -246,7 +272,7 @@ def build() -> str:
 <p>{esc(WIKI['capcir']['extract'])} Los <strong>lagos de Camporells</strong> quedan fuera del criterio moderado (fichas Visorando = Difficile, ~800 m D+). Prioridad: <strong>lago de Matemale / Forêt de la Matte</strong> (fácil, perros OK). Evitad reservas naturales catalanas vecinas (perros prohibidos).</p>
 {links([
  ("Wikipedia Formiguères", WIKI['formigueres']['wiki'], "p"),
- ("Wikiloc Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","w"),
+ ("Wikiloc Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","wiki"),
  ("Visorando bucle Matemale (fácil)","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
  ("OT Pirineo Cerdanya", "https://www.pyrenees-cerdagne.com/", "w"),
 ])}
@@ -294,11 +320,12 @@ def build() -> str:
 <p>Día de aclimatación <strong>100 % con perras</strong>. La reserva de Orlu queda fuera: <strong>perros prohibidos</strong>. Explorad bosques y pistas hacia <strong>Orgeix / Ascou / Tournals</strong>: sombra de haya, torrentes, poca gente comparado con Orlu.</p>
 <div class="trail">
 <h4>Sendero A · Ax → Orgeix (Visorando Moyenne · ~8,5 km · +318 m)</h4>
+{wikiloc_box([("Orgeix (Moderado)","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983")])}
 <p>Valle lateral menos masificado. Sombra de haya, torrentes, poca gente comparado con Orlu. Confirmad en el track que <strong>no entra en la reserva Orlu</strong>.</p>
 <p><strong>Datos:</strong> ~8,5 km · D+ moderado · salida 7:30–8:00.</p>
 {links([
  ("Visorando Ax–Orgeix (Moyenne)","https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/","w"),
- ("Wikiloc Orgeix (Moderado)","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983","w"),
+ ("Wikiloc Orgeix (Moderado)","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983","wiki"),
  ("Google Orgeix","https://www.google.com/maps/search/?api=1&query=Orgeix+Ari%C3%A8ge","g"),
 ])}
 </div>
@@ -324,9 +351,10 @@ def build() -> str:
 {quote('nayati64','01/06/2025','Pasamos 3 noches tranquilas. El sitio está limpio: dejémoslo así.','P4N #6527')}
 <div class="trail">
 <h4>Atardecer en Col de la Core</h4>
+{wikiloc_box([("Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944")])}
 <p>El collado (~1.395 m) es hub de GR y paseos cortos. No hace falta una cima: la luz sobre Bethmale basta. <strong>No</strong> uséis el Wikiloc <em>muy difícil</em> #7866059; preferid Bethmale (fácil) o Visorando Moyenne.</p>
 {links([
- ("Wikiloc Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","w"),
+ ("Wikiloc Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","wiki"),
  ("Visorando Étang de Bethmale (Moyenne)","https://www.visorando.com/randonnee-le-lac-de-bethmale/","w"),
  ("Visorando Col de la Core (Moyenne)","https://www.visorando.com/randonnee-col-de-la-core/","w"),
  ("Google Col de la Core","https://www.google.com/maps/search/?api=1&query=Col+de+la+Core","g"),
@@ -344,10 +372,11 @@ def build() -> str:
 <div class="warn"><strong>#51675 NO DORMIR.</strong> Comentario escalador1 27/07/2026: desde 26/7/2026, orden municipal, sin campers/autos de 20:00 a 6:00. Id de día y volved a Guzet/Core.</div>
 <div class="trail">
 <h4>Plan A · Cirque de Cagateille (Facile · ~4 km · +251 m)</h4>
+{wikiloc_box([("Cirque de Cagateille (Moderado · ~5 km)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020")])}
 <p>Desde el parking del circo: sendero marcado bajo bosque, arroyos, y el fondo del anfiteatro. Pasarela al centro. Es el “wow” del Couserans sin trampas técnicas.</p>
 <p><strong>Cancelado:</strong> prolongar a Hillette/Alet (Visorando = <em>Very difficult</em>, cadenas/exposición).</p>
 {links([
- ("Wikiloc Cirque de Cagateille (Moderado · ~5 km)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","w"),
+ ("Wikiloc Cirque de Cagateille (Moderado · ~5 km)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","wiki"),
  ("Visorando Circo de Cagateille (Facile)","https://www.visorando.com/randonnee-cirque-de-cagateille/","w"),
  ("Cirkwi Circo de Cagateille (très facile)","https://www.cirkwi.com/fr/circuit/664891-le-cirque-de-cagateille","w"),
  ("Komoot Circo de Cagateille","https://www.komoot.com/es-es/highlight/6134573","w"),
@@ -357,18 +386,20 @@ def build() -> str:
 </div>
 <div class="trail">
 <h4>Plan B · Cascade d'Ars (Moyenne / Wikiloc Fácil)</h4>
+{wikiloc_box([("Cascada d'Ars (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596")])}
 <p>Una de las grandes cascadas del Ariège. Bosque, GR10, mucha gente a mediodía → <strong>salida 7:30</strong>. Id a la cascada; <strong>no</strong> el bucle largo Ars+Guzet (Difficile / +1.000 m).</p>
 {links([
- ("Wikiloc Cascada d'Ars (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596","w"),
+ ("Wikiloc Cascada d'Ars (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596","wiki"),
  ("Visorando Cascada d'Ars (Moyenne)","https://www.visorando.com/randonnee-la-cascade-d-ars-2/","w"),
  ("Google Cascade d'Ars","https://www.google.com/maps/search/?api=1&query=Cascade+d%27Ars+Aulus-les-Bains","g"),
 ])}
 </div>
 <div class="trail">
 <h4>Plan C · Biros / Bethmale (Moyenne / Wikiloc Fácil)</h4>
+{wikiloc_box([("Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944")])}
 <p>Valle y bosque con perras: Étang de Bethmale o Chapelle de l'Isard. Correa cerca de rebaños. <strong>Cancelado:</strong> Minas de Bentaillou / Tour du Biros (Difficile).</p>
 {links([
- ("Wikiloc Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","w"),
+ ("Wikiloc Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","wiki"),
  ("Visorando Cabane Illau + Chapelle Isard (Moyenne)","https://www.visorando.com/randonnee-cabane-d-illau-et-chapelle-de-l-isard/","w"),
  ("Visorando Étang de Bethmale (Moyenne)","https://www.visorando.com/randonnee-le-lac-de-bethmale/","w"),
  ("Google Sentein","https://www.google.com/maps/search/?api=1&query=Sentein","g"),
@@ -417,11 +448,15 @@ def build() -> str:
 <p>Jornada de crestas volcánicas con fichas <strong>Moyenne</strong> (no Difficile). Decisión a las <strong>7:00</strong> según cielo y viento. Si hay tormenta de tarde, acortad.</p>
 <div class="trail">
 <h4>Plan A · Font d'Alagnon → Bec de l'Aigle → Téton (Moyenne)</h4>
+{wikiloc_box([
+ ("Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058"),
+ ("Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228"),
+])}
 <p>Salís de Font d'Alagnon (~1.190 m). Subida: bosque → pastos → tramo rocoso corto (manos ocasionales, no ferrata) → rocher ~1.700 m. Opcional Téton de Vénus.</p>
 <p><strong>Datos Visorando:</strong> ~8 km · +550–670 m · Moyenne. Abortar con truenos o perras exhaustas. Patous posibles en pastos. <strong>Cancelado:</strong> variantes Difficile (p. ej. Super-Lioran Difficile) y bucles largos tipo Peyre Arse 12–25 km.</p>
 {links([
- ("Wikiloc Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","w"),
- ("Wikiloc Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228","w"),
+ ("Wikiloc Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
+ ("Wikiloc Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228","wiki"),
  ("Visorando Téton + Bec (Moyenne · ~8 km)","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
  ("Visorando Bec + Téton + Bataillouse (Moyenne)","https://www.visorando.com/randonnee-rocher-du-bec-de-l-aigle-teton-de-venus-/","w"),
  ("Google Font d'Alagnon","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
@@ -461,9 +496,10 @@ def build() -> str:
 <p>Salers de basalto y torres: visitad <strong>temprano</strong>. El resto del día, el bocage (setos, prados, caminos rurales) es más fiel al espíritu del viaje que otra cima volcánica llena de coches.</p>
 <div class="trail">
 <h4>Boucle La Montagnoune (~4 km, fácil) + paseo por el pueblo</h4>
+{wikiloc_box([("Rutas fáciles cerca de Salers","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers")])}
 <p>Ficha concreta Visorando: vistas al valle de la Maronne y al pueblo. El resto del día, caminos rurales del bocage (setos, prados). Opcional: subir en camper al Pas de Peyrol solo para belvedere corto si el parking no es un caos — no hace falta coronar el Puy Mary.</p>
 {links([
- ("Wikiloc La Montagnoune / Salers (listado fáciles)","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers","w"),
+ ("Wikiloc La Montagnoune / Salers (listado fáciles)","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers","wiki"),
  ("Visorando La Montagnoune (desde Salers)","https://www.visorando.com/randonnee-la-montagnoune-depuis-salers/","w"),
  ("OT Salers","https://www.salers-tourisme.fr/","w"),
  ("Google Salers","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
@@ -498,9 +534,10 @@ def build() -> str:
 <p>Día de meseta. La cascada del Déroc merece la pena cuando la luz es buena: órganos basálticos, cueva detrás del agua, vistas al valle de la Gambaïse. El GR65 pasa cerca de Nasbinals.</p>
 <div class="trail">
 <h4>Plan A · Bucle Déroc (moderado, perros OK con correa)</h4>
+{wikiloc_box([("Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479")])}
 <p>El PR Visorando «Nasbinals – Cascade du Déroc» es <strong>Facile</strong> (~13 km · +205 m). Variante corta: solo cascada + lago Salhiens 6–8 km.</p>
 {links([
- ("Wikiloc Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","w"),
+ ("Wikiloc Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","wiki"),
  ("Visorando Cascada del Déroc (Facile)","https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/","w"),
  ("Turismo Lozère","https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/","w"),
 ])}
@@ -535,9 +572,10 @@ def build() -> str:
 <p>Último día pleno con perras. <strong>Camporells cancelado</strong> por dificultad: las fichas Visorando (Lladure, Esposolla, boucle completa) son <em>Difficile</em> (~800–1.000 m D+). Criterio del viaje = fácil/moderada.</p>
 <div class="trail">
 <h4>Plan A · Lac de Matemale + Forêt de la Matte (Facile · ~9,7 km · +130 m)</h4>
+{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
 <p>Bucle Visorando por el lago, Tour de Creu y pinares. Ideal con perras, casi llano, sombra.</p>
 {links([
- ("Wikiloc Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","w"),
+ ("Wikiloc Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","wiki"),
  ("Visorando bucle Matemale (Facile)","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
  ("Google Matemale","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
  ("Wikipedia Matemale", WIKI['matemale']['wiki'], "p"),
