@@ -10,6 +10,7 @@
 
 | Archivo | Contenido |
 |---|---|
+| **[guia-movil.html](guia-movil.html)** | **Guía blog móvil: mapa + días + navegar** |
 | [05-park4night-pernoctas.md](05-park4night-pernoctas.md) | Criterios + spots estrella van/nature |
 | [04-reservas-campings.md](04-reservas-campings.md) | Favoritos P4N (no camping) |
 | [02-hoja-dia-a-dia.md](02-hoja-dia-a-dia.md) | Día a día |

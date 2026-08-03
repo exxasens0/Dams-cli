@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1a3a32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ruta Camper">
+<title>Ruta camper · Refugio climático · 6–19 ago</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root {
+  --bg: #e8efe9;
+  --bg2: #d5e3da;
+  --ink: #142820;
+  --muted: #3d564a;
+  --card: #f7faf7;
+  --accent: #1f6b52;
+  --accent2: #c45c26;
+  --line: #b7c9bc;
+  --ok: #1f6b52;
+  --warn: #9a4d16;
+  --shadow: 0 10px 30px rgba(20,40,32,.08);
+  --radius: 16px;
+  --nav-h: 56px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #cfe0d6 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #d9e6df 0%, transparent 50%),
+    var(--bg);
+  line-height: 1.45;
+}
+h1,h2,h3,h4 { font-family: Fraunces, Georgia, serif; font-weight: 700; line-height: 1.15; margin: 0 0 .5rem; }
+a { color: var(--accent); }
+.wrap { width: min(920px, calc(100% - 1.25rem)); margin: 0 auto; }
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(247,250,247,.92);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  display: flex; gap: .5rem; align-items: center;
+  justify-content: space-between;
+  min-height: var(--nav-h);
+  padding: .4rem 0;
+}
+.brand { font-family: Fraunces, serif; font-size: 1rem; }
+.brand small { display: block; font-family: "Source Sans 3", sans-serif; font-size: .72rem; color: var(--muted); font-weight: 400; }
+.top-actions { display: flex; gap: .4rem; flex-wrap: wrap; justify-content: flex-end; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  border-radius: 999px; padding: .45rem .8rem; font-size: .82rem; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-accent { background: #fff4ec; border-color: #efc7ad; color: var(--accent2); }
+.hero {
+  padding: 1.4rem 0 1rem;
+}
+.hero h1 { font-size: clamp(1.7rem, 5.5vw, 2.5rem); max-width: 16ch; }
+.hero p { color: var(--muted); margin: .6rem 0 1rem; max-width: 42ch; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.chip {
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: .28rem .65rem; font-size: .78rem; color: var(--muted);
+}
+#map {
+  height: min(52vh, 420px); border-radius: var(--radius);
+  border: 1px solid var(--line); box-shadow: var(--shadow); margin-bottom: .75rem;
+}
+.map-hint { font-size: .82rem; color: var(--muted); margin: 0 0 1.2rem; }
+.day-nav {
+  display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: .35rem;
+  margin: 0 0 1.25rem; position: sticky; top: calc(var(--nav-h) + 1px); z-index: 40;
+  background: rgba(232,239,233,.95); padding: .45rem 0; backdrop-filter: blur(8px);
+}
+.day-nav a {
+  text-decoration: none; text-align: center; font-size: .72rem; font-weight: 700;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: .35rem .1rem; color: var(--ink);
+}
+.day-nav a span { display: block; font-weight: 400; color: var(--muted); font-size: .62rem; }
+.section { margin: 1.5rem 0; }
+.section h2 { font-size: 1.45rem; margin-bottom: .75rem; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem; margin-bottom: .8rem; box-shadow: var(--shadow);
+}
+.card h3 { font-size: 1.15rem; }
+.meta { display: flex; flex-wrap: wrap; gap: .35rem; margin: .55rem 0 .7rem; }
+.tag {
+  font-size: .72rem; font-weight: 700; letter-spacing: .02em;
+  background: var(--bg2); color: var(--muted); border-radius: 8px; padding: .22rem .45rem;
+}
+.tag.ok { background: #dcefe6; color: var(--ok); }
+.tag.warn { background: #f8e6d6; color: var(--warn); }
+.grid2 { display: grid; gap: .65rem; }
+@media (min-width: 720px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+.kv { font-size: .92rem; }
+.kv strong { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: .15rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.note {
+  border-left: 3px solid var(--accent);
+  background: #eef6f1; padding: .65rem .8rem; border-radius: 0 10px 10px 0;
+  font-size: .9rem; margin: .7rem 0 0;
+}
+.warnbox {
+  border-left: 3px solid var(--accent2);
+  background: #fff4ec; padding: .65rem .8rem; border-radius: 0 10px 10px 0;
+  font-size: .9rem; margin: .7rem 0 0;
+}
+.spot-list { display: grid; gap: .7rem; }
+.footer {
+  margin: 2rem 0 5.5rem; color: var(--muted); font-size: .85rem;
+}
+.fab {
+  position: fixed; right: .9rem; bottom: .9rem; z-index: 60;
+  display: flex; flex-direction: column; gap: .4rem;
+}
+.fab .btn { box-shadow: var(--shadow); }
+ul.clean { margin: .4rem 0 0; padding-left: 1.1rem; }
+ul.clean li { margin: .25rem 0; }
+details { margin-top: .5rem; }
+summary { cursor: pointer; font-weight: 600; }
+.toc a { display: inline-block; margin: .15rem .35rem .15rem 0; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">Ruta camper<small>6–19 ago · Sunlight 600 · 2 perras</small></div>
+    <div class="top-actions">
+      <a class="btn btn-primary" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Foix,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Ruta Maps</a>
+      <a class="btn" href="https://www.park4night.com/es/search" target="_blank" rel="noopener">Park4Night</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="chips">
+      <span class="chip">Refugio climático</span>
+      <span class="chip">Sin masificación</span>
+      <span class="chip">P4N recondito</span>
+      <span class="chip">Sin camping (salvo emergencia)</span>
+    </div>
+    <h1>Francia verde: Ariège → Cantal → Aubrac → Capcir</h1>
+    <p>Guía móvil para navegar día a día: mapa interactivo, pernoctas Park4Night (camper, césped/sombra, sin servicios) y excursiones mixtas.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#mapa">Ver mapa</a>
+      <a class="btn" href="#dias">Día a día</a>
+      <a class="btn" href="#spots">Spots dormir</a>
+      <a class="btn" href="#seguridad">Perras &amp; calor</a>
+    </div>
+  </section>
+
+  <section class="section" id="mapa">
+    <h2>Mapa de la ruta</h2>
+    <div id="map" role="img" aria-label="Mapa de etapas y pernoctas"></div>
+    <p class="map-hint">Puntos verdes = pernocta prioritaria. Tocad un marcador para abrir navegación o Park4Night. Necesita datos móviles la primera vez (después podéis capturar pantallas).</p>
+    <div class="actions">
+      <a class="btn btn-accent" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Foix,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Abrir ruta completa en Google Maps</a>
+    </div>
+  </section>
+
+  <nav class="day-nav" aria-label="Ir al día">
+    <a href="#d1">1<span>6 ago</span></a>
+    <a href="#d2">2<span>7</span></a>
+    <a href="#d3">3<span>8</span></a>
+    <a href="#d4">4<span>9</span></a>
+    <a href="#d5">5<span>10</span></a>
+    <a href="#d6">6<span>11</span></a>
+    <a href="#d7">7<span>12</span></a>
+    <a href="#d8">8<span>13</span></a>
+    <a href="#d9">9<span>14</span></a>
+    <a href="#d10">10<span>15</span></a>
+    <a href="#d11">11<span>16</span></a>
+    <a href="#d12">12<span>17</span></a>
+    <a href="#d13">13<span>18</span></a>
+    <a href="#d14">14<span>19</span></a>
+  </nav>
+
+  <section class="section" id="dias">
+    <h2>Itinerario día a día</h2>
+
+    <article class="card" id="d1">
+      <h3>Día 1 · Jue 6 — Teià → Ax</h3>
+      <div class="meta"><span class="tag">~180 km · 2h15</span><span class="tag ok">Pernocta #22287 Tournals</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan</strong>Salida tranquila. Llegada a Haute Ariège.</div>
+        <div class="kv"><strong>Excursión</strong>Río atardecer + Ladres (perras fuera del vaso).</div>
+      </div>
+      <p class="note">Tournals: acceso estrecho, autocaravana grande no entra. Sombra / nature. Si cerrado (vacas) → rincón Bonascre.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=42.7056,1.8216&travelmode=driving" target="_blank" rel="noopener">Navegar a Tournals</a>
+        <a class="btn" href="https://park4night.com/es/place/22287" target="_blank" rel="noopener">P4N #22287</a>
+        <a class="btn" href="geo:42.7056,1.8216">GPS geo</a>
+      </div>
+    </article>
+
+    <article class="card" id="d2">
+      <h3>Día 2 · Vie 7 — Ax / bosques</h3>
+      <div class="meta"><span class="tag">0 km largo</span><span class="tag ok">Misma pernocta Tournals</span><span class="tag warn">Orlu: perros no en reserva</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Hike A</strong>Bosques Ax / Orgeix 10–14 km.</div>
+        <div class="kv"><strong>Hike B</strong>Paseo corto con sombra.</div>
+      </div>
+      <p class="warnbox">No planificar la Reserva de Orlu con las perras (prohibido en muchos senderos).</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Orgeix+Ariège" target="_blank" rel="noopener">Mapa Orgeix / Ax</a>
+      </div>
+    </article>
+
+    <article class="card" id="d3">
+      <h3>Día 3 · Sáb 8 — Ax → Foix (corta) → Couserans</h3>
+      <div class="meta"><span class="tag">~120–140 km</span><span class="tag ok">#6527 Col de la Core o #24616 Guzet</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan</strong>Foix solo parada corta. Subir a altitud para dormir fresco y tranquilo.</div>
+        <div class="kv"><strong>Excursión</strong>Saint-Lizier breve + atardecer en el col.</div>
+      </div>
+      <p class="warnbox">#51675 Cagateille: verificar si sigue permitido de noche (posible ban 20h–6h desde jul 2026).</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=Col+de+la+Core,+Seix" target="_blank" rel="noopener">Navegar Col de la Core</a>
+        <a class="btn" href="https://park4night.com/es/place/6527" target="_blank" rel="noopener">P4N #6527</a>
+        <a class="btn" href="https://park4night.com/es/place/24616" target="_blank" rel="noopener">P4N Guzet #24616</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=42.7876,1.3008&travelmode=driving" target="_blank" rel="noopener">Navegar Guzet</a>
+      </div>
+    </article>
+
+    <article class="card" id="d4">
+      <h3>Día 4 · Dom 9 — Biros / Salat</h3>
+      <div class="meta"><span class="tag">Local</span><span class="tag ok">Misma base Couserans</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Hike A</strong>Valle de Biros 10–15 km (ruinas mineras / bosque).</div>
+        <div class="kv"><strong>Hike B</strong>Fluvial Salat suave.</div>
+      </div>
+      <p class="note">Correa: posible ganado. Si Cagateille está legal de noche y queréis van-only: <a href="https://park4night.com/es/place/51675" target="_blank" rel="noopener">#51675</a>.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Valle+de+Biros+Sentein" target="_blank" rel="noopener">Mapa Biros</a>
+      </div>
+    </article>
+
+    <article class="card" id="d5">
+      <h3>Día 5 · Lun 10 — Puente hacia Cantal</h3>
+      <div class="meta"><span class="tag">~220–260 km · 3h30–4h30</span><span class="tag warn">No hike largo</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Pernocta</strong>Buscar “Lieu en pleine nature” en P4N en ruta (Carladez / Estaing). Plan B: borde de #3781 Entraygues al anochecer.</div>
+        <div class="kv"><strong>Excursión</strong>Solo 3–5 km al llegar.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&origin=Seix,+France&destination=Entraygues-sur-Truy%C3%A8re,+France&travelmode=driving" target="_blank" rel="noopener">Navegar hacia Entraygues</a>
+        <a class="btn" href="https://park4night.com/es/place/3781" target="_blank" rel="noopener">P4N #3781 (borde tarde)</a>
+      </div>
+    </article>
+
+    <article class="card" id="d6">
+      <h3>Día 6 · Mar 11 — Entrada a Le Lioran</h3>
+      <div class="meta"><span class="tag">~120–150 km</span><span class="tag ok">#13709 Combe Nègre (árboles)</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan</strong>Subida al Macizo. Elegir plaza con sombra de haya/abeto.</div>
+        <div class="kv"><strong>Excursión</strong>Aclimatación 5–8 km por pistas.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=45.0849,2.7330&travelmode=driving" target="_blank" rel="noopener">Navegar Combe Nègre</a>
+        <a class="btn" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">P4N #13709</a>
+        <a class="btn" href="geo:45.0849,2.7330">GPS geo</a>
+      </div>
+    </article>
+
+    <article class="card" id="d7">
+      <h3>Día 7 · Mié 12 — Jornada fuerte Lioran</h3>
+      <div class="meta"><span class="tag">0 km</span><span class="tag ok">Misma Combe Nègre</span><span class="tag warn">Decisión meteo 7:00</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan A</strong>Bec de l’Aigle / anillo marcado 12–15 km, senda clara.</div>
+        <div class="kv"><strong>Plan B</strong>Téléphérique + paseo corto, o pistas bajas 6–8 km.</div>
+      </div>
+      <p class="warnbox">Abortar con truenos, granizo o perras sin sombra a media mañana. Patous posibles.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Bec+de+l%27Aigle+Le+Lioran" target="_blank" rel="noopener">Mapa Bec de l’Aigle</a>
+      </div>
+    </article>
+
+    <article class="card" id="d8">
+      <h3>Día 8 · Jue 13 — Piste Verte → zona Salers</h3>
+      <div class="meta"><span class="tag">~70–90 km</span><span class="tag ok">#271257 Fouey o #144306 hierba</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Excursión</strong>Piste Verte Sumène-Artense 8–12 km (llano, ideal perras).</div>
+        <div class="kv"><strong>Pernocta</strong>Granja Fouey (hierba) o estadio Saint-Bonnet. Evitar aire #855.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">P4N Fouey #271257</a>
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=45.1600,2.4521&travelmode=driving" target="_blank" rel="noopener">Navegar St-Bonnet #144306</a>
+        <a class="btn" href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">P4N #144306</a>
+      </div>
+    </article>
+
+    <article class="card" id="d9">
+      <h3>Día 9 · Vie 14 — Salers bocage</h3>
+      <div class="meta"><span class="tag">0 km</span><span class="tag ok">Misma Fouey / hierba</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Hike A</strong>Bucle bocage 10–14 km.</div>
+        <div class="kv"><strong>Opcional</strong>Pas de Peyrol solo belvedere corto (sin cima técnica).</div>
+      </div>
+      <p class="note">Visitar Salers pueblo temprano o tarde. Queso en la granja. Correa cerca de vacas.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Salers+Cantal" target="_blank" rel="noopener">Mapa Salers</a>
+      </div>
+    </article>
+
+    <article class="card" id="d10">
+      <h3>Día 10 · Sáb 15 — Salers → Aubrac</h3>
+      <div class="meta"><span class="tag">~100–130 km</span><span class="tag ok">#98143 nature</span><span class="tag warn">Perras + ganado</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Pernocta</strong>Pista hierba/bosque, acceso que filtra AC grandes. Sin servicios.</div>
+        <div class="kv"><strong>Excursión</strong>Paseo corto al llegar.</div>
+      </div>
+      <p class="warnbox">Protocolo patous. Si el spot estresa con perras → backup <a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">#5073 Déroc</a>.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=44.6227,3.0531&travelmode=driving" target="_blank" rel="noopener">Navegar #98143</a>
+        <a class="btn" href="https://park4night.com/es/place/98143" target="_blank" rel="noopener">P4N #98143</a>
+        <a class="btn" href="geo:44.6227,3.0531">GPS geo</a>
+      </div>
+    </article>
+
+    <article class="card" id="d11">
+      <h3>Día 11 · Dom 16 — Día Aubrac</h3>
+      <div class="meta"><span class="tag">0 km</span><span class="tag warn">Viento / patous / meteo 7:00</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan A</strong>12–15 km Nasbinals ↔ lagos ↔ Saint-Urcize.</div>
+        <div class="kv"><strong>Plan B</strong>Bucle Déroc 6–8 km o pueblo Nasbinals.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Cascade+du+D%C3%A9roc+Nasbinals" target="_blank" rel="noopener">Mapa Cascade du Déroc</a>
+      </div>
+    </article>
+
+    <article class="card" id="d12">
+      <h3>Día 12 · Lun 17 — Aubrac → Capcir</h3>
+      <div class="meta"><span class="tag">~280–320 km · salir &lt;9:00</span><span class="tag ok">#2547 Formiguères (tierra/lago)</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Pernocta</strong>Elegir rincón de tierra / inferior junto lago, no la fila de AC del asfalto alto.</div>
+        <div class="kv"><strong>Excursión</strong>4–6 km bosque al llegar.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711&travelmode=driving" target="_blank" rel="noopener">Navegar Formiguères</a>
+        <a class="btn" href="https://park4night.com/es/place/2547" target="_blank" rel="noopener">P4N #2547</a>
+        <a class="btn" href="geo:42.6241,2.0711">GPS geo</a>
+      </div>
+    </article>
+
+    <article class="card" id="d13">
+      <h3>Día 13 · Mar 18 — Capcir (colchón)</h3>
+      <div class="meta"><span class="tag">0 km</span><span class="tag ok">#2547 o Matemale calma</span></div>
+      <div class="grid2">
+        <div class="kv"><strong>Plan</strong>Descanso, lavado, meteo buffer.</div>
+        <div class="kv"><strong>Excursión</strong>Bosque 8–12 km o vuelta al lago.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://park4night.com/en/place/294842" target="_blank" rel="noopener">P4N Matemale #294842</a>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale" target="_blank" rel="noopener">Mapa Lac Matemale</a>
+      </div>
+    </article>
+
+    <article class="card" id="d14">
+      <h3>Día 14 · Mié 19 — Capcir → Teià</h3>
+      <div class="meta"><span class="tag">~180–200 km · 2h30–3h</span></div>
+      <p class="note">Regreso por Puigcerdà / Cerdanya. Alternativa si retenciones en frontera.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&origin=Formigu%C3%A8res,+France&destination=Tei%C3%A0,+Spain&travelmode=driving" target="_blank" rel="noopener">Navegar a Teià</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="spots">
+    <h2>Spots Park4Night (prioridad)</h2>
+    <p class="map-hint">Perfil: acceso que frena autocaravanas, césped/sombra, pocos vehículos, sin servicios.</p>
+    <div class="spot-list">
+      <div class="card">
+        <h3>#22287 Tournals (Ax)</h3>
+        <div class="meta"><span class="tag ok">Van-only</span><span class="tag">42.7056, 1.8216</span></div>
+        <p>Nature, sombra, CC grande no. Abrir/cerrar hilo. Plan B: Bonascre apartado.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/22287" target="_blank" rel="noopener">Abrir ficha</a>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=42.7056,1.8216" target="_blank" rel="noopener">Navegar</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>#6527 Col de la Core · #24616 Guzet</h3>
+        <div class="meta"><span class="tag ok">Altitud / calma noche</span></div>
+        <p>Base Couserans. Verificar #51675 Cagateille antes (posible ban noche 2026).</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/6527" target="_blank" rel="noopener">#6527</a>
+          <a class="btn" href="https://park4night.com/es/place/24616" target="_blank" rel="noopener">#24616</a>
+          <a class="btn" href="https://park4night.com/es/place/51675" target="_blank" rel="noopener">#51675 check</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>#13709 Combe Nègre</h3>
+        <div class="meta"><span class="tag ok">45.0849, 2.7330</span><span class="tag">Sombra árboles</span></div>
+        <p>Mejor base Lioran. Llegar ≥18:30. Evitar P6 masificado.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">Abrir ficha</a>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=45.0849,2.7330" target="_blank" rel="noopener">Navegar</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>#271257 Fouey · #144306 hierba</h3>
+        <div class="meta"><span class="tag ok">Césped / calma</span></div>
+        <p>Salers sin aire de autocaravanas. Fouey = granja + queso. #144306 ≈ 4 plazas.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">Fouey</a>
+          <a class="btn" href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">#144306</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>#98143 Aubrac nature</h3>
+        <div class="meta"><span class="tag ok">44.6227, 3.0531</span><span class="tag warn">Perras + ganado</span></div>
+        <p>El más recondito. Pista lenta (Sunlight 6 m). Backup #5073 Déroc.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/98143" target="_blank" rel="noopener">Abrir ficha</a>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=44.6227,3.0531" target="_blank" rel="noopener">Navegar</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>#2547 Formiguères</h3>
+        <div class="meta"><span class="tag ok">42.6241, 2.0711</span></div>
+        <p>Elegir parking tierra / lago inferior. Alternativa Matemale calma #294842.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://park4night.com/es/place/2547" target="_blank" rel="noopener">Abrir ficha</a>
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711" target="_blank" rel="noopener">Navegar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="seguridad">
+    <h2>Perras, calor y meteo</h2>
+    <div class="card">
+      <h3>Horario anti-calor</h3>
+      <ul class="clean">
+        <li><strong>7:00–7:30</strong> — decisión meteo (días 7 y 11)</li>
+        <li><strong>7:30–11:30</strong> — ventana de hike</li>
+        <li><strong>11:30–17:00</strong> — camper sombra / altitud</li>
+        <li><strong>17:30–20:00</strong> — segunda salida corta</li>
+        <li>Noches Lioran/Aubrac/Capcir: <strong>10–14 °C</strong> → manta</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Patous (Cantal &amp; Aubrac)</h3>
+      <ul class="clean">
+        <li>Correa antes de ver el rebaño</li>
+        <li>No atravesar: rodear amplio</li>
+        <li>Si carga: parar, no correr, no enfrentar</li>
+        <li>No dar de comer / no fotos de cerca</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Protocolo llegada spot</h3>
+      <ul class="clean">
+        <li>Llegar 18:30–20:00</li>
+        <li>Si hay &gt;5 furgos → otro nature a 5–15 km</li>
+        <li>Discreción (no “camping show”)</li>
+        <li>Agua: autonomía 2–3 días; llenar en pueblos</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Camping solo emergencia</h3>
+      <ul class="clean">
+        <li>Ax Malazéou: +33 5 61 64 69 14</li>
+        <li>Entraygues Val de Saures: +33 5 65 44 56 92</li>
+        <li>Lioran OT: +33 4 71 49 50 08</li>
+        <li>Nasbinals municipal: +33 6 07 13 49 29</li>
+        <li>Formiguères La Devèze: +33 6 37 59 73 89</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="filtros">
+    <h2>Cómo buscar en Park4Night</h2>
+    <div class="card">
+      <ol>
+        <li>Filtro <strong>Lieu en pleine nature</strong> (+ parking jour/nuit)</li>
+        <li>Ordenar por <strong>fecha de comentario</strong></li>
+        <li>Buscar: accès étroit, CC impossible, herbe, ombre, calme, seuls</li>
+        <li>Descartar: aire 20 places, goudron, bord de route, services</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>Ruta camper refugio climático</strong> · 6–19 agosto 2026 · Teià → Francia verde → Teià.</p>
+    <p>Guardad esta página en la pantalla de inicio del móvil (Compartir → Añadir a inicio). Los botones “Navegar” abren Google Maps / el navegador GPS del teléfono.</p>
+    <p class="toc">
+      <a href="#mapa">Mapa</a> ·
+      <a href="#dias">Días</a> ·
+      <a href="#spots">Spots</a> ·
+      <a href="#seguridad">Seguridad</a>
+    </p>
+  </footer>
+</main>
+
+<div class="fab">
+  <a class="btn btn-primary" href="#mapa">Mapa</a>
+  <a class="btn" href="#dias">Días</a>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const stages = [
+  { name: "Teià", lat: 41.4980, lng: 2.3210, kind: "home" },
+  { name: "Ax / Tournals #22287", lat: 42.7056, lng: 1.8216, kind: "sleep", p4n: "https://park4night.com/es/place/22287", nav: "https://www.google.com/maps/dir/?api=1&destination=42.7056,1.8216" },
+  { name: "Guzet #24616", lat: 42.7876, lng: 1.3008, kind: "sleep", p4n: "https://park4night.com/es/place/24616", nav: "https://www.google.com/maps/dir/?api=1&destination=42.7876,1.3008" },
+  { name: "Cagateille #51675 (check)", lat: 42.7562, lng: 1.2876, kind: "sleep", p4n: "https://park4night.com/es/place/51675", nav: "https://www.google.com/maps/dir/?api=1&destination=42.7562,1.2876" },
+  { name: "Entraygues zona", lat: 44.6404, lng: 2.5694, kind: "via", p4n: "https://park4night.com/es/place/3781", nav: "https://www.google.com/maps/dir/?api=1&destination=44.6404,2.5694" },
+  { name: "Combe Nègre #13709", lat: 45.0849, lng: 2.7330, kind: "sleep", p4n: "https://park4night.com/es/place/13709", nav: "https://www.google.com/maps/dir/?api=1&destination=45.0849,2.7330" },
+  { name: "St-Bonnet hierba #144306", lat: 45.1600, lng: 2.4521, kind: "sleep", p4n: "https://park4night.com/es/place/144306", nav: "https://www.google.com/maps/dir/?api=1&destination=45.1600,2.4521" },
+  { name: "Aubrac #98143", lat: 44.6227, lng: 3.0531, kind: "sleep", p4n: "https://park4night.com/es/place/98143", nav: "https://www.google.com/maps/dir/?api=1&destination=44.6227,3.0531" },
+  { name: "Formiguères #2547", lat: 42.6241, lng: 2.0711, kind: "sleep", p4n: "https://park4night.com/es/place/2547", nav: "https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711" },
+  { name: "Teià (regreso)", lat: 41.4980, lng: 2.3210, kind: "home" }
+];
+
+const map = L.map("map", { scrollWheelZoom: false });
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18,
+  attribution: "&copy; OpenStreetMap"
+}).addTo(map);
+
+const latlngs = [];
+stages.forEach((s) => {
+  const ll = [s.lat, s.lng];
+  latlngs.push(ll);
+  const color = s.kind === "sleep" ? "#1f6b52" : (s.kind === "home" ? "#c45c26" : "#5b7c6e");
+  const marker = L.circleMarker(ll, {
+    radius: s.kind === "sleep" ? 9 : 7,
+    color: "#fff",
+    weight: 2,
+    fillColor: color,
+    fillOpacity: 0.95
+  }).addTo(map);
+  let html = "<strong>" + s.name + "</strong>";
+  if (s.nav) html += "<br><a href='" + s.nav + "' target='_blank' rel='noopener'>Navegar</a>";
+  if (s.p4n) html += " · <a href='" + s.p4n + "' target='_blank' rel='noopener'>Park4Night</a>";
+  marker.bindPopup(html);
+});
+
+L.polyline(latlngs, { color: "#1f6b52", weight: 3, opacity: 0.65, dashArray: "6 8" }).addTo(map);
+map.fitBounds(latlngs, { padding: [30, 30] });
+
+// Enable scroll zoom after user focuses map (better on mobile page scroll)
+map.on("click", () => map.scrollWheelZoom.enable());
+</script>
+</body>
+</html>
