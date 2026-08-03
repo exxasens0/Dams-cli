@@ -26,13 +26,13 @@
 | Noches | Prioridad 1 (perfil) | Plan B | Evitar |
 |---|---|---|---|
 | 1–2 Ax | **#22287 Tournals** — nature, acceso estrecho, **CC no** | Esquina tranquila Bonascre / Guzet si cerrada | Aire #7266 pueblo (AC + ruido) |
-| 2 (día Orlu) | Dormir Tournals; **hike no dentro reserva Orlu** (perros no) | Valle bajo / bosques Ax | Contar con #17010 solo si aceptáis no entrar a la reserva con perras |
+| 2 (bosques Ax) | Dormir Tournals; hike **Orgeix / Ascou / Tournals** | — | **Orlu + #17010 cancelados** (chiens interdits) |
 | 3–4 Couserans | **#6527 Col de la Core** (altitud, noche calma) o **#24616 Guzet** | Nature cerca Seix vía mapa P4N | Aire pueblo Seix si está llena de AC |
 | 3–4 alt. | **#51675 Cagateille** solo si **sigue permitido de noche** | — | Ver aviso 2026 abajo |
 | 5 puente | Spot **nature** en ruta (Carladez / Estaing / borde Entraygues) vía filtro | #3781 **tarde** (cuando se van day-visitors), borde lejos del río masificado | Quedarse en el centro del parking #3781 a mediodía |
 | 6–7 Lioran | **#13709 Combe Nègre** — lado **haya/abeto** (sombra) | Apartarse del VVF/auberge si hay gente | P6 / Téton (#155148) llenos de AC |
 | 8–9 Salers | **#271257 Ferme Fouey** (hierba, granja, calma) o **#144306** estadio hierba (~4 plazas) | Otro France Passion / nature bocage en P4N | Aire #855 Mouriol (perfil AC) |
-| 10–11 Aubrac | **#98143** pista hierba + sombra de bosque (van) | Tramos del mismo camino antes del final; #5073 solo si #98143 cerrado | #5073 a mediodía (turismo cascada) |
+| 10–11 Aubrac | **#5073** Déroc (prioridad con perras) | #98143 solo si comentarios confirman perros OK | #98143 si chiens / ganado conflictivo → cancelado |
 | 12–13 Capcir | **#2547** Formiguères: parking **tierra / inferior junto lago** (menos AC) | **#294842** Matemale lago (evitar zona Disneyland / CCP) | Aire Camping-Car Park Matemale |
 
 ---
@@ -46,9 +46,8 @@
 - Abrir/cerrar hilo eléctrico o cable; 1 noche a veces indicada.  
 - Si cerrado por vacas/valla → Bonascre rincón apartado.
 
-### Orlu / Fanguil #17010 — solo con matices
-- https://park4night.com/fr/place/17010 — parking enherbé, carretera estrecha, calma noche.  
-- **Reserva Orlu: perros no** (ni con correa) en muchos senderos → no planificar la reserva como hike D2. Mejor hike fuera (bosques Ax / Tournals / Orgeix).
+### Orlu / Fanguil #17010 — CANCELADO
+- **No usar.** Réserve d’Orlu = chiens interdits. No se visita la reserva ni se usa #17010 como base de excursión. Día 2 = bosques Orgeix / Ascou / Tournals.
 
 ### #51675 — Cirque de Cagateille (Ustou) ★ van
 - https://park4night.com/fr/place/51675  
@@ -77,12 +76,16 @@
 - https://park4night.com/fr/place/144306  
 - GPS: **45.1600, 2.4521** — ~4 plazas, hierba, muy calma, sin servicios. Comprobar barrera.
 
-### #98143 — Aubrac nature ★ recondito
+### #98143 — Aubrac nature (backup, condicional)
 - https://park4night.com/fr/place/98143  
 - GPS: **44.6227, 3.0531**  
-- Hierba, bosque, vistas, **sin servicios**, acceso pista → filtra AC grandes. Sunlight 6 m: ir despacio; si lluvia fuerte, barro.  
-- **Perras:** correa, no acercarse a rebaños/patous; algunos avisos “chiens”; si stress → #5073 Déroc (más abierto, menos sombra).  
+- Hierba, bosque, vistas, **sin servicios**, acceso pista → filtra AC grandes.  
+- **Perras:** avisos de ganado / “chiens”. **Prioridad del viaje = #5073 Déroc.** Usar #98143 solo si comentarios recientes confirman perros OK; si chiens interdits o rebaño encima → **cancelado**.  
 - No dejar rastro (el spot se pierde por basura).
+
+### #5073 — Cascade du Déroc (prioridad Aubrac con perras)
+- https://park4night.com/fr/place/5073  
+- Base práctica días 10–11: cascada + bucles cortos dog-friendly. Evitar mediodía si hay turismo cascada; llegar tarde.
 
 ### #2547 — Formiguères Calmazeille (elegir rincón)
 - https://park4night.com/fr/place/2547  

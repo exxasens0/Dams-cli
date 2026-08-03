@@ -1,6 +1,6 @@
 dia,fecha,tramo,km_aprox,pernocta_prioridad,p4n_id,lat,lon,perfil,hike_a,hike_b,notas
 1,2026-08-06,Teia-Ax,180,Tournals nature van-only,22287,42.7056,1.8216,estrecho cesped sombra,Rio Ax / Ladres perimetral,Estirar,CC no posible
-2,2026-08-07,Ax zona,0,Tournals,22287,42.7056,1.8216,recondito,Bosques Ax-Orgeix 10-14km,Paseo corto,No reserva Orlu con perras
+2,2026-08-07,Ax zona,0,Tournals,22287,42.7056,1.8216,recondito,Bosques Ax-Orgeix 10-14km,Paseo corto,Orlu CANCELADO chiens interdits
 3,2026-08-08,Ax-Couserans,130,Col de la Core o Guzet,6527 o 24616,42.7876,1.3008,altitud calma noche,Saint-Lizier corto,Atardecer col,Verificar Cagateille 51675 ban noche
 4,2026-08-09,Biros-Couserans,0,Misma D3 o Cagateille si legal,6527/24616/51675,42.7562,1.2876,van pista estrecha,Biros 10-15km,Salat fluvial,Correa ganado
 5,2026-08-10,hacia Cantal,240,Nature en ruta o 3781 borde tarde,filtro P4N / 3781,44.6404,2.5694,evitar masa AC,3-5km,—,Llegar tarde
@@ -8,8 +8,8 @@ dia,fecha,tramo,km_aprox,pernocta_prioridad,p4n_id,lat,lon,perfil,hike_a,hike_b,
 7,2026-08-12,Lioran,0,Combe Negre,13709,45.0849,2.7330,recondito estacion,Bec Aigle 12-15km,Telepherique corto,Meteo 7:00
 8,2026-08-13,PisteVerte-Salers,80,Ferme Fouey o estadio hierba,271257 o 144306,45.1600,2.4521,hierba granja calma,Piste Verte 8-12km,—,No aire 855
 9,2026-08-14,Salers bocage,0,Fouey / 144306,271257,45.1600,2.4521,hierba,Bocage 10-14km,Belvedere corto,Queso
-10,2026-08-15,Aubrac,115,98143 nature pista,98143,44.6227,3.0531,hierba bosque van,Paseo corto,—,Perras+ganado protocolo
-11,2026-08-16,Aubrac,0,98143 o 5073,98143,44.6227,3.0531,recondito,Lagos 12-15km,Deroc 8km,Patous
+10,2026-08-15,Aubrac,115,5073 Deroc,5073,44.63,3.02,cascada dog-friendly,Paseo corto cascada,—,98143 solo si perros OK
+11,2026-08-16,Aubrac,0,5073 prioritario,5073,44.63,3.02,dog-friendly,Deroc+Salhiens 6-10km,Plateau 10-12km,Patous; 98143 condicional
 12,2026-08-17,Capcir,300,Formigueres tierra/lago,2547,42.6241,2.0711,evitar fila AC,4-6km bosque,—,Salir <9:00
 13,2026-08-18,Capcir,0,2547 rincon o Matemale calma,2547/294842,42.6241,2.0711,bosque fresco,Bosque 8-12km,Vuelta lago,Colchon
 14,2026-08-19,Teia,190,Casa,—,41.4980,2.3210,—,—,—,Puigcerda

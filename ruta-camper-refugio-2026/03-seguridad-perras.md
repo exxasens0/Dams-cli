@@ -2,6 +2,29 @@
 
 Viajáis con **2 perras**, camper Sunlight 600, ritmo mixto (hasta ~15 km, sin cimas técnicas). Edad 48/51: madrugar > sufrir mediodía.
 
+## Regla dura (no negociable)
+
+**Cualquier excursión, reserva, parking o lugar donde no se pueda ir con perros está cancelada.**
+
+- No se visita “sin ellas” dejando a las perras en la furgoneta.
+- Si un cartel o comentario dice *chiens interdits* → se cambia de sitio ese día.
+- Antes de cada hike: buscar en Wikiloc / carteles / P4N las palabras `chien`, `dog`, `interdit`.
+
+### Cancelado del viaje
+
+| Qué | Motivo |
+|---|---|
+| **Réserve nationale d’Orlu** + senderos Fanguil/Orlu | Perros prohibidos |
+| **P4N #17010** como base de excursión Orlu | Asociado a zona no dog-friendly |
+| **Réserves naturelles catalanes** (vecinas Capcir/Carlit) | Federación: chiens interdits (salvo excepciones locales) |
+| Interiores termales / vaso del Bassin des Ladres | Solo paseo perimetral; perras fuera del agua |
+
+### OK con correa (verificar in situ)
+
+Camporells (site classé), Matemale, bosques Formiguères/Orgeix, Cagateille, Piste Verte, bocage Salers, Cascade du Déroc.
+
+---
+
 ## Horario anti-calor (agosto)
 
 | Franja | Qué hacer |
@@ -29,12 +52,12 @@ Muy frecuente en días **7, 9, 10, 11**.
 2. **No atravesar** el rebaño: rodear amplio cuesta abajo si podéis.
 3. Si el patou carga: paraos, no corráis, no gritéis, no enfrentéis; esperar a que vuelva al ganado.
 4. No dar de comer / no fotografiar de cerca.
-5. Spot P4N **#98143** (Aubrac nature): muchos avisos de ganado y restricciones con perros → **evitar** con vuestras 2 perras; usar **#5073** Déroc.
+5. Spot P4N **#98143** (Aubrac nature): avisos de ganado / restricciones con perros → **no prioritario**; usar **#5073** Déroc. Si comentarios dicen chiens interdits → **cancelado**.
 
 ## Día 7 — Le Lioran (jornada fuerte)
 
 **Plan A (7:00 cielo OK, sin tormenta):**  
-Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–15 km, desnivel constante pero senda clara. Base pernocta: **#13709 Combe Nègre**.
+Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–15 km, desnivel constante pero senda clara. Base pernocta: **#13709 Combe Nègre**. Confirmar que el track no entra en zona interdit chiens.
 
 **Plan B (niebla / viento fuerte / tormenta prevista tarde):**  
 - Téléphérique + paseo corto en alto y bajada temprana, **o**  
@@ -44,23 +67,24 @@ Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–1
 
 ## Día 11 — Aubrac (plateau)
 
-**Plan A:** 12–15 km Nasbinals ↔ lagos ↔ Saint-Urcize (un solo eje), terreno abierto.
+**Plan A:** bucle Cascade du Déroc + lac Salhiens ~6–10 km desde **#5073** (correa).
 
-**Plan B (viento > ~50 km/h, lluvia horizontal, o mucho ganado con patous en el track):**  
-- Bucle corto Cascade du Déroc + lac Salhiens ~6–8 km desde **#5073**, **o**  
-- Paseo pueblo Nasbinals + descanso en aire municipal.
+**Plan B:** 10–12 km Nasbinals–plateau si no hay patous densos.
 
-**Abortar si:** tormenta eléctrica en plateau (no hay abrigo).
+**Plan C (viento / mucho ganado):** pueblo Nasbinals + descanso.
+
+**Abortar si:** tormenta eléctrica en plateau (no hay abrigo) o cartel chiens interdits.
 
 ## Otros días con perras
 
 | Día | Atención |
 |---|---|
-| 1–2 | Ladres: perras **fuera** del vaso termal. **Reserva Orlu: perros no** en muchos senderos → hike en bosques Ax/Orgeix, no contar con Fanguil como excursión |
+| 1–2 | Ladres: perras **fuera** del vaso. **Orlu cancelado**. Hike solo bosques Ax/Orgeix/Ascou/Tournals |
 | 4 Biros | Ruinas/minas: vigilancia; no dejar husmear socavones |
 | 8–9 Fouey | Granja con vacas: correa en el campo; no soltar |
-| 10–11 #98143 | Spot recondito ideal, pero ganado/patous: correa, distancia, abortar si el patou carga → backup #5073 |
+| 10–11 | Prioridad **#5073**; #98143 solo si perros OK en comentarios |
 | 8 Piste Verte | Ideal perras (llano); túnel 600 m: correa corta, linterna |
+| 13 Capcir | Camporells OK con correa; **no** entrar en réserve naturelle catalane |
 | 12 traslado largo | Paradas cada ~1h30 para beber/orinar; no “aguantar” hasta Capcir |
 
 ## Checklist botiquín perras (mínimo)

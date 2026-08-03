@@ -51,8 +51,8 @@
         <Point><coordinates>2.4521,45.1600,0</coordinates></Point>
       </Placemark>
       <Placemark>
-        <name>P4N 98143 Aubrac nature</name>
-        <description>Hierba bosque. Perras+ganado. https://park4night.com/fr/place/98143</description>
+        <name>P4N 98143 Aubrac nature (backup)</name>
+        <description>Backup solo si perros OK. Prioridad #5073. https://park4night.com/fr/place/98143</description>
         <styleUrl>#p4n</styleUrl>
         <Point><coordinates>3.0531,44.6227,0</coordinates></Point>
       </Placemark>

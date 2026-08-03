@@ -15,7 +15,7 @@
     {"type":"Feature","properties":{"name":"P4N 51675 Cagateille","park4night_id":51675,"role":"priority_check_ban","url":"https://park4night.com/fr/place/51675"},"geometry":{"type":"Point","coordinates":[1.2876,42.7562]}},
     {"type":"Feature","properties":{"name":"P4N 13709 Combe Negre","park4night_id":13709,"role":"priority","url":"https://park4night.com/fr/place/13709"},"geometry":{"type":"Point","coordinates":[2.733,45.0849]}},
     {"type":"Feature","properties":{"name":"P4N 144306 St-Bonnet hierba","park4night_id":144306,"role":"priority","url":"https://park4night.com/fr/place/144306"},"geometry":{"type":"Point","coordinates":[2.4521,45.16]}},
-    {"type":"Feature","properties":{"name":"P4N 98143 Aubrac nature","park4night_id":98143,"role":"priority","dogs":"leash_cattle","url":"https://park4night.com/fr/place/98143"},"geometry":{"type":"Point","coordinates":[3.0531,44.6227]}},
+    {"type":"Feature","properties":{"name":"P4N 98143 Aubrac nature (backup)","park4night_id":98143,"role":"backup","dogs":"conditional_cancel_if_banned","url":"https://park4night.com/fr/place/98143"},"geometry":{"type":"Point","coordinates":[3.0531,44.6227]}},
     {"type":"Feature","properties":{"name":"P4N 2547 Formigueres","park4night_id":2547,"role":"priority","url":"https://park4night.com/fr/place/2547"},"geometry":{"type":"Point","coordinates":[2.0711,42.6241]}},
     {"type":"Feature","properties":{"name":"Etapas","role":"route_line"},"geometry":{"type":"LineString","coordinates":[[2.321,41.498],[1.8393,42.7194],[1.606,42.965],[1.2,42.864],[2.567,44.646],[2.75,45.082],[2.494,45.138],[3.0,44.662],[2.1,42.63],[2.321,41.498]]}}
   ]

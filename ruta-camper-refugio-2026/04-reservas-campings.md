@@ -15,7 +15,8 @@ Guía completa: [`05-park4night-pernoctas.md`](05-park4night-pernoctas.md)
 | 6–7 | Combe Nègre | [#13709](https://park4night.com/fr/place/13709) | 45.0849, 2.7330 | Árboles + fresco |
 | 8–9 | Ferme Fouey | [#271257](https://park4night.com/fr/place/271257) | ver ficha | Hierba, granja, calma |
 | 8–9 | St-Bonnet estadio | [#144306](https://park4night.com/fr/place/144306) | 45.1600, 2.4521 | Hierba, ~4 plazas |
-| 10–11 | Aubrac nature | [#98143](https://park4night.com/fr/place/98143) | 44.6227, 3.0531 | Recondito; perras con cuidado |
+| 10–11 | Cascade du Déroc | [#5073](https://park4night.com/fr/place/5073) | ~44.63, 3.02 | Prioridad Aubrac con perras |
+| 10–11 alt | Aubrac nature | [#98143](https://park4night.com/fr/place/98143) | 44.6227, 3.0531 | Solo si perros OK; si no → cancelado |
 | 12–13 | Formiguères | [#2547](https://park4night.com/fr/place/2547) | 42.6241, 2.0711 | Elegir tierra/lago |
 | 12–13 | Matemale | [#294842](https://park4night.com/en/place/294842) | ver ficha | Lado calma, no CCP |
 

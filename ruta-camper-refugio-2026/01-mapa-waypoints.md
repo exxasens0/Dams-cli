@@ -1,5 +1,7 @@
 # Mapa y waypoints — modo camper recondito
 
+
+**Regla:** lugares sin perros → cancelados (Orlu fuera).
 Pernocta detalle: [`05-park4night-pernoctas.md`](05-park4night-pernoctas.md)
 
 ## Google Maps (etapas)
@@ -19,7 +21,8 @@ Importar [`ruta.kml`](ruta.kml) en My Maps (pins verdes = P4N reconditos).
 | Lioran | #13709 Combe Nègre | 45.0849 | 2.7330 | https://park4night.com/fr/place/13709 |
 | Salers | #271257 Ferme Fouey | ver app | — | https://park4night.com/fr/place/271257 |
 | Salers | #144306 St-Bonnet hierba | 45.1600 | 2.4521 | https://park4night.com/fr/place/144306 |
-| Aubrac | #98143 nature | 44.6227 | 3.0531 | https://park4night.com/fr/place/98143 |
+| Aubrac | #5073 Déroc (prioridad) | 44.63 | 3.02 | https://park4night.com/fr/place/5073 |
+| Aubrac alt | #98143 nature (si perros OK) | 44.6227 | 3.0531 | https://park4night.com/fr/place/98143 |
 | Capcir | #2547 Formiguères | 42.6241 | 2.0711 | https://park4night.com/fr/place/2547 |
 | Capcir | #294842 Matemale | ver app | — | https://park4night.com/en/place/294842 |
 
