@@ -114,7 +114,7 @@ def build() -> str:
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · Lonely Planet style</small></div>
+<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet</small></div>
 <div class="btns">
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
@@ -123,7 +123,7 @@ def build() -> str:
 <section class="hero">
 <div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N recondito</span><span class="chip">Solo rutas con perras</span></div>
 <h1>Del Pirineo ariégeois al Capcir</h1>
-<p class="lead">Guía de viaje completa: literatura de cada zona, fotos, opiniones reales de Park4Night, rutas Wikiloc/AllTrails/Visorando explicadas, lugares de interés y mapas Google.</p>
+<p class="lead">Guía de viaje completa: literatura de cada zona, fotos, opiniones reales de Park4Night, rutas Visorando/Komoot/Cirkwi verificadas, lugares de interés y mapas Google.</p>
 {img('ax', 'Ax-les-Thermes', 'hero-img')}
 <div class="btns">
 <a class="btn btn-p" href="#dias">Día a día</a>
@@ -157,10 +157,10 @@ def build() -> str:
 {links([
  ("Ruta completa Google Maps","https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain","g"),
  ("Park4Night mapa Francia","https://park4night.com/es/search?lat=44.5&lng=2.5&z=7","o"),
- ("Crear Google My Maps","https://www.google.com/maps/d/","g"),
+ ("Cómo importar KML a My Maps","https://support.google.com/mymaps/answer/3024836?hl=es","g"),
  ("Descargar ruta.kml","ruta.kml","p"),
 ])}
-<div class="callout"><strong>Google My Maps en 5 min:</strong> Crear mapa → nombre <em>FRANCIA AGOSTO 2026</em> → Importar <code>ruta.kml</code> → abrir en el móvil (Maps → Tus mapas) y descargar offline.</div>
+<div class="callout"><strong>Google My Maps en 5 min:</strong> crear mapa → nombre <em>FRANCIA AGOSTO 2026</em> → importar <code>ruta.kml</code> (ver enlace de ayuda) → abrir en el móvil (Maps → Tus mapas) y descargar offline.</div>
 <div class="warn"><strong>Park4Night carpeta:</strong> entrar por <a href="https://park4night.com/es" target="_blank" rel="noopener">park4night.com/es</a> → favoritos → <code>FRANCIA AGOSTO 2026</code>. El login automático falló; checklist al final.</div>
 </div>
 <div class="card"><h3>Vista Couserans / Guzet</h3>
@@ -187,7 +187,7 @@ def build() -> str:
  ("Wikipedia Ax", WIKI['ax']['wiki'], "p"),
  ("Bassin des Ladres", WIKI['ladres']['wiki'], "p"),
  ("Google Ax", "https://www.google.com/maps/search/?api=1&query=Ax-les-Thermes", "g"),
- ("OT Ax", "https://www.valleesdaxtourisme.com/", "w"),
+ ("OT Pirineos Ariégeois", "https://www.pyrenees-ariegeoises.com/", "w"),
 ])}
 </div>
 
@@ -200,8 +200,8 @@ def build() -> str:
 {links([
  ("Wikipedia Cagateille", WIKI['cagateille']['wiki'], "p"),
  ("OT Couserans", "https://www.tourisme-couserans-pyrenees.com/", "w"),
- ("Outdooractive Cagateille fácil", "https://www.outdooractive.com/es/route/ruta-de-senderismo/ariege/el-circo-de-cagateille/808515720/", "w"),
- ("AllTrails Cagateille", "https://www.alltrails.com/trail/france/ariege/cirque-de-cagateille", "w"),
+ ("Visorando Cagateille", "https://www.visorando.com/randonnee-cirque-de-cagateille/", "w"),
+ ("Komoot Cagateille", "https://www.komoot.com/es-es/highlight/6134573", "w"),
 ])}
 </div>
 
@@ -231,8 +231,8 @@ def build() -> str:
 <p>Patous frecuentes: protocolo estricto. El GR 65 (Compostela) cruza Nasbinals: usad trozos bonitos, no hace falta “hacer el camino”.</p>
 {links([
  ("Wikipedia Déroc", WIKI['deroc']['wiki'], "p"),
- ("Lozère Tourisme Déroc", "https://www.lozere-tourisme.com/patrimoine-naturel/cascade-du-deroc/", "w"),
- ("AllTrails bucle Déroc", "https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc", "w"),
+ ("Turismo Lozère Déroc", "https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/", "w"),
+ ("Visorando Cascada del Déroc", "https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/", "w"),
  ("PNR Aubrac", "https://www.parc-naturel-aubrac.fr/", "w"),
 ])}
 </div>
@@ -244,17 +244,21 @@ def build() -> str:
 {links([
  ("Wikipedia Formiguères", WIKI['formigueres']['wiki'], "p"),
  ("Visorando Camporells", "https://www.visorando.com/randonnee-boucle-des-camporells-par-la-vallee-de-l/", "w"),
- ("Wikiloc Formiguères lago Olive", "https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412", "w"),
- ("OT Capcir", "https://www.capcir-pyrenees.com/", "w"),
+ ("Visorando bucle Matemale", "https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/", "w"),
+ ("OT Pirineo Cerdanya", "https://www.pyrenees-cerdagne.com/", "w"),
 ])}
 </div>
 </section>
 """)
 
     # day nav
-    parts.append('<nav class="day-nav">' + "".join(
-        f'<a href="#d{i}">{i}<span>día</span></a>' for i in range(1, 15)
-    ) + '</nav><section class="section" id="dias"><h2>Itinerario día a día</h2>')
+    parts.append(
+        '<nav class="day-nav">'
+        + "".join(f'<a href="#d{i}">{i}<span>día</span></a>' for i in range(1, 15))
+        + '</nav>'
+        + '<div class="callout"><strong>Enlaces de rutas verificados:</strong> usamos Visorando, Komoot, Cirkwi y webs oficiales con fichas concretas (no búsquedas genéricas de Wikiloc/AllTrails).</div>'
+        + '<section class="section" id="dias"><h2>Itinerario día a día</h2>'
+    )
 
     # DAYS
     parts.append(day_shell("d1", "Día 1 · Jueves 6 — Teià → Ax-les-Thermes",
@@ -290,9 +294,8 @@ def build() -> str:
 <p>Valle lateral menos masificado. Aparcamiento al final de la pista forestal de Orgeix. Camino claro hacia el lago: prados, bosque, agua. Ideal 3–5 h ida y vuelta según ritmo. Confirmad en el track que <strong>no entra en la reserva Orlu</strong>.</p>
 <p><strong>Datos orientativos:</strong> 10–14 km · D+ moderado · horario salida 7:30–8:00.</p>
 {links([
- ("France-Randos Ayguelongue","http://www.france-randos.com/randonnee/orgeix/ariege-09/le-lac-dayguelongue","w"),
- ("Wikiloc · buscar Ayguelongue Orgeix","https://es.wikiloc.com/wikiloc/view.do?q=Ayguelongue+Orgeix","w"),
- ("AllTrails zona Orgeix","https://www.alltrails.com/explore?q=Orgeix%20Ari%C3%A8ge","w"),
+ ("Visorando Ax–Orgeix","https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/","w"),
+ ("Visorando Orgeix","https://www.visorando.com/randonnee-orgeix/","w"),
  ("Google Orgeix","https://www.google.com/maps/search/?api=1&query=Orgeix+Ari%C3%A8ge","g"),
 ])}
 </div>
@@ -320,8 +323,7 @@ def build() -> str:
 <h4>Atardecer en Col de la Core</h4>
 <p>El collado (~1.395 m) es hub de GR y paseos cortos. No hace falta una cima: la luz sobre Bethmale y el Castillonnais basta. Si queréis una ruta larga al día siguiente, descargad track esta noche.</p>
 {links([
- ("Wikiloc Col de la Core (ruta)","https://es.wikiloc.com/rutas-senderismo/col-de-la-core-7866059","w"),
- ("Wikiloc view id 7866059","https://es.wikiloc.com/wikiloc/view.do?id=7866059","w"),
+ ("Visorando Col de la Core","https://www.visorando.com/randonnee-col-de-la-core/","w"),
  ("Google Col de la Core","https://www.google.com/maps/search/?api=1&query=Col+de+la+Core","g"),
  ("P4N #6527","https://park4night.com/es/place/6527","o"),
  ("P4N #24616 Guzet","https://park4night.com/es/place/24616","o"),
@@ -340,10 +342,10 @@ def build() -> str:
 <p>Desde el parking del circo: sendero marcado bajo bosque, arroyos, y el fondo del anfiteatro. <strong>~4,3 km A/R · 1h30 · D+ ~140 m</strong>. Pasarela al centro del circo. Es el “wow” del Couserans sin trampas técnicas.</p>
 <p><strong>No prolonguéis</strong> a Hillette/Alet si no queréis pasos con cadenas y exposición (eso es otra categoría).</p>
 {links([
- ("Outdooractive topo oficial fácil","https://www.outdooractive.com/es/route/ruta-de-senderismo/ariege/el-circo-de-cagateille/808515720/","w"),
- ("AllTrails Cirque de Cagateille","https://www.alltrails.com/trail/france/ariege/cirque-de-cagateille","w"),
+ ("Visorando Circo de Cagateille","https://www.visorando.com/randonnee-cirque-de-cagateille/","w"),
+ ("Komoot Circo de Cagateille","https://www.komoot.com/es-es/highlight/6134573","w"),
  ("Visorando (versión lagos, dura)","https://www.visorando.com/en/walk-cirque-de-cagateille-etang-de-la-hilette/","w"),
- ("OT Couserans Cagateille","https://www.haut-couserans.com/randonnees/detail-de-la-randonnee-cirque-de-cagateille-1-fr-8.html","w"),
+ ("Cirkwi Circo de Cagateille","https://www.cirkwi.com/fr/circuit/664891-le-cirque-de-cagateille","w"),
  ("Google parking Cagateille","https://www.google.com/maps/dir/?api=1&destination=42.7562,1.2876","g"),
  ("P4N #51675 (solo día)","https://park4night.com/es/place/51675","o"),
 ])}
@@ -352,16 +354,19 @@ def build() -> str:
 <h4>Plan B · Cascade d'Ars desde Aulus (temprano)</h4>
 <p>Una de las grandes cascadas del Ariège. Bosque, GR10, mucha gente a mediodía → <strong>salida 7:30</strong>. Variante corta ida-vuelta a la cascada, o bucle con el lago de Guzet (más largo).</p>
 {links([
- ("Wikiloc Cascades d'Ars","https://es.wikiloc.com/rutas-senderismo/cascades-dars-56772088","w"),
- ("Wikiloc Aulus–Guzet–Ars","https://es.wikiloc.com/rutas-senderismo/aulus-les-bains-letang-de-guzet-cascade-dars-65871487","w"),
- ("Wikiloc view 56772088","https://es.wikiloc.com/wikiloc/view.do?id=56772088","w"),
+ ("Visorando Cascada d'Ars","https://www.visorando.com/randonnee-la-cascade-d-ars-2/","w"),
+ ("Visorando Ars + lago Guzet","https://www.visorando.com/randonnee-cascade-d-ars-et-etang-de-guzet/","w"),
  ("Google Cascade d'Ars","https://www.google.com/maps/search/?api=1&query=Cascade+d%27Ars+Aulus-les-Bains","g"),
 ])}
 </div>
 <div class="trail">
 <h4>Plan C · Vallée de Biros (exploratorio)</h4>
-<p>10–15 km por pistas/caminos, ruinas mineras, bosque. Vigilad socavones y ganado. Correa cerca de rebaños.</p>
-{links([("Wikiloc Biros / Sentein","https://es.wikiloc.com/wikiloc/view.do?q=vall%C3%A9e+de+Biros+Sentein","w"),("Google Sentein","https://www.google.com/maps/search/?api=1&query=Sentein","g")])}
+<p>Ruinas mineras, bosque y valle. Vigilad socavones y ganado. Correa cerca de rebaños. La ficha de minas de Bentaillou es exigente (D+ fuerte); podéis hacer solo ida-vuelta por el GR10 a la sombra.</p>
+{links([
+ ("Visorando Minas de Bentaillou (Eylie)","https://www.visorando.com/randonnee-les-mines-de-bentaillou-au-depart-d-eyli/","w"),
+ ("Tour du Biros · itinerario oficial","https://tourdubiros.org/itineraire/","w"),
+ ("Google Sentein","https://www.google.com/maps/search/?api=1&query=Sentein","g"),
+])}
 </div>
 {img('aulus','Aulus-les-Bains')}
 """))
@@ -411,8 +416,8 @@ def build() -> str:
 {links([
  ("Topo detallado Cantal Passion","https://cantalpassion.com/sports-et-loisirs/randonnees/les-randos-entre-vallees-et-sommets/633-haute-vallee-de-l-alagnon/5278-le-bec-de-l-aigle","w"),
  ("VisuGPX boucle Bec–Peyre Arse","https://www.visugpx.com/1376487773","w"),
- ("Bergfex Lioran–Bec","https://www.bergfex.es/sommer/auvergne-rhone-alpes/touren/wanderung/3619535,plomb-du-cantal--super-lioran--bec-de-laigle--font-dalagnon/","w"),
- ("Wikiloc · Bec de l'Aigle Lioran","https://es.wikiloc.com/wikiloc/view.do?q=Bec+de+l%27Aigle+Lioran","w"),
+ ("Visorando Bec + Téton","https://www.visorando.com/randonnee-rocher-du-bec-de-l-aigle-teton-de-venus-/","w"),
+ ("Visorando Bec de l'Aigle","https://www.visorando.com/randonnee-teton-de-venus-et-rocher-du-bec-de-l-aig/","w"),
  ("Google Font d'Alagnon","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
 ])}
 </div>
@@ -435,7 +440,7 @@ def build() -> str:
 <div class="trail">
 <h4>Piste Verte 8–12 km</h4>
 {links([
- ("Wikiloc Piste Verte Sumène Artense","https://es.wikiloc.com/wikiloc/view.do?q=Piste+Verte+Sum%C3%A8ne+Artense","w"),
+ ("OT Sumène Artense · Piste Verte","https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/","w"),
  ("Google Piste Verte","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense","g"),
  ("P4N Fouey","https://park4night.com/es/place/271257","o"),
  ("P4N #144306","https://park4night.com/es/place/144306","o"),
@@ -449,11 +454,10 @@ def build() -> str:
 {img('salers','Salers')}
 <p>Salers de basalto y torres: visitad <strong>temprano</strong>. El resto del día, el bocage (setos, prados, caminos rurales) es más fiel al espíritu del viaje que otra cima volcánica llena de coches.</p>
 <div class="trail">
-<h4>Boucle bocage 10–14 km</h4>
-<p>Pueblos satélite, pistas agrícolas, queso. Opcional: subir en camper al Pas de Peyrol solo para belvedere corto si el parking no es un caos — no hace falta coronar el Puy Mary.</p>
+<h4>Boucle La Montagnoune (~4 km, fácil) + paseo por el pueblo</h4>
+<p>Ficha concreta Visorando: vistas al valle de la Maronne y al pueblo. El resto del día, caminos rurales del bocage (setos, prados). Opcional: subir en camper al Pas de Peyrol solo para belvedere corto si el parking no es un caos — no hace falta coronar el Puy Mary.</p>
 {links([
- ("Wikiloc Salers boucle","https://es.wikiloc.com/wikiloc/view.do?q=Salers+boucle+randonn%C3%A9e","w"),
- ("AllTrails Salers","https://www.alltrails.com/explore?q=Salers%20Cantal","w"),
+ ("Visorando La Montagnoune (desde Salers)","https://www.visorando.com/randonnee-la-montagnoune-depuis-salers/","w"),
  ("OT Salers","https://www.salers-tourisme.fr/","w"),
  ("Google Salers","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
  ("Wikipedia Salers", WIKI['salers']['wiki'], "p"),
@@ -487,12 +491,11 @@ def build() -> str:
 <p>Día de meseta. La cascada del Déroc merece la pena cuando la luz es buena: órganos basálticos, cueva detrás del agua, vistas al valle de la Gambaïse. El GR65 pasa cerca de Nasbinals.</p>
 <div class="trail">
 <h4>Plan A · Bucle Déroc (moderado, perros OK con correa)</h4>
-<p>AllTrails y el PR «Del Déroc a la Peyrade» ofrecen bucles de ~9 km / ~2–2h30 desde Nasbinals o desde el parking de la cascada. Variante corta: solo cascada + lago Salhiens 6–8 km.</p>
+<p>El PR «Del Déroc a la Peyrade» y la ficha Visorando ofrecen bucles de ~9 km / ~2–2h30 desde Nasbinals o desde el parking de la cascada. Variante corta: solo cascada + lago Salhiens 6–8 km.</p>
 {links([
- ("AllTrails bucle Cascada del Déroc","https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc","w"),
+ ("Visorando Cascada del Déroc","https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/","w"),
  ("PDF PR Déroc–Peyrade (PNR)","https://admin-pnrgca.openig.org/api/fr/treks/51051/du-deroc-a-la-peyrade.pdf","w"),
- ("Turismo Lozère","https://www.lozere-tourisme.com/patrimoine-naturel/cascade-du-deroc/","w"),
- ("Wikiloc Cascada del Déroc","https://es.wikiloc.com/wikiloc/view.do?q=Cascade+du+D%C3%A9roc+Nasbinals","w"),
+ ("Turismo Lozère","https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/","w"),
  ("Ideas Decathlon Outdoor","https://www.decathlon-outdoor.com/fr-fr/inspire/france/randonnee-cascade-du-deroc-lozere","w"),
 ])}
 </div>
@@ -530,8 +533,8 @@ def build() -> str:
 {links([
  ("Visorando Camporells por Lladure","https://www.visorando.com/randonnee-boucle-des-camporells-par-la-vallee-de-l/","w"),
  ("Visorando Esposolla–Camporells","https://www.visorando.com/randonnee-d-esposolla-aux-lacs-des-camporells/","w"),
- ("Wikiloc Formiguères lago Olive","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","w"),
- ("Wikiloc vista 111344412","https://es.wikiloc.com/wikiloc/view.do?id=111344412","w"),
+ ("Visorando bucle Matemale","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
+ ("Visorando Lagos Camporells","https://www.visorando.com/randonnee-les-lacs-de-camporells/","w"),
  ("Google Camporells","https://www.google.com/maps/search/?api=1&query=%C3%89tangs+des+Camporells","g"),
 ])}
 </div>
@@ -541,7 +544,7 @@ def build() -> str:
 {links([
  ("Google Matemale","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
  ("Wikipedia Matemale", WIKI['matemale']['wiki'], "p"),
- ("AllTrails Matemale","https://www.alltrails.com/explore?q=Matemale","w"),
+ ("Visorando bucle Matemale","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
 ])}
 </div>
 """))
