@@ -12,7 +12,14 @@
 
 | Archivo | Contenido |
 |---|---|
-| **[guia-lonely-planet.html](guia-lonely-planet.html)** | **Guía estilo Lonely Planet (móvil)** |
+| **[guia-lonely-planet.html](guia-lonely-planet.html)** | **Guía Lonely Planet completa (fotos, rutas, opiniones)** |
+
+### Cómo abrir la guía en el navegador
+1. Descargad el HTML desde GitHub (botón Download / Raw → Guardar).
+2. Doble clic en el archivo (Chrome/Firefox/Safari).
+3. O vista previa: https://htmlpreview.github.io/?https://raw.githubusercontent.com/exxasens0/Dams-cli/cursor/ruta-camper-refugio-4641/ruta-camper-refugio-2026/guia-lonely-planet.html
+
+GitHub y Cursor muestran el HTML como código: no lo renderizan.
 | [guia-movil.html](guia-movil.html) | Misma guía (copia) |
 | [05-park4night-pernoctas.md](05-park4night-pernoctas.md) | Criterios + spots estrella van/nature |
 | [04-reservas-campings.md](04-reservas-campings.md) | Favoritos P4N (no camping) |
