@@ -56,8 +56,10 @@ Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–1
 
 | Día | Atención |
 |---|---|
-| 1–2 | Ladres: perras **fuera** del vaso termal; paseo perimetral |
+| 1–2 | Ladres: perras **fuera** del vaso termal. **Reserva Orlu: perros no** en muchos senderos → hike en bosques Ax/Orgeix, no contar con Fanguil como excursión |
 | 4 Biros | Ruinas/minas: vigilancia; no dejar husmear socavones |
+| 8–9 Fouey | Granja con vacas: correa en el campo; no soltar |
+| 10–11 #98143 | Spot recondito ideal, pero ganado/patous: correa, distancia, abortar si el patou carga → backup #5073 |
 | 8 Piste Verte | Ideal perras (llano); túnel 600 m: correa corta, linterna |
 | 12 traslado largo | Paradas cada ~1h30 para beber/orinar; no “aguantar” hasta Capcir |
 

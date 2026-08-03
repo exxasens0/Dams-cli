@@ -1,122 +1,108 @@
-# Park4Night — pernoctas (prioridad: NO camping)
+# Park4Night — modo “camper recondito” (sin servicios)
 
-**Regla del viaje:** aire municipal / parking tolerado / spot P4N primero. **Camping solo** si: aire llena, necesidad urgente de agua/sombra/vidange, o señalización que prohíbe pernocta en el parking.
+## Criterio de búsqueda (lo que queréis)
 
-App: [park4night.com](https://www.park4night.com) — filtrar por “Aire”, “Parking jour/nuit”, “Lieu nature”. Revisar **avisos de las últimas 2 semanas** en agosto (señales cambian).
+| Queréis | Evitad |
+|---|---|
+| Acceso estrecho / pista → **fuera autocaravanas grandes** | Aires municipales grandes, CCP, parkings de estación llenos de AC |
+| **Césped** o tierra, sombra (árboles) | Asfalto a pleno sol |
+| **Pocos vehículos** (ideal 1–5), lejos del pueblo | Plazas de 20–30 junto a carretera |
+| Tipo P4N: **Lieu en pleine nature** / parking pequeño | Tipo: Aire CC services |
+| **Sin servicios** (autonomía OK) | Priorizar bornes/elec/vidange |
 
-Sunlight 600 ≈ **6 m** → evitar pistas muy pedregosas o giros imposibles.
+**Sunlight 600 (~6 m):** cabe en la mayoría de spots “van / fourgon ≤6 m”. Si el comentario dice “solo furgoneta corta / 4x4”, leer fotos de acceso.
 
----
+### Filtros en la app Park4Night
 
-## Resumen por noche (prioridad 1 → plan B)
-
-| Noches | Destino | Prioridad 1 (P4N) | Plan B (P4N / aire) | Camping (solo si hace falta) |
-|---|---|---|---|---|
-| 1–2 | Ax / fresco | **#152052** Bonascre (gratis, altitud) | **#5059** aire Bonascre / **#7266** aire Ax pueblo | Malazéou |
-| 3–4 | Seix | Aire **Place de l’Allée** (municipal, gratis) | Borne **Av. de la Barraqué** + parking cercano | Haut Salat / municipal solo emergencia |
-| 5 | Entraygues | **#3781** Pont Notre-Dame / Val de Saure (gratis) | Mismo sitio otra plaza | Val de Saures |
-| 6–7 | Le Lioran | **#13709** Combe Nègre (gratis, fresco, randos) | **P6** oficial estación / **#155148** sombra (comprobar carteles) | Le Vallagnon |
-| 8–9 | Salers | **#855** aire Le Mouriol (de pago, la opción real) | Saint-Martin-Valmeroux / Saint-Paul-de-Salers (aires OT) | Emplazamiento camping Mouriol |
-| 10–11 | Aubrac | **#5073** parking Cascade du Déroc (gratis) | Aire municipal Nasbinals (rte St-Urcize) | Camping municipal Nasbinals |
-| 12–13 | Capcir | **#2547** Formiguères La Calmazeille (gratis) | Aire communal Formiguères / Matemale | La Devèze solo agua/vidange |
-
----
-
-## Detalle por etapa (con enlaces)
-
-### Ax-les-Thermes (días 1–2)
-
-| P4N | Nombre | GPS | Precio | Por qué encaja |
-|---|---|---|---|---|
-| [#152052](https://park4night.com/fr/place/152052) | Plateau de Bonascre (parking estación) | 42.7025, 1.8148 | Gratis | **Más fresco** que el pueblo; ideal refugio climático; muchas plazas |
-| [#5059](https://park4night.com/fr/place/5059) | Rue des Chalets / aire Bonascre | 42.7033, 1.8165 | Aire con servicios (agua/elec. de pago) | Si necesitáis vidange/agua cerca del parking |
-| [#7266](https://park4night.com/fr/place/7266) | Aire N20 / Av. Delcassé (pueblo) | 42.7261, 1.8314 | ~13–15 €/24h + elec. opcional | Comercios, Bassin des Ladres a pie; **única pernocta “oficial” en el pueblo** (prohibido CC en orillas de noche) |
-
-**Tips perras:** Bonascre = menos calor y más espacio para pasear. En el pueblo no aparcar de noche en Boulevard Sabatier / En Castel (prohibido CC noche).
+1. Mapa → zoom etapa → filtro **Lieu en pleine nature** (+ Parking jour/nuit).
+2. Ordenar por **fecha de comentario** (agosto cambia carteles).
+3. Leer: *accès étroit*, *CC impossible*, *herbe*, *ombre*, *calme*, *seuls*.
+4. Descartar si: *aire 20 places*, *goudron*, *bord de route*, *services*.
 
 ---
 
-### Seix / Couserans (días 3–4)
+## Nueva prioridad por noches
 
-| Fuente | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| Municipal / MeinWomo | Aire **Place de l’Allée** | ~42.864, 1.200 | Gratis (~8 plazas) | Cerca río Salat; mercado domingo; **buscar en P4N mapa Seix** |
-| Municipal | Borne **Avenue de la Barraqué** | 42.8667, 1.2066 | Servicios gratis / cheap | Vidange/agua; a veces solo borne |
-| P4N (evitar salvo necesidad) | Campings #15419 Haut Salat, #23458 Songe du Valier | — | 15–20 € | Solo si aire llena |
-
-**Tips:** Llegar **antes de 17:00** en agosto; si Place de l’Allée está llena, mirar Oust (2 km) aire/parking antes que camping.
-
----
-
-### Entraygues-sur-Truyère (día 5)
-
-| P4N | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| [#3781](https://park4night.com/fr/place/3781) | Chemin du Val de Saure / Pont Notre-Dame | 44.6404, 2.5694 | **Parking gratis**; agua/elec. con jeton (~5 € en mairie) | ~20–30 plazas; río; sombra parcial; calma noche |
-
-**Tips:** Comprar jetons de día en mairie/OT si necesitáis agua. Aparcar en batalla (no pegados a la orilla). Camping Val de Saures solo si aire saturada.
+| Noches | Prioridad 1 (perfil) | Plan B | Evitar |
+|---|---|---|---|
+| 1–2 Ax | **#22287 Tournals** — nature, acceso estrecho, **CC no** | Esquina tranquila Bonascre / Guzet si cerrada | Aire #7266 pueblo (AC + ruido) |
+| 2 (día Orlu) | Dormir Tournals; **hike no dentro reserva Orlu** (perros no) | Valle bajo / bosques Ax | Contar con #17010 solo si aceptáis no entrar a la reserva con perras |
+| 3–4 Couserans | **#6527 Col de la Core** (altitud, noche calma) o **#24616 Guzet** | Nature cerca Seix vía mapa P4N | Aire pueblo Seix si está llena de AC |
+| 3–4 alt. | **#51675 Cagateille** solo si **sigue permitido de noche** | — | Ver aviso 2026 abajo |
+| 5 puente | Spot **nature** en ruta (Carladez / Estaing / borde Entraygues) vía filtro | #3781 **tarde** (cuando se van day-visitors), borde lejos del río masificado | Quedarse en el centro del parking #3781 a mediodía |
+| 6–7 Lioran | **#13709 Combe Nègre** — lado **haya/abeto** (sombra) | Apartarse del VVF/auberge si hay gente | P6 / Téton (#155148) llenos de AC |
+| 8–9 Salers | **#271257 Ferme Fouey** (hierba, granja, calma) o **#144306** estadio hierba (~4 plazas) | Otro France Passion / nature bocage en P4N | Aire #855 Mouriol (perfil AC) |
+| 10–11 Aubrac | **#98143** pista hierba + sombra de bosque (van) | Tramos del mismo camino antes del final; #5073 solo si #98143 cerrado | #5073 a mediodía (turismo cascada) |
+| 12–13 Capcir | **#2547** Formiguères: parking **tierra / inferior junto lago** (menos AC) | **#294842** Matemale lago (evitar zona Disneyland / CCP) | Aire Camping-Car Park Matemale |
 
 ---
 
-### Le Lioran (días 6–7) — tramo más importante
+## Detalle de spots estrella
 
-| P4N | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| [#13709](https://park4night.com/fr/place/13709) | **Combe Nègre** (hacia Font de Cère / VVF) | 45.0849, 2.7330 | Gratis | **Elegid este:** fresco, salida a Bec de l’Aigle / Griou, auberge cerca, Sunlight OK |
-| Oficial | Parking **P6** estación | 45.0825, 2.7510 | Gratis | Sin servicios; autorizado estación |
-| [#155148](https://park4night.com/fr/place/155148) | Rue du Téton de Venus (bajo estación) | 45.0836, 2.7489 | Gratis | Más sombra; **leer carteles** — a veces “jour seul”; P5 a menudo más claro |
+### #22287 — Tournals (Ax) ★ perfil perfecto
+- https://park4night.com/fr/place/22287  
+- GPS: **42.7056, 1.8216**  
+- Nature / bivouac mairie; **acceso estrecho → autocaravana no**; sombra, mesas; sin servicios necesarios.  
+- Abrir/cerrar hilo eléctrico o cable; 1 noche a veces indicada.  
+- Si cerrado por vacas/valla → Bonascre rincón apartado.
 
-**Tips:** En agosto priorizad **Combe Nègre** (menos lío de señalización). No desplegar “camping” (sillas/toldo agresivo) en parkings de estación. Camping Le Vallagnon solo emergencia agua/ducha.
+### Orlu / Fanguil #17010 — solo con matices
+- https://park4night.com/fr/place/17010 — parking enherbé, carretera estrecha, calma noche.  
+- **Reserva Orlu: perros no** (ni con correa) en muchos senderos → no planificar la reserva como hike D2. Mejor hike fuera (bosques Ax / Tournals / Orgeix).
+
+### #51675 — Cirque de Cagateille (Ustou) ★ van
+- https://park4night.com/fr/place/51675  
+- GPS: **42.7562, 1.2876** — CC ≤6 m / fourgon; pista estrecha.  
+- **AVISO:** comentario (jul 2026) indica posible **prohibición 20h–6h** por ayuntamiento desde 26/7/2026. **Verificar el día antes** en P4N. Si prohibido → Col de la Core / Guzet.
+
+### #6527 — Col de la Core
+- https://park4night.com/fr/place/6527  
+- Altitud ~1.395 m, fresco, noche mucho más calma que de día; picnic; sin servicios. Buena base Couserans.
+
+### #24616 — Guzet Prat-Mataou
+- https://park4night.com/fr/place/24616  
+- GPS: **42.7876, 1.3008** — parking alto; en verano noche suele ser tranquila; más asfalto que hierba (compromiso altitud/calma).
+
+### #13709 — Combe Nègre (Lioran) ★
+- https://park4night.com/fr/place/13709  
+- GPS: **45.0849, 2.7330**  
+- Elegir zona con **árboles** (reseñas: parking bajo / borde hayedo). Llegar ≥18:30. Sin servicios. Ideal D7 (Bec de l’Aigle).
+
+### #271257 — Ferme Fouey (cerca Salers) ★ hierba
+- https://park4night.com/fr/place/271257  
+- Granja, hierba, gratis, animales OK, lejos del parking AC de Salers.  
+- Correa cerca de vacas; comprar queso = buen gesto.
+
+### #144306 — Saint-Bonnet estadio hierba
+- https://park4night.com/fr/place/144306  
+- GPS: **45.1600, 2.4521** — ~4 plazas, hierba, muy calma, sin servicios. Comprobar barrera.
+
+### #98143 — Aubrac nature ★ recondito
+- https://park4night.com/fr/place/98143  
+- GPS: **44.6227, 3.0531**  
+- Hierba, bosque, vistas, **sin servicios**, acceso pista → filtra AC grandes. Sunlight 6 m: ir despacio; si lluvia fuerte, barro.  
+- **Perras:** correa, no acercarse a rebaños/patous; algunos avisos “chiens”; si stress → #5073 Déroc (más abierto, menos sombra).  
+- No dejar rastro (el spot se pierde por basura).
+
+### #2547 — Formiguères Calmazeille (elegir rincón)
+- https://park4night.com/fr/place/2547  
+- Preferir **parking tierra / nivel bajo junto lago** (comentarios: más solo). Evitar fila de AC en el asfalto alto.  
+- Sin servicios. Fresco.
+
+### #294842 — Matemale lago
+- https://park4night.com/en/place/294842  
+- Alternativa Capcir; evitar la aire de pago / zona animación. Buscar lado calma; cuidado barreras altura en algunos parkings del bosque (2,10–2,20 m).
 
 ---
 
-### Salers (días 8–9)
+## Protocolo llegada (tranquilidad)
 
-| P4N | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| [#855](https://park4night.com/fr/place/855) | Aire Le Mouriol (D680 / route Puy Mary) | 45.1484, 2.4983 | ~14 €/noche (varía; sanitarios a menudo incluidos) | **La opción seria** junto a Salers; ~20 plazas CC |
-| OT Pays de Salers | Aires en Saint-Paul / Saint-Martin-Valmeroux / Ally | ver OT | Variable | Si Mouriol llena o queréis menos gente |
-| [#451871](https://park4night.com/fr/place/451871) | Picnic Route d’Aurillac | 45.1364, 2.4882 | — | **No contar con él** (barreras / reenvío a parking pueblo) |
+1. Llegar **18:30–20:00** (day-trippers se van).  
+2. Si hay >5 furgos → buscar el siguiente nature a 5–15 km en P4N.  
+3. No toldo “camping show”; discreción = que el spot siga abierto.  
+4. Cacas + papel: siempre fuera del sitio (sobre todo Aubrac).  
+5. Autonomía agua: llenar cada 2–3 días en pueblo (fuente / aire solo para agua, sin dormir ahí).
 
-**Tips:** No hay buen “wild” legal pegado a Salers. Aire de pago ≠ camping completo; seguid en aire. Visitar pueblo temprano/tarde.
+## Camping
 
----
-
-### Aubrac / Nasbinals (días 10–11)
-
-| P4N | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| [#5073](https://park4night.com/fr/place/5073) | **Parking Cascade du Déroc** (D52) | ~44.63, 3.02 | Gratis | **Prioridad con perras:** acceso fácil 6 m, randos, fresco, viento |
-| Municipal | Aire Nasbinals rte Saint-Urcize | ~44.660, 2.995 | Servicios; parking aire | Cerca camping; práctico para agua |
-| [#98143](https://park4night.com/fr/place/98143) | Spot nature lac (pista D52) | 44.6227, 3.0531 | Gratis | Precioso pero: pista pedregosa, a veces portail, **perros/conflicto ganado** → **no prioritario con 2 perras** |
-
-**Tips:** En #5073 llegar tarde-tarde (cuando se van los day-trippers). Correa: patous y vacas Aubrac. Evitar #98143 salvo van corto y sin estrés con perros.
-
----
-
-### Formiguères / Capcir (días 12–13)
-
-| P4N | Nombre | GPS | Precio | Notas |
-|---|---|---|---|---|
-| [#2547](https://park4night.com/fr/place/2547) | **La Calmazeille** (estación / P3–P4 camper) | 42.6241, 2.0711 | Gratis | **Cierre perfecto:** fresco, vistas, randos Camporells; verano muy calmo |
-| Communal | Aire Formiguères / zona Puyvalador | 42.6463, 2.1198 | Servicios | Si necesitáis vidange |
-| — | Lac de Matemale (parkings) | 42.580, 2.120 | Variable | Alternativa bosque/lago; leer carteles noche |
-
-**Tips:** No seguir GPS por el pueblo estrecho; acceso estación por Cami de las Ascoumas / señales “Ski Comparelles”. Parking inferior junto lago = más agradable. Camping La Devèze solo si hace falta agua/vidange con animales OK.
-
----
-
-## Protocolo “¿camping o no?”
-
-1. Abrir P4N → filtro 15 km → ordenar por **fecha de comentario**.
-2. Si hay **aire/parking ≥ 4★ reciente** → ir ahí.
-3. Si lleno a las 18:00 → plan B de la tabla (no improvisar en pueblo).
-4. Camping solo si: sin agua >48 h, calor extremo sin sombra, o lluvia + baterías bajas.
-
-## Checklist antes de cada pernocta
-
-- [ ] Cartel “interdiction de stationnement nuit / camping-cars”
-- [ ] Altura / barra (Sunlight ~2,7–2,9 m típico)
-- [ ] Sombra mañana para perras
-- [ ] Distancia a rebaño / patou
-- [ ] Nivelar + calzos; no sacar mesa si el sitio es “parking discret”
+Solo si: spot nature cerrado + lluvia extrema + necesidad sombra/agua absoluta. Lista de emergencia en [`04-reservas-campings.md`](04-reservas-campings.md).

@@ -1,194 +1,22 @@
 {
   "type": "FeatureCollection",
-  "name": "Ruta camper refugio + Park4Night 6-19 ago 2026",
+  "name": "Ruta camper recondito Park4Night 6-19 ago 2026",
   "features": [
-    {
-      "type": "Feature",
-      "properties": { "name": "Teia", "role": "home" },
-      "geometry": { "type": "Point", "coordinates": [2.3210, 41.4980] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Ax-les-Thermes", "role": "stage", "days": "1-2" },
-      "geometry": { "type": "Point", "coordinates": [1.8393, 42.7194] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Foix", "role": "via", "days": "3" },
-      "geometry": { "type": "Point", "coordinates": [1.6060, 42.9650] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Seix", "role": "stage", "days": "3-4" },
-      "geometry": { "type": "Point", "coordinates": [1.2000, 42.8640] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Entraygues-sur-Truyere", "role": "stage", "days": "5" },
-      "geometry": { "type": "Point", "coordinates": [2.5670, 44.6460] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Le Lioran", "role": "stage", "days": "6-7" },
-      "geometry": { "type": "Point", "coordinates": [2.7500, 45.0820] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Salers", "role": "stage", "days": "8-9" },
-      "geometry": { "type": "Point", "coordinates": [2.4940, 45.1380] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Nasbinals", "role": "stage", "days": "10-11" },
-      "geometry": { "type": "Point", "coordinates": [3.0000, 44.6620] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Formigueres", "role": "stage", "days": "12-13" },
-      "geometry": { "type": "Point", "coordinates": [2.1000, 42.6300] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 152052 Bonascre",
-        "role": "park4night_priority",
-        "park4night_id": 152052,
-        "url": "https://park4night.com/fr/place/152052",
-        "price": "free",
-        "nights": "1-2"
-      },
-      "geometry": { "type": "Point", "coordinates": [1.8148, 42.7025] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 7266 Ax aire Delcasse",
-        "role": "park4night_priority",
-        "park4night_id": 7266,
-        "url": "https://park4night.com/fr/place/7266",
-        "price": "paid_aire",
-        "nights": "1-2"
-      },
-      "geometry": { "type": "Point", "coordinates": [1.8314, 42.7261] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Seix Place de l Allee",
-        "role": "park4night_priority",
-        "park4night_id": null,
-        "price": "free",
-        "nights": "3-4"
-      },
-      "geometry": { "type": "Point", "coordinates": [1.2000, 42.8640] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 3781 Entraygues",
-        "role": "park4night_priority",
-        "park4night_id": 3781,
-        "url": "https://park4night.com/fr/place/3781",
-        "price": "free",
-        "nights": "5"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.5694, 44.6404] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 13709 Combe Negre",
-        "role": "park4night_priority",
-        "park4night_id": 13709,
-        "url": "https://park4night.com/fr/place/13709",
-        "price": "free",
-        "nights": "6-7"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.7330, 45.0849] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 855 Salers Mouriol",
-        "role": "park4night_priority",
-        "park4night_id": 855,
-        "url": "https://park4night.com/fr/place/855",
-        "price": "paid_aire",
-        "nights": "8-9"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.4983, 45.1484] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 5073 Cascade Deroc",
-        "role": "park4night_priority",
-        "park4night_id": 5073,
-        "url": "https://park4night.com/fr/place/5073",
-        "price": "free",
-        "nights": "10-11"
-      },
-      "geometry": { "type": "Point", "coordinates": [3.0200, 44.6300] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 2547 Formigueres Calmazeille",
-        "role": "park4night_priority",
-        "park4night_id": 2547,
-        "url": "https://park4night.com/fr/place/2547",
-        "price": "free",
-        "nights": "12-13"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.0711, 42.6241] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 5059 Aire Bonascre",
-        "role": "park4night_backup",
-        "park4night_id": 5059,
-        "url": "https://park4night.com/fr/place/5059"
-      },
-      "geometry": { "type": "Point", "coordinates": [1.8165, 42.7033] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "P4N 155148 Tetón Venus Lioran",
-        "role": "park4night_backup",
-        "park4night_id": 155148,
-        "url": "https://park4night.com/fr/place/155148",
-        "note": "Check night signs"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.7489, 45.0836] }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "Nasbinals aire St-Urcize",
-        "role": "park4night_backup"
-      },
-      "geometry": { "type": "Point", "coordinates": [2.9950, 44.6600] }
-    },
-    {
-      "type": "Feature",
-      "properties": { "name": "Etapas", "role": "route_line" },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [2.3210, 41.4980],
-          [1.8393, 42.7194],
-          [1.6060, 42.9650],
-          [1.2000, 42.8640],
-          [2.5670, 44.6460],
-          [2.7500, 45.0820],
-          [2.4940, 45.1380],
-          [3.0000, 44.6620],
-          [2.1000, 42.6300],
-          [2.3210, 41.4980]
-        ]
-      }
-    }
+    {"type":"Feature","properties":{"name":"Teia","role":"home"},"geometry":{"type":"Point","coordinates":[2.321,41.498]}},
+    {"type":"Feature","properties":{"name":"Ax","role":"stage"},"geometry":{"type":"Point","coordinates":[1.8393,42.7194]}},
+    {"type":"Feature","properties":{"name":"Seix Couserans","role":"stage"},"geometry":{"type":"Point","coordinates":[1.2,42.864]}},
+    {"type":"Feature","properties":{"name":"Entraygues zona","role":"stage"},"geometry":{"type":"Point","coordinates":[2.567,44.646]}},
+    {"type":"Feature","properties":{"name":"Le Lioran","role":"stage"},"geometry":{"type":"Point","coordinates":[2.75,45.082]}},
+    {"type":"Feature","properties":{"name":"Salers zona","role":"stage"},"geometry":{"type":"Point","coordinates":[2.494,45.138]}},
+    {"type":"Feature","properties":{"name":"Aubrac","role":"stage"},"geometry":{"type":"Point","coordinates":[3.0,44.662]}},
+    {"type":"Feature","properties":{"name":"Formigueres","role":"stage"},"geometry":{"type":"Point","coordinates":[2.1,42.63]}},
+    {"type":"Feature","properties":{"name":"P4N 22287 Tournals","park4night_id":22287,"role":"priority","profile":"van_only_nature","url":"https://park4night.com/fr/place/22287"},"geometry":{"type":"Point","coordinates":[1.8216,42.7056]}},
+    {"type":"Feature","properties":{"name":"P4N 24616 Guzet","park4night_id":24616,"role":"priority","url":"https://park4night.com/fr/place/24616"},"geometry":{"type":"Point","coordinates":[1.3008,42.7876]}},
+    {"type":"Feature","properties":{"name":"P4N 51675 Cagateille","park4night_id":51675,"role":"priority_check_ban","url":"https://park4night.com/fr/place/51675"},"geometry":{"type":"Point","coordinates":[1.2876,42.7562]}},
+    {"type":"Feature","properties":{"name":"P4N 13709 Combe Negre","park4night_id":13709,"role":"priority","url":"https://park4night.com/fr/place/13709"},"geometry":{"type":"Point","coordinates":[2.733,45.0849]}},
+    {"type":"Feature","properties":{"name":"P4N 144306 St-Bonnet hierba","park4night_id":144306,"role":"priority","url":"https://park4night.com/fr/place/144306"},"geometry":{"type":"Point","coordinates":[2.4521,45.16]}},
+    {"type":"Feature","properties":{"name":"P4N 98143 Aubrac nature","park4night_id":98143,"role":"priority","dogs":"leash_cattle","url":"https://park4night.com/fr/place/98143"},"geometry":{"type":"Point","coordinates":[3.0531,44.6227]}},
+    {"type":"Feature","properties":{"name":"P4N 2547 Formigueres","park4night_id":2547,"role":"priority","url":"https://park4night.com/fr/place/2547"},"geometry":{"type":"Point","coordinates":[2.0711,42.6241]}},
+    {"type":"Feature","properties":{"name":"Etapas","role":"route_line"},"geometry":{"type":"LineString","coordinates":[[2.321,41.498],[1.8393,42.7194],[1.606,42.965],[1.2,42.864],[2.567,44.646],[2.75,45.082],[2.494,45.138],[3.0,44.662],[2.1,42.63],[2.321,41.498]]}}
   ]
 }
