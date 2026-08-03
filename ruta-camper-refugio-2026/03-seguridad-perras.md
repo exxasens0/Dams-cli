@@ -52,7 +52,7 @@ Muy frecuente en días **7, 9, 10, 11**.
 2. **No atravesar** el rebaño: rodear amplio cuesta abajo si podéis.
 3. Si el patou carga: paraos, no corráis, no gritéis, no enfrentéis; esperar a que vuelva al ganado.
 4. No dar de comer / no fotografiar de cerca.
-5. Spot P4N **#98143** (Aubrac nature): avisos de ganado / restricciones con perros → **no prioritario**; usar **#5073** Déroc. Si comentarios dicen chiens interdits → **cancelado**.
+5. Spot P4N **#98143** CANCELADO (jul 2026: propiedad privada + chiens interdits). Aubrac = **#5073** Déroc.
 
 ## Día 7 — Le Lioran (jornada fuerte)
 
@@ -82,7 +82,7 @@ Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–1
 | 1–2 | Ladres: perras **fuera** del vaso. **Orlu cancelado**. Hike solo bosques Ax/Orgeix/Ascou/Tournals |
 | 4 Biros | Ruinas/minas: vigilancia; no dejar husmear socavones |
 | 8–9 Fouey | Granja con vacas: correa en el campo; no soltar |
-| 10–11 | Prioridad **#5073**; #98143 solo si perros OK en comentarios |
+| 10–11 | Solo **#5073**; #98143 cancelado |
 | 8 Piste Verte | Ideal perras (llano); túnel 600 m: correa corta, linterna |
 | 13 Capcir | Camporells OK con correa; **no** entrar en réserve naturelle catalane |
 | 12 traslado largo | Paradas cada ~1h30 para beber/orinar; no “aguantar” hasta Capcir |

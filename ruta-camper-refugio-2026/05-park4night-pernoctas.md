@@ -1,5 +1,10 @@
 # Park4Night — modo “camper recondito” (sin servicios)
 
+## Regla perras
+**Chiens interdits = cancelado.** **Nuit interdite = cancelado.** Leer comentarios recientes antes de cada noche.
+
+Cancelados tras auditoría ago 2026: **#51675** (09140 Ustou, ban 20h–6h desde 26/7/2026), **#98143** (propiedad privada + chiens interdits), Orlu/#17010, **#3781** (404). Detalle: [`06-auditoria-comentarios-p4n.md`](06-auditoria-comentarios-p4n.md).
+
 ## Criterio de búsqueda (lo que queréis)
 
 | Queréis | Evitad |
@@ -28,11 +33,11 @@
 | 1–2 Ax | **#22287 Tournals** — nature, acceso estrecho, **CC no** | Esquina tranquila Bonascre / Guzet si cerrada | Aire #7266 pueblo (AC + ruido) |
 | 2 (bosques Ax) | Dormir Tournals; hike **Orgeix / Ascou / Tournals** | — | **Orlu + #17010 cancelados** (chiens interdits) |
 | 3–4 Couserans | **#6527 Col de la Core** (altitud, noche calma) o **#24616 Guzet** | Nature cerca Seix vía mapa P4N | Aire pueblo Seix si está llena de AC |
-| 3–4 alt. | **#51675 Cagateille** solo si **sigue permitido de noche** | — | Ver aviso 2026 abajo |
-| 5 puente | Spot **nature** en ruta (Carladez / Estaing / borde Entraygues) vía filtro | #3781 **tarde** (cuando se van day-visitors), borde lejos del río masificado | Quedarse en el centro del parking #3781 a mediodía |
+| 3–4 día | **#51675** solo **de día** (hike) | Dormir Guzet/Core | **Pernocta CANCELADA** (comentario 27/07/2026) |
+| 5 puente | Spot **nature** en ruta (filtro P4N) | **#5896** Rue de la Grave (noche OK comentarios) | Aire #415568 masificada; #3781 **404** |
 | 6–7 Lioran | **#13709 Combe Nègre** — lado **haya/abeto** (sombra) | Apartarse del VVF/auberge si hay gente | P6 / Téton (#155148) llenos de AC |
 | 8–9 Salers | **#271257 Ferme Fouey** (hierba, granja, calma) o **#144306** estadio hierba (~4 plazas) | Otro France Passion / nature bocage en P4N | Aire #855 Mouriol (perfil AC) |
-| 10–11 Aubrac | **#5073** Déroc (prioridad con perras) | #98143 solo si comentarios confirman perros OK | #98143 si chiens / ganado conflictivo → cancelado |
+| 10–11 Aubrac | **#5073** Déroc | Nature P4N cercano si #5073 lleno | **#98143 CANCELADO** (privado + chiens interdits jul 2026) |
 | 12–13 Capcir | **#2547** Formiguères: parking **tierra / inferior junto lago** (menos AC) | **#294842** Matemale lago (evitar zona Disneyland / CCP) | Aire Camping-Car Park Matemale |
 
 ---
@@ -49,10 +54,10 @@
 ### Orlu / Fanguil #17010 — CANCELADO
 - **No usar.** Réserve d’Orlu = chiens interdits. No se visita la reserva ni se usa #17010 como base de excursión. Día 2 = bosques Orgeix / Ascou / Tournals.
 
-### #51675 — Cirque de Cagateille (Ustou) ★ van
-- https://park4night.com/fr/place/51675  
-- GPS: **42.7562, 1.2876** — CC ≤6 m / fourgon; pista estrecha.  
-- **AVISO:** comentario (jul 2026) indica posible **prohibición 20h–6h** por ayuntamiento desde 26/7/2026. **Verificar el día antes** en P4N. Si prohibido → Col de la Core / Guzet.
+### #51675 — Coulantic / Cagateille (09140 Ustou) — CANCELADO NOCHE
+- https://park4night.com/es/place/51675 · GPS **42.7562, 1.2876**
+- Comentario **escalador1 27/07/2026**: ban municipal **20:00–6:00** desde 26/7/2026 (campers/autos).
+- **Usar solo de día** para el Cirque. Dormir en **#24616** o **#6527**.
 
 ### #6527 — Col de la Core
 - https://park4night.com/fr/place/6527  
@@ -76,12 +81,9 @@
 - https://park4night.com/fr/place/144306  
 - GPS: **45.1600, 2.4521** — ~4 plazas, hierba, muy calma, sin servicios. Comprobar barrera.
 
-### #98143 — Aubrac nature (backup, condicional)
-- https://park4night.com/fr/place/98143  
-- GPS: **44.6227, 3.0531**  
-- Hierba, bosque, vistas, **sin servicios**, acceso pista → filtra AC grandes.  
-- **Perras:** avisos de ganado / “chiens”. **Prioridad del viaje = #5073 Déroc.** Usar #98143 solo si comentarios recientes confirman perros OK; si chiens interdits o rebaño encima → **cancelado**.  
-- No dejar rastro (el spot se pierde por basura).
+### #98143 — Aubrac nature — CANCELADO
+- Comentarios 2025–26: propiedad privada / interdit camper+van; **chiens interdits**.
+- No favoritos. Pernocta Aubrac = **#5073**.
 
 ### #5073 — Cascade du Déroc (prioridad Aubrac con perras)
 - https://park4night.com/fr/place/5073  

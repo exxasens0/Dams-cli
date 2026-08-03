@@ -29,4 +29,5 @@
 - **#5073** Cascade du Déroc (Aubrac, prioridad con perras)  
 - **#2547** Formiguères (rincón tierra/lago)  
 
-**Cancelado:** Orlu / #17010. **#98143** solo si comentarios confirman perros OK.
+**Cancelado pernocta:** #51675 (09140 Ustou, ban 20h–6h), #98143 (privado+perros), Orlu/#17010, #3781 (404).
+Ver [`06-auditoria-comentarios-p4n.md`](06-auditoria-comentarios-p4n.md).
