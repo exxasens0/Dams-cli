@@ -139,11 +139,11 @@ def build() -> str:
     parts.append("""
 <section class="section" id="perras"><h2>Reglas del viaje</h2>
 <div class="card prose">
-<div class="warn"><strong>Perras:</strong> cualquier sitio con <em>chiens interdits</em> está cancelado. No se deja a las perras en la furgoneta para “hacer la visita”.</div>
-<div class="warn"><strong>Pernocta:</strong> leed siempre el último comentario de Park4Night. Si dice nuit interdite / 20h–6h / propriété privée → no dormir ahí.</div>
+<div class="warn"><strong>Perras:</strong> cualquier sitio con <em>perros prohibidos</em> (chiens interdits) está cancelado. No se deja a las perras en la furgoneta para “hacer la visita”.</div>
+<div class="warn"><strong>Pernocta:</strong> leed siempre el último comentario de Park4Night. Si dice noche prohibida / 20h–6h / propiedad privada → no dormir ahí.</div>
 <ul>
 <li><strong>Cancelado noche:</strong> #51675 Cagateille (ban 20:00–6:00 desde 26/7/2026).</li>
-<li><strong>Cancelado total:</strong> #98143 Aubrac nature (privado + chiens interdits); Orlu / #17010.</li>
+<li><strong>Cancelado total:</strong> #98143 Aubrac nature (privado + perros prohibidos); Orlu / #17010.</li>
 <li><strong>Horario calor:</strong> hike 7:30–11:30 · sombra 12–17 · paseo corto al atardecer.</li>
 </ul>
 </div></section>
@@ -180,7 +180,7 @@ def build() -> str:
 
 <div class="card prose"><h3>1. Haute Ariège · Ax-les-Thermes</h3>
 {img('ax','Ax-les-Thermes')}
-<p>{esc(WIKI['ax']['extract'])} El pueblo vive del agua caliente desde la Edad Media: el <strong>Bassin des Ladres</strong> (monumento histórico) es un pédiluve público donde la gente se sienta a remojar los pies mientras charla. Alrededor, hayedos, torrentes y la sombra de las crestas hacia Orgeix y Ascou.</p>
+<p>{esc(WIKI['ax']['extract'])} El pueblo vive del agua caliente desde la Edad Media: el <strong>Bassin des Ladres</strong> (baño de pies termal, monumento histórico) es un espacio público donde la gente se sienta a remojar los pies mientras charla. Alrededor, hayedos, torrentes y la sombra de las crestas hacia Orgeix y Ascou.</p>
 <p><strong>Orlu está cancelado</strong> (perros prohibidos). Vuestra Haute Ariège es la de los bosques y collados abiertos, no la de la reserva.</p>
 <p><strong>Qué ver:</strong> paseo del Ariège al atardecer; panadería temprano; Bonascre para coger altura si aprieta el calor; Tournals (#22287) para dormir lejos de las autocaravanas del pueblo.</p>
 {links([
@@ -224,10 +224,10 @@ def build() -> str:
 ])}
 </div>
 
-<div class="card prose"><h3>5. Aubrac · plateau, Déroc, compostela</h3>
-<div class="photo-grid">{img('aubrac','Aubrac')}{img('deroc','Cascade du Déroc')}</div>
+<div class="card prose"><h3>5. Aubrac · meseta, Déroc, Compostela</h3>
+<div class="photo-grid">{img('aubrac','Aubrac')}{img('deroc','Cascada del Déroc')}</div>
 <p>{esc(WIKI['aubrac']['extract'])}</p>
-<p>La <strong>Cascade du Déroc</strong> (~32 m) cae sobre una falla de orgues basálticos; detrás hay una pequeña cueva. Es el icono natural del plateau. Pernocta en <strong>#5073</strong>. El spot nature #98143 está <strong>cancelado</strong> (privado + perros).</p>
+<p>La <strong>cascada del Déroc</strong> (~32 m) cae sobre una falla de órganos basálticos; detrás hay una pequeña cueva. Es el icono natural de la meseta. Pernocta en <strong>#5073</strong>. El spot nature #98143 está <strong>cancelado</strong> (privado + perros).</p>
 <p>Patous frecuentes: protocolo estricto. El GR 65 (Compostela) cruza Nasbinals: usad trozos bonitos, no hace falta “hacer el camino”.</p>
 {links([
  ("Wikipedia Déroc", WIKI['deroc']['wiki'], "p"),
@@ -240,11 +240,11 @@ def build() -> str:
 <div class="card prose"><h3>6. Capcir · Formiguères, Matemale, Camporells</h3>
 <div class="photo-grid">{img('formigueres','Formiguères')}{img('matemale','Lac de Matemale')}</div>
 <p>{esc(WIKI['formigueres']['extract'])}</p>
-<p>{esc(WIKI['capcir']['extract'])} Los <strong>étangs de Camporells</strong> (site classé): perros <em>autorizados con correa</em>. Evitad entrar en réserves naturelles catalanes vecinas (ban de perros). Versión suave: vuelta al lac de Matemale bajo pinares.</p>
+<p>{esc(WIKI['capcir']['extract'])} Los <strong>lagos de Camporells</strong> (espacio natural clasificado): perros <em>autorizados con correa</em>. Evitad entrar en reservas naturales catalanas vecinas (perros prohibidos). Versión suave: vuelta al lago de Matemale bajo pinares.</p>
 {links([
  ("Wikipedia Formiguères", WIKI['formigueres']['wiki'], "p"),
  ("Visorando Camporells", "https://www.visorando.com/randonnee-boucle-des-camporells-par-la-vallee-de-l/", "w"),
- ("Wikiloc Formiguères lac Olive", "https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412", "w"),
+ ("Wikiloc Formiguères lago Olive", "https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412", "w"),
  ("OT Capcir", "https://www.capcir-pyrenees.com/", "w"),
 ])}
 </div>
@@ -264,8 +264,8 @@ def build() -> str:
 <p>Salís de Teià sin prisa. El objetivo no es hacer kilómetros heroicos, sino llegar a la Haute Ariège con luz de tarde y cambiar de clima mental: de litoral a valle termal. La N-20 / túneles de Puymorens o la ruta por Andorra según tráfico; mirad el mapa antes de salir.</p>
 <h4>Dónde dormir</h4>
 <p><strong>#22287 Tournals</strong> (hacia Bonascre): acceso estrecho que filtra autocaravanas, sombra, mesas, a veces WC seco. Cerrar el cable/hilo al entrar y salir. Si hay vacas/valla → rincón tranquilo en Bonascre.</p>
-{quote('DDlaPRALINE','06/06/2024','Un panneau indique que c’est pour une nuit le stationnement')}
-{quote('jackhyde','26/06/2023','La zone est après la barrière (le cable), pensez a refermer après être passé.')}
+{quote('DDlaPRALINE','06/06/2024','Hay un cartel que indica que el aparcamiento es para una sola noche.')}
+{quote('jackhyde','26/06/2023','La zona está después de la barrera (el cable): recordad cerrarla al pasar.')}
 <h4>Qué hacer al llegar</h4>
 <ul>
 <li>Paseo corto ribera del Ariège (3–5 km máximo).</li>
@@ -284,10 +284,10 @@ def build() -> str:
         ["Local", "P4N #22287", "Orlu CANCELADO"],
         f"""
 {img('ladres','Ax y alrededores')}
-<p>Día de aclimatación <strong>100 % con perras</strong>. La Réserve d'Orlu queda fuera: chiens interdits. Explorad bosques y pistas hacia <strong>Orgeix / Ascou / Tournals</strong>: sombra de haya, torrentes, poca gente comparado con Orlu.</p>
+<p>Día de aclimatación <strong>100 % con perras</strong>. La reserva de Orlu queda fuera: <strong>perros prohibidos</strong>. Explorad bosques y pistas hacia <strong>Orgeix / Ascou / Tournals</strong>: sombra de haya, torrentes, poca gente comparado con Orlu.</p>
 <div class="trail">
 <h4>Sendero A · Vallée d'Orgeix / Lac d'Ayguelongue (recomendado)</h4>
-<p>Valle lateral menos masificado. Aparcamiento al final de la pista forestal de Orgeix. Camino claro hacia el étang: pelouses, bosque, agua. Ideal 3–5 h ida y vuelta según ritmo. Confirmad en el track que <strong>no entra en la reserva Orlu</strong>.</p>
+<p>Valle lateral menos masificado. Aparcamiento al final de la pista forestal de Orgeix. Camino claro hacia el lago: prados, bosque, agua. Ideal 3–5 h ida y vuelta según ritmo. Confirmad en el track que <strong>no entra en la reserva Orlu</strong>.</p>
 <p><strong>Datos orientativos:</strong> 10–14 km · D+ moderado · horario salida 7:30–8:00.</p>
 {links([
  ("France-Randos Ayguelongue","http://www.france-randos.com/randonnee/orgeix/ariege-09/le-lac-dayguelongue","w"),
@@ -314,8 +314,8 @@ def build() -> str:
 <p>Dejáis Haute Ariège hacia el oeste. <strong>Foix</strong>: parada corta al castillo (foto/mirador), no os comáis la mañana en cola. Luego Saint-Girons / Saint-Lizier y subida a collados.</p>
 <h4>Dónde dormir</h4>
 <p>Prioridad <strong>#6527 Col de la Core</strong> (altitud, fresco, noche calma tras el bullicio diurno) o <strong>#24616 Guzet Prat-Mataou</strong> (vistas, parking alto). <strong>No #51675 de noche.</strong></p>
-{quote('Leptitromain','25/07/2026','Une nuit tranquille de passée sur ce parking avec vue sur les montagnes et le village d\'Aulus les bains.','P4N #24616')}
-{quote('nayati64','01/06/2025','nous avons passés 3 nuits tranquille . l\'endroit est propre laissons le comme cela.','P4N #6527')}
+{quote('Leptitromain','25/07/2026','Pasamos una noche tranquila en este parking con vistas a las montañas y al pueblo de Aulus-les-Bains.','P4N #24616')}
+{quote('nayati64','01/06/2025','Pasamos 3 noches tranquilas. El sitio está limpio: dejémoslo así.','P4N #6527')}
 <div class="trail">
 <h4>Atardecer en Col de la Core</h4>
 <p>El collado (~1.395 m) es hub de GR y paseos cortos. No hace falta una cima: la luz sobre Bethmale y el Castillonnais basta. Si queréis una ruta larga al día siguiente, descargad track esta noche.</p>
@@ -350,7 +350,7 @@ def build() -> str:
 </div>
 <div class="trail">
 <h4>Plan B · Cascade d'Ars desde Aulus (temprano)</h4>
-<p>Una de las grandes cascadas del Ariège. Bosque, GR10, mucha gente a mediodía → <strong>salida 7:30</strong>. Variante corta ida-vuelta a la cascada, o bucle con Étang de Guzet (más largo).</p>
+<p>Una de las grandes cascadas del Ariège. Bosque, GR10, mucha gente a mediodía → <strong>salida 7:30</strong>. Variante corta ida-vuelta a la cascada, o bucle con el lago de Guzet (más largo).</p>
 {links([
  ("Wikiloc Cascades d'Ars","https://es.wikiloc.com/rutas-senderismo/cascades-dars-56772088","w"),
  ("Wikiloc Aulus–Guzet–Ars","https://es.wikiloc.com/rutas-senderismo/aulus-les-bains-letang-de-guzet-cascade-dars-65871487","w"),
@@ -373,7 +373,7 @@ def build() -> str:
 <p>Día de carretera. No lo convirtáis en checklist del Lot. Objetivo: ganar latitud hacia el Cantal sin llegar reventados. Paradas cada ~1h30 por las perras.</p>
 <h4>Dónde dormir</h4>
 <p>Buscad <strong>nature</strong> en ruta con filtro P4N. Plan B: <strong>#5896 Rue de la Grave</strong> (Entraygues) — comentarios 2025–26 de noches tranquilas. Evitar aire masificada #415568 como plan A. El antiguo #3781 ya no existe.</p>
-{quote('fronvald','17/06/2026','très calme. il y a juste une aire de picnic... le parking est vide, gratuit, et à proximité de la ville.','P4N #5896')}
+{quote('fronvald','17/06/2026','Muy tranquilo. Solo hay un área de picnic… el parking está vacío, es gratis y cerca del pueblo.','P4N #5896')}
 <p>Al llegar: solo 3–5 km de paseo. Cena temprana.</p>
 {links([
  ("Google Entraygues","https://www.google.com/maps/dir/?api=1&destination=44.6439,2.5628&travelmode=driving","g"),
@@ -387,8 +387,8 @@ def build() -> str:
         f"""
 {img('lioran','Le Lioran')}
 <p>Entráis en el parque de los Volcanes. El aire cambia: más seco, más alto, olor a pasto. Instalaos en <strong>Combe Nègre (#13709)</strong>, lado con árboles (haya/abeto). Llegad ≥18:30 para elegir plaza.</p>
-{quote('SoSoPhil','24/06/2026','Bel emplacement... nous y avons passé 2 nuits au calme... point d\'eau en face du restaurant')}
-{quote('SLMFC','16/07/2026','Nuit du 15/16 juillet , coin sympa au calme dans les sapins')}
+{quote('SoSoPhil','24/06/2026','Bonito sitio… pasamos 2 noches en calma… hay punto de agua frente al restaurante.')}
+{quote('SLMFC','16/07/2026','Noche del 15 al 16 de julio: rincón agradable y tranquilo entre los abetos.')}
 <h4>Aclimatación</h4>
 <p>5–8 km por pistas alrededor de Font de Cère / estación. Identificad el inicio del Bec de l'Aigle para mañana. Noche fresca: manta lista.</p>
 {links([
@@ -430,8 +430,8 @@ def build() -> str:
 <p>Día de recuperación activa: la <strong>Piste Verte Sumène-Artense</strong> (antigua vía férrea) ofrece viaductos, túnel ~600 m y sombra. Ideal perras (llano). Túnel: correa corta + linterna.</p>
 <h4>Dónde dormir</h4>
 <p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad) o <strong>#144306</strong> estadio hierba (~4 plazas). Evitar aire #855.</p>
-{quote('jeremw','01/06/2026','Nous avons passé une nuit à la ferme. Accueil très chaleureux... du bon fromage fermier','P4N #271257')}
-{quote('cindy.frt','16/05/2026','Nous avons passé une nuit à la ferme c\'était vraiment super !','P4N #271257')}
+{quote('jeremw','01/06/2026','Pasamos una noche en la granja. Acogida muy cálida… y buen queso de granja.','P4N #271257')}
+{quote('cindy.frt','16/05/2026','Pasamos una noche en la granja: ¡fue genial!','P4N #271257')}
 <div class="trail">
 <h4>Piste Verte 8–12 km</h4>
 {links([
@@ -467,11 +467,11 @@ def build() -> str:
         f"""
 {img('aubrac','Plateau de l\'Aubrac')}
 <p>Dejáis volcanes por el plateau. El paisaje se abre: menos árboles, más viento, más silencio. Es el tramo más lonely del viaje — siempre con las perras.</p>
-<div class="warn"><strong>#98143 cancelado:</strong> comentario 18/07/2026 propiedad privada / interdit camper+van; además chiens interdits. No ir.</div>
+<div class="warn"><strong>#98143 cancelado:</strong> comentario 18/07/2026 — propiedad privada / prohibido acampar y furgonetas; además perros prohibidos. No ir.</div>
 <h4>Dónde dormir</h4>
-<p><strong>#5073 Cascade du Déroc</strong>. Llegad tarde (el parking se vacía cuando se van los day-trippers). Dog-friendly práctico según reseñas.</p>
-{quote('AlbericBoissier','16/07/2025','Spot idéal, belle vue, parking en herbe... La courte balade jusqu\'au pied de la cascade vaut le détour')}
-{quote('Ars','15/04/2025','idéal si compagnon à 4 pattes !')}
+<p><strong>#5073 Cascada del Déroc</strong>. Llegad tarde (el parking se vacía cuando se van los visitantes de día). Apto con perros según reseñas.</p>
+{quote('AlbericBoissier','16/07/2025','Sitio ideal, bonitas vistas, parking de hierba… El paseo corto hasta el pie de la cascada merece la pena.')}
+{quote('Ars','15/04/2025','Ideal si vais con compañero de cuatro patas.')}
 <p>Paseo corto a la cascada al llegar. Protocolo ganado/patous desde el minuto uno.</p>
 {links([
  ("Google #5073","https://www.google.com/maps/dir/?api=1&destination=44.63,3.02&travelmode=driving","g"),
@@ -483,11 +483,11 @@ def build() -> str:
     parts.append(day_shell("d11", "Día 11 · Domingo 16 — Aubrac a fondo",
         ["Local", "P4N #5073"],
         f"""
-<div class="photo-grid">{img('deroc','Cascade du Déroc')}{img('nasbinals','Nasbinals')}</div>
-<p>Día de plateau. La Cascade du Déroc merece la pena cuando la luz es buena: orgues basálticos, cueva detrás del agua, vistas a la Gambaïse. El GR65 pasa cerca de Nasbinals.</p>
+<div class="photo-grid">{img('deroc','Cascada del Déroc')}{img('nasbinals','Nasbinals')}</div>
+<p>Día de meseta. La cascada del Déroc merece la pena cuando la luz es buena: órganos basálticos, cueva detrás del agua, vistas al valle de la Gambaïse. El GR65 pasa cerca de Nasbinals.</p>
 <div class="trail">
 <h4>Plan A · Boucle Déroc (moderada, perros OK con correa)</h4>
-<p>AllTrails y el PR “Du Déroc à la Peyrade” ofrecen bucles de ~9 km / ~2–2h30 desde Nasbinals o desde el parking de la cascada. Variante corta: solo cascada + lac Salhiens 6–8 km.</p>
+<p>AllTrails y el PR «Del Déroc a la Peyrade» ofrecen bucles de ~9 km / ~2–2h30 desde Nasbinals o desde el parking de la cascada. Variante corta: solo cascada + lago Salhiens 6–8 km.</p>
 {links([
  ("AllTrails Cascade du Déroc Loop","https://www.alltrails.com/trail/france/lozere/boucle-de-la-cascade-du-deroc","w"),
  ("PDF PR Déroc–Peyrade (PNR)","https://admin-pnrgca.openig.org/api/fr/treks/51051/du-deroc-a-la-peyrade.pdf","w"),
@@ -510,7 +510,7 @@ def build() -> str:
 <p>El traslado más largo. Partid temprano, parad cada 1h30. El premio es volver a dormir alto y fresco en Formiguères.</p>
 <h4>Dónde dormir</h4>
 <p><strong>#2547 Calmazeille</strong>: elegid parking de tierra / inferior junto lago, no la fila de AC del asfalto. Plan B: Matemale (#294842) — ojo barrera de altura ~2,0–2,2 m en temporada.</p>
-{quote('RouilleP','28/02/2025','nuitées possibles... Merci à la commune')}
+{quote('RouilleP','28/02/2025','Pernocta posible… Gracias al ayuntamiento.')}
 <p>Al llegar: 4–6 km bosque. Nada más.</p>
 {links([
  ("Google Formiguères","https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711&travelmode=driving","g"),
@@ -570,7 +570,7 @@ def build() -> str:
 <li><a href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">#13709</a> Combe Nègre</li>
 <li><a href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">#271257</a> Ferme Fouey</li>
 <li><a href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">#144306</a> Saint-Bonnet</li>
-<li><a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">#5073</a> Cascade du Déroc</li>
+<li><a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">#5073</a> Cascada del Déroc</li>
 <li><a href="https://park4night.com/es/place/2547" target="_blank" rel="noopener">#2547</a> Formiguères</li>
 <li><a href="https://park4night.com/es/place/294842" target="_blank" rel="noopener">#294842</a> Matemale</li>
 <li><a href="https://park4night.com/es/place/5896" target="_blank" rel="noopener">#5896</a> Entraygues Rue de la Grave</li>
