@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ruta camper refugio + Park4Night 6-19 ago 2026</name>
+    <description>Pernocta prioritaria Park4Night/aires. Camping solo emergencia. Sunlight 600 + 2 perras.</description>
+    <Style id="stop"><IconStyle><scale>1.1</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+    <Style id="p4n"><IconStyle><scale>1.0</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon></IconStyle></Style>
+    <Style id="via"><IconStyle><scale>0.9</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href></Icon></IconStyle></Style>
+    <Folder>
+      <name>Etapas</name>
+      <Placemark><name>00 Teia</name><styleUrl>#stop</styleUrl><Point><coordinates>2.3210,41.4980,0</coordinates></Point></Placemark>
+      <Placemark><name>01 Ax-les-Thermes</name><styleUrl>#stop</styleUrl><Point><coordinates>1.8393,42.7194,0</coordinates></Point></Placemark>
+      <Placemark><name>02 Foix via</name><styleUrl>#via</styleUrl><Point><coordinates>1.6060,42.9650,0</coordinates></Point></Placemark>
+      <Placemark><name>03 Seix</name><styleUrl>#stop</styleUrl><Point><coordinates>1.2000,42.8640,0</coordinates></Point></Placemark>
+      <Placemark><name>04 Entraygues</name><styleUrl>#stop</styleUrl><Point><coordinates>2.5670,44.6460,0</coordinates></Point></Placemark>
+      <Placemark><name>05 Le Lioran</name><styleUrl>#stop</styleUrl><Point><coordinates>2.7500,45.0820,0</coordinates></Point></Placemark>
+      <Placemark><name>06 Salers</name><styleUrl>#stop</styleUrl><Point><coordinates>2.4940,45.1380,0</coordinates></Point></Placemark>
+      <Placemark><name>07 Nasbinals</name><styleUrl>#stop</styleUrl><Point><coordinates>3.0000,44.6620,0</coordinates></Point></Placemark>
+      <Placemark><name>08 Formigueres</name><styleUrl>#stop</styleUrl><Point><coordinates>2.1000,42.6300,0</coordinates></Point></Placemark>
+    </Folder>
+    <Folder>
+      <name>Park4Night prioridad 1</name>
+      <Placemark>
+        <name>P4N 152052 Bonascre (Ax fresco)</name>
+        <description>Gratis. Altitud. https://park4night.com/fr/place/152052</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.8148,42.7025,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 7266 Aire Ax Delcasse</name>
+        <description>Aire de pago pueblo. https://park4night.com/fr/place/7266</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.8314,42.7261,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Seix Place de l Allee</name>
+        <description>Aire municipal gratuita ~8 plazas</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.2000,42.8640,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 3781 Entraygues Val de Saure</name>
+        <description>Parking gratis. https://park4night.com/fr/place/3781</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.5694,44.6404,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 13709 Combe Negre Lioran</name>
+        <description>Gratis fresco randos. https://park4night.com/fr/place/13709</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.7330,45.0849,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 855 Salers Le Mouriol</name>
+        <description>Aire de pago. https://park4night.com/fr/place/855</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.4983,45.1484,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 5073 Cascade du Deroc</name>
+        <description>Gratis Aubrac con perras. https://park4night.com/fr/place/5073</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>3.0200,44.6300,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 2547 Formigueres Calmazeille</name>
+        <description>Gratis Capcir. https://park4night.com/fr/place/2547</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.0711,42.6241,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Park4Night plan B</name>
+      <Placemark>
+        <name>P4N 5059 Aire Bonascre</name>
+        <styleUrl>#via</styleUrl>
+        <Point><coordinates>1.8165,42.7033,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Seix borne Barraque</name>
+        <styleUrl>#via</styleUrl>
+        <Point><coordinates>1.2066,42.8667,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Lioran P6 oficial</name>
+        <styleUrl>#via</styleUrl>
+        <Point><coordinates>2.7510,45.0825,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 155148 Tetón Venus</name>
+        <description>Comprobar carteles noche. https://park4night.com/fr/place/155148</description>
+        <styleUrl>#via</styleUrl>
+        <Point><coordinates>2.7489,45.0836,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Nasbinals aire St-Urcize</name>
+        <styleUrl>#via</styleUrl>
+        <Point><coordinates>2.9950,44.6600,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    <Placemark>
+      <name>Trazado etapas</name>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          2.3210,41.4980,0
+          1.8393,42.7194,0
+          1.6060,42.9650,0
+          1.2000,42.8640,0
+          2.5670,44.6460,0
+          2.7500,45.0820,0
+          2.4940,45.1380,0
+          3.0000,44.6620,0
+          2.1000,42.6300,0
+          2.3210,41.4980,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
