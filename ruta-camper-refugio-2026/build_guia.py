@@ -294,6 +294,7 @@ def build() -> str:
 <div class="card prose">
 <div class="warn"><strong>Perras:</strong> cualquier sitio con <em>perros prohibidos</em> (chiens interdits) está cancelado. No se deja a las perras en la furgoneta para “hacer la visita”.</div>
 <div class="warn"><strong>Pernocta:</strong> leed siempre el último comentario de Park4Night. Si dice noche prohibida / 20h–6h / propiedad privada → no dormir ahí.</div>
+<div class="callout"><strong>Meteo + plan B:</strong> cada día incluye previsión Open-Meteo de la zona y un bloque de opiniones/alternativas. La previsión se degrada a +10–16 días: revisad la mañana del hike (7:00).</div>
 <ul>
 <li><strong>Cancelado noche:</strong> #51675 Cagateille (ban 20:00–6:00 desde 26/7/2026).</li>
 <li><strong>Cancelado total:</strong> #98143 Aubrac nature (privado + perros prohibidos); Orlu / #17010.</li>
