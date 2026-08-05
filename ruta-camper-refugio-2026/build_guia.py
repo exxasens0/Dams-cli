@@ -202,7 +202,7 @@ def build() -> str:
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-05 (14 días completos)</small></div>
+<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-05b (P4N audit ≥4 · cercanía)</small></div>
 <div class="btns">
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
@@ -297,7 +297,7 @@ def build() -> str:
 <div class="card prose"><h3>3. Puente · Entraygues / Lot–Truyère</h3>
 {img('entraygues','Entraygues-sur-Truyère')}
 <p>{esc(WIKI['entraygues']['extract'])} Día de transición: no lo convirtáis en visita turística interminable. El valle puede calentar; priorizad llegar a cota fresca al día siguiente (Lioran).</p>
-{links([("Google Entraygues","https://www.google.com/maps/search/?api=1&query=Entraygues-sur-Truy%C3%A8re","g"),("P4N #5896","https://park4night.com/es/place/5896","o")])}
+{links([("Google Entraygues","https://www.google.com/maps/search/?api=1&query=Entraygues-sur-Truy%C3%A8re","g"),("P4N #208568","https://park4night.com/en/place/208568","o")])}
 </div>
 
 <div class="card prose"><h3>4. Cantal · Le Lioran, crestas, Salers</h3>
@@ -352,82 +352,83 @@ def build() -> str:
     )
 
     # DAYS
+
+    # Criterio P4N: parking ≥4 · camping/pago >4 · pernocta OK en comentarios ≤2 años · orden por cercanía al interés
     parts.append(day_shell("d1", "Día 1 · Jueves 6 — Teià → Ax-les-Thermes",
-        ["~180 km / 2h15", "P4N #22287", "P4N #152052", "P4N #7266"],
+        ["~180 km / 2h15", "P4N #22287", "P4N #152052", "P4N #101924"],
         f"""
 {img('ax','Llegada a Ax')}
-<p>Salís de Teià sin prisa. El objetivo no es hacer kilómetros heroicos, sino llegar a la Haute Ariège con luz de tarde y cambiar de clima mental: de litoral a valle termal.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#22287 Tournals</strong> (hacia Bonascre): acceso estrecho que filtra autocaravanas, sombra, mesas. Cerrar el cable/hilo al entrar y salir. Si está lleno, alternativas (&gt;2 estrellas, perros OK en reseñas):</p>
+<p>Salís de Teià sin prisa. Objetivo: Haute Ariège con luz de tarde.</p>
+<div class="callout"><strong>Filtro P4N:</strong> solo spots con nota ≥4 (camping/pago &gt;4), pernocta confirmada en comentarios ≤2 años, priorizando cercanía al interés del día.</div>
+<h4>Dónde dormir (Park4Night) · ordenados por cercanía a Ax / Ladres</h4>
+<p><strong>#22287 Tournals</strong> (4.35/5) — nature, acceso estrecho, noche OK 2024–26. Si está lleno:</p>
 <ul>
-  <li><strong>#152052 Plateau de Bonascre</strong> (4.1/5) — parking alto, gratis · al centro Ax: ~2,5 km.</li>
-  <li><strong>#7266 Aire municipal Ax</strong> (pago) — servicios, perros aceptados · al centro Ax: ~0,8 km.</li>
+  <li><strong>#152052 Plateau de Bonascre</strong> (4.14/5) — parking alto, noche OK 2024–26 · a Ax: ~9 km coche.</li>
+  <li><strong>#101924 Ascou D25</strong> (4.73/5) — parking picnic alto, noche OK 2025–26 · a Ax: ~19 km (más lejos, nota excelente).</li>
 </ul>
+<p><em>Descartado:</em> #7266 Aire Ax (2.4/5, ruido, muchos 1★ 2026).</p>
 {quote('DDlaPRALINE','06/06/2024','Hay un cartel que indica que el aparcamiento es para una sola noche.')}
 {quote('jackhyde','26/06/2023','La zona está después de la barrera (el cable): recordad cerrarla al pasar.')}
 
 <div class="trail">
 <h4>Paseo al llegar · ribera Ariège + Bassin des Ladres</h4>
-<p><strong>Distancia parking → centro Ax / Ladres:</strong> #22287 ~2,5 km a pie (~30 min) · #152052 ~2,5 km · #7266 ~0,8 km.</p>
-<p>Paseo corto 3–5 km por la ribera. <strong>Bassin des Ladres:</strong> ritual termal; las perras se quedan fuera del vaso (paseo perimetral).</p>
-{parking_routes("centro Ax / Ladres", ("#22287", (1.8216, 42.7056)), (1.8393, 42.7194), [("#152052", (1.8148, 42.7025)), ("#7266", (1.8345, 42.7215))], "walking", "walking")}
+<p><strong>Distancia (coche) → Ax / Ladres:</strong> #22287 ~7,6 km · #152052 ~9,1 km · #101924 ~18,7 km.</p>
+{parking_routes("Ax / Ladres", ("#22287", (1.8216, 42.7056)), (1.8393, 42.7194), [("#152052", (1.8148, 42.7025)), ("#101924", (1.9875, 42.7330))], "driving", "driving")}
 {links([
  ("P4N #22287","https://park4night.com/es/place/22287","o"),
  ("P4N #152052 Bonascre","https://park4night.com/es/place/152052","o"),
- ("P4N #7266 Aire Ax","https://park4night.com/es/place/7266","o"),
- ("Google → Tournals","https://www.google.com/maps/dir/?api=1&destination=42.7056,1.8216&travelmode=driving","g"),
+ ("P4N #101924 Ascou D25","https://park4night.com/es/place/101924","o"),
 ])}
 </div>
 {poi_extra("Ax-les-Thermes", [
-  "<strong>Baño termal:</strong> Bassin des Ladres (pies en agua caliente).",
-  "<strong>Baño en río:</strong> Ariège (zonas de picnic aguas arriba del pueblo).",
-  "<strong>Monumento:</strong> viejo casino / centro histórico termal.",
-  "<strong>Compra local:</strong> panaderías y quesos del Ariège en el pueblo.",
+  "<strong>Baño termal:</strong> Bassin des Ladres (pies; perras fuera del vaso).",
+  "<strong>Baño en río:</strong> Ariège (picnic aguas arriba).",
+  "<strong>Monumento:</strong> centro termal / casino.",
+  "<strong>Compra:</strong> pan y quesos del Ariège en el pueblo.",
 ], [
  ("Google Bassin des Ladres","https://www.google.com/maps/search/?api=1&query=Bassin+des+Ladres+Ax-les-Thermes","g"),
- ("Google Ariège (baño/picnic)","https://www.google.com/maps/search/?api=1&query=Ari%C3%A8ge+baignade+Ax-les-Thermes","g"),
+ ("Google Ariège picnic","https://www.google.com/maps/search/?api=1&query=Ari%C3%A8ge+baignade+Ax-les-Thermes","g"),
  ("Google centro Ax","https://www.google.com/maps/search/?api=1&query=Ax-les-Thermes+centre","g"),
  ("Wikipedia Ladres", WIKI['ladres']['wiki'], "p"),
 ])}
 """))
 
     parts.append(day_shell("d2", "Día 2 · Viernes 7 — Bosques Ax / Orgeix (apto con perras)",
-        ["Local", "P4N #22287", "P4N #152052", "P4N #7266", "Orlu CANCELADO"],
+        ["Local", "P4N #22287", "P4N #152052", "P4N #101924", "Orlu CANCELADO"],
         f"""
 {img('ladres','Ax y alrededores')}
-<p>Día de aclimatación <strong>100 % con perras</strong>. La reserva de Orlu queda fuera: <strong>perros prohibidos</strong>. Explorad bosques y pistas hacia <strong>Orgeix / Ascou / Tournals</strong>.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p>Misma base que ayer. Si #22287 está lleno:</p>
+<p>Día 100 % con perras. <strong>Orlu cancelado</strong> (perros prohibidos). Interés: bosques Orgeix / Ascou.</p>
+<h4>Dónde dormir · cercanos al valle Orgeix / Ascou</h4>
+<p>Misma base. Orden por cercanía práctica a Orgeix:</p>
 <ul>
-  <li><strong>#152052 Bonascre</strong> (4.1/5) · al inicio Orgeix: ~9 km en coche.</li>
-  <li><strong>#7266 Aire Ax</strong> (pago, perros OK) · al inicio Orgeix: ~10 km en coche.</li>
+  <li><strong>#22287 Tournals</strong> (4.35/5) · a Orgeix: ~15 km coche.</li>
+  <li><strong>#152052 Bonascre</strong> (4.14/5) · similar / un poco más lejos por carretera.</li>
+  <li><strong>#101924 Ascou D25</strong> (4.73/5) · más alto hacia Ascou/Pailhères (~18+ km a Orgeix), ideal si queréis dormir en altura.</li>
 </ul>
 
 <div class="trail">
-<h4>Sendero A · Ax → Orgeix (Visorando Moyenne · ~8,5 km · +318 m)</h4>
+<h4>Sendero A · Ax → Orgeix (Moyenne · ~8,5 km)</h4>
 {wikiloc_box([("Orgeix (Moderado)","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983")])}
-<p>Valle lateral menos masificado. Sombra de haya, torrentes. Confirmad en el track que <strong>no entra en la reserva Orlu</strong>.</p>
-<p><strong>Distancia parking → inicio ruta (Ax centro):</strong> #22287 ~2,5 km a pie · #152052 ~2,5 km · #7266 ~0,8 km.</p>
-<p><strong>Distancia parking → Orgeix (pueblo):</strong> #22287 ~9 km coche · #152052 ~8 km · #7266 ~10 km.</p>
-{parking_routes("inicio Orgeix (pueblo)", ("#22287", (1.8216, 42.7056)), (1.768, 42.718), [("#152052", (1.8148, 42.7025)), ("#7266", (1.8345, 42.7215))], "driving", "driving")}
+<p>Confirmad que el track <strong>no entra en reserva Orlu</strong>.</p>
+<p><strong>Distancia (coche) → Orgeix pueblo:</strong> #22287 ~15 km · #152052 ~15–16 km · #101924 ~18+ km.</p>
+{parking_routes("Orgeix (pueblo)", ("#22287", (1.8216, 42.7056)), (1.768, 42.718), [("#152052", (1.8148, 42.7025)), ("#101924", (1.9875, 42.7330))], "driving", "driving")}
 {links([
- ("Visorando Ax–Orgeix (Moyenne)","https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/","w"),
- ("Wikiloc Orgeix (Moderado)","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983","wiki"),
+ ("Visorando Ax–Orgeix","https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/","w"),
+ ("Wikiloc Orgeix","https://es.wikiloc.com/rutas-senderismo/orgeix-142403983","wiki"),
  ("P4N #22287","https://park4night.com/es/place/22287","o"),
  ("P4N #152052","https://park4night.com/es/place/152052","o"),
- ("P4N #7266","https://park4night.com/es/place/7266","o"),
+ ("P4N #101924","https://park4night.com/es/place/101924","o"),
 ])}
 </div>
 <div class="trail">
-<h4>Sendero B · Solo sombra (plan calor)</h4>
-<p>6–8 km de pistas alrededor de Tournals / Bonascre. Siesta en camper 12–17 h. Segunda salida corta al atardecer.</p>
+<h4>Sendero B · Solo sombra (calor)</h4>
+<p>6–8 km pistas Tournals / Bonascre. Siesta 12–17 h.</p>
 </div>
-<div class="callout"><strong>Tip:</strong> bajad el GPX la noche anterior y leed comentarios recientes buscando la palabra <em>chien</em>.</div>
 {poi_extra("Ax / Orgeix", [
-  "<strong>Bosque/río:</strong> valle de Orgeix (torrentes y sombra).",
-  "<strong>Baño natural:</strong> Ariège en zonas de picnic aguas arriba.",
-  "<strong>Pueblo:</strong> Ascou (iglesia y paseo corto).",
-  "<strong>Compra:</strong> pan y quesos en Ax antes de subir.",
+  "<strong>Bosque/río:</strong> valle de Orgeix.",
+  "<strong>Baño natural:</strong> Ariège picnic.",
+  "<strong>Pueblo:</strong> Ascou.",
+  "<strong>Compra:</strong> pan/quesos en Ax antes de subir.",
 ], [
  ("Google Orgeix","https://www.google.com/maps/search/?api=1&query=Orgeix+Ari%C3%A8ge","g"),
  ("Google Ascou","https://www.google.com/maps/search/?api=1&query=Ascou+Ari%C3%A8ge","g"),
@@ -436,88 +437,82 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d3", "Día 3 · Sábado 8 — Ax → Foix corta → Couserans",
-        ["~120–140 km", "P4N #6527", "P4N #24616", "P4N #15419", "#51675 NO noche"],
+        ["~120–140 km", "P4N #24616", "P4N #4433", "P4N #6527", "#51675 NO noche"],
         f"""
 <div class="photo-grid">{img('foix','Château de Foix')}{img('saint_lizier','Saint-Lizier')}</div>
-<p>Dejáis Haute Ariège hacia el oeste. <strong>Foix</strong>: parada corta al castillo (foto/mirador). Luego Saint-Girons / Saint-Lizier y subida a collados.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#6527 Col de la Core</strong> (altitud, fresco, noche calma). Si está lleno:</p>
+<p>Foix corta → Saint-Lizier → collados. <strong>No #51675 de noche.</strong></p>
+<h4>Dónde dormir · priorizando cercanía a Cagateille / Ars (mañana)</h4>
+<p>Orden por cercanía al Cirque de Cagateille (interés del día 4):</p>
 <ul>
-  <li><strong>#24616 Guzet Prat-Mataou</strong> (4.3/5) — parking alto, vistas · al Lac Bethmale: ~12 km.</li>
-  <li><strong>#15419 Camping le Haut Salat</strong> (Seix, pago) — río Salat, sombra, perros OK · al Bethmale: ~18 km.</li>
+  <li><strong>#24616 Guzet Prat-Mataou</strong> (4.54/5) — el más cercano · a Cagateille: ~20 km · noche OK 2024–26.</li>
+  <li><strong>#4433 Camping Bouries Couflens</strong> (4.71/5, camping &gt;4) · a Cagateille: ~21 km · río, perros OK.</li>
+  <li><strong>#6527 Col de la Core</strong> (4.35/5) — fresco/altitud · a Cagateille: ~33 km (más lejos).</li>
 </ul>
-<p><strong>No #51675 de noche</strong> (ban 20:00–6:00).</p>
 {quote('Leptitromain','25/07/2026','Pasamos una noche tranquila en este parking con vistas a las montañas y al pueblo de Aulus-les-Bains.','P4N #24616')}
 {quote('nayati64','01/06/2025','Pasamos 3 noches tranquilas. El sitio está limpio: dejémoslo así.','P4N #6527')}
 
 <div class="trail">
-<h4>Atardecer · Col de la Core + Lac de Bethmale</h4>
+<h4>Atardecer · Col / Bethmale</h4>
 {wikiloc_box([("Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944")])}
-<p>El collado (~1.395 m) es hub de GR. Paseo corto o subir al lago Bethmale al día siguiente.</p>
-<p><strong>Distancia parking → Bethmale (inicio ruta):</strong> #6527 ~5 km · #24616 ~12 km · #15419 ~18 km.</p>
-{parking_routes("Lac de Bethmale", ("#6527", (1.10, 42.84)), (1.25, 42.82), [("#24616", (1.3008, 42.7876)), ("#15419", (1.206, 42.8758))], "driving", "driving")}
+<p><strong>Distancia (coche) → Lac Bethmale:</strong> #24616 ~12 km · #4433 ~12 km · #6527 ~23 km.</p>
+{parking_routes("Lac de Bethmale", ("#24616", (1.3008, 42.7876)), (1.25, 42.82), [("#4433", (1.1779, 42.7902)), ("#6527", (1.1049, 42.8590))], "driving", "driving")}
 {links([
- ("Wikiloc Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","wiki"),
- ("Visorando Étang de Bethmale (Moyenne)","https://www.visorando.com/randonnee-le-lac-de-bethmale/","w"),
- ("P4N #6527","https://park4night.com/es/place/6527","o"),
+ ("Wikiloc Lac de Bethmale","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944","wiki"),
  ("P4N #24616","https://park4night.com/es/place/24616","o"),
- ("P4N #15419 Haut Salat","https://park4night.com/es/place/15419","o"),
+ ("P4N #4433 Bouries","https://park4night.com/es/place/4433","o"),
+ ("P4N #6527","https://park4night.com/es/place/6527","o"),
 ])}
 </div>
 {poi_extra("Couserans", [
-  "<strong>Lago:</strong> Lac de Bethmale (baño posible en verano, con prudencia).",
-  "<strong>Monumento:</strong> Saint-Lizier (catedral y casco).",
-  "<strong>Mirador:</strong> Col de la Core al atardecer.",
-  "<strong>Compra:</strong> quesos y productos del Couserans en Seix/Saint-Girons.",
+  "<strong>Lago:</strong> Lac de Bethmale.",
+  "<strong>Monumento:</strong> Saint-Lizier (catedral).",
+  "<strong>Mirador:</strong> Col de la Core.",
+  "<strong>Compra:</strong> productos Couserans en Seix.",
 ], [
  ("Google Lac de Bethmale","https://www.google.com/maps/search/?api=1&query=Lac+de+Bethmale","g"),
  ("Google Saint-Lizier","https://www.google.com/maps/search/?api=1&query=Saint-Lizier","g"),
- ("Google Col de la Core","https://www.google.com/maps/search/?api=1&query=Col+de+la+Core","g"),
  ("Wikipedia Saint-Lizier", WIKI['saint_lizier']['wiki'], "p"),
 ])}
 """))
 
     parts.append(day_shell("d4", "Día 4 · Domingo 9 — Cagateille de día + Biros / Cascade d'Ars",
-        ["Local", "P4N #6527 / #24616", "P4N #15419", "#51675 solo DÍA"],
+        ["Local", "P4N #24616", "P4N #4433", "P4N #6527", "#51675 solo DÍA"],
         f"""
 {img('cagateille','Cirque de Cagateille')}
-<div class="warn"><strong>#51675 NO DORMIR.</strong> Ban municipal 20:00–6:00 desde 26/7/2026. Id de día y volved a Guzet/Core.</div>
-<h4>Dónde dormir (Park4Night)</h4>
-<p>Misma base que ayer: <strong>#6527</strong> o <strong>#24616</strong>. Alternativa pago: <strong>#15419 Haut Salat</strong> (Seix, río).</p>
+<div class="warn"><strong>#51675 NO DORMIR</strong> (ban 20:00–6:00 desde 26/7/2026). Solo día → volver a Guzet/Couflens/Core.</div>
+<h4>Dónde dormir · más cercanos a Cagateille / Cascade d'Ars</h4>
+<ul>
+  <li><strong>#24616 Guzet</strong> (4.54/5) · a Cagateille ~20 km · a Cascade d'Ars ~4 km.</li>
+  <li><strong>#4433 Bouries Couflens</strong> (4.71/5 camping) · a Cagateille ~21 km.</li>
+  <li><strong>#6527 Col de la Core</strong> (4.35/5) · a Cagateille ~33 km.</li>
+</ul>
 
 <div class="trail">
-<h4>Plan A · Cirque de Cagateille (Facile · ~4 km · +251 m)</h4>
+<h4>Plan A · Cirque de Cagateille</h4>
 {wikiloc_box([("Cirque de Cagateille (Moderado · ~5 km)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020")])}
-<p>Desde el parking del circo (#51675, solo día): sendero bajo bosque hasta el anfiteatro. Pasarela al centro.</p>
-<p><strong>Distancia parking noche → Cagateille:</strong> #6527 ~14 km · #24616 ~8 km · #15419 ~22 km.</p>
-{parking_routes("parking Cagateille", ("#6527", (1.10, 42.84)), (1.2876, 42.7562), [("#24616", (1.3008, 42.7876)), ("#15419", (1.206, 42.8758))], "driving", "driving")}
+<p><strong>Distancia (coche) → parking Cagateille:</strong> #24616 ~20 km · #4433 ~21 km · #6527 ~33 km.</p>
+{parking_routes("parking Cagateille", ("#24616", (1.3008, 42.7876)), (1.2876, 42.7562), [("#4433", (1.1779, 42.7902)), ("#6527", (1.1049, 42.8590))], "driving", "driving")}
 {links([
- ("Wikiloc Cirque de Cagateille (Moderado · ~5 km)","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","wiki"),
- ("Visorando Circo de Cagateille (Facile)","https://www.visorando.com/randonnee-cirque-de-cagateille/","w"),
+ ("Wikiloc Cagateille","https://es.wikiloc.com/rutas-senderismo/cirque-de-cagateille-18941020","wiki"),
+ ("Visorando Cagateille","https://www.visorando.com/randonnee-cirque-de-cagateille/","w"),
  ("P4N #51675 (solo día)","https://park4night.com/es/place/51675","o"),
 ])}
 </div>
 <div class="trail">
-<h4>Plan B · Cascade d'Ars (Moyenne / Wikiloc Fácil)</h4>
+<h4>Plan B · Cascade d'Ars (salida 7:30)</h4>
 {wikiloc_box([("Cascada d'Ars (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596")])}
-<p>Salida <strong>7:30</strong>. Mucha gente a mediodía.</p>
-<p><strong>Distancia parking noche → Cascade d'Ars:</strong> #6527 ~16 km · #24616 ~10 km · #15419 ~20 km.</p>
-{parking_routes("Cascade d'Ars", ("#6527", (1.10, 42.84)), (1.31, 42.76), [("#24616", (1.3008, 42.7876)), ("#15419", (1.206, 42.8758))], "driving", "driving")}
+<p><strong>Distancia (coche) → Cascade d'Ars:</strong> #24616 ~4 km · #4433 ~21 km · #6527 ~40 km.</p>
+{parking_routes("Cascade d'Ars", ("#24616", (1.3008, 42.7876)), (1.31, 42.76), [("#4433", (1.1779, 42.7902)), ("#6527", (1.1049, 42.8590))], "driving", "driving")}
 {links([
- ("Wikiloc Cascada d'Ars (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596","wiki"),
- ("Visorando Cascada d'Ars (Moyenne)","https://www.visorando.com/randonnee-la-cascade-d-ars-2/","w"),
+ ("Wikiloc Cascada d'Ars","https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596","wiki"),
+ ("Visorando Cascada d'Ars","https://www.visorando.com/randonnee-la-cascade-d-ars-2/","w"),
 ])}
 </div>
-<div class="trail">
-<h4>Plan C · Biros / Bethmale (Moyenne / Wikiloc Fácil)</h4>
-{wikiloc_box([("Lac de Bethmale (Fácil)","https://es.wikiloc.com/rutas-senderismo/lac-de-bethmale-et-etang-dayes-couserans-20519944")])}
-<p>Valle y bosque con perras: Étang de Bethmale o Chapelle de l'Isard.</p>
-</div>
 {poi_extra("Couserans / Aulus", [
-  "<strong>Circo glaciar:</strong> Cirque de Cagateille (imprescindible).",
-  "<strong>Cascada:</strong> Cascade d'Ars (una de las grandes del Ariège).",
-  "<strong>Lago:</strong> Lac de Bethmale (baño posible con prudencia).",
-  "<strong>Pueblo termal:</strong> Aulus-les-Bains (fuente y paseo).",
+  "<strong>Circo:</strong> Cirque de Cagateille.",
+  "<strong>Cascada:</strong> Cascade d'Ars.",
+  "<strong>Lago:</strong> Lac de Bethmale.",
+  "<strong>Pueblo termal:</strong> Aulus-les-Bains.",
 ], [
  ("Google Cirque de Cagateille","https://www.google.com/maps/search/?api=1&query=Cirque+de+Cagateille","g"),
  ("Google Cascade d'Ars","https://www.google.com/maps/search/?api=1&query=Cascade+d%27Ars+Aulus","g"),
@@ -527,39 +522,40 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d5", "Día 5 · Lunes 10 — Traslado hacia el Macizo Central",
-        ["~220–260 km", "P4N #5896", "P4N #8417", "P4N #208568"],
+        ["~220–260 km", "P4N #208568", "P4N #415568", "P4N #8417"],
         f"""
 {img('entraygues','Entraygues-sur-Truyère')}
-<p>Día de carretera. No lo convirtáis en checklist del Lot. Objetivo: ganar latitud hacia el Cantal sin llegar reventados. Paradas cada ~1h30 por las perras.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#5896 Rue de la Grave</strong> (Entraygues) — parking tranquilo detrás del château. Si está lleno, alternativas (todas &gt;2 estrellas):</p>
+<p>Día de carretera. Interés al llegar: centro Entraygues / Lot.</p>
+<h4>Dónde dormir · más cercanos al centro (nota ≥4)</h4>
+<p><strong>#208568 Faubourg de Truyère</strong> (4.5/5) — el más cercano (~0,7 km a pie), noche OK 2025–26. Si está lleno:</p>
 <ul>
-  <li><strong>#8417 Camping municipal Val de Saures***</strong> (4.36/5) — camping con acceso a río (perros ok en las reseñas) · al centro Entraygues: ~1,8 km.</li>
-  <li><strong>#208568 40 Rue du Faubourg de Truyère</strong> (4.5/5) — parking con sombra y mesas de picnic · al centro Entraygues: ~0,7 km.</li>
+  <li><strong>#415568 Aire Lot / Pont Notre Dame</strong> (4.5/5) — ~1,4 km a pie, noche OK 2024–26 (más plazas/gente).</li>
+  <li><strong>#8417 Camping Val de Saures***</strong> (4.36/5, camping &gt;4) — ~1,8 km a pie, río + piscina, perros OK.</li>
 </ul>
-{quote('fronvald','17/06/2026','Muy tranquilo. Solo hay un área de picnic… el parking está vacío, es gratis y cerca del pueblo.','P4N #5896')}
+<p><em>Descartado:</em> #5896 Rue de la Grave (3.27/5, por debajo del umbral).</p>
+{quote('Pom35','21/05/2026','Nuit très calme.','P4N #208568')}
 
 <div class="trail">
 <h4>Paseo corto al llegar (3–5 km)</h4>
-<p><strong>Distancia parking → centro Entraygues:</strong> #5896 ~0,7 km · #8417 ~1,8 km · #208568 ~0,7 km.</p>
-{parking_routes("centro Entraygues", ("#5896", (2.5628, 44.6439)), (2.5675, 44.6472), [("#8417", (2.5639, 44.6421)), ("#208568", (2.5667, 44.6488))], "walking", "walking")}
+<p><strong>Distancia a pie → centro:</strong> #208568 ~0,7 km · #415568 ~1,4 km · #8417 ~1,8 km.</p>
+{parking_routes("centro Entraygues", ("#208568", (2.5667, 44.6488)), (2.5675, 44.6472), [("#415568", (2.5692, 44.6406)), ("#8417", (2.5639, 44.6421))], "walking", "walking")}
 {links([
- ("P4N #5896","https://park4night.com/es/place/5896","o"),
- ("P4N #8417","https://park4night.com/es/place/8417","o"),
  ("P4N #208568","https://park4night.com/en/place/208568","o"),
+ ("P4N #415568 Aire Lot","https://park4night.com/es/place/415568","o"),
+ ("P4N #8417 Val de Saures","https://park4night.com/es/place/8417","o"),
  ("Wikipedia Entraygues", WIKI['entraygues']['wiki'], "p"),
 ])}
 </div>
 {poi_extra("Entraygues", [
   "<strong>Baño vigilado:</strong> Piscine d'Entraygues.",
-  "<strong>Baño natural:</strong> Lot (zona Val de Saures / playa natural).",
-  "<strong>Paisaje/monumento:</strong> Confluence Lot–Truyère (aire picnic).",
+  "<strong>Baño natural:</strong> Lot (Val de Saures).",
+  "<strong>Paisaje:</strong> Confluence Lot–Truyère.",
   "<strong>Quesería:</strong> Fromagerie Jean Mathieu (La Borie de Banroques).",
 ], [
- ("Google Piscine d'Entraygues","https://www.google.com/maps/search/?api=1&query=Piscine+d%27Entraygues+Entraygues-sur-Truy%C3%A8re","g"),
- ("Google Val de Saures (playa Lot)","https://www.google.com/maps/search/?api=1&query=Camping+Val+de+Saures+Entraygues+plage","g"),
- ("Google Confluence Lot–Truyère","https://www.google.com/maps/search/?api=1&query=Confluence+Lot+Truy%C3%A8re+aire+de+pique-nique+Entraygues","g"),
- ("Google Fromagerie Jean Mathieu","https://www.google.com/maps/search/?api=1&query=Fromagerie+Jean+Mathieu+Nadine+Boulant+La+Borie+de+Banroques","g"),
+ ("Google Piscine d'Entraygues","https://www.google.com/maps/search/?api=1&query=Piscine+d%27Entraygues","g"),
+ ("Google Val de Saures playa","https://www.google.com/maps/search/?api=1&query=Camping+Val+de+Saures+Entraygues+plage","g"),
+ ("Google Confluence Lot–Truyère","https://www.google.com/maps/search/?api=1&query=Confluence+Lot+Truy%C3%A8re+Entraygues","g"),
+ ("Google Fromagerie Jean Mathieu","https://www.google.com/maps/search/?api=1&query=Fromagerie+Jean+Mathieu+Banroques","g"),
 ])}
 <p>Cena temprana.</p>
 """))
@@ -568,47 +564,43 @@ def build() -> str:
         ["~120–150 km", "P4N #13709", "P4N #6003", "P4N #27677"],
         f"""
 {img('lioran','Le Lioran')}
-<h4>Dónde dormir (Park4Night)</h4>
-<p>Entráis en el parque de los Volcanes. El aire cambia: más seco, más alto, olor a pasto. Instalaos en <strong>Combe Nègre (#13709)</strong>, lado con árboles (haya/abeto). Llegad ≥18:30 para elegir plaza.</p>
+<h4>Dónde dormir · cercanos al inicio Bec de l'Aigle</h4>
+<p><strong>#13709 Combe Nègre</strong> (4.11/5) — el más cercano al trailhead (~2,8 km), noche OK 2024–26. Si está lleno:</p>
+<ul>
+  <li><strong>#6003 Camping des Blats</strong> (4.74/5, camping &gt;4) · a Bec: ~6,4 km — mejor alternativa cercana.</li>
+  <li><strong>#27677 Lavigerie D62</strong> (4.29/5) · a Bec: ~30 km — solo si los dos anteriores están llenos (lejos).</li>
+</ul>
 {quote('SoSoPhil','24/06/2026','Bonito sitio… pasamos 2 noches en calma… hay punto de agua frente al restaurante.')}
 {quote('SLMFC','16/07/2026','Noche del 15 al 16 de julio: rincón agradable y tranquilo entre los abetos.')}
-<p><strong>Si está lleno</strong> (perros y &gt;2 estrellas):</p>
-<ul>
-  <li><strong>#6003 Camping des Blats</strong> (4.2/5) — camping con sombra · al inicio Bec: ~6,4 km.</li>
-  <li><strong>#27677 Lavigerie - D62</strong> (4.0/5) — parking con vistas · al inicio Bec: ~29,7 km.</li>
-</ul>
 
 <div class="trail">
-<h4>Aclimatación (hoy) · 5–8 km suaves</h4>
-<p>5–8 km por pistas alrededor de Font de Cère / estación. Identificad el inicio del <strong>Bec de l'Aigle</strong> para mañana. Noche fresca: manta lista.</p>
-<p><strong>Distancia parking → inicio Bec (referencia):</strong> #13709 ~2,8 km coche · #6003 ~6,4 km · #27677 ~29,7 km.</p>
+<h4>Aclimatación · 5–8 km + localizar inicio Bec</h4>
+<p><strong>Distancia (coche) → Font d'Alagnon / inicio Bec:</strong> #13709 ~2,8 km · #6003 ~6,4 km · #27677 ~29,7 km.</p>
 {parking_routes("inicio Bec", ("#13709", (2.7330, 45.0849)), (2.74315, 45.088234), [("#6003", (2.7137, 45.0522)), ("#27677", (2.7026, 45.1301))], "driving", "driving")}
 {links([
  ("P4N #13709","https://park4night.com/es/place/13709","o"),
  ("P4N #6003","https://park4night.com/es/place/6003","o"),
  ("P4N #27677","https://park4night.com/es/place/27677","o"),
- ("Wikipedia Lioran", WIKI['lioran']['wiki'], "p"),
  ("OT Lioran","https://www.lelioran.com/","w"),
 ])}
-
 <div class="wikiloc-box">
-<strong>Si os apetece estirar (Wikiloc · útil mañana)</strong>
+<strong>Wikiloc · útil mañana</strong>
 <div class="btns">
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058" target="_blank" rel="noopener">Wikiloc · Bec + Téton (Moderado · ~8 km)</a>
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc · Bec corto (Fácil · ~5,6 km)</a>
+<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058" target="_blank" rel="noopener">Wikiloc · Bec + Téton (~8 km)</a>
+<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc · Bec corto (~5,6 km)</a>
 </div>
 </div>
 </div>
 {poi_extra("Le Lioran / Volcanes", [
-  "<strong>Punto de salida escénico:</strong> Font d'Alagnon.",
-  "<strong>Mirador:</strong> Rocher du Bec de l'Aigle (belvédère).",
-  "<strong>Quesería local:</strong> Fromagerie du Cantal / Le Lioran (Res. des Sagnes).",
-  "<strong>Clásico del Cantal:</strong> Puy Mary (zona belvederes).",
+  "<strong>Salida:</strong> Font d'Alagnon.",
+  "<strong>Mirador:</strong> Rocher du Bec de l'Aigle.",
+  "<strong>Quesería:</strong> Fromagerie du Cantal (Le Lioran).",
+  "<strong>Belvedere:</strong> Puy Mary (opcional).",
 ], [
- ("Google Font d'Alagnon (Le Lioran)","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
- ("Google Rocher du Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Rocher+du+Bec+de+l%27Aigle","g"),
- ("Google Fromagerie du Cantal (Le Lioran)","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran+Residence+des+Sagnes","g"),
- ("Google Puy Mary (belvédères)","https://www.google.com/maps/search/?api=1&query=Puy+Mary+belvedere","g"),
+ ("Google Font d'Alagnon","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
+ ("Google Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Rocher+du+Bec+de+l%27Aigle","g"),
+ ("Google Fromagerie du Cantal","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran","g"),
+ ("Google Puy Mary","https://www.google.com/maps/search/?api=1&query=Puy+Mary","g"),
 ])}
 """))
 
@@ -616,37 +608,31 @@ def build() -> str:
         ["0 km coche", "P4N #13709", "P4N #6003", "P4N #27677", "Meteo 7:00"],
         f"""
 {img('puy_mary','Macizo del Cantal / Puy Mary')}
-<p>Jornada de crestas volcánicas con fichas <strong>Moyenne</strong> (no Difficile). Decisión a las <strong>7:00</strong> según cielo y viento.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p>Misma base: <strong>#13709 Combe Nègre</strong>. Alternativas si lleno: <strong>#6003</strong> · <strong>#27677</strong>.</p>
+<p>Crestas <strong>Moyenne</strong>. Decisión meteo 7:00.</p>
+<h4>Dónde dormir · mismos spots (cercanía al Bec)</h4>
+<p>#13709 (2,8 km) → #6003 (6,4 km) → #27677 (29,7 km, último recurso).</p>
 
 <div class="trail">
-<h4>Plan A · Font d'Alagnon → Bec de l'Aigle → Téton (Moyenne)</h4>
+<h4>Plan A · Font d'Alagnon → Bec → Téton</h4>
 {wikiloc_box([
  ("Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058"),
  ("Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228"),
 ])}
-<p><strong>Datos Visorando:</strong> ~8 km · +550–670 m · Moyenne. Patous posibles en pastos.</p>
-<p><strong>Distancia parking → Font d'Alagnon (inicio):</strong> #13709 ~2,8 km coche · #6003 ~6,4 km · #27677 ~29,7 km.</p>
 {parking_routes("Font d'Alagnon (inicio Bec)", ("#13709", (2.7330, 45.0849)), (2.74315, 45.088234), [("#6003", (2.7137, 45.0522)), ("#27677", (2.7026, 45.1301))], "driving", "driving")}
 {links([
- ("Wikiloc Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
- ("Wikiloc Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228","wiki"),
- ("Visorando Téton + Bec (Moyenne · ~8 km)","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
+ ("Wikiloc Bec + Téton","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
+ ("Visorando Téton + Bec","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
  ("P4N #13709","https://park4night.com/es/place/13709","o"),
 ])}
 </div>
-<div class="trail">
-<h4>Plan B · meteo / cansancio</h4>
-<p>Téléphérique + paseo corto en alto, <strong>o</strong> solo bosque 6–8 km alrededor de la estación. Bajad antes de las tormentas de tarde.</p>
-</div>
+<div class="trail"><h4>Plan B · meteo</h4><p>Téléphérique + paseo corto, o bosque 6–8 km. Bajad antes de tormentas.</p></div>
 {poi_extra("Cantal / Bec", [
-  "<strong>Mirador:</strong> Rocher du Bec de l'Aigle (~1.700 m).",
-  "<strong>Belvedere famoso:</strong> Puy Mary (opcional, solo si no hay masificación).",
-  "<strong>Quesería:</strong> Fromagerie du Cantal en Le Lioran.",
-  "<strong>Pastos:</strong> vigilar patous (correa antes del rebaño).",
+  "<strong>Mirador:</strong> Bec de l'Aigle (~1.700 m).",
+  "<strong>Belvedere:</strong> Puy Mary (si no hay masificación).",
+  "<strong>Quesería:</strong> Fromagerie du Cantal.",
+  "<strong>Patous:</strong> correa antes del rebaño.",
 ], [
- ("Google Rocher Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Bec+de+l%27Aigle+Le+Lioran","g"),
+ ("Google Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Bec+de+l%27Aigle+Le+Lioran","g"),
  ("Google Puy Mary","https://www.google.com/maps/search/?api=1&query=Puy+Mary","g"),
  ("Google Fromagerie Le Lioran","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran","g"),
  ("Wikipedia Puy Mary", WIKI['puy_mary']['wiki'], "p"),
@@ -654,263 +640,172 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d8", "Día 8 · Jueves 13 — Piste Verte → zona Salers",
-        ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #855"],
+        ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #114179"],
         f"""
 {img('salers','Hacia Salers')}
-<p>Día de recuperación activa: la <strong>Piste Verte Sumène-Artense</strong> (antigua vía férrea) ofrece viaductos, túnel ~600 m y sombra. Ideal perras (llano). Túnel: correa corta + linterna.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad). Evitar aire #855 como primera opción; como plan alternativo (si está lleno), mejor #144306 o #855.</p>
+<p>Piste Verte + base cerca de Salers.</p>
+<h4>Dónde dormir · cercanos a Salers (nota OK)</h4>
+<p><strong>#271257 Ferme Fouey</strong> (4.68/5) — el más cercano razonable (~3,4 km a pie), hierba, queso, noche OK 2025–26. Si está lleno:</p>
+<ul>
+  <li><strong>#144306 Saint-Bonnet estadio</strong> (4.17/5) · a Salers: ~4,9 km · noche OK 2024–26.</li>
+  <li><strong>#114179 Camping Le Moulin du Teinturier</strong> (4.7/5, camping &gt;4) · a Salers: ~10,8 km · perros gratis en reseñas.</li>
+</ul>
+<p><em>Descartado:</em> #855 Salers D680 (3.98/5, por debajo del umbral).</p>
 {quote('jeremw','01/06/2026','Pasamos una noche en la granja. Acogida muy cálida… y buen queso de granja.','P4N #271257')}
-{quote('cindy.frt','16/05/2026','Pasamos una noche en la granja: ¡fue genial!','P4N #271257')}
-<p>Alternativas (2 extras) por si está lleno:</p>
-<ul>
-  <li><strong>#144306 Saint-Bonnet</strong> (hierba, ~4 plazas) · a Salers: ~4,9 km.</li>
-  <li><strong>#855 Salers - D680</strong> (aire) · a Salers: ~1,3 km.</li>
-</ul>
 
 <div class="trail">
-<h4>Zona Salers = vuestro punto de referencia</h4>
-<p><strong>Distancia parking → Salers:</strong> #271257 ~3,4 km a pie · #144306 ~4,9 km · #855 ~1,3 km.</p>
-{parking_routes("Salers", ("#271257", (2.4912, 45.1528)), (2.495, 45.1389), [("#144306", (2.4521, 45.1600)), ("#855", (2.4983, 45.1484))], "walking", "walking")}
+<h4>Zona Salers + Piste Verte</h4>
+<p><strong>Distancia → Salers:</strong> #271257 ~3,4 km a pie · #144306 ~4,9 km coche · #114179 ~10,8 km coche.</p>
+{parking_routes("Salers", ("#271257", (2.4912, 45.1528)), (2.495, 45.1389), [("#144306", (2.4521, 45.1600)), ("#114179", (2.4232, 45.1162))], "walking", "driving")}
 {links([
  ("P4N #271257","https://park4night.com/es/place/271257","o"),
  ("P4N #144306","https://park4night.com/es/place/144306","o"),
- ("P4N #855","https://park4night.com/fr/place/855","o"),
-])}
-
-<h4 style="margin-top:.85rem">Piste Verte 8–12 km</h4>
-{links([
- ("OT Sumène Artense · Piste Verte","https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/","w"),
- ("Google Piste Verte","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense","g"),
- ("P4N Fouey","https://park4night.com/es/place/271257","o"),
-])}
-<p>Túnel ~600 m: llevad linterna para el tramo oscuro y correa corta para el paso.</p>
-</div>
-<div class="trail">
-<h4>Puntos de interés extra (Salers)</h4>
-<ul>
-  <li><strong>Monumento / pueblo:</strong> Salers (casco histórico de basalto).</li>
-  <li><strong>Quesería/visita:</strong> Maison de la Salers (museo + degustación/boutique).</li>
-  <li><strong>Compra de queso:</strong> Fromagerie (zona Saint-Bonnet-de-Salers / alrededores).</li>
-  <li><strong>Paseo corto bonito:</strong> viaductos + tramos con sombra de la Piste Verte.</li>
-</ul>
-{links([
- ("Google Salers (pueblo)","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
- ("Google Maison de la Salers (Le Fau)","https://www.google.com/maps/search/?api=1&query=Maison+de+la+Salers+Le+Fau+Saint-Bonnet-de-Salers","g"),
- ("Google Fromagerie Saint-Bonnet-de-Salers","https://www.google.com/maps/search/?api=1&query=fromagerie+Saint-Bonnet-de-Salers+coop%C3%A9rative","g"),
- ("Google Piste Verte viaductos","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense+viaduc","g"),
+ ("P4N #114179 Moulin","https://park4night.com/es/place/114179","o"),
+ ("OT Piste Verte","https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/","w"),
 ])}
 </div>
-"""))
-
-    parts.append(day_shell("d9", "Día 9 · Viernes 14 — Bocage de Salers",
-        ["Local", "P4N #271257", "P4N #144306", "P4N #855"],
-        f"""
-{img('salers','Salers')}
-<p>Salers de basalto y torres: visitad <strong>temprano</strong>. El bocage (setos, prados, caminos rurales) es el plan del día.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal). Si está lleno:</p>
-<ul>
-  <li><strong>#144306 Saint-Bonnet</strong> (hierba, ~4 plazas) · a Salers: ~4,9 km.</li>
-  <li><strong>#855 Salers - D680</strong> (aire) · a Salers: ~1,3 km.</li>
-</ul>
-
-<div class="trail">
-<h4>Boucle La Montagnoune (~4 km, fácil) + paseo por el pueblo</h4>
-{wikiloc_box([("Rutas fáciles cerca de Salers","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers")])}
-<p>Vistas al valle de la Maronne y al pueblo. Opcional: Pas de Peyrol solo para belvedere corto.</p>
-<p><strong>Distancia parking → Salers (pueblo):</strong> #271257 ~3,4 km · #144306 ~4,9 km · #855 ~1,3 km.</p>
-{parking_routes("Salers (pueblo)", ("#271257", (2.4912, 45.1528)), (2.495, 45.1389), [("#144306", (2.4521, 45.1600)), ("#855", (2.4983, 45.1484))], "walking", "walking")}
-{links([
- ("Wikiloc La Montagnoune / Salers","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers","wiki"),
- ("Visorando La Montagnoune (desde Salers)","https://www.visorando.com/randonnee-la-montagnoune-depuis-salers/","w"),
- ("OT Salers","https://www.salers-tourisme.fr/","w"),
- ("P4N #271257","https://park4night.com/es/place/271257","o"),
- ("P4N #144306","https://park4night.com/es/place/144306","o"),
-])}
-</div>
-<div class="callout">Mediodía en Salers = masificación. Evitadlo.</div>
-{poi_extra("Salers / bocage", [
-  "<strong>Pueblo monumento:</strong> Salers (basalto, torres medievales).",
-  "<strong>Quesería/visita:</strong> Maison de la Salers (degustación).",
-  "<strong>Compra:</strong> queso Cantal en Ferme Fouey (en el parking).",
-  "<strong>Paseo:</strong> bocage (setos, prados, caminos rurales).",
+{poi_extra("Salers", [
+  "<strong>Pueblo:</strong> Salers (basalto).",
+  "<strong>Visita:</strong> Maison de la Salers.",
+  "<strong>Queso:</strong> en Ferme Fouey.",
+  "<strong>Paseo:</strong> Piste Verte (viaductos/túnel).",
 ], [
  ("Google Salers","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
  ("Google Maison de la Salers","https://www.google.com/maps/search/?api=1&query=Maison+de+la+Salers","g"),
- ("Google Pas de Peyrol","https://www.google.com/maps/search/?api=1&query=Pas+de+Peyrol","g"),
+ ("Google Piste Verte","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense","g"),
+])}
+"""))
+
+    parts.append(day_shell("d9", "Día 9 · Viernes 14 — Bocage de Salers",
+        ["Local", "P4N #271257", "P4N #144306", "P4N #114179"],
+        f"""
+{img('salers','Salers')}
+<p>Salers <strong>temprano</strong> + bocage. Misma base, orden por cercanía al pueblo.</p>
+<h4>Dónde dormir</h4>
+<p>#271257 (~3,4 km) → #144306 (~4,9 km) → #114179 (~10,8 km).</p>
+
+<div class="trail">
+<h4>Boucle La Montagnoune (~4 km) + pueblo</h4>
+{wikiloc_box([("Rutas fáciles cerca de Salers","https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers")])}
+{parking_routes("Salers (pueblo)", ("#271257", (2.4912, 45.1528)), (2.495, 45.1389), [("#144306", (2.4521, 45.1600)), ("#114179", (2.4232, 45.1162))], "walking", "driving")}
+{links([
+ ("Visorando La Montagnoune","https://www.visorando.com/randonnee-la-montagnoune-depuis-salers/","w"),
+ ("OT Salers","https://www.salers-tourisme.fr/","w"),
+ ("P4N #271257","https://park4night.com/es/place/271257","o"),
+])}
+</div>
+<div class="callout">Mediodía en Salers = masificación.</div>
+{poi_extra("Salers / bocage", [
+  "<strong>Pueblo monumento:</strong> Salers.",
+  "<strong>Maison de la Salers:</strong> degustación.",
+  "<strong>Queso:</strong> Ferme Fouey.",
+  "<strong>Bocage:</strong> caminos rurales.",
+], [
+ ("Google Salers","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
+ ("Google Maison de la Salers","https://www.google.com/maps/search/?api=1&query=Maison+de+la+Salers","g"),
  ("Wikipedia Salers", WIKI['salers']['wiki'], "p"),
 ])}
 """))
 
     parts.append(day_shell("d10", "Día 10 · Sábado 15 — Hacia el Aubrac",
-        ["~100–130 km", "P4N #5073", "P4N #35527", "P4N #701477", "#98143 CANCELADO"],
+        ["~100–130 km", "P4N #5073", "P4N #90343", "#98143 CANCELADO"],
         f"""
 {img('aubrac','Meseta del Aubrac')}
-<p>Dejáis volcanes por la meseta. El paisaje se abre: menos árboles, más viento, más silencio.</p>
-<div class="warn"><strong>#98143 cancelado:</strong> propiedad privada / perros prohibidos. No ir.</div>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#5073 Cascada del Déroc</strong> (parking hierba, vistas). Llegad tarde. Si está lleno:</p>
+<div class="warn"><strong>#98143 cancelado</strong> (privado + perros). <strong>#35527 Camping Nasbinals descartado</strong> (3.89/5 &lt; umbral camping).</div>
+<h4>Dónde dormir · más cercanos a la Cascada del Déroc</h4>
+<p><strong>#5073 Cascada del Déroc</strong> (4.07/5) — 0 km al interés (cascada a ~300–500 m a pie), noche OK 2024–26. Llegad tarde. Si está lleno:</p>
 <ul>
-  <li><strong>#35527 Camping municipal Nasbinals</strong> (pago, 4.0+/5) — perros OK · a Déroc: ~4 km.</li>
-  <li><strong>#701477 Nasbinals D987</strong> (nature, 2026) — calma junto GR65 · a Déroc: ~3 km.</li>
+  <li><strong>#90343 Marchastel / Rieutort</strong> (4.76/5) — nature · a Déroc: ~5,4 km · noche OK 2024–26.</li>
 </ul>
+<p>No proponemos un 2º camping lejano: los cercanos con nota suficiente escasean; si ambos llenos, buscad en P4N spots ≥4 a &lt;15 km (evitar #98143).</p>
 {quote('AlbericBoissier','16/07/2025','Sitio ideal, bonitas vistas, parking de hierba… El paseo corto hasta el pie de la cascada merece la pena.')}
 {quote('Ars','15/04/2025','Ideal si vais con compañero de cuatro patas.')}
 
 <div class="trail">
-<h4>Paseo corto al llegar · Cascada del Déroc</h4>
-<p><strong>Distancia parking → cascada (pie):</strong> #5073 ~0,3 km · #35527 ~4 km · #701477 ~3 km.</p>
-{parking_routes("Cascada del Déroc", ("#5073", (3.02, 44.63)), (3.02, 44.63), [("#35527", (3.0402, 44.6703)), ("#701477", (3.0261, 44.6511))], "walking", "driving")}
+<h4>Paseo corto · Cascada del Déroc</h4>
+<p><strong>Distancia → cascada:</strong> #5073 ~0,3–0,5 km a pie · #90343 ~5,4 km coche + paseo.</p>
+{parking_routes("Cascada del Déroc", ("#5073", (3.0649, 44.6476)), (3.0649, 44.6476), [("#90343", (3.1080, 44.6736))], "walking", "driving")}
 {links([
  ("P4N #5073","https://park4night.com/es/place/5073","o"),
- ("P4N #35527 Nasbinals","https://park4night.com/es/place/35527","o"),
- ("P4N #701477","https://park4night.com/en/place/701477","o"),
+ ("P4N #90343 Marchastel","https://park4night.com/es/place/90343","o"),
  ("Wikipedia Déroc", WIKI['deroc']['wiki'], "p"),
 ])}
 </div>
 {poi_extra("Aubrac", [
-  "<strong>Cascada:</strong> Cascade du Déroc (órganos basálticos, cueva detrás).",
-  "<strong>Pueblo:</strong> Nasbinals (GR65, panadería, épicerie).",
-  "<strong>Lago:</strong> Lac des Salhiens (variante corta mañana).",
-  "<strong>Queso local:</strong> aligot y tome en restaurantes del pueblo.",
+  "<strong>Cascada:</strong> Cascade du Déroc.",
+  "<strong>Pueblo:</strong> Nasbinals.",
+  "<strong>Lago:</strong> Lac des Salhiens.",
+  "<strong>Gastronomía:</strong> aligot / tome.",
 ], [
  ("Google Cascade du Déroc","https://www.google.com/maps/search/?api=1&query=Cascade+du+Deroc","g"),
  ("Google Nasbinals","https://www.google.com/maps/search/?api=1&query=Nasbinals","g"),
- ("Google Lac des Salhiens","https://www.google.com/maps/search/?api=1&query=Lac+des+Salhiens+Aubrac","g"),
- ("Turismo Lozère Déroc","https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/","w"),
+ ("Google Lac des Salhiens","https://www.google.com/maps/search/?api=1&query=Lac+des+Salhiens","g"),
 ])}
 """))
 
     parts.append(day_shell("d11", "Día 11 · Domingo 16 — Aubrac a fondo",
-        ["Local", "P4N #5073", "P4N #35527", "P4N #701477"],
+        ["Local", "P4N #5073", "P4N #90343"],
         f"""
 <div class="photo-grid">{img('deroc','Cascada del Déroc')}{img('nasbinals','Nasbinals')}</div>
-<p>Día de meseta. La cascada del Déroc merece la pena cuando la luz es buena. El GR65 pasa cerca de Nasbinals.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p>Misma base que ayer: <strong>#5073</strong> · alternativas <strong>#35527</strong> · <strong>#701477</strong>.</p>
+<p>Meseta: Déroc + Nasbinals / Salhiens. Misma base priorizando cercanía a la cascada.</p>
+<h4>Dónde dormir</h4>
+<p>#5073 (al pie) → #90343 (~5,4 km).</p>
 
 <div class="trail">
-<h4>Plan A · Bucle Déroc (moderado, perros OK con correa)</h4>
+<h4>Plan A · Bucle Déroc</h4>
 {wikiloc_box([("Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479")])}
-<p>PR Visorando «Nasbinals – Cascade du Déroc» <strong>Facile</strong> (~13 km · +205 m). Variante corta: cascada + lac Salhiens 6–8 km.</p>
-<p><strong>Distancia parking → inicio Nasbinals (GR65):</strong> #5073 ~3 km a pie · #35527 ~0,5 km · #701477 ~1 km.</p>
-{parking_routes("Nasbinals (inicio ruta)", ("#5073", (3.02, 44.63)), (3.0, 44.665), [("#35527", (3.0402, 44.6703)), ("#701477", (3.0261, 44.6511))], "walking", "walking")}
+<p><strong>Distancia → Nasbinals (inicio GR):</strong> #5073 ~12 km coche / paseo largo · #90343 ~16 km · mejor salir a pie desde #5073 a la cascada.</p>
+{parking_routes("Nasbinals", ("#5073", (3.0649, 44.6476)), (3.0, 44.665), [("#90343", (3.1080, 44.6736))], "driving", "driving")}
 {links([
- ("Wikiloc Cascada del Déroc (Fácil)","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","wiki"),
- ("Visorando Cascada del Déroc (Facile)","https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/","w"),
+ ("Wikiloc Cascada del Déroc","https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479","wiki"),
+ ("Visorando Déroc","https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/","w"),
  ("P4N #5073","https://park4night.com/es/place/5073","o"),
 ])}
 </div>
-<div class="trail">
-<h4>Plan B · viento / patous densos</h4>
-<p>Pueblo Nasbinals + descanso. Abortar si tormenta eléctrica (no hay abrigo en la meseta).</p>
-</div>
+<div class="trail"><h4>Plan B · viento / patous</h4><p>Nasbinals + descanso. Abortar si tormenta.</p></div>
 {poi_extra("Aubrac / Nasbinals", [
-  "<strong>Cascada:</strong> Déroc (icono de la meseta).",
-  "<strong>Lago:</strong> Lac des Salhiens (variante corta).",
-  "<strong>Pueblo:</strong> Nasbinals (comercios, GR65).",
-  "<strong>Gastronomía:</strong> aligot (plato típico con tome).",
+  "<strong>Cascada:</strong> Déroc.",
+  "<strong>Lago:</strong> Salhiens.",
+  "<strong>Pueblo:</strong> Nasbinals.",
+  "<strong>Aligot:</strong> plato típico.",
 ], [
  ("Google Nasbinals","https://www.google.com/maps/search/?api=1&query=Nasbinals","g"),
  ("Google Lac des Salhiens","https://www.google.com/maps/search/?api=1&query=Lac+des+Salhiens","g"),
- ("Turismo Lozère","https://www.lozere-tourisme.com/patrimoine-naturel/la-cascade-du-deroc/","w"),
 ])}
 """))
 
     parts.append(day_shell("d12", "Día 12 · Lunes 17 — Aubrac → Capcir",
-        ["~280–320 km", "salir <9:00", "P4N #2547", "P4N #294842", "P4N #14142"],
+        ["~280–320 km", "salir <9:00", "P4N #2547", "P4N #14142", "P4N #294842"],
         f"""
 {img('formigueres','Formiguères')}
-<p>El traslado más largo. Partid temprano, parad cada 1h30. El premio es volver a dormir alto y fresco en Formiguères.</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#2547 Calmazeille</strong>: elegid parking de tierra / inferior junto lago, no la fila de AC del asfalto.</p>
-<p>Plan B: <strong>Matemale (#294842)</strong> — ojo barrera de altura ~2,0–2,2 m en temporada.</p>
-<p>Plan C: <strong>#14142 Camping de La Devèze***</strong> — en bosque, buenas sensaciones con perros.</p>
+<p>Traslado largo. Interés al llegar: Formiguères / Matemale.</p>
+<h4>Dónde dormir · cercanos a Formiguères / lago</h4>
+<p>Orden por cercanía a Calmazeille / Formiguères y luego Matemale:</p>
+<ul>
+  <li><strong>#2547 Calmazeille</strong> (4.54/5) — parking tierra junto lago, noche OK 2024–26 · a Matemale: ~11,6 km.</li>
+  <li><strong>#14142 Camping La Devèze***</strong> (4.41/5, camping &gt;4) · a Matemale: ~8,3 km (más cerca del lago).</li>
+  <li><strong>#294842 Matemale lago</strong> (4.29/5) — 0 km al lago · ojo barrera altura ~2,0–2,2 m.</li>
+</ul>
 {quote('RouilleP','28/02/2025','Pernocta posible… Gracias al ayuntamiento.')}
 
 {links([
  ("P4N #2547","https://park4night.com/es/place/2547","o"),
- ("P4N #294842 Matemale","https://park4night.com/es/place/294842","o"),
  ("P4N #14142 La Devèze","https://park4night.com/es/place/14142","o"),
+ ("P4N #294842 Matemale","https://park4night.com/es/place/294842","o"),
 ])}
 
 <div class="trail">
-<h4>Excursión suave al llegar (sin GPX)</h4>
-<p><strong>Opción A (según guía):</strong> paseo de <strong>4–6 km</strong> de bosque saliendo a pie desde el propio parking.</p>
-<p><strong>Distancia coche → interés:</strong> 0 km (salida directa). <strong>A pie:</strong> 4–6 km (1h15–2h, ritmo tranquilo).</p>
-{links([
- ("Google paseo desde Calmazeille","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.6241,2.0711&travelmode=walking","g"),
-])}
-
-<p style="margin-top:.7rem"><strong>Opción B (si os quedan piernas):</strong> ir al <strong>lago Matemale</strong> para un paseo/fotos.</p>
-<p><strong>Distancia parking #2547 → Matemale #294842:</strong> ~11,6 km en coche (~15–25 min).</p>
-<p><strong>Distancias al lago Matemale (#294842):</strong> #2547 ~11,6 km · #14142 ~8,3 km · #294842 = 0 km.</p>
-{links([
- ("Google (coche) Calmazeille → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&travelmode=driving","g"),
- ("Google Matemale (search)","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
-])}
-
-{links([
- ("Google coche #14142 → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6096,2.0914&destination=42.5655,2.1044&travelmode=driving","g"),
- ("Google A→B → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&waypoints=42.6096,2.0914&travelmode=driving","g"),
-])}
-
-{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
-</div>
-
-<div class="trail">
-<h4>Puntos de interés extra (Lac de Matemale & quesos)</h4>
-<ul>
-  <li><strong>Baño supervisado:</strong> zona Ourson (cerca de la base náutica) en temporada.</li>
-  <li><strong>Lugar de ocio:</strong> Espace loisirs du Lac de Matemale.</li>
-  <li><strong>Quesos de compra:</strong> Le Calmadou (fromagerie / crèmerie de brebis en Formiguères).</li>
-  <li><strong>Bonus:</strong> Ferme Pérarnaud (tienda de granja).</li>
-</ul>
-{links([
- ("Google Ourson / base nautique Matemale","https://www.google.com/maps/search/?api=1&query=Base+nautique+Ourson+Lac+de+Matemale","g"),
- ("Google Espace loisirs Lac de Matemale","https://www.google.com/maps/search/?api=1&query=Espace+loisirs+Lac+de+Matemale","g"),
- ("Google Le Calmadou (Formiguères)","https://www.google.com/maps/search/?api=1&query=Le+Calmadou+Formigu%C3%A8res+fromagerie","g"),
- ("Google Ferme Pérarnaud (Formiguères)","https://www.google.com/maps/search/?api=1&query=Ferme+P%C3%A9rarnault+Formigu%C3%A8res","g"),
-])}
-</div>
-
-{links([
- ("Google Formiguères","https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711&travelmode=driving","g"),
-])}
-"""))
-
-    parts.append(day_shell("d13", "Día 13 · Martes 18 — Capcir / Matemale (moderado)",
-        ["Local", "P4N #2547", "P4N #294842", "P4N #14142", "día colchón"],
-        f"""
-{img('matemale','Lago de Matemale')}
-<p>Último día pleno con perras. <strong>Camporells cancelado</strong> (Difficile). Prioridad: <strong>lago de Matemale / Forêt de la Matte</strong> (fácil, perros OK).</p>
-<h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#2547 Calmazeille</strong> (tierra junto lago). Alternativas: <strong>#294842 Matemale</strong> · <strong>#14142 La Devèze</strong>.</p>
-
-<div class="trail">
-<h4>Plan A · Lac de Matemale + Forêt de la Matte (Facile · ~9,7 km · +130 m)</h4>
-{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
-<p>Bucle por el lago, Tour de Creu y pinares. Ideal con perras, casi llano, sombra.</p>
-<p><strong>Distancia parking → Matemale (lago):</strong> #2547 ~11,6 km · #14142 ~8,3 km · #294842 = 0 km.</p>
+<h4>Excursión suave al llegar</h4>
+<p><strong>Opción A:</strong> 4–6 km bosque desde #2547 (0 km coche).</p>
+<p><strong>Opción B:</strong> lago Matemale. <strong>Distancias coche → Matemale:</strong> #294842 = 0 · #14142 ~8,3 km · #2547 ~11,6 km.</p>
 {parking_routes("Lac de Matemale", ("#2547", (2.0711, 42.6241)), (2.1044, 42.5655), [("#14142", (2.0914, 42.6096)), ("#294842", (2.1044, 42.5655))], "driving", "driving")}
-{links([
- ("Wikiloc Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","wiki"),
- ("Visorando bucle Matemale (Facile)","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
- ("P4N #2547","https://park4night.com/es/place/2547","o"),
- ("P4N #294842","https://park4night.com/es/place/294842","o"),
- ("Wikipedia Matemale", WIKI['matemale']['wiki'], "p"),
-])}
-</div>
-<div class="trail">
-<h4>Plan B · bosques Formiguères / orillas del lago</h4>
-<p>4–8 km suaves alrededor de Calmazeille. Verificar altura de barrera antes de entrar con la Sunlight en Matemale.</p>
+{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
 </div>
 {poi_extra("Capcir / Matemale", [
-  "<strong>Baño supervisado:</strong> zona Ourson (base náutica) en temporada.",
-  "<strong>Lago:</strong> Lac de Matemale (paseo, paddle, fotos).",
-  "<strong>Quesería:</strong> Le Calmadou (brebis, Formiguères).",
-  "<strong>Granja:</strong> Ferme Pérarnaud (tomme des Pyrénées).",
+  "<strong>Baño:</strong> zona Ourson (temporada).",
+  "<strong>Lago:</strong> Matemale.",
+  "<strong>Quesería:</strong> Le Calmadou (Formiguères).",
+  "<strong>Granja:</strong> Ferme Pérarnaud.",
 ], [
  ("Google Ourson Matemale","https://www.google.com/maps/search/?api=1&query=Base+nautique+Ourson+Matemale","g"),
  ("Google Lac de Matemale","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
@@ -919,30 +814,65 @@ def build() -> str:
 ])}
 """))
 
+    parts.append(day_shell("d13", "Día 13 · Martes 18 — Capcir / Matemale (moderado)",
+        ["Local", "P4N #294842", "P4N #14142", "P4N #2547", "día colchón"],
+        f"""
+{img('matemale','Lago de Matemale')}
+<p>Interés del día = <strong>Lac de Matemale</strong>. Orden P4N por cercanía al lago:</p>
+<h4>Dónde dormir</h4>
+<ul>
+  <li><strong>#294842 Matemale</strong> (4.29/5) — 0 km · barrera altura.</li>
+  <li><strong>#14142 La Devèze</strong> (4.41/5 camping) · ~8,3 km.</li>
+  <li><strong>#2547 Calmazeille</strong> (4.54/5) · ~11,6 km.</li>
+</ul>
+
+<div class="trail">
+<h4>Plan A · Matemale + Forêt de la Matte</h4>
+{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
+{parking_routes("Lac de Matemale", ("#294842", (2.1044, 42.5655)), (2.1044, 42.5655), [("#14142", (2.0914, 42.6096)), ("#2547", (2.0711, 42.6241))], "walking", "driving")}
+{links([
+ ("Wikiloc Lac de l'Olive","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412","wiki"),
+ ("Visorando Matemale","https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/","w"),
+ ("P4N #294842","https://park4night.com/es/place/294842","o"),
+ ("Wikipedia Matemale", WIKI['matemale']['wiki'], "p"),
+])}
+</div>
+{poi_extra("Capcir / Matemale", [
+  "<strong>Baño:</strong> Ourson.",
+  "<strong>Lago:</strong> Matemale.",
+  "<strong>Quesos:</strong> Le Calmadou + Ferme Pérarnaud.",
+  "<strong>Cancelado:</strong> Camporells (Difficile).",
+], [
+ ("Google Ourson","https://www.google.com/maps/search/?api=1&query=Base+nautique+Ourson+Matemale","g"),
+ ("Google Le Calmadou","https://www.google.com/maps/search/?api=1&query=Le+Calmadou+Formigu%C3%A8res","g"),
+ ("Google Ferme Pérarnaud","https://www.google.com/maps/search/?api=1&query=Ferme+P%C3%A9rarnaud+Formigu%C3%A8res","g"),
+])}
+"""))
+
     parts.append(day_shell("d14", "Día 14 · Miércoles 19 — Capcir → Teià",
         ["~180–200 km / 2h30–3h", "Regreso"],
         f"""
-<p>Regreso por Cerdanya / Puigcerdà. Alternativa si hay retenciones. Parada café y paseo corto si hace falta.</p>
+<p>Regreso por Cerdanya / Puigcerdà. Parada cercana recomendada: <strong>Puigcerdà</strong> (café + paseo).</p>
 <div class="trail">
 <h4>Ruta de regreso</h4>
-<p>Salid temprano desde Formiguères. Parada recomendada en <strong>Puigcerdà</strong> (café + paseo 20 min).</p>
 {links([
  ("Google Formiguères → Teià","https://www.google.com/maps/dir/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain","g"),
  ("Google parada Puigcerdà","https://www.google.com/maps/search/?api=1&query=Puigcerd%C3%A0+centro","g"),
 ])}
 </div>
 {poi_extra("Regreso Cerdanya", [
-  "<strong>Pueblo:</strong> Puigcerdà (plaza y lago de la Seu).",
-  "<strong>Compra:</strong> quesos y embutidos de la Cerdanya.",
-  "<strong>Baño/picnic:</strong> ríos del valle de la Cerdanya (paradas en ruta).",
-  "<strong>Monumento:</strong> bellver de Cerdanya (opcional, desvío corto).",
+  "<strong>Pueblo:</strong> Puigcerdà.",
+  "<strong>Compra:</strong> quesos/embutidos Cerdanya.",
+  "<strong>Picnic:</strong> ríos del valle.",
+  "<strong>Opcional:</strong> Bellver de Cerdanya.",
 ], [
  ("Google Puigcerdà","https://www.google.com/maps/search/?api=1&query=Puigcerd%C3%A0","g"),
- ("Google fromagerie Cerdanya","https://www.google.com/maps/search/?api=1&query=fromagerie+Cerdanya+Puigcerda","g"),
+ ("Google fromagerie Cerdanya","https://www.google.com/maps/search/?api=1&query=fromagerie+Cerdanya","g"),
  ("Google Bellver de Cerdanya","https://www.google.com/maps/search/?api=1&query=Bellver+de+Cerdanya","g"),
 ])}
-<p>Fin de ruta: misma casa, otras piernas.</p>
+<p>Fin de ruta.</p>
 """))
+
 
     parts.append("</section>")
 
@@ -951,31 +881,31 @@ def build() -> str:
 <section class="section" id="p4n"><h2>Park4Night · FRANCIA AGOSTO 2026</h2>
 <div class="card prose">
 <div class="warn"><strong>Login:</strong> <a href="https://park4night.com/es" target="_blank" rel="noopener">park4night.com/es</a> → Mi cuenta → Conectarse. Cuando entre: estrella → carpeta <code>FRANCIA AGOSTO 2026</code>.</div>
-<h4>Añadir (noche OK)</h4>
+<div class="callout"><strong>Criterio:</strong> parking ≥4★ · camping/pago &gt;4★ · pernocta OK en comentarios ≤2 años · priorizar cercanía al interés del día.</div>
+<h4>Añadir (noche OK · auditados)</h4>
 <ul>
-<li><a href="https://park4night.com/es/place/22287" target="_blank" rel="noopener">#22287</a> Tournals</li>
-<li><a href="https://park4night.com/es/place/152052" target="_blank" rel="noopener">#152052</a> Bonascre</li>
-<li><a href="https://park4night.com/es/place/7266" target="_blank" rel="noopener">#7266</a> Aire Ax</li>
-<li><a href="https://park4night.com/es/place/6527" target="_blank" rel="noopener">#6527</a> Col de la Core</li>
-<li><a href="https://park4night.com/es/place/24616" target="_blank" rel="noopener">#24616</a> Guzet</li>
-<li><a href="https://park4night.com/es/place/15419" target="_blank" rel="noopener">#15419</a> Haut Salat (Seix)</li>
-<li><a href="https://park4night.com/es/place/5896" target="_blank" rel="noopener">#5896</a> Entraygues</li>
-<li><a href="https://park4night.com/es/place/8417" target="_blank" rel="noopener">#8417</a> Val de Saures</li>
-<li><a href="https://park4night.com/en/place/208568" target="_blank" rel="noopener">#208568</a> Entraygues Faubourg</li>
-<li><a href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">#13709</a> Combe Nègre</li>
-<li><a href="https://park4night.com/es/place/6003" target="_blank" rel="noopener">#6003</a> Camping des Blats</li>
-<li><a href="https://park4night.com/es/place/27677" target="_blank" rel="noopener">#27677</a> Lavigerie</li>
-<li><a href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">#271257</a> Ferme Fouey</li>
-<li><a href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">#144306</a> Saint-Bonnet</li>
-<li><a href="https://park4night.com/fr/place/855" target="_blank" rel="noopener">#855</a> Salers D680</li>
-<li><a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">#5073</a> Cascada del Déroc</li>
-<li><a href="https://park4night.com/es/place/35527" target="_blank" rel="noopener">#35527</a> Camping Nasbinals</li>
-<li><a href="https://park4night.com/en/place/701477" target="_blank" rel="noopener">#701477</a> Nasbinals D987</li>
-<li><a href="https://park4night.com/es/place/2547" target="_blank" rel="noopener">#2547</a> Formiguères</li>
-<li><a href="https://park4night.com/es/place/294842" target="_blank" rel="noopener">#294842</a> Matemale</li>
-<li><a href="https://park4night.com/es/place/14142" target="_blank" rel="noopener">#14142</a> La Devèze</li>
+<li><a href="https://park4night.com/es/place/22287" target="_blank" rel="noopener">#22287</a> Tournals (4.35)</li>
+<li><a href="https://park4night.com/es/place/152052" target="_blank" rel="noopener">#152052</a> Bonascre (4.14)</li>
+<li><a href="https://park4night.com/es/place/101924" target="_blank" rel="noopener">#101924</a> Ascou D25 (4.73)</li>
+<li><a href="https://park4night.com/es/place/24616" target="_blank" rel="noopener">#24616</a> Guzet (4.54)</li>
+<li><a href="https://park4night.com/es/place/4433" target="_blank" rel="noopener">#4433</a> Bouries Couflens (4.71)</li>
+<li><a href="https://park4night.com/es/place/6527" target="_blank" rel="noopener">#6527</a> Col de la Core (4.35)</li>
+<li><a href="https://park4night.com/en/place/208568" target="_blank" rel="noopener">#208568</a> Entraygues Faubourg (4.5)</li>
+<li><a href="https://park4night.com/es/place/415568" target="_blank" rel="noopener">#415568</a> Aire Lot Entraygues (4.5)</li>
+<li><a href="https://park4night.com/es/place/8417" target="_blank" rel="noopener">#8417</a> Val de Saures (4.36)</li>
+<li><a href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">#13709</a> Combe Nègre (4.11)</li>
+<li><a href="https://park4night.com/es/place/6003" target="_blank" rel="noopener">#6003</a> Camping des Blats (4.74)</li>
+<li><a href="https://park4night.com/es/place/27677" target="_blank" rel="noopener">#27677</a> Lavigerie (4.29 · lejos del Bec)</li>
+<li><a href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">#271257</a> Ferme Fouey (4.68)</li>
+<li><a href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">#144306</a> Saint-Bonnet (4.17)</li>
+<li><a href="https://park4night.com/es/place/114179" target="_blank" rel="noopener">#114179</a> Moulin du Teinturier (4.7)</li>
+<li><a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">#5073</a> Cascada del Déroc (4.07)</li>
+<li><a href="https://park4night.com/es/place/90343" target="_blank" rel="noopener">#90343</a> Marchastel (4.76)</li>
+<li><a href="https://park4night.com/es/place/2547" target="_blank" rel="noopener">#2547</a> Formiguères (4.54)</li>
+<li><a href="https://park4night.com/es/place/14142" target="_blank" rel="noopener">#14142</a> La Devèze (4.41)</li>
+<li><a href="https://park4night.com/es/place/294842" target="_blank" rel="noopener">#294842</a> Matemale (4.29)</li>
 </ul>
-<p><strong>No añadir para noche:</strong> #51675, #98143, #17010, #3781.</p>
+<p><strong>No añadir / descartados:</strong> #51675 (ban noche), #98143 (privado+perros), #17010, #3781, <strong>#7266</strong> (2.4), <strong>#5896</strong> (3.27), <strong>#855</strong> (3.98), <strong>#35527</strong> (3.89), #701477 (sin nota).</p>
 <p>Opcional carpeta “solo día”: #51675 Cagateille.</p>
 </div></section>
 """)
