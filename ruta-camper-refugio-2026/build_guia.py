@@ -409,28 +409,28 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d5", "Día 5 · Lunes 10 — Traslado hacia el Macizo Central",
-        ["~220–260 km", "P4N #5896", "P4N #8417", "P4N #3781"],
+        ["~220–260 km", "P4N #5896", "P4N #8417", "P4N #208568"],
         f"""
 {img('entraygues','Entraygues-sur-Truyère')}
 <p>Día de carretera. No lo convirtáis en checklist del Lot. Objetivo: ganar latitud hacia el Cantal sin llegar reventados. Paradas cada ~1h30 por las perras.</p>
 <h4>Dónde dormir (Park4Night)</h4>
 <p><strong>#5896 Rue de la Grave</strong> (Entraygues) — parking tranquilo detrás del château. Si está lleno, alternativas (todas &gt;2 estrellas):</p>
 <ul>
-  <li><strong>#8417 Camping municipal Val de Saures***</strong> (4.36/5) — camping con acceso a río (perros ok en las reseñas).</li>
-  <li><strong>#3781 Chemin du Val de Saure</strong> (3.1/5) — área junto al río (mencionan que a los perros les encanta refrescarse).</li>
+  <li><strong>#8417 Camping municipal Val de Saures***</strong> (4.36/5) — camping con acceso a río (perros ok en las reseñas) · al centro Entraygues: ~1,8 km.</li>
+  <li><strong>#208568 40 Rue du Faubourg de Truyère</strong> (4.5/5) — parking con sombra y mesas de picnic · al centro Entraygues: ~0,7 km.</li>
 </ul>
 {quote('fronvald','17/06/2026','Muy tranquilo. Solo hay un área de picnic… el parking está vacío, es gratis y cerca del pueblo.','P4N #5896')}
 
 <div class="trail">
 <h4>Paseo corto al llegar (3–5 km)</h4>
-<p><strong>Distancia parking → centro Entraygues:</strong> ~0,6 km (~8–10 min a pie).</p>
+<p><strong>Distancia parking → centro Entraygues:</strong> ~0,7 km (~8–10 min a pie).</p>
 <p>Google Maps te sirve para el “punto final”; el paseo real es la vuelta suave por el pueblo y la ribera (3–5 km).</p>
 {links([
  ("Google (coche) Entraygues centro","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=driving","g"),
  ("Google (a pie) paseo Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=walking","g"),
  ("P4N #5896","https://park4night.com/es/place/5896","o"),
  ("P4N #8417","https://park4night.com/es/place/8417","o"),
- ("P4N #3781","https://park4night.com/es/place/3781","o"),
+ ("P4N #208568","https://park4night.com/en/place/208568","o"),
  ("Wikipedia Entraygues", WIKI['entraygues']['wiki'], "p"),
 ])}
 </div>
@@ -453,6 +453,8 @@ def build() -> str:
  ("Wikipedia Lioran", WIKI['lioran']['wiki'], "p"),
  ("OT Lioran","https://www.lelioran.com/","w"),
 ])}
+
+<p><strong>Distancia (coche) al inicio Bec:</strong> #6003 ~6,4 km · #27677 ~29,7 km.</p>
 
 <div class="trail">
 <h4>Aclimatación (hoy) · 5–8 km suaves</h4>
@@ -502,23 +504,24 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d8", "Día 8 · Jueves 13 — Piste Verte → zona Salers",
-        ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #16986"],
+        ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #855"],
         f"""
 {img('salers','Hacia Salers')}
 <p>Día de recuperación activa: la <strong>Piste Verte Sumène-Artense</strong> (antigua vía férrea) ofrece viaductos, túnel ~600 m y sombra. Ideal perras (llano). Túnel: correa corta + linterna.</p>
 <h4>Dónde dormir (Park4Night)</h4>
-<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad). Evitar aire #855.</p>
+<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad). Evitar aire #855 como primera opción; como plan alternativo (si está lleno), mejor #144306 o #855.</p>
 {quote('jeremw','01/06/2026','Pasamos una noche en la granja. Acogida muy cálida… y buen queso de granja.','P4N #271257')}
 {quote('cindy.frt','16/05/2026','Pasamos una noche en la granja: ¡fue genial!','P4N #271257')}
 <p>Alternativas (2 extras) por si está lleno:</p>
 {links([
  ("P4N #144306","https://park4night.com/es/place/144306","o"),
- ("P4N #16986 Hortiver","https://park4night.com/es/place/16986","o"),
+ ("P4N #855 Salers - D680","https://park4night.com/fr/place/855","o"),
 ])}
 
 <div class="trail">
 <h4>Zona Salers = vuestro punto de referencia</h4>
 <p><strong>Distancia parking → Salers:</strong> ~3,4 km en coche (~10–15 min) / ~3,4 km a pie (~45–55 min).</p>
+<p><strong>Distancia al punto de interés (Salers):</strong> #144306 ~4,9 km · #855 ~1,3 km.</p>
 {links([
  ("Google (coche) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=driving","g"),
  ("Google (a pie) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=walking","g"),
@@ -621,6 +624,7 @@ def build() -> str:
 
 <p style="margin-top:.7rem"><strong>Opción B (si os quedan piernas):</strong> ir al <strong>lago Matemale</strong> para un paseo/fotos.</p>
 <p><strong>Distancia parking #2547 → Matemale #294842:</strong> ~11,6 km en coche (~15–25 min).</p>
+<p><strong>Distancias al lago Matemale (#294842):</strong> #2547 ~11,6 km · #14142 ~8,3 km · #294842 = 0 km.</p>
 {links([
  ("Google (coche) Calmazeille → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&travelmode=driving","g"),
  ("Google Matemale (search)","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
