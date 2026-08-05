@@ -433,6 +433,11 @@ def build() -> str:
  ("P4N #208568","https://park4night.com/en/place/208568","o"),
  ("Wikipedia Entraygues", WIKI['entraygues']['wiki'], "p"),
 ])}
+{links([
+ ("Google coche #8417 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6421,2.5639&destination=44.6472,2.5675&travelmode=driving","g"),
+ ("Google coche #208568 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6488,2.5667&destination=44.6472,2.5675&travelmode=driving","g"),
+ ("Google A→B→C → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&waypoints=44.6421,2.5639%7C44.6488,2.5667&travelmode=driving","g"),
+])}
 </div>
 <p>Cena temprana.</p>
 """))
@@ -463,6 +468,12 @@ def build() -> str:
 {links([
  ("Google (coche) Combe Nègre → Bec","https://www.google.com/maps/dir/?api=1&origin=45.0849,2.7330&destination=45.088234,2.74315&travelmode=driving","g"),
  ("Google (a pie) Combe Nègre → Bec","https://www.google.com/maps/dir/?api=1&origin=45.0849,2.7330&destination=45.088234,2.74315&travelmode=walking","g"),
+])}
+
+{links([
+ ("Google coche #6003 → inicio Bec","https://www.google.com/maps/dir/?api=1&origin=45.0522,2.7137&destination=45.088234,2.74315&travelmode=driving","g"),
+ ("Google coche #27677 → inicio Bec","https://www.google.com/maps/dir/?api=1&origin=45.1301,2.7026&destination=45.088234,2.74315&travelmode=driving","g"),
+ ("Google A→B→C → inicio Bec","https://www.google.com/maps/dir/?api=1&origin=45.0849,2.7330&destination=45.088234,2.74315&waypoints=45.0522,2.7137%7C45.1301,2.7026&travelmode=driving","g"),
 ])}
 
 <div class="wikiloc-box">
@@ -525,6 +536,12 @@ def build() -> str:
 {links([
  ("Google (coche) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=driving","g"),
  ("Google (a pie) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=walking","g"),
+])}
+
+{links([
+ ("Google coche #144306 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1600,2.4521&destination=45.1389,2.495&travelmode=driving","g"),
+ ("Google coche #855 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1484,2.4983&destination=45.1389,2.495&travelmode=driving","g"),
+ ("Google A→B→C → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&waypoints=45.1600,2.4521%7C45.1484,2.4983&travelmode=driving","g"),
 ])}
 
 <h4 style="margin-top:.85rem">Piste Verte 8–12 km</h4>
@@ -628,6 +645,11 @@ def build() -> str:
 {links([
  ("Google (coche) Calmazeille → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&travelmode=driving","g"),
  ("Google Matemale (search)","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
+])}
+
+{links([
+ ("Google coche #14142 → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6096,2.0914&destination=42.5655,2.1044&travelmode=driving","g"),
+ ("Google A→B → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&waypoints=42.6096,2.0914&travelmode=driving","g"),
 ])}
 
 {wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
