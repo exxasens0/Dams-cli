@@ -434,9 +434,24 @@ def build() -> str:
  ("Wikipedia Entraygues", WIKI['entraygues']['wiki'], "p"),
 ])}
 {links([
- ("Google coche #8417 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6421,2.5639&destination=44.6472,2.5675&travelmode=driving","g"),
- ("Google coche #208568 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6488,2.5667&destination=44.6472,2.5675&travelmode=driving","g"),
- ("Google A→B→C → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&waypoints=44.6421,2.5639%7C44.6488,2.5667&travelmode=driving","g"),
+ ("Google coche #8417 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6421,2.5639&destination=44.6472,2.5675&travelmode=walking","g"),
+ ("Google coche #208568 → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6488,2.5667&destination=44.6472,2.5675&travelmode=walking","g"),
+ ("Google A→B→C → centro Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&waypoints=44.6421,2.5639%7C44.6488,2.5667&travelmode=walking","g"),
+])}
+</div>
+<div class="trail">
+<h4>Puntos de interés extra (Entraygues)</h4>
+<ul>
+  <li><strong>Baño vigilado:</strong> Piscine d'Entraygues.</li>
+  <li><strong>Baño natural:</strong> Lot (zona “Val de Saures” / playa natural).</li>
+  <li><strong>Paisaje/monumento:</strong> Confluence Lot–Truyère (aire picnic).</li>
+  <li><strong>Quesería:</strong> Fromagerie artisanale Jean Mathieu et Nadine Boulant (La Borie de Banroques).</li>
+</ul>
+{links([
+ ("Google Piscine d'Entraygues","https://www.google.com/maps/search/?api=1&query=Piscine+d%27Entraygues+Entraygues-sur-Truy%C3%A8re","g"),
+ ("Google Val de Saures (playa Lot)","https://www.google.com/maps/search/?api=1&query=Camping+Val+de+Saures+Entraygues+plage","g"),
+ ("Google Confluence Lot–Truyère (picnic)","https://www.google.com/maps/search/?api=1&query=Confluence+Lot+Truy%C3%A8re+aire+de+pique-nique+Entraygues","g"),
+ ("Google Fromagerie Jean Mathieu","https://www.google.com/maps/search/?api=1&query=Fromagerie+Jean+Mathieu+Nadine+Boulant+La+Borie+de+Banroques","g"),
 ])}
 </div>
 <p>Cena temprana.</p>
@@ -483,6 +498,19 @@ def build() -> str:
 <a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc · Bec corto (Fácil · ~5,6 km)</a>
 </div>
 </div>
+<p><strong>Puntos de interés extra (Le Lioran / Volcanes):</strong></p>
+<ul>
+  <li><strong>Punto de salida escénico:</strong> Font d'Alagnon.</li>
+  <li><strong>Mirador:</strong> Rocher du Bec de l'Aigle (belvédère).</li>
+  <li><strong>Quesería local:</strong> Fromagerie du Cantal / Le Lioran (Res. des Sagnes).</li>
+  <li><strong>Clásico del Cantal:</strong> Puy Mary (zona belvederes).</li>
+</ul>
+{links([
+ ("Google Font d'Alagnon (Le Lioran)","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
+ ("Google Rocher du Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Rocher+du+Bec+de+l%27Aigle","g"),
+ ("Google Fromagerie du Cantal (Le Lioran)","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran+Residence+des+Sagnes","g"),
+ ("Google Puy Mary (belvédères)","https://www.google.com/maps/search/?api=1&query=Puy+Mary+belvedere","g"),
+])}
 </div>
 """))
 
@@ -539,9 +567,9 @@ def build() -> str:
 ])}
 
 {links([
- ("Google coche #144306 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1600,2.4521&destination=45.1389,2.495&travelmode=driving","g"),
- ("Google coche #855 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1484,2.4983&destination=45.1389,2.495&travelmode=driving","g"),
- ("Google A→B→C → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&waypoints=45.1600,2.4521%7C45.1484,2.4983&travelmode=driving","g"),
+ ("Google coche #144306 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1600,2.4521&destination=45.1389,2.495&travelmode=walking","g"),
+ ("Google coche #855 → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1484,2.4983&destination=45.1389,2.495&travelmode=walking","g"),
+ ("Google A→B→C → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&waypoints=45.1600,2.4521%7C45.1484,2.4983&travelmode=walking","g"),
 ])}
 
 <h4 style="margin-top:.85rem">Piste Verte 8–12 km</h4>
@@ -551,6 +579,21 @@ def build() -> str:
  ("P4N Fouey","https://park4night.com/es/place/271257","o"),
 ])}
 <p>Túnel ~600 m: llevad linterna para el tramo oscuro y correa corta para el paso.</p>
+</div>
+<div class="trail">
+<h4>Puntos de interés extra (Salers)</h4>
+<ul>
+  <li><strong>Monumento / pueblo:</strong> Salers (casco histórico de basalto).</li>
+  <li><strong>Quesería/visita:</strong> Maison de la Salers (museo + degustación/boutique).</li>
+  <li><strong>Compra de queso:</strong> Fromagerie (zona Saint-Bonnet-de-Salers / alrededores).</li>
+  <li><strong>Paseo corto bonito:</strong> viaductos + tramos con sombra de la Piste Verte.</li>
+</ul>
+{links([
+ ("Google Salers (pueblo)","https://www.google.com/maps/search/?api=1&query=Salers+Cantal","g"),
+ ("Google Maison de la Salers (Le Fau)","https://www.google.com/maps/search/?api=1&query=Maison+de+la+Salers+Le+Fau+Saint-Bonnet-de-Salers","g"),
+ ("Google Fromagerie Saint-Bonnet-de-Salers","https://www.google.com/maps/search/?api=1&query=fromagerie+Saint-Bonnet-de-Salers+coop%C3%A9rative","g"),
+ ("Google Piste Verte viaductos","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense+viaduc","g"),
+])}
 </div>
 """))
 
@@ -653,6 +696,22 @@ def build() -> str:
 ])}
 
 {wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
+</div>
+
+<div class="trail">
+<h4>Puntos de interés extra (Lac de Matemale & quesos)</h4>
+<ul>
+  <li><strong>Baño supervisado:</strong> zona Ourson (cerca de la base náutica) en temporada.</li>
+  <li><strong>Lugar de ocio:</strong> Espace loisirs du Lac de Matemale.</li>
+  <li><strong>Quesos de compra:</strong> Le Calmadou (fromagerie / crèmerie de brebis en Formiguères).</li>
+  <li><strong>Bonus:</strong> Ferme Pérarnaud (tienda de granja).</li>
+</ul>
+{links([
+ ("Google Ourson / base nautique Matemale","https://www.google.com/maps/search/?api=1&query=Base+nautique+Ourson+Lac+de+Matemale","g"),
+ ("Google Espace loisirs Lac de Matemale","https://www.google.com/maps/search/?api=1&query=Espace+loisirs+Lac+de+Matemale","g"),
+ ("Google Le Calmadou (Formiguères)","https://www.google.com/maps/search/?api=1&query=Le+Calmadou+Formigu%C3%A8res+fromagerie","g"),
+ ("Google Ferme Pérarnaud (Formiguères)","https://www.google.com/maps/search/?api=1&query=Ferme+P%C3%A9rarnault+Formigu%C3%A8res","g"),
+])}
 </div>
 
 {links([
