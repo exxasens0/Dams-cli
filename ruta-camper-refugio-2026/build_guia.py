@@ -426,7 +426,7 @@ def build() -> str:
 <p><strong>Distancia parking → centro Entraygues:</strong> ~0,7 km (~8–10 min a pie).</p>
 <p>Google Maps te sirve para el “punto final”; el paseo real es la vuelta suave por el pueblo y la ribera (3–5 km).</p>
 {links([
- ("Google (coche) Entraygues centro","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=driving","g"),
+ ("Google (a pie) Entraygues centro","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=walking","g"),
  ("Google (a pie) paseo Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=walking","g"),
  ("P4N #5896","https://park4night.com/es/place/5896","o"),
  ("P4N #8417","https://park4night.com/es/place/8417","o"),
@@ -562,7 +562,7 @@ def build() -> str:
 <p><strong>Distancia parking → Salers:</strong> ~3,4 km en coche (~10–15 min) / ~3,4 km a pie (~45–55 min).</p>
 <p><strong>Distancia al punto de interés (Salers):</strong> #144306 ~4,9 km · #855 ~1,3 km.</p>
 {links([
- ("Google (coche) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=driving","g"),
+ ("Google (a pie) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=walking","g"),
  ("Google (a pie) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=walking","g"),
 ])}
 
