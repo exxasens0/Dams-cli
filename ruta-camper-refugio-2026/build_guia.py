@@ -409,36 +409,68 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d5", "Día 5 · Lunes 10 — Traslado hacia el Macizo Central",
-        ["~220–260 km", "nature / #5896", "#3781 404"],
+        ["~220–260 km", "P4N #5896", "P4N #8417", "P4N #3781"],
         f"""
 {img('entraygues','Entraygues-sur-Truyère')}
 <p>Día de carretera. No lo convirtáis en checklist del Lot. Objetivo: ganar latitud hacia el Cantal sin llegar reventados. Paradas cada ~1h30 por las perras.</p>
-<h4>Dónde dormir</h4>
-<p>Buscad <strong>nature</strong> en ruta con filtro P4N. Plan B: <strong>#5896 Rue de la Grave</strong> (Entraygues) — comentarios 2025–26 de noches tranquilas. Evitar aire masificada #415568 como plan A. El antiguo #3781 ya no existe.</p>
+<h4>Dónde dormir (Park4Night)</h4>
+<p><strong>#5896 Rue de la Grave</strong> (Entraygues) — parking tranquilo detrás del château. Si está lleno, alternativas (todas &gt;2 estrellas):</p>
+<ul>
+  <li><strong>#8417 Camping municipal Val de Saures***</strong> (4.36/5) — camping con acceso a río (perros ok en las reseñas).</li>
+  <li><strong>#3781 Chemin du Val de Saure</strong> (3.1/5) — área junto al río (mencionan que a los perros les encanta refrescarse).</li>
+</ul>
 {quote('fronvald','17/06/2026','Muy tranquilo. Solo hay un área de picnic… el parking está vacío, es gratis y cerca del pueblo.','P4N #5896')}
-<p>Al llegar: solo 3–5 km de paseo. Cena temprana.</p>
+
+<div class="trail">
+<h4>Paseo corto al llegar (3–5 km)</h4>
+<p><strong>Distancia parking → centro Entraygues:</strong> ~0,6 km (~8–10 min a pie).</p>
+<p>Google Maps te sirve para el “punto final”; el paseo real es la vuelta suave por el pueblo y la ribera (3–5 km).</p>
 {links([
- ("Google Entraygues","https://www.google.com/maps/dir/?api=1&destination=44.6439,2.5628&travelmode=driving","g"),
+ ("Google (coche) Entraygues centro","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=driving","g"),
+ ("Google (a pie) paseo Entraygues","https://www.google.com/maps/dir/?api=1&origin=44.6439,2.5628&destination=44.6472,2.5675&travelmode=walking","g"),
  ("P4N #5896","https://park4night.com/es/place/5896","o"),
+ ("P4N #8417","https://park4night.com/es/place/8417","o"),
+ ("P4N #3781","https://park4night.com/es/place/3781","o"),
  ("Wikipedia Entraygues", WIKI['entraygues']['wiki'], "p"),
 ])}
+</div>
+<p>Cena temprana.</p>
 """))
 
     parts.append(day_shell("d6", "Día 6 · Martes 11 — Llegada a Le Lioran",
-        ["~120–150 km", "P4N #13709 Combe Nègre"],
+        ["~120–150 km", "P4N #13709", "P4N #6003", "P4N #27677"],
         f"""
 {img('lioran','Le Lioran')}
+<h4>Dónde dormir (Park4Night)</h4>
 <p>Entráis en el parque de los Volcanes. El aire cambia: más seco, más alto, olor a pasto. Instalaos en <strong>Combe Nègre (#13709)</strong>, lado con árboles (haya/abeto). Llegad ≥18:30 para elegir plaza.</p>
 {quote('SoSoPhil','24/06/2026','Bonito sitio… pasamos 2 noches en calma… hay punto de agua frente al restaurante.')}
 {quote('SLMFC','16/07/2026','Noche del 15 al 16 de julio: rincón agradable y tranquilo entre los abetos.')}
-<h4>Aclimatación</h4>
-<p>5–8 km por pistas alrededor de Font de Cère / estación. Identificad el inicio del Bec de l'Aigle para mañana. Noche fresca: manta lista.</p>
+<p><strong>Si está lleno</strong> (perros y &gt;2 estrellas):</p>
 {links([
- ("Google Combe Nègre","https://www.google.com/maps/dir/?api=1&destination=45.0849,2.733&travelmode=driving","g"),
  ("P4N #13709","https://park4night.com/es/place/13709","o"),
+ ("P4N #6003 Camping des Blats","https://park4night.com/es/place/6003","o"),
+ ("P4N #27677 Lavigerie - D62","https://park4night.com/es/place/27677","o"),
  ("Wikipedia Lioran", WIKI['lioran']['wiki'], "p"),
  ("OT Lioran","https://www.lelioran.com/","w"),
 ])}
+
+<div class="trail">
+<h4>Aclimatación (hoy) · 5–8 km suaves</h4>
+<p>5–8 km por pistas alrededor de Font de Cère / estación. Identificad el inicio del <strong>Bec de l'Aigle</strong> para mañana. Noche fresca: manta lista.</p>
+<p><strong>Distancia parking → inicio Bec (referencia):</strong> ~2,8 km en coche (~5–10 min) / ~3+ km a pie (~35–45 min, según caminos).</p>
+{links([
+ ("Google (coche) Combe Nègre → Bec","https://www.google.com/maps/dir/?api=1&origin=45.0849,2.7330&destination=45.088234,2.74315&travelmode=driving","g"),
+ ("Google (a pie) Combe Nègre → Bec","https://www.google.com/maps/dir/?api=1&origin=45.0849,2.7330&destination=45.088234,2.74315&travelmode=walking","g"),
+])}
+
+<div class="wikiloc-box">
+<strong>Si os apetece estirar (Wikiloc · útil mañana)</strong>
+<div class="btns">
+<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058" target="_blank" rel="noopener">Wikiloc · Bec + Téton (Moderado · ~8 km)</a>
+<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc · Bec corto (Fácil · ~5,6 km)</a>
+</div>
+</div>
+</div>
 """))
 
     parts.append(day_shell("d7", "Día 7 · Miércoles 12 — Bec de l'Aigle (moderada Visorando)",
@@ -470,22 +502,35 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d8", "Día 8 · Jueves 13 — Piste Verte → zona Salers",
-        ["~70–90 km", "P4N #271257 o #144306"],
+        ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #16986"],
         f"""
 {img('salers','Hacia Salers')}
 <p>Día de recuperación activa: la <strong>Piste Verte Sumène-Artense</strong> (antigua vía férrea) ofrece viaductos, túnel ~600 m y sombra. Ideal perras (llano). Túnel: correa corta + linterna.</p>
-<h4>Dónde dormir</h4>
-<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad) o <strong>#144306</strong> estadio hierba (~4 plazas). Evitar aire #855.</p>
+<h4>Dónde dormir (Park4Night)</h4>
+<p><strong>#271257 Ferme Fouey</strong> (hierba, granja, queso Cantal — comprad). Evitar aire #855.</p>
 {quote('jeremw','01/06/2026','Pasamos una noche en la granja. Acogida muy cálida… y buen queso de granja.','P4N #271257')}
 {quote('cindy.frt','16/05/2026','Pasamos una noche en la granja: ¡fue genial!','P4N #271257')}
+<p>Alternativas (2 extras) por si está lleno:</p>
+{links([
+ ("P4N #144306","https://park4night.com/es/place/144306","o"),
+ ("P4N #16986 Hortiver","https://park4night.com/es/place/16986","o"),
+])}
+
 <div class="trail">
-<h4>Piste Verte 8–12 km</h4>
+<h4>Zona Salers = vuestro punto de referencia</h4>
+<p><strong>Distancia parking → Salers:</strong> ~3,4 km en coche (~10–15 min) / ~3,4 km a pie (~45–55 min).</p>
+{links([
+ ("Google (coche) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=driving","g"),
+ ("Google (a pie) Fouey → Salers","https://www.google.com/maps/dir/?api=1&origin=45.1528,2.4912&destination=45.1389,2.495&travelmode=walking","g"),
+])}
+
+<h4 style="margin-top:.85rem">Piste Verte 8–12 km</h4>
 {links([
  ("OT Sumène Artense · Piste Verte","https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/","w"),
  ("Google Piste Verte","https://www.google.com/maps/search/?api=1&query=Piste+Verte+Sum%C3%A8ne+Artense","g"),
  ("P4N Fouey","https://park4night.com/es/place/271257","o"),
- ("P4N #144306","https://park4night.com/es/place/144306","o"),
 ])}
+<p>Túnel ~600 m: llevad linterna para el tramo oscuro y correa corta para el paso.</p>
 </div>
 """))
 
@@ -550,18 +595,42 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d12", "Día 12 · Lunes 17 — Aubrac → Capcir",
-        ["~280–320 km", "salir <9:00", "P4N #2547"],
+        ["~280–320 km", "salir <9:00", "P4N #2547", "P4N #294842", "P4N #14142"],
         f"""
 {img('formigueres','Formiguères')}
 <p>El traslado más largo. Partid temprano, parad cada 1h30. El premio es volver a dormir alto y fresco en Formiguères.</p>
-<h4>Dónde dormir</h4>
-<p><strong>#2547 Calmazeille</strong>: elegid parking de tierra / inferior junto lago, no la fila de AC del asfalto. Plan B: Matemale (#294842) — ojo barrera de altura ~2,0–2,2 m en temporada.</p>
+<h4>Dónde dormir (Park4Night)</h4>
+<p><strong>#2547 Calmazeille</strong>: elegid parking de tierra / inferior junto lago, no la fila de AC del asfalto.</p>
+<p>Plan B: <strong>Matemale (#294842)</strong> — ojo barrera de altura ~2,0–2,2 m en temporada.</p>
+<p>Plan C: <strong>#14142 Camping de La Devèze***</strong> — en bosque, buenas sensaciones con perros.</p>
 {quote('RouilleP','28/02/2025','Pernocta posible… Gracias al ayuntamiento.')}
-<p>Al llegar: 4–6 km bosque. Nada más.</p>
+
 {links([
- ("Google Formiguères","https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711&travelmode=driving","g"),
  ("P4N #2547","https://park4night.com/es/place/2547","o"),
  ("P4N #294842 Matemale","https://park4night.com/es/place/294842","o"),
+ ("P4N #14142 La Devèze","https://park4night.com/es/place/14142","o"),
+])}
+
+<div class="trail">
+<h4>Excursión suave al llegar (sin GPX)</h4>
+<p><strong>Opción A (según guía):</strong> paseo de <strong>4–6 km</strong> de bosque saliendo a pie desde el propio parking.</p>
+<p><strong>Distancia coche → interés:</strong> 0 km (salida directa). <strong>A pie:</strong> 4–6 km (1h15–2h, ritmo tranquilo).</p>
+{links([
+ ("Google paseo desde Calmazeille","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.6241,2.0711&travelmode=walking","g"),
+])}
+
+<p style="margin-top:.7rem"><strong>Opción B (si os quedan piernas):</strong> ir al <strong>lago Matemale</strong> para un paseo/fotos.</p>
+<p><strong>Distancia parking #2547 → Matemale #294842:</strong> ~11,6 km en coche (~15–25 min).</p>
+{links([
+ ("Google (coche) Calmazeille → Matemale","https://www.google.com/maps/dir/?api=1&origin=42.6241,2.0711&destination=42.5655,2.1044&travelmode=driving","g"),
+ ("Google Matemale (search)","https://www.google.com/maps/search/?api=1&query=Lac+de+Matemale","g"),
+])}
+
+{wikiloc_box([("Formiguères · Lac de l'Olive (Fácil)","https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412")])}
+</div>
+
+{links([
+ ("Google Formiguères","https://www.google.com/maps/dir/?api=1&destination=42.6241,2.0711&travelmode=driving","g"),
 ])}
 """))
 
