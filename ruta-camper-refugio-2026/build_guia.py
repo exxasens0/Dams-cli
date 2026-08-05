@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 WIKI = json.loads((ROOT / "_wiki_cache.json").read_text())
+EXTRAS = json.loads((ROOT / "_day_extras.json").read_text())
 
 
 def esc(s: str) -> str:
@@ -126,6 +127,58 @@ def parking_routes(
     return links(items)
 
 
+def day_extras_html(day_num: int) -> str:
+    """Weather forecast + web opinions / plan-B alternatives for one day."""
+    block = EXTRAS["days"].get(str(day_num)) or {}
+    wx = block.get("weather") or {}
+    opinions = block.get("opinions") or []
+    alts = block.get("alternatives") or []
+    meta = EXTRAS.get("meta") or {}
+
+    if wx.get("available"):
+        tips = "".join(f"<li>{esc(t)}</li>" for t in (wx.get("tips") or []))
+        tips_html = f"<ul>{tips}</ul>" if tips else ""
+        precip_prob = wx.get("precip_prob")
+        precip_txt = f"{precip_prob:.0f}%" if precip_prob is not None else "—"
+        uv = wx.get("uv_max")
+        uv_txt = f"{uv:.1f}" if uv is not None else "—"
+        wx_html = f"""<div class="wx">
+<div class="wx-head"><strong>Meteo · {esc(wx.get('place') or '')}</strong>
+<span>{esc(wx.get('date') or '')} · Open-Meteo</span></div>
+<div class="wx-grid">
+<div><em>Cielo</em><strong>{esc(wx.get('summary_es') or '—')}</strong></div>
+<div><em>Temp</em><strong>{wx.get('t_min'):.0f}–{wx.get('t_max'):.0f}°C</strong></div>
+<div><em>Lluvia</em><strong>{wx.get('precip_mm'):.1f} mm · {esc(precip_txt)}</strong></div>
+<div><em>Viento / UV</em><strong>{wx.get('wind_max'):.0f} km/h · UV {esc(uv_txt)}</strong></div>
+</div>
+{tips_html}
+<p class="wx-src">Fuente: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> best_match (modelos Météo-France / DWD / ECMWF). Previsión del {esc((meta.get('weather_fetched_at') or '')[:10])}; revisad la mañana del día.</p>
+</div>"""
+    else:
+        wx_html = """<div class="wx"><div class="wx-head"><strong>Meteo</strong></div>
+<p>Previsión aún fuera de horizonte o no disponible. Consultad Open-Meteo / Météo-France la víspera.</p></div>"""
+
+    op_lis = "".join(f"<li>{esc(o)}</li>" for o in opinions)
+    alt_lis = "".join(
+        f'<li><strong>{esc(a.get("title") or "")}</strong> — {esc(a.get("why") or "")}'
+        + (
+            f' · <a href="{esc(a["url"])}" target="_blank" rel="noopener">ver</a>'
+            if a.get("url")
+            else ""
+        )
+        + "</li>"
+        for a in alts
+    )
+    plan_html = f"""<div class="planb">
+<h4>Opiniones web + plan B (si no os gusta)</h4>
+<p class="wx-src">{esc(meta.get("opinions_note") or "")}</p>
+<ul class="op-list">{op_lis}</ul>
+<p><strong>Alternativas:</strong></p>
+<ul>{alt_lis}</ul>
+</div>"""
+    return wx_html + plan_html
+
+
 CSS = r"""
 :root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 14px 32px rgba(26,34,28,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -165,6 +218,18 @@ a{color:var(--pine)}.wrap{width:min(980px,calc(100% - 1.2rem));margin:0 auto}
 .op p{margin:0 0 .55rem;font-style:italic}.op footer{font-size:.82rem;color:var(--muted)}
 .trail{background:#f6faf7;border:1px dashed #b7cfc2;border-radius:14px;padding:.9rem 1rem;margin:.9rem 0}
 .trail h4{margin-top:0;color:var(--pine)}
+.wx{margin:.85rem 0;padding:.85rem 1rem;border-radius:14px;background:linear-gradient(135deg,#e8f2fb,#f4f7f2);border:1px solid #c5d6e6}
+.wx-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.35rem;margin-bottom:.55rem}
+.wx-head span{font-size:.78rem;color:var(--muted)}
+.wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.45rem .7rem;margin:.35rem 0 .55rem}
+@media(min-width:640px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.wx-grid em{display:block;font-size:.68rem;color:var(--muted);font-style:normal;text-transform:uppercase;letter-spacing:.03em}
+.wx-grid strong{font-size:.95rem}
+.wx ul{margin:.35rem 0 0;padding-left:1.1rem}
+.wx-src{font-size:.75rem;color:var(--muted);margin:.45rem 0 0}
+.planb{margin:.85rem 0;padding:.9rem 1rem;border-radius:14px;background:#fff8f0;border:1px solid #e8d2b8}
+.planb h4{margin-top:0;color:var(--clay)}
+.planb .op-list{margin:.4rem 0 .7rem}
 .day-nav{position:sticky;top:59px;z-index:40;display:grid;grid-template-columns:repeat(7,1fr);gap:.28rem;background:rgba(242,238,228,.96);padding:.4rem 0;backdrop-filter:blur(8px)}
 .day-nav a{text-align:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.32rem .1rem;font-size:.68rem;font-weight:700;color:var(--ink)}
 .day-nav a span{display:block;font-weight:400;color:var(--muted);font-size:.58rem}
@@ -202,16 +267,16 @@ def build() -> str:
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-05c (P4N ≥4 · ≤15 min coche)</small></div>
+<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-05d (meteo + plan B)</small></div>
 <div class="btns">
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
 </div></div></header>
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N recondito</span><span class="chip">Solo rutas con perras</span></div>
+<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N ≤15 min</span><span class="chip">Meteo Open-Meteo</span><span class="chip">Plan B por día</span></div>
 <h1>Del Pirineo ariégeois al Capcir</h1>
-<p class="lead">Guía de viaje completa: literatura de cada zona, fotos, opiniones reales de Park4Night, rutas <strong>Wikiloc</strong> y Visorando/Komoot fáciles o moderadas, lugares de interés y mapas Google.</p>
+<p class="lead">Guía de viaje completa: meteo por día (Open-Meteo), opiniones web + alternativas si un sitio no os gusta, P4N auditado, rutas <strong>Wikiloc</strong> / Visorando fáciles o moderadas y mapas Google.</p>
 {img('ax', 'Ax-les-Thermes', 'hero-img')}
 <div class="btns">
 <a class="btn btn-p" href="#dias">Día a día</a>
@@ -357,6 +422,7 @@ def build() -> str:
     parts.append(day_shell("d1", "Día 1 · Jueves 6 — Teià → Ax-les-Thermes",
         ["~180 km / 2h15", "P4N #297295", "P4N #94127", "P4N #22287", "≤15 min"],
         f"""
+{day_extras_html(1)}
 {img('ax','Llegada a Ax')}
 <p>Salís de Teià sin prisa. Objetivo: Haute Ariège con luz de tarde.</p>
 <div class="callout"><strong>Filtro P4N:</strong> nota ≥4 (camping/pago &gt;4) · pernocta OK en comentarios ≤2 años · <strong>≤15 min en coche</strong> del P4N al interés del día.</div>
@@ -397,6 +463,7 @@ def build() -> str:
     parts.append(day_shell("d2", "Día 2 · Viernes 7 — Bosques Orgeix (apto con perras)",
         ["Local", "P4N #94127", "P4N #20472", "P4N #22280", "Orlu trails CANCEL", "≤15 min"],
         f"""
+{day_extras_html(2)}
 {img('ladres','Ax y alrededores')}
 <p>Día 100 % con perras. <strong>Senderos de la reserva Orlu cancelados</strong> (perros prohibidos). Interés: valle / picnic Orgeix.</p>
 <h4>Dónde dormir · ≤15 min coche → Orgeix (La Payssière)</h4>
@@ -439,6 +506,7 @@ def build() -> str:
     parts.append(day_shell("d3", "Día 3 · Sábado 8 — Ax → Foix corta → Couserans (Guzet)",
         ["~120–140 km", "P4N #24616", "P4N #40904", "P4N #82429", "≤15 min"],
         f"""
+{day_extras_html(3)}
 <div class="photo-grid">{img('foix','Château de Foix')}{img('saint_lizier','Saint-Lizier')}</div>
 <p>Foix corta → Saint-Lizier → base Guzet. Interés del atardecer: <strong>belvedere Guzet / Aulus</strong> (cumple ≤15 min). <strong>No #51675 de noche.</strong></p>
 <h4>Dónde dormir · ≤15 min coche → Guzet Prat-Mataou</h4>
@@ -478,6 +546,7 @@ def build() -> str:
     parts.append(day_shell("d4", "Día 4 · Domingo 9 — Cascade d'Ars (+ Cagateille opcional)",
         ["Local", "P4N #4258", "P4N #40904", "P4N #24616", "#51675 solo DÍA", "≤15 min"],
         f"""
+{day_extras_html(4)}
 {img('cagateille','Cirque de Cagateille')}
 <div class="warn"><strong>#51675 NO DORMIR</strong> (ban 20:00–6:00 desde 26/7/2026). Solo aparcamiento de día.</div>
 <p>Interés que cumple ≤15 min desde pernocta: <strong>Cascade d'Ars</strong>. Cagateille desde Guzet son ~28 min → <em>fuera de criterio</em>; solo si aceptáis la excepción (parking día #51675).</p>
@@ -528,6 +597,7 @@ def build() -> str:
     parts.append(day_shell("d5", "Día 5 · Lunes 10 — Traslado hacia el Macizo Central",
         ["~220–260 km", "P4N #208568", "P4N #415568", "P4N #8417", "≤15 min"],
         f"""
+{day_extras_html(5)}
 {img('entraygues','Entraygues-sur-Truyère')}
 <p>Día de carretera. Interés al llegar: centro Entraygues / Lot.</p>
 <h4>Dónde dormir · ≤15 min (a pie) → centro</h4>
@@ -567,6 +637,7 @@ def build() -> str:
     parts.append(day_shell("d6", "Día 6 · Martes 11 — Llegada a Le Lioran",
         ["~120–150 km", "P4N #13709", "P4N #42476", "P4N #6003", "≤15 min"],
         f"""
+{day_extras_html(6)}
 {img('lioran','Le Lioran')}
 <h4>Dónde dormir · ≤15 min coche → inicio Bec de l'Aigle</h4>
 <ul>
@@ -612,6 +683,7 @@ def build() -> str:
     parts.append(day_shell("d7", "Día 7 · Miércoles 12 — Bec de l'Aigle (moderada Visorando)",
         ["0 km coche", "P4N #13709", "P4N #42476", "P4N #6003", "Meteo 7:00", "≤15 min"],
         f"""
+{day_extras_html(7)}
 {img('puy_mary','Macizo del Cantal / Puy Mary')}
 <p>Crestas <strong>Moyenne</strong>. Decisión meteo 7:00.</p>
 <h4>Dónde dormir · mismos spots (≤15 min al Bec)</h4>
@@ -649,6 +721,7 @@ def build() -> str:
     parts.append(day_shell("d8", "Día 8 · Jueves 13 — Piste Verte → zona Salers",
         ["~70–90 km", "P4N #271257", "P4N #144306", "P4N #114179", "≤15 min"],
         f"""
+{day_extras_html(8)}
 {img('salers','Hacia Salers')}
 <p>Piste Verte + base cerca de Salers.</p>
 <h4>Dónde dormir · ≤15 min → Salers</h4>
@@ -686,6 +759,7 @@ def build() -> str:
     parts.append(day_shell("d9", "Día 9 · Viernes 14 — Bocage de Salers",
         ["Local", "P4N #271257", "P4N #144306", "P4N #114179", "≤15 min"],
         f"""
+{day_extras_html(9)}
 {img('salers','Salers')}
 <p>Salers <strong>temprano</strong> + bocage. Misma base (todos ≤15 min al pueblo).</p>
 <h4>Dónde dormir</h4>
@@ -717,6 +791,7 @@ def build() -> str:
     parts.append(day_shell("d10", "Día 10 · Sábado 15 — Hacia el Aubrac",
         ["~100–130 km", "P4N #5073", "P4N #48703", "P4N #90343", "#98143 CANCELADO", "≤15 min"],
         f"""
+{day_extras_html(10)}
 {img('aubrac','Meseta del Aubrac')}
 <div class="warn"><strong>#98143 cancelado</strong> (privado + perros). <strong>#35527 Camping Nasbinals descartado</strong> (3.89/5 &lt; umbral camping).</div>
 <h4>Dónde dormir · ≤15 min → Cascada del Déroc</h4>
@@ -754,6 +829,7 @@ def build() -> str:
     parts.append(day_shell("d11", "Día 11 · Domingo 16 — Aubrac a fondo",
         ["Local", "P4N #5073", "P4N #48703", "P4N #90343", "≤15 min"],
         f"""
+{day_extras_html(11)}
 <div class="photo-grid">{img('deroc','Cascada del Déroc')}{img('nasbinals','Nasbinals')}</div>
 <p>Meseta: Déroc + Nasbinals / Salhiens. Misma base (interés cascada ≤15 min).</p>
 <h4>Dónde dormir</h4>
@@ -787,6 +863,7 @@ def build() -> str:
     parts.append(day_shell("d12", "Día 12 · Lunes 17 — Aubrac → Capcir",
         ["~280–320 km", "salir <9:00", "P4N #294842", "P4N #14142", "P4N #2547", "≤15 min"],
         f"""
+{day_extras_html(12)}
 {img('formigueres','Formiguères')}
 <p>Traslado largo. Interés al llegar: <strong>Formiguères / Calmazeille</strong> (todos los P4N ≤15 min).</p>
 <h4>Dónde dormir · ≤15 min coche → Formiguères</h4>
@@ -826,6 +903,7 @@ def build() -> str:
     parts.append(day_shell("d13", "Día 13 · Martes 18 — Capcir / Matemale (moderado)",
         ["Local", "P4N #294842", "P4N #348514", "P4N #14142", "día colchón", "≤15 min"],
         f"""
+{day_extras_html(13)}
 {img('matemale','Lago de Matemale')}
 <p>Interés del día = <strong>Lac de Matemale</strong>. Solo P4N ≤15 min al lago.</p>
 <h4>Dónde dormir</h4>
@@ -865,6 +943,7 @@ def build() -> str:
     parts.append(day_shell("d14", "Día 14 · Miércoles 19 — Capcir → Teià",
         ["~180–200 km / 2h30–3h", "Regreso"],
         f"""
+{day_extras_html(14)}
 <p>Regreso por Cerdanya / Puigcerdà. Parada cercana recomendada: <strong>Puigcerdà</strong> (café + paseo).</p>
 <div class="trail">
 <h4>Ruta de regreso</h4>
