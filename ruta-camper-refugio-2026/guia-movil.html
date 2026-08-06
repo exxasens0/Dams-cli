@@ -54,6 +54,14 @@ a{color:var(--pine)}.wrap{width:min(980px,calc(100% - 1.2rem));margin:0 auto}
 .planb{margin:.85rem 0;padding:.9rem 1rem;border-radius:14px;background:#fff8f0;border:1px solid #e8d2b8}
 .planb h4{margin-top:0;color:var(--clay)}
 .planb .op-list{margin:.4rem 0 .7rem}
+.regs{margin:.85rem 0;padding:.9rem 1rem;border-radius:14px;background:#f3f6f8;border:1px solid #c5d0d8}
+.regs h4{margin-top:0;color:#1a3a4a}
+.regs .regs-badge{display:inline-block;font-size:.72rem;font-weight:700;border-radius:8px;padding:.18rem .5rem;margin-left:.35rem}
+.regs .risk-alto{background:#ffe5d9;color:#8a3010}
+.regs .risk-medio{background:#fff0cc;color:#7a5a10}
+.regs .risk-bajo{background:#e3f5e8;color:#1a5c32}
+.regs ul{margin:.35rem 0 .65rem;padding-left:1.15rem}
+.regs .regs-sum{font-weight:700;margin:.5rem 0 .35rem}
 .day-nav{position:sticky;top:59px;z-index:40;display:grid;grid-template-columns:repeat(7,1fr);gap:.28rem;background:rgba(242,238,228,.96);padding:.4rem 0;backdrop-filter:blur(8px)}
 .day-nav a{text-align:center;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.32rem .1rem;font-size:.68rem;font-weight:700;color:var(--ink)}
 .day-nav a span{display:block;font-weight:400;color:var(--muted);font-size:.58rem}
@@ -67,16 +75,16 @@ code{background:#efe9dc;padding:.05rem .3rem;border-radius:4px;font-size:.88em}
 </style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-05d (meteo + plan B)</small></div>
+<div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-06a (normativa municipal CC)</small></div>
 <div class="btns">
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
 </div></div></header>
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N ≤15 min</span><span class="chip">Meteo Open-Meteo</span><span class="chip">Plan B por día</span></div>
+<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N ≤15 min</span><span class="chip">Meteo Open-Meteo</span><span class="chip">Normativa municipal CC</span><span class="chip">Plan B por día</span></div>
 <h1>Del Pirineo ariégeois al Capcir</h1>
-<p class="lead">Guía de viaje completa: meteo por día (Open-Meteo), opiniones web + alternativas si un sitio no os gusta, P4N auditado, rutas <strong>Wikiloc</strong> / Visorando fáciles o moderadas y mapas Google.</p>
+<p class="lead">Guía de viaje completa: normativa municipal de autocaravanas (agosto), meteo por día, opiniones/plan B, P4N auditado, Wikiloc/Visorando y mapas Google.</p>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ax-les-Thermes_-_53230478005.jpg/1280px-Ax-les-Thermes_-_53230478005.jpg" alt="Ax-les-Thermes" loading="lazy" referrerpolicy="no-referrer">
 <figcaption>Foto: Wikimedia / Wikipedia · <a href="https://es.wikipedia.org/wiki/Ax-les-Thermes" target="_blank" rel="noopener">fuente</a></figcaption>
@@ -94,7 +102,7 @@ code{background:#efe9dc;padding:.05rem .3rem;border-radius:4px;font-size:.88em}
 <div class="card prose">
 <div class="warn"><strong>Perras:</strong> cualquier sitio con <em>perros prohibidos</em> (chiens interdits) está cancelado. No se deja a las perras en la furgoneta para “hacer la visita”.</div>
 <div class="warn"><strong>Pernocta:</strong> leed siempre el último comentario de Park4Night. Si dice noche prohibida / 20h–6h / propiedad privada → no dormir ahí.</div>
-<div class="callout"><strong>Meteo + plan B:</strong> cada día incluye previsión Open-Meteo de la zona y un bloque de opiniones/alternativas. La previsión se degrada a +10–16 días: revisad la mañana del hike (7:00).</div>
+<div class="callout"><strong>Meteo + plan B + normativa:</strong> cada día incluye previsión Open-Meteo, opiniones/alternativas y <em>normativa municipal</em> de aparcamiento/pernocta para autocaravanas en agosto. Los carteles in situ prevalecen; revisad meteo a las 7:00.</div>
 <ul>
 <li><strong>Cancelado noche:</strong> #51675 Cagateille (ban 20:00–6:00 desde 26/7/2026).</li>
 <li><strong>Cancelado total:</strong> #98143 Aubrac nature (privado + perros prohibidos); Orlu / #17010.</li>
@@ -224,6 +232,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>P4N #297295 Savignac: noches tranquilas 2025–26; campanas de iglesia posibles.</li><li>P4N #94127 Orgeix: sitio idílico junto al río, pero hay avisos de parking reservado al centro ecuestre / carteles anti-camping — verificad al llegar.</li><li>P4N #22287 Tournals: muy valorado en 2026; acceso estrecho y a veces 1 noche / cable.</li><li>Ayuntamiento Ax: prohibido dormir en el pueblo y En Castel 18h–6h; aire oficial Norte (Av. Delcassé) y Parc d&#x27;Espagne de pago sin servicios.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Camping Malazéou (Savignac)</strong> — Si P4N os falla: 4★ río, perros, piscina verano, ~10 min Ax. Plan B confort. · <a href="https://axlesthermes.wellness-sport-camping.com/" target="_blank" rel="noopener">ver</a></li><li><strong>Aire oficial Ax (entrada Norte)</strong> — Servicios agua/elec; más urbana/ruidosa que Tournals. Alternativa legal clara. · <a href="https://www.mairie-ax.fr/camping-car" target="_blank" rel="noopener">ver</a></li><li><strong>Parc d&#x27;Espagne (piscina)</strong> — Pitches con arceau, mayo–sept, sin agua/luz. Solo si queréis estar en el pueblo. · <a href="https://www.mairie-ax.fr/camping-car" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Ax-les-Thermes (09)</strong> · Alta temporada aire oficial: 15/06–15/09.</p>
+<p class="regs-sum">En agosto: NO dormir en el centro/ribera. Usad aire Norte, Parc d&#x27;Espagne, Bonascre o P4N nature fuera (Tournals/Savignac/Orgeix) mirando carteles.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Aire oficial entrada Norte (Av. Delcassé / gare): servicios vidange + agua + electricidad.</li><li>Parc d&#x27;Espagne (piscina): mayo–sept, de pago, arceaux; agua gratis, sin electricidad (según mairie).</li><li>Aire Bonascre (plateau): borne agua/elec/vidange (pago CB).</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>PROHIBIDO estacionar camping-cars en el pueblo de noche, en particular ribera Ariège / barrio En Castel 18:00–06:00 (mairie).</li><li>Pernoctad solo en aires oficiales, campings o spots P4N fuera del casco con carteles OK.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Aire Norte alta temp. 15/06–15/09: 12€/24h + elec 4€ + taxe séjour 1,58€/CC · máx. 21 días.</li><li>Baja temp.: 9€/24h. Reserva posible aireservice.com.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Sin toldo/mesa/sillas fuera en vía pública. Animales aceptados en aire OT.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.mairie-ax.fr/camping-car" target="_blank" rel="noopener">Mairie Ax · Camping-caristes</a><a class="btn btn-w" href="https://www.pyrenees-ariegeoises.com/preparer-mon-sejour/dormir/campings-et-aires-de-camping-cars/aire-de-stationnement-pour-camping-cars-ax-les-thermes-fr-4240146/" target="_blank" rel="noopener">OT Pyrénées Ariégeoises · Parc d&#x27;Espagne</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Ax-les-Thermes_-_53230478005.jpg/1280px-Ax-les-Thermes_-_53230478005.jpg" alt="Llegada a Ax" loading="lazy" referrerpolicy="no-referrer">
@@ -286,6 +306,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Orgeix Payssière divide opiniones: 5★ ‘paraíso río + foodtruck’ vs 1★ ‘reservado clientela’.</li><li>Camping Les Ioules (#20472): reseñas 2026 muy buenas (río, limpio); plan seguro si el picnic está lleno.</li><li>Orlu D22 (#22280): calma fuera de temporada; en agosto más delicado. No entrar en reserva Orlu con perras.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Pistas sombra Tournals / Bonascre</strong> — Si Orgeix no convence: 6–8 km bosque sin Orlu, siesta en cota. · <a href="https://park4night.com/es/place/22287" target="_blank" rel="noopener">ver</a></li><li><strong>Visorando Ax–Orgeix (recorte)</strong> — Acortad el track si calor/tormenta; quedáos en ribera. · <a href="https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/" target="_blank" rel="noopener">ver</a></li><li><strong>Malazéou + shuttle Ax</strong> — Base confort y paseo corto pueblo/termas sin mover el van. · <a href="https://www.vanlifemag.fr/campingsetapes/le-malazeou-camping-carvaneige-a-ax-les-thermes-dans-les-pyrenees/99853" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-medio">riesgo medio</span></h4>
+<p><strong>Orgeix / Orlu (09)</strong> · Alta afluencia valle; carteles locales variables.</p>
+<p class="regs-sum">Orgeix: leed carteles. Si duda → Les Ioules o aire Ax. Orlu solo aparcamiento D22; no trails con perras.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>La Payssière (#94127): zona picnic; algunos comentarios indican reserva a clientela del centre équestre — verificad paneles al llegar.</li><li>No aparquéis obstruyendo accesos ni en propiedad privada señalizada.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>No hay arrêté claro publicado online tipo Ax; prevalecen carteles in situ.</li><li>Si hay ‘camping interdit’ / privado → no pasar noche. Alternativa legal: camping Les Ioules (#20472) o volver a aire Ax.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Camping municipal Les Ioules: tarifa camping (consultar recepción).</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Reserva natural Orlu: perros prohibidos en senderos (no es norma de aparcamiento, pero cancela hikes Orlu).</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://park4night.com/es/place/94127" target="_blank" rel="noopener">P4N #94127 Orgeix</a><a class="btn btn-w" href="https://park4night.com/es/place/20472" target="_blank" rel="noopener">P4N #20472 Les Ioules</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Vue_d%27ensemble_de_la_place_du_Breilh_depuis_le_nord.jpg" alt="Ax y alrededores" loading="lazy" referrerpolicy="no-referrer">
@@ -344,6 +376,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Guzet #24616: noches 2026 ‘tranquila con vistas a Aulus’ — spot estrella Couserans.</li><li>Ustou D68 #40904: bien en verano; en invierno se llena de esquiadores por la mañana.</li><li>Montagnou #82429: camping con vistas al macizo; alternativa si parking Guzet saturado.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Base Bethmale (#200908 / #6527)</strong> — Si preferís lago al atardecer en vez de Guzet; relocad a Ars al día 4. · <a href="https://park4night.com/es/place/6527" target="_blank" rel="noopener">ver</a></li><li><strong>Camping Coulédous (Aulus)</strong> — Municipal todo el año, río Garbet, cerca termas — plan B pueblo. · <a href="https://www.camping-aulus-couledous.com/" target="_blank" rel="noopener">ver</a></li><li><strong>Aire municipal Aulus (centro)</strong> — Cerca del Garbet; más gente que Guzet pero legal y práctica. · <a href="https://www.campingcardhotes.fr/aire-aulus-les-bains-533" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Ustou + Aulus-les-Bains (09)</strong> · Temporada alta Couserans / Guzet.</p>
+<p class="regs-sum">Cagateille = SOLO DÍA (ban 20h–6h Ustou). Noche: Guzet/Jouges/Coulédous según carteles.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Coulantic / Cagateille (#51675, comuna Ustou): aparcamiento de DÍA para el circo; acceso estrecho en agosto.</li><li>Aulus · parking Cascade d&#x27;Ars / Jouges (#4258): parking hike; OT/mairie gestionan uso (a menudo de pago o controlado en temporada).</li><li>Guzet Prat-Mataou (#24616): parking estación; noche tolerada en práctica P4N — respetad carteles estación.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>USTOU / #51675: desde 26/07/2026, por orden municipal, NO campers/autos ni similares 20:00–06:00 (comentario P4N escalador1). Solo día.</li><li>Aulus: opción legal camping municipal Le Coulédous (abierto todo el año).</li><li>Pernocta Guzet/Ustou D68: nature/parking — sin ‘camping’ exterior; si panel prohíbe noche, obedeced.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Coulédous: tarifas camping municipal. Parking hike Aulus: preguntad OT (a menudo ticket).</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> En PNR Pyrénées Ariégeoises: discreción, no fuego libre, no basura.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://park4night.com/es/place/51675" target="_blank" rel="noopener">P4N #51675 (ban noche)</a><a class="btn btn-w" href="https://www.camping-aulus-couledous.com/" target="_blank" rel="noopener">Camping Coulédous Aulus</a><a class="btn btn-w" href="https://auluslesbains.com/vivre-a-aulus/camping-municipal/" target="_blank" rel="noopener">Mairie Aulus · camping</a></div>
 </div>
 <div class="photo-grid"><figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Chateau_Foix.jpg" alt="Château de Foix" loading="lazy" referrerpolicy="no-referrer">
@@ -405,6 +449,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Cascade d&#x27;Ars: AllTrails ~4,7/5 pero muchos la marcan difícil si subís al étang; versión familia = solo cascada baja (~5 km / +260 m).</li><li>Aulus Jouges #4258: agradecen a la commune; parking inclinado y disputado por coches a la sombra en agosto.</li><li>Cagateille: solo día (#51675 ban noche). Desde Guzet ~28 min — excepción al criterio ≤15 min.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Ars ‘cascada baja’ solamente</strong> — Si meteo/chubascos o piernas: ida-vuelta corta ombrée sin crestas. · <a href="https://randobase.fr/massifs/pyrenees/cascades-ars-ariege/" target="_blank" rel="noopener">ver</a></li><li><strong>Coulédous + paseo pueblo Aulus</strong> — Día térmico suave: termas/pueblo si tormenta en altura. · <a href="https://auluslesbains.com/vivre-a-aulus/camping-municipal/" target="_blank" rel="noopener">ver</a></li><li><strong>Saltar Cagateille</strong> — Priorizad Ars (cumple ≤15 min). Cagateille solo si cielo estable y aceptáis el traslado. · <a href="https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Ustou + Aulus-les-Bains (09)</strong> · Temporada alta Couserans / Guzet.</p>
+<p class="regs-sum">Cagateille = SOLO DÍA (ban 20h–6h Ustou). Noche: Guzet/Jouges/Coulédous según carteles.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Coulantic / Cagateille (#51675, comuna Ustou): aparcamiento de DÍA para el circo; acceso estrecho en agosto.</li><li>Aulus · parking Cascade d&#x27;Ars / Jouges (#4258): parking hike; OT/mairie gestionan uso (a menudo de pago o controlado en temporada).</li><li>Guzet Prat-Mataou (#24616): parking estación; noche tolerada en práctica P4N — respetad carteles estación.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>USTOU / #51675: desde 26/07/2026, por orden municipal, NO campers/autos ni similares 20:00–06:00 (comentario P4N escalador1). Solo día.</li><li>Aulus: opción legal camping municipal Le Coulédous (abierto todo el año).</li><li>Pernocta Guzet/Ustou D68: nature/parking — sin ‘camping’ exterior; si panel prohíbe noche, obedeced.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Coulédous: tarifas camping municipal. Parking hike Aulus: preguntad OT (a menudo ticket).</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> En PNR Pyrénées Ariégeoises: discreción, no fuego libre, no basura.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://park4night.com/es/place/51675" target="_blank" rel="noopener">P4N #51675 (ban noche)</a><a class="btn btn-w" href="https://www.camping-aulus-couledous.com/" target="_blank" rel="noopener">Camping Coulédous Aulus</a><a class="btn btn-w" href="https://auluslesbains.com/vivre-a-aulus/camping-municipal/" target="_blank" rel="noopener">Mairie Aulus · camping</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Cirque_de_Cagateille_au_printemps.jpg" alt="Cirque de Cagateille" loading="lazy" referrerpolicy="no-referrer">
@@ -469,6 +525,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Aire Lot / Pont Notre Dame: muy alabada 2025–26 (río, centro a pie); bémols = basura de otros y borne a veces caprichosa (jetons mairie).</li><li>Faubourg #208568: noche calma pero arco ~2,05 m — medid el Sunlight.</li><li>Val de Saures: camping limpio, río, piscina incluida en temporada; plan B confort.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Aire Pont Notre Dame (#415568)</strong> — Si Faubourg lleno/arco bajo: más plazas, misma vibra río. · <a href="https://park4night.com/es/place/415568" target="_blank" rel="noopener">ver</a></li><li><strong>Camping Val de Saures</strong> — Si aire saturada en agosto: playa Lot + servicios. · <a href="https://entraygues.fr/informations-touristiques/" target="_blank" rel="noopener">ver</a></li><li><strong>Acortar visita Entraygues</strong> — Día puente: no lo convertáis en sightseeing eterno; priorizad llegar fresco a Lioran mañana. · <a href="https://www.terresdaveyron.com/sejourner/dormir/campings/borne-de-service-camping-car-entraygues-sur-truyere-fr-5279989/" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-bajo">riesgo bajo</span></h4>
+<p><strong>Entraygues-sur-Truyère (12)</strong> · Aire gratuita Pont Notre Dame operativa; camping Val de Saures abierto ~mid-abril a fin sept.</p>
+<p class="regs-sum">Aire Lot gratuita OK de paso; jetons servicios en mairie. Alternativa camping Val de Saures.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Aire gratuita cerca del Lot (Pont Notre Dame / chemin du camping): ~30 plazas; estacionamiento en bataille (no a lo largo del ribazo).</li><li>Acceso al camping cerrado de noche; la aire permanece parcialmente abierta para de paso.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Pernocta en la aire municipal de paso: tolerada/organizada por la comuna (fuente mairie/OT).</li><li>No montéis camping (toldo/mesa): es estaciónamiento, no camping.</li><li>Alternativa: Camping Val de Saures (servicios + piscina incluida en temporada).</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Estacionamiento aire: gratuito.</li><li>Servicios (agua/elec) abril–oct: 5€ en jetons en mairie (3 place de l&#x27;église) · 05 65 44 53 31.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Arco/altura en algunos accesos (~2,05 m en Faubourg P4N) — medid el Sunlight.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://entraygues.fr/informations-touristiques/" target="_blank" rel="noopener">Mairie Entraygues · infos touristiques</a><a class="btn btn-w" href="https://www.terresdaveyron.com/sejourner/dormir/campings/borne-de-service-camping-car-entraygues-sur-truyere-fr-5279989/" target="_blank" rel="noopener">OT Terres d&#x27;Aveyron · borne</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Entraygues-sur-Truy%C3%A8re_JPG05.jpg/1280px-Entraygues-sur-Truy%C3%A8re_JPG05.jpg" alt="Entraygues-sur-Truyère" loading="lazy" referrerpolicy="no-referrer">
@@ -526,6 +594,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Combe Nègre #13709: ‘calma entre abetos’, punto de agua; ideal trailhead Bec.</li><li>Camping des Blats: familia, río Cère, ~7 km Lioran — muy bien valorado agosto 2026.</li><li>St-Jacques D67 #42476: vistas; algún aviso de excrementos / fuego prohibido.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Blats (#6003) primero</strong> — Si Combe Nègre llena o sin ganas de nature dry: servicios + calma. · <a href="https://www.cantal-destination.com/fiche/camping-des-blats/" target="_blank" rel="noopener">ver</a></li><li><strong>Font d&#x27;Alagnon parking día</strong> — Localizad el inicio Bec esta tarde; mañana salís sin rodeos. · <a href="https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/" target="_blank" rel="noopener">ver</a></li><li><strong>Actividades estación Lioran</strong> — Plan B no-cresta: teleférico / paseo corto si meteo dudosa. · <a href="https://www.lelioran.com/" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-medio">riesgo medio</span></h4>
+<p><strong>Laveissière / Saint-Jacques-des-Blats · Le Lioran (15)</strong> · Estación abierta actividades verano; parkings trailhead concurridos de día.</p>
+<p class="regs-sum">Más seguro: Blats. Nature P4N solo si cartel OK y sin ‘camping’ visible.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Parkings de estación / Font d&#x27;Alagnon: uso diurno hike; seguid paneles P6/zonas CC si existen.</li><li>Combe Nègre / D67: parkings nature — no hay arrêté municipal fuerte publicado; prevalecen carteles y ‘no camping’.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Opción 100 % conforme: Camping des Blats (St-Jacques) — emplacements CC + servicios.</li><li>Pernocta en parking nature: solo si panel lo permite y sin material exterior (circulaire 2004).</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Blats: tarifa camping (consultar). Parkings estación: según señalización día.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Patous en estives: correa; no es norma de aparcamiento pero condiciona la ruta.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.cantal-destination.com/fiche/camping-des-blats/" target="_blank" rel="noopener">Camping des Blats</a><a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">OT Le Lioran</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/3/37/T%C3%A9l%C3%A9ph%C3%A9rique_plomb_cantal.jpg?utm_source=ca.wikipedia.org&amp;utm_campaign=api&amp;utm_content=thumbnail_unscaled" alt="Le Lioran" loading="lazy" referrerpolicy="no-referrer">
@@ -592,6 +672,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Visorando Bec+Téton ~4,8/5 (jun–jul 2026): salida Font d&#x27;Alagnon lógica; Téton ‘más pedregoso que el nombre’; descenso Bec técnico (manos).</li><li>Vertigo: varios avisos — si os da, no forcéis el Bec; cortad a bosque/Téton solo.</li><li>Chiens: autorizados en el circuito, pero un paso puede ser difícil para perro + patous en estives.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Bec corto (~5,6 km)</strong> — Si meteo/calor/perras: versión corta Wikiloc sin forzar crestas largas. · <a href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">ver</a></li><li><strong>Télésiège Rombière + paseo</strong> — Plan B: subir mecánico y caminar suave por crestas bajas. · <a href="https://www.lelioran.com/" target="_blank" rel="noopener">ver</a></li><li><strong>Bosque Alagnon 6–8 km</strong> — Si tormenta 7:00: nada de crestas; sombra y vuelta a van. · <a href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-medio">riesgo medio</span></h4>
+<p><strong>Laveissière / Saint-Jacques-des-Blats · Le Lioran (15)</strong> · Estación abierta actividades verano; parkings trailhead concurridos de día.</p>
+<p class="regs-sum">Más seguro: Blats. Nature P4N solo si cartel OK y sin ‘camping’ visible.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Parkings de estación / Font d&#x27;Alagnon: uso diurno hike; seguid paneles P6/zonas CC si existen.</li><li>Combe Nègre / D67: parkings nature — no hay arrêté municipal fuerte publicado; prevalecen carteles y ‘no camping’.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Opción 100 % conforme: Camping des Blats (St-Jacques) — emplacements CC + servicios.</li><li>Pernocta en parking nature: solo si panel lo permite y sin material exterior (circulaire 2004).</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Blats: tarifa camping (consultar). Parkings estación: según señalización día.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Patous en estives: correa; no es norma de aparcamiento pero condiciona la ruta.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.cantal-destination.com/fiche/camping-des-blats/" target="_blank" rel="noopener">Camping des Blats</a><a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">OT Le Lioran</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Puy_Mary_face_Est.jpg/1280px-Puy_Mary_face_Est.jpg" alt="Macizo del Cantal / Puy Mary" loading="lazy" referrerpolicy="no-referrer">
@@ -640,6 +732,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Ferme Fouey: OT + Campercontact ~4,7/5 — acogida Marcel/Yves, queso, trata; gratis. Algunos: WC no de noche / ruido ventilación / luces trata 6h.</li><li>Llamad/avisad: no es un aire anónimo; turismo lento y responsable.</li><li>St-Bonnet #144306: calma municipal; pasar por fromagerie.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>St-Bonnet estadio (#144306)</strong> — Si Fouey lleno o demasiado ‘granja’: hierba municipal cerca. · <a href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">ver</a></li><li><strong>Camping Moulin du Teinturier</strong> — Servicios + sombra (ojo: reseñas 2026 sobre poda de árboles). · <a href="https://park4night.com/es/place/114179" target="_blank" rel="noopener">ver</a></li><li><strong>Piste Verte sin Salers mediodía</strong> — Si pueblo saturado: priorizad vía verde y Salers al atardecer. · <a href="https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Salers + Saint-Bonnet-de-Salers (15)</strong> · Pâques→Toussaint = régimen pago día/noche municipal. Agosto = máxima afluencia.</p>
+<p class="regs-sum">Salers agosto: CC fuera del casco. Día=Charles Maigne 4€. Noche=Mouriol 14€ o Fouey (privado) / St-Bonnet.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>PROHIBIDA la circulación de camping-cars por el casco histórico (pasajes estrechos/abovedados) — mairie Salers.</li><li>Día: ~15 plazas señalizadas en rocades Charles Maigne — SOLO DÍA entre Pâques y Toussaint; 1 plaza/vehículo; sin toldo ni mesa picnic.</li><li>Horodateur: 4€/24h (mismo que coche) Pâques→Toussaint.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Noche municipal oficial: camping municipal Mouriol-Bas (route Puy Mary) · ~15 min a pie al centro (D680 o Montagnoune).</li><li>Ferme Fouey (St-Bonnet): acogida privada en explotación (France Passion / OT) — no es aire municipal de Salers; seguid reglas de la granja (aviso previo recomendado).</li><li>St-Bonnet estadio (#144306): comprobar carteles comunales.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Mouriol noche: 14€ + taxe séjour 0,22€/pers + 6€ elec opcional (apertura camping Pâques–Toussaint).</li><li>Borne servicios Mouriol: jeton 4€ (en recepción camping).</li><li>Puy Mary / Pas de Peyrol en verano: restricciones circulación/estacionamiento CC + navettes mid-julio→fin agosto — no improviséis en arcén.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> En Charles Maigne de día: estacionamiento estricto, sin desballaje.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.salers.fr/stationnement-parking-salers-cantal" target="_blank" rel="noopener">Mairie Salers · stationnement CC</a><a class="btn btn-w" href="https://www.salers-tourisme.fr/faq" target="_blank" rel="noopener">OT Pays de Salers · FAQ CC</a><a class="btn btn-w" href="https://www.salers-tourisme.fr/accueil-camping-cars-saint-bonnet-de-salers" target="_blank" rel="noopener">OT · Accueil Fouey</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Salers_Beffroi.JPG/1280px-Salers_Beffroi.JPG" alt="Hacia Salers" loading="lazy" referrerpolicy="no-referrer">
@@ -696,6 +800,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Salers a mediodía en agosto = embudo: OT y foros coinciden en temprano o tarde.</li><li>Fouey sigue siendo la base más citada para van + queso del entorno.</li><li>La Montagnoune: boucle corta ideal calor; no hace falta gran cresta.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Maison de la Salers + degustación</strong> — Si el casco histórico satura: museo/queso fuera del embudo de calles. · <a href="https://www.salers-tourisme.fr/" target="_blank" rel="noopener">ver</a></li><li><strong>Bocage rural en coche corto</strong> — Pistas sombra lejos del basalt village si masificación. · <a href="https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers" target="_blank" rel="noopener">ver</a></li><li><strong>Mudanza temprana hacia Aubrac</strong> — Si Salers no os gusta: adelantad Déroc y ganad frescura meseta. · <a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Salers + Saint-Bonnet-de-Salers (15)</strong> · Pâques→Toussaint = régimen pago día/noche municipal. Agosto = máxima afluencia.</p>
+<p class="regs-sum">Salers agosto: CC fuera del casco. Día=Charles Maigne 4€. Noche=Mouriol 14€ o Fouey (privado) / St-Bonnet.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>PROHIBIDA la circulación de camping-cars por el casco histórico (pasajes estrechos/abovedados) — mairie Salers.</li><li>Día: ~15 plazas señalizadas en rocades Charles Maigne — SOLO DÍA entre Pâques y Toussaint; 1 plaza/vehículo; sin toldo ni mesa picnic.</li><li>Horodateur: 4€/24h (mismo que coche) Pâques→Toussaint.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Noche municipal oficial: camping municipal Mouriol-Bas (route Puy Mary) · ~15 min a pie al centro (D680 o Montagnoune).</li><li>Ferme Fouey (St-Bonnet): acogida privada en explotación (France Passion / OT) — no es aire municipal de Salers; seguid reglas de la granja (aviso previo recomendado).</li><li>St-Bonnet estadio (#144306): comprobar carteles comunales.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Mouriol noche: 14€ + taxe séjour 0,22€/pers + 6€ elec opcional (apertura camping Pâques–Toussaint).</li><li>Borne servicios Mouriol: jeton 4€ (en recepción camping).</li><li>Puy Mary / Pas de Peyrol en verano: restricciones circulación/estacionamiento CC + navettes mid-julio→fin agosto — no improviséis en arcén.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> En Charles Maigne de día: estacionamiento estricto, sin desballaje.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.salers.fr/stationnement-parking-salers-cantal" target="_blank" rel="noopener">Mairie Salers · stationnement CC</a><a class="btn btn-w" href="https://www.salers-tourisme.fr/faq" target="_blank" rel="noopener">OT Pays de Salers · FAQ CC</a><a class="btn btn-w" href="https://www.salers-tourisme.fr/accueil-camping-cars-saint-bonnet-de-salers" target="_blank" rel="noopener">OT · Accueil Fouey</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Salers_Beffroi.JPG/1280px-Salers_Beffroi.JPG" alt="Salers" loading="lazy" referrerpolicy="no-referrer">
@@ -744,6 +860,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Déroc #5073: 5★ agosto 2026 ‘perfecto noche + paseos’; dog-friendly en reseñas antiguas.</li><li>Buron du Ché #48703: marco salvaje; restaurante a veces cerrado; moscas en reseñas primavera.</li><li>Marchastel #90343: calma noche, más paso de día.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Solo cascada a pie desde #5073</strong> — Si cansancio traslado: 10–20 min a pie y listo. · <a href="https://fr.wikipedia.org/wiki/Cascade_du_D%C3%A9roc" target="_blank" rel="noopener">ver</a></li><li><strong>Nasbinals pueblo + aligot</strong> — Plan B cultural/gastro si viento en meseta. · <a href="https://www.google.com/maps/search/?api=1&amp;query=Nasbinals" target="_blank" rel="noopener">ver</a></li><li><strong>Evitar #98143</strong> — Privado + perros prohibidos — no improviséis ‘nature’ ahí. · <a href="https://park4night.com/es/place/98143" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-medio">riesgo medio</span></h4>
+<p><strong>Nasbinals (48) · Aubrac</strong> · GR65 / Compostela = mucha afluencia.</p>
+<p class="regs-sum">No Foirail &gt;24h. Déroc OK en práctica si discreto; aire Saint-Urcize = plan conforme.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Place du Foirail: limitado a 24 h (mairie) — no parking longue durée.</li><li>Longue durée: route de Marvejols (cementerio) y route de Saint-Urcize (Maison Médicale; solo parte no asfaltada según OT).</li><li>Aire de service oficial: route de Saint-Urcize junto camping municipal.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Aire/camping municipal Saint-Urcize: opción conforme.</li><li>Parking Cascade du Déroc (#5073): práctica de noche tolerada por usuarios si sois discretos; no es aire homologada — carteles in situ mandan; sin camping exterior.</li><li>#98143 nature: CANCELADO (privado + perros).</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Consultad aire/camping municipal Nasbinals. Déroc: gratuito si panel lo permite.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Meseta: viento + patous; no es norma de parking pero afecta la estancia.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.nasbinals.fr/services/2-4/" target="_blank" rel="noopener">Mairie Nasbinals · parkings</a><a class="btn btn-w" href="https://www.aubrac-lozere.com/garer-vehicule/" target="_blank" rel="noopener">Aubrac Lozère · garer véhicule</a><a class="btn btn-w" href="https://www.lozere-tourisme.com/aires-camping-cars/aire-de-service-camping-car-de-nasbinals/" target="_blank" rel="noopener">OT · Aire Nasbinals</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/MC_Aubrac_1.jpg" alt="Meseta del Aubrac" loading="lazy" referrerpolicy="no-referrer">
@@ -803,6 +931,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Aubrac: viento frecuente; patous en GR65 — protocolo estricto.</li><li>Déroc sigue siendo el ancla; Nasbinals = turismo Compostela en agosto.</li><li>Salhiens: lago más tranquilo que el pueblo si buscáis agua/foto.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Bucle corto Déroc (Visorando)</strong> — Si viento/patous: cascada y vuelta, sin meseta abierta larga. · <a href="https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/" target="_blank" rel="noopener">ver</a></li><li><strong>Lac des Salhiens</strong> — Alternativa paisaje agua sin GR masificado. · <a href="https://www.google.com/maps/search/?api=1&amp;query=Lac+des+Salhiens" target="_blank" rel="noopener">ver</a></li><li><strong>Día descanso camper</strong> — Meseta + calor/viento: legitimad siesta y salida corta 18 h. · <a href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-medio">riesgo medio</span></h4>
+<p><strong>Nasbinals (48) · Aubrac</strong> · GR65 / Compostela = mucha afluencia.</p>
+<p class="regs-sum">No Foirail &gt;24h. Déroc OK en práctica si discreto; aire Saint-Urcize = plan conforme.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Place du Foirail: limitado a 24 h (mairie) — no parking longue durée.</li><li>Longue durée: route de Marvejols (cementerio) y route de Saint-Urcize (Maison Médicale; solo parte no asfaltada según OT).</li><li>Aire de service oficial: route de Saint-Urcize junto camping municipal.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Aire/camping municipal Saint-Urcize: opción conforme.</li><li>Parking Cascade du Déroc (#5073): práctica de noche tolerada por usuarios si sois discretos; no es aire homologada — carteles in situ mandan; sin camping exterior.</li><li>#98143 nature: CANCELADO (privado + perros).</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>Consultad aire/camping municipal Nasbinals. Déroc: gratuito si panel lo permite.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> Meseta: viento + patous; no es norma de parking pero afecta la estancia.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.nasbinals.fr/services/2-4/" target="_blank" rel="noopener">Mairie Nasbinals · parkings</a><a class="btn btn-w" href="https://www.aubrac-lozere.com/garer-vehicule/" target="_blank" rel="noopener">Aubrac Lozère · garer véhicule</a><a class="btn btn-w" href="https://www.lozere-tourisme.com/aires-camping-cars/aire-de-service-camping-car-de-nasbinals/" target="_blank" rel="noopener">OT · Aire Nasbinals</a></div>
 </div>
 <div class="photo-grid"><figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Cascade_du_D%C3%A9roc.jpg/1280px-Cascade_du_D%C3%A9roc.jpg" alt="Cascada del Déroc" loading="lazy" referrerpolicy="no-referrer">
@@ -855,6 +995,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Matemale: aire Camping-Car Park 40 plazas + servicios; otra zona no aménagée ~3€/día. Fuera = prohibido.</li><li>#294842: calma lago, barrera ~2,0–2,2 m — medid el van.</li><li>La Devèze / Calmazeille: buenas notas 2026; Formiguères = base clásica Capcir.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Camping-Car Park Matemale</strong> — Si nature llena o barrera: servicios wifi/elec reserva online. · <a href="https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale" target="_blank" rel="noopener">ver</a></li><li><strong>Camping du Lac Matemale</strong> — Confort (spa/chalets) si tras largo traslado queréis ducha segura. · <a href="https://www.camping-lac-matemale.com/" target="_blank" rel="noopener">ver</a></li><li><strong>Aire Les Angles (Pla Del Mir)</strong> — Plan B Capcir asfaltada + navettes estación. · <a href="https://www.pyrenees-cerdagne.com/planifier/sejourner/aires-de-camping-cars" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Matemale / Formiguères · Capcir (66)</strong> · 1 jul–31 ago: parkings día de pago en base lac; máxima presión turística.</p>
+<p class="regs-sum">Matemale/Capcir: CC solo en aires señalizadas. Fuera = prohibido. Julio–agosto ticket día 2€.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Lac de Matemale: estacionamiento CC ESTRICTAMENTE limitado a zonas señalizadas.</li><li>1) Aire Camping-Car Park (40 plazas, servicios, 24/24 todo el año).</li><li>2) Aire suplementaria no aménagée: ticket diario (~2–3€) en horódato parking B.</li><li>Fuera de esas zonas: PROHIBIDO (Communauté de communes Pyrénées catalanes / Formiguères).</li><li>Parking día ocio lago: 2€ jornada 8h–18h (1 jul–31 ago) en parkings de entrada del site.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Solo en CCP Matemale, aire no aménagée autorizada, camping du Lac, La Devèze, o Calmazeille si carteles lo permiten.</li><li>Barrera altura frecuente ~2,0–2,2 m en accesos lago — medid el van.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>CCP: tarifa red Camping-Car Park (reserva online).</li><li>Aire simple: ticket ~2€/día (Formiguères/Matte).</li><li>Parking coche día site: 2€ 8h–18h julio–agosto.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> No improviséis en bordes del lago ni en bosque La Matte.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://formigueres.fr/la-decouverte-des-alentours/base-de-loisirs-de-la-matte/" target="_blank" rel="noopener">Formiguères · Base La Matte</a><a class="btn btn-w" href="https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale" target="_blank" rel="noopener">CC Pyrénées catalanes · Lac Matemale</a><a class="btn btn-w" href="https://www.campingcarpark.com/fr_FR/camping-car/occitanie/pyrenees-orientales/matemale" target="_blank" rel="noopener">Camping-Car Park Matemale</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Formigueres_eg1.JPG/1280px-Formigueres_eg1.JPG" alt="Formiguères" loading="lazy" referrerpolicy="no-referrer">
@@ -913,6 +1065,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Lago Matemale = pilar turístico Capcir: baño Ourson, paseos fáciles, masificación posible agosto.</li><li>P4N lago: noches ‘vue parfaite’ agosto 2026; altura limitada.</li><li>Camporells: bonito pero Difficile — fuera de criterio perras/fácil.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Boucle Visorando desde el lago</strong> — Si no queréis coche: caminad desde #294842. · <a href="https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/" target="_blank" rel="noopener">ver</a></li><li><strong>Lac de l&#x27;Olive (Formiguères)</strong> — Alternativa hike fácil si Matemale saturado. · <a href="https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412" target="_blank" rel="noopener">ver</a></li><li><strong>Quesos Capcir (Calmadou / Pérarnaud)</strong> — Plan B gastronómico si meteo gris. · <a href="https://www.google.com/maps/search/?api=1&amp;query=Le+Calmadou+Formigu%C3%A8res" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-alto">riesgo alto</span></h4>
+<p><strong>Matemale / Formiguères · Capcir (66)</strong> · 1 jul–31 ago: parkings día de pago en base lac; máxima presión turística.</p>
+<p class="regs-sum">Matemale/Capcir: CC solo en aires señalizadas. Fuera = prohibido. Julio–agosto ticket día 2€.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>Lac de Matemale: estacionamiento CC ESTRICTAMENTE limitado a zonas señalizadas.</li><li>1) Aire Camping-Car Park (40 plazas, servicios, 24/24 todo el año).</li><li>2) Aire suplementaria no aménagée: ticket diario (~2–3€) en horódato parking B.</li><li>Fuera de esas zonas: PROHIBIDO (Communauté de communes Pyrénées catalanes / Formiguères).</li><li>Parking día ocio lago: 2€ jornada 8h–18h (1 jul–31 ago) en parkings de entrada del site.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Solo en CCP Matemale, aire no aménagée autorizada, camping du Lac, La Devèze, o Calmazeille si carteles lo permiten.</li><li>Barrera altura frecuente ~2,0–2,2 m en accesos lago — medid el van.</li></ul>
+<p><strong>Tarifas / agosto:</strong></p><ul><li>CCP: tarifa red Camping-Car Park (reserva online).</li><li>Aire simple: ticket ~2€/día (Formiguères/Matte).</li><li>Parking coche día site: 2€ 8h–18h julio–agosto.</li></ul>
+<p><strong>Estacionar ≠ acampar:</strong> No improviséis en bordes del lago ni en bosque La Matte.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://formigueres.fr/la-decouverte-des-alentours/base-de-loisirs-de-la-matte/" target="_blank" rel="noopener">Formiguères · Base La Matte</a><a class="btn btn-w" href="https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale" target="_blank" rel="noopener">CC Pyrénées catalanes · Lac Matemale</a><a class="btn btn-w" href="https://www.campingcarpark.com/fr_FR/camping-car/occitanie/pyrenees-orientales/matemale" target="_blank" rel="noopener">Camping-Car Park Matemale</a></div>
 </div>
 <figure class="photo">
 <img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Lac_Matemale_3.jpg/1280px-Lac_Matemale_3.jpg" alt="Lago de Matemale" loading="lazy" referrerpolicy="no-referrer">
@@ -966,6 +1130,18 @@ Capcir forma una meseta situada a 1500 metros de media, y es el enlace entre el 
 <ul class="op-list"><li>Regreso Cerdanya: Puigcerdà es la parada café/compra más citada; evitar rodeos Andorranos si cansancio.</li><li>Formiguères mañana fresca típica a 1500 m — buen momento para cerrar depósito agua.</li></ul>
 <p><strong>Alternativas:</strong></p>
 <ul><li><strong>Parada Puigcerdà centro</strong> — Café + paseo corto sin alargar mucho el regreso. · <a href="https://www.google.com/maps/search/?api=1&amp;query=Puigcerd%C3%A0+centro" target="_blank" rel="noopener">ver</a></li><li><strong>Bellver de Cerdanya</strong> — Si queréis pueblo más tranquilo que Puigcerdà. · <a href="https://www.google.com/maps/search/?api=1&amp;query=Bellver+de+Cerdanya" target="_blank" rel="noopener">ver</a></li><li><strong>Directo N260 / AP-7</strong> — Si meteo fea o cansancio: sin sightseeing, casa. · <a href="https://www.google.com/maps/dir/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">ver</a></li></ul>
+</div><div class="regs">
+<h4>Normativa municipal · autocaravanas<span class="regs-badge risk-bajo">riesgo bajo</span></h4>
+<p><strong>Formiguères → Cerdanya / Teià</strong> · Tráfico frontera Puigcerdà posible.</p>
+<p class="regs-sum">Salida: servicios en Capcir. Parada café Puigcerdà sin pernocta improvisada.</p>
+<p><strong>Aparcamiento:</strong></p>
+<ul><li>En Formiguères: vaciad/llenad en aire/camping antes de salir.</li><li>Puigcerdà (España): aparcamiento urbano sujeto a ordenanzas locales; no pernoctéis en zona azul/prohibida.</li></ul>
+<p><strong>Pernocta:</strong></p>
+<ul><li>Día de regreso: no planificar pernocta FR salvo imprevisto (entonces CCP/aires Capcir).</li></ul>
+
+<p><strong>Estacionar ≠ acampar:</strong> Al cruzar a España: normativa española distinta (Instrucción DGT); no acampar en vía pública.</p>
+<p class="wx-src">Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.</p>
+<div class="btns"><a class="btn btn-w" href="https://www.google.com/maps/dir/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Formiguères → Teià</a></div>
 </div>
 <p>Regreso por Cerdanya / Puigcerdà. Parada cercana recomendada: <strong>Puigcerdà</strong> (café + paseo).</p>
 <div class="trail">

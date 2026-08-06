@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "checked_at": "2026-08-06T06:02:10.130528+00:00",
+    "note_es": "Síntesis de páginas oficiales de mairies/OT (ago 2026). Los carteles in situ prevalecen. En Francia (circulaire 19/10/2004): el camping-car puede estacionar como un coche si no hay ‘camping’ (sin toldo, mesa, sillas fuera). Las comunas pueden restringir zonas concretas con arrêté motivado.",
+    "sources_index": [
+      "https://www.mairie-ax.fr/camping-car",
+      "https://entraygues.fr/informations-touristiques/",
+      "https://www.salers.fr/stationnement-parking-salers-cantal",
+      "https://www.salers-tourisme.fr/faq",
+      "https://www.nasbinals.fr/services/2-4/",
+      "https://formigueres.fr/la-decouverte-des-alentours/base-de-loisirs-de-la-matte/",
+      "https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale"
+    ]
+  },
+  "days": {
+    "1": {
+      "commune": "Ax-les-Thermes (09)",
+      "agosto": "Alta temporada aire oficial: 15/06–15/09.",
+      "aparcamiento": [
+        "Aire oficial entrada Norte (Av. Delcassé / gare): servicios vidange + agua + electricidad.",
+        "Parc d'Espagne (piscina): mayo–sept, de pago, arceaux; agua gratis, sin electricidad (según mairie).",
+        "Aire Bonascre (plateau): borne agua/elec/vidange (pago CB)."
+      ],
+      "pernocta": [
+        "PROHIBIDO estacionar camping-cars en el pueblo de noche, en particular ribera Ariège / barrio En Castel 18:00–06:00 (mairie).",
+        "Pernoctad solo en aires oficiales, campings o spots P4N fuera del casco con carteles OK."
+      ],
+      "tarifas": [
+        "Aire Norte alta temp. 15/06–15/09: 12€/24h + elec 4€ + taxe séjour 1,58€/CC · máx. 21 días.",
+        "Baja temp.: 9€/24h. Reserva posible aireservice.com."
+      ],
+      "camping_vs_stationnement": "Sin toldo/mesa/sillas fuera en vía pública. Animales aceptados en aire OT.",
+      "fuentes": [
+        {
+          "label": "Mairie Ax · Camping-caristes",
+          "url": "https://www.mairie-ax.fr/camping-car"
+        },
+        {
+          "label": "OT Pyrénées Ariégeoises · Parc d'Espagne",
+          "url": "https://www.pyrenees-ariegeoises.com/preparer-mon-sejour/dormir/campings-et-aires-de-camping-cars/aire-de-stationnement-pour-camping-cars-ax-les-thermes-fr-4240146/"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "En agosto: NO dormir en el centro/ribera. Usad aire Norte, Parc d'Espagne, Bonascre o P4N nature fuera (Tournals/Savignac/Orgeix) mirando carteles."
+    },
+    "2": {
+      "commune": "Orgeix / Orlu (09)",
+      "agosto": "Alta afluencia valle; carteles locales variables.",
+      "aparcamiento": [
+        "La Payssière (#94127): zona picnic; algunos comentarios indican reserva a clientela del centre équestre — verificad paneles al llegar.",
+        "No aparquéis obstruyendo accesos ni en propiedad privada señalizada."
+      ],
+      "pernocta": [
+        "No hay arrêté claro publicado online tipo Ax; prevalecen carteles in situ.",
+        "Si hay ‘camping interdit’ / privado → no pasar noche. Alternativa legal: camping Les Ioules (#20472) o volver a aire Ax."
+      ],
+      "tarifas": [
+        "Camping municipal Les Ioules: tarifa camping (consultar recepción)."
+      ],
+      "camping_vs_stationnement": "Reserva natural Orlu: perros prohibidos en senderos (no es norma de aparcamiento, pero cancela hikes Orlu).",
+      "fuentes": [
+        {
+          "label": "P4N #94127 Orgeix",
+          "url": "https://park4night.com/es/place/94127"
+        },
+        {
+          "label": "P4N #20472 Les Ioules",
+          "url": "https://park4night.com/es/place/20472"
+        }
+      ],
+      "riesgo": "medio",
+      "resumen": "Orgeix: leed carteles. Si duda → Les Ioules o aire Ax. Orlu solo aparcamiento D22; no trails con perras."
+    },
+    "3": {
+      "commune": "Ustou + Aulus-les-Bains (09)",
+      "agosto": "Temporada alta Couserans / Guzet.",
+      "aparcamiento": [
+        "Coulantic / Cagateille (#51675, comuna Ustou): aparcamiento de DÍA para el circo; acceso estrecho en agosto.",
+        "Aulus · parking Cascade d'Ars / Jouges (#4258): parking hike; OT/mairie gestionan uso (a menudo de pago o controlado en temporada).",
+        "Guzet Prat-Mataou (#24616): parking estación; noche tolerada en práctica P4N — respetad carteles estación."
+      ],
+      "pernocta": [
+        "USTOU / #51675: desde 26/07/2026, por orden municipal, NO campers/autos ni similares 20:00–06:00 (comentario P4N escalador1). Solo día.",
+        "Aulus: opción legal camping municipal Le Coulédous (abierto todo el año).",
+        "Pernocta Guzet/Ustou D68: nature/parking — sin ‘camping’ exterior; si panel prohíbe noche, obedeced."
+      ],
+      "tarifas": [
+        "Coulédous: tarifas camping municipal. Parking hike Aulus: preguntad OT (a menudo ticket)."
+      ],
+      "camping_vs_stationnement": "En PNR Pyrénées Ariégeoises: discreción, no fuego libre, no basura.",
+      "fuentes": [
+        {
+          "label": "P4N #51675 (ban noche)",
+          "url": "https://park4night.com/es/place/51675"
+        },
+        {
+          "label": "Camping Coulédous Aulus",
+          "url": "https://www.camping-aulus-couledous.com/"
+        },
+        {
+          "label": "Mairie Aulus · camping",
+          "url": "https://auluslesbains.com/vivre-a-aulus/camping-municipal/"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Cagateille = SOLO DÍA (ban 20h–6h Ustou). Noche: Guzet/Jouges/Coulédous según carteles."
+    },
+    "4": {
+      "commune": "Ustou + Aulus-les-Bains (09)",
+      "agosto": "Temporada alta Couserans / Guzet.",
+      "aparcamiento": [
+        "Coulantic / Cagateille (#51675, comuna Ustou): aparcamiento de DÍA para el circo; acceso estrecho en agosto.",
+        "Aulus · parking Cascade d'Ars / Jouges (#4258): parking hike; OT/mairie gestionan uso (a menudo de pago o controlado en temporada).",
+        "Guzet Prat-Mataou (#24616): parking estación; noche tolerada en práctica P4N — respetad carteles estación."
+      ],
+      "pernocta": [
+        "USTOU / #51675: desde 26/07/2026, por orden municipal, NO campers/autos ni similares 20:00–06:00 (comentario P4N escalador1). Solo día.",
+        "Aulus: opción legal camping municipal Le Coulédous (abierto todo el año).",
+        "Pernocta Guzet/Ustou D68: nature/parking — sin ‘camping’ exterior; si panel prohíbe noche, obedeced."
+      ],
+      "tarifas": [
+        "Coulédous: tarifas camping municipal. Parking hike Aulus: preguntad OT (a menudo ticket)."
+      ],
+      "camping_vs_stationnement": "En PNR Pyrénées Ariégeoises: discreción, no fuego libre, no basura.",
+      "fuentes": [
+        {
+          "label": "P4N #51675 (ban noche)",
+          "url": "https://park4night.com/es/place/51675"
+        },
+        {
+          "label": "Camping Coulédous Aulus",
+          "url": "https://www.camping-aulus-couledous.com/"
+        },
+        {
+          "label": "Mairie Aulus · camping",
+          "url": "https://auluslesbains.com/vivre-a-aulus/camping-municipal/"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Cagateille = SOLO DÍA (ban 20h–6h Ustou). Noche: Guzet/Jouges/Coulédous según carteles."
+    },
+    "5": {
+      "commune": "Entraygues-sur-Truyère (12)",
+      "agosto": "Aire gratuita Pont Notre Dame operativa; camping Val de Saures abierto ~mid-abril a fin sept.",
+      "aparcamiento": [
+        "Aire gratuita cerca del Lot (Pont Notre Dame / chemin du camping): ~30 plazas; estacionamiento en bataille (no a lo largo del ribazo).",
+        "Acceso al camping cerrado de noche; la aire permanece parcialmente abierta para de paso."
+      ],
+      "pernocta": [
+        "Pernocta en la aire municipal de paso: tolerada/organizada por la comuna (fuente mairie/OT).",
+        "No montéis camping (toldo/mesa): es estaciónamiento, no camping.",
+        "Alternativa: Camping Val de Saures (servicios + piscina incluida en temporada)."
+      ],
+      "tarifas": [
+        "Estacionamiento aire: gratuito.",
+        "Servicios (agua/elec) abril–oct: 5€ en jetons en mairie (3 place de l'église) · 05 65 44 53 31."
+      ],
+      "camping_vs_stationnement": "Arco/altura en algunos accesos (~2,05 m en Faubourg P4N) — medid el Sunlight.",
+      "fuentes": [
+        {
+          "label": "Mairie Entraygues · infos touristiques",
+          "url": "https://entraygues.fr/informations-touristiques/"
+        },
+        {
+          "label": "OT Terres d'Aveyron · borne",
+          "url": "https://www.terresdaveyron.com/sejourner/dormir/campings/borne-de-service-camping-car-entraygues-sur-truyere-fr-5279989/"
+        }
+      ],
+      "riesgo": "bajo",
+      "resumen": "Aire Lot gratuita OK de paso; jetons servicios en mairie. Alternativa camping Val de Saures."
+    },
+    "6": {
+      "commune": "Laveissière / Saint-Jacques-des-Blats · Le Lioran (15)",
+      "agosto": "Estación abierta actividades verano; parkings trailhead concurridos de día.",
+      "aparcamiento": [
+        "Parkings de estación / Font d'Alagnon: uso diurno hike; seguid paneles P6/zonas CC si existen.",
+        "Combe Nègre / D67: parkings nature — no hay arrêté municipal fuerte publicado; prevalecen carteles y ‘no camping’."
+      ],
+      "pernocta": [
+        "Opción 100 % conforme: Camping des Blats (St-Jacques) — emplacements CC + servicios.",
+        "Pernocta en parking nature: solo si panel lo permite y sin material exterior (circulaire 2004)."
+      ],
+      "tarifas": [
+        "Blats: tarifa camping (consultar). Parkings estación: según señalización día."
+      ],
+      "camping_vs_stationnement": "Patous en estives: correa; no es norma de aparcamiento pero condiciona la ruta.",
+      "fuentes": [
+        {
+          "label": "Camping des Blats",
+          "url": "https://www.cantal-destination.com/fiche/camping-des-blats/"
+        },
+        {
+          "label": "OT Le Lioran",
+          "url": "https://www.lelioran.com/"
+        }
+      ],
+      "riesgo": "medio",
+      "resumen": "Más seguro: Blats. Nature P4N solo si cartel OK y sin ‘camping’ visible."
+    },
+    "7": {
+      "commune": "Laveissière / Saint-Jacques-des-Blats · Le Lioran (15)",
+      "agosto": "Estación abierta actividades verano; parkings trailhead concurridos de día.",
+      "aparcamiento": [
+        "Parkings de estación / Font d'Alagnon: uso diurno hike; seguid paneles P6/zonas CC si existen.",
+        "Combe Nègre / D67: parkings nature — no hay arrêté municipal fuerte publicado; prevalecen carteles y ‘no camping’."
+      ],
+      "pernocta": [
+        "Opción 100 % conforme: Camping des Blats (St-Jacques) — emplacements CC + servicios.",
+        "Pernocta en parking nature: solo si panel lo permite y sin material exterior (circulaire 2004)."
+      ],
+      "tarifas": [
+        "Blats: tarifa camping (consultar). Parkings estación: según señalización día."
+      ],
+      "camping_vs_stationnement": "Patous en estives: correa; no es norma de aparcamiento pero condiciona la ruta.",
+      "fuentes": [
+        {
+          "label": "Camping des Blats",
+          "url": "https://www.cantal-destination.com/fiche/camping-des-blats/"
+        },
+        {
+          "label": "OT Le Lioran",
+          "url": "https://www.lelioran.com/"
+        }
+      ],
+      "riesgo": "medio",
+      "resumen": "Más seguro: Blats. Nature P4N solo si cartel OK y sin ‘camping’ visible."
+    },
+    "8": {
+      "commune": "Salers + Saint-Bonnet-de-Salers (15)",
+      "agosto": "Pâques→Toussaint = régimen pago día/noche municipal. Agosto = máxima afluencia.",
+      "aparcamiento": [
+        "PROHIBIDA la circulación de camping-cars por el casco histórico (pasajes estrechos/abovedados) — mairie Salers.",
+        "Día: ~15 plazas señalizadas en rocades Charles Maigne — SOLO DÍA entre Pâques y Toussaint; 1 plaza/vehículo; sin toldo ni mesa picnic.",
+        "Horodateur: 4€/24h (mismo que coche) Pâques→Toussaint."
+      ],
+      "pernocta": [
+        "Noche municipal oficial: camping municipal Mouriol-Bas (route Puy Mary) · ~15 min a pie al centro (D680 o Montagnoune).",
+        "Ferme Fouey (St-Bonnet): acogida privada en explotación (France Passion / OT) — no es aire municipal de Salers; seguid reglas de la granja (aviso previo recomendado).",
+        "St-Bonnet estadio (#144306): comprobar carteles comunales."
+      ],
+      "tarifas": [
+        "Mouriol noche: 14€ + taxe séjour 0,22€/pers + 6€ elec opcional (apertura camping Pâques–Toussaint).",
+        "Borne servicios Mouriol: jeton 4€ (en recepción camping).",
+        "Puy Mary / Pas de Peyrol en verano: restricciones circulación/estacionamiento CC + navettes mid-julio→fin agosto — no improviséis en arcén."
+      ],
+      "camping_vs_stationnement": "En Charles Maigne de día: estacionamiento estricto, sin desballaje.",
+      "fuentes": [
+        {
+          "label": "Mairie Salers · stationnement CC",
+          "url": "https://www.salers.fr/stationnement-parking-salers-cantal"
+        },
+        {
+          "label": "OT Pays de Salers · FAQ CC",
+          "url": "https://www.salers-tourisme.fr/faq"
+        },
+        {
+          "label": "OT · Accueil Fouey",
+          "url": "https://www.salers-tourisme.fr/accueil-camping-cars-saint-bonnet-de-salers"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Salers agosto: CC fuera del casco. Día=Charles Maigne 4€. Noche=Mouriol 14€ o Fouey (privado) / St-Bonnet."
+    },
+    "9": {
+      "commune": "Salers + Saint-Bonnet-de-Salers (15)",
+      "agosto": "Pâques→Toussaint = régimen pago día/noche municipal. Agosto = máxima afluencia.",
+      "aparcamiento": [
+        "PROHIBIDA la circulación de camping-cars por el casco histórico (pasajes estrechos/abovedados) — mairie Salers.",
+        "Día: ~15 plazas señalizadas en rocades Charles Maigne — SOLO DÍA entre Pâques y Toussaint; 1 plaza/vehículo; sin toldo ni mesa picnic.",
+        "Horodateur: 4€/24h (mismo que coche) Pâques→Toussaint."
+      ],
+      "pernocta": [
+        "Noche municipal oficial: camping municipal Mouriol-Bas (route Puy Mary) · ~15 min a pie al centro (D680 o Montagnoune).",
+        "Ferme Fouey (St-Bonnet): acogida privada en explotación (France Passion / OT) — no es aire municipal de Salers; seguid reglas de la granja (aviso previo recomendado).",
+        "St-Bonnet estadio (#144306): comprobar carteles comunales."
+      ],
+      "tarifas": [
+        "Mouriol noche: 14€ + taxe séjour 0,22€/pers + 6€ elec opcional (apertura camping Pâques–Toussaint).",
+        "Borne servicios Mouriol: jeton 4€ (en recepción camping).",
+        "Puy Mary / Pas de Peyrol en verano: restricciones circulación/estacionamiento CC + navettes mid-julio→fin agosto — no improviséis en arcén."
+      ],
+      "camping_vs_stationnement": "En Charles Maigne de día: estacionamiento estricto, sin desballaje.",
+      "fuentes": [
+        {
+          "label": "Mairie Salers · stationnement CC",
+          "url": "https://www.salers.fr/stationnement-parking-salers-cantal"
+        },
+        {
+          "label": "OT Pays de Salers · FAQ CC",
+          "url": "https://www.salers-tourisme.fr/faq"
+        },
+        {
+          "label": "OT · Accueil Fouey",
+          "url": "https://www.salers-tourisme.fr/accueil-camping-cars-saint-bonnet-de-salers"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Salers agosto: CC fuera del casco. Día=Charles Maigne 4€. Noche=Mouriol 14€ o Fouey (privado) / St-Bonnet."
+    },
+    "10": {
+      "commune": "Nasbinals (48) · Aubrac",
+      "agosto": "GR65 / Compostela = mucha afluencia.",
+      "aparcamiento": [
+        "Place du Foirail: limitado a 24 h (mairie) — no parking longue durée.",
+        "Longue durée: route de Marvejols (cementerio) y route de Saint-Urcize (Maison Médicale; solo parte no asfaltada según OT).",
+        "Aire de service oficial: route de Saint-Urcize junto camping municipal."
+      ],
+      "pernocta": [
+        "Aire/camping municipal Saint-Urcize: opción conforme.",
+        "Parking Cascade du Déroc (#5073): práctica de noche tolerada por usuarios si sois discretos; no es aire homologada — carteles in situ mandan; sin camping exterior.",
+        "#98143 nature: CANCELADO (privado + perros)."
+      ],
+      "tarifas": [
+        "Consultad aire/camping municipal Nasbinals. Déroc: gratuito si panel lo permite."
+      ],
+      "camping_vs_stationnement": "Meseta: viento + patous; no es norma de parking pero afecta la estancia.",
+      "fuentes": [
+        {
+          "label": "Mairie Nasbinals · parkings",
+          "url": "https://www.nasbinals.fr/services/2-4/"
+        },
+        {
+          "label": "Aubrac Lozère · garer véhicule",
+          "url": "https://www.aubrac-lozere.com/garer-vehicule/"
+        },
+        {
+          "label": "OT · Aire Nasbinals",
+          "url": "https://www.lozere-tourisme.com/aires-camping-cars/aire-de-service-camping-car-de-nasbinals/"
+        }
+      ],
+      "riesgo": "medio",
+      "resumen": "No Foirail >24h. Déroc OK en práctica si discreto; aire Saint-Urcize = plan conforme."
+    },
+    "11": {
+      "commune": "Nasbinals (48) · Aubrac",
+      "agosto": "GR65 / Compostela = mucha afluencia.",
+      "aparcamiento": [
+        "Place du Foirail: limitado a 24 h (mairie) — no parking longue durée.",
+        "Longue durée: route de Marvejols (cementerio) y route de Saint-Urcize (Maison Médicale; solo parte no asfaltada según OT).",
+        "Aire de service oficial: route de Saint-Urcize junto camping municipal."
+      ],
+      "pernocta": [
+        "Aire/camping municipal Saint-Urcize: opción conforme.",
+        "Parking Cascade du Déroc (#5073): práctica de noche tolerada por usuarios si sois discretos; no es aire homologada — carteles in situ mandan; sin camping exterior.",
+        "#98143 nature: CANCELADO (privado + perros)."
+      ],
+      "tarifas": [
+        "Consultad aire/camping municipal Nasbinals. Déroc: gratuito si panel lo permite."
+      ],
+      "camping_vs_stationnement": "Meseta: viento + patous; no es norma de parking pero afecta la estancia.",
+      "fuentes": [
+        {
+          "label": "Mairie Nasbinals · parkings",
+          "url": "https://www.nasbinals.fr/services/2-4/"
+        },
+        {
+          "label": "Aubrac Lozère · garer véhicule",
+          "url": "https://www.aubrac-lozere.com/garer-vehicule/"
+        },
+        {
+          "label": "OT · Aire Nasbinals",
+          "url": "https://www.lozere-tourisme.com/aires-camping-cars/aire-de-service-camping-car-de-nasbinals/"
+        }
+      ],
+      "riesgo": "medio",
+      "resumen": "No Foirail >24h. Déroc OK en práctica si discreto; aire Saint-Urcize = plan conforme."
+    },
+    "12": {
+      "commune": "Matemale / Formiguères · Capcir (66)",
+      "agosto": "1 jul–31 ago: parkings día de pago en base lac; máxima presión turística.",
+      "aparcamiento": [
+        "Lac de Matemale: estacionamiento CC ESTRICTAMENTE limitado a zonas señalizadas.",
+        "1) Aire Camping-Car Park (40 plazas, servicios, 24/24 todo el año).",
+        "2) Aire suplementaria no aménagée: ticket diario (~2–3€) en horódato parking B.",
+        "Fuera de esas zonas: PROHIBIDO (Communauté de communes Pyrénées catalanes / Formiguères).",
+        "Parking día ocio lago: 2€ jornada 8h–18h (1 jul–31 ago) en parkings de entrada del site."
+      ],
+      "pernocta": [
+        "Solo en CCP Matemale, aire no aménagée autorizada, camping du Lac, La Devèze, o Calmazeille si carteles lo permiten.",
+        "Barrera altura frecuente ~2,0–2,2 m en accesos lago — medid el van."
+      ],
+      "tarifas": [
+        "CCP: tarifa red Camping-Car Park (reserva online).",
+        "Aire simple: ticket ~2€/día (Formiguères/Matte).",
+        "Parking coche día site: 2€ 8h–18h julio–agosto."
+      ],
+      "camping_vs_stationnement": "No improviséis en bordes del lago ni en bosque La Matte.",
+      "fuentes": [
+        {
+          "label": "Formiguères · Base La Matte",
+          "url": "https://formigueres.fr/la-decouverte-des-alentours/base-de-loisirs-de-la-matte/"
+        },
+        {
+          "label": "CC Pyrénées catalanes · Lac Matemale",
+          "url": "https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale"
+        },
+        {
+          "label": "Camping-Car Park Matemale",
+          "url": "https://www.campingcarpark.com/fr_FR/camping-car/occitanie/pyrenees-orientales/matemale"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Matemale/Capcir: CC solo en aires señalizadas. Fuera = prohibido. Julio–agosto ticket día 2€."
+    },
+    "13": {
+      "commune": "Matemale / Formiguères · Capcir (66)",
+      "agosto": "1 jul–31 ago: parkings día de pago en base lac; máxima presión turística.",
+      "aparcamiento": [
+        "Lac de Matemale: estacionamiento CC ESTRICTAMENTE limitado a zonas señalizadas.",
+        "1) Aire Camping-Car Park (40 plazas, servicios, 24/24 todo el año).",
+        "2) Aire suplementaria no aménagée: ticket diario (~2–3€) en horódato parking B.",
+        "Fuera de esas zonas: PROHIBIDO (Communauté de communes Pyrénées catalanes / Formiguères).",
+        "Parking día ocio lago: 2€ jornada 8h–18h (1 jul–31 ago) en parkings de entrada del site."
+      ],
+      "pernocta": [
+        "Solo en CCP Matemale, aire no aménagée autorizada, camping du Lac, La Devèze, o Calmazeille si carteles lo permiten.",
+        "Barrera altura frecuente ~2,0–2,2 m en accesos lago — medid el van."
+      ],
+      "tarifas": [
+        "CCP: tarifa red Camping-Car Park (reserva online).",
+        "Aire simple: ticket ~2€/día (Formiguères/Matte).",
+        "Parking coche día site: 2€ 8h–18h julio–agosto."
+      ],
+      "camping_vs_stationnement": "No improviséis en bordes del lago ni en bosque La Matte.",
+      "fuentes": [
+        {
+          "label": "Formiguères · Base La Matte",
+          "url": "https://formigueres.fr/la-decouverte-des-alentours/base-de-loisirs-de-la-matte/"
+        },
+        {
+          "label": "CC Pyrénées catalanes · Lac Matemale",
+          "url": "https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale"
+        },
+        {
+          "label": "Camping-Car Park Matemale",
+          "url": "https://www.campingcarpark.com/fr_FR/camping-car/occitanie/pyrenees-orientales/matemale"
+        }
+      ],
+      "riesgo": "alto",
+      "resumen": "Matemale/Capcir: CC solo en aires señalizadas. Fuera = prohibido. Julio–agosto ticket día 2€."
+    },
+    "14": {
+      "commune": "Formiguères → Cerdanya / Teià",
+      "agosto": "Tráfico frontera Puigcerdà posible.",
+      "aparcamiento": [
+        "En Formiguères: vaciad/llenad en aire/camping antes de salir.",
+        "Puigcerdà (España): aparcamiento urbano sujeto a ordenanzas locales; no pernoctéis en zona azul/prohibida."
+      ],
+      "pernocta": [
+        "Día de regreso: no planificar pernocta FR salvo imprevisto (entonces CCP/aires Capcir)."
+      ],
+      "tarifas": [],
+      "camping_vs_stationnement": "Al cruzar a España: normativa española distinta (Instrucción DGT); no acampar en vía pública.",
+      "fuentes": [
+        {
+          "label": "Google Formiguères → Teià",
+          "url": "https://www.google.com/maps/dir/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain"
+        }
+      ],
+      "riesgo": "bajo",
+      "resumen": "Salida: servicios en Capcir. Parada café Puigcerdà sin pernocta improvisada."
+    }
+  }
+}
