@@ -223,57 +223,58 @@ def live_three_day_html() -> str:
     return """
 <section class="section live-plan" id="plan-rapido">
 <div class="live-title"><span>Plan activo</span><h2>Lunes 10 · martes 11 · miércoles 12</h2></div>
-<div class="warn"><strong>Regla térmica:</strong> no tratéis un parking como refugio de calor. El <strong>Col de la Core</strong> es alto pero expuesto y sin sombra/servicios; llegad con agua, batería y plan B. El miércoles, <strong>Camping La Grange</strong> tiene río, sombra y luz, pero Sentein puede rondar 29 °C a mediodía: después de la mina, río/sombra, no van cerrado a las 17 h.</div>
+<div class="warn"><strong>Prioridad miércoles:</strong> ruta <em>y</em> noche en alta montaña — no bajéis a Sentein / La Grange. Base fija: <strong>Col de la Core · P4N #6527 (~1.395 m)</strong>. Es alto y fresco, pero <strong>expuesto, sin sombra ni servicios</strong>: llenad agua el lunes, batería cargada, ventanas/toldos listos. No tratéis el parking como refugio de calor a las 17 h con el van cerrado. Bentaillou queda aparcado: demasiado exigente para este tramo.</div>
 
 <article class="card prose">
 <h3>Lunes 10 · Saint-Lizier + Col de la Core</h3>
-<div class="meta"><span class="tag">visita + comida</span><span class="tag">P4N #6527</span><span class="tag">1.395 m</span><span class="tag">24 °C máx. en el Col</span></div>
+<div class="meta"><span class="tag">visita + comida</span><span class="tag">P4N #6527</span><span class="tag">1.395 m</span><span class="tag">~24 °C máx. en el Col</span></div>
 <div class="wx">
 <div class="wx-head"><strong>Meteo actual · Col de la Core</strong><span>Lun 10 · Open-Meteo actualizado 9 ago</span></div>
-<div class="wx-grid"><div><em>Mañana</em><strong>Seca · 15–21°C</strong></div><div><em>Mediodía</em><strong>21–24°C</strong></div><div><em>Tarde</em><strong>Chubascos desde ~17–18 h</strong></div><div><em>Noche</em><strong>Fresca, pero posible lluvia</strong></div></div>
+<div class="wx-grid"><div><em>Mañana</em><strong>Seca · 15–21°C</strong></div><div><em>Mediodía</em><strong>21–24°C</strong></div><div><em>Tarde</em><strong>Chubascos desde ~17–18 h</strong></div><div><em>Noche</em><strong>Fresca, posible lluvia</strong></div></div>
 </div>
 <ol>
 <li><strong>Salida tranquila del camping Ustou.</strong> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.79757,1.26285&amp;destination=43.00045,1.13720&amp;travelmode=driving" target="_blank" rel="noopener">Google · Ustou → Saint-Lizier</a> (~40 min).</li>
-<li><strong>Comida y visita corta de Saint-Lizier:</strong> aparcad en el <em>Palais des Évêques</em>, parking plano apto para camper alto; no entréis al casco por calles estrechas. Palacio, catedral, claustro y mirador.</li>
-<li><strong>Después de comer:</strong> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.00045,1.13720&amp;destination=42.85879,1.10511&amp;travelmode=driving" target="_blank" rel="noopener">Google · Saint-Lizier → Col de la Core</a> (~40 min). Llegad antes de que cambie el cielo y antes de que se llene.</li>
+<li><strong>Comida y visita corta de Saint-Lizier:</strong> aparcad en el <em>Palais des Évêques</em>, parking plano apto para camper alto; no entréis al casco por calles estrechas. Palacio, catedral, claustro y mirador. <strong>Agua:</strong> llenad bidones aquí o en Ustou — en el Col no hay.</li>
+<li><strong>Después de comer:</strong> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.00045,1.13720&amp;destination=42.85879,1.10511&amp;travelmode=driving" target="_blank" rel="noopener">Google · Saint-Lizier → Col de la Core</a> (~40 min). Llegad antes de que cambie el cielo y antes de que se llene. Esta será vuestra base martes <em>y</em> miércoles.</li>
 </ol>
-<div class="trail"><h4>Dormir</h4>
-<p><strong>P4N #6527 · Col de la Core</strong> — parking alto, vistas y salidas de sendero. Gratis, perros OK, sin agua/luz/ducha y <strong>sin sombra</strong>. Aparcad discretamente, sin desplegar material; los carteles locales mandan. Hay reseñas de obras/plazas reducidas: si no hay sitio o el cielo se pone feo, no insistáis.</p>
+<div class="trail"><h4>Dormir lun + mar + (ideal) mié</h4>
+<p><strong>P4N #6527 · Col de la Core</strong> — parking alto, vistas y dos salidas de sendero. Gratis, perros OK, sin agua/luz/ducha y <strong>sin sombra</strong>. Aparcad discretamente, sin desplegar material; los carteles locales mandan. Hay reseñas de obras/plazas reducidas: si no hay sitio, plan B inmediato abajo.</p>
 <div class="btns"><a class="btn btn-o" href="https://park4night.com/fr/place/6527" target="_blank" rel="noopener">P4N #6527 · Col de la Core</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.85879,1.10511&amp;travelmode=driving" target="_blank" rel="noopener">Google Col de la Core</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · mapa tracks Core</a></div>
 </div>
 </article>
 
 <article class="card prose">
-<h3>Martes 11 · Trekking desde el Col de la Core</h3>
-<div class="meta"><span class="tag">salida 7:00–7:30</span><span class="tag">seca hasta ~14–15 h</span><span class="tag tag-bad">tormenta probable tarde</span></div>
+<h3>Martes 11 · 1ª ruta alta · dormir otra vez en el Col</h3>
+<div class="meta"><span class="tag">salida 7:00–7:30</span><span class="tag">seca hasta ~14–15 h</span><span class="tag tag-bad">tormenta probable tarde</span><span class="tag">noche en altura</span></div>
 <div class="wx">
 <div class="wx-head"><strong>Meteo actual · altura Core</strong><span>Mar 11 · Open-Meteo actualizado 9 ago</span></div>
 <div class="wx-grid"><div><em>Temp</em><strong>14–24°C</strong></div><div><em>Hasta 14 h</em><strong>Seco</strong></div><div><em>15–17 h</em><strong>Riesgo creciente</strong></div><div><em>17–22 h</em><strong>Tormenta probable</strong></div></div>
 </div>
 <div class="photo-grid">
-<div class="trail"><h4>Plan A · Cap de Bouirex</h4><p><strong>8 km · +516 m · 3 h 30 · 1.873 m.</strong> Circular amarilla desde el P4N, cumbre y gran panorama. Es la opción más corta y limpia.</p><div class="btns"><a class="btn btn-w" href="https://www.tourisme-couserans-pyrenees.com/randonnees/estives-du-bouirex/" target="_blank" rel="noopener">Ficha oficial Bouirex</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · tracks Core</a></div></div>
-<div class="trail"><h4>Plan B · Étang d’Ayès + Chemin de la Liberté</h4><p><strong>9,7 km A/R · +590 m · ~3 h 45 · 1.742 m.</strong> Lago de altura y antigua ruta de evasión hacia España durante la II Guerra Mundial. Elegidlo solo si a las 7 h el cielo sigue estable.</p><div class="btns"><a class="btn btn-w" href="https://www.petiterepublique.com/2022/07/29/tourisme-randonnee-letang-dayes-au-depart-du-col-de-la-corre/" target="_blank" rel="noopener">Ficha Étang d’Ayès</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · tracks Core</a></div></div>
+<div class="trail"><h4>Elegid UNA · Cap de Bouirex</h4><p><strong>8 km · +516 m · 3 h 30 · 1.873 m.</strong> Circular amarilla desde el P4N, cumbre y gran panorama. Opción más corta y limpia — recomendada si el cielo es dudoso a las 7 h.</p><div class="btns"><a class="btn btn-w" href="https://www.tourisme-couserans-pyrenees.com/randonnees/estives-du-bouirex/" target="_blank" rel="noopener">Ficha oficial Bouirex</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · tracks Core</a></div></div>
+<div class="trail"><h4>O Étang d’Ayès + Chemin de la Liberté</h4><p><strong>9,7 km A/R · +590 m · ~3 h 45 · 1.742 m.</strong> Lago de altura y antigua ruta de evasión hacia España. Un pelín más larga; guardadla para el miércoles si hoy preferís Bouirex.</p><div class="btns"><a class="btn btn-w" href="https://www.petiterepublique.com/2022/07/29/tourisme-randonnee-letang-dayes-au-depart-du-col-de-la-corre/" target="_blank" rel="noopener">Ficha Étang d’Ayès</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · tracks Core</a></div></div>
 </div>
-<p><strong>Decisión:</strong> regresad al van antes de las 14 h. Perras con correa: estives, ganado y patous. Si aparecen nubes verticales o se oye trueno, bajad sin completar la cumbre/lago.</p>
-<p><strong>Tras la ruta:</strong> <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.85879,1.10511&amp;destination=42.8752,0.9576&amp;travelmode=driving" target="_blank" rel="noopener">Google · Col de la Core → Camping La Grange, Sentein</a>. Es la base correcta para la mina del miércoles.</p>
+<p><strong>Decisión:</strong> regresad al van <strong>antes de las 14 h</strong>. Perras con correa: estives, ganado y patous. Si aparecen nubes verticales o se oye trueno, bajad sin completar cumbre/lago.</p>
+<p><strong>Tras la ruta · NO bajéis a Sentein.</strong> Quedaos en el Col de la Core. Si la tormenta es fuerte, el Col se llena o necesitáis sombra/WC: <a href="https://park4night.com/fr/place/10723" target="_blank" rel="noopener">P4N #10723 · Lac de Bethmale (~1.074 m)</a> — más bajo que el Col pero con sombra y servicios básicos; <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.85879,1.10511&amp;destination=42.8615,1.0565&amp;travelmode=driving" target="_blank" rel="noopener">Google · Core → Lac Bethmale</a> (~20 min). Prohibido bañarse en el lago.</p>
 </article>
 
 <article class="card prose">
-<h3>Miércoles 12 · Minas de Bentaillou</h3>
-<div class="meta"><span class="tag">base Sentein / Biros</span><span class="tag">P4N #27166</span><span class="tag">salida 6:30–7:00</span><span class="tag">mañana seca</span></div>
+<h3>Miércoles 12 · 2ª ruta alta · noche en altura</h3>
+<div class="meta"><span class="tag">prioridad alta montaña</span><span class="tag">P4N #6527</span><span class="tag">salida 7:00–7:30</span><span class="tag">día más estable</span></div>
 <div class="wx">
-<div class="wx-head"><strong>Meteo actual · Eylie / Bentaillou</strong><span>Mié 12 · Open-Meteo actualizado 9 ago</span></div>
-<div class="wx-grid"><div><em>Valle</em><strong>18–29°C</strong></div><div><em>Mañana</em><strong>Seca</strong></div><div><em>Tarde</em><strong>Riesgo bajo, ~20%</strong></div><div><em>Altura</em><strong>Más fresco; llevad capa</strong></div></div>
+<div class="wx-head"><strong>Meteo actual · Col de la Core</strong><span>Mié 12 · Open-Meteo actualizado 9 ago</span></div>
+<div class="wx-grid"><div><em>Temp</em><strong>16–26°C</strong></div><div><em>Lluvia</em><strong>~0,5 mm · pmax 5%</strong></div><div><em>Mañana</em><strong>Seca y usable</strong></div><div><em>Tarde</em><strong>Mejor que el martes</strong></div></div>
 </div>
-<div class="trail"><h4>Dormir el martes · servicios y sombra</h4>
-<p><strong>Camping municipal La Grange · Sentein · P4N #27166</strong> — 46 plazas, electricidad opcional, duchas, vaciado y río Lez. Perros admitidos; recepción en agosto 8:30–12:00 y 16:00–19:30. <strong>No es alta montaña:</strong> a las 17 h puede seguir caluroso; elegid parcela sombreada junto al río, conectad el van y pasad la tarde fuera/en el agua.</p>
-<div class="btns"><a class="btn btn-o" href="https://park4night.com/fr/place/27166" target="_blank" rel="noopener">P4N #27166 · Camping La Grange</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8752,0.9576&amp;travelmode=driving" target="_blank" rel="noopener">Google Camping La Grange</a><a class="btn btn-w" href="tel:+33561961874">Llamar 05 61 96 18 74</a></div>
+<div class="trail"><h4>Ruta · la que no hicisteis el martes</h4>
+<p>Salís andando desde el mismo parking. Si el martes fue <strong>Bouirex</strong> → hoy <strong>Étang d’Ayès</strong> (9,7 km A/R, +590 m, ~3 h 45, lago a 1.742 m). Si el martes fue Ayès → hoy Bouirex (8 km, +516 m, 3 h 30, 1.873 m). Ambas son moderadas de altura, <strong>muy por debajo</strong> de Bentaillou (14 km / +1.000 m).</p>
+<div class="btns"><a class="btn btn-w" href="https://www.tourisme-couserans-pyrenees.com/randonnees/estives-du-bouirex/" target="_blank" rel="noopener">Ficha Bouirex</a><a class="btn btn-w" href="https://www.petiterepublique.com/2022/07/29/tourisme-randonnee-letang-dayes-au-depart-du-col-de-la-corre/" target="_blank" rel="noopener">Ficha Ayès</a><a class="btn btn-wiki" href="https://www.wikiloc.com/wikiloc/map.do?sw=42.82,1.08&amp;ne=42.89,1.14" target="_blank" rel="noopener">Wikiloc · tracks Core</a></div>
 </div>
-<div class="trail"><h4>Ruta minera · solo si estáis fuertes</h4>
-<p><strong>Boucle des Mines de Bentaillou:</strong> 13–14 km, +920–1.000 m, 5 h 50–7 h, mina a ~1.900 m. Salid del camping antes de las 7 h y aparcad en el Bocard. <strong>No entréis en galerías</strong>; no hagáis la bajada circular si el terreno está mojado o no seguís bien el track. Alternativa segura: GR10 hasta Plateau de Rouge / instalaciones mineras y regreso por el mismo camino.</p>
-<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.8752,0.9576&amp;destination=42.83452,0.93491&amp;travelmode=driving" target="_blank" rel="noopener">Google camping → Bocard d’Eylie</a><a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/boucle-des-mines-de-bentaillou-bocard-chemin-des-mines-bentaillou-retour-par-le-gr10-col-de-cataoue-8146062" target="_blank" rel="noopener">Wikiloc · Mines de Bentaillou</a><a class="btn btn-w" href="https://www.tourisme-couserans-pyrenees.com/en/randonnees/boucle-des-mines-du-bentaillou/" target="_blank" rel="noopener">Ficha oficial</a></div>
+<div class="trail"><h4>Dormir miércoles · alta montaña</h4>
+<p><strong>Plan A:</strong> otra noche en <strong>Col de la Core · #6527</strong> (1.395 m) — coherente con la prioridad de altura. Revisad agua y batería; a mediodía puede hacer ~26 °C al sol: abrid todo, usad toldo si el viento lo permite, y no os enclaustréis en el van.</p>
+<p><strong>Plan B sombra:</strong> <strong>Lac de Bethmale · P4N #10723</strong> (~1.074 m) si necesitáis árboles/WC tras dos noches expuestas. Sigue siendo montaña, no valle de Sentein.</p>
+<div class="btns"><a class="btn btn-o" href="https://park4night.com/fr/place/6527" target="_blank" rel="noopener">P4N #6527 · Col de la Core</a><a class="btn btn-o" href="https://park4night.com/fr/place/10723" target="_blank" rel="noopener">P4N #10723 · Lac Bethmale</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8615,1.0565&amp;travelmode=driving" target="_blank" rel="noopener">Google Lac Bethmale</a></div>
 </div>
-<p class="wx-src">El Bocard es parking de inicio, no pernocta formal: usad el camping. Revisión meteorológica obligatoria a las 6:00 y perras siempre con correa por ganado/patous.</p>
+<p class="wx-src"><strong>Aplazado a propósito:</strong> Camping La Grange (Sentein) y Mines de Bentaillou — valle + ruta dura. Solo si más adelante os apetece y estáis fuertes; no es el miércoles.</p>
 </article>
 </section>
 """
