@@ -219,184 +219,117 @@ def day_context_html(day_num: int) -> str:
 
 
 def live_three_day_html() -> str:
-    """Priority field plan: leave Pyrenees for Massif Central (heat-aware)."""
+    """Active plan: Spain loop Albarracín → Morella → Irati, back Teià Sat 22."""
     return """
 <section class="section live-plan" id="plan-rapido">
-<div class="live-title"><span>Plan activo</span><h2>Martes 11 → sábado 15 · Macizo Central (ola de calor)</h2></div>
-<div class="warn"><strong>Estrategia calor:</strong> dormid siempre en <em>cota</em> (Lioran / bosque Combe Nègre · meseta Aubrac). Los valles (Entraygues, fondo de Salers a mediodía) pueden ir a 32–37 °C: pasad de largo o solo parada corta con sombra. Hiking <strong>7:00–12:00</strong>, siesta en sombra 12–17 h, no van cerrado al sol. Perras con correa (patous en estives). <strong>Puy Mary / Pas de Peyrol:</strong> en julio–agosto los camping-cars tienen estacionamiento diurno restringido; usad navetta o id muy temprano / tarde. <strong>#27677 Col de Serre</strong> indica límite ~2,20 m → probable <em>no</em> para el Sunlight: verificad antes.</div>
+<div class="live-title"><span>Plan activo</span><h2>Domingo 16 → sábado 22 · Albarracín · Morella · Irati → Teià</h2></div>
+<div class="warn"><strong>Marco:</strong> volvéis a Teià el <strong>sábado 22</strong>. Bloque fresco interior (Teruel–Castellón) a mitad de semana; <strong>vuelta por Navarra (Irati)</strong> vie–sáb. Perras siempre con correa. Hiking 7:00–12:00. No Parrizal de Beceite si confirma perros prohibidos — hay alternativas en Ports. Parking Irati de día: no contar con pernocta en Casas de Irati.</div>
 
 <article class="card prose">
-<h3>Martes 11 · Salida Pirineo → Le Lioran</h3>
-<div class="meta"><span class="tag">salida Core 12:00–12:30</span><span class="tag">llegada 18:00–19:00</span><span class="tag">~5–5,5 h</span><span class="tag tag-bad">lluvia tarde Lioran</span></div>
-<div class="wx">
-<div class="wx-head"><strong>Meteo · trayecto / Lioran</strong><span>Mar 11 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Core mañana</em><strong>Seca · útil si desayunáis</strong></div><div><em>Carretera</em><strong>Chaparrones posibles</strong></div><div><em>Lioran tarde</em><strong>~18–24 °C · ~13 mm</strong></div><div><em>Entraygues</em><strong>~35 °C · no dormir ahí</strong></div></div>
-</div>
+<h3>Domingo 16 · Teià → Albarracín</h3>
+<div class="meta"><span class="tag">~5,5–6 h</span><span class="tag">salida mañana</span><span class="tag">noche sierra ~1.200 m</span></div>
 <ol>
-<li><strong>Mañana en el Core (opcional y corta):</strong> solo si os apetece café + paseo &lt;1 h. No empecéis Bouirex/Ayès enteros: salís a las 12–12:30.</li>
-<li><strong>12:00–12:30 · salida</strong> hacia Le Lioran. <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.85879,1.10511&amp;destination=45.0849,2.7330&amp;travelmode=driving" target="_blank" rel="noopener">Google · Col de la Core → Combe Nègre / Lioran</a>.</li>
-<li><strong>Paradas:</strong> combustible, agua, comida. Entraygues = <em>cruzar</em>, no pernocta (valle caliente).</li>
-<li><strong>Llegada 18–19 h:</strong> puede llover; priorizad parking con árboles y listo para miércoles.</li>
+<li>Salida de Teià por la mañana (evitar calor de tarde en valle del Ebro si podéis).</li>
+<li><a href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=40.407,-1.444&amp;travelmode=driving" target="_blank" rel="noopener">Google · Teià → Albarracín</a>.</li>
+<li>Llegada tarde: paseo corto pueblo / murallas si quedan fuerzas.</li>
 </ol>
-<div class="trail"><h4>Dormir martes · cota Lioran</h4>
-<p><strong>Plan A · P4N #13709 Combe Nègre</strong> — bosque de abetos, sombra, base Lioran, noche muy valorada. Ideal ola de calor.</p>
-<p><strong>Plan B · #42476 Saint-Jacques D67</strong> — calma, cerca de la estación.</p>
-<p><strong>Plan C confort · Camping des Blats #6003</strong> — ~980 m, río Cère, sombra, perros OK, ~7 min al Lioran · tel. 04 71 47 06 00.</p>
-<div class="btns">
-<a class="btn btn-o" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">P4N #13709 Combe Nègre</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/42476" target="_blank" rel="noopener">P4N #42476</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/6003" target="_blank" rel="noopener">Camping Blats #6003</a>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=45.0849,2.7330&amp;travelmode=driving" target="_blank" rel="noopener">Google Combe Nègre</a>
-<a class="btn btn-w" href="tel:+33471470600">Blats 04 71 47 06 00</a>
-</div>
+<div class="trail"><h4>Dormir</h4>
+<p><strong>Plan A:</strong> aire / P4N zona Tejería · Albarracín (servicios, ~15 €, cerca del pueblo) · <a href="https://park4night.com/es/place/390083" target="_blank" rel="noopener">P4N #390083</a>.</p>
+<p><strong>Plan B:</strong> <a href="https://www.campingalbarracin.com/" target="_blank" rel="noopener">Camping Ciudad de Albarracín</a> — sombra, duchas, perros según condiciones · vistas muralla.</p>
 </div>
 </article>
 
 <article class="card prose">
-<h3>Miércoles 12 · Volcán / bosque Lioran (con perras)</h3>
-<div class="meta"><span class="tag">salida 7:00–7:30</span><span class="tag">seco y claro</span><span class="tag">17–28 °C cota</span><span class="tag tag-bad">Bec/Téton CANCELADO · chiens interdits</span></div>
-<div class="wx">
-<div class="wx-head"><strong>Meteo · Le Lioran / Puy Mary</strong><span>Mié 12 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Lioran</em><strong>17–28 °C · seco</strong></div><div><em>Puy Mary</em><strong>14–25 °C · el más fresco</strong></div><div><em>Mañana</em><strong>Ideal</strong></div><div><em>Valle</em><strong>Hasta 36 °C · evitad</strong></div></div>
-</div>
-<div class="warn"><strong>Cancelado:</strong> <em>Bec de l’Aigle + Téton de Vénus</em> (oficial Parc des Volcans / PDIPR): <strong>chiens interdits, même tenus en laisse</strong> (estives / propiedades privadas). No se deja a las perras en el van para “hacer la cresta”.</div>
-<div class="photo-grid">
-<div class="trail"><h4>Plan A · Puy Mary (1.783 m) · perras OK en senda</h4>
-<p>Subida corta por <strong>escaleras/senda amueblada</strong> desde Pas de Peyrol (~30–45 min A/R, +~200 m). Perras <strong>con correa</strong>, solo en el camino; <strong>no atraveséis estives</strong> fuera de senda. CC: no aparquéis arriba de día (restricción verano) → coche/navetta o id muy temprano/tarde. Navettas: perros según línea (a menudo límite de peso) — preguntad.</p>
-<div class="btns">
-<a class="btn btn-w" href="https://www.puymary.fr/les-bons-gestes/" target="_blank" rel="noopener">Bons gestes · perros</a>
-<a class="btn btn-w" href="https://www.puymary.fr/les-lignes-du-volcan/" target="_blank" rel="noopener">Navettas Puy Mary</a>
-<a class="btn btn-w" href="https://www.tourisme-avec-mon-chien.com/le-puy-mary-avec-son-chien/" target="_blank" rel="noopener">Puy Mary con perro</a>
-<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Pas+de+Peyrol+Puy+Mary" target="_blank" rel="noopener">Google Pas de Peyrol</a>
-</div></div>
-<div class="trail"><h4>Plan B · Bosque Combe Nègre / Font de Cère (sombra)</h4>
-<p>Paseo 6–10 km por pistas forestales desde #13709 o Col de Font de Cère: fresco, apto perras, sin la cresta prohibida. Ideal si hace calor o no queréis logística del col.</p>
-<div class="btns">
-<a class="btn btn-o" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">Base #13709</a>
-<a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">OT / estación Lioran</a>
-<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Font+de+C%C3%A8re+Lioran" target="_blank" rel="noopener">Google Font de Cère</a>
-</div></div>
-</div>
-<div class="trail"><h4>Plan C · Plomb du Cantal (teleférico) + paseo corto</h4>
-<p>Subida mecánica desde Super Lioran + paseo suave arriba (perras admitidas en actividades listadas por OT Hautes Terres; confirmdad en taquilla). Sin grimpada tipo Bec.</p>
-<div class="btns">
-<a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">Téléphérique Plomb</a>
-<a class="btn btn-w" href="https://www.hautesterrestourisme.fr/blog/post/je-pars-en-vacances-sur-le-volcan-cantal-avec-mon-chien/" target="_blank" rel="noopener">Cantal con perro (OT)</a>
-</div></div>
-<p><strong>Tarde calor:</strong> sombra en Combe Nègre o río en Blats. No bajéis al valle del Lot.</p>
-<div class="trail"><h4>Dormir miércoles · misma cota</h4>
-<p>Repetid <strong>#13709 / #42476 / Blats #6003</strong>. Evitad #27677 Col de Serre si la barrera 2,20 m no deja pasar el Sunlight.</p>
-<div class="btns">
-<a class="btn btn-o" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">#13709</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/42476" target="_blank" rel="noopener">#42476</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/6003" target="_blank" rel="noopener">#6003 Blats</a>
-</div>
-</div>
-</article>
-
-<article class="card prose">
-<h3>Jueves 13 · Piste Verte + hacia Salers (evitar mediodía caliente)</h3>
-<div class="meta"><span class="tag">ruta verde / sombra</span><span class="tag">Salers 18–32 °C</span><span class="tag">Puy Mary 16–27 °C</span><span class="tag">noche hierba / sombra</span></div>
-<div class="wx">
-<div class="wx-head"><strong>Meteo · Cantal oeste</strong><span>Jue 13 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Crestas</em><strong>Secas · aún buenas</strong></div><div><em>Salers pueblo</em><strong>Hasta ~32 °C</strong></div><div><em>Lluvia</em><strong>~0 mm</strong></div><div><em>Estrategia</em><strong>Mañana activa · tarde sombra</strong></div></div>
-</div>
-<div class="trail"><h4>Mañana · Piste Verte (vía verde)</h4>
-<p>Antigua vía férrea Sumène–Artense: sombra de árboles, suave, ideal con perras y calor. Tramo corto A/R (8–12 km) desde un parking de la vía; no hace falta toda la línea.</p>
-<div class="btns">
-<a class="btn btn-w" href="https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/" target="_blank" rel="noopener">OT Piste Verte</a>
-<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Piste+Verte+Sum%C3%A8ne+Artense" target="_blank" rel="noopener">Google Piste Verte</a>
-</div></div>
-<div class="trail"><h4>Alternativa / extra · volcán si no lo hicisteis ayer</h4>
-<p>Navetta a Pas de Peyrol temprano + subida corta Puy Mary, o mirador sin cumbre. Viento típico en cresta: capa aunque haga calor abajo.</p></div>
-<div class="trail"><h4>Tarde · traslado a base Salers (después de la siesta)</h4>
-<p>Movimiento corto (~1 h). Pueblo de basalto: <strong>visita solo temprano mañana viernes</strong>, no a las 15 h.</p>
-<p><strong>Dormir (prioridad sombra/hierba, no asfalto):</strong></p>
+<h3>Lunes 17 · Albarracín + Pinares de Rodeno</h3>
+<div class="meta"><span class="tag">perras OK</span><span class="tag">pinar / rodeno</span><span class="tag">noche otra vez Albarracín</span></div>
 <ul>
-<li><strong>#271257 Ferme Fouey</strong> (~6 min Salers) — hierba, queso, acogida; mejor que parking duro.</li>
-<li><strong>#144306 Saint-Bonnet estadio</strong> — plan B ~6 min.</li>
-<li><strong>#114179 Camping Le Moulin du Teinturier</strong> — río/sombra, perros OK, ~11 min · confort si el van hierve.</li>
+<li><strong>Mañana:</strong> Pinares de Rodeno (senderos señalizados, piedra roja, sombra). Perras atadas.</li>
+<li><strong>Tarde:</strong> casco de Albarracín, Guadalaviar, miradores — siesta si aprieta.</li>
 </ul>
 <div class="btns">
-<a class="btn btn-o" href="https://park4night.com/es/place/271257" target="_blank" rel="noopener">P4N #271257 Fouey</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/144306" target="_blank" rel="noopener">P4N #144306</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/114179" target="_blank" rel="noopener">Camping Moulin #114179</a>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=45.0849,2.7330&amp;destination=45.1528,2.4912&amp;travelmode=driving" target="_blank" rel="noopener">Google Lioran → Fouey</a>
-</div>
+<a class="btn btn-w" href="https://albarracinturismo.com/viajar-con-mascotas-albarracin-teruel/" target="_blank" rel="noopener">Albarracín con mascotas</a>
+<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Pinares+de+Rodeno+Albarrac%C3%ADn" target="_blank" rel="noopener">Google Rodeno</a>
 </div>
 </article>
 
 <article class="card prose">
-<h3>Viernes 14 · Salers temprano → meseta Aubrac (cota)</h3>
-<div class="meta"><span class="tag">pueblo 8:00–10:30</span><span class="tag">Salers ~32 °C</span><span class="tag">Aubrac 18–30 °C</span><span class="tag">noche meseta</span></div>
-<div class="wx">
-<div class="wx-head"><strong>Meteo · Salers → Aubrac</strong><span>Vie 14 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Salers</em><strong>20–32 °C · seco</strong></div><div><em>Aubrac</em><strong>18–30 °C · más aire</strong></div><div><em>Nubes</em><strong>Más por la tarde</strong></div><div><em>Plan</em><strong>Subir a meseta antes del pico de calor</strong></div></div>
-</div>
+<h3>Martes 18 · Sierra suave → Morella</h3>
+<div class="meta"><span class="tag">mejor meteo</span><span class="tag">~12–22 °C tip.</span><span class="tag">traslado ~2,5–3 h</span></div>
 <ol>
-<li><strong>8:00 Salers:</strong> casco basalto + Maison de la Salers. Evitad calles estrechas con el van: aparcad en Fouey/estadio y andad.</li>
-<li><strong>Boucle La Montagnoune (~4 km)</strong> o paseo bocage corto — terminad antes de 11:30.</li>
-<li><strong>Mediodía:</strong> sombra en Fouey / Moulin (río), no el casco.</li>
-<li><strong>Tarde (ideal desde ~16–17 h):</strong> hacia Aubrac / Cascada del Déroc. <a href="https://www.google.com/maps/dir/?api=1&amp;origin=45.1528,2.4912&amp;destination=44.6476,3.0649&amp;travelmode=driving" target="_blank" rel="noopener">Google · Fouey → Cascade du Déroc</a> (~1,5–2 h).</li>
+<li>Mañana: ruta corta sierra (Tramacastilla / entorno) o segundo Rodeno si os enganchó.</li>
+<li>Mediodía/tarde: <a href="https://www.google.com/maps/dir/?api=1&amp;origin=40.407,-1.444&amp;destination=40.619,-0.100&amp;travelmode=driving" target="_blank" rel="noopener">Google · Albarracín → Morella</a>.</li>
+<li>Atardecer: vistas castillo desde fuera / primer paseo.</li>
 </ol>
-<div class="btns">
-<a class="btn btn-w" href="https://www.visorando.com/randonnee-la-montagnoune-depuis-salers/" target="_blank" rel="noopener">Visorando Montagnoune</a>
-<a class="btn btn-w" href="https://www.salers-tourisme.fr/" target="_blank" rel="noopener">OT Salers</a>
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers" target="_blank" rel="noopener">Wikiloc Salers</a>
-</div>
-<div class="trail"><h4>Dormir viernes · meseta (eludir calor del valle)</h4>
-<p><strong>Plan A · #5073 Cascada del Déroc</strong> — parking meseta, cascada a pie 5–10 min, perras OK. Llegad tarde; plaza disputada en agosto.</p>
-<p><strong>Plan B · #48703 Buron du Ché</strong> (~7 min) · <strong>Plan C · #90343 Marchastel</strong> (~9 min).</p>
-<p><strong>Cancelado:</strong> #98143 (privado + perros). Camping Nasbinals solo si no hay sitio en los tres anteriores.</p>
-<div class="btns">
-<a class="btn btn-o" href="https://park4night.com/es/place/5073" target="_blank" rel="noopener">P4N #5073 Déroc</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/48703" target="_blank" rel="noopener">P4N #48703</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/90343" target="_blank" rel="noopener">P4N #90343</a>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=44.6476,3.0649&amp;travelmode=driving" target="_blank" rel="noopener">Google Déroc</a>
-</div>
+<div class="trail"><h4>Dormir Morella</h4>
+<p><strong>Camping-Car Park Morella</strong> · N-232 · vista castillo · <a href="https://park4night.com/es/place/6766" target="_blank" rel="noopener">P4N #6766</a> (app CCP).</p>
 </div>
 </article>
 
 <article class="card prose">
-<h3>Sábado 15 · Aubrac · Déroc + meseta (ojo lluvia)</h3>
-<div class="meta"><span class="tag">fácil / moderado</span><span class="tag">18–28 °C</span><span class="tag tag-bad">lluvia posible 60–75%</span><span class="tag">quedarse en cota</span></div>
-<div class="wx">
-<div class="wx-head"><strong>Meteo · Aubrac / Déroc</strong><span>Sáb 15 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Temp</em><strong>18–28 °C · más fresco</strong></div><div><em>Lluvia</em><strong>~2–3 mm · pmax alta</strong></div><div><em>Nubes</em><strong>Muchas</strong></div><div><em>Decisión 7:00</em><strong>Si tronca, plan corto</strong></div></div>
-</div>
-<div class="trail"><h4>Plan A · Cascada del Déroc (fácil)</h4>
-<p>Desde #5073 a pie. Ideal con perras. Si el cielo aguanta: ampliar hacia Nasbinals / Lac des Salhiens.</p>
-<div class="btns">
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/cascade-du-deroc-depuis-nasbinals-224224479" target="_blank" rel="noopener">Wikiloc Déroc</a>
-<a class="btn btn-w" href="https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/" target="_blank" rel="noopener">Visorando Déroc</a>
-<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Lac+des+Salhiens" target="_blank" rel="noopener">Google Lac Salhiens</a>
-</div></div>
-<div class="trail"><h4>Plan B · lluvia / viento</h4>
-<p>Paseo mínimo a la cascada entre chubascos, Nasbinals (café/aligot), siesta en van con ventilación en la meseta. No bajéis a valles calientes “por cambiar”.</p></div>
-<div class="trail"><h4>Dormir sábado</h4>
-<p>Misma base meseta: <strong>#5073 / #48703 / #90343</strong>. Domingo: Aubrac a fondo o inicio descenso hacia Capcir según meteo (siguiente tramo de la guía).</p>
-</div>
-<p class="wx-src"><strong>Fuera de este bloque (aplazado):</strong> minas de Bentaillou / valle Biros — ya dejasteis el Pirineo. Si más adelante volvéis al Ariège, está en la guía antigua; ahora priorizad volcán, vía verde y meseta.</p>
-</article>
-
-<article class="card prose">
-<h3>Cheat-sheet parking · cotas vs calor</h3>
-<div class="meta"><span class="tag">imprimible mental</span><span class="tag">Sunlight alto</span></div>
+<h3>Miércoles 19 · Morella + Ports (con perras)</h3>
+<div class="meta"><span class="tag">pueblo + naturaleza</span><span class="tag">noche Morella</span></div>
 <ul>
-<li><strong>Lioran / Cantal alto:</strong> #13709 Combe Nègre (sombra) · #42476 · Camping Blats #6003 (~980 m, río) · <em>evitar</em> #27677 si límite 2,20 m.</li>
-<li><strong>Salers (noche, no siesta de pueblo):</strong> #271257 Fouey · #144306 · Camping Moulin #114179.</li>
-<li><strong>Aubrac meseta:</strong> #5073 Déroc · #48703 · #90343 · nunca #98143.</li>
-<li><strong>Prohibido como base calor:</strong> Entraygues / Lot fondo de valle · Pas de Peyrol de día en CC · van cerrado a las 17 h al sol.</li>
+<li><strong>Mañana temprano:</strong> murallas / casco / castillo (perras: zonas exteriores y paseos; interior monumentos según carteles).</li>
+<li><strong>Senderismo:</strong> rutas Ports de Morella / Vilafranca — evitad <strong>Parrizal de Beceite</strong> si hay ban de perros; elegid senda forestal alternativa.</li>
 </ul>
 <div class="btns">
-<a class="btn btn-p" href="#d6">Día guía · Lioran</a>
-<a class="btn btn-p" href="#d7">Día guía · Lioran perras</a>
-<a class="btn btn-p" href="#d8">Día guía · Piste Verte</a>
-<a class="btn btn-p" href="#d10">Día guía · Aubrac</a>
+<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Ports+de+Morella+senderismo" target="_blank" rel="noopener">Google Ports senderismo</a>
+<a class="btn btn-w" href="https://www.morella.net/" target="_blank" rel="noopener">Turismo Morella</a>
 </div>
+</article>
+
+<article class="card prose">
+<h3>Jueves 20 · Cierre mediterráneo interior → Navarra</h3>
+<div class="meta"><span class="tag">opcional Penyagolosa AM</span><span class="tag">luego norte ~5 h</span><span class="tag">noche Ochagavía / Roncal</span></div>
+<ol>
+<li><strong>Opción A (recomendada si salís pronto):</strong> paseo corto Ports/Vilafranca y dirección Navarra.</li>
+<li><strong>Opción B:</strong> rodeo <em>ligero</em> Penyagolosa solo si salís muy temprano — no comáis el día de Irati.</li>
+<li>Traslado: <a href="https://www.google.com/maps/dir/?api=1&amp;origin=40.619,-0.100&amp;destination=42.908,-1.091&amp;travelmode=driving" target="_blank" rel="noopener">Google · Morella → Ochagavía</a> (~5 h).</li>
+</ol>
+<div class="trail"><h4>Dormir</h4>
+<p><strong>Ochagavía</strong> parking AC · <a href="https://park4night.com/es/place/298598" target="_blank" rel="noopener">P4N #298598</a> (sin servicios; llegad antes de que se llene) · o camping Osate / valle Roncal si preferís sombra y duchas.</p>
+</div>
+</article>
+
+<article class="card prose">
+<h3>Viernes 21 · Selva de Irati (día estrella Navarra)</h3>
+<div class="meta"><span class="tag">perros atados OK</span><span class="tag">hayedo</span><span class="tag">noche Ochagavía</span></div>
+<div class="warn">En Irati los perros deben ir <strong>siempre atados</strong> (fauna + ganado). Aparcad en parkings oficiales (Casas de Irati / accesos); la pernocta en esos parkings de la selva no es la base — dormid en pueblo.</div>
+<ul>
+<li>Ruta fácil/media desde Casas de Irati o Virgen de las Nieves (elegid según meteo y ganas).</li>
+<li>Pueblo Ochagavía: queso, sidrería, paseo.</li>
+</ul>
+<div class="btns">
+<a class="btn btn-w" href="https://turismoselvadeirati.com/selva-de-irati/" target="_blank" rel="noopener">Turismo Selva de Irati</a>
+<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.908,-1.091&amp;destination=42.990,-1.120&amp;travelmode=driving" target="_blank" rel="noopener">Google · hacia Casas de Irati</a>
+</div>
+</article>
+
+<article class="card prose">
+<h3>Sábado 22 · Ochagavía → Teià</h3>
+<div class="meta"><span class="tag">vuelta a casa</span><span class="tag">~5–5,5 h</span><span class="tag">salida ~9:00</span></div>
+<ol>
+<li>Café + paseo corto pueblo (sin ruta larga).</li>
+<li>Salida ~9:00: <a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.908,-1.091&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Google · Ochagavía → Teià</a>.</li>
+<li>Llegada tarde a Teià.</li>
+</ol>
+</article>
+
+<article class="card prose">
+<h3>Resumen express</h3>
+<ul>
+<li><strong>16–17</strong> Albarracín / Rodeno</li>
+<li><strong>18–19</strong> Morella / Ports</li>
+<li><strong>20</strong> traslado a Navarra</li>
+<li><strong>21</strong> Irati</li>
+<li><strong>22</strong> Teià</li>
+</ul>
+<p>Penyagolosa queda como <em>extra</em> el jueves solo si no pone en peligro llegar a Ochagavía con luz.</p>
 </article>
 </section>
 """
+
+
 
 
 
@@ -499,18 +432,18 @@ def build() -> str:
 <header class="top"><div class="wrap top-in">
 <div class="brand">Guía camper · Francia verde<small>6–19 agosto 2026 · estilo Lonely Planet · v2026-08-06a (normativa municipal CC)</small></div>
 <div class="btns">
-<a class="btn btn-p" href="#plan-rapido">Plan mar–sáb</a>
+<a class="btn btn-p" href="#plan-rapido">Plan 16–22</a>
 <a class="btn btn-g" href="https://www.google.com/maps/dir/Tei%C3%A0,+Spain/Ax-les-Thermes,+France/Seix,+France/Entraygues-sur-Truy%C3%A8re,+France/Le+Lioran,+France/Salers,+France/Nasbinals,+France/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain" target="_blank" rel="noopener">Google Maps ruta</a>
 <a class="btn btn-o" href="https://park4night.com/es" target="_blank" rel="noopener">Park4Night</a>
 </div></div></header>
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N ≤15 min</span><span class="chip">Meteo Open-Meteo</span><span class="chip">Normativa municipal CC</span><span class="chip">Plan B por día</span><span class="chip">Macizo · ola de calor</span></div>
+<div class="chips"><span class="chip">Refugio climático</span><span class="chip">Sunlight 600 + 2 perras</span><span class="chip">P4N ≤15 min</span><span class="chip">Meteo Open-Meteo</span><span class="chip">Normativa municipal CC</span><span class="chip">Plan B por día</span><span class="chip">ES · Alb–Morella–Irati</span></div>
 <h1>Del Pirineo ariégeois al Capcir</h1>
 <p class="lead">Guía de viaje completa: normativa municipal de autocaravanas (agosto), meteo por día, opiniones/plan B, P4N auditado, Wikiloc/Visorando y mapas Google.</p>
 {img('ax', 'Ax-les-Thermes', 'hero-img')}
 <div class="btns">
-<a class="btn btn-p" href="#plan-rapido">Plan mar–sáb · Macizo</a>
+<a class="btn btn-p" href="#plan-rapido">Plan 16–22 · ES</a>
 <a class="btn btn-p" href="#dias">Día a día</a>
 <a class="btn" href="#regiones">Regiones</a>
 <a class="btn" href="#mapas">Mapas</a>
