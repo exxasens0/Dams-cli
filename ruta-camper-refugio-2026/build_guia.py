@@ -239,8 +239,8 @@ def live_three_day_html() -> str:
 <li><strong>Llegada 18–19 h:</strong> puede llover; priorizad parking con árboles y listo para miércoles.</li>
 </ol>
 <div class="trail"><h4>Dormir martes · cota Lioran</h4>
-<p><strong>Plan A · P4N #13709 Combe Nègre</strong> — bosque de abetos, sombra, ~5 min del inicio Bec, noche muy valorada. Ideal ola de calor.</p>
-<p><strong>Plan B · #42476 Saint-Jacques D67</strong> — ~4 min al Bec, calma.</p>
+<p><strong>Plan A · P4N #13709 Combe Nègre</strong> — bosque de abetos, sombra, base Lioran, noche muy valorada. Ideal ola de calor.</p>
+<p><strong>Plan B · #42476 Saint-Jacques D67</strong> — calma, cerca de la estación.</p>
 <p><strong>Plan C confort · Camping des Blats #6003</strong> — ~980 m, río Cère, sombra, perros OK, ~7 min al Lioran · tel. 04 71 47 06 00.</p>
 <div class="btns">
 <a class="btn btn-o" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">P4N #13709 Combe Nègre</a>
@@ -253,30 +253,37 @@ def live_three_day_html() -> str:
 </article>
 
 <article class="card prose">
-<h3>Miércoles 12 · Volcán / crestas Lioran (día hiking)</h3>
-<div class="meta"><span class="tag">salida 7:00–7:30</span><span class="tag">seco y claro</span><span class="tag">17–28 °C cota</span><span class="tag">noche otra vez en altura</span></div>
+<h3>Miércoles 12 · Volcán / bosque Lioran (con perras)</h3>
+<div class="meta"><span class="tag">salida 7:00–7:30</span><span class="tag">seco y claro</span><span class="tag">17–28 °C cota</span><span class="tag tag-bad">Bec/Téton CANCELADO · chiens interdits</span></div>
 <div class="wx">
 <div class="wx-head"><strong>Meteo · Le Lioran / Puy Mary</strong><span>Mié 12 · Open-Meteo 10 ago</span></div>
-<div class="wx-grid"><div><em>Lioran</em><strong>17–28 °C · seco</strong></div><div><em>Puy Mary</em><strong>14–25 °C · el más fresco</strong></div><div><em>Mañana</em><strong>Ideal crestas</strong></div><div><em>Valle</em><strong>Hasta 36 °C · evitad</strong></div></div>
+<div class="wx-grid"><div><em>Lioran</em><strong>17–28 °C · seco</strong></div><div><em>Puy Mary</em><strong>14–25 °C · el más fresco</strong></div><div><em>Mañana</em><strong>Ideal</strong></div><div><em>Valle</em><strong>Hasta 36 °C · evitad</strong></div></div>
 </div>
+<div class="warn"><strong>Cancelado:</strong> <em>Bec de l’Aigle + Téton de Vénus</em> (oficial Parc des Volcans / PDIPR): <strong>chiens interdits, même tenus en laisse</strong> (estives / propiedades privadas). No se deja a las perras en el van para “hacer la cresta”.</div>
 <div class="photo-grid">
-<div class="trail"><h4>Plan A · Bec de l’Aigle + Téton de Vénus</h4>
-<p><strong>~8 km · moderado</strong> desde Font d’Alagnon. Gran cresta volcánica. Versión corta ~5,6 km si llegáis cansados del viaje.</p>
+<div class="trail"><h4>Plan A · Puy Mary (1.783 m) · perras OK en senda</h4>
+<p>Subida corta por <strong>escaleras/senda amueblada</strong> desde Pas de Peyrol (~30–45 min A/R, +~200 m). Perras <strong>con correa</strong>, solo en el camino; <strong>no atraveséis estives</strong> fuera de senda. CC: no aparquéis arriba de día (restricción verano) → coche/navetta o id muy temprano/tarde. Navettas: perros según línea (a menudo límite de peso) — preguntad.</p>
 <div class="btns">
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058" target="_blank" rel="noopener">Wikiloc Bec+Téton</a>
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc corto</a>
-<a class="btn btn-w" href="https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/" target="_blank" rel="noopener">Visorando</a>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=45.0849,2.7330&amp;destination=45.088234,2.74315&amp;travelmode=driving" target="_blank" rel="noopener">Google → Font d’Alagnon</a>
-</div></div>
-<div class="trail"><h4>Plan B · Volcán Puy Mary (1.783 m)</h4>
-<p>Subida corta desde Pas de Peyrol (~30–40 min A/R a pie). <strong>CC no aparquéis arriba de día</strong> (restricción verano). Navetta «Lignes du Volcan» desde Lioran / pueblos; perros según línea — preguntad. Alternativa: téléphérique / miradores Lioran sin cresta.</p>
-<div class="btns">
+<a class="btn btn-w" href="https://www.puymary.fr/les-bons-gestes/" target="_blank" rel="noopener">Bons gestes · perros</a>
 <a class="btn btn-w" href="https://www.puymary.fr/les-lignes-du-volcan/" target="_blank" rel="noopener">Navettas Puy Mary</a>
-<a class="btn btn-w" href="https://www.puymary.fr/se-deplacer-et-se-stationner-puy-mary-acces/" target="_blank" rel="noopener">Normas CC / acceso</a>
+<a class="btn btn-w" href="https://www.tourisme-avec-mon-chien.com/le-puy-mary-avec-son-chien/" target="_blank" rel="noopener">Puy Mary con perro</a>
 <a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Pas+de+Peyrol+Puy+Mary" target="_blank" rel="noopener">Google Pas de Peyrol</a>
 </div></div>
+<div class="trail"><h4>Plan B · Bosque Combe Nègre / Font de Cère (sombra)</h4>
+<p>Paseo 6–10 km por pistas forestales desde #13709 o Col de Font de Cère: fresco, apto perras, sin la cresta prohibida. Ideal si hace calor o no queréis logística del col.</p>
+<div class="btns">
+<a class="btn btn-o" href="https://park4night.com/es/place/13709" target="_blank" rel="noopener">Base #13709</a>
+<a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">OT / estación Lioran</a>
+<a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Font+de+C%C3%A8re+Lioran" target="_blank" rel="noopener">Google Font de Cère</a>
+</div></div>
 </div>
-<p><strong>Tarde calor:</strong> sombra en Combe Nègre, río cerca de Blats, o telecabina + terraza. No bajéis al valle del Lot.</p>
+<div class="trail"><h4>Plan C · Plomb du Cantal (teleférico) + paseo corto</h4>
+<p>Subida mecánica desde Super Lioran + paseo suave arriba (perras admitidas en actividades listadas por OT Hautes Terres; confirmdad en taquilla). Sin grimpada tipo Bec.</p>
+<div class="btns">
+<a class="btn btn-w" href="https://www.lelioran.com/" target="_blank" rel="noopener">Téléphérique Plomb</a>
+<a class="btn btn-w" href="https://www.hautesterrestourisme.fr/blog/post/je-pars-en-vacances-sur-le-volcan-cantal-avec-mon-chien/" target="_blank" rel="noopener">Cantal con perro (OT)</a>
+</div></div>
+<p><strong>Tarde calor:</strong> sombra en Combe Nègre o río en Blats. No bajéis al valle del Lot.</p>
 <div class="trail"><h4>Dormir miércoles · misma cota</h4>
 <p>Repetid <strong>#13709 / #42476 / Blats #6003</strong>. Evitad #27677 Col de Serre si la barrera 2,20 m no deja pasar el Sunlight.</p>
 <div class="btns">
@@ -383,7 +390,7 @@ def live_three_day_html() -> str:
 </ul>
 <div class="btns">
 <a class="btn btn-p" href="#d6">Día guía · Lioran</a>
-<a class="btn btn-p" href="#d7">Día guía · Bec</a>
+<a class="btn btn-p" href="#d7">Día guía · Lioran perras</a>
 <a class="btn btn-p" href="#d8">Día guía · Piste Verte</a>
 <a class="btn btn-p" href="#d10">Día guía · Aubrac</a>
 </div>
@@ -595,13 +602,13 @@ def build() -> str:
 
 <div class="card prose"><h3>4. Cantal · Le Lioran, crestas, Salers</h3>
 <div class="photo-grid">{img('lioran','Le Lioran')}{img('salers','Salers')}</div>
-<p>{esc(WIKI['lioran']['extract'])} El Cantal es un estratovolcán desmantelado: pastos, burones, queso AOP y basalto. El <strong>Bec de l'Aigle</strong> (~1.700 m) es vuestra jornada estrella: bosque, pasto, senda marcada, sin alpinismo técnico.</p>
+<p>{esc(WIKI['lioran']['extract'])} El Cantal es un estratovolcán desmantelado: pastos, burones, queso AOP y basalto. <strong>Bec de l'Aigle / Téton de Vénus: CANCELADO</strong> (Parc des Volcans: <em>chiens interdits même en laisse</em>). Con perras: <strong>Puy Mary</strong> por senda amueblada, bosque Combe Nègre / Font de Cère, o Plomb en teleférico.</p>
 <p>{esc(WIKI['salers']['extract'])} En agosto, Salers a mediodía es un embudo: visitad temprano o al atardecer y dormid fuera (Ferme Fouey / hierba).</p>
-<p>El <strong>Puy Mary</strong> (1.783 m) es el belvedere famoso; no hace falta coronarlo si el parking es un caos — el Bec de l'Aigle ya da la experiencia volcánica.</p>
+<p>El <strong>Puy Mary</strong> (1.783 m) es el belvedere famoso; perras con correa solo en la senda, sin atravesar estives.</p>
 {links([
  ("Wikipedia Lioran", WIKI['lioran']['wiki'], "p"),
- ("Wikiloc Bec + Téton (Moderado)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
- ("Topo Bec de l'Aigle (Moyenne)","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
+ ("Puy Mary · bons gestes","https://www.puymary.fr/les-bons-gestes/","w"),
+ ("Cantal con perro (OT)","https://www.hautesterrestourisme.fr/blog/post/je-pars-en-vacances-sur-le-volcan-cantal-avec-mon-chien/","w"),
  ("Wikipedia Salers", WIKI['salers']['wiki'], "p"),
  ("OT Salers", "https://www.salers-tourisme.fr/", "w"),
 ])}
@@ -863,86 +870,80 @@ def build() -> str:
 """))
 
     parts.append(day_shell("d6", "Día 6 · Martes 11 — Llegada a Le Lioran",
-        ["~120–150 km", "P4N #13709", "P4N #42476", "P4N #6003", "≤15 min"],
+        ["~120–150 km", "P4N #13709", "P4N #42476", "P4N #6003", "≤15 min", "Bec CANCELADO perras"],
         f"""
 {day_context_html(6)}
 {img('lioran','Le Lioran')}
-<h4>Dónde dormir · ≤15 min coche → inicio Bec de l'Aigle</h4>
+<div class="warn"><strong>Bec / Téton CANCELADO con perras:</strong> ficha oficial Parc des Volcans — <em>chiens interdits, même tenus en laisse</em>. No localicéis Font d'Alagnon para esa cresta; mañana = Puy Mary / bosque / Plomb.</div>
+<h4>Dónde dormir · base Lioran (cota / sombra)</h4>
 <ul>
-  <li><strong>#13709 Combe Nègre</strong> (4.11/5) — ~5 min · noche OK 2024–26.</li>
-  <li><strong>#42476 Saint-Jacques D67</strong> (4.56/5) — ~4 min · noche calma en reseñas.</li>
-  <li><strong>#6003 Camping des Blats</strong> (4.74/5, camping &gt;4) — ~7 min.</li>
+  <li><strong>#13709 Combe Nègre</strong> (4.11/5) — bosque, noche OK 2024–26 · ideal calor.</li>
+  <li><strong>#42476 Saint-Jacques D67</strong> (4.56/5) — noche calma.</li>
+  <li><strong>#6003 Camping des Blats</strong> (4.74/5) — ~980 m, río, perros OK · ~7 min estación.</li>
 </ul>
-<p><em>Descartado (&gt;15 min):</em> #27677 Lavigerie (~30 min al Bec).</p>
+<p><em>Ojo altura:</em> #27677 Col de Serre (~2,20 m) probable no para Sunlight.</p>
 {quote('SoSoPhil','24/06/2026','Bonito sitio… pasamos 2 noches en calma… hay punto de agua frente al restaurante.','P4N #13709')}
 {quote('SLMFC','16/07/2026','Noche del 15 al 16 de julio: rincón agradable y tranquilo entre los abetos.','P4N #13709')}
 
 <div class="trail">
-<h4>Aclimatación · 5–8 km + localizar inicio Bec</h4>
-<p><strong>Tiempo coche → Font d'Alagnon / inicio Bec:</strong> #42476 ~4 min · #13709 ~5 min · #6003 ~7 min.</p>
-{parking_routes("inicio Bec", ("#13709", (2.7330, 45.0849)), (2.74315, 45.088234), [("#42476", (2.7295, 45.0804)), ("#6003", (2.7137, 45.0522))], "driving", "driving")}
+<h4>Aclimatación · paseo bosque 5–8 km (perras OK)</h4>
+<p>Desde Combe Nègre / Font de Cère: pistas forestales, sombra. <strong>No</strong> subáis hacia Bec/Téton.</p>
 {links([
  ("P4N #13709","https://park4night.com/es/place/13709","o"),
  ("P4N #42476","https://park4night.com/es/place/42476","o"),
  ("P4N #6003","https://park4night.com/es/place/6003","o"),
  ("OT Lioran","https://www.lelioran.com/","w"),
+ ("Cantal con perro","https://www.hautesterrestourisme.fr/blog/post/je-pars-en-vacances-sur-le-volcan-cantal-avec-mon-chien/","w"),
 ])}
-<div class="wikiloc-box">
-<strong>Wikiloc · útil mañana</strong>
-<div class="btns">
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058" target="_blank" rel="noopener">Wikiloc · Bec + Téton (~8 km)</a>
-<a class="btn btn-wiki" href="https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228" target="_blank" rel="noopener">Wikiloc · Bec corto (~5,6 km)</a>
 </div>
-</div>
-</div>
-{poi_extra("Le Lioran / Volcanes", [
-  "<strong>Salida:</strong> Font d'Alagnon.",
-  "<strong>Mirador:</strong> Rocher du Bec de l'Aigle.",
+{poi_extra("Le Lioran / Volcanes (con perras)", [
+  "<strong>Belvedere:</strong> Puy Mary (senda amueblada + correa).",
+  "<strong>Bosque:</strong> Combe Nègre / Font de Cère.",
+  "<strong>Mecánico:</strong> téléphérique Plomb du Cantal (confirmar perros en taquilla).",
   "<strong>Quesería:</strong> Fromagerie du Cantal (Le Lioran).",
-  "<strong>Belvedere:</strong> Puy Mary (opcional).",
 ], [
- ("Google Font d'Alagnon","https://www.google.com/maps/search/?api=1&query=Font+d%27Alagnon+Le+Lioran","g"),
- ("Google Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Rocher+du+Bec+de+l%27Aigle","g"),
- ("Google Fromagerie du Cantal","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran","g"),
  ("Google Puy Mary","https://www.google.com/maps/search/?api=1&query=Puy+Mary","g"),
+ ("Google Col Font de Cère","https://www.google.com/maps/search/?api=1&query=Col+de+Font+de+C%C3%A8re+Lioran","g"),
+ ("Google Fromagerie du Cantal","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran","g"),
+ ("Google Plomb du Cantal","https://www.google.com/maps/search/?api=1&query=T%C3%A9l%C3%A9ph%C3%A9rique+Plomb+du+Cantal","g"),
 ])}
 """))
 
-    parts.append(day_shell("d7", "Día 7 · Miércoles 12 — Bec de l'Aigle (moderada Visorando)",
-        ["0 km coche", "P4N #13709", "P4N #42476", "P4N #6003", "Meteo 7:00", "≤15 min"],
+    parts.append(day_shell("d7", "Día 7 · Miércoles 12 — Puy Mary / bosque (perras OK)",
+        ["P4N #13709", "P4N #42476", "P4N #6003", "Bec CANCELADO", "Meteo 7:00"],
         f"""
 {day_context_html(7)}
 {img('puy_mary','Macizo del Cantal / Puy Mary')}
-<p>Crestas <strong>Moyenne</strong>. Decisión meteo 7:00.</p>
-<h4>Dónde dormir · mismos spots (≤15 min al Bec)</h4>
-<p>#42476 (~4 min) → #13709 (~5 min) → #6003 (~7 min). Sin #27677.</p>
+<div class="warn"><strong>Cancelado:</strong> Bec de l'Aigle + Téton de Vénus — <a href="https://decouvertes.parcdesvolcans.fr/trek/47-Teton-de-Venus" target="_blank" rel="noopener">ficha Parc des Volcans</a>: chiens interdits même en laisse. Regla del viaje: no se deja a las perras en el van.</div>
+<p>Día volcánico <strong>apto con perras</strong>. Decisión meteo 7:00.</p>
+<h4>Dónde dormir · misma base Lioran</h4>
+<p>#13709 → #42476 → #6003 Blats.</p>
 
 <div class="trail">
-<h4>Plan A · Font d'Alagnon → Bec → Téton</h4>
-{wikiloc_box([
- ("Bec + Téton (Moderado · ~8 km)","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058"),
- ("Bec corto (Fácil · ~5,6 km)","https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228"),
-])}
-{parking_routes("Font d'Alagnon (inicio Bec)", ("#13709", (2.7330, 45.0849)), (2.74315, 45.088234), [("#42476", (2.7295, 45.0804)), ("#6003", (2.7137, 45.0522))], "driving", "driving")}
+<h4>Plan A · Puy Mary desde Pas de Peyrol</h4>
+<p>~30–45 min A/R por senda/escaleras (+~200 m). Correa obligatoria; no salgáis a estives. CC: restricción diurna en el col → navetta o ventana temprana/tarde.</p>
 {links([
- ("Wikiloc Bec + Téton","https://es.wikiloc.com/rutas-senderismo/bec-de-laigle-et-teton-de-venus-depuis-le-lioran-225701058","wiki"),
- ("Visorando Téton + Bec","https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/","w"),
+ ("Bons gestes · perros","https://www.puymary.fr/les-bons-gestes/","w"),
+ ("Navettas Lignes du Volcan","https://www.puymary.fr/les-lignes-du-volcan/","w"),
+ ("Acceso / normas CC","https://www.puymary.fr/se-deplacer-et-se-stationner-puy-mary-acces/","w"),
+ ("Puy Mary con perro","https://www.tourisme-avec-mon-chien.com/le-puy-mary-avec-son-chien/","w"),
  ("P4N #13709","https://park4night.com/es/place/13709","o"),
  ("P4N #42476","https://park4night.com/es/place/42476","o"),
  ("P4N #6003","https://park4night.com/es/place/6003","o"),
 ])}
 </div>
-<div class="trail"><h4>Plan B · meteo</h4><p>Téléphérique + paseo corto, o bosque 6–8 km. Bajad antes de tormentas.</p></div>
-{poi_extra("Cantal / Bec", [
-  "<strong>Mirador:</strong> Bec de l'Aigle (~1.700 m).",
-  "<strong>Belvedere:</strong> Puy Mary (si no hay masificación).",
+<div class="trail"><h4>Plan B · bosque sombra</h4><p>6–10 km pistas desde Combe Nègre / Font de Cère. Fresco y legal con perras.</p></div>
+<div class="trail"><h4>Plan C · Plomb téléphérique</h4><p>Subida mecánica + paseo corto arriba; confirmdad perros en taquilla.</p></div>
+{poi_extra("Cantal con perras", [
+  "<strong>Belvedere:</strong> Puy Mary (1.783 m).",
+  "<strong>Bosque:</strong> Combe Nègre.",
   "<strong>Quesería:</strong> Fromagerie du Cantal.",
-  "<strong>Patous:</strong> correa antes del rebaño.",
+  "<strong>Patous / vacas:</strong> correa y rodear; no cruzar estives.",
 ], [
- ("Google Bec de l'Aigle","https://www.google.com/maps/search/?api=1&query=Bec+de+l%27Aigle+Le+Lioran","g"),
  ("Google Puy Mary","https://www.google.com/maps/search/?api=1&query=Puy+Mary","g"),
  ("Google Fromagerie Le Lioran","https://www.google.com/maps/search/?api=1&query=Fromagerie+du+Cantal+Le+Lioran","g"),
  ("Wikipedia Puy Mary", WIKI['puy_mary']['wiki'], "p"),
+ ("OT Lioran","https://www.lelioran.com/","w"),
 ])}
 """))
 

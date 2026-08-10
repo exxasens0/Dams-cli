@@ -251,9 +251,10 @@
         "tips": []
       },
       "opinions": [
-        "Combe Nègre #13709: ‘calma entre abetos’, punto de agua; ideal trailhead Bec.",
+        "Combe Nègre #13709: ‘calma entre abetos’, punto de agua; base ideal Lioran (calor).",
         "Camping des Blats: familia, río Cère, ~7 km Lioran — muy bien valorado agosto 2026.",
-        "St-Jacques D67 #42476: vistas; algún aviso de excrementos / fuego prohibido."
+        "St-Jacques D67 #42476: vistas; algún aviso de excrementos / fuego prohibido.",
+        "Bec/Téton: CANCELADO — Parc des Volcans chiens interdits même en laisse."
       ],
       "alternatives": [
         {
@@ -262,13 +263,13 @@
           "url": "https://www.cantal-destination.com/fiche/camping-des-blats/"
         },
         {
-          "title": "Font d'Alagnon parking día",
-          "why": "Localizad el inicio Bec esta tarde; mañana salís sin rodeos.",
-          "url": "https://www.visorando.com/randonnee-le-teton-de-venus-au-dessus-du-lioran/"
+          "title": "Paseo bosque Font de Cère",
+          "why": "Aclimatación con perras; no ir hacia Bec/Téton.",
+          "url": "https://www.lelioran.com/"
         },
         {
           "title": "Actividades estación Lioran",
-          "why": "Plan B no-cresta: teleférico / paseo corto si meteo dudosa.",
+          "why": "Teleférico Plomb / paseo corto (confirmar perros en taquilla).",
           "url": "https://www.lelioran.com/"
         }
       ]
@@ -277,9 +278,9 @@
       "weather": {
         "day": 7,
         "date": "2026-08-12",
-        "place": "Bec de l'Aigle / Lioran",
-        "lat": 45.0882,
-        "lon": 2.7432,
+        "place": "Puy Mary / Lioran",
+        "lat": 45.110,
+        "lon": 2.675,
         "available": true,
         "weather_code": 2,
         "summary_es": "Parcialmente nublado",
@@ -290,28 +291,28 @@
         "wind_max": 10.3,
         "uv_max": 7.15,
         "timezone": "Europe/Paris",
-        "elevation": 1204.0,
+        "elevation": 1588.0,
         "tips": []
       },
       "opinions": [
-        "Visorando Bec+Téton ~4,8/5 (jun–jul 2026): salida Font d'Alagnon lógica; Téton ‘más pedregoso que el nombre’; descenso Bec técnico (manos).",
-        "Vertigo: varios avisos — si os da, no forcéis el Bec; cortad a bosque/Téton solo.",
-        "Chiens: autorizados en el circuito, pero un paso puede ser difícil para perro + patous en estives."
+        "CANCELADO Bec/Téton: ficha oficial Parc des Volcans — chiens interdits même tenus en laisse (estives/privado).",
+        "Puy Mary: senda amueblada OK con perro en correa; no atravesar estives (bons gestes Grand Site).",
+        "Navettas: preguntad peso/perros; CC restringido de día en Pas de Peyrol."
       ],
       "alternatives": [
         {
-          "title": "Bec corto (~5,6 km)",
-          "why": "Si meteo/calor/perras: versión corta Wikiloc sin forzar crestas largas.",
-          "url": "https://es.wikiloc.com/rutas-senderismo/le-bec-de-laigle-le-teton-de-venus-le-bataillouze-26865228"
+          "title": "Puy Mary (senda + correa)",
+          "why": "Belvedere volcánico legal con perras; ~30–45 min A/R desde Peyrol.",
+          "url": "https://www.puymary.fr/les-bons-gestes/"
         },
         {
-          "title": "Télésiège Rombière + paseo",
-          "why": "Plan B: subir mecánico y caminar suave por crestas bajas.",
+          "title": "Télésiège / Plomb + paseo",
+          "why": "Subida mecánica y caminar suave; confirmar perros en taquilla.",
           "url": "https://www.lelioran.com/"
         },
         {
-          "title": "Bosque Alagnon 6–8 km",
-          "why": "Si tormenta 7:00: nada de crestas; sombra y vuelta a van.",
+          "title": "Bosque Combe Nègre 6–10 km",
+          "why": "Sombra, perras OK, sin cresta prohibida.",
           "url": "https://park4night.com/es/place/13709"
         }
       ]
