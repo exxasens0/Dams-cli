@@ -1,4 +1,6 @@
-# Ruta camper · Pirineo ≤25°C (15–24 ago 2026)
+# Ruta camper · Pirineo ≤25°C (16–24 ago 2026)
+
+**Salida domingo 16** (sábado 15 en casa). Revisar meteo a las 7:00 antes de cargar.
 
 **Sunlight 600** + **2 perras**. Solo bases con **sensación máx ≤25°C** (Open-Meteo).
 
