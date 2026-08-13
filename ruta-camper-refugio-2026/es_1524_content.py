@@ -94,12 +94,13 @@ DAYS = [
         p4n_id=285213,
         drive_from="Dom 16 noche, Teià → Parking Carretera Astún", drive_km="~375 km", drive_h="4,5 h",
         # Trailhead: base estación Astún (3,5 km del overnight)
-        hike="Ibón de Estanes", hike_lat=42.796, hike_lon=-0.459,
-        hike_km="12 km", hike_dif="Moderado",
-        hike_desn="~400 m", hike_h="3–4 h",
-        hike_parking="Parking base Astún (frente a la estación de esquí)",
+        hike="Ibones de Astún + Punta Malacara (circular)", hike_lat=42.796, hike_lon=-0.459,
+        hike_km="9,2 km", hike_dif="Moderado",
+        hike_desn="~580 m", hike_h="4–4,5 h",
+        hike_parking="Parking base estación Astún (Valle de Astún 22889, 3,5 km del overnight)",
+        wikiloc_url="https://es.wikiloc.com/rutas-alpinismo/estacio-desqui-dastun-punta-malacara-ibon-de-las-truchas-ibon-de-astun-ibon-de-escalar-ibon-de-las-54386380",
         concurrencia="Media-alta",
-        interes=["Estación Internacional de Canfranc","Valle del Aragón","Pozas de montaña","GR-11"],
+        interes=["Ibón de Escalar (2075 m)","Ibón de Truchas (2120 m)","Punta Malacara (2268 m)","Frontera Francia","Telesilla a los Lagos (opcional)"],
         historia=(
             "La <strong>Estación Internacional de Canfranc</strong> (1928) fue la más grande de España "
             "y segunda de Europa. Su apertura conectó España y Francia por el Pirineo central. "
@@ -108,10 +109,14 @@ DAYS = [
             "servicio; lleva décadas en rehabilitación como hotel de lujo."
         ),
         observaciones=(
-            "Llegaréis la noche del dom 16. Primer hike completo: lunes 17 por la mañana. "
-            "Desde el parking base de Astún seguir la pista hasta el ibón (~400 m desnivel). "
-            "Pozas en ruta perfectas para que las perras se refresque. Patous en pastizales — correa. "
-            "Canfranc pueblo (pan, gastro) a ~11 km. Parking inclinado: P2/P4 más llanos."
+            "Mañana del dom 16: llegada nocturna al P4N sin hike. "
+            "🥾 Lunes 17: circular ibones desde base de Astún (3,5 km en camper). "
+            "Ibón de Escalar → Ibón de Truchas → Punta Malacara (2268 m) → vuelta. "
+            "Altitud máx 2268 m — dificultad moderada, sin sección técnica. "
+            "🚡 Telesilla Los Lagos (opcional): sube hasta 2100 m en 10 min, directo al Ibón de Truchas. "
+            "Mascotas permitidas en el telesilla. Ahorra ~350 m de desnivel; precio: ~15–20€/persona. "
+            "Pozas y agua en ruta para las perras. Patous en pastizales — correa obligatoria. "
+            "Parking base Astún gratuito (asfaltado). Canfranc pueblo a ~11 km para pan/gastro."
         ),
         planb="Visita exterior estación Canfranc · paseo río Aragón · Canfranc Pueblo.",
     ),
@@ -597,10 +602,11 @@ def day_card(d:dict)->str:
         th_note = ("<em style='font-size:.8rem;color:var(--muted)'>Trailhead = pernocta, no hay que mover la camper.</em>"
                    if same_as_night else
                    f"<em style='font-size:.8rem;color:var(--muted)'>{esc(hp)}</em>")
+        wl_btn = (f'\n{btn("📍 Wikiloc · ruta completa", d["wikiloc_url"], "o")}' if d.get("wikiloc_url") else "")
         hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · \
 {esc(d['hike_km'])} · {esc(d['hike_desn'])} desnivel · {esc(d['hike_h'])}</p>
 {th_note}
-{btns([('🗺️ Navegar al trailhead (Google)', gmaps_pin(hlat, hlon), 'g')])}
+{btns([('🗺️ Navegar al trailhead (Google)', gmaps_pin(hlat, hlon), 'g')])}{wl_btn}
 <p style="font-size:.75rem;color:var(--muted)">Confirmar ruta en Wikiloc/AllTrails antes del hike.</p>"""
 
     # POIs
