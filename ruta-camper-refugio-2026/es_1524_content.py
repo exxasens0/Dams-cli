@@ -145,7 +145,9 @@ DAYS = [
             "🐾 Tarde: piscina para perros + zona de suelta libre + riachuelo a pie del camping. "
             "El camping también tiene acceso a la ribera del río para que se refresquen. "
             "Máximo 2 perros; gratuito en parcelas y bungalows (+3€/noche en parcelas). "
-            "Reserva confirmada: parcela para la noche del 18. "
+            "📋 Reserva #109671 — Parcela, 1 noche. Estado: entrega a cuenta realizada. "
+            "Contacto camping: 974 57 95 57 · info@campingelarrebol.com. "
+            "⚠️ Cancelación gratis hasta 7 días antes (hasta el martes 11 ago). "
             "D3 (mié 19): salir de El Arrebol hacia Astún (~38 km, ~35 min) para Anayet."
         ),
         planb="Tarde en El Arrebol: piscina, zona de suelta, restaurante — plan B perfecto si llueve.",
