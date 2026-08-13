@@ -22,6 +22,10 @@ ISA        = (-0.919,  42.855)  # Isaba, borde río Esca
 JACA   = (-0.549,   42.568)
 ARREBOL= (-0.5098,  42.5645)  # Camping El Arrebol · N-330 km 643 · Jaca
 
+# Anayet area (Valle de Tena, distinto valle que Astún)
+PORTALET_TH = (-0.370,  42.791)  # Parking El Portalet trailhead (Anayet hike)
+FORMIGAL_NIGHT = (-0.347, 42.776) # Near Sallent de Gállego / Formigal (overnight D3)
+
 # Trailheads (lat, lon) para gmaps_pin (uso interno)
 TH_ESTANES  = (42.796, -0.459)  # Astún ski base → Ibón de Estanes
 TH_CANALROYA= (42.772, -0.480)  # Candanchú/Rioseta → Canal Roya
@@ -159,32 +163,40 @@ DAYS = [
     ),
     dict(
         day=3, date="2026-08-19",
-        zona="Astún · Lagunas de Anayet",
-        # Pernocta: P4N #285213 (de vuelta al área Astún/Canfranc tras el hike)
-        parking_name="P4N #285213 · Parking Carretera Astún (de vuelta tras Anayet)",
-        parking_lat=42.8091, parking_lon=-0.5121,
-        p4n_id=285213,
-        drive_from="El Arrebol → Astún (~38 km, ~35 min)", drive_km="~38 km", drive_h="~35 min",
-        # Trailhead: base Astún (misma que overnight tras el hike)
-        hike="Lagunas de Anayet (ruta baja)", hike_lat=42.796, hike_lon=-0.459,
-        hike_km="9 km", hike_dif="Moderado",
-        hike_desn="~350 m", hike_h="3 h",
-        hike_parking="Parking base estación Astún (fin de la A-136, ~3 km del P4N overnight)",
-        concurrencia="Media-alta (zona estación)",
-        interes=["Lagunas de Anayet","Pic du Midi d'Ossau (vistas)","Refugio de Anayet","Glaciares rocosos"],
+        zona="Ibones de Anayet · Valle de Tena (Formigal)",
+        # Pernocta: borde Sallent de Gállego / Formigal (P4N zona)
+        # ⚠️ ANAYET NO ESTÁ EN ASTÚN — está en Valle de Tena, 60 km al este de Jaca
+        parking_name="Borde Sallent de Gállego / Formigal (P4N zona)",
+        parking_lat=42.776, parking_lon=-0.347,
+        drive_from="El Arrebol → Portalet Anayet (~62 km, ~55 min)", drive_km="~62 km", drive_h="~55 min",
+        # Trailhead: Parking El Portalet (ruta desde Portalet: 550 m desnivel vs 750 m desde Corral Mulas)
+        hike="Ibones de Anayet desde El Portalet", hike_lat=42.791, hike_lon=-0.370,
+        hike_km="10 km", hike_dif="Moderado",
+        hike_desn="~550 m", hike_h="3,5–4 h",
+        hike_parking="Parking El Portalet (A-136 km s/n · estación de esquí Formigal, lado norte)",
+        wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ibones-de-anayet-desde-el-portalet-formigal-27294107",
+        concurrencia="Media-alta (agosto, destino muy conocido)",
+        interes=["Ibones de Anayet (2233 m)","Pico Anayet (2574 m, solo vistas)","Midi d'Ossau","Valle de Tena","GR-11"],
         historia=(
-            "Las <strong>Lagunas de Anayet</strong> (1960–2227 m) son ibones glaciares con "
-            "vistas directas al <strong>Pic du Midi d'Ossau</strong> (2884 m), "
-            "uno de los montes más fotogénicos del Pirineo por su silueta volcánica bicéfala. "
-            "La zona fue área de pastoreo trashúmante durante siglos. El refugio de Anayet "
-            "(privado) sirve bocadillos en agosto."
+            "Los <strong>Ibones de Anayet</strong> son unos lagos glaciares a 2.233 m situados a los pies "
+            "del espectacular <strong>Pico Anayet</strong> (2.574 m), una antigua chimenea volcánica que "
+            "es uno de los montes más fotogénicos del Pirineo por su silueta característica. "
+            "Con el <strong>Midi d'Ossau</strong> (2.884 m, Francia) como telón de fondo, el paisaje "
+            "es de fama europea. El Valle de Tena fue una de las primeras zonas con estaciones de esquí "
+            "en España; Formigal (1966) es hoy una de las más grandes del país."
         ),
         observaciones=(
-            "0 mm, 25°C. Tomar la ruta baja de Anayet (no la variante de crestas, técnica). "
-            "Desde Astún: seguir la pista principal ~1,5 km hasta el desvío señalizado Anayet. "
-            "Tarde: preparar camper y mañana D4 bajar a Oza (86 km, 1h25)."
+            "⚠️ Anayet NO está en Astún — es el Valle de Tena (Formigal), 60 km este de Jaca. "
+            "Ruta desde El Portalet: 10 km, 550 m desnivel — más fresquita que la de Corral de Mulas (750 m). "
+            "Ruta muy expuesta al sol sin sombra — salir antes de las 8:00. "
+            "🐾 Perras: correa obligatoria (vacas y caballos en toda la ruta). "
+            "🚫 PROHIBIDO BAÑARSE en los ibones (22 jun – 21 sep 2026) — multa hasta 1.000€. "
+            "🦟 Sanguijuelas en el agua del ibón — no meter a las perras en el lago; sí en riachuelos del camino. "
+            "💧 Sin fuentes de agua potable en ruta — llevar mínimo 2L por persona + agua extra para las perras. "
+            "🏔️ No subir al pico (cadena, pasos expuestos) — quedarse en los ibones. "
+            "Pernocta: P4N zona Sallent de Gállego / Formigal (42.776, -0.347)."
         ),
-        planb="Paseo llano Candanchú · vista exterior hacia frontera.",
+        planb="Sallent de Gállego pueblo (casco medieval, gastro) · borde río Gállego.",
     ),
     dict(
         day=4, date="2026-08-20",
@@ -193,7 +205,7 @@ DAYS = [
         parking_name="Área forestal Selva de Oza (borde pinar, Valle de Hecho)",
         parking_lat=42.840, parking_lon=-0.738,
         # p4n_id: sin ID confirmado → usa search centrado en el spot
-        drive_from="Parking Astún → Oza (Valle de Hecho)", drive_km="~86 km", drive_h="~1h25",
+        drive_from="Formigal/Portalet → Oza (Valle de Hecho)", drive_km="~90 km", drive_h="~1h30",
         # Trailhead: parking terminal del Valle de Oza (fin del asfalto), 2,5 km más al norte
         hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
         hike_km="8 km", hike_dif="Fácil",
@@ -470,8 +482,8 @@ def _drive_url(d: dict) -> str:
     n = d["day"]
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
     if n==2: return gmaps_dir(*SPOT1,*ARREBOL)
-    if n==3: return gmaps_dir(*ARREBOL,*SPOT1)
-    if n==4: return gmaps_dir(*SPOT1,*OZA_NIGHT)
+    if n==3: return gmaps_dir(*ARREBOL,*PORTALET_TH)
+    if n==4: return gmaps_dir(*FORMIGAL_NIGHT,*OZA_NIGHT)
     if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
     if n==6: return gmaps_dir(*YESA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
@@ -545,13 +557,13 @@ def day_card(d:dict)->str:
                      f"Tarde-noche en el camping: piscina para perros, zona de suelta, restaurante.</p>"
                      f"{btns([('Candanchú → El Arrebol (conducir)', gmaps_dir(*SPOT1,*ARREBOL), 'g')])}")
     elif n==3:
-        ruta_html = (f"<p>Salir de El Arrebol hacia Astún (38 km, ~35 min). "
-                     f"Hike Anayet desde la base de la estación; pernocta en P4N #285213 (3 km del trailhead).</p>"
-                     f"{btns([('El Arrebol → Astún (conducir)', gmaps_dir(*ARREBOL,*SPOT1), 'g')])}")
+        ruta_html = (f"<p>El Arrebol → Parking El Portalet (Formigal) ~62 km, ~55 min via Sabiñánigo/Biescas. "
+                     f"⚠️ Anayet NO está en Astún — es el Valle de Tena, otro valle diferente.</p>"
+                     f"{btns([('El Arrebol → Portalet Anayet (conducir)', gmaps_dir(*ARREBOL,*PORTALET_TH), 'g')])}")
     elif n==4:
-        ruta_html = (f"<p>Bajad a Canfranc Estación (~11 km) y continuad hasta Oza (Valle de Hecho, ~86 km · ~1h25). "
+        ruta_html = (f"<p>Formigal/Portalet → Oza (Valle de Hecho, ~90 km · ~1h30 via Sabiñánigo). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('Parking Astún → Oza (conducir)', gmaps_dir(*SPOT1,*OZA_NIGHT), 'g')])}")
+                     f"{btns([('Formigal → Oza (conducir)', gmaps_dir(*FORMIGAL_NIGHT,*OZA_NIGHT), 'g')])}")
     elif n==5:
         ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
                      f"{btns([('Oza → Jaca', gmaps_dir(*OZA_NIGHT,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
