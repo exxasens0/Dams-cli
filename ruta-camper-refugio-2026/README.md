@@ -4,7 +4,7 @@
 
 **Reglas:** perras en todas las visitas · hike solo sensación **<25 °C** · tramos **≤2 h** (solo ida/vuelta ~5 h) · pernocta **Google Maps first** (P4N = emergencia).
 
-**Eje:** Teià → Ochagavía/Irati (Navarra) → Jaca (Huesca) → Albarracín → Escucha (Teruel) → Morella (Castellón) → Teià
+**Eje:** Teià → Albarracín (Teruel) → Escucha → Morella (Castellón) → Jaca (Huesca) → Ochagavía/Irati (Navarra) → Teià
 
 ## Abrir la guía en el móvil
 

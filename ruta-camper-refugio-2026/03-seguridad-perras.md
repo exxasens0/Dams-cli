@@ -103,7 +103,7 @@ En parkings de estación (Lioran, Formiguères, Bonascre): pernocta tipo **parki
 
 # Viaje activo · Navarra + Interior ES 15–24 agosto 2026
 
-**Teià loop** · **Navarra primero** (Ochagavía/Irati) → bajar por Jaca (Huesca) → Albarracín → Escucha → Morella → Teià.
+**Teià loop** · **Albarracín primero** → Escucha → Morella → **Navarra al final** (Ochagavía/Irati) → Teià.
 
 ## Regla dura (igual que Francia)
 
@@ -136,40 +136,32 @@ Selva de Irati (Navarra), pueblo Ochagavía/Roncal, Ciudadela Jaca (exterior), P
 
 ## Por zona
 
-### Ochagavía · Irati (Navarra) — D1–3 · **≥2 noches**
+### Ochagavía · Irati (Navarra) — D8–9 · **≥2 noches al final**
 
-- **Mínimo 2 noches** en Irati (Ochagavía) o Valle del Baztán (Elizondo) antes de bajar.
-- Plan A: **3 noches Ochagavía** — D2 Irati Abodi, D3 Isaba/Burgui u otra ruta.
-- Plan B lluvia/masificación: **Elizondo (Valle del Baztán, Navarra)** — valle verde, paseos río, menos turismo que Irati.
-- **Selva de Irati:** perros **atados** (fauna, ganado).
-- **Patous** en Roncal/Baztán — correa antes de ver rebaño.
-- Casco empedrado: pernocta fuera del pueblo con AC 7 m.
+- **Cierre del viaje en Navarra** — mínimo 2 noches (D8–9) antes de volver lun 24.
+- Plan A: Ochagavía + Selva de Irati. Plan B: Elizondo (Valle del Baztán, Navarra).
+- D8–9 meteo ~20 °C sensación — mejor ventana hike del viaje.
+- **Selva de Irati:** perros **atados**. **Patous** en Roncal/Baztán.
 
-### Jaca (Huesca) — D4
+### Albarracín (Teruel) — D1–2
 
-- Traslado desde Navarra tras ≥2 noches.
-- Ciudadela: exterior OK; interior → confirmar perros.
+- Inicio del viaje. Rodeno D2: perros atados en pinar.
 
-### Albarracín (Teruel) — D5
+### Escucha · minas (Teruel) — D3
 
-- 1 noche. Murallas tarde.
+- **Exterior** + ruta digital: OK. Mina interior: **978 756 705**.
 
-### Escucha · minas (Teruel) — D6
+### Morella · Ports (Castellón) — D4–6
 
-- **Rodeno AM** (salir ~11:00) + traslado + minas PM — día largo.
+- Murallas/castillo exterior OK. **Parrizal:** plan B = senda forestal Ports.
 
-- **Exterior** + ruta digital: OK.
-- Mina interior: **978 756 705** — si no admiten perros, cancelar.
+### Jaca (Huesca) — D7
 
-### Morella · Ports (Castellón) — D7–8
+- Escalón Morella → Navarra (evita tramo largo directo).
 
-- Murallas/castillo exterior OK.
-- **Parrizal:** plan B = senda forestal Ports / Vilafranca.
+### Vuelta Ochagavía → Teià — D10
 
-### Vuelta Montanejos → Teià — D9–10
-
-- D9: paseo corto AM; domingo concurrido.
-- D10: solo conducción ~5 h; paradas cada 2 h.
+- D10: Ochagavía → Teià ~5 h; paradas cada 2 h para perras.
 
 ## P4N / GMaps (agosto)
 
