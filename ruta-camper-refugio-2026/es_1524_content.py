@@ -110,6 +110,17 @@ details.archive{margin:2rem 0}details.archive summary{cursor:pointer;font-weight
 .fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.4rem;z-index:60}
 .wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;font-size:.88rem}
 @media(min-width:520px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+.summary-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:640px}
+.summary-table th,.summary-table td{padding:.55rem .65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.summary-table th{background:var(--pine);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0}
+.summary-table tr:last-child td{border-bottom:0}
+.summary-table tr:hover td{background:#f5faf6}
+.summary-table a{color:var(--pine);font-weight:700;text-decoration:none}
+.summary-table .wx-ok{color:var(--pine);font-weight:700}
+.summary-table .wx-warn{color:var(--clay);font-weight:700}
+.summary-table .wx-rain{color:#2a5f8a}
+.summary-meta{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
 """
 
 
@@ -327,23 +338,100 @@ def build_days() -> str:
     return "".join(parts)
 
 
+WEEKDAYS_ES = {
+    0: "lunes", 1: "martes", 2: "miércoles", 3: "jueves",
+    4: "viernes", 5: "sábado", 6: "domingo",
+}
+
+
+def _weekday_es(date_iso: str) -> str:
+    from datetime import date
+    y, m, d = map(int, date_iso.split("-"))
+    return WEEKDAYS_ES[date(y, m, d).weekday()]
+
+
+def _fmt_fecha(date_iso: str) -> str:
+    y, m, d = date_iso.split("-")
+    return f"{_weekday_es(date_iso)} {int(d)} ago"
+
+
+# Filas del cuadro resumen: (día, fecha_iso, lugar corto, tramo, km, maps_url)
+SUMMARY_ROWS = [
+    (1, "2026-08-16", "Lanuza (Huesca)", "Teià → Lanuza", "350 km · 4–5 h", gmaps_dir(*TEIA, *SAL)),
+    (2, "2026-08-17", "Lanuza (Huesca)", "Sin traslado", "—", gmaps_pin(42.658, -0.328)),
+    (3, "2026-08-18", "Canfranc (Huesca)", "Lanuza → Canfranc", "75 km · 1h15", gmaps_dir(*SAL, *CAN)),
+    (4, "2026-08-19", "Canfranc (Huesca)", "Sin traslado", "—", gmaps_pin(42.751, -0.516)),
+    (5, "2026-08-20", "Canfranc (Huesca)", "Sin traslado · noches 20+21", "—", gmaps_pin(42.751, -0.516)),
+    (6, "2026-08-22", "Elizondo / Baztán (Navarra)", "Canfranc → Elizondo", "181 km · 2h20", gmaps_dir(*CAN, *BAZ)),
+    (7, "2026-08-23", "Elizondo / Baztán (Navarra)", "Sin traslado", "—", gmaps_pin(43.148, -1.515)),
+    (8, "2026-08-24", "Ochagavía / Irati (Navarra)", "Elizondo → Ochagavía", "121 km · 1h55", gmaps_dir(*BAZ, *OCH)),
+    (9, "2026-08-25", "Ochagavía / Irati (Navarra)", "Sin traslado", "—", gmaps_pin(42.906, -1.079)),
+    (10, "2026-08-26", "Teià (Barcelona)", "Ochagavía → Teià", "435 km · 5–6 h", gmaps_dir(*OCH, *TEIA)),
+]
+
+
+def summary_table() -> str:
+    wx_by_day = {d["day"]: d for d in WEATHER["days"]}
+    rows_html = []
+    for day, date_iso, lugar, tramo, dist, maps_url in SUMMARY_ROWS:
+        w = wx_by_day.get(day)
+        if w:
+            app = w["app_max"]
+            mm = w["precip_mm"]
+            prob = w["precip_prob"]
+            wx_cls = "wx-ok" if app <= 25 else "wx-warn"
+            clima = (
+                f'<span class="{wx_cls}">sens. {app:.0f}°C</span><br>'
+                f'<span class="wx-rain">{mm:.0f} mm · {prob:.0f}%</span>'
+            )
+        else:
+            clima = "—"
+        fecha = _fmt_fecha(date_iso)
+        fecha_extra = ""
+        if day == 5:
+            fecha = "jueves 20–viernes 21 ago"
+            fecha_extra = ""
+        rows_html.append(
+            f"<tr>"
+            f'<td><a href="#d{day}">D{day}</a></td>'
+            f"<td>{esc(fecha)}{fecha_extra}</td>"
+            f"<td><strong>{esc(lugar)}</strong></td>"
+            f"<td>{esc(tramo)}<br><span style=\"color:var(--muted)\">{esc(dist)}</span></td>"
+            f"<td>{clima}</td>"
+            f'<td><a href="{esc(maps_url)}" target="_blank" rel="noopener">Maps</a></td>'
+            f"</tr>"
+        )
+    return f"""
+<div class="summary-wrap">
+<table class="summary-table">
+<thead>
+<tr>
+<th>Día</th>
+<th>Fecha</th>
+<th>Lugar</th>
+<th>Tramo · km</th>
+<th>Clima</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+{"".join(rows_html)}
+</tbody>
+</table>
+</div>
+<p class="summary-meta">Clima = sensación máx + lluvia (Open-Meteo · {esc(WEATHER['fetched_at'][:10])}). Revisar a las 7:00.</p>
+<p>{btns([("🗺️ Ruta completa · todo el loop", GMAPS_LOOP, "g")])}</p>
+"""
+
+
 def live_summary() -> str:
     return f"""
 <section class="section live-plan" id="plan-rapido">
-<h2>Plan · 16–26 agosto 2026</h2>
-<div class="card prose">
-<div class="callout"><strong>Esquema:</strong> D1–D2 Lanuza · D3–D5 Canfranc · D6–D7 Baztán · D8–D9 Ochagavía · D10 Teià.</div>
-<div class="warn"><strong>D5 = jue 20 + vie 21</strong> en Canfranc: el vie 21 Baztán va a ~32°C; la ventana fresca Baztán es solo <strong>22–23</strong>.</div>
-<div class="warn">Hike solo si sensación ≤25°C · perras siempre · D6 Canfranc→Elizondo ~2h20 (excepción).</div>
-<p>{btns([("🗺️ Loop Google Maps", GMAPS_LOOP, "g")])}</p>
-<ol>
-<li><strong>D1–D2</strong> 16–17 · {P['lanuza']}</li>
-<li><strong>D3–D5</strong> 18–21 · {P['can']} (4 noches)</li>
-<li><strong>D6–D7</strong> 22–23 · {P['baztan']}</li>
-<li><strong>D8–D9</strong> 24–25 · {P['och']} / {P['irati']}</li>
-<li><strong>D10</strong> 26 · → {P['teia']}</li>
-</ol>
-</div></section>"""
+<h2>Cuadro resumen · 16–26 agosto 2026</h2>
+{summary_table()}
+<div class="warn"><strong>D5 = jue 20 + vie 21</strong> en Canfranc: el vie 21 Baztán ~32°C; Baztán fresco solo <strong>22–23</strong>.</div>
+<div class="callout">Hike solo si sensación ≤25°C · perras siempre · D6 ~2h20 excepción.</div>
+</section>"""
 
 
 def gmaps_howto() -> str:

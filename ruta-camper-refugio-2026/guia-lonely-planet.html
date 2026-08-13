@@ -44,6 +44,17 @@ details.archive{margin:2rem 0}details.archive summary{cursor:pointer;font-weight
 .fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.4rem;z-index:60}
 .wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;font-size:.88rem}
 @media(min-width:520px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+.summary-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:640px}
+.summary-table th,.summary-table td{padding:.55rem .65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.summary-table th{background:var(--pine);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0}
+.summary-table tr:last-child td{border-bottom:0}
+.summary-table tr:hover td{background:#f5faf6}
+.summary-table a{color:var(--pine);font-weight:700;text-decoration:none}
+.summary-table .wx-ok{color:var(--pine);font-weight:700}
+.summary-table .wx-warn{color:var(--clay);font-weight:700}
+.summary-table .wx-rain{color:#2a5f8a}
+.summary-meta{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
 </style>
 </head><body>
 <header class="top"><div class="wrap top-in">
@@ -63,20 +74,31 @@ details.archive{margin:2rem 0}details.archive summary{cursor:pointer;font-weight
 </section>
 
 <section class="section live-plan" id="plan-rapido">
-<h2>Plan · 16–26 agosto 2026</h2>
-<div class="card prose">
-<div class="callout"><strong>Esquema:</strong> D1–D2 Lanuza · D3–D5 Canfranc · D6–D7 Baztán · D8–D9 Ochagavía · D10 Teià.</div>
-<div class="warn"><strong>D5 = jue 20 + vie 21</strong> en Canfranc: el vie 21 Baztán va a ~32°C; la ventana fresca Baztán es solo <strong>22–23</strong>.</div>
-<div class="warn">Hike solo si sensación ≤25°C · perras siempre · D6 Canfranc→Elizondo ~2h20 (excepción).</div>
-<p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.773,-0.336|42.75,-0.525|43.148,-1.515|42.906,-1.079&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop Google Maps</a></div></p>
-<ol>
-<li><strong>D1–D2</strong> 16–17 · Lanuza / Formigal (Huesca)</li>
-<li><strong>D3–D5</strong> 18–21 · Canfranc Estación (Huesca) (4 noches)</li>
-<li><strong>D6–D7</strong> 22–23 · Elizondo · Valle del Baztán (Navarra)</li>
-<li><strong>D8–D9</strong> 24–25 · Ochagavía (Navarra) / Selva de Irati (Navarra)</li>
-<li><strong>D10</strong> 26 · → Teià (Barcelona)</li>
-</ol>
-</div></section>
+<h2>Cuadro resumen · 16–26 agosto 2026</h2>
+
+<div class="summary-wrap">
+<table class="summary-table">
+<thead>
+<tr>
+<th>Día</th>
+<th>Fecha</th>
+<th>Lugar</th>
+<th>Tramo · km</th>
+<th>Clima</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><a href="#d1">D1</a></td><td>domingo 16 ago</td><td><strong>Lanuza (Huesca)</strong></td><td>Teià → Lanuza<br><span style="color:var(--muted)">350 km · 4–5 h</span></td><td><span class="wx-ok">sens. 23°C</span><br><span class="wx-rain">9 mm · 86%</span></td><td><a href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.773,-0.336&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d2">D2</a></td><td>lunes 17 ago</td><td><strong>Lanuza (Huesca)</strong></td><td>Sin traslado<br><span style="color:var(--muted)">—</span></td><td><span class="wx-warn">sens. 25°C</span><br><span class="wx-rain">4 mm · 28%</span></td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=42.658,-0.328" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d3">D3</a></td><td>martes 18 ago</td><td><strong>Canfranc (Huesca)</strong></td><td>Lanuza → Canfranc<br><span style="color:var(--muted)">75 km · 1h15</span></td><td><span class="wx-ok">sens. 24°C</span><br><span class="wx-rain">0 mm · 1%</span></td><td><a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.773,-0.336&amp;destination=42.75,-0.525&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d4">D4</a></td><td>miércoles 19 ago</td><td><strong>Canfranc (Huesca)</strong></td><td>Sin traslado<br><span style="color:var(--muted)">—</span></td><td><span class="wx-ok">sens. 25°C</span><br><span class="wx-rain">0 mm · 3%</span></td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=42.751,-0.516" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d5">D5</a></td><td>jueves 20–viernes 21 ago</td><td><strong>Canfranc (Huesca)</strong></td><td>Sin traslado · noches 20+21<br><span style="color:var(--muted)">—</span></td><td><span class="wx-ok">sens. 18°C</span><br><span class="wx-rain">15 mm · 45%</span></td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=42.751,-0.516" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d6">D6</a></td><td>sábado 22 ago</td><td><strong>Elizondo / Baztán (Navarra)</strong></td><td>Canfranc → Elizondo<br><span style="color:var(--muted)">181 km · 2h20</span></td><td><span class="wx-ok">sens. 23°C</span><br><span class="wx-rain">20 mm · 54%</span></td><td><a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.75,-0.525&amp;destination=43.148,-1.515&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d7">D7</a></td><td>domingo 23 ago</td><td><strong>Elizondo / Baztán (Navarra)</strong></td><td>Sin traslado<br><span style="color:var(--muted)">—</span></td><td><span class="wx-ok">sens. 23°C</span><br><span class="wx-rain">11 mm · 45%</span></td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=43.148,-1.515" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d8">D8</a></td><td>lunes 24 ago</td><td><strong>Ochagavía / Irati (Navarra)</strong></td><td>Elizondo → Ochagavía<br><span style="color:var(--muted)">121 km · 1h55</span></td><td><span class="wx-ok">sens. 22°C</span><br><span class="wx-rain">34 mm · 44%</span></td><td><a href="https://www.google.com/maps/dir/?api=1&amp;origin=43.148,-1.515&amp;destination=42.906,-1.079&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d9">D9</a></td><td>martes 25 ago</td><td><strong>Ochagavía / Irati (Navarra)</strong></td><td>Sin traslado<br><span style="color:var(--muted)">—</span></td><td><span class="wx-ok">sens. 21°C</span><br><span class="wx-rain">12 mm · 41%</span></td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=42.906,-1.079" target="_blank" rel="noopener">Maps</a></td></tr><tr><td><a href="#d10">D10</a></td><td>miércoles 26 ago</td><td><strong>Teià (Barcelona)</strong></td><td>Ochagavía → Teià<br><span style="color:var(--muted)">435 km · 5–6 h</span></td><td><span class="wx-warn">sens. 30°C</span><br><span class="wx-rain">21 mm · 37%</span></td><td><a href="https://www.google.com/maps/dir/?api=1&amp;origin=42.906,-1.079&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a></td></tr>
+</tbody>
+</table>
+</div>
+<p class="summary-meta">Clima = sensación máx + lluvia (Open-Meteo · 2026-08-13). Revisar a las 7:00.</p>
+<p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.773,-0.336|42.75,-0.525|43.148,-1.515|42.906,-1.079&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Ruta completa · todo el loop</a></div></p>
+
+<div class="warn"><strong>D5 = jue 20 + vie 21</strong> en Canfranc: el vie 21 Baztán ~32°C; Baztán fresco solo <strong>22–23</strong>.</div>
+<div class="callout">Hike solo si sensación ≤25°C · perras siempre · D6 ~2h20 excepción.</div>
+</section>
 
 <section class="section" id="dormir-gmaps"><h2>Buscar pernocta sin Park4Night</h2>
 <div class="card prose">
