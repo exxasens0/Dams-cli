@@ -21,6 +21,7 @@ ISA        = (-0.919,  42.855)  # Isaba, borde río Esca
 
 JACA   = (-0.549,   42.568)
 ARREBOL= (-0.5098,  42.5645)  # Camping El Arrebol · N-330 km 643 · Jaca
+VILLANUA= (-0.566,   42.784)   # P4N #135785 · Villanúa · 7 Calle Piscinas (borde río)
 
 # Anayet area (Valle de Tena, distinto valle que Astún)
 PORTALET_TH = (-0.370,  42.791)  # Parking El Portalet trailhead (Anayet hike)
@@ -127,22 +128,21 @@ DAYS = [
     ),
     dict(
         day=2, date="2026-08-18",
-        zona="Búnkeres Línea P (AM) → Camping El Arrebol (tarde)",
-        # Pernocta: Camping El Arrebol, Jaca (piscina perros, restaurante pet-friendly)
-        parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
-        parking_lat=42.5645, parking_lon=-0.5098,
-        camping_url="https://www.campingelarrebol.com",
-        camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-18&checkout=2026-08-19&guestAges=18,18#additional_concepts",
-        drive_from="Canfranc Estación → El Arrebol tras el hike", drive_km="~35 km", drive_h="~35 min",
-        # Trailhead: Canfranc Estación pueblo (junto a la estación de tren)
+        zona="Búnkeres Línea P (AM) · Villanúa (noche)",
+        # Pernocta: P4N #135785 Villanúa (borde río, gratuito, cualquier tamaño AC)
+        parking_name="P4N #135785 · Villanúa · 7 Calle Piscinas (borde río)",
+        parking_lat=42.784, parking_lon=-0.566,
+        p4n_id=135785,
+        drive_from="Canfranc Estación → Villanúa (tras el hike)", drive_km="~5 km", drive_h="~8 min",
+        # Trailhead: Canfranc Estación pueblo
         hike="Ruta de los Búnkeres – Línea P Canfranc", hike_lat=42.750, hike_lon=-0.525,
         hike_km="9,6 km", hike_dif="Fácil",
         hike_desn="~320 m", hike_h="2,5–3 h",
         hike_parking="Canfranc Estación pueblo (junto a la estación internacional de tren)",
         wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
         hike_from_overnight="~11 km · 15 min del overnight (P4N #285213 → Canfranc Estación)",
-        concurrencia="Media (hike histórico) · Media (camping agosto)",
-        interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Piscina perros El Arrebol","Zona de suelta"],
+        concurrencia="Baja (ruta poco conocida)",
+        interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Río Aragón","Villanúa pueblo"],
         historia=(
             "La <strong>Línea P</strong> ('P' de Pirineos) fue el mayor proyecto de ingeniería militar "
             "de la España franquista: entre 1944 y 1957 se construyeron cientos de búnkeres de hormigón "
@@ -153,58 +153,56 @@ DAYS = [
             "ferroviaria, imitando el despiece de los sillares para camuflarlos."
         ),
         observaciones=(
-            "D1 ya es exigente (ibones + Malacara, 580 m). D2 = ruta fácil e histórica. "
+            "D1 exigente (ibones + Malacara, 580 m). D2 = ruta fácil e histórica. "
             "🥾 Mañana: Búnkeres desde Canfranc Estación (~11 km del overnight, 15 min en camper). "
             "Bosque Picauvé + 12+ búnkeres Núcleo 111 + mirador estación. Fácil, perros OK. "
-            "🍽️ Mediodía (~13h): conducir a Camping El Arrebol (~35 km, 35 min). "
-            "🐾 Tarde: piscina para perros + zona de suelta libre + riachuelo. "
-            "📋 Reserva El Arrebol #109671 — Parcela, 1 noche. "
-            "☎️ 974 57 95 57 · info@campingelarrebol.com. "
-            "⚠️ Cancelación gratis hasta el martes 11 ago (7 días antes)."
+            "Tras el hike: conducir 5 km a Villanúa · P4N #135785 (borde río, gratuito, nivelado). "
+            "Villanúa: pueblo tranquilo con bares y tiendas. Cerca de la Cueva de las Güixas. "
+            "D3 mañana: ibón de Ip desde Canfranc pueblo (~10 km, 12 min) + luego El Arrebol."
         ),
-        planb="Tarde en El Arrebol: piscina, zona de suelta, restaurante — plan B perfecto si llueve.",
+        planb="Paseo Villanúa · borde río Aragón · Cueva de las Güixas (si tienen visitas).",
     ),
     dict(
         day=3, date="2026-08-19",
-        zona="Ibones de Anayet · Valle de Tena (Formigal)",
-        # Pernocta: P4N #46830 (Formigal, gratuito, 30 plazas)
-        # ⚠️ P4N #572967 (Anayet) = solo día + CERRADO en verano — NO VÁLIDO para pernoctar
-        # Alternativa pagada: P4N #328908 (Sallent de Gállego Aire, 10€/noche, servicios completos)
-        parking_name="P4N #46830 · Formigal (parking gratuito autocaravanas)",
-        parking_lat=42.7724, parking_lon=-0.3594,
-        p4n_id=46830,
-        drive_from="El Arrebol → Portalet Anayet (~62 km, ~55 min)", drive_km="~62 km", drive_h="~55 min",
-        # Trailhead: Parking El Portalet (ruta desde Portalet: 550 m desnivel vs 750 m desde Corral Mulas)
-        hike="Ibones de Anayet desde El Portalet", hike_lat=42.791, hike_lon=-0.370,
-        hike_km="10 km", hike_dif="Moderado",
-        hike_desn="~550 m", hike_h="3,5–4 h",
-        hike_parking="Parking El Portalet (A-136 km s/n · estación de esquí Formigal, lado norte)",
-        wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ibones-de-anayet-desde-el-portalet-formigal-27294107",
-        hike_from_overnight="El Portalet está ~10 km del P4N #46830 · 12 min en camper (A-136 norte)",
-        concurrencia="Media-alta (agosto, destino muy conocido)",
-        interes=["Ibones de Anayet (2233 m)","Pico Anayet (2574 m, solo vistas)","Midi d'Ossau","Valle de Tena","GR-11"],
+        zona="Ibón de Ip (AM) · Camping El Arrebol (tarde)",
+        # Pernocta: Camping El Arrebol (reserva #109671 modificada a 19→20 ago)
+        parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
+        parking_lat=42.5645, parking_lon=-0.5098,
+        camping_url="https://www.campingelarrebol.com",
+        camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-19&checkout=2026-08-20&guestAges=18,18#additional_concepts",
+        drive_from="Villanúa → Canfranc pueblo (hike) → El Arrebol", drive_km="~35 km", drive_h="~35 min",
+        # Trailhead: parking Canfranc pueblo (cruzar Puente de Arriba sobre el río Aragón)
+        hike="Ibón de Ip circular (Canfranc pueblo)", hike_lat=42.745, hike_lon=-0.521,
+        hike_km="~16 km", hike_dif="Moderado",
+        hike_desn="~1.086 m", hike_h="~5 h",
+        hike_parking="Parking Canfranc pueblo · cruzar Puente de Arriba sobre el río Aragón (~10 km de Villanúa, 12 min)",
+        wikiloc_url="https://es.wikiloc.com/rutas-senderismo/circular-al-ibon-de-ip-119496015",
+        hike_from_overnight="~10 km · 12 min del overnight (P4N #135785 Villanúa → Canfranc pueblo)",
+        concurrencia="Media (menos conocido que Anayet)",
+        interes=["Ibón de Ip (2.112 m)","Circo de Collarada","Refugio Canal de Ip","Valle del Aragón","Canfranc pueblo"],
         historia=(
-            "Los <strong>Ibones de Anayet</strong> son unos lagos glaciares a 2.233 m situados a los pies "
-            "del espectacular <strong>Pico Anayet</strong> (2.574 m), una antigua chimenea volcánica que "
-            "es uno de los montes más fotogénicos del Pirineo por su silueta característica. "
-            "Con el <strong>Midi d'Ossau</strong> (2.884 m, Francia) como telón de fondo, el paisaje "
-            "es de fama europea. El Valle de Tena fue una de las primeras zonas con estaciones de esquí "
-            "en España; Formigal (1966) es hoy una de las más grandes del país."
+            "El <strong>Ibón de Ip</strong> se asienta a 2.112 m al pie del <strong>Circo de Collarada</strong>, "
+            "el pico más alto de la Jacetania (2.886 m). La subida sigue el <strong>Barranco de Ip</strong> por dos "
+            "laderas distintas — La Solana (sur, bosque de pinos) y La Besera (norte, más solitaria) — "
+            "que se combinan en un circular clásico del valle del Aragón. Mucho menos conocido que los ibones "
+            "de Anayet o Astún, lo que significa silencio real incluso en agosto. "
+            "El pueblo de <strong>Canfranc</strong> (no la estación) conserva el trazado medieval y la "
+            "iglesia de la Asunción, muy distinto al núcleo ferroviario de Canfranc Estación."
         ),
         observaciones=(
-            "⚠️ Anayet NO está en Astún — es el Valle de Tena (Formigal), 60 km este de Jaca. "
-            "Ruta desde El Portalet: 10 km, 550 m desnivel — más fresquita que la de Corral de Mulas (750 m). "
-            "Ruta muy expuesta al sol sin sombra — salir antes de las 8:00. "
-            "🐾 Perras: correa obligatoria (vacas y caballos en toda la ruta). "
-            "🚫 PROHIBIDO BAÑARSE en los ibones (22 jun – 21 sep 2026) — multa hasta 1.000€. "
-            "🦟 Sanguijuelas en el agua del ibón — no meter a las perras en el lago; sí en riachuelos del camino. "
-            "💧 Sin fuentes de agua potable en ruta — llevar mínimo 2L por persona + agua extra para las perras. "
-            "🏔️ No subir al pico (cadena, pasos expuestos) — quedarse en los ibones. "
-            "⚠️ P4N #572967 que encontrasteis = SOLO DÍA + CERRADO en verano — no sirve para pernoctar. "
-            "✅ Pernocta: P4N #46830 (Formigal, gratuito, 30 plazas) o "
-            "P4N #328908 (Sallent Aire, 10€/noche, grises+negras+electricidad disponible)."
+            "⚠️ Desnivel considerable: ~1.086 m en 16 km — salir muy temprano (7:00 h máximo). "
+            "Ruta técnicamente fácil (no hay pasos expuestos ni cadenas) pero físicamente exigente. "
+            "Circular: subir por La Solana (bosque, más sombreada) · bajar por La Besera. "
+            "Agua en los barrancos del camino — las perras pueden refrescarse en ruta. "
+            "Parking pequeño en Canfranc pueblo (cruzar el puente sobre el río). "
+            "⚡ Llegar al parking a las 6:30–7:00 en agosto para encontrar plaza. "
+            "🍽️ Mediodía (~14h): conducir a El Arrebol (~35 km, 35 min). "
+            "🐾 Tarde: piscina para perros + zona de suelta + restaurante pet-friendly. "
+            "📋 Reserva El Arrebol #109671 — fecha modificada a 19/08→20/08. "
+            "☎️ 974 57 95 57 · info@campingelarrebol.com."
         ),
-        planb="Sallent de Gállego pueblo (casco medieval, gastro) · borde río Gállego.",
+        planb="Si el desnivel da respeto: solo subir hasta el Refugio Canal de Ip (~8 km, ~600 m) y volver. "
+              "Igualmente bonito. Tarde en El Arrebol piscina perros.",
     ),
     dict(
         day=4, date="2026-08-20",
@@ -213,7 +211,7 @@ DAYS = [
         parking_name="Área forestal Selva de Oza (borde pinar, Valle de Hecho)",
         parking_lat=42.840, parking_lon=-0.738,
         # p4n_id: sin ID confirmado → usa search centrado en el spot
-        drive_from="Formigal/Portalet → Oza (Valle de Hecho)", drive_km="~90 km", drive_h="~1h30",
+        drive_from="El Arrebol → Oza via Jaca → Hecho", drive_km="~65 km", drive_h="~1h10",
         # Trailhead: parking terminal del Valle de Oza (fin del asfalto), 2,5 km más al norte
         hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
         hike_km="8 km", hike_dif="Fácil",
@@ -490,9 +488,9 @@ def crowd_span(c:str)->str:
 def _drive_url(d: dict) -> str:
     n = d["day"]
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
-    if n==2: return gmaps_dir(*SPOT1,*ARREBOL)
-    if n==3: return gmaps_dir(*ARREBOL,*PORTALET_TH)
-    if n==4: return gmaps_dir(*FORMIGAL_NIGHT,*OZA_NIGHT)
+    if n==2: return gmaps_dir(*SPOT1,*VILLANUA)
+    if n==3: return gmaps_dir(*VILLANUA,*ARREBOL)
+    if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)
     if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
     if n==6: return gmaps_dir(*YESA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
@@ -565,17 +563,17 @@ def day_card(d:dict)->str:
                      f"Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
                      f"{btns([('Dom 16 · Teià → P4N #285213 (conducir)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
     elif n==2:
-        ruta_html = (f"<p>🥾 Mañana Canal Roya (7–12h) · 🍽️ 13h conducir a Camping El Arrebol (~33 km, 30 min). "
-                     f"Tarde-noche en el camping: piscina para perros, zona de suelta, restaurante.</p>"
-                     f"{btns([('Candanchú → El Arrebol (conducir)', gmaps_dir(*SPOT1,*ARREBOL), 'g')])}")
+        ruta_html = (f"<p>🥾 Búnkeres desde Canfranc Estación (~11 km del overnight). "
+                     f"Tras el hike: 5 km hasta P4N #135785 Villanúa (borde río).</p>"
+                     f"{btns([('P4N #285213 → Villanúa (conducir)', gmaps_dir(*SPOT1,*VILLANUA), 'g')])}")
     elif n==3:
-        ruta_html = (f"<p>El Arrebol → Parking El Portalet (Formigal) ~62 km, ~55 min via Sabiñánigo/Biescas. "
-                     f"⚠️ Anayet NO está en Astún — es el Valle de Tena, otro valle diferente.</p>"
-                     f"{btns([('El Arrebol → Portalet Anayet (conducir)', gmaps_dir(*ARREBOL,*PORTALET_TH), 'g')])}")
+        ruta_html = (f"<p>🥾 Ibón de Ip: salir de Villanúa hacia Canfranc pueblo (~10 km, 12 min). "
+                     f"Tras el hike (~5 h): conducir a El Arrebol (~35 km, 35 min) para comer.</p>"
+                     f"{btns([('Villanúa → Canfranc pueblo trailhead', gmaps_dir(*VILLANUA,*ARREBOL), 'g')])}")
     elif n==4:
-        ruta_html = (f"<p>Formigal/Portalet → Oza (Valle de Hecho, ~90 km · ~1h30 via Sabiñánigo). "
+        ruta_html = (f"<p>El Arrebol → Oza vía Jaca → Hecho (~65 km, ~1h10). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('Formigal → Oza (conducir)', gmaps_dir(*FORMIGAL_NIGHT,*OZA_NIGHT), 'g')])}")
+                     f"{btns([('El Arrebol → Oza (conducir)', gmaps_dir(*ARREBOL,*OZA_NIGHT), 'g')])}")
     elif n==5:
         ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
                      f"{btns([('Oza → Jaca', gmaps_dir(*OZA_NIGHT,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
