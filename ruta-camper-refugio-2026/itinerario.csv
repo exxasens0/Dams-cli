@@ -1,11 +1,11 @@
 dia,fecha,tramo,km_aprox,min_aprox,base,provincia,gmaps_sleep_1,lat,lon,camping_fallback,visita_estrella,perros
-1,2026-08-15,Teia-Albarracin,280,300,Albarracin,Teruel,Tejeria Guadalaviar,40.412,-1.443,Camping Albarracin,Llegada pueblo,OK
-2,2026-08-16,local,0,0,Albarracin,Teruel,Rodeno acceso,40.450,-1.380,#390083,Pinares Rodeno AM,OK atado
-3,2026-08-17,Albarracin-Escucha,90,90,Escucha,Teruel,N420 borde,40.762,-1.068,Museo CC,Minas exterior,confirmar mina
-4,2026-08-18,Escucha-Morella,130,120,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Murallas,OK exterior
-5,2026-08-19,local,0,0,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Ports Morella,OK
-6,2026-08-20,local,0,0,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Ports dia 2,OK
-7,2026-08-21,Morella-Veo,80,90,Alcudia de Veo,Castellon,Cami vell Veo,39.948,-0.278,Altomira,Traslado,OK
-8,2026-08-22,local,0,0,Alcudia de Veo,Castellon,Cami vell Veo,39.948,-0.278,Altomira,Veo-Ain AM,OK
-9,2026-08-23,hacia Catalunya,120,120,Montanejos,Castellon,Arenoso borde,40.058,-0.524,camping,Puente,OK
-10,2026-08-24,Teia,450,300,Teia,Barcelona,,,,,Vuelta,OK
+1,2026-08-15,Teia-Ochagavia,400,300,Ochagavia,Navarra,borde pueblo,42.908,-1.082,Camping Robledo,Llegada Roncal,OK
+2,2026-08-16,local,0,0,Ochagavia,Navarra,misma D1,42.908,-1.082,Camping Robledo,Selva Irati AM,OK atado
+3,2026-08-17,Ochagavia-Jaca,95,90,Jaca,Huesca,Ciudadela,42.569,-0.552,AC Jaca,Bajada sur,OK
+4,2026-08-18,Jaca-Albarracin,180,120,Albarracin,Teruel,Tejeria,40.412,-1.443,Camping Albarracin,Murallas,OK
+5,2026-08-19,local,0,0,Albarracin,Teruel,Rodeno,40.450,-1.380,#390083,Pinares Rodeno,OK atado
+6,2026-08-20,Albarracin-Escucha,90,90,Escucha,Teruel,N420 borde,40.762,-1.068,Museo CC,Minas exterior,confirmar mina
+7,2026-08-21,Escucha-Morella,130,120,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Murallas,OK exterior
+8,2026-08-22,local,0,0,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Ports Morella,OK
+9,2026-08-23,Morella-Montanejos,120,120,Montanejos,Castellon,Arenoso borde,40.058,-0.524,camping,Puente,OK
+10,2026-08-24,Montanejos-Teia,450,300,Teia,Barcelona,,,,,Vuelta,OK

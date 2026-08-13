@@ -101,9 +101,9 @@ En parkings de estación (Lioran, Formiguères, Bonascre): pernocta tipo **parki
 
 ---
 
-# Viaje activo · Interior España 15–24 agosto 2026
+# Viaje activo · Navarra + Interior ES 15–24 agosto 2026
 
-**Teià loop** · Albarracín → Escucha → Morella/Ports → Sierra Espadán → Teià.
+**Teià loop** · **Navarra primero** (Ochagavía/Irati) → bajar por Jaca (Huesca) → Albarracín → Escucha → Morella → Teià.
 
 ## Regla dura (igual que Francia)
 
@@ -115,65 +115,66 @@ En parkings de estación (Lioran, Formiguères, Bonascre): pernocta tipo **parki
 
 | Qué | Motivo |
 |---|---|
-| **Parrizal (Beceite)** | Reserva + sendero estrecho; perros a menudo **prohibidos** — confirmar antes de ir |
-| **Mina bajo tierra Escucha** | Solo si museo confirma mascotas; si no → **exterior + ruta digital** |
+| **Sierra Espadán** | Eliminado del viaje — lejos del eje + calor extremo agosto |
+| **Parrizal (Beceite, Castellón)** | Reserva + sendero estrecho; perros a menudo **prohibidos** |
+| **Mina bajo tierra Escucha (Teruel)** | Solo si museo confirma mascotas |
 | **Peñíscola / costa** | Calor + masificación agosto |
-| **Valderrobres valle** | Sensación térmica alta vs Morella/Ports |
-| **Navarra / Irati** | Fuera del viaje (tramo >2 h desde Castellón) |
 
 ## OK con correa (verificar in situ)
 
-Pinares de Rodeno, Guadalaviar, patrimonio minero **exterior** Escucha, murallas/castillo Morella (exterior), sendas forestales Ports de Morella, Camí vell Veo–Aín, Chorreras Montanejos (paseo corto).
+Selva de Irati (Navarra), pueblo Ochagavía/Roncal, Ciudadela Jaca (exterior), Pinares Rodeno, minas **exterior** Escucha, murallas Morella, Ports de Morella, Chorreras Montanejos.
 
-## Horario anti-calor (agosto interior)
+## Horario anti-calor (agosto)
 
 | Franja | Qué hacer |
 |---|---|
 | 07:00–07:30 | Decisión meteo (Open-Meteo sensación máx) |
 | 07:30–11:00 | **Ventana hike** (cortar si sensación ≥25 °C) |
 | 11:30–17:00 | Camper sombra / pueblo / río |
-| 17:30–20:00 | Paseo corto (murallas, Guadalaviar, pueblo) |
-| Noche | Albarracín/Morella más frescos; Espadán caliente → ventilación |
+| 17:30–20:00 | Paseo corto |
+| Noche | Navarra/Albarracín más frescos; Montanejos caliente → ventilación |
 
 ## Por zona
 
-### Albarracín (D1–2)
+### Ochagavía · Irati (Navarra) — D1–2
 
-- Rodeno: **perros atados** en pinar (fauna).
-- Casco: calles empedradas — correa corta.
-- Pernocta GMaps: estacionar ≠ acampar (sin toldo/mesas).
+- **Selva de Irati:** perros **atados** (fauna, ganado).
+- **Patous** en pastos del Roncal — correa antes de ver rebaño; no atravesar manada.
+- Casco Ochagavía empedrado: no entrar con AC 7 m; pernocta fuera del pueblo.
+- Frescor nocturno — manta útil.
 
-### Escucha · minas (D3)
+### Jaca (Huesca) — D3
 
-- **Exterior** maquinaria y ruta digital: OK.
-- **Visita mina interior:** llamar **978 756 705** / reserva web — si no admiten perros, cancelar interior.
-- Zona industrial: vigilar maquinaria y socavones; no dejar husmear huecos.
+- Escalón de bajada (evita tramo largo directo a Teruel).
+- Ciudadela: exterior OK; interior → confirmar perros.
 
-### Morella · Ports (D4–6)
+### Albarracín (Teruel) — D4–5
 
-- Murallas/castillo: exterior OK; interior museo → confirmar.
-- **Parrizal:** plan B = senda forestal Ports / Vilafranca si ban perros.
-- Tormenta (D6 posible): bosque OK con impermeable; evitar crestas.
+- Rodeno: perros atados en pinar.
+- Pernocta GMaps: estacionar ≠ acampar.
 
-### Sierra Espadán PN (D7–8)
+### Escucha · minas (Teruel) — D6
 
-- Parque Natural: perros **atados**; normativa prohíbe acampar libre — discreción parking día.
-- Calor fuerte D8 (AppMax ~34 °C): hike solo **7:00–10:00** o cancelar.
-- **Camping Altomira** = emergencia legal con sombra.
+- **Exterior** + ruta digital: OK.
+- Mina interior: **978 756 705** — si no admiten perros, cancelar.
 
-### Vuelta (D9–10)
+### Morella · Ports (Castellón) — D7–8
 
-- D9 Montanejos: paseo corto AM si fresco; Chorreras muy concurrido domingo.
-- D10: solo conducción ~5 h; paradas sombra cada **2 h** para perras; no hike.
+- Murallas/castillo exterior OK.
+- **Parrizal:** plan B = senda forestal Ports / Vilafranca.
+
+### Vuelta Montanejos → Teià — D9–10
+
+- D9: paseo corto AM; domingo concurrido.
+- D10: solo conducción ~5 h; paradas cada 2 h.
 
 ## P4N / GMaps (agosto)
 
 - P4N Albarracín (#390083) y Morella (#6766): **saturados** — GMaps first.
-- Si cartel “prohibido pernoctar” → siguiente candidato del día (ver `05-pernoctas-gmaps-p4n.md`).
 
 ## Checklist botiquín (ES)
 
 - Agua extra 5–10 L + bebedero  
-- Correas + arnés + bozal  
-- Pinzas garrapatas (bosque Rodeno / Ports)  
-- 112 + vet guardia: Teruel / Castellón / Barcelona según tramo  
+- Correas + arnés + bozal (Patous Navarra/Aubrac)  
+- Pinzas garrapatas (Irati / Rodeno / Ports)  
+- 112 + vet guardia: Pamplona / Teruel / Castellón / Barcelona  

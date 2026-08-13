@@ -1,10 +1,10 @@
-# Ruta camper · Interior España (15–24 ago 2026)
+# Ruta camper · Navarra + Interior ES (15–24 ago 2026)
 
-**Sunlight 600** + **2 perras**. Fresco, poca masificación, minas + gastro + senderismo.
+**Sunlight 600** + **2 perras**. Navarra primero, luego bajar: Irati, minas, gastro, senderismo.
 
 **Reglas:** perras en todas las visitas · hike solo sensación **<25 °C** · tramos **≤2 h** (solo ida/vuelta ~5 h) · pernocta **Google Maps first** (P4N = emergencia).
 
-**Eje:** Teià → Albarracín → Escucha (minas) → Morella/Ports → Sierra Espadán → Teià
+**Eje:** Teià → Ochagavía/Irati (Navarra) → Jaca (Huesca) → Albarracín → Escucha (Teruel) → Morella (Castellón) → Teià
 
 ## Abrir la guía en el móvil
 
