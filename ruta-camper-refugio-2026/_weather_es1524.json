@@ -1,30 +1,30 @@
 {
-  "fetched_at": "2026-08-13T13:03:06.436608+00:00",
+  "fetched_at": "2026-08-13T14:51:02.014155+00:00",
   "source": "Open-Meteo best_match",
   "attribution": "https://open-meteo.com/",
-  "route_note": "Salida dom 16 ago · solo bases app_max <=25°C",
+  "route_note": "16–25 ago · Lanuza→Canfranc→Irati→Baztán→Irati→Teià · Baztán solo 22–23 ≤25°C",
   "days": [
     {
       "day": 1,
       "date": "2026-08-16",
-      "place": "Canfranc",
-      "place_label": "Canfranc Estación (Huesca)",
-      "lat": 42.75,
-      "lon": -0.525,
+      "place": "Sallent",
+      "place_label": "Sallent de Gállego / Lanuza (Huesca)",
+      "lat": 42.773,
+      "lon": -0.336,
       "available": true,
-      "summary_es": "Código 63",
-      "t_max": 20.0,
-      "t_min": 13.9,
-      "app_max": 21.9,
-      "app_min": 13.7,
-      "precip_mm": 5.1,
-      "precip_prob": 89,
-      "uv_max": 6.2,
+      "summary_es": "Código 80",
+      "t_max": 20.5,
+      "t_min": 16.5,
+      "app_max": 23.0,
+      "app_min": 17.4,
+      "precip_mm": 9.2,
+      "precip_prob": 86,
+      "uv_max": 6.3,
       "tips": [
-        "Salida domingo: revisar meteo a las 7:00 antes de cargar.",
-        "⚠️ Lluvia en llegada: llovizna ~11–22 h (89% prob, ≈5 mm). Sin hike.",
-        "Plan B: estación, pueblo, museo · primer hike lun 17.",
-        "OK temperatura: sensación máx 22°C (≤25)."
+        "Salida domingo · Lanuza primero (ahorra ~70 km).",
+        "⚠️ Lluvia llegada · sin hike.",
+        "1 noche Lanuza — lun 17 Sallent ~25°C → subir a Canfranc.",
+        "OK temperatura: sensación máx 23°C (≤25)."
       ]
     },
     {
@@ -44,8 +44,10 @@
       "precip_prob": 29,
       "uv_max": 7.2,
       "tips": [
-        "Primer hike del viaje — ventana seca AM.",
-        "OK hike: sensación máx 23°C (≤25)."
+        "Traslado Lanuza→Canfranc (~75 km · ~1h15).",
+        "Primer hike posible tarde/AM si seco.",
+        "Escape calor valle Tena (Sallent 25°C+).",
+        "OK temperatura: sensación máx 23°C (≤25)."
       ]
     },
     {
@@ -65,8 +67,8 @@
       "precip_prob": 1,
       "uv_max": 7.1,
       "tips": [
-        "Día seco — Selva de Oza.",
-        "OK hike: sensación máx 24°C (≤25)."
+        "Día seco — Ibón / Selva de Oza.",
+        "OK temperatura: sensación máx 24°C (≤25)."
       ]
     },
     {
@@ -86,50 +88,51 @@
       "precip_prob": 3,
       "uv_max": 7.75,
       "tips": [
-        "Última noche Canfranc — hike corto AM si ≤25°C.",
-        "OK hike: sensación máx 25°C (≤25)."
+        "Día seco — valle Canfranc.",
+        "OK temperatura: sensación máx 25°C (≤25)."
       ]
     },
     {
       "day": 5,
       "date": "2026-08-20",
-      "place": "Sallent",
-      "place_label": "Sallent de Gállego (Huesca)",
-      "lat": 42.773,
-      "lon": -0.336,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
       "summary_es": "Código 51",
-      "t_max": 21.2,
-      "t_min": 16.7,
-      "app_max": 21.5,
-      "app_min": 17.3,
-      "precip_mm": 0.6,
-      "precip_prob": 52,
-      "uv_max": 6.4,
+      "t_max": 20.2,
+      "t_min": 15.2,
+      "app_max": 20.0,
+      "app_min": 14.7,
+      "precip_mm": 1.2,
+      "precip_prob": 48,
+      "uv_max": 7.0,
       "tips": [
-        "Traslado corto · paseo Lanuza tarde.",
-        "OK hike: sensación máx 22°C (≤25)."
+        "Fresco ~20°C.",
+        "OK temperatura: sensación máx 20°C (≤25)."
       ]
     },
     {
       "day": 6,
       "date": "2026-08-21",
-      "place": "Sallent",
-      "place_label": "Sallent de Gállego (Huesca)",
-      "lat": 42.773,
-      "lon": -0.336,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
       "summary_es": "Código 95",
-      "t_max": 20.0,
-      "t_min": 15.7,
-      "app_max": 21.1,
-      "app_min": 16.2,
-      "precip_mm": 16.8,
-      "precip_prob": 46,
-      "uv_max": 6.95,
+      "t_max": 17.7,
+      "t_min": 13.8,
+      "app_max": 18.4,
+      "app_min": 13.8,
+      "precip_mm": 14.7,
+      "precip_prob": 45,
+      "uv_max": 6.9,
       "tips": [
-        "⚠️ Lluvia posible (≈17 mm) — hike solo AM si seco.",
-        "OK hike: sensación máx 21°C (≤25)."
+        "⚠️ Lluvia posible — hike AM si seco.",
+        "Preparar traslado Navarra.",
+        "OK temperatura: sensación máx 18°C (≤25)."
       ]
     },
     {
@@ -149,49 +152,76 @@
       "precip_prob": 42,
       "uv_max": 3.7,
       "tips": [
-        "Navarra noche 1/2 · lluvia posible tarde.",
-        "OK hike: sensación máx 20°C (≤25)."
+        "Navarra noche 1/3 · Irati.",
+        "⚠️ Lluvia posible.",
+        "OK temperatura: sensación máx 20°C (≤25)."
       ]
     },
     {
       "day": 8,
       "date": "2026-08-23",
+      "place": "Elizondo",
+      "place_label": "Elizondo · Valle del Baztán (Navarra)",
+      "lat": 43.148,
+      "lon": -1.515,
+      "available": true,
+      "summary_es": "Código 81",
+      "t_max": 21.6,
+      "t_min": 15.4,
+      "app_max": 22.6,
+      "app_min": 16.7,
+      "precip_mm": 11.4,
+      "precip_prob": 45,
+      "uv_max": 3.3,
+      "tips": [
+        "Única ventana Baztán ≤25°C (22–23).",
+        "⚠️ Lluvia posible · hike AM.",
+        "NO quedarse lun 24 (Baztán ~29°C).",
+        "OK temperatura: sensación máx 23°C (≤25)."
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-08-24",
       "place": "Ochagavia",
       "place_label": "Ochagavía (Navarra)",
       "lat": 42.906,
       "lon": -1.079,
       "available": true,
       "summary_es": "Código 95",
-      "t_max": 19.8,
-      "t_min": 12.1,
-      "app_max": 21.5,
-      "app_min": 11.7,
-      "precip_mm": 17.7,
-      "precip_prob": 52,
-      "uv_max": 6.25,
+      "t_max": 20.2,
+      "t_min": 12.0,
+      "app_max": 21.6,
+      "app_min": 12.0,
+      "precip_mm": 33.6,
+      "precip_prob": 44,
+      "uv_max": 6.8,
       "tips": [
-        "Irati — hike AM; lluvia posible (≈18 mm).",
-        "OK hike: sensación máx 22°C (≤25)."
+        "Vuelta a Ochagavía — Baztán ya >25°C.",
+        "⚠️ Lluvia fuerte posible (~34 mm).",
+        "Noche 3 Navarra · salida mar 25.",
+        "OK temperatura: sensación máx 22°C (≤25)."
       ]
     },
     {
-      "day": 9,
-      "date": "2026-08-24",
+      "day": 10,
+      "date": "2026-08-25",
       "place": "Teia",
       "place_label": "Teià (Barcelona)",
       "lat": 41.498,
       "lon": 2.319,
       "available": true,
-      "summary_es": "Código 51",
-      "t_max": 29.9,
-      "t_min": 22.2,
-      "app_max": 33.7,
-      "app_min": 24.3,
-      "precip_mm": 2.4,
-      "precip_prob": 31,
-      "uv_max": 4.05,
+      "summary_es": "Código 95",
+      "t_max": 29.7,
+      "t_min": 22.4,
+      "app_max": 33.4,
+      "app_min": 25.9,
+      "precip_mm": 1.5,
+      "precip_prob": 28,
+      "uv_max": 6.6,
       "tips": [
-        "⚠️ Sensación 34°C >25 — solo conducción / sombra."
+        "⚠️ Sensación ~33°C — solo conducción / sombra.",
+        "⚠️ Sensación 33°C >25 — solo conducción / sombra."
       ]
     }
   ]

@@ -1,4 +1,4 @@
-"""Spain Pyrenees camper guide 16–24 Aug 2026 — HTML builder (≤25°C bases)."""
+"""Spain Pyrenees camper guide 16–25 Aug 2026 — HTML builder (≤25°C bases)."""
 from __future__ import annotations
 
 import html
@@ -9,19 +9,19 @@ ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 TEIA = (2.319, 41.498)
+SAL = (-0.336, 42.773)   # Sallent / Lanuza
 CAN = (-0.525, 42.750)   # Canfranc Estación
-SAL = (-0.336, 42.773)   # Sallent de Gállego
-OCH = (-1.079, 42.906)   # Ochagavía
-BAZ = (-1.515, 43.148)   # Elizondo (Plan B Navarra)
+OCH = (-1.079, 42.906)   # Ochagavía / Irati
+BAZ = (-1.515, 43.148)   # Elizondo / Baztán
 
 P = {
     "teia": "Teià (Barcelona)",
-    "can": "Canfranc Estación (Huesca)",
     "sal": "Sallent de Gállego (Huesca)",
-    "och": "Ochagavía (Navarra)",
-    "baztan": "Elizondo · Valle del Baztán (Navarra)",
-    "irati": "Selva de Irati (Navarra)",
     "lanuza": "Lanuza / Formigal (Huesca)",
+    "can": "Canfranc Estación (Huesca)",
+    "och": "Ochagavía (Navarra)",
+    "irati": "Selva de Irati (Navarra)",
+    "baztan": "Elizondo · Valle del Baztán (Navarra)",
 }
 
 
@@ -37,7 +37,6 @@ def gmaps_dir(olon: float, olat: float, dlon: float, dlat: float) -> str:
 
 
 def gmaps_route(stops: list[tuple[float, float]]) -> str:
-    """Ruta multi-parada: lista de (lon, lat); primera = origen, última = destino."""
     if len(stops) < 2:
         return ""
     olon, olat = stops[0]
@@ -52,8 +51,8 @@ def gmaps_route(stops: list[tuple[float, float]]) -> str:
     return url + "&travelmode=driving"
 
 
-# Pirineo alto: únicas bases con sensación ≤25°C en las fechas del viaje
-GMAPS_LOOP = gmaps_route([TEIA, CAN, SAL, OCH, TEIA])
+# Lanuza primero → Canfranc → Irati → Baztán → Teià
+GMAPS_LOOP = gmaps_route([TEIA, SAL, CAN, OCH, BAZ, TEIA])
 
 
 def gmaps_pin(lat: float, lon: float, label: str = "") -> str:
@@ -89,7 +88,7 @@ body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);
 .warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.75rem 1rem;border-radius:8px;margin:.75rem 0}
 .callout{background:var(--sec);padding:.75rem 1rem;border-radius:8px;margin:.75rem 0}
 .day-nav{position:sticky;top:52px;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;background:rgba(242,238,228,.96);padding:.45rem 0;margin:0 -1rem;padding-left:1rem;padding-right:1rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-@media(min-width:640px){.day-nav{grid-template-columns:repeat(9,1fr)}}
+@media(min-width:640px){.day-nav{grid-template-columns:repeat(10,1fr)}}
 .day-nav a{font-size:.68rem;text-align:center;padding:.35rem .2rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
 .day-nav a:hover{background:var(--sec)}
 .day-card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.5rem 0;overflow:hidden;box-shadow:var(--shadow)}
@@ -177,71 +176,12 @@ def spot(name: str, lat: float, lon: float, why: str, risk: str = "") -> str:
 def build_days() -> str:
     parts = []
 
+    # D1 · dom 16 · Teià → Lanuza
     parts.append(day_card(
-        "d1", "Día 1 · Domingo 16 agosto", f"{P['teia']} → {P['can']} · ~350 km · ~4–5 h",
-        f"""<p><strong>Salida domingo</strong> — revisar meteo a las <strong>7:00</strong> antes de cargar. Tramo largo permitido (ida).</p>
-{btns([("Google · Teià → Canfranc", gmaps_dir(*TEIA, *CAN), "g")])}
-<div class="warn"><strong>⚠️ Lluvia en llegada (Open-Meteo):</strong> llovizna ~11–22 h (89% prob, ≈5 mm). <strong>Sin hike.</strong> Salid cuando la carretera esté seca; llegada ~12–14 h.</div>
-<p>Plan B al llegar: estación + pueblo · sensación ~22°C.</p>""",
-        (
-            spot("Parking Canfranc Estación", 42.751, -0.516,
-                 "Pueblo fronterizo: aparcamientos amplios junto a la estación. Satélite: sin salida.",
-                 "Agosto: turismo día")
-            + spot("Área servicio A-136", 42.745, -0.530,
-                   "Alternativa si estación llena.", "Carretera")
-        ),
-        """<ul><li>Camping pequeños valle (emergencia)</li></ul>""",
-        [("Estación Canfranc (exterior)", "0,2", "3", "OK paseo", gmaps_pin(42.751, -0.516)),
-         ("Villa de Canfranc", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
-        f"""<ol><li><strong>7:00</strong> — consultar meteo; si OK → salir de Teià</li>
-<li><strong>Solo conducción + pernocta</strong> — sin senderismo</li>
-<li>Tarde lluvia: estación / museo / gastro pueblo</li></ol>
-{btns([("Museo estación Canfranc", "https://www.canfranc.es/turismo/estacion-internacional/", "w")])}""",
-        1, "<p>Sábado 15 en casa (evitáis lluvia sáb + conducción bajo tormenta). Primer hike → <strong>lunes 17</strong>.</p>",
-    ))
-
-    parts.append(day_card(
-        "d2", "Día 2 · Lunes 17", f"{P['can']} · Ibón de Estanes",
-        f"""<p><strong>Sin traslado.</strong> Meteo mejora (≈0,7 mm, 29% prob) — <strong>primer hike del viaje</strong>.</p>""",
-        spot("Misma pernocta D1", 42.751, -0.516, "Segunda noche Canfranc.", ""),
-        """<ul><li>—</li></ul>""",
-        [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
-         ("Valle de Canfranc", "5", "10", "OK", gmaps_pin(42.751, -0.516)),
-         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
-        """<ol><li><strong>7:00–12:00 · Ibón de Estanes</strong> (ibón, sombra)</li>
-<li>Tarde: si llueve → valle / pueblo</li></ol>""",
-        2, "<p>Patous posibles — correa antes del rebaño.</p>",
-    ))
-
-    parts.append(day_card(
-        "d3", "Día 3 · Martes 18", f"{P['can']} · Selva de Oza",
-        f"<p><strong>Sin traslado.</strong> Día seco (0 mm) · sensación ~24°C.</p>",
-        spot("Base Canfranc", 42.751, -0.516, "Tercera noche.", ""),
-        """<ul><li>—</li></ul>""",
-        [("Selva de Oza / Respomuso", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
-         ("Ruta Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50)),
-         ("Sallent de Gállego (recce)", "25", "35", "OK", gmaps_pin(42.773, -0.336))],
-        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong> (pinar, ibones)</li>
-<li>Tarde: reconocer ruta mañana a Sallent</li></ol>""",
-        3, "<p>No dejar perras en furgoneta.</p>",
-    ))
-
-    parts.append(day_card(
-        "d4", "Día 4 · Miércoles 19", f"{P['can']} · último día base",
-        f"<p><strong>Sin traslado.</strong> Cuarta noche Canfranc · sensación ~25°C (límite — hike solo mañana).</p>",
-        spot("Base Canfranc", 42.751, -0.516, "Última noche antes de Tena.", "Corte hike si ≥25°C"),
-        """<ul><li>—</li></ul>""",
-        [("Ibón de Estanes (2ª ruta)", "12", "20", "OK", gmaps_pin(42.78, -0.48)),
-         ("Canfranc pueblo", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
-        """<ol><li>7:00–11:00 hike corto si sensación OK</li>
-<li>Tarde: preparar traslado D5</li></ol>""",
-        4, "<p>Revisar meteo a las 7:00 — abortar si sube.</p>",
-    ))
-
-    parts.append(day_card(
-        "d5", "Día 5 · Jueves 20", f"{P['can']} → {P['sal']} · ~45 km · ~1 h",
-        f"""<p>Traslado corto al valle de Tena — sensación ~21°C.</p>
-{btns([("Google · Canfranc → Sallent de Gállego", gmaps_dir(*CAN, *SAL), "g")])}""",
+        "d1", "Día 1 · Domingo 16 agosto", f"{P['teia']} → {P['lanuza']} · ~350 km · ~4–5 h",
+        f"""<p><strong>Lanuza primero</strong> — ~15 km menos que Canfranc; loop ~70 km más corto. Revisar meteo a las <strong>7:00</strong>.</p>
+{btns([("Google · Teià → Sallent / Lanuza", gmaps_dir(*TEIA, *SAL), "g")])}
+<div class="warn"><strong>⚠️ Lluvia llegada:</strong> ~9 mm · 86% prob. <strong>Sin hike.</strong> 1 noche aquí — lun 17 Sallent ~25°C → subir a Canfranc.</div>""",
         (
             spot("Parking embalse Lanuza", 42.658, -0.328,
                  "Vistas ibón, aparcamiento amplio. Satélite: borde embalse.", "Agosto: turistas")
@@ -250,69 +190,158 @@ def build_days() -> str:
         ),
         """<ul><li>Camping Lanuza / Formigal (emergencia)</li></ul>""",
         [("Embalse Lanuza", "0,5", "5", "OK paseo", gmaps_pin(42.658, -0.328)),
-         ("Formigal bosques", "10", "15", "OK atado", gmaps_pin(42.778, -0.378)),
          ("Sallent pueblo", "2", "5", "OK", gmaps_pin(42.773, -0.336))],
-        """<ol><li>Paseo Lanuza tarde (perros)</li>
-<li>Gastro: trucha, migas</li></ol>""",
-        5, "<p>Mejor clima del tramo Tena — aprovechar D6 AM.</p>",
+        """<ol><li><strong>7:00</strong> — meteo; salir de Teià</li>
+<li>Solo conducción + pernocta — sin senderismo</li>
+<li>Tarde lluvia: interior camper / gastro Sallent</li></ol>""",
+        1, "<p>Sábado 15 en casa. Primer hike → lun 17 en Canfranc.</p>",
     ))
 
+    # D2 · lun 17 · Lanuza → Canfranc
     parts.append(day_card(
-        "d6", "Día 6 · Viernes 21", f"{P['sal']} · {P['lanuza']}",
-        f"<p><strong>Sin traslado.</strong> ~21°C sensación · lluvia posible tarde (≈17 mm).</p>",
-        spot("Misma base Lanuza", 42.658, -0.328, "Repetir parking.", ""),
-        """<ul><li>Camping emergencia</li></ul>""",
-        [("Circular Lanuza–Búbal", "12", "18", "OK atado", gmaps_pin(42.658, -0.328)),
-         ("Formigal senderos", "10", "15", "OK", gmaps_pin(42.778, -0.378)),
-         ("Piedrafita lago", "15", "20", "OK", gmaps_pin(42.698, -0.315))],
-        """<ol><li><strong>7:00–12:00 · Lanuza / Formigal</strong> (bosque, ibón) — ventana seca</li>
-<li>Tarde: mover mañana hacia Navarra</li></ol>""",
-        6, "<p>Preparar D7 traslado a Roncal (~2 h).</p>",
+        "d2", "Día 2 · Lunes 17", f"{P['lanuza']} → {P['can']} · ~75 km · ~1h15",
+        f"""<p>Escape calor valle de Tena (Sallent sensación ~25°C). Canfranc ~23°C.</p>
+{btns([("Google · Sallent → Canfranc", gmaps_dir(*SAL, *CAN), "g")])}
+<p>Opcional: paseo corto Lanuza AM si seco · luego subir.</p>""",
+        (
+            spot("Parking Canfranc Estación", 42.751, -0.516,
+                 "Aparcamientos amplios junto a la estación. Satélite: sin salida.", "Agosto: turismo")
+            + spot("Área servicio A-136", 42.745, -0.530,
+                   "Alternativa si estación llena.", "Carretera")
+        ),
+        """<ul><li>Camping valle (emergencia)</li></ul>""",
+        [("Estación Canfranc", "0,2", "3", "OK paseo", gmaps_pin(42.751, -0.516)),
+         ("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
+         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
+        """<ol><li>AM: paseo corto Lanuza si seco (opcional)</li>
+<li>Traslado a Canfranc</li>
+<li>Tarde: valle / estación — primer contacto</li></ol>""",
+        2, "<p>Inicio base Canfranc (5 noches D2–D6).</p>",
     ))
 
+    # D3 · mar 18 · Canfranc Ibón
     parts.append(day_card(
-        "d7", "Día 7 · Sábado 22", f"{P['sal']} → {P['och']} · ~120 km · ~2 h",
-        f"""<p>Subida a Navarra — tramo ≤2 h. <strong>Noche 1/2</strong> Roncal (~20°C).</p>
-{btns([("Google · Sallent → Ochagavía", gmaps_dir(*SAL, *OCH), "g")])}""",
+        "d3", "Día 3 · Martes 18", f"{P['can']} · Ibón de Estanes",
+        f"<p><strong>Sin traslado.</strong> Día seco (0 mm) · sensación ~24°C — <strong>primer hike</strong>.</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Segunda noche Canfranc.", ""),
+        """<ul><li>—</li></ul>""",
+        [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
+         ("Valle de Canfranc", "5", "10", "OK", gmaps_pin(42.751, -0.516)),
+         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
+        """<ol><li><strong>7:00–12:00 · Ibón de Estanes</strong></li>
+<li>Tarde: siesta / pueblo</li></ol>""",
+        3, "<p>Patous — correa antes del rebaño.</p>",
+    ))
+
+    # D4 · mié 19 · Selva de Oza
+    parts.append(day_card(
+        "d4", "Día 4 · Miércoles 19", f"{P['can']} · Selva de Oza",
+        f"<p><strong>Sin traslado.</strong> Día seco · sensación ~25°C (límite — hike AM).</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Tercera noche.", "Corte hike si ≥25°C"),
+        """<ul><li>—</li></ul>""",
+        [("Selva de Oza / Respomuso", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
+         ("Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50))],
+        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong></li>
+<li>Tarde: valle</li></ol>""",
+        4, "<p>Revisar meteo 7:00.</p>",
+    ))
+
+    # D5 · jue 20
+    parts.append(day_card(
+        "d5", "Día 5 · Jueves 20", f"{P['can']} · valle",
+        f"<p><strong>Sin traslado.</strong> Fresco ~20°C sensación.</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Cuarta noche.", ""),
+        """<ul><li>—</li></ul>""",
+        [("Ibón de Estanes (2ª)", "12", "20", "OK", gmaps_pin(42.78, -0.48)),
+         ("Canfranc pueblo", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
+        """<ol><li>Hike corto AM</li>
+<li>Tarde: descanso</li></ol>""",
+        5, "<p>Mejor ventana fresca Canfranc.</p>",
+    ))
+
+    # D6 · vie 21
+    parts.append(day_card(
+        "d6", "Día 6 · Viernes 21", f"{P['can']} · último día base",
+        f"<p><strong>Sin traslado.</strong> ~18°C · lluvia posible (~15 mm) — hike solo AM si seco.</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Quinta noche — última antes de Navarra.", ""),
+        """<ul><li>—</li></ul>""",
+        [("Valle corto", "5", "10", "OK", gmaps_pin(42.751, -0.516)),
+         ("Estación / museo", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
+        f"""<ol><li>7:00–11:00 hike corto si seco</li>
+<li>Tarde: preparar D7 → Irati</li></ol>
+{btns([("Museo estación Canfranc", "https://www.canfranc.es/turismo/estacion-internacional/", "w")])}""",
+        6, "<p>Mañana: Canfranc → Ochagavía (~126 km · ~2 h).</p>",
+    ))
+
+    # D7 · sáb 22 · → Irati
+    parts.append(day_card(
+        "d7", "Día 7 · Sábado 22", f"{P['can']} → {P['och']} · ~126 km · ~2 h",
+        f"""<p>Subida a Navarra — <strong>noche 1/3</strong> Irati (~20°C).</p>
+{btns([("Google · Canfranc → Ochagavía", gmaps_dir(*CAN, *OCH), "g")])}""",
         (
             spot("Aparcamiento borde Ochagavía", 42.908, -1.082,
                  "Fuera casco empedrado.", "AC 7 m — no entrar pueblo")
-            + spot(f"Plan B · {P['baztan']}", 43.148, -1.515,
-                   "Si Irati lluvia: Elizondo (Valle del Baztán, Navarra) — comprobar meteo (suele ser más caluroso).",
-                   "Baztán a veces >25°C")
+            + spot("Camping Robledo", 42.91, -1.09,
+                   "Emergencia con servicios.", "")
         ),
         """<ul><li><a href="https://www.campingelrobledo.com/">Camping Robledo</a></li></ul>""",
         [("Casco Ochagavía", "0,3", "3", "OK paseo", gmaps_pin(42.906, -1.079)),
          ("Selva de Irati", "8", "12", "OK atado", gmaps_pin(42.918, -1.045))],
-        """<ol><li>Paseo Roncal tarde</li>
+        """<ol><li>Llegada · paseo Roncal</li>
+<li>Si seco: entrada corta Irati tarde</li>
 <li>Gastro: cordero, queso Roncal</li></ol>""",
-        7, "<p>Lluvia posible tarde — paseo corto pueblo.</p>",
+        7, "<p>Lluvia posible — priorizar pernocta y mañana Irati.</p>",
     ))
 
+    # D8 · dom 23 · Irati AM → Baztán
     parts.append(day_card(
-        "d8", "Día 8 · Domingo 23", f"{P['och']} · {P['irati']} · noche 2/2",
-        f"""<p><strong>Sin traslado.</strong> Cierre en {P['irati']} (~22°C sensación).</p>
-<p>≥2 noches Navarra cumplidas (D7–8).</p>""",
-        spot("Misma pernocta D7", 42.908, -1.082, "Repetir parking.", "Domingo: más gente"),
+        "d8", "Día 8 · Domingo 23", f"{P['irati']} AM → {P['baztan']} · ~121 km · ~1h55",
+        f"""<p><strong>Ventana única Baztán ≤25°C</strong> (solo 22–23 ago). Irati mañana · Elizondo tarde.</p>
+{btns([("Google · Ochagavía → Elizondo", gmaps_dir(*OCH, *BAZ), "g")])}
+<div class="warn"><strong>NO quedarse lun 24 en Baztán:</strong> sensación ~29°C. Mañana volvéis a Ochagavía.</div>""",
+        (
+            spot("Parking borde Elizondo", 43.148, -1.515,
+                 "Fuera casco · satélite: aparcamientos valle.", "Agosto: gente")
+            + spot("Señorío de Bertiz (exterior)", 43.14, -1.61,
+                   "Parque — confirmar perros atados / horarios.", "Normativa interior")
+        ),
+        """<ul><li>Camping / área valle Baztán (emergencia)</li></ul>""",
+        [("Elizondo casco", "0,3", "5", "OK paseo", gmaps_pin(43.148, -1.515)),
+         ("Senderos valle Baztán", "5", "10", "OK atado", gmaps_pin(43.16, -1.52)),
+         ("Bertiz acceso", "12", "15", "Confirmar", gmaps_pin(43.14, -1.61))],
+        f"""<ol><li><strong>7:00–11:00 · Irati</strong> (antes de mover)</li>
+<li>Traslado a Elizondo (~2 h)</li>
+<li>Tarde: paseo valle Baztán / Elizondo</li></ol>
+{btns([("Turismo Baztán", "https://www.turismo.navarra.es/es/ver/valle-del-baztan/", "w")])}""",
+        8, "<p>Noche 2/3 Navarra · única noche fresca en Baztán.</p>",
+    ))
+
+    # D9 · lun 24 · Baztán → Ochagavía (escape heat)
+    parts.append(day_card(
+        "d9", "Día 9 · Lunes 24", f"{P['baztan']} → {P['och']} · ~121 km · ~1h55",
+        f"""<p><strong>Salir temprano de Elizondo</strong> — Baztán ~29°C sensación. Vuelta a Ochagavía (~22°C).</p>
+{btns([("Google · Elizondo → Ochagavía", gmaps_dir(*BAZ, *OCH), "g")])}
+<div class="warn"><strong>⚠️ Lluvia Irati:</strong> ~34 mm posibles — plan B pueblo / museo Roncal.</div>""",
+        spot("Misma pernocta Ochagavía", 42.908, -1.082, "Noche 3/3 Navarra · última antes de vuelta.", "Lluvia"),
         """<ul><li>Camping Robledo</li></ul>""",
-        [("Selva de Irati · Abodi", "8", "12", "OK atado", gmaps_pin(42.918, -1.045)),
-         ("Isaba / Burgui", "15", "20", "OK", gmaps_pin(42.925, -1.005)),
+        [("Casco Ochagavía", "0,3", "3", "OK", gmaps_pin(42.906, -1.079)),
          ("Senda río Zatoia", "5", "8", "OK", gmaps_pin(42.910, -1.070))],
-        f"""<ol><li><strong>7:00–12:00 · Selva de Irati</strong> — hike AM (lluvia posible tarde)</li>
-<li>Tarde: siesta — salida lun 24 temprano</li></ol>
-{btns([("Turismo Roncal", "https://www.turismo.navarra.es/es/ver/valle-del-roncal/", "w")])}""",
-        8, "<p>Patous — correa. Última noche.</p>",
+        """<ol><li>7:00 salir Elizondo (antes del calor)</li>
+<li>Llegada Ochagavía · si lluvia: pueblo / gastro</li>
+<li>Preparar vuelta mar 25 temprano</li></ol>""",
+        9, "<p>≥2 noches Navarra cumplidas (D7–9 = 3). Extra km Elizondo↔Ochagavía ~120 km — precio de Baztán fresco.</p>",
     ))
 
+    # D10 · mar 25 · → Teià
     parts.append(day_card(
-        "d9", "Día 9 · Lunes 24", f"{P['och']} → {P['teia']} · ~400 km · ~5 h",
-        f"""<p><strong>Tramo largo</strong> (vuelta). Solo conducción — costa ~34°C sensación, no hike.</p>
+        "d10", "Día 10 · Martes 25", f"{P['och']} → {P['teia']} · ~435 km · ~5–6 h",
+        f"""<p><strong>Tramo largo</strong> (vuelta). Costa ~33°C sensación — solo conducción.</p>
 {btns([("Google · Ochagavía → Teià", gmaps_dir(*OCH, *TEIA), "g")])}""",
         "<p><strong>Llegada a casa.</strong></p>",
         "<p>—</p>",
         [],
         "<p>Paradas sombra cada 2 h · AC para perras · salir temprano.</p>",
-        9, "<p>Camper al sol en costa = interior 35°C+ — no parar sin sombra.</p>",
+        10, "<p>Camper al sol en costa = interior 35°C+ — no parar sin sombra.</p>",
     ))
 
     return "".join(parts)
@@ -321,19 +350,20 @@ def build_days() -> str:
 def live_summary() -> str:
     return f"""
 <section class="section live-plan" id="plan-rapido">
-<h2>Plan activo · 16–24 agosto 2026 · Pirineo ≤25°C</h2>
+<h2>Plan activo · 16–25 agosto 2026 · Pirineo ≤25°C</h2>
 <div class="card prose">
-<div class="warn"><strong>Cambio de ruta:</strong> Albarracín, Escucha, Morella y Jaca <strong>descartados</strong> — sensación 28–32°C (camper interior ~35°C con perras). Solo bases Pirineo alto ≤25°C.</div>
-<div class="callout"><strong>Salida domingo 16</strong> — sábado 15 en casa. Revisar meteo a las 7:00 antes de cargar. Evitáis lluvia sáb + conducción bajo tormenta.</div>
-<div class="warn"><strong>Reglas:</strong> hike solo si sensación ≤25°C · ≥2 noches Navarra (D7–8) · tramos ≤2 h (D1/D9 ~5 h).</div>
-<div class="callout"><strong>Eje:</strong> {P['can']} (4 noches) → {P['sal']} → {P['och']}/{P['irati']} → {P['teia']}.</div>
+<div class="callout"><strong>Salida domingo 16 · vuelta martes 25.</strong> Lanuza primero (ahorra km) · Canfranc · Irati · <strong>Baztán</strong> (solo 22–23 fresco) · vuelta Irati lun 24 · Teià.</div>
+<div class="warn"><strong>Baztán:</strong> sensación ≤25°C <em>solo</em> sáb–dom 22–23. Lun 24–mar 25 Elizondo ~29–31°C → <strong>no pernoctar</strong>; volvéis a Ochagavía.</div>
+<div class="warn"><strong>Reglas:</strong> hike solo si sensación ≤25°C · ≥2 noches Navarra (D7–9) · tramos ≤2 h (D1/D10 largos).</div>
+<div class="callout"><strong>Eje:</strong> {P['lanuza']} → {P['can']} → {P['och']}/{P['irati']} → {P['baztan']} → {P['och']} → {P['teia']}.</div>
 <p>{btns([("🗺️ Ruta Google Maps · loop completo", GMAPS_LOOP, "g")])}</p>
-<p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['can']} → {P['sal']} → {P['och']} → {P['teia']}</p>
 <ol>
-<li><strong>16–19</strong> {P['can']} (Canfranc · ~22–25°C) · primer hike lun 17</li>
-<li><strong>20–21</strong> {P['sal']} / {P['lanuza']} (~21°C)</li>
-<li><strong>22–23</strong> {P['och']} / {P['irati']} (~20°C) · ≥2 noches</li>
-<li><strong>24</strong> → {P['teia']} (solo conducción)</li>
+<li><strong>16</strong> {P['lanuza']} (1 noche · llegada)</li>
+<li><strong>17–21</strong> {P['can']} (5 noches · hikes)</li>
+<li><strong>22</strong> {P['och']} / Irati · noche 1 Navarra</li>
+<li><strong>23</strong> {P['baztan']} · noche 2 Navarra</li>
+<li><strong>24</strong> vuelta {P['och']} · noche 3 Navarra (escape calor Baztán)</li>
+<li><strong>25</strong> → {P['teia']}</li>
 </ol>
 </div></section>"""
 
@@ -358,18 +388,18 @@ def rules_section() -> str:
 <section class="section" id="perras"><h2>Reglas del viaje</h2>
 <div class="card prose">
 <div class="warn"><strong>Perras:</strong> solo actividades donde entren con vosotros. Visita sin perros = <strong>cancelada</strong>.</div>
-<div class="warn"><strong>Calor:</strong> solo pernocta donde Open-Meteo sensación ≤25°C. Si sube → cancelar hike.</div>
+<div class="warn"><strong>Calor:</strong> solo pernocta donde Open-Meteo sensación ≤25°C. Si sube → cancelar hike / cambiar base.</div>
 <ul>
 <li>Sunlight 600 (&gt;2,10 m) · 2 perras siempre</li>
-<li>Conducción ≤2 h entre bases · D1 y D9 ~5 h</li>
-<li>≥2 noches Navarra Irati/Baztán (D7–8)</li>
-<li><strong>Descartado por calor:</strong> Albarracín, Escucha, Morella, Jaca, interior (28–32°C sensación)</li>
+<li>Conducción ≤2 h entre bases · D1 y D10 ~5–6 h</li>
+<li>≥2 noches Navarra Irati + Baztán (D7–9)</li>
+<li><strong>Descartado por calor:</strong> Albarracín, Escucha, Morella, Jaca, Baztán fuera del 22–23</li>
 </ul>
 </div></section>"""
 
 
 def day_nav() -> str:
-    links = "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1, 10))
+    links = "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1, 11))
     return f'<nav class="day-nav wrap">{links}</nav>'
 
 
@@ -377,26 +407,26 @@ def render_spain_guide() -> str:
     return f"""<!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía camper · Pirineo ≤25°C · 16–24 ago 2026</title>
+<title>Guía camper · Pirineo ≤25°C · 16–25 ago 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Pirineo ≤25°C<small>16–24 agosto 2026 · Salida dom · Huesca · Navarra · Sunlight 600 + 2 perras</small></div>
+<div class="brand">Guía camper · Pirineo ≤25°C<small>16–25 agosto 2026 · Lanuza · Canfranc · Irati · Baztán · Sunlight 600 + 2 perras</small></div>
 <div class="btns">
-<a class="btn btn-p" href="#plan-rapido">Plan 16–24</a>
+<a class="btn btn-p" href="#plan-rapido">Plan 16–25</a>
 <a class="btn btn-g" href="#d1">Días</a>
 <a class="btn btn-o" href="#dormir-gmaps">Dormir GMaps</a>
 </div></div></header>
 {day_nav()}
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Salida dom 16</span><span class="chip">≤25°C sensación</span><span class="chip">Canfranc · Irati</span><span class="chip">≥2 noches Navarra</span><span class="chip">Perras siempre</span></div>
-<h1>Canfranc · Lanuza · Irati</h1>
-<p class="lead">Ruta <strong>100 % Pirineo alto</strong>: pernoctas ≤25°C sensación. Salida <strong>domingo 16</strong> tras consultar meteo · vuelta lun 24.</p>
+<div class="chips"><span class="chip">Salida dom 16</span><span class="chip">Vuelta mar 25</span><span class="chip">Lanuza 1º</span><span class="chip">Irati + Baztán</span><span class="chip">≤25°C</span></div>
+<h1>Lanuza · Canfranc · Irati · Baztán</h1>
+<p class="lead">10 días Pirineo alto. Lanuza primero (menos km) · Canfranc fresco · Navarra Irati + <strong>Valle del Baztán</strong> (ventana 22–23) · vuelta mar 25.</p>
 {btns([
     ("🗺️ Ruta completa · Google Maps", GMAPS_LOOP, "g"),
-    ("Google · D1 Teià → Canfranc", gmaps_dir(*TEIA, *CAN), "g"),
+    ("Google · D1 Teià → Lanuza", gmaps_dir(*TEIA, *SAL), "g"),
 ])}
 </section>
 {live_summary()}
@@ -409,7 +439,7 @@ def render_spain_guide() -> str:
 <p class="card">La guía Francia está en el historial git del repo. Este viaje reemplaza el plan activo.</p>
 </details>
 <footer class="foot">
-<p><strong>Guía camper Pirineo ≤25°C</strong> · 16–24 agosto 2026 · Open-Meteo · Google Maps</p>
+<p><strong>Guía camper Pirineo ≤25°C</strong> · 16–25 agosto 2026 · Open-Meteo · Google Maps</p>
 <p>Abrir vía raw.githack en el móvil (ver ABRIR-GUIA.md).</p>
 </footer>
 </main>

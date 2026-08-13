@@ -1,12 +1,12 @@
-# Ruta camper · Pirineo ≤25°C (16–24 ago 2026)
+# Ruta camper · Pirineo ≤25°C (16–25 ago 2026)
 
-**Salida domingo 16** (sábado 15 en casa). Revisar meteo a las 7:00 antes de cargar.
+**Salida domingo 16** · **vuelta martes 25**. Revisar meteo a las 7:00 antes de cargar.
 
-**Sunlight 600** + **2 perras**. Solo bases con **sensación máx ≤25°C** (Open-Meteo).
+**Sunlight 600** + **2 perras**. Solo bases con **sensación máx ≤25°C**.
 
-Interior Teruel/Castellón descartado: 28–32°C sensación → ~35°C dentro de la camper.
+**Eje:** Teià → Lanuza → Canfranc → Ochagavía/Irati → Elizondo/Baztán → Ochagavía → Teià
 
-**Eje:** Teià → Canfranc (Huesca) → Sallent de Gállego → Ochagavía/Irati (Navarra) → Teià
+Baztán solo fresco 22–23 ago; lun 24 volvéis a Irati (Elizondo ~29°C).
 
 ## Abrir la guía en el móvil
 

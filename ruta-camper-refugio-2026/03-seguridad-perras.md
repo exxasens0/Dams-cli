@@ -1,36 +1,39 @@
-# Viaje activo · Pirineo ≤25°C · 16–24 agosto 2026
+# Viaje activo · Pirineo ≤25°C · 16–25 agosto 2026
 
-**Salida domingo 16** · sábado 15 en casa · **Teià loop** · solo bases Open-Meteo **sensación ≤25°C** · ≥2 noches Navarra (D7–8).
+**Salida domingo 16** · **vuelta martes 25** · Teià loop · sensación ≤25°C · Navarra Irati + Baztán (D7–9).
 
-## Por qué cambió la ruta
+## Por qué esta ruta
 
-| Zona descartada | Sensación máx (16–24 ago) | Problema camper |
+| Zona | Sensación | Uso |
 |---|---|---|
-| Albarracín (Teruel) | 29–31°C | Interior ~35°C+ |
-| Escucha (Teruel) | 28°C | Idem |
-| Morella (Castellón) | 28–30°C | Idem |
-| Jaca (Huesca) | 28–32°C | Idem |
-| **Canfranc (Huesca)** | **22–25°C** | ✓ Razonable |
-| **Sallent (Huesca)** | **21°C** | ✓ |
-| **Ochagavía (Navarra)** | **20–22°C** (D7–8) | ✓ |
+| Albarracín / Morella / Jaca | 28–32°C | Descartado |
+| **Lanuza (Huesca)** | 23°C (16) | ✓ 1 noche · primero (ahorra km) |
+| **Canfranc (Huesca)** | 18–25°C | ✓ 5 noches |
+| **Ochagavía / Irati** | 20–22°C | ✓ noches 22 + 24 |
+| **Elizondo / Baztán** | 23°C solo 22–23 | ✓ 1 noche (23) · 24–25 ~29°C ❌ |
 
 ## Por zona
 
-### Canfranc (Huesca) — D1–4
+### Lanuza (Huesca) — D1
 
-- Ibón de Estanes, Bosque de la Mina, Selva de Oza.
-- Perros atados (patous, fauna).
+- Llegada domingo. Lluvia. Sin hike.
+- Lun 17: subir a Canfranc (Sallent ~25°C).
 
-### Sallent / Lanuza (Huesca) — D5–6
+### Canfranc (Huesca) — D2–6
 
-- Embalse Lanuza, Formigal bosques.
-- Evitar masificación estación en agosto.
+- Ibón de Estanes, Selva de Oza, Bosque de la Mina.
+- Perros atados (patous).
 
-### Ochagavía / Irati (Navarra) — D7–8
+### Ochagavía / Irati (Navarra) — D7 + D9
 
-- ≥2 noches. Selva de Irati atado.
-- Plan B Baztán solo si meteo ≤25°C (suele ser más caluroso).
+- Noche 1 (22) y noche 3 (24, vuelta por calor Baztán).
+- Lluvia posible D9 (~34 mm) — plan B pueblo.
 
-### D9 vuelta
+### Elizondo / Baztán (Navarra) — D8
 
-- Solo conducción. Costa caliente — no hike.
+- Única noche fresca (23). Irati AM → traslado ~2 h.
+- **No** pernoctar lun 24 (~29°C).
+
+### D10 vuelta (mar 25)
+
+- Solo conducción. Costa caliente.
