@@ -1,11 +1,11 @@
 dia,fecha,tramo,km_aprox,min_aprox,base,provincia,app_max_c,visita_estrella,perros
 1,2026-08-16,Teia-Lanuza,350,270,Lanuza,Huesca,23,Llegada lluvia,OK
-2,2026-08-17,Lanuza-Canfranc,75,75,Canfranc Estacion,Huesca,23,Escape calor Tena,OK
-3,2026-08-18,local,0,0,Canfranc Estacion,Huesca,24,Ibon Estanes,OK atado
-4,2026-08-19,local,0,0,Canfranc Estacion,Huesca,25,Selva de Oza,OK atado
-5,2026-08-20,local,0,0,Canfranc Estacion,Huesca,20,Valle Canfranc,OK
-6,2026-08-21,local,0,0,Canfranc Estacion,Huesca,18,Ultimo dia Canfranc,OK
-7,2026-08-22,Canfranc-Ochagavia,126,120,Ochagavia,Navarra,20,Irati noche 1,OK
-8,2026-08-23,Ochagavia-Elizondo,121,115,Elizondo Baztan,Navarra,23,Baztan noche 2,OK atado
-9,2026-08-24,Elizondo-Ochagavia,121,115,Ochagavia,Navarra,22,Escape calor Baztan noche 3,OK
-10,2026-08-25,Ochagavia-Teia,435,330,Teia,Barcelona,33,Solo conduccion,OK
+2,2026-08-17,local,0,0,Lanuza,Huesca,25,Lanuza noche 2,OK
+3,2026-08-18,Lanuza-Canfranc,75,75,Canfranc,Huesca,24,Ibon Estanes,OK atado
+4,2026-08-19,local,0,0,Canfranc,Huesca,25,Selva de Oza,OK atado
+5,2026-08-20,local,0,0,Canfranc,Huesca,20,Canfranc jue-vie (noche tambien 21),OK
+6,2026-08-22,Canfranc-Elizondo,181,140,Elizondo Baztan,Navarra,23,Baztan noche 1,OK
+7,2026-08-23,local,0,0,Elizondo Baztan,Navarra,23,Baztan noche 2,OK atado
+8,2026-08-24,Elizondo-Ochagavia,121,115,Ochagavia,Navarra,22,Irati noche 1,OK
+9,2026-08-25,local,0,0,Ochagavia,Navarra,21,Irati noche 2,OK atado
+10,2026-08-26,Ochagavia-Teia,435,330,Teia,Barcelona,30,Solo conduccion,OK

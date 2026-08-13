@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2026-08-13T14:51:02.014155+00:00",
+  "fetched_at": "2026-08-13T14:58:19.108002+00:00",
   "source": "Open-Meteo best_match",
   "attribution": "https://open-meteo.com/",
-  "route_note": "16–25 ago · Lanuza→Canfranc→Irati→Baztán→Irati→Teià · Baztán solo 22–23 ≤25°C",
+  "route_note": "D1-2 Lanuza · D3-5 Canfranc (noches 18-21) · D6-7 Baztán 22-23 · D8-9 Ochagavía 24-25 · D10 Teià 26",
   "days": [
     {
       "day": 1,
@@ -21,33 +21,32 @@
       "precip_prob": 86,
       "uv_max": 6.3,
       "tips": [
-        "Salida domingo · Lanuza primero (ahorra ~70 km).",
+        "D1–D2 Lanuza · salida dom tras meteo 7:00.",
         "⚠️ Lluvia llegada · sin hike.",
-        "1 noche Lanuza — lun 17 Sallent ~25°C → subir a Canfranc.",
         "OK temperatura: sensación máx 23°C (≤25)."
       ]
     },
     {
       "day": 2,
       "date": "2026-08-17",
-      "place": "Canfranc",
-      "place_label": "Canfranc Estación (Huesca)",
-      "lat": 42.75,
-      "lon": -0.525,
+      "place": "Sallent",
+      "place_label": "Sallent de Gállego / Lanuza (Huesca)",
+      "lat": 42.773,
+      "lon": -0.336,
       "available": true,
-      "summary_es": "Código 51",
-      "t_max": 23.9,
-      "t_min": 13.2,
-      "app_max": 23.3,
-      "app_min": 13.7,
-      "precip_mm": 0.7,
-      "precip_prob": 29,
-      "uv_max": 7.2,
+      "summary_es": "Código 81",
+      "t_max": 25.2,
+      "t_min": 15.1,
+      "app_max": 25.4,
+      "app_min": 15.9,
+      "precip_mm": 4.5,
+      "precip_prob": 28,
+      "uv_max": 7.25,
       "tips": [
-        "Traslado Lanuza→Canfranc (~75 km · ~1h15).",
-        "Primer hike posible tarde/AM si seco.",
-        "Escape calor valle Tena (Sallent 25°C+).",
-        "OK temperatura: sensación máx 23°C (≤25)."
+        "Segunda noche Lanuza.",
+        "⚠️ Sensación ~25°C — hike solo AM / sombra.",
+        "Mañana → Canfranc.",
+        "⚠️ Sensación 25°C >25 — solo conducción / sombra."
       ]
     },
     {
@@ -67,7 +66,8 @@
       "precip_prob": 1,
       "uv_max": 7.1,
       "tips": [
-        "Día seco — Ibón / Selva de Oza.",
+        "Canfranc noche 1/4 (noches 18–21).",
+        "Día seco · primer hike Ibón.",
         "OK temperatura: sensación máx 24°C (≤25)."
       ]
     },
@@ -88,33 +88,12 @@
       "precip_prob": 3,
       "uv_max": 7.75,
       "tips": [
-        "Día seco — valle Canfranc.",
+        "Canfranc · Selva de Oza · día seco.",
         "OK temperatura: sensación máx 25°C (≤25)."
       ]
     },
     {
       "day": 5,
-      "date": "2026-08-20",
-      "place": "Canfranc",
-      "place_label": "Canfranc Estación (Huesca)",
-      "lat": 42.75,
-      "lon": -0.525,
-      "available": true,
-      "summary_es": "Código 51",
-      "t_max": 20.2,
-      "t_min": 15.2,
-      "app_max": 20.0,
-      "app_min": 14.7,
-      "precip_mm": 1.2,
-      "precip_prob": 48,
-      "uv_max": 7.0,
-      "tips": [
-        "Fresco ~20°C.",
-        "OK temperatura: sensación máx 20°C (≤25)."
-      ]
-    },
-    {
-      "day": 6,
       "date": "2026-08-21",
       "place": "Canfranc",
       "place_label": "Canfranc Estación (Huesca)",
@@ -130,35 +109,37 @@
       "precip_prob": 45,
       "uv_max": 6.9,
       "tips": [
-        "⚠️ Lluvia posible — hike AM si seco.",
-        "Preparar traslado Navarra.",
+        "D5 = jue 20 + vie 21 Canfranc (Baztán vie 21 ~32°C ❌).",
+        "⚠️ Lluvia posible vie 21 · hike AM.",
+        "Sáb 22 → Baztán.",
         "OK temperatura: sensación máx 18°C (≤25)."
       ]
     },
     {
-      "day": 7,
+      "day": 6,
       "date": "2026-08-22",
-      "place": "Ochagavia",
-      "place_label": "Ochagavía (Navarra)",
-      "lat": 42.906,
-      "lon": -1.079,
+      "place": "Elizondo",
+      "place_label": "Elizondo · Valle del Baztán (Navarra)",
+      "lat": 43.148,
+      "lon": -1.515,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 18.7,
-      "t_min": 15.8,
-      "app_max": 20.3,
-      "app_min": 16.3,
-      "precip_mm": 9.9,
-      "precip_prob": 42,
-      "uv_max": 3.7,
+      "summary_es": "Código 81",
+      "t_max": 20.3,
+      "t_min": 18.6,
+      "app_max": 23.1,
+      "app_min": 20.9,
+      "precip_mm": 19.8,
+      "precip_prob": 54,
+      "uv_max": 5.8,
       "tips": [
-        "Navarra noche 1/3 · Irati.",
+        "Baztán noche 1/2 · ventana ≤25°C (22–23).",
         "⚠️ Lluvia posible.",
-        "OK temperatura: sensación máx 20°C (≤25)."
+        "Traslado Canfranc→Elizondo ~181 km · ~2h20.",
+        "OK temperatura: sensación máx 23°C (≤25)."
       ]
     },
     {
-      "day": 8,
+      "day": 7,
       "date": "2026-08-23",
       "place": "Elizondo",
       "place_label": "Elizondo · Valle del Baztán (Navarra)",
@@ -174,14 +155,13 @@
       "precip_prob": 45,
       "uv_max": 3.3,
       "tips": [
-        "Única ventana Baztán ≤25°C (22–23).",
-        "⚠️ Lluvia posible · hike AM.",
-        "NO quedarse lun 24 (Baztán ~29°C).",
+        "Baztán noche 2/2.",
+        "Mañana → Ochagavía (lun 24 Elizondo ~29°C ❌).",
         "OK temperatura: sensación máx 23°C (≤25)."
       ]
     },
     {
-      "day": 9,
+      "day": 8,
       "date": "2026-08-24",
       "place": "Ochagavia",
       "place_label": "Ochagavía (Navarra)",
@@ -197,31 +177,52 @@
       "precip_prob": 44,
       "uv_max": 6.8,
       "tips": [
-        "Vuelta a Ochagavía — Baztán ya >25°C.",
-        "⚠️ Lluvia fuerte posible (~34 mm).",
-        "Noche 3 Navarra · salida mar 25.",
+        "Ochagavía / Irati noche 1/2.",
+        "⚠️ Lluvia fuerte posible.",
         "OK temperatura: sensación máx 22°C (≤25)."
       ]
     },
     {
-      "day": 10,
+      "day": 9,
       "date": "2026-08-25",
+      "place": "Ochagavia",
+      "place_label": "Ochagavía (Navarra)",
+      "lat": 42.906,
+      "lon": -1.079,
+      "available": true,
+      "summary_es": "Código 53",
+      "t_max": 21.0,
+      "t_min": 14.3,
+      "app_max": 20.7,
+      "app_min": 15.1,
+      "precip_mm": 11.7,
+      "precip_prob": 41,
+      "uv_max": 6.45,
+      "tips": [
+        "Ochagavía / Irati noche 2/2.",
+        "Preparar vuelta mié 26.",
+        "OK temperatura: sensación máx 21°C (≤25)."
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2026-08-26",
       "place": "Teia",
       "place_label": "Teià (Barcelona)",
       "lat": 41.498,
       "lon": 2.319,
       "available": true,
       "summary_es": "Código 95",
-      "t_max": 29.7,
-      "t_min": 22.4,
-      "app_max": 33.4,
-      "app_min": 25.9,
-      "precip_mm": 1.5,
-      "precip_prob": 28,
-      "uv_max": 6.6,
+      "t_max": 26.0,
+      "t_min": 22.6,
+      "app_max": 30.1,
+      "app_min": 25.2,
+      "precip_mm": 21.3,
+      "precip_prob": 37,
+      "uv_max": 6.75,
       "tips": [
-        "⚠️ Sensación ~33°C — solo conducción / sombra.",
-        "⚠️ Sensación 33°C >25 — solo conducción / sombra."
+        "⚠️ Costa caliente — solo conducción.",
+        "⚠️ Sensación 30°C >25 — solo conducción / sombra."
       ]
     }
   ]
