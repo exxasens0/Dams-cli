@@ -103,6 +103,22 @@ DAYS = [
         hike_desn="~580 m", hike_h="4–4,5 h",
         hike_parking="Parking base estación Astún (Valle de Astún 22889, 3,5 km del overnight)",
         wikiloc_url="https://es.wikiloc.com/rutas-alpinismo/estacio-desqui-dastun-punta-malacara-ibon-de-las-truchas-ibon-de-astun-ibon-de-escalar-ibon-de-las-54386380",
+        alt_hike=dict(
+            nombre="Ruta de los Búnkeres – Línea P Canfranc",
+            km="~9,6 km",
+            desnivel="~320 m",
+            dif="Fácil",
+            tiempo="2,5–3 h",
+            parking_lat=42.750, parking_lon=-0.525,
+            parking_desc="Canfranc Estación pueblo (junto a la estación de tren)",
+            wikiloc="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
+            nota=(
+                "Ruta histórica por el bosque de Picauvé visitando los búnkeres de la <strong>Línea P</strong> "
+                "(1944–1957), construidos por Franco para frenar una hipotética invasión aliada que nunca llegó. "
+                "Más de 12 posiciones de hormigón armado defendiendo el túnel ferroviario y la estación. "
+                "Perros OK · sin secciones técnicas · compatible con visita exterior estación Canfranc."
+            ),
+        ),
         concurrencia="Media-alta",
         interes=["Ibón de Escalar (2075 m)","Ibón de Truchas (2120 m)","Punta Malacara (2268 m)","Frontera Francia","Telesilla a los Lagos (opcional)"],
         historia=(
@@ -620,6 +636,23 @@ def day_card(d:dict)->str:
 {th_note}
 {btns([('🗺️ Navegar al trailhead (Google)', gmaps_pin(hlat, hlon), 'g')])}{wl_btn}
 <p style="font-size:.75rem;color:var(--muted)">Confirmar ruta en Wikiloc/AllTrails antes del hike.</p>"""
+
+        # Alternative hike (e.g. Plan B or bonus route)
+        if d.get("alt_hike"):
+            ah = d["alt_hike"]
+            hike_html += f"""
+<details style="margin-top:.75rem;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+<summary style="padding:.6rem .85rem;background:var(--sec);cursor:pointer;font-size:.82rem;font-weight:700;color:var(--pine)">
+🏛️ Alternativa histórica: {esc(ah['nombre'])} ({esc(ah['dif'])} · {esc(ah['km'])})
+</summary>
+<div style="padding:.75rem .85rem;font-size:.85rem">
+<p>{ah['nota']}</p>
+<p style="font-size:.8rem;color:var(--muted)">{esc(ah['km'])} · {esc(ah['desnivel'])} desnivel · {esc(ah['tiempo'])}</p>
+<p style="font-size:.78rem;color:var(--muted)">Inicio: {esc(ah['parking_desc'])}</p>
+{btns([('🗺️ Navegar al inicio (Google)', gmaps_pin(ah['parking_lat'], ah['parking_lon']), 'g'),
+       ('📍 Wikiloc · ruta búnkeres', ah['wikiloc'], 'o')])}
+</div>
+</details>"""
 
     # POIs
     poi_html = ", ".join(f"<strong>{esc(p)}</strong>" for p in d["interes"]) if d["interes"] else "—"
