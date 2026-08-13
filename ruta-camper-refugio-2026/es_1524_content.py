@@ -1,515 +1,666 @@
-"""Spain Pyrenees camper guide 16–26 Aug 2026 — D1-2 Lanuza · D3-5 Canfranc · D6-7 Baztán · D8-9 Ochagavía · D10 Teià."""
+"""Guía camper 16–26 ago 2026 · Dom16 noche→Canfranc · D1-3 Canfranc · D4 Oza · D5 Jaca+Nav · D6-9 Navarra · D10 Teià."""
 from __future__ import annotations
-
-import html
-import json
+import html, json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
-TEIA = (2.319, 41.498)
-SAL = (-0.336, 42.773)
-CAN = (-0.525, 42.750)
-OCH = (-1.079, 42.906)
-BAZ = (-1.515, 43.148)
+# ── Coordenadas clave ────────────────────────────────────────────────────────
+TEIA  = (2.319,  41.498)
+CAN   = (-0.525, 42.750)   # Canfranc Estación
+OZA   = (-0.717, 42.822)   # Selva de Oza parking
+ZUR   = (-0.832, 42.860)   # Zuriza
+OCH   = (-1.079, 42.906)   # Ochagavía
+ISA   = (-0.921, 42.856)   # Isaba
+JACA  = (-0.549, 42.568)
+YESA  = (-1.072, 42.622)   # Embalse de Yesa (pernoc transición D5)
 
-P = {
-    "teia": "Teià (Barcelona)",
-    "sal": "Sallent de Gállego (Huesca)",
-    "lanuza": "Lanuza / Formigal (Huesca)",
-    "can": "Canfranc Estación (Huesca)",
-    "och": "Ochagavía (Navarra)",
-    "irati": "Selva de Irati (Navarra)",
-    "baztan": "Elizondo · Valle del Baztán (Navarra)",
-}
+WEEKDAYS = {0:"lunes",1:"martes",2:"miércoles",3:"jueves",4:"viernes",5:"sábado",6:"domingo"}
+def weekday(d:str)->str:
+    from datetime import date as dt; y,m,d2=map(int,d.split("-")); return WEEKDAYS[dt(y,m,d2).weekday()]
+def fmt_date(d:str)->str: return f"{weekday(d)} {int(d.split('-')[2])} ago"
 
+def esc(s:str)->str: return html.escape(s or "",quote=True)
+def gmaps_dir(olon,olat,dlon,dlat)->str:
+    return f"https://www.google.com/maps/dir/?api=1&origin={olat},{olon}&destination={dlat},{dlon}&travelmode=driving"
+def gmaps_route(stops)->str:
+    if len(stops)<2: return ""
+    olon,olat=stops[0]; dlon,dlat=stops[-1]
+    url=f"https://www.google.com/maps/dir/?api=1&origin={olat},{olon}&destination={dlat},{dlon}"
+    mid=stops[1:-1]
+    if mid: url+="&waypoints="+"|".join(f"{lat},{lon}" for lon,lat in mid)
+    return url+"&travelmode=driving"
+def gmaps_pin(lat,lon)->str: return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+def p4n(lat,lon,dist=8)->str: return f"https://park4night.com/es/map#{14}/{lat}/{lon}"
 
-def esc(s: str) -> str:
-    return html.escape(s or "", quote=True)
+GMAPS_LOOP = gmaps_route([TEIA, CAN, OZA, OCH, ISA, TEIA])
 
-
-def gmaps_dir(olon: float, olat: float, dlon: float, dlat: float) -> str:
-    return (
-        f"https://www.google.com/maps/dir/?api=1"
-        f"&origin={olat},{olon}&destination={dlat},{dlon}&travelmode=driving"
-    )
-
-
-def gmaps_route(stops: list[tuple[float, float]]) -> str:
-    if len(stops) < 2:
-        return ""
-    olon, olat = stops[0]
-    dlon, dlat = stops[-1]
-    url = (
-        f"https://www.google.com/maps/dir/?api=1"
-        f"&origin={olat},{olon}&destination={dlat},{dlon}"
-    )
-    mid = stops[1:-1]
-    if mid:
-        url += "&waypoints=" + "|".join(f"{lat},{lon}" for lon, lat in mid)
-    return url + "&travelmode=driving"
-
-
-GMAPS_LOOP = gmaps_route([TEIA, SAL, CAN, BAZ, OCH, TEIA])
-
-
-def gmaps_pin(lat: float, lon: float, label: str = "") -> str:
-    if label:
-        return f"https://www.google.com/maps/search/?api=1&query={label.replace(' ', '+')}"
-    return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
-
-
-def btn(label: str, url: str, kind: str = "g") -> str:
-    cls = {"g": "btn btn-g", "o": "btn btn-o", "w": "btn btn-w", "p": "btn btn-p"}.get(kind, "btn")
+def btn(label,url,kind="g")->str:
+    cls={"g":"btn btn-g","o":"btn btn-o","w":"btn btn-w","p":"btn btn-p"}.get(kind,"btn")
     return f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
+def btns(items)->str:
+    return '<div class="btns">'+"".join(btn(l,u,k) for l,u,k in items)+"</div>"
 
-
-def btns(items: list[tuple[str, str, str]]) -> str:
-    return '<div class="btns">' + "".join(btn(l, u, k) for l, u, k in items) + "</div>"
-
-
-CSS = r"""
-:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 14px 32px rgba(26,34,28,.09);--sec:#e8efe9}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 420px at 0% 0%,#dfe8df,transparent 55%),var(--bg);line-height:1.55}
-.wrap{max-width:920px;margin:0 auto;padding:0 1rem 4rem}
-.top{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem;padding:.55rem 0}
-.brand{font-family:"Fraunces",serif;font-weight:700;color:var(--pine)}.brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.72rem;font-weight:400;color:var(--muted)}
-.btn{display:inline-block;padding:.45rem .75rem;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}.btn-w{background:#f5f0ff}
-.hero{padding:1.5rem 0 1rem}.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.6rem,4vw,2.2rem);margin:.4rem 0}
-.lead{color:var(--muted);max-width:42rem}.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.6rem}
-.chip{font-size:.72rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.25rem .55rem;border-radius:999px}
-.section{margin:2rem 0}.section>h2{font-family:"Fraunces",serif;color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.35rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0;box-shadow:var(--shadow)}
-.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.75rem 1rem;border-radius:8px;margin:.75rem 0}
-.callout{background:var(--sec);padding:.75rem 1rem;border-radius:8px;margin:.75rem 0}
-.day-nav{position:sticky;top:52px;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;background:rgba(242,238,228,.96);padding:.45rem 0;margin:0 -1rem;padding-left:1rem;padding-right:1rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-@media(min-width:640px){.day-nav{grid-template-columns:repeat(10,1fr)}}
-.day-nav a{font-size:.68rem;text-align:center;padding:.35rem .2rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
-.day-nav a:hover{background:var(--sec)}
-.day-card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.5rem 0;overflow:hidden;box-shadow:var(--shadow)}
-.day-card-head{background:linear-gradient(135deg,var(--pine),#2a6b55);color:#fff;padding:1rem 1.15rem}
-.day-card-head h3{margin:0;font-family:"Fraunces",serif;font-size:1.15rem}
-.day-card-head .sub{opacity:.9;font-size:.85rem;margin-top:.25rem}
-.day-sec{padding:.85rem 1.15rem;border-top:1px solid var(--line)}
-.day-sec h4{margin:0 0 .5rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--clay)}
-.day-sec.route{background:#f8faf8}.day-sec.sleep{background:#f5f8f5}.day-sec.camp{background:#faf8f5}
-.day-sec.dist{padding:0}.day-sec.visits{background:#fff}.day-sec.meteo{background:#f0f6fa}.day-sec.notes{background:#fafafa}
-.dist-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.dist-table th,.dist-table td{padding:.45rem .5rem;border-bottom:1px solid var(--line);text-align:left}
-.dist-table th{background:var(--sec);font-size:.72rem;text-transform:uppercase;color:var(--muted)}
-.tag-dog-ok{color:var(--pine);font-weight:700}.tag-dog-no{color:#a33;font-weight:700}
-.spot{margin:.5rem 0;padding:.6rem .75rem;background:var(--sec);border-radius:8px;font-size:.9rem}
-.spot strong{display:block;color:var(--pine)}
-.live-plan .card{margin-top:1rem}
-.foot{padding:2rem 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
-details.archive{margin:2rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
-.fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.4rem;z-index:60}
-.wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;font-size:.88rem}
-@media(min-width:520px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
-.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
-.summary-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:640px}
-.summary-table th,.summary-table td{padding:.55rem .65rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.summary-table th{background:var(--pine);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0}
-.summary-table tr:last-child td{border-bottom:0}
-.summary-table tr:hover td{background:#f5faf6}
-.summary-table a{color:var(--pine);font-weight:700;text-decoration:none}
-.summary-table .wx-ok{color:var(--pine);font-weight:700}
-.summary-table .wx-warn{color:var(--clay);font-weight:700}
-.summary-table .wx-rain{color:#2a5f8a}
-.summary-meta{font-size:.78rem;color:var(--muted);margin:.35rem 0 0}
-"""
-
-
-def weather_block(day_num: int) -> str:
-    w = next((d for d in WEATHER["days"] if d["day"] == day_num), None)
-    if not w:
-        return "<p>Meteo no disponible.</p>"
-    tips = "".join(f"<li>{esc(t)}</li>" for t in w.get("tips", []))
-    return f"""<div class="wx-grid">
-<div><em>Base</em><strong>{esc(w.get('place_label') or w['place'])}</strong></div>
-<div><em>Temp</em><strong>{w['t_min']:.0f}–{w['t_max']:.0f}°C</strong></div>
-<div><em>Sensación máx</em><strong>{w['app_max']:.0f}°C</strong></div>
-<div><em>Lluvia</em><strong>{w['precip_mm']:.1f} mm · {w['precip_prob']:.0f}%</strong></div>
-</div>
-<ul>{tips}</ul>
-<p style="font-size:.78rem;color:var(--muted)">Open-Meteo · {esc(WEATHER['fetched_at'][:10])} · revisar a las 7:00</p>"""
-
-
-def dist_table(rows: list[tuple[str, str, str, str, str]]) -> str:
-    trs = []
-    for poi, km, mins, dogs, url in rows:
-        dog_cls = "tag-dog-ok" if dogs.startswith("OK") else "tag-dog-no"
-        link = f'<a href="{esc(url)}" target="_blank" rel="noopener">Maps</a>' if url else "—"
-        trs.append(
-            f"<tr><td>{esc(poi)}</td><td>{esc(km)}</td><td>{esc(mins)}</td>"
-            f'<td class="{dog_cls}">{esc(dogs)}</td><td>{link}</td></tr>'
-        )
-    return f"""<table class="dist-table">
-<thead><tr><th>POI</th><th>Km</th><th>Min</th><th>Perras</th><th></th></tr></thead>
-<tbody>{"".join(trs)}</tbody></table>"""
-
-
-def day_card(
-    did: str, title: str, subtitle: str, route_html: str, sleep_html: str,
-    camp_html: str, dist_rows: list[tuple[str, str, str, str, str]],
-    visits_html: str, day_num: int, notes_html: str,
-) -> str:
-    return f"""<article class="day-card" id="{did}">
-<div class="day-card-head"><h3>{esc(title)}</h3><div class="sub">{esc(subtitle)}</div></div>
-<section class="day-sec route"><h4>🚐 Ruta al sitio</h4>{route_html}</section>
-<section class="day-sec sleep"><h4>🅿️ Dónde dormir · Google Maps</h4>{sleep_html}</section>
-<section class="day-sec camp"><h4>⛺ Campings / emergencia (P4N)</h4>{camp_html}</section>
-<section class="day-sec dist"><h4>📏 Distancias desde pernocta</h4>{dist_table(dist_rows)}</section>
-<section class="day-sec visits"><h4>🥾 Visitas posibles</h4>{visits_html}</section>
-<section class="day-sec meteo"><h4>🌡️ Meteo del día</h4>{weather_block(day_num)}</section>
-<section class="day-sec notes"><h4>⚠️ Notas</h4>{notes_html}</section>
-</article>"""
-
-
-def spot(name: str, lat: float, lon: float, why: str, risk: str = "") -> str:
-    risk_html = f"<br><em>Riesgo:</em> {esc(risk)}" if risk else ""
-    return f"""<div class="spot"><strong>{esc(name)}</strong>
-{esc(why)}{risk_html}<br>{btn("Abrir en Google Maps", gmaps_pin(lat, lon), "g")}</div>"""
-
-
-def build_days() -> str:
-    parts = []
-
-    parts.append(day_card(
-        "d1", "D1 · Domingo 16 · Lanuza", f"{P['teia']} → {P['lanuza']} · ~350 km · ~4–5 h",
-        f"""<p><strong>Lanuza primero</strong> (D1–D2). Revisar meteo <strong>7:00</strong> antes de cargar.</p>
-{btns([("Google · Teià → Lanuza", gmaps_dir(*TEIA, *SAL), "g")])}
-<div class="warn">⚠️ Lluvia llegada (~9 mm). <strong>Sin hike.</strong></div>""",
-        (
-            spot("Parking embalse Lanuza", 42.658, -0.328,
-                 "Aparcamiento amplio borde embalse.", "Agosto: turistas")
-            + spot("Formigal acceso (plan B)", 42.778, -0.378,
-                   "Comprobar pernocta.", "Masificación")
+# ── Datos completos por día ──────────────────────────────────────────────────
+DAYS = [
+    # (day, date, zona_titulo, parking_name, parking_lat, parking_lon,
+    #  p4n_url, camping_url, drive_from, drive_km, drive_h,
+    #  hike_nombre, hike_km, hike_dif, hike_desnivel, hike_h,
+    #  concurrencia, interes_tags, historia, observaciones, planb)
+    dict(
+        day=1, date="2026-08-17",
+        zona="Valle del Aragón · Canfranc Estación",
+        parking_name="Canal Roya / Rioseta",
+        parking_lat=42.781, parking_lon=-0.493,
+        drive_from="Dom 16 noche, Teià → Canfranc", drive_km="~366 km", drive_h="4,5 h",
+        hike="Ibón de Estanes", hike_km="12 km", hike_dif="Moderado",
+        hike_desn="~400 m", hike_h="3–4 h",
+        concurrencia="Media-alta",
+        interes=["Estación Internacional de Canfranc","Valle del Aragón","Río Aragón"],
+        historia=(
+            "La <strong>Estación Internacional de Canfranc</strong> (1928) fue la más grande de España "
+            "y segunda de Europa. Su apertura conectó España y Francia por el Pirineo central. "
+            "Durante la II Guerra Mundial fue paso clandestino de judíos y se cree que por aquí "
+            "salió arte expoliado por los nazis hacia España. En 1970 un accidente en el puente "
+            "francés cortó el servicio; lleva décadas abandonada. Actualmente en rehabilitación "
+            "como hotel de lujo. El edificio modernista es impresionante incluso desde fuera."
         ),
-        """<ul><li>Camping Lanuza / Formigal (emergencia)</li></ul>""",
-        [("Embalse Lanuza", "0,5", "5", "OK paseo", gmaps_pin(42.658, -0.328)),
-         ("Sallent pueblo", "2", "5", "OK", gmaps_pin(42.773, -0.336))],
-        """<ol><li>Solo conducción + pernocta</li>
-<li>Tarde lluvia: camper / gastro Sallent</li></ol>""",
-        1, "<p>Noche 1/2 Lanuza.</p>",
-    ))
-
-    parts.append(day_card(
-        "d2", "D2 · Lunes 17 · Lanuza", f"{P['lanuza']} · noche 2/2",
-        f"""<p><strong>Sin traslado.</strong> Sensación ~25°C (límite) — hike solo <strong>mañana</strong> si OK.</p>
-<div class="warn">Si sube de 25°C → cancelar hike · preparar Canfranc para mañana.</div>""",
-        spot("Misma pernocta Lanuza", 42.658, -0.328, "Segunda noche.", "Calor límite"),
-        """<ul><li>Camping emergencia</li></ul>""",
-        [("Circular Lanuza–Búbal", "12", "18", "OK atado", gmaps_pin(42.658, -0.328)),
-         ("Formigal bosques", "10", "15", "OK", gmaps_pin(42.778, -0.378))],
-        """<ol><li>7:00–11:00 paseo / sendero corto si ≤25°C</li>
-<li>Tarde: sombra · carga para Canfranc</li></ol>""",
-        2, "<p>Mañana D3 → Canfranc (~75 km · ~1h15).</p>",
-    ))
-
-    parts.append(day_card(
-        "d3", "D3 · Martes 18 · Canfranc", f"{P['lanuza']} → {P['can']} · ~75 km · ~1h15",
-        f"""<p>Subida a Canfranc — base fresca D3–D5 (noches 18–21).</p>
-{btns([("Google · Sallent → Canfranc", gmaps_dir(*SAL, *CAN), "g")])}
-<p>Día seco · <strong>primer hike</strong> Ibón si llegáis con tiempo.</p>""",
-        (
-            spot("Parking Canfranc Estación", 42.751, -0.516,
-                 "Aparcamientos junto a la estación.", "Agosto: turismo")
-            + spot("Área A-136", 42.745, -0.530, "Si estación llena.", "Carretera")
+        observaciones=(
+            "Llegáis con la noche del dom 16 · sin hike ese día. "
+            "El parking Canal Roya tiene varios spots P4N junto al río Aragón (agua, sombra). "
+            "Ibón de Estanes: sendero bien marcado, gana ~400 m · pozas con agua para perras. "
+            "Perros atados en pastizales superiores (patous presentes agosto). "
+            "Canfranc pueblo tiene pan, supermercado pequeño y gastro de borda aragonesa."
         ),
-        """<ul><li>Camping valle (emergencia)</li></ul>""",
-        [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
-         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50)),
-         ("Estación", "0,2", "3", "OK paseo", gmaps_pin(42.751, -0.516))],
-        """<ol><li>Traslado AM</li>
-<li>Tarde: Ibón de Estanes o valle</li></ol>""",
-        3, "<p>Patous — correa. Noche 1 Canfranc.</p>",
-    ))
-
-    parts.append(day_card(
-        "d4", "D4 · Miércoles 19 · Canfranc", f"{P['can']} · Selva de Oza",
-        f"<p><strong>Sin traslado.</strong> Día seco · sensación ~25°C — hike AM.</p>",
-        spot("Base Canfranc", 42.751, -0.516, "Noche 2 Canfranc.", ""),
-        """<ul><li>—</li></ul>""",
-        [("Selva de Oza", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
-         ("Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50))],
-        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong></li>
-<li>Tarde: valle</li></ol>""",
-        4, "<p>Revisar meteo 7:00.</p>",
-    ))
-
-    parts.append(day_card(
-        "d5", "D5 · Jueves 20–viernes 21 · Canfranc", f"{P['can']} · cierre base (2 noches)",
-        f"""<p><strong>Sin traslado.</strong> Jue 20 fresco (~20°C) · vie 21 lluvia posible (~15 mm).</p>
-<div class="warn"><strong>Por qué 2 noches en D5:</strong> el vie 21 Baztán está a ~32°C. Dormís Canfranc jue+vie; <strong>sáb 22</strong> salís a Baztán (ya ≤25°C).</div>""",
-        spot("Base Canfranc", 42.751, -0.516, "Noches 3–4 Canfranc (20 y 21).", "Lluvia vie"),
-        """<ul><li>—</li></ul>""",
-        [("Ibón / valle corto", "12", "20", "OK", gmaps_pin(42.78, -0.48)),
-         ("Estación / museo", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
-        f"""<ol><li><strong>Jue 20:</strong> hike AM valle / Ibón</li>
-<li><strong>Vie 21:</strong> hike corto solo si seco · tarde preparar Baztán</li></ol>
-{btns([("Museo estación Canfranc", "https://www.canfranc.es/turismo/estacion-internacional/", "w")])}""",
-        5, "<p>Sáb 22: Canfranc → Elizondo ~181 km · ~2h20 (único tramo &gt;2 h entre bases).</p>",
-    ))
-
-    parts.append(day_card(
-        "d6", "D6 · Sábado 22 · Baztán", f"{P['can']} → {P['baztan']} · ~181 km · ~2h20",
-        f"""<p><strong>Valle del Baztán noche 1/2.</strong> Ventana ≤25°C solo 22–23.</p>
-{btns([("Google · Canfranc → Elizondo", gmaps_dir(*CAN, *BAZ), "g")])}
-<div class="warn">Tramo ~2h20 — excepción Navarra. Salid temprano.</div>""",
-        (
-            spot("Parking borde Elizondo", 43.148, -1.515,
-                 "Fuera casco · satélite valle.", "Agosto: gente")
-            + spot("Señorío de Bertiz (exterior)", 43.14, -1.61,
-                   "Confirmar perros / horarios.", "Normativa")
+        planb="Visita exterior estación Canfranc · paseo por el pueblo · río Aragón.",
+    ),
+    dict(
+        day=2, date="2026-08-18",
+        zona="Canal Roya · Canfranc",
+        parking_name="Canal Roya tramo bajo",
+        parking_lat=42.800, parking_lon=-0.495,
+        drive_from="Misma zona Canal Roya", drive_km="—", drive_h="—",
+        hike="Canal Roya – Laguna de Tortiellas", hike_km="10 km", hike_dif="Fácil-Moderado",
+        hike_desn="~300 m", hike_h="3 h",
+        concurrencia="Media",
+        interes=["Canal Roya","Llanos de la Rinconada","Frontera Francia","GR-11"],
+        historia=(
+            "El <strong>Canal Roya</strong> es un valle glaciar que serpentea hacia la frontera "
+            "francesa. Forma parte del <strong>GR-11</strong>, el sendero que cruza los Pirineos "
+            "de Cabo Higuer (Hondarribia) al Cap de Creus (Cadaqués). El valle conserva glaciares "
+            "rocosos y en días claros se ven los picos fronterizos. El nombre 'Canal' viene de los "
+            "barrancos rectilíneos tallados por glaciares cuaternarios."
         ),
-        """<ul><li>Camping / área valle (emergencia)</li></ul>""",
-        [("Elizondo casco", "0,3", "5", "OK paseo", gmaps_pin(43.148, -1.515)),
-         ("Senderos Baztán", "5", "10", "OK atado", gmaps_pin(43.16, -1.52)),
-         ("Bertiz acceso", "12", "15", "Confirmar", gmaps_pin(43.14, -1.61))],
-        f"""<ol><li>Traslado AM</li>
-<li>Tarde: paseo valle / Elizondo (lluvia posible)</li></ol>
-{btns([("Turismo Baztán", "https://www.turismo.navarra.es/es/ver/valle-del-baztan/", "w")])}""",
-        6, "<p>Navarra 1/4 noches.</p>",
-    ))
-
-    parts.append(day_card(
-        "d7", "D7 · Domingo 23 · Baztán", f"{P['baztan']} · noche 2/2",
-        f"""<p><strong>Sin traslado.</strong> Última noche fresca en Baztán (~23°C).</p>
-<div class="warn">Lun 24 Elizondo ~29°C → mañana a Ochagavía.</div>""",
-        spot("Misma pernocta Elizondo", 43.148, -1.515, "Repetir parking.", ""),
-        """<ul><li>—</li></ul>""",
-        [("Senderos valle", "5", "10", "OK atado", gmaps_pin(43.16, -1.52)),
-         ("Elizondo", "0", "5", "OK", gmaps_pin(43.148, -1.515)),
-         ("Bertiz", "12", "15", "Confirmar", gmaps_pin(43.14, -1.61))],
-        """<ol><li><strong>7:00–12:00</strong> hike / paseo valle</li>
-<li>Tarde: siesta · preparar D8</li></ol>""",
-        7, "<p>Navarra 2/4. Mañana → Ochagavía ~121 km · ~1h55.</p>",
-    ))
-
-    parts.append(day_card(
-        "d8", "D8 · Lunes 24 · Ochagavía", f"{P['baztan']} → {P['och']} · ~121 km · ~1h55",
-        f"""<p>Escape calor Baztán · <strong>Irati noche 1/2</strong> (~22°C).</p>
-{btns([("Google · Elizondo → Ochagavía", gmaps_dir(*BAZ, *OCH), "g")])}
-<div class="warn">⚠️ Lluvia fuerte posible (~34 mm) — hike solo si ventana seca; si no, pueblo.</div>""",
-        (
-            spot("Aparcamiento borde Ochagavía", 42.908, -1.082,
-                 "Fuera casco empedrado.", "AC 7 m")
-            + spot("Camping Robledo", 42.91, -1.09, "Emergencia con servicios.", "")
+        observaciones=(
+            "Mejor día del tramo aragonés: 0 mm, 24°C. Aprovechar para hike largo. "
+            "El camino de Canal Roya es un carril forestal ancho al principio, perfecto para perros. "
+            "Se puede aparcar en distintos puntos según cuánto se quiera caminar. "
+            "Tarde: mover camper unos km para cambiar paisaje nocturno (borde Aragón o Astún)."
         ),
-        """<ul><li><a href="https://www.campingelrobledo.com/">Camping Robledo</a></li></ul>""",
-        [("Casco Ochagavía", "0,3", "3", "OK", gmaps_pin(42.906, -1.079)),
-         ("Selva de Irati", "8", "12", "OK atado", gmaps_pin(42.918, -1.045))],
-        """<ol><li>Salir Elizondo temprano</li>
-<li>Si seco: Irati tarde corta</li>
-<li>Si lluvia: Roncal / gastro</li></ol>""",
-        8, "<p>Navarra 3/4.</p>",
-    ))
-
-    parts.append(day_card(
-        "d9", "D9 · Martes 25 · Ochagavía", f"{P['och']} · {P['irati']} · noche 2/2",
-        f"""<p><strong>Sin traslado.</strong> Cierre Irati (~21°C). Lluvia posible — hike AM.</p>""",
-        spot("Misma pernocta D8", 42.908, -1.082, "Última noche viaje.", "Lluvia"),
-        """<ul><li>Camping Robledo</li></ul>""",
-        [("Selva de Irati · Abodi", "8", "12", "OK atado", gmaps_pin(42.918, -1.045)),
-         ("Senda río Zatoia", "5", "8", "OK", gmaps_pin(42.910, -1.070)),
-         ("Isaba / Burgui", "15", "20", "OK", gmaps_pin(42.925, -1.005))],
-        f"""<ol><li><strong>7:00–12:00 · Irati</strong> si seco</li>
-<li>Tarde: siesta · salida mié 26 temprano</li></ol>
-{btns([("Turismo Roncal", "https://www.turismo.navarra.es/es/ver/valle-del-roncal/", "w")])}""",
-        9, "<p>Navarra 4/4 · ≥2 noches cumplidas (Baztán + Irati).</p>",
-    ))
-
-    parts.append(day_card(
-        "d10", "D10 · Miércoles 26 · Teià", f"{P['och']} → {P['teia']} · ~435 km · ~5–6 h",
-        f"""<p><strong>Vuelta.</strong> Solo conducción — costa ~30°C+ sensación.</p>
-{btns([("Google · Ochagavía → Teià", gmaps_dir(*OCH, *TEIA), "g")])}""",
-        "<p><strong>Llegada a casa.</strong></p>",
-        "<p>—</p>",
-        [],
-        "<p>Paradas sombra cada 2 h · AC perras · salir temprano.</p>",
-        10, "<p>No parar al sol sin sombra — interior camper 35°C+.</p>",
-    ))
-
-    return "".join(parts)
-
-
-WEEKDAYS_ES = {
-    0: "lunes", 1: "martes", 2: "miércoles", 3: "jueves",
-    4: "viernes", 5: "sábado", 6: "domingo",
-}
-
-
-def _weekday_es(date_iso: str) -> str:
-    from datetime import date
-    y, m, d = map(int, date_iso.split("-"))
-    return WEEKDAYS_ES[date(y, m, d).weekday()]
-
-
-def _fmt_fecha(date_iso: str) -> str:
-    y, m, d = date_iso.split("-")
-    return f"{_weekday_es(date_iso)} {int(d)} ago"
-
-
-# Filas del cuadro resumen: (día, fecha_iso, lugar corto, tramo, km, maps_url)
-SUMMARY_ROWS = [
-    (1, "2026-08-16", "Lanuza (Huesca)", "Teià → Lanuza", "350 km · 4–5 h", gmaps_dir(*TEIA, *SAL)),
-    (2, "2026-08-17", "Lanuza (Huesca)", "Sin traslado", "—", gmaps_pin(42.658, -0.328)),
-    (3, "2026-08-18", "Canfranc (Huesca)", "Lanuza → Canfranc", "75 km · 1h15", gmaps_dir(*SAL, *CAN)),
-    (4, "2026-08-19", "Canfranc (Huesca)", "Sin traslado", "—", gmaps_pin(42.751, -0.516)),
-    (5, "2026-08-20", "Canfranc (Huesca)", "Sin traslado · noches 20+21", "—", gmaps_pin(42.751, -0.516)),
-    (6, "2026-08-22", "Elizondo / Baztán (Navarra)", "Canfranc → Elizondo", "181 km · 2h20", gmaps_dir(*CAN, *BAZ)),
-    (7, "2026-08-23", "Elizondo / Baztán (Navarra)", "Sin traslado", "—", gmaps_pin(43.148, -1.515)),
-    (8, "2026-08-24", "Ochagavía / Irati (Navarra)", "Elizondo → Ochagavía", "121 km · 1h55", gmaps_dir(*BAZ, *OCH)),
-    (9, "2026-08-25", "Ochagavía / Irati (Navarra)", "Sin traslado", "—", gmaps_pin(42.906, -1.079)),
-    (10, "2026-08-26", "Teià (Barcelona)", "Ochagavía → Teià", "435 km · 5–6 h", gmaps_dir(*OCH, *TEIA)),
+        planb="Paseo corto borde río Aragón · área picnic Canfranc.",
+    ),
+    dict(
+        day=3, date="2026-08-19",
+        zona="Candanchú · Astún · Canfranc",
+        parking_name="Astún (parking estación)",
+        parking_lat=42.795, parking_lon=-0.458,
+        drive_from="Canfranc → Astún (~8 km)", drive_km="~8 km", drive_h="15 min",
+        hike="Lagunas de Anayet (ruta baja)", hike_km="9 km", hike_dif="Moderado",
+        hike_desn="~350 m", hike_h="3 h",
+        concurrencia="Media-alta (zona estación)",
+        interes=["Lagunas de Anayet","Pics du Midi d'Ossau (vistas)","Refugio de Anayet","Frontera Francia"],
+        historia=(
+            "Las <strong>Lagunas de Anayet</strong> (1960–2227 m) son ibones glaciares con "
+            "vistas directas al <strong>Pic du Midi d'Ossau</strong> (2884 m, Francia), "
+            "uno de los montes más fotogénicos del Pirineo por su silueta volcánica. "
+            "La zona fue zona de pastoreo trashúmante durante siglos; los pastores aragoneses "
+            "subían con sus rebaños cada verano desde el Somontano. El refugio de Anayet "
+            "(privado) sirve bocadillos en agosto."
+        ),
+        observaciones=(
+            "0 mm, 25°C — último día seco antes de varios días con posible lluvia. "
+            "Tomar el sendero bajo de Anayet (no la variante de crestas, que es técnica). "
+            "Candanchú en agosto es un cruce de ciclistas y senderistas; aparcar en Astún "
+            "suele ser más tranquilo. "
+            "Tarde: preparar camper y bajar a Oza mañana (mover zona D4)."
+        ),
+        planb="Paseo llano Candanchú · vista exterior hacia frontera.",
+    ),
+    dict(
+        day=4, date="2026-08-20",
+        zona="Selva de Oza · Aguas Tuertas ⭐",
+        parking_name="Área forestal Selva de Oza",
+        parking_lat=42.822, parking_lon=-0.717,
+        drive_from="Canfranc → Oza (Valle de Hecho, ~40 km)", drive_km="~40 km", drive_h="~50 min",
+        hike="Aguas Tuertas", hike_km="8 km", hike_dif="Fácil",
+        hike_desn="~200 m", hike_h="2,5 h",
+        concurrencia="Media",
+        interes=["Aguas Tuertas","Río Aragón Subordán","Selva de Oza","Valle de Hecho","Siresa"],
+        historia=(
+            "<strong>Aguas Tuertas</strong> ('aguas torcidas') es una pradera alpina de origen "
+            "glaciar a ~1640 m donde el río Aragón Subordán forma meandros imposibles en terreno "
+            "llano, como si el río se hubiera olvidado de ir cuesta abajo. Es uno de los paisajes "
+            "más singulares y fotogénicos del Pirineo, y sorprendentemente accesible. "
+            "<strong>Selva de Oza</strong> es un hayedo-pinar de gran valor ecológico; el Valle de Hecho "
+            "conserva el <strong>cheso</strong>, un dialecto aragonés con 1.500 hablantes, "
+            "uno de los pocos vivos de Aragón. El pueblo de Hecho tiene un museo de escultura "
+            "contemporánea al aire libre único en el Pirineo."
+        ),
+        observaciones=(
+            "Jue 20 es el día más fresco de toda la semana aragonesa (21°C en Oza). "
+            "Perros perfectos en Aguas Tuertas: terreno llano, agua en el río, poca gente. "
+            "Aparcar en el área forestal de Oza (P4N varios spots, zona de acampada libre histórica "
+            "ahora regulada). Tened los carteles en cuenta — zona ZEPA. "
+            "Siresa (3 km de Oza): monasterio románico del s.IX, el más antiguo de Aragón, merece "
+            "una parada de 20 min. Hecho pueblo (10 km) para avituallamiento."
+        ),
+        planb="Paseo borde río Aragón Subordán en Oza · fresco y sombreado.",
+    ),
+    dict(
+        day=5, date="2026-08-21",
+        zona="Ansó / Zuriza → Jaca → borde Navarra",
+        parking_name="Embalse de Yesa (pernocta transición)",
+        parking_lat=42.622, parking_lon=-1.072,
+        drive_from="Oza → Ansó/Zuriza (~25 km) → Jaca (~70 km) → Yesa (~80 km)", drive_km="~115 km", drive_h="~2 h",
+        hike="Foz de Biniés (opcional AM temprano)", hike_km="4 km", hike_dif="Fácil",
+        hike_desn="~80 m", hike_h="1,5 h",
+        concurrencia="Alta Jaca agosto · tranquila Foz",
+        interes=["Foz de Biniés","Ansó medieval","Jaca catedral románica","Ciudadela de Jaca","Embalse Yesa"],
+        historia=(
+            "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón. Su "
+            "<strong>catedral románica</strong> (1063) es la primera románica de España y modelo "
+            "para las demás del Camino de Santiago. La <strong>Ciudadela</strong> (s.XVI) es una "
+            "de las mejores fortalezas estrelladas de Europa, aún activa como cuartel. "
+            "<strong>Ansó</strong> conserva el <strong>traje típico ansotano</strong>, uno de los "
+            "trajes regionales más llamativos de España — las mujeres solteras llevaban la toca "
+            "hacia adelante, las casadas hacia atrás. La aldea estuvo aislada durante siglos "
+            "y desarrolló su propia cultura."
+        ),
+        observaciones=(
+            "Día de lluvia (~16–21 mm) → ideal para conducción y cultura urbana. "
+            "Foz de Biniés: si el tiempo lo permite a primera hora (gargantas kársticas, "
+            "fácil, 1,5 h, perros OK). Jaca: visita catedral exterior + ciudadela desde fuera "
+            "(perros no entran al museo pero sí paseo foso). "
+            "Tarde: hacia embalse Yesa o ya Ochagavía si el tiempo mejora. "
+            "Yesa tiene varios P4N en el borde del embalse — bonita pernocta de transición."
+        ),
+        planb="Jaca: catedral + ciudadela + mercado cubierto si llueve.",
+    ),
+    dict(
+        day=6, date="2026-08-22",
+        zona="Ochagavía · Valle de Salazar",
+        parking_name="Borde Ochagavía (fuera casco)",
+        parking_lat=42.908, parking_lon=-1.082,
+        drive_from="Yesa → Ochagavía (~90 km)", drive_km="~90 km", drive_h="~1h15",
+        hike="Acceso suave Selva de Irati · río Zatoia", hike_km="6 km", hike_dif="Fácil",
+        hike_desn="~100 m", hike_h="2 h",
+        concurrencia="Alta (sábado agosto)",
+        interes=["Ochagavía casco medieval","Santuario de Muskilda","Río Zatoia","Puente medieval"],
+        historia=(
+            "<strong>Ochagavía</strong> es la capital del <strong>Valle de Salazar</strong>, "
+            "uno de los valles pirenaicos navarros mejor conservados. Su casco medieval tiene "
+            "el típico trazado de pueblo de montaña navarro: calles empedradas, casas de piedra "
+            "con escudos, puente románico sobre el Zatoia. El <strong>Santuario de Muskilda</strong> "
+            "(s.XIII, en el monte sobre el pueblo) es el más venerado del Pirineo navarro; "
+            "cada 8 de septiembre los danzantes de Ochagavía bailan ante la Virgen con traje "
+            "tradicional en una de las fiestas más antiguas de Navarra. "
+            "La zona es la entrada al <strong>Queso Roncal DOP</strong>, el primer queso español "
+            "con denominación de origen (1981)."
+        ),
+        observaciones=(
+            "Llegar a primera hora para pillar parking fuera del casco (AC 7 m, callejuelas). "
+            "P4N varios spots borde río y fuera del pueblo. "
+            "Sábado agosto = alta concurrencia turística en el casco; los senderos están más tranquilos. "
+            "Río Zatoia: agua limpia y fría, perfecto para perras. "
+            "Avituallamiento: hay supermercado pequeño en Ochagavía. "
+            "Gastronomía: cordero al chilindrón, queso Roncal, cuajada."
+        ),
+        planb="Casco medieval Ochagavía · tiendas de queso Roncal · paseo río.",
+    ),
+    dict(
+        day=7, date="2026-08-23",
+        zona="Selva de Irati · Embalse Irabia",
+        parking_name="Área embalse Irabia / Casas de Irati",
+        parking_lat=42.933, parking_lon=-1.032,
+        drive_from="Ochagavía → Irabia (~15 km)", drive_km="~15 km", drive_h="~20 min",
+        hike="Circular hayedo-abetal de Irati", hike_km="9 km", hike_dif="Fácil-Moderado",
+        hike_desn="~250 m", hike_h="3 h",
+        concurrencia="Alta (domingo) · se diluye en la selva",
+        interes=["Selva de Irati","Embalse de Irabia","Hayedo-abetal","Casas de Irati","Abodi"],
+        historia=(
+            "La <strong>Selva de Irati</strong> es el segundo bosque caducifolio más grande de Europa, "
+            "con 17.000 ha de hayedo-abetal compartidas entre Navarra y el País Vasco francés. "
+            "Los hayas y abetos alcanzan los 35 m de altura; algunos ejemplares superan los 500 años. "
+            "Históricamente fue zona de carboneo y extracción maderera para la Armada española "
+            "(los barcos necesitaban los árboles rectos del Pirineo). "
+            "El <strong>Embalse de Irabia</strong> (1942) es artificial pero perfectamente integrado "
+            "en el paisaje. La selva alberga urogallos, corzos, jabalíes y, ocasionalmente, "
+            "oso pardo (avistamientos raros pero documentados). "
+            "En otoño el espectáculo cromático es de fama europea; en verano la sombra del hayedo "
+            "es un refugio climático natural."
+        ),
+        observaciones=(
+            "Mover camper a la zona Irabia — hay varios P4N remotos y el área de Casas de Irati "
+            "tiene camping oficial. El acceso por pista forestal es ancho, sin problema para Sunlight. "
+            "Domingo = turistas, pero entrad pronto (antes de 9h) y la selva se vacía. "
+            "Perros con correa — zona sensible para aves (urogallo). "
+            "Si llueve: el hayedo bajo lluvia es impresionante (niebla, setas en agosto-septiembre). "
+            "Agua: río Irati nace aquí, cristalino y frío."
+        ),
+        planb="Parking Irabia + paseo borde embalse (sin hike, con lluvia igualmente bonito).",
+    ),
+    dict(
+        day=8, date="2026-08-24",
+        zona="Orbaitzeta · Río Irati interior",
+        parking_name="Orbaitzeta / aguas arriba río",
+        parking_lat=42.964, parking_lon=-1.217,
+        drive_from="Irabia → Orbaitzeta (~20 km pista forestal)", drive_km="~20 km", drive_h="~30 min",
+        hike="Senda Río Irati / Ruinas Orbaitzeta", hike_km="7 km", hike_dif="Fácil",
+        hike_desn="~100 m", hike_h="2,5 h",
+        concurrencia="Baja (lunes, zona remota)",
+        interes=["Real Fábrica de Armas de Orbaitzeta","Río Irati","Bosque interior","Garralda"],
+        historia=(
+            "Las <strong>Ruinas de la Real Fábrica de Armas de Orbaitzeta</strong> son uno de los "
+            "monumentos industriales más espectaculares y olvidados de España. "
+            "Construida en 1784 por orden de Carlos III para fabricar cañones para la Armada, "
+            "funcionó hasta 1874 cuando fue destruida durante las <strong>Guerras Carlistas</strong>. "
+            "Las tres guerras civiles carlistas (1833–76) devastaron el Pirineo navarro: "
+            "Navarra era el corazón del carlismo y estas montañas vieron combates brutales. "
+            "Hoy las ruinas de sillería asoman entre el hayedo como una ciudad fantasma: "
+            "edificios de 3 pisos cubiertos de hiedra, fraguas, canales hidráulicos. "
+            "La visita es libre y gratuita; los perros pueden entrar."
+        ),
+        observaciones=(
+            "⚠️ Día de mayor lluvia del viaje (~34 mm posibles). "
+            "Plan A (seco): senda río Irati aguas arriba + ruinas Orbaitzeta. "
+            "Plan B (lluvia): visita ruinas Orbaitzeta (bajo el hayedo, soporta bien lluvia) "
+            "+ pueblo Garralda / Aribe para café. "
+            "Zona muy remota y tranquila — baja concurrencia incluso en agosto. "
+            "P4N: buscar spots borde río antes de Orbaitzeta. "
+            "Mañana: mover a Isaba (~35 km)."
+        ),
+        planb="Ruinas Fábrica de Armas Orbaitzeta · bosque cubierto · pueblo Garralda.",
+    ),
+    dict(
+        day=9, date="2026-08-25",
+        zona="Isaba · Valle del Roncal",
+        parking_name="Borde río Esca / Isaba",
+        parking_lat=42.856, parking_lon=-0.921,
+        drive_from="Orbaitzeta → Isaba (~35 km)", drive_km="~35 km", drive_h="~45 min",
+        hike="Senda río Esca o acceso Belagua", hike_km="8 km", hike_dif="Fácil",
+        hike_desn="~150 m", hike_h="2,5 h",
+        concurrencia="Baja (martes)",
+        interes=["Isaba","Circo de Belagua","Río Esca","Queso Roncal DOP","Tributo de las Tres Vacas"],
+        historia=(
+            "<strong>Isaba</strong> es el pueblo más importante del <strong>Valle del Roncal</strong>, "
+            "famoso por su queso DOP y por una curiosidad histórica única en Europa: "
+            "el <strong>Tributo de las Tres Vacas</strong>. Desde 1375 (¡cada año sin excepción!), "
+            "el 13 de julio, Francia entrega tres vacas de raza pirenaica al Valle del Roncal "
+            "como compensación por el uso de pastos del Pirineo. Es el único tributo que "
+            "Francia paga a España. La ceremonia se celebra en el límite fronterizo de Pierre "
+            "Saint-Martin. El <strong>Circo de Belagua</strong> es un anfiteatro glaciar imponente; "
+            "el acceso desde Isaba sube a 1.400 m con vistas al Pico de Anie (2463 m, Francia)."
+        ),
+        observaciones=(
+            "Último día en Navarra antes de la vuelta. Tranquilo martes. "
+            "Senda del río Esca desde Isaba: plana, sombreada, perfecta para perras. "
+            "Circo de Belagua: si el tiempo mejora, vale el desvío (14 km A/R, moderado). "
+            "Isaba tiene queso Roncal en varias tiendas — ideal para llevar a casa. "
+            "Pernocta: borde río Esca o P4N en los alrededores. "
+            "Mañana D10: salida temprana a Teià (~435 km, ~5,5 h)."
+        ),
+        planb="Paseo pueblo Isaba · compras queso Roncal · río Esca.",
+    ),
+    dict(
+        day=10, date="2026-08-26",
+        zona="Vuelta a Teià",
+        parking_name="Teià — casa",
+        parking_lat=41.498, parking_lon=2.319,
+        drive_from="Isaba → Teià (~435 km)", drive_km="~435 km", drive_h="5–6 h",
+        hike="—", hike_km="—", hike_dif="—", hike_desn="—", hike_h="—",
+        concurrencia="—",
+        interes=["Parada sombra cada 2 h","AC para perras","Evitar parar sin sombra"],
+        historia="",
+        observaciones=(
+            "Salir antes de las 8:00 para evitar el calor de costa. "
+            "Costa mediterránea en agosto: sensación ~30°C+ — interior camper 35°C+ al sol. "
+            "Paradas solo en áreas de servicio con sombra o gasolineras con zona arbolada. "
+            "AC encendido para las perras. "
+            "Ruta recomendada: Pamplona → Zaragoza → Lleida → Barcelona."
+        ),
+        planb="—",
+    ),
 ]
 
-
-def summary_table() -> str:
-    wx_by_day = {d["day"]: d for d in WEATHER["days"]}
-    rows_html = []
-    for day, date_iso, lugar, tramo, dist, maps_url in SUMMARY_ROWS:
-        w = wx_by_day.get(day)
-        if w:
-            app = w["app_max"]
-            mm = w["precip_mm"]
-            prob = w["precip_prob"]
-            wx_cls = "wx-ok" if app <= 25 else "wx-warn"
-            clima = (
-                f'<span class="{wx_cls}">sens. {app:.0f}°C</span><br>'
-                f'<span class="wx-rain">{mm:.0f} mm · {prob:.0f}%</span>'
-            )
-        else:
-            clima = "—"
-        fecha = _fmt_fecha(date_iso)
-        fecha_extra = ""
-        if day == 5:
-            fecha = "jueves 20–viernes 21 ago"
-            fecha_extra = ""
-        rows_html.append(
-            f"<tr>"
-            f'<td><a href="#d{day}">D{day}</a></td>'
-            f"<td>{esc(fecha)}{fecha_extra}</td>"
-            f"<td><strong>{esc(lugar)}</strong></td>"
-            f"<td>{esc(tramo)}<br><span style=\"color:var(--muted)\">{esc(dist)}</span></td>"
-            f"<td>{clima}</td>"
-            f'<td><a href="{esc(maps_url)}" target="_blank" rel="noopener">Maps</a></td>'
-            f"</tr>"
-        )
-    return f"""
-<div class="summary-wrap">
-<table class="summary-table">
-<thead>
-<tr>
-<th>Día</th>
-<th>Fecha</th>
-<th>Lugar</th>
-<th>Tramo · km</th>
-<th>Clima</th>
-<th>Ruta</th>
-</tr>
-</thead>
-<tbody>
-{"".join(rows_html)}
-</tbody>
-</table>
-</div>
-<p class="summary-meta">Clima = sensación máx + lluvia (Open-Meteo · {esc(WEATHER['fetched_at'][:10])}). Revisar a las 7:00.</p>
-<p>{btns([("🗺️ Ruta completa · todo el loop", GMAPS_LOOP, "g")])}</p>
+# ── CSS ──────────────────────────────────────────────────────────────────────
+CSS = r"""
+:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 14px 32px rgba(26,34,28,.09);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 420px at 0% 0%,#dfe8df,transparent 55%),var(--bg);line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1rem 4rem}
+.top{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem 0}
+.brand{font-family:"Fraunces",serif;font-weight:700;color:var(--pine);font-size:1rem}
+.brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.68rem;font-weight:400;color:var(--muted)}
+.btn{display:inline-block;padding:.4rem .7rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}.btn-w{background:#f5f0ff}
+.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
+.hero{padding:1.2rem 0 .8rem}.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.5rem,4vw,2rem);margin:.3rem 0}
+.lead{color:var(--muted);max-width:44rem}.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
+.chip{font-size:.7rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
+.section{margin:2rem 0}.section>h2{font-family:"Fraunces",serif;color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.25rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0;box-shadow:var(--shadow)}
+.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
+.callout{background:var(--sec);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
+.day-nav{position:sticky;top:48px;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);gap:.2rem;background:rgba(242,238,228,.97);padding:.4rem 0;margin:0 -1rem;padding-left:1rem;padding-right:1rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+@media(min-width:600px){.day-nav{grid-template-columns:repeat(10,1fr)}}
+.day-nav a{font-size:.65rem;text-align:center;padding:.3rem .15rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
+.day-nav a:hover{background:var(--sec)}
+/* Summary table */
+.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.summary-table{width:100%;border-collapse:collapse;font-size:.79rem;min-width:780px}
+.summary-table thead th{background:var(--pine);color:#fff;padding:.5rem .6rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.summary-table tbody td{padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+.summary-table tbody tr:last-child td{border-bottom:0}
+.summary-table tbody tr:hover td{background:#f4f9f5}
+.summary-table a{color:var(--pine);font-weight:600;text-decoration:none}
+.summary-table a:hover{text-decoration:underline}
+.badge{display:inline-block;padding:.1rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700;white-space:nowrap}
+.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}.dif-a{background:#fde;color:var(--red)}
+.crowd-b{color:#155724;font-weight:700}.crowd-m{color:#856404;font-weight:700}.crowd-a{color:var(--red);font-weight:700}
+.wx-ok{color:var(--pine);font-weight:700}.wx-warn{color:var(--red);font-weight:700}
+.star{color:var(--gold);font-weight:700}
+/* Day cards */
+.day-card{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:2rem 0;overflow:hidden;box-shadow:var(--shadow)}
+.day-card-head{background:linear-gradient(135deg,var(--pine),#2a6b55);color:#fff;padding:1rem 1.2rem}
+.day-card-head h3{margin:0;font-family:"Fraunces",serif;font-size:1.1rem}
+.day-card-head .sub{opacity:.9;font-size:.82rem;margin-top:.2rem}
+.day-sec{padding:.8rem 1.1rem;border-top:1px solid var(--line)}
+.day-sec h4{margin:0 0 .5rem;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--clay)}
+.day-sec.ruta{background:#f8faf8}.day-sec.parking{background:#f5f8f5}.day-sec.hike{background:#f0f8f0}
+.day-sec.historia{background:#fffbf3}.day-sec.obs{background:#fafafa}.day-sec.meteo{background:#f0f6fa}.day-sec.planb{background:#fff8f0}
+.spot{margin:.4rem 0;padding:.5rem .7rem;background:var(--sec);border-radius:8px;font-size:.88rem}
+.spot strong{display:block;color:var(--pine);margin-bottom:.15rem}
+.wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem;font-size:.85rem}
+@media(min-width:500px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.wx-grid>div{background:#e8f4fb;padding:.4rem .5rem;border-radius:6px}
+.wx-grid em{display:block;font-size:.7rem;color:var(--muted);font-style:normal}
+.wx-grid strong{display:block;font-size:.9rem}
+.foot{padding:1.5rem 0;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+.fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.35rem;z-index:60}
+details.archive{margin:1.5rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
 """
 
+# ── Helpers ──────────────────────────────────────────────────────────────────
+def weather_block(day_num:int)->str:
+    w = next((d for d in WEATHER["days"] if d["day"]==day_num), None)
+    if not w: return "<p>—</p>"
+    tips = "".join(f"<li>{esc(t)}</li>" for t in w.get("tips",[]))
+    cls = "wx-ok" if w["app_max"]<=25 else "wx-warn"
+    return f"""<div class="wx-grid">
+<div><em>Zona</em><strong style="font-size:.78rem">{esc(w.get('place_label') or w['place'])}</strong></div>
+<div><em>Temp día</em><strong>{w['t_min']:.0f}–{w['t_max']:.0f}°C</strong></div>
+<div><em>Sensación máx</em><strong class="{cls}">{w['app_max']:.0f}°C</strong></div>
+<div><em>Lluvia</em><strong>{w['precip_mm']:.1f} mm · {w['precip_prob']:.0f}%</strong></div>
+</div><ul style="margin:.4rem 0;padding-left:1.2rem;font-size:.83rem">{tips}</ul>
+<p style="font-size:.72rem;color:var(--muted);margin:.3rem 0 0">Open-Meteo · {esc(WEATHER['fetched_at'][:10])} · confirmar a las 7:00</p>"""
 
-def live_summary() -> str:
-    return f"""
-<section class="section live-plan" id="plan-rapido">
-<h2>Cuadro resumen · 16–26 agosto 2026</h2>
-{summary_table()}
-<div class="warn"><strong>D5 = jue 20 + vie 21</strong> en Canfranc: el vie 21 Baztán ~32°C; Baztán fresco solo <strong>22–23</strong>.</div>
-<div class="callout">Hike solo si sensación ≤25°C · perras siempre · D6 ~2h20 excepción.</div>
-</section>"""
+def dif_badge(dif:str)->str:
+    m = {"Fácil":"dif-f","Moderado":"dif-m","Fácil-Moderado":"dif-f","Difícil":"dif-a"}
+    cls = m.get(dif,"dif-m")
+    return f'<span class="badge {cls}">{esc(dif)}</span>'
 
+def crowd_span(c:str)->str:
+    m = {"Baja":"crowd-b","Media":"crowd-m","Media-alta":"crowd-a","Alta":"crowd-a","Muy alta":"crowd-a"}
+    cls = m.get(c.split()[0],"crowd-m")
+    return f'<span class="{cls}">{esc(c)}</span>'
 
-def gmaps_howto() -> str:
-    return """
-<section class="section" id="dormir-gmaps"><h2>Buscar pernocta sin Park4Night</h2>
-<div class="card prose">
-<ol>
-<li>Google Maps <strong>satélite</strong> → zoom borde pueblo/bosque.</li>
-<li>Parking sin salida, mirador, acceso &gt;2,10 m.</li>
-<li>Cartel prohibido → siguiente candidato.</li>
-<li>Estacionar ≠ acampar (sin toldo/mesa fuera).</li>
-</ol>
-</div></section>"""
+# ── Summary table ─────────────────────────────────────────────────────────────
+def summary_table()->str:
+    wx = {d["day"]:d for d in WEATHER["days"]}
+    # D0 conducción row
+    rows = [
+        f"""<tr style="background:#f5f8f5">
+<td><strong>D0</strong></td>
+<td>domingo 16 ago<br><span style="color:var(--muted);font-size:.72rem">conducción nocturna</span></td>
+<td>Teià → Canfranc</td>
+<td>~366 km · 4,5 h</td>
+<td>Canal Roya · borde río Aragón {btn("Maps",gmaps_pin(42.781,-0.493),"g")}</td>
+<td>—</td>
+<td>—</td>
+<td style="color:var(--muted)">5 mm · 89%</td>
+<td>{btn("Ruta D0",gmaps_dir(*TEIA,*CAN),"g")}</td>
+</tr>"""
+    ]
+    for d in DAYS:
+        n = d["day"]
+        w = wx.get(n)
+        wx_html = "—"
+        if w:
+            cls = "wx-ok" if w["app_max"]<=25 else "wx-warn"
+            wx_html = (f'<span class="{cls}">{w["app_max"]:.0f}°C</span>'
+                       f'<br><span style="color:#2a5f8a">{w["precip_mm"]:.0f} mm · {w["precip_prob"]:.0f}%</span>')
 
+        fecha_html = fmt_date(d["date"])
+        star = " ⭐" if n==4 else ""
+        hike_html = "—"
+        if d["hike"] != "—":
+            hike_html = (f'{esc(d["hike"])}<br>'
+                         f'{dif_badge(d["hike_dif"])} {esc(d["hike_km"])} · {esc(d["hike_h"])}')
+        # drive link
+        if n==1:  dr_url = gmaps_dir(*TEIA,*CAN)
+        elif n==3: dr_url = gmaps_pin(42.795,-0.458)
+        elif n==4: dr_url = gmaps_dir(*CAN,*OZA)
+        elif n==5: dr_url = gmaps_dir(*OZA,*YESA)
+        elif n==6: dr_url = gmaps_dir(*YESA,*OCH)
+        elif n==8: dr_url = gmaps_pin(42.964,-1.217)
+        elif n==9: dr_url = gmaps_dir(-1.217,42.964,*ISA)
+        elif n==10: dr_url = gmaps_dir(*OCH,*TEIA)
+        else: dr_url = gmaps_pin(d["parking_lat"],d["parking_lon"])
 
-def rules_section() -> str:
-    return f"""
-<section class="section" id="perras"><h2>Reglas</h2>
-<div class="card prose">
-<div class="warn"><strong>Perras:</strong> solo donde entren con vosotros.</div>
-<div class="warn"><strong>Calor:</strong> pernocta solo si sensación ≤25°C.</div>
-<ul>
-<li>Sunlight 600 · 2 perras</li>
-<li>≤2 h entre bases (D6 ~2h20 excepción · D1/D10 largos)</li>
-<li>Navarra: Baztán D6–D7 + Irati D8–D9</li>
-</ul>
-</div></section>"""
+        p4n_url = p4n(d["parking_lat"],d["parking_lon"])
+        rows.append(
+            f"""<tr>
+<td><a href="#d{n}"><strong>D{n}{star}</strong></a></td>
+<td>{fecha_html}</td>
+<td><strong>{esc(d['zona'])}</strong></td>
+<td>{esc(d['drive_km'])} · {esc(d['drive_h'])}</td>
+<td>{esc(d['parking_name'])}<br>
+{btn("GMaps",gmaps_pin(d['parking_lat'],d['parking_lon']),"g")}
+{btn("P4N",p4n_url,"o")}</td>
+<td>{hike_html}</td>
+<td>{crowd_span(d['concurrencia'])}</td>
+<td>{wx_html}</td>
+<td>{btn("Ruta",dr_url,"g")}</td>
+</tr>"""
+        )
+    return f"""<div class="summary-wrap">
+<table class="summary-table">
+<thead><tr>
+<th>Día</th><th>Fecha</th><th>Zona</th><th>Conducción</th>
+<th>Parking · pernocta</th><th>Excursión · dificultad</th>
+<th>Concurrencia</th><th>Clima</th><th>Ruta</th>
+</tr></thead>
+<tbody>{"".join(rows)}</tbody>
+</table></div>
+<p style="font-size:.75rem;color:var(--muted);margin:.3rem 0">
+Clima = sensación máx (altitude-adjusted) + precipitación previsión Open-Meteo {esc(WEATHER['fetched_at'][:10])}.
+⭐ D4 = día estrella. Actualizar meteo cada mañana a las 7:00.
+</p>
+<p>{btns([("🗺️ Loop completo Google Maps", GMAPS_LOOP, "g"),
+          ("D0 dom 16 · Teià → Canfranc", gmaps_dir(*TEIA,*CAN), "g")])}</p>"""
 
+# ── Day cards ─────────────────────────────────────────────────────────────────
+def day_card(d:dict)->str:
+    n   = d["day"]
+    tit = f"D{n} · {fmt_date(d['date'])} · {d['zona']}"
+    sub = f"{d['drive_from']} · {d['drive_km']}" if d["drive_km"]!="—" else d["drive_from"]
 
-def day_nav() -> str:
-    links = "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1, 11))
+    # ruta section
+    if n==1:
+        ruta_html = (f"<p>Llegáis la noche del <strong>domingo 16</strong> desde Teià (~366 km, 4,5 h). "
+                     f"No hace falta hike ese día. Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
+                     f"{btns([('Dom 16 · Teià → Canfranc', gmaps_dir(*TEIA,*CAN), 'g')])}")
+    elif n==4:
+        ruta_html = (f"<p>Mover camper Canfranc → Selva de Oza (~40 km, ~50 min). "
+                     f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella para Aguas Tuertas</strong>.</p>"
+                     f"{btns([('Canfranc → Oza', gmaps_dir(*CAN,*OZA), 'g')])}")
+    elif n==5:
+        ruta_html = (f"<p>Día de transición: Oza/Zuriza → Foz de Biniés (opcional AM) → Jaca (cultural) → Yesa/Navarra.</p>"
+                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA,*JACA), 'g'), ('Jaca → borde Navarra (Yesa)', gmaps_dir(*JACA,*YESA), 'g')])}")
+    elif n==6:
+        ruta_html = (f"<p>Yesa → Ochagavía (~90 km, ~1h15). Entrada al Pirineo navarro.</p>"
+                     f"{btns([('Yesa → Ochagavía', gmaps_dir(*YESA,*OCH), 'g')])}")
+    elif n==7:
+        ruta_html = f"<p>Mover camper Ochagavía → zona Irabia (~15 km pista forestal ancha).</p>{btns([('Ochagavía → Irabia', gmaps_dir(*OCH,-1.032,42.933), 'g')])}"
+    elif n==8:
+        ruta_html = f"<p>Irabia → Orbaitzeta (~20 km pista forestal).</p>"
+    elif n==9:
+        ruta_html = (f"<p>Orbaitzeta → Isaba (~35 km, ~45 min). Último cambio de base.</p>"
+                     f"{btns([('Orbaitzeta → Isaba', gmaps_dir(-1.217,42.964,*ISA), 'g')])}")
+    elif n==10:
+        ruta_html = (f"<p><strong>Vuelta a casa.</strong> ~435 km, 5–6 h. Salir antes de las 8:00.</p>"
+                     f"{btns([('Ochagavía/Isaba → Teià', gmaps_dir(*ISA,*TEIA), 'g')])}")
+    else:
+        ruta_html = "<p>Sin traslado.</p>"
+
+    # parking section
+    parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
+{btn("Abrir en Google Maps", gmaps_pin(d['parking_lat'],d['parking_lon']), "g")}
+{btn("P4N zona", p4n(d['parking_lat'],d['parking_lon']), "o")}</div>"""
+
+    # hike section
+    if d["hike"]=="—":
+        hike_html = "<p>Sin senderismo — solo conducción.</p>"
+    else:
+        hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · 
+{esc(d['hike_km'])} · {esc(d['hike_desn'])} desnivel · {esc(d['hike_h'])}</p>
+{btns([('🗺️ Ver zona hike', gmaps_pin(d['parking_lat'],d['parking_lon']), 'g')])}"""
+
+    # POIs
+    poi_html = ", ".join(f"<strong>{esc(p)}</strong>" for p in d["interes"]) if d["interes"] else "—"
+
+    # historia
+    hist_html = f"<p>{d['historia']}</p>" if d["historia"] else ""
+
+    # concurrencia
+    obs_html = f"<p>{esc(d['observaciones'])}</p>" if d["observaciones"] else ""
+    crowd_html = f"<p>Concurrencia esperada: {crowd_span(d['concurrencia'])}</p>"
+
+    # plan B
+    planb_html = f"<p><strong>Plan B lluvia:</strong> {esc(d['planb'])}</p>" if d["planb"] and d["planb"]!="—" else ""
+
+    return f"""<article class="day-card" id="d{n}">
+<div class="day-card-head"><h3>{esc(tit)}</h3><div class="sub">{esc(sub)}</div></div>
+<section class="day-sec ruta"><h4>🚐 Ruta del día</h4>{ruta_html}</section>
+<section class="day-sec parking"><h4>🅿️ Parking · pernocta</h4>{parking_html}</section>
+<section class="day-sec hike"><h4>🥾 Excursión del día</h4>{hike_html}<p style="font-size:.82rem;color:var(--muted)">Interés: {poi_html}</p></section>
+{f'<section class="day-sec historia"><h4>🏛️ Historia y contexto</h4>{hist_html}</section>' if hist_html else ""}
+<section class="day-sec obs"><h4>👥 Observaciones · concurrencia</h4>{obs_html}{crowd_html}</section>
+<section class="day-sec meteo"><h4>🌡️ Meteo del día</h4>{weather_block(n)}</section>
+{f'<section class="day-sec planb"><h4>🌧️ Plan B lluvia</h4>{planb_html}</section>' if planb_html else ""}
+</article>"""
+
+# ── Nav ───────────────────────────────────────────────────────────────────────
+def day_nav()->str:
+    links = "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1,11))
     return f'<nav class="day-nav wrap">{links}</nav>'
 
-
-def render_spain_guide() -> str:
+# ── Render ────────────────────────────────────────────────────────────────────
+def render_spain_guide()->str:
+    days_html = "".join(day_card(d) for d in DAYS)
     return f"""<!DOCTYPE html>
 <html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía camper · 16–26 ago 2026 · Lanuza · Canfranc · Baztán · Irati</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guía camper · Pirineo Aragonés + Navarra · 16–26 ago 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · ≤25°C<small>16–26 ago · D1-2 Lanuza · D3-5 Canfranc · D6-7 Baztán · D8-9 Irati · D10 Teià</small></div>
+<div class="brand">Guía Camper · Pirineo ≤25°C<small>16–26 ago · Canfranc · Oza · Navarra · Sunlight 600 + 2 perras</small></div>
 <div class="btns">
-<a class="btn btn-p" href="#plan-rapido">Plan</a>
+<a class="btn btn-p" href="#resumen">Resumen</a>
 <a class="btn btn-g" href="#d1">Días</a>
-<a class="btn btn-o" href="#dormir-gmaps">Dormir</a>
+<a class="btn btn-o" href="#como-dormir">Dormir</a>
 </div></div></header>
 {day_nav()}
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">D1–2 Lanuza</span><span class="chip">D3–5 Canfranc</span><span class="chip">D6–7 Baztán</span><span class="chip">D8–9 Ochagavía</span><span class="chip">D10 Teià</span></div>
-<h1>Lanuza · Canfranc · Baztán · Irati</h1>
-<p class="lead">Salida <strong>dom 16</strong> · vuelta <strong>mié 26</strong>. Orden inteligente: Lanuza primero, Baztán en su ventana fresca (22–23), Irati 24–25.</p>
-{btns([("🗺️ Ruta completa", GMAPS_LOOP, "g"), ("D1 Teià → Lanuza", gmaps_dir(*TEIA, *SAL), "g")])}
+<div class="chips">
+<span class="chip">Dom 16 conducción</span>
+<span class="chip">D1–3 Canfranc</span>
+<span class="chip">D4 Oza ⭐</span>
+<span class="chip">D5 Jaca+Nav</span>
+<span class="chip">D6–9 Navarra</span>
+<span class="chip">D10 vuelta</span>
+</div>
+<h1>Canfranc · Oza · Irati · Roncal</h1>
+<p class="lead">Dom 16 noche → Canfranc · 3 días Pirineo aragonés · día estrella Oza/Aguas Tuertas ·
+Selva de Irati · Valle del Roncal. Vuelta miércoles 26. Hike moderado, perras siempre.</p>
+{btns([("🗺️ Loop completo",GMAPS_LOOP,"g"),("Dom 16 · Teià → Canfranc",gmaps_dir(*TEIA,*CAN),"g")])}
 </section>
-{live_summary()}
-{gmaps_howto()}
-{rules_section()}
-<section class="section" id="dias"><h2>Día a día</h2>
-{build_days()}
+
+<section class="section" id="resumen">
+<h2>Cuadro resumen completo</h2>
+{summary_table()}
 </section>
-<footer class="foot">
-<p><strong>Guía camper</strong> · 16–26 agosto 2026 · Open-Meteo · Google Maps</p>
+
+<section class="section" id="como-dormir">
+<h2>Cómo buscar pernocta (sin P4N obligatorio)</h2>
+<div class="card">
+<ol style="padding-left:1.3rem;font-size:.9rem">
+<li>Google Maps <strong>satélite</strong> → zoom borde río / bosque / camino forestal.</li>
+<li>Buscar acceso ancho (&gt;2,10 m), sin cartel de prohibición, sin fondo de saco.</li>
+<li>Street View para comprobar estado del suelo.</li>
+<li>Llegar con luz — si hay cartel "prohibido pernocta" → siguiente candidato.</li>
+<li><strong>Estacionar ≠ acampar</strong>: sin toldo, sin mesa fuera, sin fuego.</li>
+</ol>
+<div class="warn">P4N en agosto = masificado. Preferid spots no listados. Los botones P4N abren la zona en el mapa de la app.</div>
+</div>
+</section>
+
+<section class="section" id="reglas">
+<h2>Reglas del viaje</h2>
+<div class="card">
+<div class="warn"><strong>Perras:</strong> solo actividades donde entren con vosotros. Sin excepción.</div>
+<div class="warn"><strong>Calor:</strong> hike cancelado si sensación máx &gt;25°C en la zona del trail.</div>
+<ul style="font-size:.9rem;padding-left:1.3rem">
+<li>Sunlight 600 · 2 perras · hike moderado máximo</li>
+<li>Tramos ≤2 h entre bases (D0 y D10 largos)</li>
+<li>Patous: correa obligatoria cerca de rebaños (toda la zona aragonesa y navarra)</li>
+<li>Hike 7:00–12:00 — tardes de calor: sombra + agua para perras</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="dias"><h2>Día a día detallado</h2>
+{days_html}
+</section>
+
+<details class="archive wrap"><summary>Versiones anteriores del itinerario (archivo)</summary>
+<p class="card" style="font-size:.85rem">Albarracín–Morella–Irati, versiones Pirineo 15–24 y 16–25 con Baztán → archivadas en git.</p>
+</details>
+
+<footer class="foot wrap">
+<p><strong>Guía Camper Pirineo ≤25°C</strong> · 16–26 agosto 2026 · Open-Meteo · Google Maps</p>
+<p>Abrir en móvil: raw.githack → rama cursor/ruta-camper-refugio-4641 → guia-movil.html</p>
 </footer>
 </main>
-<div class="fab"><a class="btn btn-p" href="#d1">D1</a><a class="btn" href="#plan-rapido">Plan</a></div>
+<div class="fab">
+<a class="btn btn-p" href="#resumen">Resumen</a>
+<a class="btn" href="#d1">D1</a>
+</div>
 </body></html>"""
 
 
-def main() -> None:
+def main()->None:
     html_out = render_spain_guide()
-    for name in ("guia-movil.html", "guia-lonely-planet.html"):
-        (ROOT / name).write_text(html_out, encoding="utf-8")
-    print("written", len(html_out), "bytes")
-    print("loop:", GMAPS_LOOP)
+    for name in ("guia-movil.html","guia-lonely-planet.html"):
+        (ROOT/name).write_text(html_out, encoding="utf-8")
+    print("written",len(html_out),"bytes")
+    print("loop:",GMAPS_LOOP)
 
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()

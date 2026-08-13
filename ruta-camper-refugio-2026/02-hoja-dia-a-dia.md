@@ -1,20 +1,21 @@
 # Hoja día a día — 16–26 agosto 2026
 
-**Esquema:** D1–D2 Lanuza · D3–D5 Canfranc · D6–D7 Baztán · D8–D9 Ochagavía · D10 Teià
+**Esquema:** Dom 16 noche conducción → D1–D3 Canfranc · D4 Oza ⭐ · D5 Jaca+transición · D6–D9 Navarra · D10 vuelta
 
-**D5 = jue 20 + vie 21** en Canfranc (Baztán el vie 21 ~32°C; fresco solo 22–23).
+**D4 = día estrella:** jue 20 es el más fresco de toda la semana aragonesa (21°C en Oza) — Aguas Tuertas.
 
-| Día | Fecha | Base |
-|-----|-------|------|
-| D1 | dom 16 | Lanuza |
-| D2 | lun 17 | Lanuza |
-| D3 | mar 18 | Canfranc |
-| D4 | mié 19 | Canfranc |
-| D5 | jue 20–vie 21 | Canfranc (2 noches) |
-| D6 | sáb 22 | Elizondo / Baztán |
-| D7 | dom 23 | Baztán |
-| D8 | lun 24 | Ochagavía / Irati |
-| D9 | mar 25 | Ochagavía / Irati |
-| D10 | mié 26 | → Teià |
+| Día | Fecha | Zona base | Conducción | Hike | App.máx |
+|-----|-------|-----------|------------|------|---------|
+| D0 | dom 16 | conducción | Teià → Canfranc ~366 km | — | — |
+| D1 | lun 17 | Canfranc / Canal Roya | — | Ibón de Estanes | 23°C |
+| D2 | mar 18 | Canfranc / Canal Roya | — | Canal Roya | 24°C |
+| D3 | mié 19 | Canfranc / Astún | Canfranc→Astún ~8 km | Anayet bajo | 25°C |
+| **D4** | **jue 20** | **Oza ⭐** | **Canfranc→Oza ~40 km** | **Aguas Tuertas** | **21°C** |
+| D5 | vie 21 | Jaca → Yesa | Oza→Jaca→Yesa ~115 km | Foz de Biniés (AM) | 21°C |
+| D6 | sáb 22 | Ochagavía | Yesa→Ochagavía ~90 km | Río Zatoia / Irati | 20°C |
+| D7 | dom 23 | Irabia / Irati | Ochagavía→Irabia ~15 km | Hayedo-abetal | 22°C |
+| D8 | lun 24 | Orbaitzeta | Irabia→Orbaitzeta ~20 km | Río Irati / Ruinas | 22°C |
+| D9 | mar 25 | Isaba | Orbaitzeta→Isaba ~35 km | Roncal / Belagua | 21°C |
+| D10 | mié 26 | → Teià | Isaba→Teià ~435 km | — | — |
 
-[Loop Maps](https://www.google.com/maps/dir/?api=1&origin=41.498,2.319&destination=41.498,2.319&waypoints=42.773,-0.336|42.750,-0.525|43.148,-1.515|42.906,-1.079&travelmode=driving)
+[Loop completo Maps](https://www.google.com/maps/dir/?api=1&origin=41.498,2.319&destination=41.498,2.319&waypoints=42.75,-0.525|42.822,-0.717|42.906,-1.079|42.856,-0.921&travelmode=driving)
