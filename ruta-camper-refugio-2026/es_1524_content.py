@@ -58,7 +58,8 @@ GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA, OCH, ISA, TEIA])
 
 def btn(label,url,kind="g")->str:
     cls={"g":"btn btn-g","o":"btn btn-o","w":"btn btn-w","p":"btn btn-p"}.get(kind,"btn")
-    return f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener">{esc(label)}</a>'
+    extra = "" if str(url).startswith("#") else ' target="_blank" rel="noopener"'
+    return f'<a class="{cls}" href="{esc(url)}"{extra}>{esc(label)}</a>'
 def btns(items)->str:
     return '<div class="btns">'+"".join(btn(l,u,k) for l,u,k in items)+"</div>"
 
@@ -359,61 +360,55 @@ DAYS = [
 
 # ── CSS ──────────────────────────────────────────────────────────────────────
 CSS = r"""
-:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 14px 32px rgba(26,34,28,.09);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 420px at 0% 0%,#dfe8df,transparent 55%),var(--bg);line-height:1.6}
-.wrap{max-width:1000px;margin:0 auto;padding:0 1rem 4rem}
-.top{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem 0}
-.brand{font-family:"Fraunces",serif;font-weight:700;color:var(--pine);font-size:1rem}
-.brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.68rem;font-weight:400;color:var(--muted)}
-.btn{display:inline-block;padding:.4rem .7rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}.btn-w{background:#f5f0ff}
-.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
-.hero{padding:1.2rem 0 .8rem}.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.5rem,4vw,2rem);margin:.3rem 0}
-.lead{color:var(--muted);max-width:44rem}.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
-.chip{font-size:.7rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
-.section{margin:2rem 0}.section>h2{font-family:"Fraunces",serif;color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.25rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0;box-shadow:var(--shadow)}
-.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
-.callout{background:var(--sec);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
-.day-nav{position:sticky;top:48px;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);gap:.2rem;background:rgba(242,238,228,.97);padding:.4rem 0;margin:0 -1rem;padding-left:1rem;padding-right:1rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-@media(min-width:600px){.day-nav{grid-template-columns:repeat(10,1fr)}}
-.day-nav a{font-size:.65rem;text-align:center;padding:.3rem .15rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
-.day-nav a:hover{background:var(--sec)}
-/* Summary table */
-.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
-.summary-table{width:100%;border-collapse:collapse;font-size:.79rem;min-width:780px}
-.summary-table thead th{background:var(--pine);color:#fff;padding:.5rem .6rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.summary-table tbody td{padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
-.summary-table tbody tr:last-child td{border-bottom:0}
-.summary-table tbody tr:hover td{background:#f4f9f5}
-.summary-table a{color:var(--pine);font-weight:600;text-decoration:none}
-.summary-table a:hover{text-decoration:underline}
-.badge{display:inline-block;padding:.1rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700;white-space:nowrap}
-.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}.dif-a{background:#fde;color:var(--red)}
+:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 10px 24px rgba(26,34,28,.08);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;overflow-wrap:anywhere;word-break:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 .85rem 5.5rem}
+.chrome{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.98);border-bottom:1px solid var(--line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.35rem;padding:.45rem 0 .15rem}
+.brand{font-weight:800;color:var(--pine);font-size:.92rem}
+.brand small{display:none;font-size:.68rem;font-weight:400;color:var(--muted)}
+@media(min-width:520px){.brand small{display:block}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.45rem .75rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}
+.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.35rem 0}
+.hero{padding:1rem 0 .5rem}.hero h1{font-size:1.35rem;margin:.25rem 0;color:var(--pine)}
+.lead{color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.45rem}
+.chip{font-size:.68rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
+.section{margin:1.4rem 0}.section>h2{color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.15rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem;margin:.7rem 0}
+.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.callout{background:var(--sec);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.day-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;padding:.35rem 0 .5rem}
+@media(min-width:640px){.day-nav{grid-template-columns:repeat(11,1fr)}}
+.day-nav a{font-size:.72rem;text-align:center;min-height:38px;display:flex;align-items:center;justify-content:center;padding:.35rem .1rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
+.badge{display:inline-block;padding:.12rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700}
+.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}
 .crowd-b{color:#155724;font-weight:700}.crowd-m{color:#856404;font-weight:700}.crowd-a{color:var(--red);font-weight:700}
 .wx-ok{color:var(--pine);font-weight:700}.wx-warn{color:var(--red);font-weight:700}
-.star{color:var(--gold);font-weight:700}
-/* Day cards */
-.day-card{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:2rem 0;overflow:hidden;box-shadow:var(--shadow)}
-.day-card-head{background:linear-gradient(135deg,var(--pine),#2a6b55);color:#fff;padding:1rem 1.2rem}
-.day-card-head h3{margin:0;font-family:"Fraunces",serif;font-size:1.1rem}
-.day-card-head .sub{opacity:.9;font-size:.82rem;margin-top:.2rem}
-.day-sec{padding:.8rem 1.1rem;border-top:1px solid var(--line)}
-.day-sec h4{margin:0 0 .5rem;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--clay)}
+.sum-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem .85rem;margin:.65rem 0}
+.sum-card .k{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sum-card h3{margin:.15rem 0 .4rem;font-size:1.02rem;color:var(--pine)}
+.sum-card .row{display:grid;grid-template-columns:4.6rem 1fr;gap:.15rem .4rem;font-size:.86rem;margin:.12rem 0}
+.sum-card .row b{color:var(--muted);font-weight:600;font-size:.75rem}
+.day-card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;overflow:hidden}
+.day-card-head{background:var(--pine);color:#fff;padding:.9rem 1rem}
+.day-card-head h3{margin:0;font-size:1.05rem}
+.day-card-head .sub{opacity:.9;font-size:.8rem;margin-top:.2rem}
+.day-sec{padding:.75rem .9rem;border-top:1px solid var(--line)}
+.day-sec h4{margin:0 0 .4rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--clay)}
 .day-sec.ruta{background:#f8faf8}.day-sec.parking{background:#f5f8f5}.day-sec.hike{background:#f0f8f0}
 .day-sec.historia{background:#fffbf3}.day-sec.obs{background:#fafafa}.day-sec.meteo{background:#f0f6fa}.day-sec.planb{background:#fff8f0}
-.spot{margin:.4rem 0;padding:.5rem .7rem;background:var(--sec);border-radius:8px;font-size:.88rem}
+.spot{margin:.35rem 0;padding:.5rem .65rem;background:var(--sec);border-radius:8px;font-size:.88rem}
 .spot strong{display:block;color:var(--pine);margin-bottom:.15rem}
-.wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem;font-size:.85rem}
-@media(min-width:500px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.wx-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;font-size:.84rem}
 .wx-grid>div{background:#e8f4fb;padding:.4rem .5rem;border-radius:6px}
-.wx-grid em{display:block;font-size:.7rem;color:var(--muted);font-style:normal}
-.wx-grid strong{display:block;font-size:.9rem}
-.foot{padding:1.5rem 0;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
-.fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.35rem;z-index:60}
-details.archive{margin:1.5rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
+.wx-grid em{display:block;font-size:.68rem;color:var(--muted);font-style:normal}
+.wx-grid strong{display:block}
+.foot{padding:1.3rem 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+.fab{position:fixed;bottom:.8rem;right:.8rem;display:flex;gap:.3rem;z-index:60}
+details.archive{margin:1.2rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
 """
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -440,80 +435,62 @@ def crowd_span(c:str)->str:
     cls = m.get(c.split()[0],"crowd-m")
     return f'<span class="{cls}">{esc(c)}</span>'
 
-# ── Summary table ─────────────────────────────────────────────────────────────
-def summary_table()->str:
-    wx = {d["day"]:d for d in WEATHER["days"]}
-    # D0 conducción row
-    rows = [
-        f"""<tr style="background:#f5f8f5">
-<td><strong>D0</strong></td>
-<td>domingo 16 ago<br><span style="color:var(--muted);font-size:.72rem">conducción nocturna</span></td>
-<td>Teià → Parking Astún (22889)</td>
-<td>~375 km · 4,5 h</td>
-<td>P4N #285213 · Carretera Astún {btn("Maps",gmaps_pin(42.8091,-0.5121),"g")} {btn("P4N",p4n_place(P4N_NIGHT1),"o")}</td>
-<td>—</td>
-<td>—</td>
-<td style="color:var(--muted)">5 mm · 89%</td>
-<td>{btn("Ruta D0",gmaps_dir(*TEIA,*SPOT1),"g")}</td>
-</tr>"""
-    ]
+def _drive_url(d: dict) -> str:
+    n = d["day"]
+    if n==1: return gmaps_dir(*TEIA,*SPOT1)
+    if n==4: return gmaps_dir(*SPOT1,*OZA)
+    if n==5: return gmaps_dir(*OZA,*YESA)
+    if n==6: return gmaps_dir(*YESA,*OCH)
+    if n==9: return gmaps_dir(-1.217,42.964,*ISA)
+    if n==10: return gmaps_dir(*ISA,*TEIA)
+    return gmaps_pin(d["parking_lat"], d["parking_lon"])
+
+
+def summary_table() -> str:
+    wx = {d["day"]: d for d in WEATHER["days"]}
+    cards = []
+
+    cards.append(f"""<article class="sum-card" id="d0">
+<div class="k">D0 · conducción</div>
+<h3>domingo 16 ago · Teià → Parking Astún</h3>
+<div class="row"><b>Km</b><span>~375 km · 4,5 h</span></div>
+<div class="row"><b>Parking</b><span>P4N #285213 Carretera Astún (22889)</span></div>
+<div class="row"><b>Hike</b><span>Sin hike · llegada noche</span></div>
+<div class="row"><b>Clima</b><span>lluvia posible en llegada</span></div>
+{btns([("Conducir al parking", gmaps_dir(*TEIA,*SPOT1), "g"), ("Ficha P4N", p4n_place(P4N_NIGHT1), "o")])}
+</article>""")
+
     for d in DAYS:
         n = d["day"]
         w = wx.get(n)
         wx_html = "—"
         if w:
-            cls = "wx-ok" if w["app_max"]<=25 else "wx-warn"
-            wx_html = (f'<span class="{cls}">{w["app_max"]:.0f}°C</span>'
-                       f'<br><span style="color:#2a5f8a">{w["precip_mm"]:.0f} mm · {w["precip_prob"]:.0f}%</span>')
-
-        fecha_html = fmt_date(d["date"])
-        star = " ⭐" if n==4 else ""
+            cls = "wx-ok" if w["app_max"] <= 25 else "wx-warn"
+            wx_html = f'<span class="{cls}">{w["app_max"]:.0f}°C</span> · {w["precip_mm"]:.0f} mm ({w["precip_prob"]:.0f}%)'
         hike_html = "—"
         if d["hike"] != "—":
-            hike_html = (f'{esc(d["hike"])}<br>'
-                         f'{dif_badge(d["hike_dif"])} {esc(d["hike_km"])} · {esc(d["hike_h"])}')
-        # drive link
-        if n==1:  dr_url = gmaps_dir(*TEIA,*SPOT1)
-        elif n==3: dr_url = gmaps_pin(d["parking_lat"], d["parking_lon"])
-        elif n==4: dr_url = gmaps_dir(*SPOT1,*OZA)
-        elif n==5: dr_url = gmaps_dir(*OZA,*YESA)
-        elif n==6: dr_url = gmaps_dir(*YESA,*OCH)
-        elif n==8: dr_url = gmaps_pin(d["parking_lat"], d["parking_lon"])
-        elif n==9: dr_url = gmaps_dir(-1.217,42.964,*ISA)
-        elif n==10: dr_url = gmaps_dir(*ISA,*TEIA)
-        else: dr_url = gmaps_pin(d["parking_lat"],d["parking_lon"])
+            hike_html = f'{esc(d["hike"])} · {dif_badge(d["hike_dif"])} · {esc(d["hike_km"])} · {esc(d["hike_h"])}'
+        star = " ⭐" if n == 4 else ""
+        cards.append(f"""<article class="sum-card">
+<div class="k"><a href="#d{n}">D{n}{star}</a></div>
+<h3>{fmt_date(d["date"])} · {esc(d["zona"])}</h3>
+<div class="row"><b>Km</b><span>{esc(d["drive_km"])} · {esc(d["drive_h"])}</span></div>
+<div class="row"><b>Parking</b><span>{esc(d["parking_name"])}</span></div>
+<div class="row"><b>Hike</b><span>{hike_html}</span></div>
+<div class="row"><b>Gente</b><span>{crowd_span(d["concurrencia"])}</span></div>
+<div class="row"><b>Clima</b><span>{wx_html}</span></div>
+{btns([
+    ("Conducir", _drive_url(d), "g"),
+    ("P4N", p4n_url_for(d), "o"),
+    ("Detalle", f"#d{n}", "p"),
+])}
+</article>""")
 
-        p4n_url = p4n_url_for(d)
-        rows.append(
-            f"""<tr>
-<td><a href="#d{n}"><strong>D{n}{star}</strong></a></td>
-<td>{fecha_html}</td>
-<td><strong>{esc(d['zona'])}</strong></td>
-<td>{esc(d['drive_km'])} · {esc(d['drive_h'])}</td>
-<td>{esc(d['parking_name'])}<br>
-{btn("GMaps",gmaps_pin(d['parking_lat'],d['parking_lon']),"g")}
-{btn("P4N",p4n_url,"o")}</td>
-<td>{hike_html}</td>
-<td>{crowd_span(d['concurrencia'])}</td>
-<td>{wx_html}</td>
-<td>{btn("Ruta",dr_url,"g")}</td>
-</tr>"""
-        )
-    return f"""<div class="summary-wrap">
-<table class="summary-table">
-<thead><tr>
-<th>Día</th><th>Fecha</th><th>Zona</th><th>Conducción</th>
-<th>Parking · pernocta</th><th>Excursión · dificultad</th>
-<th>Concurrencia</th><th>Clima</th><th>Ruta</th>
-</tr></thead>
-<tbody>{"".join(rows)}</tbody>
-</table></div>
-<p style="font-size:.75rem;color:var(--muted);margin:.3rem 0">
-Clima = sensación máx (altitude-adjusted) + precipitación previsión Open-Meteo {esc(WEATHER['fetched_at'][:10])}.
-⭐ D4 = día estrella. Actualizar meteo cada mañana a las 7:00.
-</p>
-<p>{btns([("🗺️ Loop completo Google Maps", GMAPS_LOOP, "g"),
-          ("D0 · Teià → Parking Astún #285213", gmaps_dir(*TEIA,*SPOT1), "g")])}</p>"""
+    return f"""
+<p>{btns([("🗺️ Loop completo", GMAPS_LOOP, "g"), ("D0 Teià → P4N #285213", gmaps_dir(*TEIA,*SPOT1), "g")])}</p>
+{"".join(cards)}
+<p style="font-size:.75rem;color:var(--muted)">Clima Open-Meteo {esc(WEATHER['fetched_at'][:10])} · revisar 7:00. ⭐ D4 día estrella.</p>
+"""
 
 # ── Day cards ─────────────────────────────────────────────────────────────────
 def day_card(d:dict)->str:
@@ -589,8 +566,8 @@ def day_card(d:dict)->str:
 
 # ── Nav ───────────────────────────────────────────────────────────────────────
 def day_nav()->str:
-    links = "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1,11))
-    return f'<nav class="day-nav wrap">{links}</nav>'
+    links = '<a href="#d0">D0</a>' + "".join(f'<a href="#d{i}">D{i}</a>' for i in range(1,11))
+    return f'<nav class="day-nav">{links}</nav>'
 
 # ── Render ────────────────────────────────────────────────────────────────────
 def render_spain_guide()->str:
@@ -598,18 +575,20 @@ def render_spain_guide()->str:
     return f"""<!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Guía camper · Pirineo Aragonés + Navarra · 16–26 ago 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Guía camper · Pirineo · 16–26 ago 2026</title>
 <style>{CSS}</style>
 </head><body>
-<header class="top"><div class="wrap top-in">
+<div class="chrome"><div class="wrap">
+<header class="top-in">
 <div class="brand">Guía Camper · Pirineo ≤25°C<small>16–26 ago · Canfranc · Oza · Navarra · Sunlight 600 + 2 perras</small></div>
 <div class="btns">
 <a class="btn btn-p" href="#resumen">Resumen</a>
 <a class="btn btn-g" href="#d1">Días</a>
 <a class="btn btn-o" href="#como-dormir">Dormir</a>
-</div></div></header>
+</div>
+</header>
 {day_nav()}
+</div></div>
 <main class="wrap">
 <section class="hero">
 <div class="chips">
@@ -669,7 +648,7 @@ Selva de Irati · Valle del Roncal. Vuelta miércoles 26. Hike moderado, perras 
 
 <footer class="foot wrap">
 <p><strong>Guía Camper Pirineo ≤25°C</strong> · 16–26 agosto 2026 · Open-Meteo · Google Maps</p>
-<p>Abrir en móvil: raw.githack → rama cursor/ruta-camper-refugio-4641 → guia-movil.html</p>
+<p>Si GitHub enseña código: descargad <code>guia-movil.html</code> y abridlo en el navegador. No uses raw.githubusercontent.com.</p>
 </footer>
 </main>
 <div class="fab">

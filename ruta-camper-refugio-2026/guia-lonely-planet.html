@@ -1,74 +1,70 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Guía camper · Pirineo Aragonés + Navarra · 16–26 ago 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Guía camper · Pirineo · 16–26 ago 2026</title>
 <style>
-:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 14px 32px rgba(26,34,28,.09);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 420px at 0% 0%,#dfe8df,transparent 55%),var(--bg);line-height:1.6}
-.wrap{max-width:1000px;margin:0 auto;padding:0 1rem 4rem}
-.top{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem 0}
-.brand{font-family:"Fraunces",serif;font-weight:700;color:var(--pine);font-size:1rem}
-.brand small{display:block;font-family:"Source Sans 3",sans-serif;font-size:.68rem;font-weight:400;color:var(--muted)}
-.btn{display:inline-block;padding:.4rem .7rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
-.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}.btn-w{background:#f5f0ff}
-.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
-.hero{padding:1.2rem 0 .8rem}.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.5rem,4vw,2rem);margin:.3rem 0}
-.lead{color:var(--muted);max-width:44rem}.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
-.chip{font-size:.7rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
-.section{margin:2rem 0}.section>h2{font-family:"Fraunces",serif;color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.25rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;margin:.8rem 0;box-shadow:var(--shadow)}
-.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
-.callout{background:var(--sec);padding:.65rem .9rem;border-radius:8px;margin:.6rem 0}
-.day-nav{position:sticky;top:48px;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);gap:.2rem;background:rgba(242,238,228,.97);padding:.4rem 0;margin:0 -1rem;padding-left:1rem;padding-right:1rem;backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-@media(min-width:600px){.day-nav{grid-template-columns:repeat(10,1fr)}}
-.day-nav a{font-size:.65rem;text-align:center;padding:.3rem .15rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
-.day-nav a:hover{background:var(--sec)}
-/* Summary table */
-.summary-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1rem 0;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
-.summary-table{width:100%;border-collapse:collapse;font-size:.79rem;min-width:780px}
-.summary-table thead th{background:var(--pine);color:#fff;padding:.5rem .6rem;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-.summary-table tbody td{padding:.5rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
-.summary-table tbody tr:last-child td{border-bottom:0}
-.summary-table tbody tr:hover td{background:#f4f9f5}
-.summary-table a{color:var(--pine);font-weight:600;text-decoration:none}
-.summary-table a:hover{text-decoration:underline}
-.badge{display:inline-block;padding:.1rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700;white-space:nowrap}
-.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}.dif-a{background:#fde;color:var(--red)}
+:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 10px 24px rgba(26,34,28,.08);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;overflow-wrap:anywhere;word-break:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 .85rem 5.5rem}
+.chrome{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.98);border-bottom:1px solid var(--line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.35rem;padding:.45rem 0 .15rem}
+.brand{font-weight:800;color:var(--pine);font-size:.92rem}
+.brand small{display:none;font-size:.68rem;font-weight:400;color:var(--muted)}
+@media(min-width:520px){.brand small{display:block}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.45rem .75rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}
+.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.35rem 0}
+.hero{padding:1rem 0 .5rem}.hero h1{font-size:1.35rem;margin:.25rem 0;color:var(--pine)}
+.lead{color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.45rem}
+.chip{font-size:.68rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
+.section{margin:1.4rem 0}.section>h2{color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.15rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem;margin:.7rem 0}
+.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.callout{background:var(--sec);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.day-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;padding:.35rem 0 .5rem}
+@media(min-width:640px){.day-nav{grid-template-columns:repeat(11,1fr)}}
+.day-nav a{font-size:.72rem;text-align:center;min-height:38px;display:flex;align-items:center;justify-content:center;padding:.35rem .1rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
+.badge{display:inline-block;padding:.12rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700}
+.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}
 .crowd-b{color:#155724;font-weight:700}.crowd-m{color:#856404;font-weight:700}.crowd-a{color:var(--red);font-weight:700}
 .wx-ok{color:var(--pine);font-weight:700}.wx-warn{color:var(--red);font-weight:700}
-.star{color:var(--gold);font-weight:700}
-/* Day cards */
-.day-card{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:2rem 0;overflow:hidden;box-shadow:var(--shadow)}
-.day-card-head{background:linear-gradient(135deg,var(--pine),#2a6b55);color:#fff;padding:1rem 1.2rem}
-.day-card-head h3{margin:0;font-family:"Fraunces",serif;font-size:1.1rem}
-.day-card-head .sub{opacity:.9;font-size:.82rem;margin-top:.2rem}
-.day-sec{padding:.8rem 1.1rem;border-top:1px solid var(--line)}
-.day-sec h4{margin:0 0 .5rem;font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--clay)}
+.sum-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem .85rem;margin:.65rem 0}
+.sum-card .k{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sum-card h3{margin:.15rem 0 .4rem;font-size:1.02rem;color:var(--pine)}
+.sum-card .row{display:grid;grid-template-columns:4.6rem 1fr;gap:.15rem .4rem;font-size:.86rem;margin:.12rem 0}
+.sum-card .row b{color:var(--muted);font-weight:600;font-size:.75rem}
+.day-card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;overflow:hidden}
+.day-card-head{background:var(--pine);color:#fff;padding:.9rem 1rem}
+.day-card-head h3{margin:0;font-size:1.05rem}
+.day-card-head .sub{opacity:.9;font-size:.8rem;margin-top:.2rem}
+.day-sec{padding:.75rem .9rem;border-top:1px solid var(--line)}
+.day-sec h4{margin:0 0 .4rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--clay)}
 .day-sec.ruta{background:#f8faf8}.day-sec.parking{background:#f5f8f5}.day-sec.hike{background:#f0f8f0}
 .day-sec.historia{background:#fffbf3}.day-sec.obs{background:#fafafa}.day-sec.meteo{background:#f0f6fa}.day-sec.planb{background:#fff8f0}
-.spot{margin:.4rem 0;padding:.5rem .7rem;background:var(--sec);border-radius:8px;font-size:.88rem}
+.spot{margin:.35rem 0;padding:.5rem .65rem;background:var(--sec);border-radius:8px;font-size:.88rem}
 .spot strong{display:block;color:var(--pine);margin-bottom:.15rem}
-.wx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem;font-size:.85rem}
-@media(min-width:500px){.wx-grid{grid-template-columns:repeat(4,1fr)}}
+.wx-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;font-size:.84rem}
 .wx-grid>div{background:#e8f4fb;padding:.4rem .5rem;border-radius:6px}
-.wx-grid em{display:block;font-size:.7rem;color:var(--muted);font-style:normal}
-.wx-grid strong{display:block;font-size:.9rem}
-.foot{padding:1.5rem 0;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
-.fab{position:fixed;bottom:1rem;right:1rem;display:flex;gap:.35rem;z-index:60}
-details.archive{margin:1.5rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
+.wx-grid em{display:block;font-size:.68rem;color:var(--muted);font-style:normal}
+.wx-grid strong{display:block}
+.foot{padding:1.3rem 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+.fab{position:fixed;bottom:.8rem;right:.8rem;display:flex;gap:.3rem;z-index:60}
+details.archive{margin:1.2rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
 </style>
 </head><body>
-<header class="top"><div class="wrap top-in">
+<div class="chrome"><div class="wrap">
+<header class="top-in">
 <div class="brand">Guía Camper · Pirineo ≤25°C<small>16–26 ago · Canfranc · Oza · Navarra · Sunlight 600 + 2 perras</small></div>
 <div class="btns">
 <a class="btn btn-p" href="#resumen">Resumen</a>
 <a class="btn btn-g" href="#d1">Días</a>
 <a class="btn btn-o" href="#como-dormir">Dormir</a>
-</div></div></header>
-<nav class="day-nav wrap"><a href="#d1">D1</a><a href="#d2">D2</a><a href="#d3">D3</a><a href="#d4">D4</a><a href="#d5">D5</a><a href="#d6">D6</a><a href="#d7">D7</a><a href="#d8">D8</a><a href="#d9">D9</a><a href="#d10">D10</a></nav>
+</div>
+</header>
+<nav class="day-nav"><a href="#d0">D0</a><a href="#d1">D1</a><a href="#d2">D2</a><a href="#d3">D3</a><a href="#d4">D4</a><a href="#d5">D5</a><a href="#d6">D6</a><a href="#d7">D7</a><a href="#d8">D8</a><a href="#d9">D9</a><a href="#d10">D10</a></nav>
+</div></div>
 <main class="wrap">
 <section class="hero">
 <div class="chips">
@@ -82,155 +78,114 @@ details.archive{margin:1.5rem 0}details.archive summary{cursor:pointer;font-weig
 <h1>Canfranc · Oza · Irati · Roncal</h1>
 <p class="lead">Dom 16 noche → Canfranc · 3 días Pirineo aragonés · día estrella Oza/Aguas Tuertas ·
 Selva de Irati · Valle del Roncal. Vuelta miércoles 26. Hike moderado, perras siempre.</p>
-<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.8091,-0.5121|42.822,-0.717|42.906,-1.079|42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop completo</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.75,-0.525&amp;travelmode=driving" target="_blank" rel="noopener">Dom 16 · Teià → Canfranc</a></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.8091,-0.5121|42.822,-0.717|42.906,-1.079|42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop completo</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Dom 16 · Teià → P4N #285213</a></div>
 </section>
 
 <section class="section" id="resumen">
 <h2>Cuadro resumen completo</h2>
-<div class="summary-wrap">
-<table class="summary-table">
-<thead><tr>
-<th>Día</th><th>Fecha</th><th>Zona</th><th>Conducción</th>
-<th>Parking · pernocta</th><th>Excursión · dificultad</th>
-<th>Concurrencia</th><th>Clima</th><th>Ruta</th>
-</tr></thead>
-<tbody><tr style="background:#f5f8f5">
-<td><strong>D0</strong></td>
-<td>domingo 16 ago<br><span style="color:var(--muted);font-size:.72rem">conducción nocturna</span></td>
-<td>Teià → Parking Astún (22889)</td>
-<td>~375 km · 4,5 h</td>
-<td>P4N #285213 · Carretera Astún <a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Maps</a> <a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">P4N</a></td>
-<td>—</td>
-<td>—</td>
-<td style="color:var(--muted)">5 mm · 89%</td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Ruta D0</a></td>
-</tr><tr>
-<td><a href="#d1"><strong>D1</strong></a></td>
-<td>lunes 17 ago</td>
-<td><strong>Carretera Astún · Canfranc (22889)</strong></td>
-<td>~375 km · 4,5 h</td>
-<td>P4N #285213 · Parking Carretera Astún<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">P4N</a></td>
-<td>Ibón de Estanes<br><span class="badge dif-m">Moderado</span> 12 km · 3–4 h</td>
-<td><span class="crowd-a">Media-alta</span></td>
-<td><span class="wx-ok">23°C</span><br><span style="color:#2a5f8a">1 mm · 24%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d2"><strong>D2</strong></a></td>
-<td>martes 18 ago</td>
-<td><strong>Carretera Astún · Canfranc (22889)</strong></td>
-<td>— · —</td>
-<td>P4N #285213 · misma pernocta<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">P4N</a></td>
-<td>Canal Roya – Laguna de Tortiellas<br><span class="badge dif-f">Fácil-Moderado</span> 10 km · 3 h</td>
-<td><span class="crowd-m">Media</span></td>
-<td><span class="wx-ok">24°C</span><br><span style="color:#2a5f8a">0 mm · 2%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d3"><strong>D3</strong></a></td>
-<td>miércoles 19 ago</td>
-<td><strong>Candanchú · Astún · Canfranc</strong></td>
-<td>~20 km · ~30 min</td>
-<td>Astún (parking estación)<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.795,-0.458&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.795&amp;lng=-0.458&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Lagunas de Anayet (ruta baja)<br><span class="badge dif-m">Moderado</span> 9 km · 3 h</td>
-<td><span class="crowd-a">Media-alta (zona estación)</span></td>
-<td><span class="wx-ok">25°C</span><br><span style="color:#2a5f8a">0 mm · 3%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.795,-0.458&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d4"><strong>D4 ⭐</strong></a></td>
-<td>jueves 20 ago</td>
-<td><strong>Selva de Oza · Aguas Tuertas ⭐</strong></td>
-<td>~86 km · ~1h25</td>
-<td>Área forestal Selva de Oza<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.822,-0.717&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.822&amp;lng=-0.717&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Aguas Tuertas<br><span class="badge dif-f">Fácil</span> 8 km · 2,5 h</td>
-<td><span class="crowd-m">Media</span></td>
-<td><span class="wx-ok">21°C</span><br><span style="color:#2a5f8a">1 mm · 30%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.8091,-0.5121&amp;destination=42.822,-0.717&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d5"><strong>D5</strong></a></td>
-<td>viernes 21 ago</td>
-<td><strong>Ansó / Zuriza → Jaca → borde Navarra</strong></td>
-<td>~100 km · ~1h30</td>
-<td>Embalse de Yesa (pernocta transición)<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.622,-1.072&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.622&amp;lng=-1.072&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Foz de Biniés (opcional AM temprano)<br><span class="badge dif-f">Fácil</span> 4 km · 1,5 h</td>
-<td><span class="crowd-a">Alta Jaca agosto · tranquila Foz</span></td>
-<td><span class="wx-ok">21°C</span><br><span style="color:#2a5f8a">16 mm · 39%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.822,-0.717&amp;destination=42.622,-1.072&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d6"><strong>D6</strong></a></td>
-<td>sábado 22 ago</td>
-<td><strong>Ochagavía · Valle de Salazar</strong></td>
-<td>~90 km · ~1h15</td>
-<td>Borde Ochagavía (fuera casco)<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.908,-1.082&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.908&amp;lng=-1.082&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Acceso suave Selva de Irati · río Zatoia<br><span class="badge dif-f">Fácil</span> 6 km · 2 h</td>
-<td><span class="crowd-a">Alta (sábado agosto)</span></td>
-<td><span class="wx-ok">20°C</span><br><span style="color:#2a5f8a">10 mm · 42%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.622,-1.072&amp;destination=42.906,-1.079&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d7"><strong>D7</strong></a></td>
-<td>domingo 23 ago</td>
-<td><strong>Selva de Irati · Embalse Irabia</strong></td>
-<td>~15 km · ~20 min</td>
-<td>Área embalse Irabia / Casas de Irati<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.933,-1.032&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.933&amp;lng=-1.032&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Circular hayedo-abetal de Irati<br><span class="badge dif-f">Fácil-Moderado</span> 9 km · 3 h</td>
-<td><span class="crowd-a">Alta (domingo) · se diluye en la selva</span></td>
-<td><span class="wx-ok">22°C</span><br><span style="color:#2a5f8a">18 mm · 52%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.933,-1.032&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d8"><strong>D8</strong></a></td>
-<td>lunes 24 ago</td>
-<td><strong>Orbaitzeta · Río Irati interior</strong></td>
-<td>~20 km · ~30 min</td>
-<td>Orbaitzeta / aguas arriba río<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.964,-1.217&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.964&amp;lng=-1.217&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Senda Río Irati / Ruinas Orbaitzeta<br><span class="badge dif-f">Fácil</span> 7 km · 2,5 h</td>
-<td><span class="crowd-b">Baja (lunes, zona remota)</span></td>
-<td><span class="wx-ok">22°C</span><br><span style="color:#2a5f8a">34 mm · 44%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.964,-1.217&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d9"><strong>D9</strong></a></td>
-<td>martes 25 ago</td>
-<td><strong>Isaba · Valle del Roncal</strong></td>
-<td>~35 km · ~45 min</td>
-<td>Borde río Esca / Isaba<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=42.856&amp;lng=-0.921&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>Senda río Esca o acceso Belagua<br><span class="badge dif-f">Fácil</span> 8 km · 2,5 h</td>
-<td><span class="crowd-b">Baja (martes)</span></td>
-<td><span class="wx-ok">21°C</span><br><span style="color:#2a5f8a">15 mm · 41%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.964,-1.217&amp;destination=42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr><tr>
-<td><a href="#d10"><strong>D10</strong></a></td>
-<td>miércoles 26 ago</td>
-<td><strong>Vuelta a Teià</strong></td>
-<td>~435 km · 5–6 h</td>
-<td>Teià — casa<br>
-<a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">GMaps</a>
-<a class="btn btn-o" href="https://park4night.com/es/search?lat=41.498&amp;lng=2.319&amp;zoom=14" target="_blank" rel="noopener">P4N</a></td>
-<td>—</td>
-<td><span class="crowd-m">—</span></td>
-<td><span class="wx-warn">30°C</span><br><span style="color:#2a5f8a">21 mm · 37%</span></td>
-<td><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.856,-0.921&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Ruta</a></td>
-</tr></tbody>
-</table></div>
-<p style="font-size:.75rem;color:var(--muted);margin:.3rem 0">
-Clima = sensación máx (altitude-adjusted) + precipitación previsión Open-Meteo 2026-08-13.
-⭐ D4 = día estrella. Actualizar meteo cada mañana a las 7:00.
-</p>
-<p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.8091,-0.5121|42.822,-0.717|42.906,-1.079|42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop completo Google Maps</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">D0 · Teià → Parking Astún #285213</a></div></p>
+
+<p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.8091,-0.5121|42.822,-0.717|42.906,-1.079|42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop completo</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">D0 Teià → P4N #285213</a></div></p>
+<article class="sum-card" id="d0">
+<div class="k">D0 · conducción</div>
+<h3>domingo 16 ago · Teià → Parking Astún</h3>
+<div class="row"><b>Km</b><span>~375 km · 4,5 h</span></div>
+<div class="row"><b>Parking</b><span>P4N #285213 Carretera Astún (22889)</span></div>
+<div class="row"><b>Hike</b><span>Sin hike · llegada noche</span></div>
+<div class="row"><b>Clima</b><span>lluvia posible en llegada</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Conducir al parking</a><a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">Ficha P4N</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d1">D1</a></div>
+<h3>lunes 17 ago · Carretera Astún · Canfranc (22889)</h3>
+<div class="row"><b>Km</b><span>~375 km · 4,5 h</span></div>
+<div class="row"><b>Parking</b><span>P4N #285213 · Parking Carretera Astún</span></div>
+<div class="row"><b>Hike</b><span>Ibón de Estanes · <span class="badge dif-m">Moderado</span> · 12 km · 3–4 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Media-alta</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">23°C</span> · 1 mm (24%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d1">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d2">D2</a></div>
+<h3>martes 18 ago · Carretera Astún · Canfranc (22889)</h3>
+<div class="row"><b>Km</b><span>— · —</span></div>
+<div class="row"><b>Parking</b><span>P4N #285213 · misma pernocta</span></div>
+<div class="row"><b>Hike</b><span>Canal Roya – Laguna de Tortiellas · <span class="badge dif-f">Fácil-Moderado</span> · 10 km · 3 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-m">Media</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">24°C</span> · 0 mm (2%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.8091,-0.5121&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/place/285213" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d2">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d3">D3</a></div>
+<h3>miércoles 19 ago · Candanchú · Astún · Canfranc</h3>
+<div class="row"><b>Km</b><span>~20 km · ~30 min</span></div>
+<div class="row"><b>Parking</b><span>Astún (parking estación)</span></div>
+<div class="row"><b>Hike</b><span>Lagunas de Anayet (ruta baja) · <span class="badge dif-m">Moderado</span> · 9 km · 3 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Media-alta (zona estación)</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">25°C</span> · 0 mm (3%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.795,-0.458&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.795&amp;lng=-0.458&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d3">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d4">D4 ⭐</a></div>
+<h3>jueves 20 ago · Selva de Oza · Aguas Tuertas ⭐</h3>
+<div class="row"><b>Km</b><span>~86 km · ~1h25</span></div>
+<div class="row"><b>Parking</b><span>Área forestal Selva de Oza</span></div>
+<div class="row"><b>Hike</b><span>Aguas Tuertas · <span class="badge dif-f">Fácil</span> · 8 km · 2,5 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-m">Media</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">21°C</span> · 1 mm (30%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.8091,-0.5121&amp;destination=42.822,-0.717&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.822&amp;lng=-0.717&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d4">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d5">D5</a></div>
+<h3>viernes 21 ago · Ansó / Zuriza → Jaca → borde Navarra</h3>
+<div class="row"><b>Km</b><span>~100 km · ~1h30</span></div>
+<div class="row"><b>Parking</b><span>Embalse de Yesa (pernocta transición)</span></div>
+<div class="row"><b>Hike</b><span>Foz de Biniés (opcional AM temprano) · <span class="badge dif-f">Fácil</span> · 4 km · 1,5 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Alta Jaca agosto · tranquila Foz</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">21°C</span> · 16 mm (39%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.822,-0.717&amp;destination=42.622,-1.072&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.622&amp;lng=-1.072&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d5">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d6">D6</a></div>
+<h3>sábado 22 ago · Ochagavía · Valle de Salazar</h3>
+<div class="row"><b>Km</b><span>~90 km · ~1h15</span></div>
+<div class="row"><b>Parking</b><span>Borde Ochagavía (fuera casco)</span></div>
+<div class="row"><b>Hike</b><span>Acceso suave Selva de Irati · río Zatoia · <span class="badge dif-f">Fácil</span> · 6 km · 2 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Alta (sábado agosto)</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">20°C</span> · 10 mm (42%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.622,-1.072&amp;destination=42.906,-1.079&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.908&amp;lng=-1.082&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d6">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d7">D7</a></div>
+<h3>domingo 23 ago · Selva de Irati · Embalse Irabia</h3>
+<div class="row"><b>Km</b><span>~15 km · ~20 min</span></div>
+<div class="row"><b>Parking</b><span>Área embalse Irabia / Casas de Irati</span></div>
+<div class="row"><b>Hike</b><span>Circular hayedo-abetal de Irati · <span class="badge dif-f">Fácil-Moderado</span> · 9 km · 3 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Alta (domingo) · se diluye en la selva</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">22°C</span> · 18 mm (52%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.933,-1.032&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.933&amp;lng=-1.032&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d7">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d8">D8</a></div>
+<h3>lunes 24 ago · Orbaitzeta · Río Irati interior</h3>
+<div class="row"><b>Km</b><span>~20 km · ~30 min</span></div>
+<div class="row"><b>Parking</b><span>Orbaitzeta / aguas arriba río</span></div>
+<div class="row"><b>Hike</b><span>Senda Río Irati / Ruinas Orbaitzeta · <span class="badge dif-f">Fácil</span> · 7 km · 2,5 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-b">Baja (lunes, zona remota)</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">22°C</span> · 34 mm (44%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.964,-1.217&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.964&amp;lng=-1.217&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d8">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d9">D9</a></div>
+<h3>martes 25 ago · Isaba · Valle del Roncal</h3>
+<div class="row"><b>Km</b><span>~35 km · ~45 min</span></div>
+<div class="row"><b>Parking</b><span>Borde río Esca / Isaba</span></div>
+<div class="row"><b>Hike</b><span>Senda río Esca o acceso Belagua · <span class="badge dif-f">Fácil</span> · 8 km · 2,5 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-b">Baja (martes)</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">21°C</span> · 15 mm (41%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.964,-1.217&amp;destination=42.856,-0.921&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=42.856&amp;lng=-0.921&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d9">Detalle</a></div>
+</article><article class="sum-card">
+<div class="k"><a href="#d10">D10</a></div>
+<h3>miércoles 26 ago · Vuelta a Teià</h3>
+<div class="row"><b>Km</b><span>~435 km · 5–6 h</span></div>
+<div class="row"><b>Parking</b><span>Teià — casa</span></div>
+<div class="row"><b>Hike</b><span>—</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-m">—</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-warn">30°C</span> · 21 mm (37%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.856,-0.921&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-o" href="https://park4night.com/es/search?lat=41.498&amp;lng=2.319&amp;zoom=14" target="_blank" rel="noopener">P4N</a><a class="btn btn-p" href="#d10">Detalle</a></div>
+</article>
+<p style="font-size:.75rem;color:var(--muted)">Clima Open-Meteo 2026-08-13 · revisar 7:00. ⭐ D4 día estrella.</p>
+
 </section>
 
 <section class="section" id="como-dormir">
@@ -469,7 +424,7 @@ Clima = sensación máx (altitude-adjusted) + precipitación previsión Open-Met
 
 <footer class="foot wrap">
 <p><strong>Guía Camper Pirineo ≤25°C</strong> · 16–26 agosto 2026 · Open-Meteo · Google Maps</p>
-<p>Abrir en móvil: raw.githack → rama cursor/ruta-camper-refugio-4641 → guia-movil.html</p>
+<p>Si GitHub enseña código: descargad <code>guia-movil.html</code> y abridlo en el navegador. No uses raw.githubusercontent.com.</p>
 </footer>
 </main>
 <div class="fab">
