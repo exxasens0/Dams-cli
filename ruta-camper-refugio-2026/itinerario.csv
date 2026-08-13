@@ -1,11 +1,11 @@
-dia,fecha,tramo,km_aprox,min_aprox,base,provincia,noches_zona,gmaps_sleep_1,lat,lon,camping_fallback,visita_estrella,perros
-1,2026-08-15,Teia-Albarracin,280,300,Albarracin,Teruel,,Tejeria,40.412,-1.443,Camping Albarracin,Llegada murallas,OK
-2,2026-08-16,local,0,0,Albarracin,Teruel,,Rodeno,40.450,-1.380,#390083,Pinares Rodeno,OK atado
-3,2026-08-17,Albarracin-Escucha,90,90,Escucha,Teruel,,N420 borde,40.762,-1.068,Museo CC,Minas exterior,confirmar mina
-4,2026-08-18,Escucha-Morella,130,120,Morella,Castellon,,N232 mirador,40.621,-0.095,#6766,Murallas,OK exterior
-5,2026-08-19,local,0,0,Morella,Castellon,,N232 mirador,40.621,-0.095,#6766,Ports Morella,OK
-6,2026-08-20,local,0,0,Morella,Castellon,,N232 mirador,40.621,-0.095,#6766,Ports dia 2,OK
-7,2026-08-21,Morella-Jaca,200,120,Jaca,Huesca,,Ciudadela,42.569,-0.552,AC Jaca,Escalón Navarra,OK
-8,2026-08-22,Jaca-Ochagavia,95,90,Ochagavia,Navarra,1/2,borde pueblo,42.908,-1.082,Camping Robledo,Llegada Roncal,OK
-9,2026-08-23,local,0,0,Ochagavia,Navarra,2/2,misma D8,42.908,-1.082,Camping Robledo,Selva Irati,OK atado
-10,2026-08-24,Ochagavia-Teia,400,300,Teia,Barcelona,,,,,Vuelta desde Navarra,OK
+dia,fecha,tramo,km_aprox,min_aprox,base,provincia,app_max_c,visita_estrella,perros
+1,2026-08-15,Teia-Canfranc,350,270,Canfranc Estacion,Huesca,22,Llegada valle,OK
+2,2026-08-16,local,0,0,Canfranc Estacion,Huesca,22,Ibon Estanes,OK atado
+3,2026-08-17,local,0,0,Canfranc Estacion,Huesca,23,Selva de Oza,OK atado
+4,2026-08-18,local,0,0,Canfranc Estacion,Huesca,24,Valle Canfranc,OK
+5,2026-08-19,local,0,0,Canfranc Estacion,Huesca,25,Ultimo dia base,OK
+6,2026-08-20,Canfranc-Sallent,45,60,Sallent de Gallego,Huesca,21,Lanuza,OK
+7,2026-08-21,local,0,0,Sallent de Gallego,Huesca,21,Formigal bosque,OK atado
+8,2026-08-22,Sallent-Ochagavia,120,120,Ochagavia,Navarra,20,Roncal noche 1,OK
+9,2026-08-23,local,0,0,Ochagavia,Navarra,22,Selva Irati noche 2,OK atado
+10,2026-08-24,Ochagavia-Teia,400,300,Teia,Barcelona,34,Solo conduccion,OK

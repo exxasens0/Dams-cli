@@ -1,146 +1,147 @@
 {
-  "fetched_at": "2026-08-13T12:33:37.574458+00:00",
+  "fetched_at": "2026-08-13T13:03:06.436608+00:00",
   "source": "Open-Meteo best_match",
   "attribution": "https://open-meteo.com/",
+  "route_note": "Solo bases app_max <=25°C",
   "days": [
     {
       "day": 1,
       "date": "2026-08-15",
-      "place": "Albarracin",
-      "place_label": "Albarracín (Teruel)",
-      "lat": 40.407,
-      "lon": -1.444,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 28.9,
-      "t_min": 17.4,
-      "app_max": 29.1,
-      "app_min": 17.6,
-      "precip_mm": 1.4,
-      "precip_prob": 88,
-      "uv_max": 7.5,
+      "summary_es": "Código 95",
+      "t_max": 21.1,
+      "t_min": 16.1,
+      "app_max": 22.3,
+      "app_min": 14.5,
+      "precip_mm": 11.23,
+      "precip_prob": 67,
+      "uv_max": 6.1,
       "tips": [
-        "Sensación máx ~29°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
       "day": 2,
       "date": "2026-08-16",
-      "place": "Albarracin",
-      "place_label": "Albarracín (Teruel)",
-      "lat": 40.407,
-      "lon": -1.444,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 28.4,
-      "t_min": 15.8,
-      "app_max": 26.6,
-      "app_min": 16.2,
-      "precip_mm": 1.1,
-      "precip_prob": 40,
-      "uv_max": 6.3,
+      "summary_es": "Código 63",
+      "t_max": 20.0,
+      "t_min": 13.9,
+      "app_max": 21.9,
+      "app_min": 13.7,
+      "precip_mm": 5.1,
+      "precip_prob": 89,
+      "uv_max": 6.2,
       "tips": [
-        "Sensación máx ~27°C: hike 7:00–11:00, tarde sombra."
+        "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
       "day": 3,
       "date": "2026-08-17",
-      "place": "Escucha",
-      "place_label": "Escucha (Teruel)",
-      "lat": 40.765,
-      "lon": -1.065,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 26.8,
-      "t_min": 17.1,
-      "app_max": 28.2,
-      "app_min": 18.7,
-      "precip_mm": 1.2,
-      "precip_prob": 43,
-      "uv_max": 7.55,
+      "summary_es": "Código 51",
+      "t_max": 23.9,
+      "t_min": 13.2,
+      "app_max": 23.3,
+      "app_min": 13.7,
+      "precip_mm": 0.7,
+      "precip_prob": 29,
+      "uv_max": 7.2,
       "tips": [
-        "Sensación máx ~28°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 23°C (≤25)."
       ]
     },
     {
       "day": 4,
       "date": "2026-08-18",
-      "place": "Morella",
-      "place_label": "Morella (Castellón)",
-      "lat": 40.619,
-      "lon": -0.1,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
-      "summary_es": "Código 3",
-      "t_max": 27.9,
-      "t_min": 17.3,
-      "app_max": 28.4,
-      "app_min": 18.1,
+      "summary_es": "Código 0",
+      "t_max": 25.6,
+      "t_min": 14.0,
+      "app_max": 24.4,
+      "app_min": 13.7,
       "precip_mm": 0.0,
-      "precip_prob": 10,
-      "uv_max": 7.0,
+      "precip_prob": 1,
+      "uv_max": 7.1,
       "tips": [
-        "Sensación máx ~28°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 24°C (≤25)."
       ]
     },
     {
       "day": 5,
       "date": "2026-08-19",
-      "place": "Morella",
-      "place_label": "Morella (Castellón)",
-      "lat": 40.619,
-      "lon": -0.1,
+      "place": "Canfranc",
+      "place_label": "Canfranc Estación (Huesca)",
+      "lat": 42.75,
+      "lon": -0.525,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 26.4,
-      "t_min": 15.9,
-      "app_max": 28.0,
-      "app_min": 16.3,
-      "precip_mm": 2.4,
-      "precip_prob": 8,
-      "uv_max": 6.7,
+      "summary_es": "Código 0",
+      "t_max": 24.7,
+      "t_min": 16.2,
+      "app_max": 24.9,
+      "app_min": 15.0,
+      "precip_mm": 0.0,
+      "precip_prob": 3,
+      "uv_max": 7.75,
       "tips": [
-        "Sensación máx ~28°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 25°C (≤25)."
       ]
     },
     {
       "day": 6,
       "date": "2026-08-20",
-      "place": "Morella",
-      "place_label": "Morella (Castellón)",
-      "lat": 40.619,
-      "lon": -0.1,
+      "place": "Sallent",
+      "place_label": "Sallent de Gállego (Huesca)",
+      "lat": 42.773,
+      "lon": -0.336,
       "available": true,
-      "summary_es": "Código 95",
-      "t_max": 26.0,
-      "t_min": 17.3,
-      "app_max": 28.3,
-      "app_min": 18.9,
-      "precip_mm": 3.15,
-      "precip_prob": 37,
-      "uv_max": 7.3,
+      "summary_es": "Código 51",
+      "t_max": 21.2,
+      "t_min": 16.7,
+      "app_max": 21.5,
+      "app_min": 17.3,
+      "precip_mm": 0.6,
+      "precip_prob": 52,
+      "uv_max": 6.4,
       "tips": [
-        "Sensación máx ~28°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
       "day": 7,
       "date": "2026-08-21",
-      "place": "Jaca",
-      "place_label": "Jaca (Huesca)",
-      "lat": 42.569,
-      "lon": -0.549,
+      "place": "Sallent",
+      "place_label": "Sallent de Gállego (Huesca)",
+      "lat": 42.773,
+      "lon": -0.336,
       "available": true,
       "summary_es": "Código 95",
-      "t_max": 26.7,
-      "t_min": 17.4,
-      "app_max": 28.4,
-      "app_min": 17.3,
-      "precip_mm": 8.1,
-      "precip_prob": 35,
-      "uv_max": 7.05,
+      "t_max": 20.0,
+      "t_min": 15.7,
+      "app_max": 21.1,
+      "app_min": 16.2,
+      "precip_mm": 16.8,
+      "precip_prob": 46,
+      "uv_max": 6.95,
       "tips": [
-        "Sensación máx ~28°C: hike 7:00–10:00, tarde sombra."
+        "OK hike: sensación máx 21°C (≤25)."
       ]
     },
     {
@@ -160,7 +161,7 @@
       "precip_prob": 42,
       "uv_max": 3.7,
       "tips": [
-        "Ventana mañana favorable para hike si sensación <25°C."
+        "OK hike: sensación máx 20°C (≤25)."
       ]
     },
     {
@@ -177,10 +178,10 @@
       "app_max": 21.5,
       "app_min": 11.7,
       "precip_mm": 17.7,
-      "precip_prob": 55,
+      "precip_prob": 52,
       "uv_max": 6.25,
       "tips": [
-        "Ventana mañana favorable para hike si sensación <25°C."
+        "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
@@ -200,7 +201,7 @@
       "precip_prob": 31,
       "uv_max": 4.05,
       "tips": [
-        "Sensación máx ~34°C: hike 7:00–10:00, tarde sombra."
+        "⚠️ Sensación 34°C >25 — solo conducción / sombra."
       ]
     }
   ]

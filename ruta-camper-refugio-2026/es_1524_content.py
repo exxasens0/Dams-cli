@@ -1,4 +1,4 @@
-"""Spain interior camper guide 15–24 Aug 2026 — HTML builder."""
+"""Spain Pyrenees camper guide 15–24 Aug 2026 — HTML builder (≤25°C bases)."""
 from __future__ import annotations
 
 import html
@@ -9,25 +9,19 @@ ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 TEIA = (2.319, 41.498)
+CAN = (-0.525, 42.750)   # Canfranc Estación
+SAL = (-0.336, 42.773)   # Sallent de Gállego
 OCH = (-1.079, 42.906)   # Ochagavía
-BAZ = (-1.515, 43.148)   # Elizondo, Valle del Baztán
-JAC = (-0.549, 42.569)   # Jaca
-ALB = (-1.444, 40.407)
-ESC = (-1.065, 40.765)
-MOR = (-0.100, 40.619)
-MON = (-0.517, 40.067)
+BAZ = (-1.515, 43.148)   # Elizondo (Plan B Navarra)
 
-# Nombre + provincia (siempre visible en UI)
 P = {
     "teia": "Teià (Barcelona)",
+    "can": "Canfranc Estación (Huesca)",
+    "sal": "Sallent de Gállego (Huesca)",
     "och": "Ochagavía (Navarra)",
     "baztan": "Elizondo · Valle del Baztán (Navarra)",
-    "jac": "Jaca (Huesca)",
-    "alb": "Albarracín (Teruel)",
-    "esc": "Escucha (Teruel)",
-    "mor": "Morella (Castellón)",
-    "mon": "Montanejos (Castellón)",
     "irati": "Selva de Irati (Navarra)",
+    "lanuza": "Lanuza / Formigal (Huesca)",
 }
 
 
@@ -58,8 +52,8 @@ def gmaps_route(stops: list[tuple[float, float]]) -> str:
     return url + "&travelmode=driving"
 
 
-# Loop: Albarracín primero → bajar Castellón → subir Navarra → casa
-GMAPS_LOOP = gmaps_route([TEIA, ALB, ESC, MOR, JAC, OCH, TEIA])
+# Pirineo alto: únicas bases con sensación ≤25°C en las fechas del viaje
+GMAPS_LOOP = gmaps_route([TEIA, CAN, SAL, OCH, TEIA])
 
 
 def gmaps_pin(lat: float, lon: float, label: str = "") -> str:
@@ -184,176 +178,152 @@ def build_days() -> str:
     parts = []
 
     parts.append(day_card(
-        "d1", "Día 1 · Sábado 15 agosto", f"{P['teia']} → {P['alb']} · ~280 km · ~5 h",
-        f"""<p><strong>Tramo largo permitido</strong> (ida). Entramos por Teruel.</p>
-{btns([("Google · Teià → Albarracín", gmaps_dir(*TEIA, *ALB), "g")])}
-<p>Llegada tarde: paseo corto murallas / Guadalaviar si fresco.</p>""",
+        "d1", "Día 1 · Sábado 15 agosto", f"{P['teia']} → {P['can']} · ~350 km · ~4–5 h",
+        f"""<p><strong>Tramo largo permitido</strong> (ida). Subida directa al Pirineo alto — única zona ≤25°C sensación.</p>
+{btns([("Google · Teià → Canfranc", gmaps_dir(*TEIA, *CAN), "g")])}
+<p>Llegada tarde: paseo estación histórica / valle. Sensación prevista ~22°C.</p>""",
         (
-            spot("Parking Tejería / borde Guadalaviar", 40.412, -1.443,
-                 "Sin salida junto al río, sombra de pinos.", "Agosto: pescadores AM")
-            + spot("Mirador murallas (atardecer)", 40.405, -1.448,
-                   "Aparcamiento ancho — solo estacionar.", "Pendiente")
+            spot("Parking Canfranc Estación", 42.751, -0.516,
+                 "Pueblo fronterizo: aparcamientos amplios junto a la estación. Satélite: sin salida.",
+                 "Agosto: turismo día")
+            + spot("Área servicio A-136", 42.745, -0.530,
+                   "Alternativa si estación llena.", "Carretera")
         ),
-        """<ul><li><a href="https://park4night.com/es/place/390083">P4N #390083</a> (saturado)</li>
-<li><a href="https://www.campingalbarracin.com/">Camping Albarracín</a></li></ul>""",
-        [("Casco Albarracín", "1", "5", "OK paseo", gmaps_pin(40.407, -1.444)),
-         ("Guadalaviar río", "2", "5", "OK", gmaps_pin(40.408, -1.442))],
-        """<ol><li>Paseo murallas / Guadalaviar (tarde)</li>
-<li>Gastro: cordero (reserva)</li></ol>""",
-        1, "<p>Perras atadas. Estacionar ≠ acampar.</p>",
+        """<ul><li>Camping pequeños valle (emergencia)</li></ul>""",
+        [("Estación Canfranc (exterior)", "0,2", "3", "OK paseo", gmaps_pin(42.751, -0.516)),
+         ("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
+         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
+        """<ol><li>Paseo valle / estación (tarde)</li>
+<li>Gastro: bordas aragonesas</li></ol>""",
+        1, "<p>Base fresca todo el viaje. Perras atadas en pastos.</p>",
     ))
 
     parts.append(day_card(
-        "d2", "Día 2 · Domingo 16", f"{P['alb']} · Pinares de Rodeno",
-        f"<p><strong>Sin traslado.</strong> Base {P['alb']}.</p>",
+        "d2", "Día 2 · Domingo 16", f"{P['can']} · Ibón de Estanes",
+        f"<p><strong>Sin traslado.</strong> Sensación ~22°C — hike cómodo.</p>",
+        spot("Misma pernocta D1", 42.751, -0.516, "Repetir parking.", "Finde: más gente"),
+        """<ul><li>Misma base D1</li></ul>""",
+        [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
+         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50)),
+         ("Villa de Canfranc", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
+        """<ol><li><strong>7:00–12:00 · Ibón de Estanes</strong> (ibón, sombra)</li>
+<li>Tarde: siesta / valle</li></ol>""",
+        2, "<p>Patous posibles — correa antes del rebaño.</p>",
+    ))
+
+    parts.append(day_card(
+        "d3", "Día 3 · Lunes 17", f"{P['can']} · Selva de Oza",
+        f"<p><strong>Sin traslado.</strong> Segundo día Pirineo aragonés (~23°C sensación).</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Misma noche.", ""),
+        """<ul><li>—</li></ul>""",
+        [("Selva de Oza / Respomuso", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
+         ("Panticosa (exterior)", "20", "30", "Confirmar", gmaps_pin(42.823, -0.218)),
+         ("Valle de Canfranc", "5", "10", "OK", gmaps_pin(42.751, -0.516))],
+        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong> (pinar, ibones)</li>
+<li>Evitar termas interior Panticosa si ban perros</li></ol>""",
+        3, "<p>No dejar perras en furgoneta.</p>",
+    ))
+
+    parts.append(day_card(
+        "d4", "Día 4 · Martes 18", f"{P['can']} · valle y senderos",
+        f"<p><strong>Sin traslado.</strong> Sensación ~24°C.</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Cuarta noche — misma base.", ""),
+        """<ul><li>—</li></ul>""",
+        [("Ruta Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50)),
+         ("Mirador valle", "8", "12", "OK", gmaps_pin(42.77, -0.49)),
+         ("Sallent de Gállego (recce)", "25", "35", "OK", gmaps_pin(42.773, -0.336))],
+        """<ol><li>Hike corto AM valle Canfranc</li>
+<li>Tarde: reconocer ruta mañana a Sallent</li></ol>""",
+        4, "<p>Última noche Canfranc antes de mover.</p>",
+    ))
+
+    parts.append(day_card(
+        "d5", "Día 5 · Miércoles 19", f"{P['can']} · último día base",
+        f"<p><strong>Sin traslado.</strong> Sensación ~25°C (límite — hike solo mañana).</p>",
+        spot("Base Canfranc", 42.751, -0.516, "Quinta noche.", "Corte hike si ≥25°C"),
+        """<ul><li>—</li></ul>""",
+        [("Ibón de Estanes (2ª ruta)", "12", "20", "OK", gmaps_pin(42.78, -0.48)),
+         ("Canfranc pueblo", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
+        """<ol><li>7:00–11:00 hike corto si sensación OK</li>
+<li>Tarde: preparar traslado D6</li></ol>""",
+        5, "<p>Revisar meteo a las 7:00 — abortar si sube.</p>",
+    ))
+
+    parts.append(day_card(
+        "d6", "Día 6 · Jueves 20", f"{P['can']} → {P['sal']} · ~45 km · ~1 h",
+        f"""<p>Traslado corto al valle de Tena — sensación baja a ~21°C.</p>
+{btns([("Google · Canfranc → Sallent de Gállego", gmaps_dir(*CAN, *SAL), "g")])}""",
         (
-            spot("Rodeno acceso / Tejería", 40.45, -1.38,
-                 "Pinares: aparcamientos forestales amplios.", "Finde: más coches")
-            + spot("Camping Albarracín", 40.401, -1.435,
-                   "Emergencia sombra/duchas.", "Reserva agosto")
+            spot("Parking embalse Lanuza", 42.658, -0.328,
+                 "Vistas ibón, aparcamiento amplio. Satélite: borde embalse.", "Agosto: turistas")
+            + spot("Formigal acceso (plan B)", 42.778, -0.378,
+                   "Zona estación, comprobar pernocta.", "Masificación")
         ),
-        """<ul><li>#390083 · Camping Albarracín</li></ul>""",
-        [("Pinares de Rodeno", "8", "12", "OK atado", gmaps_pin(40.45, -1.38)),
-         ("Sendero PR-TE-08", "10", "15", "OK", gmaps_pin(40.44, -1.37)),
-         ("Albarracín casco", "1", "5", "OK exterior", gmaps_pin(40.407, -1.444))],
-        f"""<ol><li><strong>7:00–11:00 · Pinares de Rodeno</strong></li>
-<li>Tarde: pueblo / Guadalaviar</li></ol>
-{btns([("Turismo Albarracín mascotas", "https://albarracinturismo.com/viajar-con-mascotas-albarracin-teruel/", "w")])}""",
-        2, "<p>Corte hike si sensación ≥25°C.</p>",
+        """<ul><li>Camping Lanuza / Formigal (emergencia)</li></ul>""",
+        [("Embalse Lanuza", "0,5", "5", "OK paseo", gmaps_pin(42.658, -0.328)),
+         ("Formigal bosques", "10", "15", "OK atado", gmaps_pin(42.778, -0.378)),
+         ("Sallent pueblo", "2", "5", "OK", gmaps_pin(42.773, -0.336))],
+        """<ol><li>Paseo Lanuza tarde (perros)</li>
+<li>Gastro: trucha, migas</li></ol>""",
+        6, "<p>Mejor clima del tramo Tena — aprovechar D7 AM.</p>",
     ))
 
     parts.append(day_card(
-        "d3", "Día 3 · Lunes 17", f"{P['alb']} → {P['esc']} · ~90 km · ~1,5 h",
-        f"""<p>Traslado ≤2 h hacia Cuencas Mineras.</p>
-<p>{P['esc']} — Teruel (cerca de Andorra, Teruel).</p>
-{btns([("Google · Albarracín → Escucha", gmaps_dir(*ALB, *ESC), "g")])}""",
+        "d7", "Día 7 · Viernes 21", f"{P['sal']} · {P['lanuza']}",
+        f"<p><strong>Sin traslado.</strong> Día estrella ~21°C sensación.</p>",
+        spot("Misma base Lanuza", 42.658, -0.328, "Repetir parking.", ""),
+        """<ul><li>Camping emergencia</li></ul>""",
+        [("Circular Lanuza–Búbal", "12", "18", "OK atado", gmaps_pin(42.658, -0.328)),
+         ("Formigal senderos", "10", "15", "OK", gmaps_pin(42.778, -0.378)),
+         ("Piedrafita lago", "15", "20", "OK", gmaps_pin(42.698, -0.315))],
+        """<ol><li><strong>7:00–12:00 · Lanuza / Formigal</strong> (bosque, ibón)</li>
+<li>Tarde: mover mañana hacia Navarra</li></ol>""",
+        7, "<p>Preparar D8 traslado a Roncal (~2 h).</p>",
+    ))
+
+    parts.append(day_card(
+        "d8", "Día 8 · Sábado 22", f"{P['sal']} → {P['och']} · ~120 km · ~2 h",
+        f"""<p>Subida a Navarra — tramo ≤2 h. <strong>Noche 1/2</strong> Roncal (~20°C).</p>
+{btns([("Google · Sallent → Ochagavía", gmaps_dir(*SAL, *OCH), "g")])}""",
         (
-            spot("Parking N-420 borde Escucha", 40.762, -1.068,
-                 "Zona minera, aparcamiento amplio.", "Día: camiones")
-            + spot("Barrio sur pueblo minero", 40.758, -1.062,
-                   "Calles amplias.", "Pendiente")
-        ),
-        """<ul><li>Área CC museo minero</li>
-<li><a href="https://www.museomineroescucha.es/">Museo Minero</a></li></ul>""",
-        [("Museo Minero Escucha", "0,5", "3", "Confirmar", "https://www.museomineroescucha.es/"),
-         ("Ruta digital pueblo minero", "1", "5", "OK", gmaps_pin(40.765, -1.065)),
-         ("Maquinaria exterior mina", "0,3", "2", "OK", gmaps_pin(40.764, -1.067))],
-        """<ol><li>Patrimonio minero <strong>exterior</strong> + ruta digital</li>
-<li>Mina interior: solo si confirman perros · 978 756 705</li></ol>""",
-        3, "<p>No dejar perras en furgoneta para mina.</p>",
-    ))
-
-    parts.append(day_card(
-        "d4", "Día 4 · Martes 18", f"{P['esc']} → {P['mor']} · ~130 km · ~2 h",
-        f"""<p>Bajada a Castellón interior (~2 h).</p>
-{btns([("Google · Escucha → Morella", gmaps_dir(*ESC, *MOR), "g")])}""",
-        (
-            spot("Parking N-232 mirador castillo", 40.621, -0.095,
-                 "Vistas castillo, ancho para AC 7 m.", "Agosto: turistas")
-            + spot("Camí vell acceso sur", 40.615, -0.105,
-                   "Más tranquilo que CCP.", "Comprobar cartel")
-        ),
-        """<ul><li><a href="https://park4night.com/es/place/6766">P4N #6766</a> CCP Morella</li></ul>""",
-        [("Murallas Morella", "0,5", "5", "OK exterior", gmaps_pin(40.619, -0.100)),
-         ("Castillo (exterior)", "0,6", "5", "OK mirador", gmaps_pin(40.620, -0.098))],
-        """<ol><li>Atardecer murallas / castillo (exterior, perros)</li>
-<li>Gastro: flaó, llonganissa</li></ol>""",
-        4, "<p>Interior Castellón — buena ventana hike D5–6.</p>",
-    ))
-
-    parts.append(day_card(
-        "d5", "Día 5 · Miércoles 19", f"{P['mor']} · Ports de Morella",
-        "<p><strong>Día estrella senderismo.</strong> Sin traslado.</p>",
-        spot("Misma base D4", 40.621, -0.095, "Repetir parking N-232.", ""),
-        """<ul><li>#6766 · Camping Sant Cristòfol (emergencia)</li></ul>""",
-        [("Ports de Morella", "15", "20", "OK bosque", gmaps_pin(40.75, -0.15)),
-         ("Vilafranca", "20", "25", "OK", gmaps_pin(40.83, -0.18)),
-         ("Parrizal Beceite", "—", "—", "Cancelar si ban", "")],
-        f"""<ol><li><strong>7:00–12:00 · Ports / Vilafranca</strong> (sombra bosque)</li>
-<li>Evitar Parrizal si ban perros</li></ol>
-{btns([("Turismo Morella", "https://www.morella.net/", "w")])}""",
-        5, "<p>Mejor sensación térmica del tramo sur.</p>",
-    ))
-
-    parts.append(day_card(
-        "d6", "Día 6 · Jueves 20", f"{P['mor']} · segundo día Ports o pueblo",
-        "<p>Sin traslado. Lluvia posible — bosque OK.</p>",
-        spot("Base Morella (D4/D5)", 40.621, -0.095, "Misma pernocta.", ""),
-        """<ul><li>#6766 · Camping emergencia</li></ul>""",
-        [("Ruta circular Ports", "18", "25", "OK", gmaps_pin(40.76, -0.16)),
-         ("Morella casco AM", "0", "3", "OK", gmaps_pin(40.619, -0.100))],
-        """<ol><li>Segundo día Ports (ruta distinta) o pueblo si lluvia</li>
-<li>Gastro: mesón (reserva)</li></ol>""",
-        6, "<p>Plan B lluvia: casco + museo (confirmar perros).</p>",
-    ))
-
-    parts.append(day_card(
-        "d7", "Día 7 · Viernes 21", f"{P['mor']} → {P['jac']} · ~200 km · ~2 h",
-        f"""<p>Subimos hacia el norte — escalón antes de Navarra (≤2 h).</p>
-{btns([("Google · Morella → Jaca", gmaps_dir(*MOR, *JAC), "g")])}""",
-        (
-            spot("Parking Ciudadela Jaca", 42.569, -0.552,
-                 "Zona amplia junto a la Ciudadela.", "Agosto: turistas")
-            + spot("Ordesa acceso sur (plan B)", 42.614, -0.028,
-                   "Alternativa montaña.", "Acceso PN")
-        ),
-        """<ul><li>Áreas autocaravanas Jaca</li></ul>""",
-        [("Ciudadela Jaca", "0,5", "5", "OK exterior", gmaps_pin(42.569, -0.552)),
-         ("Paseo río Aragón", "1", "5", "OK", gmaps_pin(42.572, -0.548))],
-        """<ol><li>Paseo Jaca tarde (exterior, perros)</li>
-<li>Mañana D8: subida a Navarra</li></ol>""",
-        7, "<p>Jaca = escalón Morella → Irati sin tramo largo.</p>",
-    ))
-
-    parts.append(day_card(
-        "d8", "Día 8 · Sábado 22", f"{P['jac']} → {P['och']} · ~95 km · ~1,5 h",
-        f"""<p>Entramos en Navarra — tramo ≤2 h.</p>
-<p><strong>Noche 1/2</strong> en {P['och']} (mínimo 2 noches Irati o Baztán).</p>
-{btns([("Google · Jaca → Ochagavía", gmaps_dir(*JAC, *OCH), "g")])}""",
-        (
-            spot("Aparcamiento borde Ochagavía / río", 42.908, -1.082,
-                 "Valle de Roncal: fuera del casco empedrado.", "Casco estrecho AC 7 m")
+            spot("Aparcamiento borde Ochagavía", 42.908, -1.082,
+                 "Fuera casco empedrado.", "AC 7 m — no entrar pueblo")
             + spot(f"Plan B · {P['baztan']}", 43.148, -1.515,
-                   "Alternativa ≥2 noches: Elizondo (Valle del Baztán, Navarra).",
-                   "Cambiar destino D8 si Irati lluvia")
+                   "Si Irati lluvia: Elizondo (Valle del Baztán, Navarra) — comprobar meteo (suele ser más caluroso).",
+                   "Baztán a veces >25°C")
         ),
-        """<ul><li><a href="https://www.campingelrobledo.com/">Camping Robledo</a> Roncal</li></ul>""",
+        """<ul><li><a href="https://www.campingelrobledo.com/">Camping Robledo</a></li></ul>""",
         [("Casco Ochagavía", "0,3", "3", "OK paseo", gmaps_pin(42.906, -1.079)),
          ("Selva de Irati", "8", "12", "OK atado", gmaps_pin(42.918, -1.045))],
-        """<ol><li>Paseo pueblo Roncal (tarde)</li>
+        """<ol><li>Paseo Roncal tarde</li>
 <li>Gastro: cordero, queso Roncal</li></ol>""",
-        8, "<p>Meteo Irati D8–9 muy favorable (~20 °C sensación).</p>",
+        8, "<p>Navarra al final del viaje — mejor ventana climática.</p>",
     ))
 
     parts.append(day_card(
         "d9", "Día 9 · Domingo 23", f"{P['och']} · {P['irati']} · noche 2/2",
-        f"""<p><strong>Sin traslado.</strong> Día estrella Navarra — cierre del viaje en montaña.</p>
-<p class="callout" style="margin:.5rem 0;padding:.5rem .75rem;background:var(--sec);border-radius:8px">Plan A: {P['irati']}. Plan B: {P['baztan']} (Elizondo) — mismas ≥2 noches.</p>""",
-        spot("Misma pernocta D8", 42.908, -1.082,
-             "Repetir parking.", "Domingo: más gente Irati"),
-        """<ul><li>Camping Robledo / Baztán</li></ul>""",
+        f"""<p><strong>Sin traslado.</strong> Cierre en {P['irati']} (~22°C sensación).</p>
+<p>≥2 noches Navarra cumplidas (D8–9).</p>""",
+        spot("Misma pernocta D8", 42.908, -1.082, "Repetir parking.", "Domingo: más gente"),
+        """<ul><li>Camping Robledo</li></ul>""",
         [("Selva de Irati · Abodi", "8", "12", "OK atado", gmaps_pin(42.918, -1.045)),
-         ("Isaba / Burgui Roncal", "15", "20", "OK", gmaps_pin(42.925, -1.005)),
+         ("Isaba / Burgui", "15", "20", "OK", gmaps_pin(42.925, -1.005)),
          ("Senda río Zatoia", "5", "8", "OK", gmaps_pin(42.910, -1.070))],
-        f"""<ol><li><strong>7:00–12:00 · Selva de Irati</strong> (hayedo, sombra)</li>
-<li>Tarde: siesta / pueblo — preparar salida lun 24</li></ol>
-{btns([
-    ("Turismo Roncal", "https://www.turismo.navarra.es/es/ver/valle-del-roncal/", "w"),
-    ("Turismo Baztán", "https://www.turismo.navarra.es/es/ver/valle-del-baztan/", "w"),
-])}""",
-        9, "<p>Patous en pastos — correa. Última noche de pernocta.</p>",
+        f"""<ol><li><strong>7:00–12:00 · Selva de Irati</strong></li>
+<li>Tarde: siesta — salida lun 24 temprano</li></ol>
+{btns([("Turismo Roncal", "https://www.turismo.navarra.es/es/ver/valle-del-roncal/", "w")])}""",
+        9, "<p>Patous — correa. Última noche.</p>",
     ))
 
     parts.append(day_card(
         "d10", "Día 10 · Lunes 24", f"{P['och']} → {P['teia']} · ~400 km · ~5 h",
-        f"""<p><strong>Tramo largo permitido</strong> (vuelta a casa desde Navarra).</p>
-{btns([("Google · Ochagavía → Teià", gmaps_dir(*OCH, *TEIA), "g"),
-       ("Google · Elizondo → Teià (si Plan B Baztán)", gmaps_dir(*BAZ, *TEIA), "g")])}""",
-        "<p><strong>Llegada a casa.</strong> Sin pernocta en ruta.</p>",
+        f"""<p><strong>Tramo largo</strong> (vuelta). Solo conducción — costa ~34°C sensación, no hike.</p>
+{btns([("Google · Ochagavía → Teià", gmaps_dir(*OCH, *TEIA), "g")])}""",
+        "<p><strong>Llegada a casa.</strong></p>",
         "<p>—</p>",
         [],
-        "<p>Solo conducción. Paradas sombra cada 2 h para perras. Hike opcional muy corto AM si salís ~7:00.</p>",
-        10, "<p>Costa caliente al llegar — no hike tarde.</p>",
+        "<p>Paradas sombra cada 2 h · AC para perras · salir temprano.</p>",
+        10, "<p>Camper al sol en costa = interior 35°C+ — no parar sin sombra.</p>",
     ))
 
     return "".join(parts)
@@ -362,19 +332,18 @@ def build_days() -> str:
 def live_summary() -> str:
     return f"""
 <section class="section live-plan" id="plan-rapido">
-<h2>Plan activo · 15–24 agosto 2026</h2>
+<h2>Plan activo · 15–24 agosto 2026 · Pirineo ≤25°C</h2>
 <div class="card prose">
-<div class="warn"><strong>Reglas:</strong> Teià loop · <strong>Albarracín primero → Navarra al final</strong> · ≥2 noches Irati/Baztán (D8–9) · tramos ≤2 h (solo D1 y D10 ~5 h).</div>
-<div class="callout"><strong>Eje:</strong> {P['alb']} → {P['esc']} → {P['mor']} → {P['jac']} → {P['och']}/{P['irati']} → {P['teia']}. Fin de viaje en Navarra (fresco).</div>
+<div class="warn"><strong>Cambio de ruta:</strong> Albarracín, Escucha, Morella y Jaca <strong>descartados</strong> — sensación 28–32°C (camper interior ~35°C con perras). Solo bases Pirineo alto ≤25°C.</div>
+<div class="warn"><strong>Reglas:</strong> hike solo si sensación ≤25°C · ≥2 noches Navarra (D8–9) · tramos ≤2 h (D1/D10 ~5 h).</div>
+<div class="callout"><strong>Eje:</strong> {P['can']} (5 noches) → {P['sal']} → {P['och']}/{P['irati']} → {P['teia']}.</div>
 <p>{btns([("🗺️ Ruta Google Maps · loop completo", GMAPS_LOOP, "g")])}</p>
-<p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['alb']} → {P['esc']} → {P['mor']} → {P['jac']} → {P['och']} → {P['teia']}</p>
+<p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['can']} → {P['sal']} → {P['och']} → {P['teia']}</p>
 <ol>
-<li><strong>15–16</strong> {P['alb']} / Rodeno</li>
-<li><strong>17</strong> {P['esc']} minas</li>
-<li><strong>18–20</strong> {P['mor']} / Ports</li>
-<li><strong>21</strong> {P['jac']} (escalón subida)</li>
-<li><strong>22–23</strong> {P['och']} / {P['irati']} · <em>≥2 noches</em></li>
-<li><strong>24</strong> {P['och']} → {P['teia']}</li>
+<li><strong>15–19</strong> {P['can']} (Canfranc · ~22–25°C)</li>
+<li><strong>20–21</strong> {P['sal']} / {P['lanuza']} (~21°C)</li>
+<li><strong>22–23</strong> {P['och']} / {P['irati']} (~20°C) · ≥2 noches</li>
+<li><strong>24</strong> → {P['teia']} (solo conducción)</li>
 </ol>
 </div></section>"""
 
@@ -399,12 +368,12 @@ def rules_section() -> str:
 <section class="section" id="perras"><h2>Reglas del viaje</h2>
 <div class="card prose">
 <div class="warn"><strong>Perras:</strong> solo actividades donde entren con vosotros. Visita sin perros = <strong>cancelada</strong>.</div>
-<div class="warn"><strong>Calor:</strong> hike solo sensación &lt;25°C (Open-Meteo). Tip. 7:00–11:00.</div>
+<div class="warn"><strong>Calor:</strong> solo pernocta donde Open-Meteo sensación ≤25°C. Si sube → cancelar hike.</div>
 <ul>
-<li>Sunlight 600 (&gt;2,10 m)</li>
-<li>Conducción ≤2 h entre bases · D1 y D10 hasta ~5 h</li>
-<li>Orden: <strong>Albarracín → sur → Navarra al final</strong> · ≥2 noches Irati/Baztán (D8–9)</li>
-<li>Descartados: Sierra Espadán, Peñíscola/costa, Parrizal si ban perros</li>
+<li>Sunlight 600 (&gt;2,10 m) · 2 perras siempre</li>
+<li>Conducción ≤2 h entre bases · D1 y D10 ~5 h</li>
+<li>≥2 noches Navarra Irati/Baztán (D8–9)</li>
+<li><strong>Descartado por calor:</strong> Albarracín, Escucha, Morella, Jaca, interior (28–32°C sensación)</li>
 </ul>
 </div></section>"""
 
@@ -418,12 +387,12 @@ def render_spain_guide() -> str:
     return f"""<!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía camper · Navarra + Interior ES · 15–24 ago 2026</title>
+<title>Guía camper · Pirineo ≤25°C · 15–24 ago 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head><body>
 <header class="top"><div class="wrap top-in">
-<div class="brand">Guía camper · Teruel → Navarra<small>15–24 agosto 2026 · Teruel · Castellón · Huesca · Navarra · Barcelona · Sunlight 600 + 2 perras</small></div>
+<div class="brand">Guía camper · Pirineo ≤25°C<small>15–24 agosto 2026 · Huesca · Navarra · Barcelona · Sunlight 600 + 2 perras</small></div>
 <div class="btns">
 <a class="btn btn-p" href="#plan-rapido">Plan 15–24</a>
 <a class="btn btn-g" href="#d1">Días</a>
@@ -432,12 +401,12 @@ def render_spain_guide() -> str:
 {day_nav()}
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Albarracín primero</span><span class="chip">Navarra al final</span><span class="chip">≥2 noches Irati</span><span class="chip">GMaps first</span><span class="chip">Perras siempre</span></div>
-<h1>Albarracín · Escucha · Morella · Irati</h1>
-<p class="lead">Empezamos en {P['alb']}, bajamos a {P['esc']} y {P['mor']}, y <strong>cerramos en Navarra</strong> ({P['och']}, {P['irati']}) con ≥2 noches. Vuelta lun 24 desde el Roncal.</p>
+<div class="chips"><span class="chip">≤25°C sensación</span><span class="chip">Canfranc · Irati</span><span class="chip">≥2 noches Navarra</span><span class="chip">GMaps first</span><span class="chip">Perras siempre</span></div>
+<h1>Canfranc · Lanuza · Irati</h1>
+<p class="lead">Ruta <strong>100 % Pirineo alto</strong>: todas las pernoctas con sensación ≤25°C (Open-Meteo). {P['can']} → {P['sal']} → {P['och']}. Interior Teruel/Castellón descartado (camper ~35°C interior).</p>
 {btns([
     ("🗺️ Ruta completa · Google Maps", GMAPS_LOOP, "g"),
-    ("Google · D1 Teià → Albarracín", gmaps_dir(*TEIA, *ALB), "g"),
+    ("Google · D1 Teià → Canfranc", gmaps_dir(*TEIA, *CAN), "g"),
 ])}
 </section>
 {live_summary()}
@@ -450,7 +419,7 @@ def render_spain_guide() -> str:
 <p class="card">La guía Francia está en el historial git del repo. Este viaje reemplaza el plan activo.</p>
 </details>
 <footer class="foot">
-<p><strong>Guía camper Navarra + interior ES</strong> · 15–24 agosto 2026 · Open-Meteo · Google Maps</p>
+<p><strong>Guía camper Pirineo ≤25°C</strong> · 15–24 agosto 2026 · Open-Meteo · Google Maps</p>
 <p>Abrir vía raw.githack en el móvil (ver ABRIR-GUIA.md).</p>
 </footer>
 </main>

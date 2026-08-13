@@ -1,26 +1,26 @@
-# Hoja día a día — 15 a 24 agosto 2026 · Albarracín → Navarra
+# Hoja día a día — 15 a 24 agosto 2026 · Pirineo ≤25°C
 
-**Teià loop** · **Albarracín primero, Navarra al final** · ≥2 noches Irati/Baztán (D8–9) · tramos ≤2 h (solo D1 y D10 ~5 h).
+**Criterio:** solo bases donde Open-Meteo prevé **sensación máx ≤25°C** (camper a la sombra con 29°C exterior ≈ 35°C interior).
 
-## Ruta completa Google Maps
+**Descartado por calor (28–32°C sensación):** Albarracín, Escucha, Morella, Jaca, interior Castellón/Teruel.
 
-[Abrir loop en Google Maps](https://www.google.com/maps/dir/?api=1&origin=41.498,2.319&destination=41.498,2.319&waypoints=40.407,-1.444|40.765,-1.065|40.619,-0.100|42.569,-0.549|42.906,-1.079&travelmode=driving)
+## Ruta Google Maps
 
-**Paradas:** Teià (Barcelona) → Albarracín (Teruel) → Escucha (Teruel) → Morella (Castellón) → Jaca (Huesca) → Ochagavía (Navarra) → Teià (Barcelona)
+[Abrir loop en Google Maps](https://www.google.com/maps/dir/?api=1&origin=41.498,2.319&destination=41.498,2.319&waypoints=42.750,-0.525|42.773,-0.336|42.906,-1.079&travelmode=driving)
 
-| Día | Fecha | Tramo | Base (provincia) | Visita estrella |
-|-----|-------|-------|------------------|-----------------|
-| 1 | Sáb 15 | Teià → Albarracín (Teruel) | Albarracín (Teruel) | Llegada, murallas |
-| 2 | Dom 16 | local | Albarracín (Teruel) | Pinares de Rodeno |
-| 3 | Lun 17 | Albarracín → Escucha (Teruel) | Escucha (Teruel) | Minas exterior |
-| 4 | Mar 18 | Escucha → Morella (Castellón) | Morella (Castellón) | Murallas / castillo |
-| 5 | Mié 19 | local | Morella (Castellón) | Ports de Morella |
-| 6 | Jue 20 | local | Morella (Castellón) | Segundo día Ports |
-| 7 | Vie 21 | Morella → Jaca (Huesca) | Jaca (Huesca) | Escalón subida |
-| 8 | Sáb 22 | Jaca → Ochagavía (Navarra) | Ochagavía (Navarra) | Llegada Roncal · noche 1/2 |
-| 9 | Dom 23 | local | Ochagavía (Navarra) | Selva de Irati · noche 2/2 |
-| 10 | Lun 24 | Ochagavía → Teià (Barcelona) | Casa | Vuelta ~5 h |
+**Paradas:** Teià (Barcelona) → Canfranc Estación (Huesca) → Sallent de Gállego (Huesca) → Ochagavía (Navarra) → Teià (Barcelona)
 
-**Plan B Navarra:** Elizondo (Valle del Baztán, Navarra) en lugar de Ochagavía (D8–9).
+| Día | Base (provincia) | AppMax | Visita |
+|-----|------------------|--------|--------|
+| 15 | Canfranc Estación (Huesca) | 22°C | Llegada |
+| 16 | Canfranc (Huesca) | 22°C | Ibón de Estanes |
+| 17 | Canfranc (Huesca) | 23°C | Selva de Oza |
+| 18 | Canfranc (Huesca) | 24°C | Valle |
+| 19 | Canfranc (Huesca) | 25°C | Último día base |
+| 20 | Sallent de Gállego (Huesca) | 21°C | Lanuza |
+| 21 | Sallent (Huesca) | 21°C | Formigal / ibones |
+| 22 | Ochagavía (Navarra) | 20°C | Roncal · noche 1/2 |
+| 23 | Ochagavía (Navarra) | 22°C | Irati · noche 2/2 |
+| 24 | → Teià (Barcelona) | — | Solo conducción |
 
 CSV: [`itinerario.csv`](itinerario.csv)
