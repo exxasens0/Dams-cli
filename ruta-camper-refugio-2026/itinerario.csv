@@ -1,10 +1,10 @@
 dia,fecha,tramo,km_aprox,min_aprox,base,provincia,app_max_c,visita_estrella,perros
-0,2026-08-16,Teia-Canfranc,366,270,Canfranc Canal Roya,Huesca,,Conduccion nocturna,OK
-1,2026-08-17,local,0,0,Canfranc Canal Roya,Huesca,23,Ibon de Estanes,OK atado
-2,2026-08-18,local,0,0,Canfranc Canal Roya,Huesca,24,Canal Roya,OK
-3,2026-08-19,Canfranc-Astun,8,15,Astun Candanchu,Huesca,25,Anayet bajo,OK
-4,2026-08-20,Canfranc-Oza,40,50,Selva de Oza,Huesca,21,Aguas Tuertas STAR,OK
-5,2026-08-21,Oza-Jaca-Yesa,115,120,Embalse Yesa,Huesca-Navarra,21,Jaca catedral+Foz Binies,OK
+0,2026-08-16,Teia-ParkingAstun-P4N285213,375,270,Parking Carretera Astun 22889,Huesca,,Conduccion nocturna P4N 285213,OK
+1,2026-08-17,local,0,0,Parking Carretera Astun 22889,Huesca,23,Ibon de Estanes,OK atado
+2,2026-08-18,local,0,0,Parking Carretera Astun 22889,Huesca,24,Canal Roya,OK
+3,2026-08-19,ParkingAstun-AstunEstacion,20,30,Astun parking,Huesca,25,Anayet bajo,OK
+4,2026-08-20,ParkingAstun-Oza,86,85,Selva de Oza,Huesca,21,Aguas Tuertas STAR,OK
+5,2026-08-21,Oza-Jaca-Yesa,100,90,Embalse Yesa,Huesca-Navarra,21,Jaca catedral+Foz Binies,OK
 6,2026-08-22,Yesa-Ochagavia,90,75,Ochagavia,Navarra,20,Irati entrada,OK
 7,2026-08-23,Ochagavia-Irabia,15,20,Embalse Irabia,Navarra,22,Hayedo-abetal Irati,OK atado
 8,2026-08-24,Irabia-Orbaitzeta,20,30,Orbaitzeta,Navarra,22,Rio Irati+Ruinas,OK

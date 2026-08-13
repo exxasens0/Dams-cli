@@ -7,15 +7,16 @@ ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 # ── Coordenadas clave ────────────────────────────────────────────────────────
-TEIA   = (2.319,   41.498)
-SPOT1  = (-0.51183, 42.80934)  # Canal Roya · primera noche (usuario)
-CAN    = (-0.525,  42.750)   # Canfranc Estación (~11 km al sur del spot)
-OZA    = (-0.717,  42.822)   # Selva de Oza parking
-ZUR    = (-0.832,  42.860)   # Zuriza
-OCH    = (-1.079,  42.906)   # Ochagavía
-ISA    = (-0.921,  42.856)   # Isaba
-JACA   = (-0.549,  42.568)
-YESA   = (-1.072,  42.622)   # Embalse de Yesa
+TEIA   = (2.319,    41.498)
+SPOT1  = (-0.5121,  42.8091)  # P4N #285213 · Parking Carretera Astún (22889 Jaca)
+CAN    = (-0.525,   42.750)   # Canfranc Estación
+OZA    = (-0.717,   42.822)
+ZUR    = (-0.832,   42.860)
+OCH    = (-1.079,   42.906)
+ISA    = (-0.921,   42.856)
+JACA   = (-0.549,   42.568)
+YESA   = (-1.072,   42.622)
+P4N_NIGHT1 = 285213
 
 WEEKDAYS = {0:"lunes",1:"martes",2:"miércoles",3:"jueves",4:"viernes",5:"sábado",6:"domingo"}
 def weekday(d:str)->str:
@@ -32,10 +33,26 @@ def gmaps_route(stops)->str:
     mid=stops[1:-1]
     if mid: url+="&waypoints="+"|".join(f"{lat},{lon}" for lon,lat in mid)
     return url+"&travelmode=driving"
-def gmaps_pin(lat,lon)->str: return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
+def gmaps_pin(lat, lon) -> str:
+    """Navegación en coche al punto (no search: el pin cae en pistas sin acceso)."""
+    return (
+        f"https://www.google.com/maps/dir/?api=1"
+        f"&destination={lat},{lon}&travelmode=driving"
+    )
+
+
 def p4n(lat, lon, zoom: int = 14) -> str:
-    """Abre el mapa Park4Night centrado en coordenadas (formato search, no hash)."""
     return f"https://park4night.com/es/search?lat={lat}&lng={lon}&zoom={zoom}"
+
+
+def p4n_place(place_id: int) -> str:
+    return f"https://park4night.com/es/place/{place_id}"
+
+
+def p4n_url_for(d: dict) -> str:
+    if d.get("p4n_id"):
+        return p4n_place(d["p4n_id"])
+    return p4n(d["parking_lat"], d["parking_lon"])
 
 GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA, OCH, ISA, TEIA])
 
@@ -53,10 +70,11 @@ DAYS = [
     #  concurrencia, interes_tags, historia, observaciones, planb)
     dict(
         day=1, date="2026-08-17",
-        zona="Canal Roya · Canfranc",
-        parking_name="Canal Roya · spot primera noche",
-        parking_lat=42.80934, parking_lon=-0.51183,
-        drive_from="Dom 16 noche, Teià → Canal Roya", drive_km="~375 km", drive_h="4,5 h",
+        zona="Carretera Astún · Canfranc (22889)",
+        parking_name="P4N #285213 · Parking Carretera Astún",
+        parking_lat=42.8091, parking_lon=-0.5121,
+        p4n_id=285213,
+        drive_from="Dom 16 noche, Teià → Parking Carretera Astún", drive_km="~375 km", drive_h="4,5 h",
         hike="Ibón de Estanes", hike_km="12 km", hike_dif="Moderado",
         hike_desn="~400 m", hike_h="3–4 h",
         concurrencia="Media-alta",
@@ -70,20 +88,23 @@ DAYS = [
             "como hotel de lujo. El edificio modernista es impresionante incluso desde fuera."
         ),
         observaciones=(
-            "Llegáis con la noche del dom 16 · sin hike ese día. "
-            "El parking Canal Roya tiene varios spots P4N junto al río Aragón (agua, sombra). "
-            "Ibón de Estanes: sendero bien marcado, gana ~400 m · pozas con agua para perras. "
-            "Perros atados en pastizales superiores (patous presentes agosto). "
-            "Canfranc pueblo tiene pan, supermercado pequeño y gastro de borda aragonesa."
+            "Llegáis la noche del dom 16 · sin hike ese día. "
+            "<strong>Parking de gravilla en la carretera de Astún</strong> (P4N #285213, CP 22889). "
+            "Acceso por A-136 hasta Canfranc y seguir hacia Astún — asfalto hasta el parking. "
+            "Los parkings inferiores son solo turismos y <strong>no</strong> permiten pernocta. "
+            "Usad el parking de gravilla (P2/P4 más llanos; P3 más inclinado). "
+            "Ibón de Estanes: sendero bien marcado ~400 m desnivel · pozas para perras. "
+            "Patous en pastizales — correa. Canfranc pueblo: pan y gastro a ~11 km."
         ),
         planb="Visita exterior estación Canfranc · paseo por el pueblo · río Aragón.",
     ),
     dict(
         day=2, date="2026-08-18",
-        zona="Canal Roya · Canfranc",
-        parking_name="Canal Roya · misma zona",
-        parking_lat=42.80934, parking_lon=-0.51183,
-        drive_from="Sin traslado · misma zona Canal Roya", drive_km="—", drive_h="—",
+        zona="Carretera Astún · Canfranc (22889)",
+        parking_name="P4N #285213 · misma pernocta",
+        parking_lat=42.8091, parking_lon=-0.5121,
+        p4n_id=285213,
+        drive_from="Sin traslado · misma pernocta Parking Astún", drive_km="—", drive_h="—",
         hike="Canal Roya – Laguna de Tortiellas", hike_km="10 km", hike_dif="Fácil-Moderado",
         hike_desn="~300 m", hike_h="3 h",
         concurrencia="Media",
@@ -96,10 +117,10 @@ DAYS = [
             "barrancos rectilíneos tallados por glaciares cuaternarios."
         ),
         observaciones=(
-            "Mejor día del tramo aragonés: 0 mm, 24°C. Aprovechar para hike largo. "
-            "El camino de Canal Roya es un carril forestal ancho al principio, perfecto para perros. "
-            "Se puede aparcar en distintos puntos según cuánto se quiera caminar. "
-            "Tarde: mover camper unos km para cambiar paisaje nocturno (borde Aragón o Astún)."
+            "Mejor día del tramo aragonés: 0 mm, 24°C. "
+            "El sendero de Canal Roya sale cerca del parking (reseñas P4N lo confirman). "
+            "No entrar por pistas forestales laterales con la camper. "
+            "Patous — correa. Tarde: misma pernocta o bajar a Canfranc pueblo."
         ),
         planb="Paseo corto borde río Aragón · área picnic Canfranc.",
     ),
@@ -108,7 +129,7 @@ DAYS = [
         zona="Candanchú · Astún · Canfranc",
         parking_name="Astún (parking estación)",
         parking_lat=42.795, parking_lon=-0.458,
-        drive_from="Canal Roya → Canfranc Estación → Astún", drive_km="~20 km", drive_h="~30 min",
+        drive_from="Parking Astún → Canfranc Estación → Astún", drive_km="~20 km", drive_h="~30 min",
         hike="Lagunas de Anayet (ruta baja)", hike_km="9 km", hike_dif="Moderado",
         hike_desn="~350 m", hike_h="3 h",
         concurrencia="Media-alta (zona estación)",
@@ -135,7 +156,7 @@ DAYS = [
         zona="Selva de Oza · Aguas Tuertas ⭐",
         parking_name="Área forestal Selva de Oza",
         parking_lat=42.822, parking_lon=-0.717,
-        drive_from="Canal Roya / Astún → Oza (Valle de Hecho)", drive_km="~86 km", drive_h="~1h25",
+        drive_from="Parking Astún → Oza (Valle de Hecho)", drive_km="~86 km", drive_h="~1h25",
         hike="Aguas Tuertas", hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
         concurrencia="Media",
@@ -427,9 +448,9 @@ def summary_table()->str:
         f"""<tr style="background:#f5f8f5">
 <td><strong>D0</strong></td>
 <td>domingo 16 ago<br><span style="color:var(--muted);font-size:.72rem">conducción nocturna</span></td>
-<td>Teià → Canal Roya</td>
+<td>Teià → Parking Astún (22889)</td>
 <td>~375 km · 4,5 h</td>
-<td>Canal Roya (spot primera noche) {btn("Maps",gmaps_pin(42.80934,-0.51183),"g")}</td>
+<td>P4N #285213 · Carretera Astún {btn("Maps",gmaps_pin(42.8091,-0.5121),"g")} {btn("P4N",p4n_place(P4N_NIGHT1),"o")}</td>
 <td>—</td>
 <td>—</td>
 <td style="color:var(--muted)">5 mm · 89%</td>
@@ -452,17 +473,17 @@ def summary_table()->str:
             hike_html = (f'{esc(d["hike"])}<br>'
                          f'{dif_badge(d["hike_dif"])} {esc(d["hike_km"])} · {esc(d["hike_h"])}')
         # drive link
-        if n==1:  dr_url = gmaps_dir(*TEIA,*CAN)
-        elif n==3: dr_url = gmaps_pin(42.795,-0.458)
-        elif n==4: dr_url = gmaps_dir(*CAN,*OZA)
+        if n==1:  dr_url = gmaps_dir(*TEIA,*SPOT1)
+        elif n==3: dr_url = gmaps_pin(d["parking_lat"], d["parking_lon"])
+        elif n==4: dr_url = gmaps_dir(*SPOT1,*OZA)
         elif n==5: dr_url = gmaps_dir(*OZA,*YESA)
         elif n==6: dr_url = gmaps_dir(*YESA,*OCH)
-        elif n==8: dr_url = gmaps_pin(42.964,-1.217)
+        elif n==8: dr_url = gmaps_pin(d["parking_lat"], d["parking_lon"])
         elif n==9: dr_url = gmaps_dir(-1.217,42.964,*ISA)
-        elif n==10: dr_url = gmaps_dir(*OCH,*TEIA)
+        elif n==10: dr_url = gmaps_dir(*ISA,*TEIA)
         else: dr_url = gmaps_pin(d["parking_lat"],d["parking_lon"])
 
-        p4n_url = p4n(d["parking_lat"],d["parking_lon"])
+        p4n_url = p4n_url_for(d)
         rows.append(
             f"""<tr>
 <td><a href="#d{n}"><strong>D{n}{star}</strong></a></td>
@@ -492,7 +513,7 @@ Clima = sensación máx (altitude-adjusted) + precipitación previsión Open-Met
 ⭐ D4 = día estrella. Actualizar meteo cada mañana a las 7:00.
 </p>
 <p>{btns([("🗺️ Loop completo Google Maps", GMAPS_LOOP, "g"),
-          ("D0 dom 16 · Teià → Canfranc", gmaps_dir(*TEIA,*CAN), "g")])}</p>"""
+          ("D0 · Teià → Parking Astún #285213", gmaps_dir(*TEIA,*SPOT1), "g")])}</p>"""
 
 # ── Day cards ─────────────────────────────────────────────────────────────────
 def day_card(d:dict)->str:
@@ -504,11 +525,11 @@ def day_card(d:dict)->str:
     if n==1:
         ruta_html = (f"<p>Llegaréis la noche del <strong>domingo 16</strong> desde Teià (~375 km, 4,5 h). "
                      f"Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
-                     f"{btns([('Dom 16 · Teià → Canal Roya (spot)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
+                     f"{btns([('Dom 16 · Teià → P4N #285213 (conducir)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
     elif n==4:
         ruta_html = (f"<p>Bajad a Canfranc Estación (~11 km) y continuad hasta Oza (Valle de Hecho, ~86 km · ~1h25). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('Canal Roya → Oza', gmaps_dir(*SPOT1,*OZA), 'g')])}")
+                     f"{btns([('Parking Astún → Oza', gmaps_dir(*SPOT1,*OZA), 'g')])}")
     elif n==5:
         ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
                      f"{btns([('Oza → Jaca', gmaps_dir(*OZA,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
@@ -530,8 +551,9 @@ def day_card(d:dict)->str:
 
     # parking section
     parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
-{btn("Abrir en Google Maps", gmaps_pin(d['parking_lat'],d['parking_lon']), "g")}
-{btn("P4N zona", p4n(d['parking_lat'],d['parking_lon']), "o")}</div>"""
+<p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">Navegación en coche al parking (no pin suelto).</p>
+{btn("Conducir aquí (Google)", gmaps_pin(d['parking_lat'],d['parking_lon']), "g")}
+{btn("Ficha P4N" if d.get("p4n_id") else "P4N zona", p4n_url_for(d), "o")}</div>"""
 
     # hike section
     if d["hike"]=="—":
@@ -539,7 +561,7 @@ def day_card(d:dict)->str:
     else:
         hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · 
 {esc(d['hike_km'])} · {esc(d['hike_desn'])} desnivel · {esc(d['hike_h'])}</p>
-{btns([('🗺️ Ver zona hike', gmaps_pin(d['parking_lat'],d['parking_lon']), 'g')])}"""
+{btns([('🗺️ Conducir al parking del hike', gmaps_pin(d['parking_lat'],d['parking_lon']), 'g')])}"""
 
     # POIs
     poi_html = ", ".join(f"<strong>{esc(p)}</strong>" for p in d["interes"]) if d["interes"] else "—"
@@ -601,7 +623,7 @@ def render_spain_guide()->str:
 <h1>Canfranc · Oza · Irati · Roncal</h1>
 <p class="lead">Dom 16 noche → Canfranc · 3 días Pirineo aragonés · día estrella Oza/Aguas Tuertas ·
 Selva de Irati · Valle del Roncal. Vuelta miércoles 26. Hike moderado, perras siempre.</p>
-{btns([("🗺️ Loop completo",GMAPS_LOOP,"g"),("Dom 16 · Teià → Canfranc",gmaps_dir(*TEIA,*CAN),"g")])}
+{btns([("🗺️ Loop completo",GMAPS_LOOP,"g"),("Dom 16 · Teià → P4N #285213",gmaps_dir(*TEIA,*SPOT1),"g")])}
 </section>
 
 <section class="section" id="resumen">
