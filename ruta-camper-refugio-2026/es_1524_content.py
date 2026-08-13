@@ -33,7 +33,9 @@ def gmaps_route(stops)->str:
     if mid: url+="&waypoints="+"|".join(f"{lat},{lon}" for lon,lat in mid)
     return url+"&travelmode=driving"
 def gmaps_pin(lat,lon)->str: return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
-def p4n(lat,lon,dist=8)->str: return f"https://park4night.com/es/map#{14}/{lat}/{lon}"
+def p4n(lat, lon, zoom: int = 14) -> str:
+    """Abre el mapa Park4Night centrado en coordenadas (formato search, no hash)."""
+    return f"https://park4night.com/es/search?lat={lat}&lng={lon}&zoom={zoom}"
 
 GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA, OCH, ISA, TEIA])
 
