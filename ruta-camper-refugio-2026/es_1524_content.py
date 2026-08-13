@@ -7,14 +7,15 @@ ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 # ── Coordenadas clave ────────────────────────────────────────────────────────
-TEIA  = (2.319,  41.498)
-CAN   = (-0.525, 42.750)   # Canfranc Estación
-OZA   = (-0.717, 42.822)   # Selva de Oza parking
-ZUR   = (-0.832, 42.860)   # Zuriza
-OCH   = (-1.079, 42.906)   # Ochagavía
-ISA   = (-0.921, 42.856)   # Isaba
-JACA  = (-0.549, 42.568)
-YESA  = (-1.072, 42.622)   # Embalse de Yesa (pernoc transición D5)
+TEIA   = (2.319,   41.498)
+SPOT1  = (-0.51183, 42.80934)  # Canal Roya · primera noche (usuario)
+CAN    = (-0.525,  42.750)   # Canfranc Estación (~11 km al sur del spot)
+OZA    = (-0.717,  42.822)   # Selva de Oza parking
+ZUR    = (-0.832,  42.860)   # Zuriza
+OCH    = (-1.079,  42.906)   # Ochagavía
+ISA    = (-0.921,  42.856)   # Isaba
+JACA   = (-0.549,  42.568)
+YESA   = (-1.072,  42.622)   # Embalse de Yesa
 
 WEEKDAYS = {0:"lunes",1:"martes",2:"miércoles",3:"jueves",4:"viernes",5:"sábado",6:"domingo"}
 def weekday(d:str)->str:
@@ -34,7 +35,7 @@ def gmaps_route(stops)->str:
 def gmaps_pin(lat,lon)->str: return f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
 def p4n(lat,lon,dist=8)->str: return f"https://park4night.com/es/map#{14}/{lat}/{lon}"
 
-GMAPS_LOOP = gmaps_route([TEIA, CAN, OZA, OCH, ISA, TEIA])
+GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA, OCH, ISA, TEIA])
 
 def btn(label,url,kind="g")->str:
     cls={"g":"btn btn-g","o":"btn btn-o","w":"btn btn-w","p":"btn btn-p"}.get(kind,"btn")
@@ -50,10 +51,10 @@ DAYS = [
     #  concurrencia, interes_tags, historia, observaciones, planb)
     dict(
         day=1, date="2026-08-17",
-        zona="Valle del Aragón · Canfranc Estación",
-        parking_name="Canal Roya / Rioseta",
-        parking_lat=42.781, parking_lon=-0.493,
-        drive_from="Dom 16 noche, Teià → Canfranc", drive_km="~366 km", drive_h="4,5 h",
+        zona="Canal Roya · Canfranc",
+        parking_name="Canal Roya · spot primera noche",
+        parking_lat=42.80934, parking_lon=-0.51183,
+        drive_from="Dom 16 noche, Teià → Canal Roya", drive_km="~375 km", drive_h="4,5 h",
         hike="Ibón de Estanes", hike_km="12 km", hike_dif="Moderado",
         hike_desn="~400 m", hike_h="3–4 h",
         concurrencia="Media-alta",
@@ -78,9 +79,9 @@ DAYS = [
     dict(
         day=2, date="2026-08-18",
         zona="Canal Roya · Canfranc",
-        parking_name="Canal Roya tramo bajo",
-        parking_lat=42.800, parking_lon=-0.495,
-        drive_from="Misma zona Canal Roya", drive_km="—", drive_h="—",
+        parking_name="Canal Roya · misma zona",
+        parking_lat=42.80934, parking_lon=-0.51183,
+        drive_from="Sin traslado · misma zona Canal Roya", drive_km="—", drive_h="—",
         hike="Canal Roya – Laguna de Tortiellas", hike_km="10 km", hike_dif="Fácil-Moderado",
         hike_desn="~300 m", hike_h="3 h",
         concurrencia="Media",
@@ -105,7 +106,7 @@ DAYS = [
         zona="Candanchú · Astún · Canfranc",
         parking_name="Astún (parking estación)",
         parking_lat=42.795, parking_lon=-0.458,
-        drive_from="Canfranc → Astún (~8 km)", drive_km="~8 km", drive_h="15 min",
+        drive_from="Canal Roya → Canfranc Estación → Astún", drive_km="~20 km", drive_h="~30 min",
         hike="Lagunas de Anayet (ruta baja)", hike_km="9 km", hike_dif="Moderado",
         hike_desn="~350 m", hike_h="3 h",
         concurrencia="Media-alta (zona estación)",
@@ -132,7 +133,7 @@ DAYS = [
         zona="Selva de Oza · Aguas Tuertas ⭐",
         parking_name="Área forestal Selva de Oza",
         parking_lat=42.822, parking_lon=-0.717,
-        drive_from="Canfranc → Oza (Valle de Hecho, ~40 km)", drive_km="~40 km", drive_h="~50 min",
+        drive_from="Canal Roya / Astún → Oza (Valle de Hecho)", drive_km="~86 km", drive_h="~1h25",
         hike="Aguas Tuertas", hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
         concurrencia="Media",
@@ -162,7 +163,7 @@ DAYS = [
         zona="Ansó / Zuriza → Jaca → borde Navarra",
         parking_name="Embalse de Yesa (pernocta transición)",
         parking_lat=42.622, parking_lon=-1.072,
-        drive_from="Oza → Ansó/Zuriza (~25 km) → Jaca (~70 km) → Yesa (~80 km)", drive_km="~115 km", drive_h="~2 h",
+        drive_from="Oza → Jaca (~55 km) → Yesa (~45 km)", drive_km="~100 km", drive_h="~1h30",
         hike="Foz de Biniés (opcional AM temprano)", hike_km="4 km", hike_dif="Fácil",
         hike_desn="~80 m", hike_h="1,5 h",
         concurrencia="Alta Jaca agosto · tranquila Foz",
@@ -424,13 +425,13 @@ def summary_table()->str:
         f"""<tr style="background:#f5f8f5">
 <td><strong>D0</strong></td>
 <td>domingo 16 ago<br><span style="color:var(--muted);font-size:.72rem">conducción nocturna</span></td>
-<td>Teià → Canfranc</td>
-<td>~366 km · 4,5 h</td>
-<td>Canal Roya · borde río Aragón {btn("Maps",gmaps_pin(42.781,-0.493),"g")}</td>
+<td>Teià → Canal Roya</td>
+<td>~375 km · 4,5 h</td>
+<td>Canal Roya (spot primera noche) {btn("Maps",gmaps_pin(42.80934,-0.51183),"g")}</td>
 <td>—</td>
 <td>—</td>
 <td style="color:var(--muted)">5 mm · 89%</td>
-<td>{btn("Ruta D0",gmaps_dir(*TEIA,*CAN),"g")}</td>
+<td>{btn("Ruta D0",gmaps_dir(*TEIA,*SPOT1),"g")}</td>
 </tr>"""
     ]
     for d in DAYS:
@@ -499,16 +500,16 @@ def day_card(d:dict)->str:
 
     # ruta section
     if n==1:
-        ruta_html = (f"<p>Llegáis la noche del <strong>domingo 16</strong> desde Teià (~366 km, 4,5 h). "
-                     f"No hace falta hike ese día. Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
-                     f"{btns([('Dom 16 · Teià → Canfranc', gmaps_dir(*TEIA,*CAN), 'g')])}")
+        ruta_html = (f"<p>Llegaréis la noche del <strong>domingo 16</strong> desde Teià (~375 km, 4,5 h). "
+                     f"Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
+                     f"{btns([('Dom 16 · Teià → Canal Roya (spot)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
     elif n==4:
-        ruta_html = (f"<p>Mover camper Canfranc → Selva de Oza (~40 km, ~50 min). "
-                     f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella para Aguas Tuertas</strong>.</p>"
-                     f"{btns([('Canfranc → Oza', gmaps_dir(*CAN,*OZA), 'g')])}")
+        ruta_html = (f"<p>Bajad a Canfranc Estación (~11 km) y continuad hasta Oza (Valle de Hecho, ~86 km · ~1h25). "
+                     f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
+                     f"{btns([('Canal Roya → Oza', gmaps_dir(*SPOT1,*OZA), 'g')])}")
     elif n==5:
-        ruta_html = (f"<p>Día de transición: Oza/Zuriza → Foz de Biniés (opcional AM) → Jaca (cultural) → Yesa/Navarra.</p>"
-                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA,*JACA), 'g'), ('Jaca → borde Navarra (Yesa)', gmaps_dir(*JACA,*YESA), 'g')])}")
+        ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
+                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
     elif n==6:
         ruta_html = (f"<p>Yesa → Ochagavía (~90 km, ~1h15). Entrada al Pirineo navarro.</p>"
                      f"{btns([('Yesa → Ochagavía', gmaps_dir(*YESA,*OCH), 'g')])}")
