@@ -10,12 +10,14 @@
 
 **Paradas:** Teià (Barcelona) → Canfranc Estación (Huesca) → Sallent de Gállego (Huesca) → Ochagavía (Navarra) → Teià (Barcelona)
 
+**Finde lluvioso (15–16 ago):** Open-Meteo prevé lluvia en todo el Pirineo (Canfranc ≈11+5 mm, Sallent/Ochagavía similar). No hay base alternativa ≤25°C y seca — costa e interior descartados por calor. D1–2 = traslado + plan B lluvia; **primer hike lun 17**.
+
 | Día | Base (provincia) | AppMax | Visita |
 |-----|------------------|--------|--------|
-| 15 | Canfranc Estación (Huesca) | 22°C | Llegada |
-| 16 | Canfranc (Huesca) | 22°C | Ibón de Estanes |
-| 17 | Canfranc (Huesca) | 23°C | Selva de Oza |
-| 18 | Canfranc (Huesca) | 24°C | Valle |
+| 15 | Canfranc Estación (Huesca) | 22°C | **Solo traslado** · lluvia tarde |
+| 16 | Canfranc (Huesca) | 22°C | **Plan B lluvia** (estación/pueblo) |
+| 17 | Canfranc (Huesca) | 23°C | Ibón de Estanes (reprogramado) |
+| 18 | Canfranc (Huesca) | 24°C | Selva de Oza |
 | 19 | Canfranc (Huesca) | 25°C | Último día base |
 | 20 | Sallent de Gállego (Huesca) | 21°C | Lanuza |
 | 21 | Sallent (Huesca) | 21°C | Formigal / ibones |

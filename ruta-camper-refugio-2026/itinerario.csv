@@ -1,8 +1,8 @@
 dia,fecha,tramo,km_aprox,min_aprox,base,provincia,app_max_c,visita_estrella,perros
-1,2026-08-15,Teia-Canfranc,350,270,Canfranc Estacion,Huesca,22,Llegada valle,OK
-2,2026-08-16,local,0,0,Canfranc Estacion,Huesca,22,Ibon Estanes,OK atado
-3,2026-08-17,local,0,0,Canfranc Estacion,Huesca,23,Selva de Oza,OK atado
-4,2026-08-18,local,0,0,Canfranc Estacion,Huesca,24,Valle Canfranc,OK
+1,2026-08-15,Teia-Canfranc,350,270,Canfranc Estacion,Huesca,22,Solo traslado lluvia tarde,OK
+2,2026-08-16,local,0,0,Canfranc Estacion,Huesca,22,Plan B lluvia estacion,OK
+3,2026-08-17,local,0,0,Canfranc Estacion,Huesca,23,Ibon Estanes reprogramado,OK atado
+4,2026-08-18,local,0,0,Canfranc Estacion,Huesca,24,Selva de Oza,OK atado
 5,2026-08-19,local,0,0,Canfranc Estacion,Huesca,25,Ultimo dia base,OK
 6,2026-08-20,Canfranc-Sallent,45,60,Sallent de Gallego,Huesca,21,Lanuza,OK
 7,2026-08-21,local,0,0,Sallent de Gallego,Huesca,21,Formigal bosque,OK atado

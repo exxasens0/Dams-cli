@@ -181,7 +181,8 @@ def build_days() -> str:
         "d1", "Día 1 · Sábado 15 agosto", f"{P['teia']} → {P['can']} · ~350 km · ~4–5 h",
         f"""<p><strong>Tramo largo permitido</strong> (ida). Subida directa al Pirineo alto — única zona ≤25°C sensación.</p>
 {btns([("Google · Teià → Canfranc", gmaps_dir(*TEIA, *CAN), "g")])}
-<p>Llegada tarde: paseo estación histórica / valle. Sensación prevista ~22°C.</p>""",
+<div class="warn"><strong>⚠️ Lluvia tarde (Open-Meteo):</strong> mañana seca hasta ~13 h; tormenta ~15–19 h (≈11 mm). <strong>Sin hike.</strong> Salid temprano de Teià (6–7 h) para llegar ~11–12 h.</div>
+<p>Llegada: paseo corto estación <em>antes de 14 h</em> · sensación ~22°C.</p>""",
         (
             spot("Parking Canfranc Estación", 42.751, -0.516,
                  "Pueblo fronterizo: aparcamientos amplios junto a la estación. Satélite: sin salida.",
@@ -193,46 +194,51 @@ def build_days() -> str:
         [("Estación Canfranc (exterior)", "0,2", "3", "OK paseo", gmaps_pin(42.751, -0.516)),
          ("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
          ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
-        """<ol><li>Paseo valle / estación (tarde)</li>
-<li>Gastro: bordas aragonesas</li></ol>""",
-        1, "<p>Base fresca todo el viaje. Perras atadas en pastos.</p>",
+        """<ol><li><strong>Solo conducción + pernocta</strong> — sin senderismo</li>
+<li>Si llegáis antes de 14 h: paseo corto exterior estación (30 min max)</li>
+<li>Tarde/noche: interior camper / gastro pueblo si llueve</li></ol>""",
+        1, "<p>Base fresca todo el viaje. No hay destino alternativo ≤25°C y seco sáb-dom — el Pirineo es la única opción viable.</p>",
     ))
 
     parts.append(day_card(
-        "d2", "Día 2 · Domingo 16", f"{P['can']} · Ibón de Estanes",
-        f"<p><strong>Sin traslado.</strong> Sensación ~22°C — hike cómodo.</p>",
+        "d2", "Día 2 · Domingo 16", f"{P['can']} · plan B lluvia",
+        f"""<p><strong>Sin traslado.</strong> Sensación ~22°C pero <strong>lluvia todo el día</strong> (89% prob, llovizna ~11–22 h).</p>
+<div class="warn"><strong>Plan B lluvia:</strong> cancelar Ibón de Estanes. Primer hike → <strong>lunes 17</strong> (mejora meteo).</div>""",
         spot("Misma pernocta D1", 42.751, -0.516, "Repetir parking.", "Finde: más gente"),
         """<ul><li>Misma base D1</li></ul>""",
         [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
          ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50)),
          ("Villa de Canfranc", "0", "3", "OK", gmaps_pin(42.751, -0.516))],
-        """<ol><li><strong>7:00–12:00 · Ibón de Estanes</strong> (ibón, sombra)</li>
-<li>Tarde: siesta / valle</li></ol>""",
-        2, "<p>Patous posibles — correa antes del rebaño.</p>",
+        f"""<ol><li><strong>Plan A (lluvia):</strong> estación Canfranc + pueblo a pie (cubierto parcial)</li>
+<li><strong>Plan B:</strong> Jaca (~30 min) — museo, cafés (solo si carretera seca)</li>
+<li><strong>Pospuesto:</strong> Ibón de Estanes → <strong>D3 lun 17</strong></li></ol>
+{btns([("Museo estación Canfranc", "https://www.canfranc.es/turismo/estacion-internacional/", "w")])}""",
+        2, "<p>Domingo lluvioso en todo el Pirineo (Canfranc, Sallent, Ochagavía). No compensa cambiar base — misma lluvia y más conducción.</p>",
     ))
 
     parts.append(day_card(
-        "d3", "Día 3 · Lunes 17", f"{P['can']} · Selva de Oza",
-        f"<p><strong>Sin traslado.</strong> Segundo día Pirineo aragonés (~23°C sensación).</p>",
+        "d3", "Día 3 · Lunes 17", f"{P['can']} · Ibón de Estanes (reprogramado)",
+        f"""<p><strong>Sin traslado.</strong> Meteo mejora (≈0,7 mm, 29% prob) — <strong>primer hike del viaje</strong>.</p>
+<p>Ibón de Estanes reprogramado desde dom 16 · Selva de Oza pasa a mar 18.</p>""",
         spot("Base Canfranc", 42.751, -0.516, "Misma noche.", ""),
         """<ul><li>—</li></ul>""",
-        [("Selva de Oza / Respomuso", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
-         ("Panticosa (exterior)", "20", "30", "Confirmar", gmaps_pin(42.823, -0.218)),
-         ("Valle de Canfranc", "5", "10", "OK", gmaps_pin(42.751, -0.516))],
-        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong> (pinar, ibones)</li>
-<li>Evitar termas interior Panticosa si ban perros</li></ol>""",
+        [("Ibón de Estanes", "12", "20", "OK atado", gmaps_pin(42.78, -0.48)),
+         ("Valle de Canfranc", "5", "10", "OK", gmaps_pin(42.751, -0.516)),
+         ("Bosque de la Mina", "8", "15", "OK", gmaps_pin(42.76, -0.50))],
+        """<ol><li><strong>7:00–12:00 · Ibón de Estanes</strong> (ibón, sombra) — ventana seca</li>
+<li>Tarde: si llueve → valle / pueblo</li></ol>""",
         3, "<p>No dejar perras en furgoneta.</p>",
     ))
 
     parts.append(day_card(
-        "d4", "Día 4 · Martes 18", f"{P['can']} · valle y senderos",
-        f"<p><strong>Sin traslado.</strong> Sensación ~24°C.</p>",
+        "d4", "Día 4 · Martes 18", f"{P['can']} · Selva de Oza",
+        f"<p><strong>Sin traslado.</strong> Día seco (0 mm) · sensación ~24°C.</p>",
         spot("Base Canfranc", 42.751, -0.516, "Cuarta noche — misma base.", ""),
         """<ul><li>—</li></ul>""",
-        [("Ruta Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50)),
-         ("Mirador valle", "8", "12", "OK", gmaps_pin(42.77, -0.49)),
+        [("Selva de Oza / Respomuso", "15", "25", "OK atado", gmaps_pin(42.82, -0.45)),
+         ("Ruta Bosque de la Mina", "10", "15", "OK", gmaps_pin(42.76, -0.50)),
          ("Sallent de Gállego (recce)", "25", "35", "OK", gmaps_pin(42.773, -0.336))],
-        """<ol><li>Hike corto AM valle Canfranc</li>
+        """<ol><li><strong>7:00–12:00 · Selva de Oza</strong> (pinar, ibones)</li>
 <li>Tarde: reconocer ruta mañana a Sallent</li></ol>""",
         4, "<p>Última noche Canfranc antes de mover.</p>",
     ))
@@ -336,6 +342,7 @@ def live_summary() -> str:
 <div class="card prose">
 <div class="warn"><strong>Cambio de ruta:</strong> Albarracín, Escucha, Morella y Jaca <strong>descartados</strong> — sensación 28–32°C (camper interior ~35°C con perras). Solo bases Pirineo alto ≤25°C.</div>
 <div class="warn"><strong>Reglas:</strong> hike solo si sensación ≤25°C · ≥2 noches Navarra (D8–9) · tramos ≤2 h (D1/D10 ~5 h).</div>
+<div class="warn"><strong>⚠️ Finde lluvioso (15–16 ago):</strong> lluvia en todo el Pirineo (Canfranc, Sallent, Ochagavía). D1–2 = traslado + plan B lluvia · <strong>primer hike lun 17</strong>. Mar–mié secos en Canfranc.</div>
 <div class="callout"><strong>Eje:</strong> {P['can']} (5 noches) → {P['sal']} → {P['och']}/{P['irati']} → {P['teia']}.</div>
 <p>{btns([("🗺️ Ruta Google Maps · loop completo", GMAPS_LOOP, "g")])}</p>
 <p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['can']} → {P['sal']} → {P['och']} → {P['teia']}</p>
@@ -433,3 +440,7 @@ def main() -> None:
         (ROOT / name).write_text(html_out, encoding="utf-8")
     print("written", len(html_out), "bytes")
     print("loop:", GMAPS_LOOP)
+
+
+if __name__ == "__main__":
+    main()
