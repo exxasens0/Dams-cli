@@ -7,15 +7,31 @@ ROOT = Path(__file__).resolve().parent
 WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 # ── Coordenadas clave ────────────────────────────────────────────────────────
+# Formato (lon, lat) para gmaps_dir/gmaps_route; (lat, lon) para gmaps_pin/p4n
 TEIA   = (2.319,    41.498)
-SPOT1  = (-0.5121,  42.8091)  # P4N #285213 · Parking Carretera Astún (22889 Jaca)
-CAN    = (-0.525,   42.750)   # Canfranc Estación
-OZA    = (-0.717,   42.822)
-ZUR    = (-0.832,   42.860)
-OCH    = (-1.079,   42.906)
-ISA    = (-0.921,   42.856)
+SPOT1  = (-0.5121,  42.8091)  # P4N #285213 · Parking Carretera Astún (22889)
+
+# Overnight spots (lon, lat) para gmaps_route
+OZA_NIGHT  = (-0.738,  42.840)  # Área forestal Selva de Oza (borde pinar)
+YESA       = (-1.061,  42.609)  # Embalse Yesa, margen sur
+OCH        = (-1.082,  42.908)  # Ochagavía, borde río (fuera casco)
+IRABIA     = (-1.015,  42.929)  # Casas de Irati / Irabia
+ORBA_NIGHT = (-1.231,  42.979)  # Norte Orbaitzeta, borde río Irati
+ISA        = (-0.919,  42.855)  # Isaba, borde río Esca
+
 JACA   = (-0.549,   42.568)
-YESA   = (-1.072,   42.622)
+
+# Trailheads (lat, lon) para gmaps_pin (uso interno)
+TH_ESTANES  = (42.796, -0.459)  # Astún ski base → Ibón de Estanes
+TH_CANALROYA= (42.772, -0.480)  # Candanchú/Rioseta → Canal Roya
+TH_ANAYET   = (42.796, -0.459)  # Astún ski base → Lagunas de Anayet
+TH_AGUAS    = (42.862, -0.742)  # Parking terminal Valle Oza → Aguas Tuertas
+TH_BINIES   = (42.694, -0.909)  # Acceso Foz de Biniés (junto a Biniés pueblo)
+TH_ZATOIA   = (42.906, -1.067)  # Puente medieval Ochagavía → Río Zatoia
+TH_IRATI    = (42.929, -1.012)  # Casas de Irati (mismo que pernocta D7)
+TH_ORBA     = (42.985, -1.240)  # Parking Ruinas Fábrica de Armas Orbaitzeta
+TH_ESCA     = (42.848, -0.919)  # Sur Isaba → Senda Río Esca
+
 P4N_NIGHT1 = 285213
 
 WEEKDAYS = {0:"lunes",1:"martes",2:"miércoles",3:"jueves",4:"viernes",5:"sábado",6:"domingo"}
@@ -54,7 +70,7 @@ def p4n_url_for(d: dict) -> str:
         return p4n_place(d["p4n_id"])
     return p4n(d["parking_lat"], d["parking_lon"])
 
-GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA, OCH, ISA, TEIA])
+GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA_NIGHT, OCH, ISA, TEIA])
 
 def btn(label,url,kind="g")->str:
     cls={"g":"btn btn-g","o":"btn btn-o","w":"btn btn-w","p":"btn btn-p"}.get(kind,"btn")
@@ -64,278 +80,277 @@ def btns(items)->str:
     return '<div class="btns">'+"".join(btn(l,u,k) for l,u,k in items)+"</div>"
 
 # ── Datos completos por día ──────────────────────────────────────────────────
+# parking_lat/lon = PERNOCTA (camper duerme aquí, P4N link)
+# hike_lat/lon    = TRAILHEAD (donde aparcas para iniciar el hike)
+# Si hike_lat no se indica se asume igual a parking
 DAYS = [
-    # (day, date, zona_titulo, parking_name, parking_lat, parking_lon,
-    #  p4n_url, camping_url, drive_from, drive_km, drive_h,
-    #  hike_nombre, hike_km, hike_dif, hike_desnivel, hike_h,
-    #  concurrencia, interes_tags, historia, observaciones, planb)
     dict(
         day=1, date="2026-08-17",
         zona="Carretera Astún · Canfranc (22889)",
+        # Pernocta: P4N #285213, camino al ski Astún
         parking_name="P4N #285213 · Parking Carretera Astún",
         parking_lat=42.8091, parking_lon=-0.5121,
         p4n_id=285213,
         drive_from="Dom 16 noche, Teià → Parking Carretera Astún", drive_km="~375 km", drive_h="4,5 h",
-        hike="Ibón de Estanes", hike_km="12 km", hike_dif="Moderado",
+        # Trailhead: base estación Astún (3,5 km del overnight)
+        hike="Ibón de Estanes", hike_lat=42.796, hike_lon=-0.459,
+        hike_km="12 km", hike_dif="Moderado",
         hike_desn="~400 m", hike_h="3–4 h",
+        hike_parking="Parking base Astún (frente a la estación de esquí)",
         concurrencia="Media-alta",
-        interes=["Estación Internacional de Canfranc","Valle del Aragón","Río Aragón"],
+        interes=["Estación Internacional de Canfranc","Valle del Aragón","Pozas de montaña","GR-11"],
         historia=(
             "La <strong>Estación Internacional de Canfranc</strong> (1928) fue la más grande de España "
             "y segunda de Europa. Su apertura conectó España y Francia por el Pirineo central. "
             "Durante la II Guerra Mundial fue paso clandestino de judíos y se cree que por aquí "
-            "salió arte expoliado por los nazis hacia España. En 1970 un accidente en el puente "
-            "francés cortó el servicio; lleva décadas abandonada. Actualmente en rehabilitación "
-            "como hotel de lujo. El edificio modernista es impresionante incluso desde fuera."
+            "salió arte expoliado por los nazis. En 1970 un accidente en el puente francés cortó el "
+            "servicio; lleva décadas en rehabilitación como hotel de lujo."
         ),
         observaciones=(
-            "Llegáis la noche del dom 16 · sin hike ese día. "
-            "<strong>Parking de gravilla en la carretera de Astún</strong> (P4N #285213, CP 22889). "
-            "Acceso por A-136 hasta Canfranc y seguir hacia Astún — asfalto hasta el parking. "
-            "Los parkings inferiores son solo turismos y <strong>no</strong> permiten pernocta. "
-            "Usad el parking de gravilla (P2/P4 más llanos; P3 más inclinado). "
-            "Ibón de Estanes: sendero bien marcado ~400 m desnivel · pozas para perras. "
-            "Patous en pastizales — correa. Canfranc pueblo: pan y gastro a ~11 km."
+            "Llegaréis la noche del dom 16. Primer hike completo: lunes 17 por la mañana. "
+            "Desde el parking base de Astún seguir la pista hasta el ibón (~400 m desnivel). "
+            "Pozas en ruta perfectas para que las perras se refresque. Patous en pastizales — correa. "
+            "Canfranc pueblo (pan, gastro) a ~11 km. Parking inclinado: P2/P4 más llanos."
         ),
-        planb="Visita exterior estación Canfranc · paseo por el pueblo · río Aragón.",
+        planb="Visita exterior estación Canfranc · paseo río Aragón · Canfranc Pueblo.",
     ),
     dict(
         day=2, date="2026-08-18",
         zona="Carretera Astún · Canfranc (22889)",
+        # Pernocta: misma que D1
         parking_name="P4N #285213 · misma pernocta",
         parking_lat=42.8091, parking_lon=-0.5121,
         p4n_id=285213,
         drive_from="Sin traslado · misma pernocta Parking Astún", drive_km="—", drive_h="—",
-        hike="Canal Roya – Laguna de Tortiellas", hike_km="10 km", hike_dif="Fácil-Moderado",
+        # Trailhead: Candanchú / Rioseta (parking al pie del Canal Roya)
+        hike="Canal Roya – Laguna de Tortiellas", hike_lat=42.772, hike_lon=-0.480,
+        hike_km="10 km", hike_dif="Fácil-Moderado",
         hike_desn="~300 m", hike_h="3 h",
+        hike_parking="Parking Candanchú / Rioseta (al pie del Canal Roya, A-136 km 45)",
         concurrencia="Media",
-        interes=["Canal Roya","Llanos de la Rinconada","Frontera Francia","GR-11"],
+        interes=["Canal Roya glaciar","Laguna Tortiellas","GR-11","Frontera Francia","Vistas Picos"],
         historia=(
             "El <strong>Canal Roya</strong> es un valle glaciar que serpentea hacia la frontera "
             "francesa. Forma parte del <strong>GR-11</strong>, el sendero que cruza los Pirineos "
-            "de Cabo Higuer (Hondarribia) al Cap de Creus (Cadaqués). El valle conserva glaciares "
-            "rocosos y en días claros se ven los picos fronterizos. El nombre 'Canal' viene de los "
-            "barrancos rectilíneos tallados por glaciares cuaternarios."
+            "de Cabo Higuer a Cap de Creus. El nombre 'Canal' viene de los barrancos rectilíneos "
+            "tallados por glaciares cuaternarios. En días claros se ven los picos fronterizos."
         ),
         observaciones=(
             "Mejor día del tramo aragonés: 0 mm, 24°C. "
-            "El sendero de Canal Roya sale cerca del parking (reseñas P4N lo confirman). "
-            "No entrar por pistas forestales laterales con la camper. "
-            "Patous — correa. Tarde: misma pernocta o bajar a Canfranc pueblo."
+            "Aparcar en Candanchú/Rioseta y seguir la pista del Canal Roya (~5 km al fondo del valle). "
+            "NO entrar con la camper por pistas forestales laterales. Patous — correa. "
+            "Tarde: misma pernocta o bajar a Canfranc pueblo (pan, tiendas)."
         ),
         planb="Paseo corto borde río Aragón · área picnic Canfranc.",
     ),
     dict(
         day=3, date="2026-08-19",
-        zona="Candanchú · Astún · Canfranc",
-        parking_name="Astún (parking estación)",
-        parking_lat=42.795, parking_lon=-0.458,
-        drive_from="Parking Astún → Canfranc Estación → Astún", drive_km="~20 km", drive_h="~30 min",
-        hike="Lagunas de Anayet (ruta baja)", hike_km="9 km", hike_dif="Moderado",
+        zona="Astún · Lagunas de Anayet",
+        # Pernocta: siguen en P4N #285213 (misma base D1-D3)
+        parking_name="P4N #285213 · misma pernocta (3ª noche)",
+        parking_lat=42.8091, parking_lon=-0.5121,
+        p4n_id=285213,
+        drive_from="Sin traslado · misma pernocta", drive_km="—", drive_h="—",
+        # Trailhead: base Astún (3,5 km del overnight, 5 min en camper)
+        hike="Lagunas de Anayet (ruta baja)", hike_lat=42.796, hike_lon=-0.459,
+        hike_km="9 km", hike_dif="Moderado",
         hike_desn="~350 m", hike_h="3 h",
+        hike_parking="Parking base estación Astún (seguir A-136 hasta el final, 3,5 km del overnight)",
         concurrencia="Media-alta (zona estación)",
-        interes=["Lagunas de Anayet","Pics du Midi d'Ossau (vistas)","Refugio de Anayet","Frontera Francia"],
+        interes=["Lagunas de Anayet","Pic du Midi d'Ossau (vistas)","Refugio de Anayet","Glaciares rocosos"],
         historia=(
             "Las <strong>Lagunas de Anayet</strong> (1960–2227 m) son ibones glaciares con "
-            "vistas directas al <strong>Pic du Midi d'Ossau</strong> (2884 m, Francia), "
-            "uno de los montes más fotogénicos del Pirineo por su silueta volcánica. "
-            "La zona fue zona de pastoreo trashúmante durante siglos; los pastores aragoneses "
-            "subían con sus rebaños cada verano desde el Somontano. El refugio de Anayet "
+            "vistas directas al <strong>Pic du Midi d'Ossau</strong> (2884 m), "
+            "uno de los montes más fotogénicos del Pirineo por su silueta volcánica bicéfala. "
+            "La zona fue área de pastoreo trashúmante durante siglos. El refugio de Anayet "
             "(privado) sirve bocadillos en agosto."
         ),
         observaciones=(
-            "0 mm, 25°C — último día seco antes de varios días con posible lluvia. "
-            "Tomar el sendero bajo de Anayet (no la variante de crestas, que es técnica). "
-            "Candanchú en agosto es un cruce de ciclistas y senderistas; aparcar en Astún "
-            "suele ser más tranquilo. "
-            "Tarde: preparar camper y bajar a Oza mañana (mover zona D4)."
+            "0 mm, 25°C. Tomar la ruta baja de Anayet (no la variante de crestas, técnica). "
+            "Desde Astún: seguir la pista principal ~1,5 km hasta el desvío señalizado Anayet. "
+            "Tarde: preparar camper y mañana D4 bajar a Oza (86 km, 1h25)."
         ),
         planb="Paseo llano Candanchú · vista exterior hacia frontera.",
     ),
     dict(
         day=4, date="2026-08-20",
         zona="Selva de Oza · Aguas Tuertas ⭐",
-        parking_name="Área forestal Selva de Oza",
-        parking_lat=42.822, parking_lon=-0.717,
+        # Pernocta: área forestal Selva de Oza
+        parking_name="Área forestal Selva de Oza (borde pinar, Valle de Hecho)",
+        parking_lat=42.840, parking_lon=-0.738,
+        # p4n_id: sin ID confirmado → usa search centrado en el spot
         drive_from="Parking Astún → Oza (Valle de Hecho)", drive_km="~86 km", drive_h="~1h25",
-        hike="Aguas Tuertas", hike_km="8 km", hike_dif="Fácil",
+        # Trailhead: parking terminal del Valle de Oza (fin del asfalto), 2,5 km más al norte
+        hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
+        hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
+        hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~2,5 km al norte de la pernocta)",
         concurrencia="Media",
-        interes=["Aguas Tuertas","Río Aragón Subordán","Selva de Oza","Valle de Hecho","Siresa"],
+        interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX"],
         historia=(
-            "<strong>Aguas Tuertas</strong> ('aguas torcidas') es una pradera alpina de origen "
-            "glaciar a ~1640 m donde el río Aragón Subordán forma meandros imposibles en terreno "
-            "llano, como si el río se hubiera olvidado de ir cuesta abajo. Es uno de los paisajes "
-            "más singulares y fotogénicos del Pirineo, y sorprendentemente accesible. "
+            "<strong>Aguas Tuertas</strong> ('aguas torcidas') es una pradera alpina glaciar a 1640 m "
+            "donde el río Aragón Subordán forma meandros imposibles en terreno llano. "
             "<strong>Selva de Oza</strong> es un hayedo-pinar de gran valor ecológico; el Valle de Hecho "
-            "conserva el <strong>cheso</strong>, un dialecto aragonés con 1.500 hablantes, "
-            "uno de los pocos vivos de Aragón. El pueblo de Hecho tiene un museo de escultura "
-            "contemporánea al aire libre único en el Pirineo."
+            "conserva el <strong>cheso</strong>, dialecto aragonés con ~1.500 hablantes. "
+            "El monasterio de <strong>Siresa</strong> (3 km) es el más antiguo de Aragón (s.IX)."
         ),
         observaciones=(
-            "Jue 20 es el día más fresco de toda la semana aragonesa (21°C en Oza). "
-            "Perros perfectos en Aguas Tuertas: terreno llano, agua en el río, poca gente. "
-            "Aparcar en el área forestal de Oza (P4N varios spots, zona de acampada libre histórica "
-            "ahora regulada). Tened los carteles en cuenta — zona ZEPA. "
-            "Siresa (3 km de Oza): monasterio románico del s.IX, el más antiguo de Aragón, merece "
-            "una parada de 20 min. Hecho pueblo (10 km) para avituallamiento."
+            "Jue 20: único día fresco de toda la semana aragonesa (~21°C sensación en Oza). "
+            "Pernocta en el área forestal Oza: 42.840, -0.738 — buscar en P4N zona. "
+            "Hike desde el parking terminal del asfalto (42.862, -0.742): de ahí 4 km a los meandros. "
+            "Aguas Tuertas: terreno llano, agua en el río, las perras van sueltas. "
+            "Siresa (3 km desde Oza): 20 min, vale la parada. Hecho pueblo (10 km) para avituallamiento."
         ),
-        planb="Paseo borde río Aragón Subordán en Oza · fresco y sombreado.",
+        planb="Paseo borde río Aragón Subordán en Oza · sombra garantizada.",
     ),
     dict(
         day=5, date="2026-08-21",
-        zona="Ansó / Zuriza → Jaca → borde Navarra",
-        parking_name="Embalse de Yesa (pernocta transición)",
-        parking_lat=42.622, parking_lon=-1.072,
+        zona="Foz de Biniés → Jaca → Embalse Yesa",
+        # Pernocta: borde Embalse Yesa, margen sur
+        parking_name="Borde Embalse Yesa (margen sur, cerca N-240)",
+        parking_lat=42.609, parking_lon=-1.061,
         drive_from="Oza → Jaca (~55 km) → Yesa (~45 km)", drive_km="~100 km", drive_h="~1h30",
-        hike="Foz de Biniés (opcional AM temprano)", hike_km="4 km", hike_dif="Fácil",
+        # Trailhead: Foz de Biniés (parada en ruta, 2 km antes de llegar a Biniés pueblo)
+        hike="Foz de Biniés (opcional AM, parada en ruta)", hike_lat=42.694, hike_lon=-0.909,
+        hike_km="4 km", hike_dif="Fácil",
         hike_desn="~80 m", hike_h="1,5 h",
-        concurrencia="Alta Jaca agosto · tranquila Foz",
-        interes=["Foz de Biniés","Ansó medieval","Jaca catedral románica","Ciudadela de Jaca","Embalse Yesa"],
+        hike_parking="Parking junto a Biniés pueblo (A-1603, km 2 · se llega antes de Jaca)",
+        concurrencia="Alta Jaca agosto · Baja Foz",
+        interes=["Foz de Biniés (gargantas kársticas)","Ansó medieval","Jaca catedral románica","Ciudadela Jaca","Embalse Yesa"],
         historia=(
             "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón. Su "
-            "<strong>catedral románica</strong> (1063) es la primera románica de España y modelo "
-            "para las demás del Camino de Santiago. La <strong>Ciudadela</strong> (s.XVI) es una "
-            "de las mejores fortalezas estrelladas de Europa, aún activa como cuartel. "
-            "<strong>Ansó</strong> conserva el <strong>traje típico ansotano</strong>, uno de los "
-            "trajes regionales más llamativos de España — las mujeres solteras llevaban la toca "
-            "hacia adelante, las casadas hacia atrás. La aldea estuvo aislada durante siglos "
-            "y desarrolló su propia cultura."
+            "<strong>catedral románica</strong> (1063) es la primera románica de España. "
+            "<strong>Ansó</strong> conserva el traje típico ansotano, uno de los más llamativos "
+            "de España. La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río "
+            "Veral, accesible por pasarela de madera sin desnivel."
         ),
         observaciones=(
             "Día de lluvia (~16–21 mm) → ideal para conducción y cultura urbana. "
-            "Foz de Biniés: si el tiempo lo permite a primera hora (gargantas kársticas, "
-            "fácil, 1,5 h, perros OK). Jaca: visita catedral exterior + ciudadela desde fuera "
-            "(perros no entran al museo pero sí paseo foso). "
-            "Tarde: hacia embalse Yesa o ya Ochagavía si el tiempo mejora. "
-            "Yesa tiene varios P4N en el borde del embalse — bonita pernocta de transición."
+            "Foz de Biniés: si el tiempo lo permite a primera hora (pasarela fácil, 1,5 h, perros OK, "
+            "desvío -10 km desde la ruta principal). Jaca: catedral exterior + ciudadela exterior. "
+            "Pernocta Yesa: P4N zona 42.609, -1.061 — varios spots borde embalse y río Aragón."
         ),
-        planb="Jaca: catedral + ciudadela + mercado cubierto si llueve.",
+        planb="Jaca: catedral + ciudadela + mercado cubierto · café bajo porches.",
     ),
     dict(
         day=6, date="2026-08-22",
         zona="Ochagavía · Valle de Salazar",
-        parking_name="Borde Ochagavía (fuera casco)",
+        # Pernocta: fuera del casco medieval (la camper no cabe dentro)
+        parking_name="Borde río Zatoia / salida norte Ochagavía (fuera casco)",
         parking_lat=42.908, parking_lon=-1.082,
         drive_from="Yesa → Ochagavía (~90 km)", drive_km="~90 km", drive_h="~1h15",
-        hike="Acceso suave Selva de Irati · río Zatoia", hike_km="6 km", hike_dif="Fácil",
+        # Trailhead: puente medieval (entrada al sendero Zatoia, 500 m del overnight)
+        hike="Sendero Río Zatoia", hike_lat=42.906, hike_lon=-1.067,
+        hike_km="6 km", hike_dif="Fácil",
         hike_desn="~100 m", hike_h="2 h",
+        hike_parking="Puente medieval Ochagavía (centro pueblo, ~500 m del parking nocturno)",
         concurrencia="Alta (sábado agosto)",
-        interes=["Ochagavía casco medieval","Santuario de Muskilda","Río Zatoia","Puente medieval"],
+        interes=["Ochagavía casco medieval","Santuario de Muskilda (s.XIII)","Río Zatoia","Puente románico","Queso Roncal DOP"],
         historia=(
-            "<strong>Ochagavía</strong> es la capital del <strong>Valle de Salazar</strong>, "
-            "uno de los valles pirenaicos navarros mejor conservados. Su casco medieval tiene "
-            "el típico trazado de pueblo de montaña navarro: calles empedradas, casas de piedra "
-            "con escudos, puente románico sobre el Zatoia. El <strong>Santuario de Muskilda</strong> "
-            "(s.XIII, en el monte sobre el pueblo) es el más venerado del Pirineo navarro; "
-            "cada 8 de septiembre los danzantes de Ochagavía bailan ante la Virgen con traje "
-            "tradicional en una de las fiestas más antiguas de Navarra. "
-            "La zona es la entrada al <strong>Queso Roncal DOP</strong>, el primer queso español "
-            "con denominación de origen (1981)."
+            "<strong>Ochagavía</strong> es la capital del Valle de Salazar. Su casco medieval tiene "
+            "calles empedradas, casas de piedra con escudos y puente románico sobre el Zatoia. "
+            "El <strong>Santuario de Muskilda</strong> (s.XIII) es el más venerado del Pirineo "
+            "navarro — cada 8 de septiembre los danzantes bailan ante la Virgen con traje tradicional. "
+            "La zona es la entrada al <strong>Queso Roncal DOP</strong> (primer queso español con DO, 1981)."
         ),
         observaciones=(
-            "Llegar a primera hora para pillar parking fuera del casco (AC 7 m, callejuelas). "
-            "P4N varios spots borde río y fuera del pueblo. "
-            "Sábado agosto = alta concurrencia turística en el casco; los senderos están más tranquilos. "
-            "Río Zatoia: agua limpia y fría, perfecto para perras. "
-            "Avituallamiento: hay supermercado pequeño en Ochagavía. "
-            "Gastronomía: cordero al chilindrón, queso Roncal, cuajada."
+            "La camper (7 m) NO entra al casco medieval — aparcar fuera en borde del río. "
+            "Coordenadas pernocta sugeridas: 42.908, -1.082 (norte del pueblo, borde prado). "
+            "El sendero del Zatoia arranca desde el puente medieval (500 m andando desde la camper). "
+            "Río Zatoia: agua limpia y fría, perfecto para las perras. "
+            "Avituallamiento: hay supermercado en Ochagavía. Queso Roncal: comprar aquí."
         ),
-        planb="Casco medieval Ochagavía · tiendas de queso Roncal · paseo río.",
+        planb="Casco medieval Ochagavía · tiendas de queso Roncal · paseo río bajo la lluvia.",
     ),
     dict(
         day=7, date="2026-08-23",
         zona="Selva de Irati · Embalse Irabia",
-        parking_name="Área embalse Irabia / Casas de Irati",
-        parking_lat=42.933, parking_lon=-1.032,
-        drive_from="Ochagavía → Irabia (~15 km)", drive_km="~15 km", drive_h="~20 min",
-        hike="Circular hayedo-abetal de Irati", hike_km="9 km", hike_dif="Fácil-Moderado",
+        # Pernocta: Casas de Irati / área de aparcamiento Irabia
+        parking_name="Casas de Irati · Área Irabia (fin de pista forestal asfaltada)",
+        parking_lat=42.929, parking_lon=-1.015,
+        drive_from="Ochagavía → Irabia (~15 km pista forestal ancha)", drive_km="~15 km", drive_h="~20 min",
+        # Trailhead: mismo parking (el hike circular empieza aquí)
+        hike="Circular hayedo-abetal de Irati", hike_lat=42.929, hike_lon=-1.012,
+        hike_km="9 km", hike_dif="Fácil-Moderado",
         hike_desn="~250 m", hike_h="3 h",
+        hike_parking="Parking Casas de Irati (= pernocta, inicio del circular)",
         concurrencia="Alta (domingo) · se diluye en la selva",
-        interes=["Selva de Irati","Embalse de Irabia","Hayedo-abetal","Casas de Irati","Abodi"],
+        interes=["Selva de Irati (2º bosque caducifolio Europa)","Embalse de Irabia","Hayas 500 años","Urogallo","Abodi"],
         historia=(
             "La <strong>Selva de Irati</strong> es el segundo bosque caducifolio más grande de Europa, "
-            "con 17.000 ha de hayedo-abetal compartidas entre Navarra y el País Vasco francés. "
-            "Los hayas y abetos alcanzan los 35 m de altura; algunos ejemplares superan los 500 años. "
-            "Históricamente fue zona de carboneo y extracción maderera para la Armada española "
-            "(los barcos necesitaban los árboles rectos del Pirineo). "
-            "El <strong>Embalse de Irabia</strong> (1942) es artificial pero perfectamente integrado "
-            "en el paisaje. La selva alberga urogallos, corzos, jabalíes y, ocasionalmente, "
-            "oso pardo (avistamientos raros pero documentados). "
-            "En otoño el espectáculo cromático es de fama europea; en verano la sombra del hayedo "
-            "es un refugio climático natural."
+            "17.000 ha de hayedo-abetal compartidas entre Navarra y el País Vasco francés. "
+            "Las hayas y abetos alcanzan los 35 m; algunos ejemplares superan los 500 años. "
+            "Históricamente zona de carboneo y extracción maderera para la Armada española. "
+            "La selva alberga urogallos, corzos, jabalíes y, ocasionalmente, oso pardo."
         ),
         observaciones=(
-            "Mover camper a la zona Irabia — hay varios P4N remotos y el área de Casas de Irati "
-            "tiene camping oficial. El acceso por pista forestal es ancho, sin problema para Sunlight. "
-            "Domingo = turistas, pero entrad pronto (antes de 9h) y la selva se vacía. "
-            "Perros con correa — zona sensible para aves (urogallo). "
-            "Si llueve: el hayedo bajo lluvia es impresionante (niebla, setas en agosto-septiembre). "
+            "La pista forestal Ochagavía → Irabia es amplia (ancho OK para Sunlight 600). "
+            "El hike circular empieza y termina en el mismo parking donde dormís. "
+            "Entrar pronto (antes de 9h): la selva se vacía aunque el parking esté lleno. "
+            "Perros con correa — zona ZEPA sensible para urogallo. "
             "Agua: río Irati nace aquí, cristalino y frío."
         ),
-        planb="Parking Irabia + paseo borde embalse (sin hike, con lluvia igualmente bonito).",
+        planb="Paseo borde embalse Irabia bajo lluvia (el hayedo con niebla es impresionante).",
     ),
     dict(
         day=8, date="2026-08-24",
         zona="Orbaitzeta · Río Irati interior",
-        parking_name="Orbaitzeta / aguas arriba río",
-        parking_lat=42.964, parking_lon=-1.217,
+        # Pernocta: norte de Orbaitzeta, borde río Irati (aguas arriba de las ruinas)
+        parking_name="Norte Orbaitzeta · borde río Irati (aguas arriba ruinas)",
+        parking_lat=42.979, parking_lon=-1.231,
         drive_from="Irabia → Orbaitzeta (~20 km pista forestal)", drive_km="~20 km", drive_h="~30 min",
-        hike="Senda Río Irati / Ruinas Orbaitzeta", hike_km="7 km", hike_dif="Fácil",
+        # Trailhead: parking habilitado junto a las ruinas (1 km al norte de la pernocta)
+        hike="Senda Río Irati / Ruinas Orbaitzeta", hike_lat=42.985, hike_lon=-1.240,
+        hike_km="7 km", hike_dif="Fácil",
         hike_desn="~100 m", hike_h="2,5 h",
+        hike_parking="Parking habilitado Ruinas Fábrica de Armas (señalizado desde Orbaitzeta, ~1 km al norte)",
         concurrencia="Baja (lunes, zona remota)",
-        interes=["Real Fábrica de Armas de Orbaitzeta","Río Irati","Bosque interior","Garralda"],
+        interes=["Real Fábrica de Armas Orbaitzeta (1784)","Río Irati","Hayedo interior","Pueblo Garralda"],
         historia=(
             "Las <strong>Ruinas de la Real Fábrica de Armas de Orbaitzeta</strong> son uno de los "
             "monumentos industriales más espectaculares y olvidados de España. "
             "Construida en 1784 por orden de Carlos III para fabricar cañones para la Armada, "
-            "funcionó hasta 1874 cuando fue destruida durante las <strong>Guerras Carlistas</strong>. "
-            "Las tres guerras civiles carlistas (1833–76) devastaron el Pirineo navarro: "
-            "Navarra era el corazón del carlismo y estas montañas vieron combates brutales. "
+            "fue destruida en 1874 durante las <strong>Guerras Carlistas</strong>. "
             "Hoy las ruinas de sillería asoman entre el hayedo como una ciudad fantasma: "
-            "edificios de 3 pisos cubiertos de hiedra, fraguas, canales hidráulicos. "
-            "La visita es libre y gratuita; los perros pueden entrar."
+            "edificios de 3 pisos cubiertos de hiedra, fraguas, canales hidráulicos. Visita libre."
         ),
         observaciones=(
             "⚠️ Día de mayor lluvia del viaje (~34 mm posibles). "
             "Plan A (seco): senda río Irati aguas arriba + ruinas Orbaitzeta. "
-            "Plan B (lluvia): visita ruinas Orbaitzeta (bajo el hayedo, soporta bien lluvia) "
-            "+ pueblo Garralda / Aribe para café. "
-            "Zona muy remota y tranquila — baja concurrencia incluso en agosto. "
-            "P4N: buscar spots borde río antes de Orbaitzeta. "
-            "Mañana: mover a Isaba (~35 km)."
+            "Plan B (lluvia): las ruinas están bajo hayedo denso — visita perfecta con lluvia. "
+            "Zona muy remota y tranquila. Pernocta: buscar en P4N zona 42.979, -1.231."
         ),
-        planb="Ruinas Fábrica de Armas Orbaitzeta · bosque cubierto · pueblo Garralda.",
+        planb="Ruinas Fábrica de Armas Orbaitzeta · bosque cubierto · café pueblo Garralda (12 km).",
     ),
     dict(
         day=9, date="2026-08-25",
         zona="Isaba · Valle del Roncal",
-        parking_name="Borde río Esca / Isaba",
-        parking_lat=42.856, parking_lon=-0.921,
+        # Pernocta: sur de Isaba, borde río Esca (junto al camping municipal o aguas abajo)
+        parking_name="Sur Isaba · borde río Esca (junto a Camping El Ferial o aguas abajo)",
+        parking_lat=42.853, parking_lon=-0.919,
         drive_from="Orbaitzeta → Isaba (~35 km)", drive_km="~35 km", drive_h="~45 min",
-        hike="Senda río Esca o acceso Belagua", hike_km="8 km", hike_dif="Fácil",
+        # Trailhead: pasarela al sur del pueblo (senda Esca), ~500 m al sur del overnight
+        hike="Senda Río Esca (Isaba sur)", hike_lat=42.848, hike_lon=-0.919,
+        hike_km="8 km", hike_dif="Fácil",
         hike_desn="~150 m", hike_h="2,5 h",
+        hike_parking="Pasarela sur de Isaba (senda del Esca, ~500 m al sur de la pernocta)",
         concurrencia="Baja (martes)",
-        interes=["Isaba","Circo de Belagua","Río Esca","Queso Roncal DOP","Tributo de las Tres Vacas"],
+        interes=["Isaba","Circo de Belagua","Río Esca","Queso Roncal DOP","Tributo de las Tres Vacas (1375)"],
         historia=(
-            "<strong>Isaba</strong> es el pueblo más importante del <strong>Valle del Roncal</strong>, "
-            "famoso por su queso DOP y por una curiosidad histórica única en Europa: "
-            "el <strong>Tributo de las Tres Vacas</strong>. Desde 1375 (¡cada año sin excepción!), "
-            "el 13 de julio, Francia entrega tres vacas de raza pirenaica al Valle del Roncal "
-            "como compensación por el uso de pastos del Pirineo. Es el único tributo que "
-            "Francia paga a España. La ceremonia se celebra en el límite fronterizo de Pierre "
-            "Saint-Martin. El <strong>Circo de Belagua</strong> es un anfiteatro glaciar imponente; "
-            "el acceso desde Isaba sube a 1.400 m con vistas al Pico de Anie (2463 m, Francia)."
+            "<strong>Isaba</strong> es el pueblo más importante del <strong>Valle del Roncal</strong>. "
+            "El <strong>Tributo de las Tres Vacas</strong>: desde 1375 (¡cada año sin excepción!), "
+            "cada 13 de julio Francia entrega tres vacas de raza pirenaica al Valle del Roncal "
+            "como compensación por uso de pastos del Pirineo. Es el único tributo que Francia paga "
+            "a España. El <strong>Circo de Belagua</strong> es un anfiteatro glaciar con vistas al "
+            "Pico de Anie (2463 m)."
         ),
         observaciones=(
-            "Último día en Navarra antes de la vuelta. Tranquilo martes. "
-            "Senda del río Esca desde Isaba: plana, sombreada, perfecta para perras. "
-            "Circo de Belagua: si el tiempo mejora, vale el desvío (14 km A/R, moderado). "
-            "Isaba tiene queso Roncal en varias tiendas — ideal para llevar a casa. "
-            "Pernocta: borde río Esca o P4N en los alrededores. "
-            "Mañana D10: salida temprana a Teià (~435 km, ~5,5 h)."
+            "Último día en Navarra. Senda del Esca: plana, sombreada, perfecta para perras. "
+            "La pasarela de inicio está a ~500 m al sur de la pernocta — no necesitáis mover la camper. "
+            "Isaba tiene queso Roncal en varias tiendas — comprar para llevar a casa. "
+            "Circo de Belagua (si tiempo mejora): 14 km A/R, moderado, arranca 8 km al norte de Isaba."
         ),
-        planb="Paseo pueblo Isaba · compras queso Roncal · río Esca.",
+        planb="Paseo pueblo Isaba · compras queso Roncal · río Esca pasarela.",
     ),
     dict(
         day=10, date="2026-08-26",
@@ -343,7 +358,9 @@ DAYS = [
         parking_name="Teià — casa",
         parking_lat=41.498, parking_lon=2.319,
         drive_from="Isaba → Teià (~435 km)", drive_km="~435 km", drive_h="5–6 h",
-        hike="—", hike_km="—", hike_dif="—", hike_desn="—", hike_h="—",
+        hike="—", hike_lat=None, hike_lon=None,
+        hike_km="—", hike_dif="—", hike_desn="—", hike_h="—",
+        hike_parking="",
         concurrencia="—",
         interes=["Parada sombra cada 2 h","AC para perras","Evitar parar sin sombra"],
         historia="",
@@ -438,10 +455,12 @@ def crowd_span(c:str)->str:
 def _drive_url(d: dict) -> str:
     n = d["day"]
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
-    if n==4: return gmaps_dir(*SPOT1,*OZA)
-    if n==5: return gmaps_dir(*OZA,*YESA)
+    if n==4: return gmaps_dir(*SPOT1,*OZA_NIGHT)
+    if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
     if n==6: return gmaps_dir(*YESA,*OCH)
-    if n==9: return gmaps_dir(-1.217,42.964,*ISA)
+    if n==7: return gmaps_dir(*OCH,*IRABIA)
+    if n==8: return gmaps_dir(*IRABIA,*ORBA_NIGHT)
+    if n==9: return gmaps_dir(*ORBA_NIGHT,*ISA)
     if n==10: return gmaps_dir(*ISA,*TEIA)
     return gmaps_pin(d["parking_lat"], d["parking_lon"])
 
@@ -506,25 +525,27 @@ def day_card(d:dict)->str:
     elif n==4:
         ruta_html = (f"<p>Bajad a Canfranc Estación (~11 km) y continuad hasta Oza (Valle de Hecho, ~86 km · ~1h25). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('Parking Astún → Oza', gmaps_dir(*SPOT1,*OZA), 'g')])}")
+                     f"{btns([('Parking Astún → Oza (conducir)', gmaps_dir(*SPOT1,*OZA_NIGHT), 'g')])}")
     elif n==5:
         ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
-                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
+                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA_NIGHT,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
     elif n==6:
         ruta_html = (f"<p>Yesa → Ochagavía (~90 km, ~1h15). Entrada al Pirineo navarro.</p>"
-                     f"{btns([('Yesa → Ochagavía', gmaps_dir(*YESA,*OCH), 'g')])}")
+                     f"{btns([('Yesa → Ochagavía (conducir)', gmaps_dir(*YESA,*OCH), 'g')])}")
     elif n==7:
-        ruta_html = f"<p>Mover camper Ochagavía → zona Irabia (~15 km pista forestal ancha).</p>{btns([('Ochagavía → Irabia', gmaps_dir(*OCH,-1.032,42.933), 'g')])}"
+        ruta_html = (f"<p>Mover camper Ochagavía → Casas de Irati/Irabia (~15 km pista forestal ancha, OK para Sunlight 600).</p>"
+                     f"{btns([('Ochagavía → Casas de Irati (conducir)', gmaps_dir(*OCH,*IRABIA), 'g')])}")
     elif n==8:
-        ruta_html = f"<p>Irabia → Orbaitzeta (~20 km pista forestal).</p>"
+        ruta_html = (f"<p>Irabia → Orbaitzeta (~20 km, continua la pista forestal).</p>"
+                     f"{btns([('Irabia → Orbaitzeta (conducir)', gmaps_dir(*IRABIA,*ORBA_NIGHT), 'g')])}")
     elif n==9:
         ruta_html = (f"<p>Orbaitzeta → Isaba (~35 km, ~45 min). Último cambio de base.</p>"
-                     f"{btns([('Orbaitzeta → Isaba', gmaps_dir(-1.217,42.964,*ISA), 'g')])}")
+                     f"{btns([('Orbaitzeta → Isaba (conducir)', gmaps_dir(*ORBA_NIGHT,*ISA), 'g')])}")
     elif n==10:
         ruta_html = (f"<p><strong>Vuelta a casa.</strong> ~435 km, 5–6 h. Salir antes de las 8:00.</p>"
-                     f"{btns([('Ochagavía/Isaba → Teià', gmaps_dir(*ISA,*TEIA), 'g')])}")
+                     f"{btns([('Isaba → Teià (conducir)', gmaps_dir(*ISA,*TEIA), 'g')])}")
     else:
-        ruta_html = "<p>Sin traslado.</p>"
+        ruta_html = "<p>Sin traslado — misma base.</p>"
 
     # parking section
     parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
@@ -536,9 +557,18 @@ def day_card(d:dict)->str:
     if d["hike"]=="—":
         hike_html = "<p>Sin senderismo — solo conducción.</p>"
     else:
-        hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · 
+        hlat = d.get("hike_lat") or d["parking_lat"]
+        hlon = d.get("hike_lon") or d["parking_lon"]
+        hp   = d.get("hike_parking","")
+        same_as_night = (abs(hlat - d["parking_lat"]) < 0.001 and abs(hlon - d["parking_lon"]) < 0.001)
+        th_note = ("<em style='font-size:.8rem;color:var(--muted)'>Trailhead = pernocta, no hay que mover la camper.</em>"
+                   if same_as_night else
+                   f"<em style='font-size:.8rem;color:var(--muted)'>{esc(hp)}</em>")
+        hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · \
 {esc(d['hike_km'])} · {esc(d['hike_desn'])} desnivel · {esc(d['hike_h'])}</p>
-{btns([('🗺️ Conducir al parking del hike', gmaps_pin(d['parking_lat'],d['parking_lon']), 'g')])}"""
+{th_note}
+{btns([('🗺️ Navegar al trailhead (Google)', gmaps_pin(hlat, hlon), 'g')])}
+<p style="font-size:.75rem;color:var(--muted)">Confirmar ruta en Wikiloc/AllTrails antes del hike.</p>"""
 
     # POIs
     poi_html = ", ".join(f"<strong>{esc(p)}</strong>" for p in d["interes"]) if d["interes"] else "—"
