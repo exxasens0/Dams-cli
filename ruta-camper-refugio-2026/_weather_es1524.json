@@ -2,32 +2,10 @@
   "fetched_at": "2026-08-13T13:03:06.436608+00:00",
   "source": "Open-Meteo best_match",
   "attribution": "https://open-meteo.com/",
-  "route_note": "Solo bases app_max <=25°C",
+  "route_note": "Salida dom 16 ago · solo bases app_max <=25°C",
   "days": [
     {
       "day": 1,
-      "date": "2026-08-15",
-      "place": "Canfranc",
-      "place_label": "Canfranc Estación (Huesca)",
-      "lat": 42.75,
-      "lon": -0.525,
-      "available": true,
-      "summary_es": "Código 95",
-      "t_max": 21.1,
-      "t_min": 16.1,
-      "app_max": 22.3,
-      "app_min": 14.5,
-      "precip_mm": 11.23,
-      "precip_prob": 67,
-      "uv_max": 6.1,
-      "tips": [
-        "⚠️ Lluvia tarde: tormenta ~15–19 h (≈11 mm). Mañana seca hasta ~13 h.",
-        "D1 = solo traslado. Sin hike. Llegar antes de 14 h si podéis.",
-        "OK temperatura: sensación máx 22°C (≤25)."
-      ]
-    },
-    {
-      "day": 2,
       "date": "2026-08-16",
       "place": "Canfranc",
       "place_label": "Canfranc Estación (Huesca)",
@@ -43,13 +21,14 @@
       "precip_prob": 89,
       "uv_max": 6.2,
       "tips": [
-        "⚠️ Lluvia todo el día: llovizna ~11–22 h (89% prob, ≈5 mm).",
-        "Plan B lluvia: estación, pueblo, museo — posponer Ibón a lun 17.",
+        "Salida domingo: revisar meteo a las 7:00 antes de cargar.",
+        "⚠️ Lluvia en llegada: llovizna ~11–22 h (89% prob, ≈5 mm). Sin hike.",
+        "Plan B: estación, pueblo, museo · primer hike lun 17.",
         "OK temperatura: sensación máx 22°C (≤25)."
       ]
     },
     {
-      "day": 3,
+      "day": 2,
       "date": "2026-08-17",
       "place": "Canfranc",
       "place_label": "Canfranc Estación (Huesca)",
@@ -65,11 +44,12 @@
       "precip_prob": 29,
       "uv_max": 7.2,
       "tips": [
+        "Primer hike del viaje — ventana seca AM.",
         "OK hike: sensación máx 23°C (≤25)."
       ]
     },
     {
-      "day": 4,
+      "day": 3,
       "date": "2026-08-18",
       "place": "Canfranc",
       "place_label": "Canfranc Estación (Huesca)",
@@ -85,11 +65,12 @@
       "precip_prob": 1,
       "uv_max": 7.1,
       "tips": [
+        "Día seco — Selva de Oza.",
         "OK hike: sensación máx 24°C (≤25)."
       ]
     },
     {
-      "day": 5,
+      "day": 4,
       "date": "2026-08-19",
       "place": "Canfranc",
       "place_label": "Canfranc Estación (Huesca)",
@@ -105,11 +86,12 @@
       "precip_prob": 3,
       "uv_max": 7.75,
       "tips": [
+        "Última noche Canfranc — hike corto AM si ≤25°C.",
         "OK hike: sensación máx 25°C (≤25)."
       ]
     },
     {
-      "day": 6,
+      "day": 5,
       "date": "2026-08-20",
       "place": "Sallent",
       "place_label": "Sallent de Gállego (Huesca)",
@@ -125,11 +107,12 @@
       "precip_prob": 52,
       "uv_max": 6.4,
       "tips": [
+        "Traslado corto · paseo Lanuza tarde.",
         "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
-      "day": 7,
+      "day": 6,
       "date": "2026-08-21",
       "place": "Sallent",
       "place_label": "Sallent de Gállego (Huesca)",
@@ -145,11 +128,12 @@
       "precip_prob": 46,
       "uv_max": 6.95,
       "tips": [
+        "⚠️ Lluvia posible (≈17 mm) — hike solo AM si seco.",
         "OK hike: sensación máx 21°C (≤25)."
       ]
     },
     {
-      "day": 8,
+      "day": 7,
       "date": "2026-08-22",
       "place": "Ochagavia",
       "place_label": "Ochagavía (Navarra)",
@@ -165,11 +149,12 @@
       "precip_prob": 42,
       "uv_max": 3.7,
       "tips": [
+        "Navarra noche 1/2 · lluvia posible tarde.",
         "OK hike: sensación máx 20°C (≤25)."
       ]
     },
     {
-      "day": 9,
+      "day": 8,
       "date": "2026-08-23",
       "place": "Ochagavia",
       "place_label": "Ochagavía (Navarra)",
@@ -185,11 +170,12 @@
       "precip_prob": 52,
       "uv_max": 6.25,
       "tips": [
+        "Irati — hike AM; lluvia posible (≈18 mm).",
         "OK hike: sensación máx 22°C (≤25)."
       ]
     },
     {
-      "day": 10,
+      "day": 9,
       "date": "2026-08-24",
       "place": "Teia",
       "place_label": "Teià (Barcelona)",
