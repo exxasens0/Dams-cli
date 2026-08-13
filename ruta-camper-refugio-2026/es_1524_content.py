@@ -20,6 +20,7 @@ ORBA_NIGHT = (-1.231,  42.979)  # Norte Orbaitzeta, borde río Irati
 ISA        = (-0.919,  42.855)  # Isaba, borde río Esca
 
 JACA   = (-0.549,   42.568)
+ARREBOL= (-0.5098,  42.5645)  # Camping El Arrebol · N-330 km 643 · Jaca
 
 # Trailheads (lat, lon) para gmaps_pin (uso interno)
 TH_ESTANES  = (42.796, -0.459)  # Astún ski base → Ibón de Estanes
@@ -116,19 +117,20 @@ DAYS = [
     ),
     dict(
         day=2, date="2026-08-18",
-        zona="Carretera Astún · Canfranc (22889)",
-        # Pernocta: misma que D1
-        parking_name="P4N #285213 · misma pernocta",
-        parking_lat=42.8091, parking_lon=-0.5121,
-        p4n_id=285213,
-        drive_from="Sin traslado · misma pernocta Parking Astún", drive_km="—", drive_h="—",
+        zona="Canal Roya (AM) → Camping El Arrebol (tarde)",
+        # Pernocta: Camping El Arrebol, Jaca (piscina perros, restaurante pet-friendly)
+        parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
+        parking_lat=42.5645, parking_lon=-0.5098,
+        camping_url="https://www.campingelarrebol.com",
+        camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-18&checkout=2026-08-19&guestAges=18,18#additional_concepts",
+        drive_from="Candanchú → El Arrebol tras el hike (AM)", drive_km="~33 km", drive_h="~30 min",
         # Trailhead: Candanchú / Rioseta (parking al pie del Canal Roya)
         hike="Canal Roya – Laguna de Tortiellas", hike_lat=42.772, hike_lon=-0.480,
         hike_km="10 km", hike_dif="Fácil-Moderado",
         hike_desn="~300 m", hike_h="3 h",
         hike_parking="Parking Candanchú / Rioseta (al pie del Canal Roya, A-136 km 45)",
-        concurrencia="Media",
-        interes=["Canal Roya glaciar","Laguna Tortiellas","GR-11","Frontera Francia","Vistas Picos"],
+        concurrencia="Media (hike) · Media (camping agosto)",
+        interes=["Canal Roya glaciar","Laguna Tortiellas","GR-11","Piscina para perros El Arrebol","Zona de suelta"],
         historia=(
             "El <strong>Canal Roya</strong> es un valle glaciar que serpentea hacia la frontera "
             "francesa. Forma parte del <strong>GR-11</strong>, el sendero que cruza los Pirineos "
@@ -136,26 +138,31 @@ DAYS = [
             "tallados por glaciares cuaternarios. En días claros se ven los picos fronterizos."
         ),
         observaciones=(
-            "Mejor día del tramo aragonés: 0 mm, 24°C. "
-            "Aparcar en Candanchú/Rioseta y seguir la pista del Canal Roya (~5 km al fondo del valle). "
-            "NO entrar con la camper por pistas forestales laterales. Patous — correa. "
-            "Tarde: misma pernocta o bajar a Canfranc pueblo (pan, tiendas)."
+            "Mejor día del tramo aragonés: 0 mm, ~24°C en Canfranc (~26°C en Jaca/El Arrebol). "
+            "🥾 Mañana: Canal Roya desde Candanchú (salir temprano, 7–8h). "
+            "🍽️ Mediodía (~13h): conducir a Camping El Arrebol (~33 km, 30 min). "
+            "Comer en el restaurante pet-friendly del camping (perros dentro). "
+            "🐾 Tarde: piscina para perros + zona de suelta libre + riachuelo a pie del camping. "
+            "El camping también tiene acceso a la ribera del río para que se refresquen. "
+            "Máximo 2 perros; gratuito en parcelas y bungalows (+3€/noche en parcelas). "
+            "Reserva confirmada: parcela para la noche del 18. "
+            "D3 (mié 19): salir de El Arrebol hacia Astún (~38 km, ~35 min) para Anayet."
         ),
-        planb="Paseo corto borde río Aragón · área picnic Canfranc.",
+        planb="Tarde en El Arrebol: piscina, zona de suelta, restaurante — plan B perfecto si llueve.",
     ),
     dict(
         day=3, date="2026-08-19",
         zona="Astún · Lagunas de Anayet",
-        # Pernocta: siguen en P4N #285213 (misma base D1-D3)
-        parking_name="P4N #285213 · misma pernocta (3ª noche)",
+        # Pernocta: P4N #285213 (de vuelta al área Astún/Canfranc tras el hike)
+        parking_name="P4N #285213 · Parking Carretera Astún (de vuelta tras Anayet)",
         parking_lat=42.8091, parking_lon=-0.5121,
         p4n_id=285213,
-        drive_from="Sin traslado · misma pernocta", drive_km="—", drive_h="—",
-        # Trailhead: base Astún (3,5 km del overnight, 5 min en camper)
+        drive_from="El Arrebol → Astún (~38 km, ~35 min)", drive_km="~38 km", drive_h="~35 min",
+        # Trailhead: base Astún (misma que overnight tras el hike)
         hike="Lagunas de Anayet (ruta baja)", hike_lat=42.796, hike_lon=-0.459,
         hike_km="9 km", hike_dif="Moderado",
         hike_desn="~350 m", hike_h="3 h",
-        hike_parking="Parking base estación Astún (seguir A-136 hasta el final, 3,5 km del overnight)",
+        hike_parking="Parking base estación Astún (fin de la A-136, ~3 km del P4N overnight)",
         concurrencia="Media-alta (zona estación)",
         interes=["Lagunas de Anayet","Pic du Midi d'Ossau (vistas)","Refugio de Anayet","Glaciares rocosos"],
         historia=(
@@ -455,6 +462,8 @@ def crowd_span(c:str)->str:
 def _drive_url(d: dict) -> str:
     n = d["day"]
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
+    if n==2: return gmaps_dir(*SPOT1,*ARREBOL)
+    if n==3: return gmaps_dir(*ARREBOL,*SPOT1)
     if n==4: return gmaps_dir(*SPOT1,*OZA_NIGHT)
     if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
     if n==6: return gmaps_dir(*YESA,*OCH)
@@ -490,17 +499,19 @@ def summary_table() -> str:
         if d["hike"] != "—":
             hike_html = f'{esc(d["hike"])} · {dif_badge(d["hike_dif"])} · {esc(d["hike_km"])} · {esc(d["hike_h"])}'
         star = " ⭐" if n == 4 else ""
+        night_link = d["camping_url"] if d.get("camping_url") else p4n_url_for(d)
+        night_label = "Web Camping" if d.get("camping_url") else ("Ficha P4N" if d.get("p4n_id") else "P4N zona")
         cards.append(f"""<article class="sum-card">
 <div class="k"><a href="#d{n}">D{n}{star}</a></div>
 <h3>{fmt_date(d["date"])} · {esc(d["zona"])}</h3>
 <div class="row"><b>Km</b><span>{esc(d["drive_km"])} · {esc(d["drive_h"])}</span></div>
-<div class="row"><b>Parking</b><span>{esc(d["parking_name"])}</span></div>
+<div class="row"><b>Pernocta</b><span>{esc(d["parking_name"])}</span></div>
 <div class="row"><b>Hike</b><span>{hike_html}</span></div>
 <div class="row"><b>Gente</b><span>{crowd_span(d["concurrencia"])}</span></div>
 <div class="row"><b>Clima</b><span>{wx_html}</span></div>
 {btns([
     ("Conducir", _drive_url(d), "g"),
-    ("P4N", p4n_url_for(d), "o"),
+    (night_label, night_link, "o"),
     ("Detalle", f"#d{n}", "p"),
 ])}
 </article>""")
@@ -522,6 +533,14 @@ def day_card(d:dict)->str:
         ruta_html = (f"<p>Llegaréis la noche del <strong>domingo 16</strong> desde Teià (~375 km, 4,5 h). "
                      f"Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
                      f"{btns([('Dom 16 · Teià → P4N #285213 (conducir)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
+    elif n==2:
+        ruta_html = (f"<p>🥾 Mañana Canal Roya (7–12h) · 🍽️ 13h conducir a Camping El Arrebol (~33 km, 30 min). "
+                     f"Tarde-noche en el camping: piscina para perros, zona de suelta, restaurante.</p>"
+                     f"{btns([('Candanchú → El Arrebol (conducir)', gmaps_dir(*SPOT1,*ARREBOL), 'g')])}")
+    elif n==3:
+        ruta_html = (f"<p>Salir de El Arrebol hacia Astún (38 km, ~35 min). "
+                     f"Hike Anayet desde la base de la estación; pernocta en P4N #285213 (3 km del trailhead).</p>"
+                     f"{btns([('El Arrebol → Astún (conducir)', gmaps_dir(*ARREBOL,*SPOT1), 'g')])}")
     elif n==4:
         ruta_html = (f"<p>Bajad a Canfranc Estación (~11 km) y continuad hasta Oza (Valle de Hecho, ~86 km · ~1h25). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
@@ -548,7 +567,19 @@ def day_card(d:dict)->str:
         ruta_html = "<p>Sin traslado — misma base.</p>"
 
     # parking section
-    parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
+    if d.get("camping_url"):
+        camping_btns = btns([
+            ("Conducir aquí (Google)", gmaps_pin(d["parking_lat"], d["parking_lon"]), "g"),
+            ("Web El Arrebol", d["camping_url"], "o"),
+            ("Reservar parcela", d["camping_booking"], "p"),
+        ])
+        camping_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 Camping pet-friendly · piscina perros</span>'
+        parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
+{camping_badge}
+<p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">Perros gratis en bungalows · +3€/noche en parcelas · máx 2 perros · perros en el restaurante</p>
+{camping_btns}</div>"""
+    else:
+        parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
 <p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">Navegación en coche al parking (no pin suelto).</p>
 {btn("Conducir aquí (Google)", gmaps_pin(d['parking_lat'],d['parking_lon']), "g")}
 {btn("Ficha P4N" if d.get("p4n_id") else "P4N zona", p4n_url_for(d), "o")}</div>"""
