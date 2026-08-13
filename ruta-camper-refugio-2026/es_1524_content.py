@@ -10,6 +10,7 @@ WEATHER = json.loads((ROOT / "_weather_es1524.json").read_text())
 
 TEIA = (2.319, 41.498)
 OCH = (-1.079, 42.906)   # Ochagavía
+BAZ = (-1.515, 43.148)   # Elizondo, Valle del Baztán
 JAC = (-0.549, 42.569)   # Jaca
 ALB = (-1.444, 40.407)
 ESC = (-1.065, 40.765)
@@ -20,6 +21,7 @@ MON = (-0.517, 40.067)
 P = {
     "teia": "Teià (Barcelona)",
     "och": "Ochagavía (Navarra)",
+    "baztan": "Elizondo · Valle del Baztán (Navarra)",
     "jac": "Jaca (Huesca)",
     "alb": "Albarracín (Teruel)",
     "esc": "Escucha (Teruel)",
@@ -199,12 +201,13 @@ def build_days() -> str:
          ("Foces de Arbayún (mirador)", "25", "30", "OK exterior", gmaps_pin(42.78, -1.12))],
         """<ol><li>Paseo pueblo Roncal (tarde/noche)</li>
 <li>Gastro: cordero al chilindrón, queso Roncal</li></ol>""",
-        1, "<p>Pirineo navarro: frescor nocturno. Perras atadas en pueblo.</p>",
+        1, "<p><strong>≥2 noches Irati/Roncal</strong> (noche 1/3). Pirineo navarro — frescor nocturno.</p>",
     ))
 
     parts.append(day_card(
-        "d2", "Día 2 · Domingo 16", f"{P['och']} · {P['irati']}",
-        f"<p><strong>Sin traslado.</strong> Día estrella Navarra — base {P['och']}.</p>",
+        "d2", "Día 2 · Domingo 16", f"{P['och']} · {P['irati']} · noche 2/3",
+        f"""<p><strong>Sin traslado.</strong> Día estrella — base {P['och']}.</p>
+<p class="callout" style="margin:.5rem 0;padding:.5rem .75rem;background:var(--sec);border-radius:8px">Plan A: {P['irati']}. Plan B (≥2 noches): {P['baztan']} — sustituir base por Elizondo manteniendo D1–D3.</p>""",
         spot("Misma pernocta D1", 42.908, -1.082,
              "Repetir parking si funcionó.", "Domingo: más gente en Irati"),
         """<ul><li>Camping Robledo Roncal</li></ul>""",
@@ -214,13 +217,38 @@ def build_days() -> str:
         f"""<ol><li><strong>7:00–12:00 · Selva de Irati</strong> (hayedo/faia, sombra)</li>
 <li>Tarde: siesta / pueblo / río</li></ol>
 {btns([("Turismo Roncal", "https://www.turismo.navarra.es/es/ver/valle-del-roncal/", "w")])}""",
-        2, "<p>Patous posibles en pastos — correa antes de ver rebaño.</p>",
+        2, "<p>Patous en pastos — correa antes de ver rebaño.</p>",
     ))
 
     parts.append(day_card(
-        "d3", "Día 3 · Lunes 17", f"{P['och']} → {P['jac']} · ~95 km · ~1,5 h",
-        f"""<p>Bajamos hacia el sur — primer salto ≤2 h.</p>
-{btns([("Google · Ochagavía → Jaca", gmaps_dir(*OCH, *JAC), "g")])}""",
+        "d3", "Día 3 · Lunes 17", f"{P['och']} · {P['irati']} día 2 · noche 3/3",
+        f"""<p><strong>Sin traslado.</strong> Segundo día completo en Navarra — <em>mínimo 2 noches cumplido</em> (lleváis 3).</p>
+<p>Segunda ruta distinta: valle, Isaba, Burgui o acceso oeste Irati.</p>""",
+        (
+            spot("Misma base Ochagavía", 42.908, -1.082,
+                 "Tercera noche mismo parking.", "")
+            + spot(f"Alternativa Plan B · {P['baztan']}", 43.148, -1.515,
+                   "Si Irati llueve/masificado: 2–3 noches en Elizondo (valle verde, menos gente que Irati).",
+                   "Cambiar D1 ruta a Elizondo")
+        ),
+        """<ul><li>Camping Baztán / áreas Elizondo (Plan B)</li></ul>""",
+        [("Isaba · Roncal", "15", "20", "OK paseo", gmaps_pin(42.925, -1.005)),
+         ("Burgui · foz", "12", "18", "OK", gmaps_pin(42.885, -1.055)),
+         ("Irati acceso Orba/Zuza", "20", "25", "OK atado", gmaps_pin(42.88, -1.02))],
+        f"""<ol><li><strong>7:00–12:00 · Ruta distinta a D2</strong> (Isaba/Burgui o Irati oeste)</li>
+<li>Tarde: preparar bajada · última noche Roncal</li></ol>
+{btns([
+    ("Turismo Baztán", "https://www.turismo.navarra.es/es/ver/valle-del-baztan/", "w"),
+    ("Google · Ochagavía → Elizondo (Plan B)", gmaps_dir(*OCH, *BAZ), "g"),
+])}""",
+        3, "<p>D4 por la mañana: bajar hacia Jaca. No acortar Irati/Baztán por debajo de 2 noches.</p>",
+    ))
+
+    parts.append(day_card(
+        "d4", "Día 4 · Martes 18", f"{P['och']} → {P['jac']} · ~95 km · ~1,5 h",
+        f"""<p>Tras ≥2 noches Navarra, bajamos — tramo ≤2 h.</p>
+{btns([("Google · Ochagavía → Jaca", gmaps_dir(*OCH, *JAC), "g"),
+       ("Google · Elizondo → Jaca (si Plan B Baztán)", gmaps_dir(*BAZ, *JAC), "g")])}""",
         (
             spot("Parking Ciudadela Jaca", 42.569, -0.552,
                  "Zona amplia junto a la Ciudadela, fácil para AC.", "Agosto: turistas")
@@ -233,12 +261,12 @@ def build_days() -> str:
          ("Monasterio San Juan de la Peña (ext.)", "25", "30", "Confirmar", gmaps_pin(42.508, -0.672))],
         """<ol><li>Paseo Jaca tarde (Ciudadela exterior, perros)</li>
 <li>Preparar bajada a Teruel mañana</li></ol>""",
-        3, "<p>Jaca = escalón geográfico para no hacer tramo largo a Teruel.</p>",
+        4, "<p>Jaca = escalón para no hacer tramo largo a Teruel.</p>",
     ))
 
     parts.append(day_card(
-        "d4", "Día 4 · Martes 18", f"{P['jac']} → {P['alb']} · ~180 km · ~2 h",
-        f"""<p>Tramo ~2 h hacia el interior turolense.</p>
+        "d5", "Día 5 · Miércoles 19", f"{P['jac']} → {P['alb']} · ~180 km · ~2 h",
+        f"""<p>Tramo ~2 h hacia Teruel.</p>
 {btns([("Google · Jaca → Albarracín", gmaps_dir(*JAC, *ALB), "g")])}""",
         (
             spot("Parking Tejería / borde Guadalaviar", 40.412, -1.443,
@@ -252,31 +280,13 @@ def build_days() -> str:
          ("Guadalaviar río", "2", "5", "OK", gmaps_pin(40.408, -1.442))],
         """<ol><li>Atardecer murallas / Guadalaviar si fresco</li>
 <li>Gastro: cordero (reserva)</li></ol>""",
-        4, "<p>Estacionar ≠ acampar (sin toldo/mesas fuera).</p>",
+        5, "<p>Estacionar ≠ acampar (sin toldo/mesas fuera).</p>",
     ))
 
     parts.append(day_card(
-        "d5", "Día 5 · Miércoles 19", f"{P['alb']} · Pinares de Rodeno",
-        f"<p><strong>Sin traslado.</strong> Base {P['alb']}.</p>",
-        (
-            spot("Rodeno acceso / Tejería", 40.45, -1.38,
-                 "Pinares: aparcamientos forestales amplios.", "Finde: más coches")
-            + spot("Camping Albarracín", 40.401, -1.435,
-                   "Emergencia sombra/duchas.", "Reserva agosto")
-        ),
-        """<ul><li>#390083 · Camping Albarracín</li></ul>""",
-        [("Pinares de Rodeno", "8", "12", "OK atado", gmaps_pin(40.45, -1.38)),
-         ("Sendero PR-TE-08", "10", "15", "OK", gmaps_pin(40.44, -1.37)),
-         ("Albarracín casco", "1", "5", "OK exterior", gmaps_pin(40.407, -1.444))],
-        f"""<ol><li><strong>7:00–11:00 · Pinares de Rodeno</strong></li>
-<li>Tarde: pueblo / Guadalaviar</li></ol>
-{btns([("Turismo Albarracín mascotas", "https://albarracinturismo.com/viajar-con-mascotas-albarracin-teruel/", "w")])}""",
-        5, "<p>Corte hike si sensación ≥25°C.</p>",
-    ))
-
-    parts.append(day_card(
-        "d6", "Día 6 · Jueves 20", f"{P['alb']} → {P['esc']} · ~90 km · ~1,5 h",
-        f"""<p>Traslado ≤2 h. {P['esc']} — Cuencas Mineras, Teruel (cerca de Andorra, Teruel).</p>
+        "d6", "Día 6 · Jueves 20", f"{P['alb']} → {P['esc']} · Rodeno AM + minas",
+        f"""<p>Día doble: <strong>Pinares de Rodeno 7:00–11:00</strong>, luego {P['alb']} → {P['esc']} (~1,5 h).</p>
+<p>{P['esc']} — Cuencas Mineras, Teruel (cerca de Andorra, Teruel).</p>
 {btns([("Google · Albarracín → Escucha", gmaps_dir(*ALB, *ESC), "g")])}""",
         (
             spot("Parking N-420 borde Escucha", 40.762, -1.068,
@@ -286,12 +296,13 @@ def build_days() -> str:
         ),
         """<ul><li>Área CC museo minero (confirmar)</li>
 <li><a href="https://www.museomineroescucha.es/">Museo Minero</a></li></ul>""",
-        [("Museo Minero Escucha", "0,5", "3", "Confirmar", "https://www.museomineroescucha.es/"),
-         ("Ruta digital pueblo minero", "1", "5", "OK", gmaps_pin(40.765, -1.065)),
-         ("Maquinaria exterior mina", "0,3", "2", "OK", gmaps_pin(40.764, -1.067))],
-        """<ol><li>Patrimonio minero <strong>exterior</strong> + ruta digital</li>
+        [("Pinares de Rodeno", "8", "12", "OK atado", gmaps_pin(40.45, -1.38)),
+         ("Museo Minero Escucha", "0,5", "3", "Confirmar", "https://www.museomineroescucha.es/"),
+         ("Ruta digital pueblo minero", "1", "5", "OK", gmaps_pin(40.765, -1.065))],
+        """<ol><li>AM: Rodeno desde parking pinar (salir ~11:00)</li>
+<li>PM: patrimonio minero <strong>exterior</strong> Escucha</li>
 <li>Mina interior: solo si confirman perros · 978 756 705</li></ol>""",
-        6, "<p>No dejar perras en furgoneta para visita mina.</p>",
+        6, "<p>Día intenso — madrugar. No dejar perras en furgoneta para mina.</p>",
     ))
 
     parts.append(day_card(
@@ -362,15 +373,15 @@ def live_summary() -> str:
 <section class="section live-plan" id="plan-rapido">
 <h2>Plan activo · 15–24 agosto 2026</h2>
 <div class="card prose">
-<div class="warn"><strong>Reglas:</strong> Teià loop · Navarra primero · bajar por Aragón/Teruel/Castellón · tramos ≤2 h (solo D1 y D10 ~5 h) · perras siempre · GMaps first.</div>
-<div class="callout"><strong>Eje:</strong> {P['och']}/{P['irati']} → {P['jac']} → {P['alb']} → {P['esc']} → {P['mor']} → {P['teia']}. <em>Sierra Espadán eliminada</em> (lejos + calor).</div>
+<div class="warn"><strong>Reglas:</strong> Teià loop · <strong>≥2 noches Irati o Baztán</strong> · bajar por Aragón/Teruel/Castellón · tramos ≤2 h (solo D1 y D10 ~5 h) · perras siempre.</div>
+<div class="callout"><strong>Eje:</strong> {P['och']}/{P['irati']} (D1–3, 3 noches) → {P['jac']} → {P['alb']} → {P['esc']} → {P['mor']} → {P['teia']}. Plan B Navarra: {P['baztan']}.</div>
 <p>{btns([("🗺️ Ruta Google Maps · loop completo", GMAPS_LOOP, "g")])}</p>
 <p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['och']} → {P['jac']} → {P['alb']} → {P['esc']} → {P['mor']} → {P['mon']} → {P['teia']}</p>
 <ol>
-<li><strong>15–16</strong> {P['och']} / {P['irati']}</li>
-<li><strong>17</strong> {P['jac']} (escalón bajada)</li>
-<li><strong>18–19</strong> {P['alb']} / Rodeno</li>
-<li><strong>20</strong> {P['esc']} minas</li>
+<li><strong>15–17</strong> {P['och']} / {P['irati']} · <em>3 noches</em> (mín. 2)</li>
+<li><strong>18</strong> {P['jac']}</li>
+<li><strong>19</strong> {P['alb']}</li>
+<li><strong>20</strong> {P['esc']} (Rodeno AM + minas)</li>
 <li><strong>21–22</strong> {P['mor']} / Ports</li>
 <li><strong>23–24</strong> {P['mon']} → {P['teia']}</li>
 </ol>
@@ -401,7 +412,7 @@ def rules_section() -> str:
 <ul>
 <li>Sunlight 600 (&gt;2,10 m)</li>
 <li>Conducción ≤2 h entre bases · D1 y D10 hasta ~5 h</li>
-<li>Navarra → bajar (no ir y volver a Irati desde Castellón)</li>
+<li>Navarra: <strong>≥2 noches</strong> {P['irati']} o {P['baztan']} antes de bajar</li>
 <li>Descartados: Sierra Espadán, Peñíscola/costa, Parrizal si ban perros</li>
 </ul>
 </div></section>"""
@@ -430,9 +441,9 @@ def render_spain_guide() -> str:
 {day_nav()}
 <main class="wrap">
 <section class="hero">
-<div class="chips"><span class="chip">Navarra primero</span><span class="chip">Sensación &lt;25°C</span><span class="chip">GMaps first</span><span class="chip">Irati · minas · Ports</span><span class="chip">Perras siempre</span></div>
+<div class="chips"><span class="chip">≥2 noches Irati</span><span class="chip">Navarra primero</span><span class="chip">Sensación &lt;25°C</span><span class="chip">GMaps first</span><span class="chip">Perras siempre</span></div>
 <h1>Irati · Albarracín · Escucha · Morella</h1>
-<p class="lead">Subimos a {P['och']} y la {P['irati']}, bajamos por {P['jac']}, {P['alb']}, {P['esc']} (Teruel) y {P['mor']} (Castellón). Espadán fuera — demasiado lejos y caluroso.</p>
+<p class="lead">Subimos a {P['och']} y la {P['irati']} (<strong>mínimo 2 noches</strong>, planificadas 3). Plan B: {P['baztan']}. Luego bajamos por {P['jac']}, {P['alb']}, {P['esc']} y {P['mor']}.</p>
 {btns([
     ("🗺️ Ruta completa · Google Maps", GMAPS_LOOP, "g"),
     ("Google · D1 Teià → Ochagavía", gmaps_dir(*TEIA, *OCH), "g"),

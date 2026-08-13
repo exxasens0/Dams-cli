@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-13T11:08:35.492318+00:00",
+  "fetched_at": "2026-08-13T11:11:15.474869+00:00",
   "source": "Open-Meteo best_match",
   "attribution": "https://open-meteo.com/",
   "days": [
@@ -46,41 +46,41 @@
     {
       "day": 3,
       "date": "2026-08-17",
-      "place": "Jaca",
-      "place_label": "Jaca (Huesca)",
-      "lat": 42.569,
-      "lon": -0.549,
+      "place": "Ochagavia",
+      "place_label": "Ochagavía (Navarra)",
+      "lat": 42.906,
+      "lon": -1.079,
       "available": true,
-      "summary_es": "Código 80",
-      "t_max": 29.5,
-      "t_min": 18.2,
-      "app_max": 28.7,
-      "app_min": 19.2,
-      "precip_mm": 6.88,
-      "precip_prob": 17,
+      "summary_es": "Código 51",
+      "t_max": 24.6,
+      "t_min": 16.3,
+      "app_max": 25.1,
+      "app_min": 16.5,
+      "precip_mm": 0.2,
+      "precip_prob": 23,
       "uv_max": 7.05,
       "tips": [
-        "Sensación máx ~29°C: hike 7:00–10:00, tarde sombra."
+        "Sensación máx ~25°C: hike 7:00–11:00, tarde sombra."
       ]
     },
     {
       "day": 4,
       "date": "2026-08-18",
-      "place": "Albarracin",
-      "place_label": "Albarracín (Teruel)",
-      "lat": 40.407,
-      "lon": -1.444,
+      "place": "Jaca",
+      "place_label": "Jaca (Huesca)",
+      "lat": 42.569,
+      "lon": -0.549,
       "available": true,
-      "summary_es": "Código 3",
-      "t_max": 28.6,
-      "t_min": 16.5,
-      "app_max": 28.9,
-      "app_min": 16.6,
+      "summary_es": "Código 1",
+      "t_max": 30.3,
+      "t_min": 14.4,
+      "app_max": 30.9,
+      "app_min": 14.5,
       "precip_mm": 0.0,
-      "precip_prob": 10,
-      "uv_max": 7.4,
+      "precip_prob": 1,
+      "uv_max": 6.85,
       "tips": [
-        "Sensación máx ~29°C: hike 7:00–10:00, tarde sombra."
+        "Sensación máx ~31°C: hike 7:00–10:00, tarde sombra."
       ]
     },
     {

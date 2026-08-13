@@ -136,24 +136,27 @@ Selva de Irati (Navarra), pueblo Ochagavía/Roncal, Ciudadela Jaca (exterior), P
 
 ## Por zona
 
-### Ochagavía · Irati (Navarra) — D1–2
+### Ochagavía · Irati (Navarra) — D1–3 · **≥2 noches**
 
+- **Mínimo 2 noches** en Irati (Ochagavía) o Valle del Baztán (Elizondo) antes de bajar.
+- Plan A: **3 noches Ochagavía** — D2 Irati Abodi, D3 Isaba/Burgui u otra ruta.
+- Plan B lluvia/masificación: **Elizondo (Valle del Baztán, Navarra)** — valle verde, paseos río, menos turismo que Irati.
 - **Selva de Irati:** perros **atados** (fauna, ganado).
-- **Patous** en pastos del Roncal — correa antes de ver rebaño; no atravesar manada.
-- Casco Ochagavía empedrado: no entrar con AC 7 m; pernocta fuera del pueblo.
-- Frescor nocturno — manta útil.
+- **Patous** en Roncal/Baztán — correa antes de ver rebaño.
+- Casco empedrado: pernocta fuera del pueblo con AC 7 m.
 
-### Jaca (Huesca) — D3
+### Jaca (Huesca) — D4
 
-- Escalón de bajada (evita tramo largo directo a Teruel).
+- Traslado desde Navarra tras ≥2 noches.
 - Ciudadela: exterior OK; interior → confirmar perros.
 
-### Albarracín (Teruel) — D4–5
+### Albarracín (Teruel) — D5
 
-- Rodeno: perros atados en pinar.
-- Pernocta GMaps: estacionar ≠ acampar.
+- 1 noche. Murallas tarde.
 
 ### Escucha · minas (Teruel) — D6
+
+- **Rodeno AM** (salir ~11:00) + traslado + minas PM — día largo.
 
 - **Exterior** + ruta digital: OK.
 - Mina interior: **978 756 705** — si no admiten perros, cancelar.
