@@ -1,0 +1,197 @@
+{
+  "fetched_at": "2026-08-13T10:53:24.384505+00:00",
+  "source": "Open-Meteo best_match",
+  "attribution": "https://open-meteo.com/",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-08-15",
+      "place": "Albarracin",
+      "lat": 40.407,
+      "lon": -1.444,
+      "available": true,
+      "summary_es": "Chubascos",
+      "t_max": 28.9,
+      "t_min": 17.4,
+      "app_max": 29.1,
+      "app_min": 17.6,
+      "precip_mm": 1.4,
+      "precip_prob": 88,
+      "uv_max": 7.4,
+      "tips": [
+        "Sensación máx ~29°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-16",
+      "place": "Albarracin",
+      "lat": 40.407,
+      "lon": -1.444,
+      "available": true,
+      "summary_es": "Chubascos",
+      "t_max": 28.4,
+      "t_min": 15.8,
+      "app_max": 26.6,
+      "app_min": 16.2,
+      "precip_mm": 1.1,
+      "precip_prob": 40,
+      "uv_max": 7.5,
+      "tips": [
+        "Ventana mañana favorable para hike si sensación <25°C."
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-17",
+      "place": "Escucha",
+      "lat": 40.765,
+      "lon": -1.065,
+      "available": true,
+      "summary_es": "Chubascos",
+      "t_max": 26.8,
+      "t_min": 17.1,
+      "app_max": 28.2,
+      "app_min": 18.7,
+      "precip_mm": 1.2,
+      "precip_prob": 43,
+      "uv_max": 7.2,
+      "tips": [
+        "Sensación máx ~28°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-08-18",
+      "place": "Morella",
+      "lat": 40.619,
+      "lon": -0.1,
+      "available": true,
+      "summary_es": "Nublado",
+      "t_max": 27.9,
+      "t_min": 17.3,
+      "app_max": 28.4,
+      "app_min": 18.1,
+      "precip_mm": 0.0,
+      "precip_prob": 10,
+      "uv_max": 7.3,
+      "tips": [
+        "Sensación máx ~28°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-08-19",
+      "place": "Morella",
+      "lat": 40.619,
+      "lon": -0.1,
+      "available": true,
+      "summary_es": "Chubascos",
+      "t_max": 26.4,
+      "t_min": 15.9,
+      "app_max": 28.0,
+      "app_min": 16.3,
+      "precip_mm": 2.4,
+      "precip_prob": 8,
+      "uv_max": 6.8,
+      "tips": [
+        "Sensación máx ~28°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-08-20",
+      "place": "Morella",
+      "lat": 40.619,
+      "lon": -0.1,
+      "available": true,
+      "summary_es": "Tormenta",
+      "t_max": 26.0,
+      "t_min": 17.3,
+      "app_max": 28.3,
+      "app_min": 18.9,
+      "precip_mm": 3.15,
+      "precip_prob": 29,
+      "uv_max": 4.7,
+      "tips": [
+        "Sensación máx ~28°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-08-21",
+      "place": "Veo Espadan",
+      "lat": 39.95,
+      "lon": -0.28,
+      "available": true,
+      "summary_es": "Código 51",
+      "t_max": 29.7,
+      "t_min": 20.5,
+      "app_max": 31.2,
+      "app_min": 21.4,
+      "precip_mm": 1.5,
+      "precip_prob": 45,
+      "uv_max": 5.9,
+      "tips": [
+        "Sensación máx ~31°C: hike 7:00–11:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-08-22",
+      "place": "Veo Espadan",
+      "lat": 39.95,
+      "lon": -0.28,
+      "available": true,
+      "summary_es": "Código 51",
+      "t_max": 31.1,
+      "t_min": 19.7,
+      "app_max": 34.4,
+      "app_min": 20.5,
+      "precip_mm": 2.4,
+      "precip_prob": 59,
+      "uv_max": 6.75,
+      "tips": [
+        "Sensación máx ~34°C: hike 7:00–10:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-08-23",
+      "place": "Montanejos",
+      "lat": 40.067,
+      "lon": -0.517,
+      "available": true,
+      "summary_es": "Código 51",
+      "t_max": 27.8,
+      "t_min": 18.1,
+      "app_max": 30.2,
+      "app_min": 19.5,
+      "precip_mm": 0.9,
+      "precip_prob": 43,
+      "uv_max": 6.5,
+      "tips": [
+        "Sensación máx ~30°C: hike 7:00–10:00, tarde sombra."
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2026-08-24",
+      "place": "Teia",
+      "lat": 41.498,
+      "lon": 2.319,
+      "available": true,
+      "summary_es": "Código 51",
+      "t_max": 29.9,
+      "t_min": 22.2,
+      "app_max": 33.7,
+      "app_min": 24.3,
+      "precip_mm": 2.4,
+      "precip_prob": 34,
+      "uv_max": 0.8,
+      "tips": [
+        "Sensación máx ~34°C: hike 7:00–09:00, tarde sombra."
+      ]
+    }
+  ]
+}

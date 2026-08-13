@@ -1,46 +1,31 @@
-# Ruta camper 14 días — Refugio climático (6–19 ago 2026)
+# Ruta camper · Interior España (15–24 ago 2026)
 
-**Sunlight 600** + **2 perras**. Fresco, poca masificación.
+**Sunlight 600** + **2 perras**. Fresco, poca masificación, minas + gastro + senderismo.
 
-**Regla dura:** cualquier lugar donde no se pueda ir con perros → **cancelado** (Orlu fuera; no dejar perras en la furgoneta para visitar).
+**Reglas:** perras en todas las visitas · hike solo sensación **<25 °C** · tramos **≤2 h** (solo ida/vuelta ~5 h) · pernocta **Google Maps first** (P4N = emergencia).
 
-**Pernocta:** Park4Night **recondito** — preferencia acceso que limita autocaravanas, césped/sombra, sin servicios, lejos de la masa. Camping solo emergencia.
+**Eje:** Teià → Albarracín → Escucha (minas) → Morella/Ports → Sierra Espadán → Teià
 
-**Eje:** Teià → Ax (Tournals) → Couserans (Core/Guzet) → puente → Le Lioran (Combe Nègre) → Salers (Fouey/hierba) → Aubrac (**#5073** Déroc) → Capcir (Formiguères) → Teià
+## Abrir la guía en el móvil
 
-## Abrir la guía en el móvil (web real)
+https://raw.githack.com/exxasens0/Dams-cli/cursor/ruta-camper-refugio-4641/ruta-camper-refugio-2026/guia-movil.html
 
-GitHub / Cursor / Raw muestran código, **no** la web. Usad este enlace (sirve HTML correcto):
-
-**https://raw.githack.com/exxasens0/Dams-cli/cursor/ruta-camper-refugio-4641/ruta-camper-refugio-2026/guia-movil.html**
-
-Reserva (misma guía, caché por commit):  
-https://rawcdn.githack.com/exxasens0/Dams-cli/dc83c10/ruta-camper-refugio-2026/guia-movil.html
-
-En la guía, tocáis **Plan lun–mié**.
-
-Si el enlace no carga: en GitHub abrid `guia-movil.html` → botón **Raw** → en el móvil **Compartir → Guardar en Archivos** → abrid el archivo con Chrome/Safari.
+Ver [`ABRIR-GUIA.md`](ABRIR-GUIA.md).
 
 ## Empezad por
 
 | Archivo | Contenido |
 |---|---|
-| **[guia-movil.html](guia-movil.html)** | Guía completa (móvil) |
-| **[guia-lonely-planet.html](guia-lonely-planet.html)** | Misma guía (copia) |
-| [05-park4night-pernoctas.md](05-park4night-pernoctas.md) | Criterios + spots estrella van/nature |
-| [04-reservas-campings.md](04-reservas-campings.md) | Favoritos P4N (no camping) |
-| [02-hoja-dia-a-dia.md](02-hoja-dia-a-dia.md) | Día a día |
-| [01-mapa-waypoints.md](01-mapa-waypoints.md) + KML/GeoJSON | Mapa |
-| [03-seguridad-perras.md](03-seguridad-perras.md) | Regla perras, cancelados, patous, calor |
+| **[guia-movil.html](guia-movil.html)** | Guía completa (UI día a día ordenada) |
+| [02-hoja-dia-a-dia.md](02-hoja-dia-a-dia.md) | Resumen 10 días |
+| [05-pernoctas-gmaps-p4n.md](05-pernoctas-gmaps-p4n.md) | Dormir sin P4N |
+| [03-seguridad-perras.md](03-seguridad-perras.md) | Regla perras, cancelados |
+| [itinerario.csv](itinerario.csv) | Datos estructurados |
 
-## Estrellas P4N
+## Generar HTML
 
-- **#22287** Tournals (Ax) — CC no  
-- **#6527 / #24616** Core / Guzet  
-- **#13709** Combe Nègre (sombra)  
-- **#271257 / #144306** Fouey / hierba Salers  
-- **#5073** Cascade du Déroc (Aubrac, prioridad con perras)  
-- **#2547** Formiguères (rincón tierra/lago)  
+```bash
+python3 build_guia.py
+```
 
-**Cancelado pernocta:** #51675 (09140 Ustou, ban 20h–6h), #98143 (privado+perros), Orlu/#17010, #3781 (404).
-Ver [`06-auditoria-comentarios-p4n.md`](06-auditoria-comentarios-p4n.md).
+(Usa `es_1524_content.py` · viaje Francia archivado en git histórico.)

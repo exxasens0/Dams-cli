@@ -98,3 +98,82 @@ Circuito marcado pistas/burons hacia **Bec de l’Aigle** o anillo Lioran 12–1
 ## Discreción en Park4Night
 
 En parkings de estación (Lioran, Formiguères, Bonascre): pernocta tipo **parking**, no camping. Sin toldo desplegado agresivo si hay cartel; recoger cacas siempre (sobre todo Aubrac: el spot se pierde por basura).
+
+---
+
+# Viaje activo · Interior España 15–24 agosto 2026
+
+**Teià loop** · Albarracín → Escucha → Morella/Ports → Sierra Espadán → Teià.
+
+## Regla dura (igual que Francia)
+
+- Solo actividades donde entren las **2 perras** con vosotros.
+- Visita sin perros = **cancelada** (no dejar en furgoneta).
+- Buscar: `perro`, `mascota`, `perros`, `dog` en web oficial / cartel / Wikiloc.
+
+## Cancelado o condicional
+
+| Qué | Motivo |
+|---|---|
+| **Parrizal (Beceite)** | Reserva + sendero estrecho; perros a menudo **prohibidos** — confirmar antes de ir |
+| **Mina bajo tierra Escucha** | Solo si museo confirma mascotas; si no → **exterior + ruta digital** |
+| **Peñíscola / costa** | Calor + masificación agosto |
+| **Valderrobres valle** | Sensación térmica alta vs Morella/Ports |
+| **Navarra / Irati** | Fuera del viaje (tramo >2 h desde Castellón) |
+
+## OK con correa (verificar in situ)
+
+Pinares de Rodeno, Guadalaviar, patrimonio minero **exterior** Escucha, murallas/castillo Morella (exterior), sendas forestales Ports de Morella, Camí vell Veo–Aín, Chorreras Montanejos (paseo corto).
+
+## Horario anti-calor (agosto interior)
+
+| Franja | Qué hacer |
+|---|---|
+| 07:00–07:30 | Decisión meteo (Open-Meteo sensación máx) |
+| 07:30–11:00 | **Ventana hike** (cortar si sensación ≥25 °C) |
+| 11:30–17:00 | Camper sombra / pueblo / río |
+| 17:30–20:00 | Paseo corto (murallas, Guadalaviar, pueblo) |
+| Noche | Albarracín/Morella más frescos; Espadán caliente → ventilación |
+
+## Por zona
+
+### Albarracín (D1–2)
+
+- Rodeno: **perros atados** en pinar (fauna).
+- Casco: calles empedradas — correa corta.
+- Pernocta GMaps: estacionar ≠ acampar (sin toldo/mesas).
+
+### Escucha · minas (D3)
+
+- **Exterior** maquinaria y ruta digital: OK.
+- **Visita mina interior:** llamar **978 756 705** / reserva web — si no admiten perros, cancelar interior.
+- Zona industrial: vigilar maquinaria y socavones; no dejar husmear huecos.
+
+### Morella · Ports (D4–6)
+
+- Murallas/castillo: exterior OK; interior museo → confirmar.
+- **Parrizal:** plan B = senda forestal Ports / Vilafranca si ban perros.
+- Tormenta (D6 posible): bosque OK con impermeable; evitar crestas.
+
+### Sierra Espadán PN (D7–8)
+
+- Parque Natural: perros **atados**; normativa prohíbe acampar libre — discreción parking día.
+- Calor fuerte D8 (AppMax ~34 °C): hike solo **7:00–10:00** o cancelar.
+- **Camping Altomira** = emergencia legal con sombra.
+
+### Vuelta (D9–10)
+
+- D9 Montanejos: paseo corto AM si fresco; Chorreras muy concurrido domingo.
+- D10: solo conducción ~5 h; paradas sombra cada **2 h** para perras; no hike.
+
+## P4N / GMaps (agosto)
+
+- P4N Albarracín (#390083) y Morella (#6766): **saturados** — GMaps first.
+- Si cartel “prohibido pernoctar” → siguiente candidato del día (ver `05-pernoctas-gmaps-p4n.md`).
+
+## Checklist botiquín (ES)
+
+- Agua extra 5–10 L + bebedero  
+- Correas + arnés + bozal  
+- Pinzas garrapatas (bosque Rodeno / Ports)  
+- 112 + vet guardia: Teruel / Castellón / Barcelona según tramo  

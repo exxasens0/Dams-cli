@@ -1202,11 +1202,18 @@ def build() -> str:
 
 
 def main() -> None:
+    """Primary guide: Spain interior 15–24 Aug 2026 (see es_1524_content.py)."""
+    from es_1524_content import main as main_es
+
+    main_es()
+
+
+def main_france_archive() -> None:
+    """Legacy France 6–19 guide (archived builder)."""
     html_out = build()
-    for name in ("guia-lonely-planet.html", "guia-movil.html"):
+    for name in ("guia-lonely-planet-francia.html",):
         (ROOT / name).write_text(html_out, encoding="utf-8")
-    Path("/opt/cursor/artifacts/guia-lonely-planet-francia-agosto-2026.html").write_text(html_out, encoding="utf-8")
-    print("written", len(html_out), "bytes")
+    print("written france archive", len(html_out), "bytes")
 
 
 if __name__ == "__main__":

@@ -4,6 +4,6 @@ Copiad y pegad en Chrome / Safari:
 
 https://raw.githack.com/exxasens0/Dams-cli/cursor/ruta-camper-refugio-4641/ruta-camper-refugio-2026/guia-movil.html
 
-Luego: botón **Plan mar–sáb · Macizo**.
+Luego: botón **Plan 15–24** o saltos **D1…D10**.
 
-Si no carga, prueba el raw de la rama (Content-Type texto; mejor githack arriba).
+Cada día tiene bloques fijos: Ruta · Dormir GMaps · Campings · Distancias · Visitas · Meteo.
