@@ -103,22 +103,7 @@ DAYS = [
         hike_desn="~580 m", hike_h="4–4,5 h",
         hike_parking="Parking base estación Astún (Valle de Astún 22889, 3,5 km del overnight)",
         wikiloc_url="https://es.wikiloc.com/rutas-alpinismo/estacio-desqui-dastun-punta-malacara-ibon-de-las-truchas-ibon-de-astun-ibon-de-escalar-ibon-de-las-54386380",
-        alt_hike=dict(
-            nombre="Ruta de los Búnkeres – Línea P Canfranc",
-            km="~9,6 km",
-            desnivel="~320 m",
-            dif="Fácil",
-            tiempo="2,5–3 h",
-            parking_lat=42.750, parking_lon=-0.525,
-            parking_desc="Canfranc Estación pueblo (junto a la estación de tren)",
-            wikiloc="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
-            nota=(
-                "Ruta histórica por el bosque de Picauvé visitando los búnkeres de la <strong>Línea P</strong> "
-                "(1944–1957), construidos por Franco para frenar una hipotética invasión aliada que nunca llegó. "
-                "Más de 12 posiciones de hormigón armado defendiendo el túnel ferroviario y la estación. "
-                "Perros OK · sin secciones técnicas · compatible con visita exterior estación Canfranc."
-            ),
-        ),
+        hike_from_overnight="3,5 km · 5 min en camper (P4N #285213 → base Astún)",
         concurrencia="Media-alta",
         interes=["Ibón de Escalar (2075 m)","Ibón de Truchas (2120 m)","Punta Malacara (2268 m)","Frontera Francia","Telesilla a los Lagos (opcional)"],
         historia=(
@@ -142,48 +127,52 @@ DAYS = [
     ),
     dict(
         day=2, date="2026-08-18",
-        zona="Canal Roya (AM) → Camping El Arrebol (tarde)",
+        zona="Búnkeres Línea P (AM) → Camping El Arrebol (tarde)",
         # Pernocta: Camping El Arrebol, Jaca (piscina perros, restaurante pet-friendly)
         parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
         parking_lat=42.5645, parking_lon=-0.5098,
         camping_url="https://www.campingelarrebol.com",
         camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-18&checkout=2026-08-19&guestAges=18,18#additional_concepts",
-        drive_from="Candanchú → El Arrebol tras el hike (AM)", drive_km="~33 km", drive_h="~30 min",
-        # Trailhead: Candanchú / Rioseta (parking al pie del Canal Roya)
-        hike="Canal Roya – Laguna de Tortiellas", hike_lat=42.772, hike_lon=-0.480,
-        hike_km="10 km", hike_dif="Fácil-Moderado",
-        hike_desn="~300 m", hike_h="3 h",
-        hike_parking="Parking Candanchú / Rioseta (al pie del Canal Roya, A-136 km 45)",
-        concurrencia="Media (hike) · Media (camping agosto)",
-        interes=["Canal Roya glaciar","Laguna Tortiellas","GR-11","Piscina para perros El Arrebol","Zona de suelta"],
+        drive_from="Canfranc Estación → El Arrebol tras el hike", drive_km="~35 km", drive_h="~35 min",
+        # Trailhead: Canfranc Estación pueblo (junto a la estación de tren)
+        hike="Ruta de los Búnkeres – Línea P Canfranc", hike_lat=42.750, hike_lon=-0.525,
+        hike_km="9,6 km", hike_dif="Fácil",
+        hike_desn="~320 m", hike_h="2,5–3 h",
+        hike_parking="Canfranc Estación pueblo (junto a la estación internacional de tren)",
+        wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
+        hike_from_overnight="~11 km · 15 min del overnight (P4N #285213 → Canfranc Estación)",
+        concurrencia="Media (hike histórico) · Media (camping agosto)",
+        interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Piscina perros El Arrebol","Zona de suelta"],
         historia=(
-            "El <strong>Canal Roya</strong> es un valle glaciar que serpentea hacia la frontera "
-            "francesa. Forma parte del <strong>GR-11</strong>, el sendero que cruza los Pirineos "
-            "de Cabo Higuer a Cap de Creus. El nombre 'Canal' viene de los barrancos rectilíneos "
-            "tallados por glaciares cuaternarios. En días claros se ven los picos fronterizos."
+            "La <strong>Línea P</strong> ('P' de Pirineos) fue el mayor proyecto de ingeniería militar "
+            "de la España franquista: entre 1944 y 1957 se construyeron cientos de búnkeres de hormigón "
+            "en los valles fronterizos para frenar una hipotética invasión aliada que nunca llegó. "
+            "En Canfranc, el <strong>Núcleo de Resistencia nº 111 «Los Arañones»</strong> defendía "
+            "el túnel ferroviario y la estación. El asentamiento C-1 apuntaba directamente a la boca "
+            "del túnel desde el bosque. Algunos búnkeres se construyeron adosados a la propia obra "
+            "ferroviaria, imitando el despiece de los sillares para camuflarlos."
         ),
         observaciones=(
-            "Mejor día del tramo aragonés: 0 mm, ~24°C en Canfranc (~26°C en Jaca/El Arrebol). "
-            "🥾 Mañana: Canal Roya desde Candanchú (salir temprano, 7–8h). "
-            "🍽️ Mediodía (~13h): conducir a Camping El Arrebol (~33 km, 30 min). "
-            "Comer en el restaurante pet-friendly del camping (perros dentro). "
-            "🐾 Tarde: piscina para perros + zona de suelta libre + riachuelo a pie del camping. "
-            "El camping también tiene acceso a la ribera del río para que se refresquen. "
-            "Máximo 2 perros; gratuito en parcelas y bungalows (+3€/noche en parcelas). "
-            "📋 Reserva #109671 — Parcela, 1 noche. Estado: entrega a cuenta realizada. "
-            "Contacto camping: 974 57 95 57 · info@campingelarrebol.com. "
-            "⚠️ Cancelación gratis hasta 7 días antes (hasta el martes 11 ago). "
-            "D3 (mié 19): salir de El Arrebol hacia Astún (~38 km, ~35 min) para Anayet."
+            "D1 ya es exigente (ibones + Malacara, 580 m). D2 = ruta fácil e histórica. "
+            "🥾 Mañana: Búnkeres desde Canfranc Estación (~11 km del overnight, 15 min en camper). "
+            "Bosque Picauvé + 12+ búnkeres Núcleo 111 + mirador estación. Fácil, perros OK. "
+            "🍽️ Mediodía (~13h): conducir a Camping El Arrebol (~35 km, 35 min). "
+            "🐾 Tarde: piscina para perros + zona de suelta libre + riachuelo. "
+            "📋 Reserva El Arrebol #109671 — Parcela, 1 noche. "
+            "☎️ 974 57 95 57 · info@campingelarrebol.com. "
+            "⚠️ Cancelación gratis hasta el martes 11 ago (7 días antes)."
         ),
         planb="Tarde en El Arrebol: piscina, zona de suelta, restaurante — plan B perfecto si llueve.",
     ),
     dict(
         day=3, date="2026-08-19",
         zona="Ibones de Anayet · Valle de Tena (Formigal)",
-        # Pernocta: borde Sallent de Gállego / Formigal (P4N zona)
-        # ⚠️ ANAYET NO ESTÁ EN ASTÚN — está en Valle de Tena, 60 km al este de Jaca
-        parking_name="Borde Sallent de Gállego / Formigal (P4N zona)",
-        parking_lat=42.776, parking_lon=-0.347,
+        # Pernocta: P4N #46830 (Formigal, gratuito, 30 plazas)
+        # ⚠️ P4N #572967 (Anayet) = solo día + CERRADO en verano — NO VÁLIDO para pernoctar
+        # Alternativa pagada: P4N #328908 (Sallent de Gállego Aire, 10€/noche, servicios completos)
+        parking_name="P4N #46830 · Formigal (parking gratuito autocaravanas)",
+        parking_lat=42.7724, parking_lon=-0.3594,
+        p4n_id=46830,
         drive_from="El Arrebol → Portalet Anayet (~62 km, ~55 min)", drive_km="~62 km", drive_h="~55 min",
         # Trailhead: Parking El Portalet (ruta desde Portalet: 550 m desnivel vs 750 m desde Corral Mulas)
         hike="Ibones de Anayet desde El Portalet", hike_lat=42.791, hike_lon=-0.370,
@@ -191,6 +180,7 @@ DAYS = [
         hike_desn="~550 m", hike_h="3,5–4 h",
         hike_parking="Parking El Portalet (A-136 km s/n · estación de esquí Formigal, lado norte)",
         wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ibones-de-anayet-desde-el-portalet-formigal-27294107",
+        hike_from_overnight="El Portalet está ~10 km del P4N #46830 · 12 min en camper (A-136 norte)",
         concurrencia="Media-alta (agosto, destino muy conocido)",
         interes=["Ibones de Anayet (2233 m)","Pico Anayet (2574 m, solo vistas)","Midi d'Ossau","Valle de Tena","GR-11"],
         historia=(
@@ -210,7 +200,9 @@ DAYS = [
             "🦟 Sanguijuelas en el agua del ibón — no meter a las perras en el lago; sí en riachuelos del camino. "
             "💧 Sin fuentes de agua potable en ruta — llevar mínimo 2L por persona + agua extra para las perras. "
             "🏔️ No subir al pico (cadena, pasos expuestos) — quedarse en los ibones. "
-            "Pernocta: P4N zona Sallent de Gállego / Formigal (42.776, -0.347)."
+            "⚠️ P4N #572967 que encontrasteis = SOLO DÍA + CERRADO en verano — no sirve para pernoctar. "
+            "✅ Pernocta: P4N #46830 (Formigal, gratuito, 30 plazas) o "
+            "P4N #328908 (Sallent Aire, 10€/noche, grises+negras+electricidad disponible)."
         ),
         planb="Sallent de Gállego pueblo (casco medieval, gastro) · borde río Gállego.",
     ),
@@ -227,6 +219,7 @@ DAYS = [
         hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
         hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~2,5 km al norte de la pernocta)",
+        hike_from_overnight="~2,5 km · 5 min al norte del overnight (fin del asfalto Valle Oza)",
         concurrencia="Media",
         interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX"],
         historia=(
@@ -533,6 +526,9 @@ def summary_table() -> str:
         hike_html = "—"
         if d["hike"] != "—":
             hike_html = f'{esc(d["hike"])} · {dif_badge(d["hike_dif"])} · {esc(d["hike_km"])} · {esc(d["hike_h"])}'
+        th_row = ""
+        if d.get("hike_from_overnight") and d["hike"] != "—":
+            th_row = f'<div class="row"><b>Al trail</b><span style="font-size:.78rem">{esc(d["hike_from_overnight"])}</span></div>\n'
         star = " ⭐" if n == 4 else ""
         night_link = d["camping_url"] if d.get("camping_url") else p4n_url_for(d)
         night_label = "Web Camping" if d.get("camping_url") else ("Ficha P4N" if d.get("p4n_id") else "P4N zona")
@@ -542,7 +538,7 @@ def summary_table() -> str:
 <div class="row"><b>Km</b><span>{esc(d["drive_km"])} · {esc(d["drive_h"])}</span></div>
 <div class="row"><b>Pernocta</b><span>{esc(d["parking_name"])}</span></div>
 <div class="row"><b>Hike</b><span>{hike_html}</span></div>
-<div class="row"><b>Gente</b><span>{crowd_span(d["concurrencia"])}</span></div>
+{th_row}<div class="row"><b>Gente</b><span>{crowd_span(d["concurrencia"])}</span></div>
 <div class="row"><b>Clima</b><span>{wx_html}</span></div>
 {btns([
     ("Conducir", _drive_url(d), "g"),
@@ -636,23 +632,6 @@ def day_card(d:dict)->str:
 {th_note}
 {btns([('🗺️ Navegar al trailhead (Google)', gmaps_pin(hlat, hlon), 'g')])}{wl_btn}
 <p style="font-size:.75rem;color:var(--muted)">Confirmar ruta en Wikiloc/AllTrails antes del hike.</p>"""
-
-        # Alternative hike (e.g. Plan B or bonus route)
-        if d.get("alt_hike"):
-            ah = d["alt_hike"]
-            hike_html += f"""
-<details style="margin-top:.75rem;border:1px solid var(--line);border-radius:10px;overflow:hidden">
-<summary style="padding:.6rem .85rem;background:var(--sec);cursor:pointer;font-size:.82rem;font-weight:700;color:var(--pine)">
-🏛️ Alternativa histórica: {esc(ah['nombre'])} ({esc(ah['dif'])} · {esc(ah['km'])})
-</summary>
-<div style="padding:.75rem .85rem;font-size:.85rem">
-<p>{ah['nota']}</p>
-<p style="font-size:.8rem;color:var(--muted)">{esc(ah['km'])} · {esc(ah['desnivel'])} desnivel · {esc(ah['tiempo'])}</p>
-<p style="font-size:.78rem;color:var(--muted)">Inicio: {esc(ah['parking_desc'])}</p>
-{btns([('🗺️ Navegar al inicio (Google)', gmaps_pin(ah['parking_lat'], ah['parking_lon']), 'g'),
-       ('📍 Wikiloc · ruta búnkeres', ah['wikiloc'], 'o')])}
-</div>
-</details>"""
 
     # POIs
     poi_html = ", ".join(f"<strong>{esc(p)}</strong>" for p in d["interes"]) if d["interes"] else "—"
