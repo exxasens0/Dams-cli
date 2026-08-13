@@ -13,6 +13,17 @@ ALB = (-1.444, 40.407)
 ESC = (-1.065, 40.765)
 MOR = (-0.100, 40.619)
 VEO = (-0.280, 39.950)
+MON = (-0.517, 40.067)
+
+# Nombre + provincia (para UI y meteo)
+P = {
+    "teia": "Teià (Barcelona)",
+    "alb": "Albarracín (Teruel)",
+    "esc": "Escucha (Teruel)",
+    "mor": "Morella (Castellón)",
+    "veo": "Alcudia de Veo (Castellón)",
+    "mon": "Montanejos (Castellón)",
+}
 
 
 def esc(s: str) -> str:
@@ -24,6 +35,26 @@ def gmaps_dir(olon: float, olat: float, dlon: float, dlat: float) -> str:
         f"https://www.google.com/maps/dir/?api=1"
         f"&origin={olat},{olon}&destination={dlat},{dlon}&travelmode=driving"
     )
+
+
+def gmaps_route(stops: list[tuple[float, float]]) -> str:
+    """Ruta multi-parada: lista de (lon, lat); primera = origen, última = destino."""
+    if len(stops) < 2:
+        return ""
+    olon, olat = stops[0]
+    dlon, dlat = stops[-1]
+    url = (
+        f"https://www.google.com/maps/dir/?api=1"
+        f"&origin={olat},{olon}&destination={dlat},{dlon}"
+    )
+    mid = stops[1:-1]
+    if mid:
+        url += "&waypoints=" + "|".join(f"{lat},{lon}" for lon, lat in mid)
+    return url + "&travelmode=driving"
+
+
+# Loop completo: Teià → bases → Teià (solo tramos con conducción)
+GMAPS_LOOP = gmaps_route([TEIA, ALB, ESC, MOR, VEO, MON, TEIA])
 
 
 def gmaps_pin(lat: float, lon: float, label: str = "") -> str:
@@ -92,7 +123,7 @@ def weather_block(day_num: int) -> str:
         return "<p>Meteo no disponible.</p>"
     tips = "".join(f"<li>{esc(t)}</li>" for t in w.get("tips", []))
     return f"""<div class="wx-grid">
-<div><em>Base</em><strong>{esc(w['place'])}</strong></div>
+<div><em>Base</em><strong>{esc(w.get('place_label') or w['place'])}</strong></div>
 <div><em>Temp</em><strong>{w['t_min']:.0f}–{w['t_max']:.0f}°C</strong></div>
 <div><em>Sensación máx</em><strong>{w['app_max']:.0f}°C</strong></div>
 <div><em>Lluvia</em><strong>{w['precip_mm']:.1f} mm · {w['precip_prob']:.0f}%</strong></div>
@@ -150,7 +181,7 @@ def build_days() -> str:
     parts = []
 
     parts.append(day_card(
-        "d1", "Día 1 · Sábado 15 agosto", "Teià → Albarracín · ~280 km · ~5 h",
+        "d1", "Día 1 · Sábado 15 agosto", f"{P['teia']} → {P['alb']} · ~280 km · ~5 h",
         f"""<p><strong>Tramo largo permitido</strong> (solo ida/vuelta).</p>
 {btns([("Google · Teià → Albarracín", gmaps_dir(*TEIA, *ALB), "g")])}
 <p>Llegada tarde: sin hike. Sombra, agua, paseo corto pueblo si sensación baja.</p>""",
@@ -174,8 +205,8 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d2", "Día 2 · Domingo 16", "Albarracín · Rodeno",
-        "<p><strong>Sin traslado.</strong> Base Albarracín.</p>",
+        "d2", "Día 2 · Domingo 16", f"{P['alb']} · Rodeno",
+        f"<p><strong>Sin traslado.</strong> Base {P['alb']}.</p>",
         (
             spot("Mismo parking D1 o Rodeno acceso", 40.45, -1.38,
                  "Acceso Pinares: aparcamientos forestales amplios, sombra de pino rodeno.",
@@ -196,8 +227,9 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d3", "Día 3 · Lunes 17", "Albarracín → Escucha · ~90 km · ~1,5 h",
+        "d3", "Día 3 · Lunes 17", f"{P['alb']} → {P['esc']} · ~90 km · ~1,5 h",
         f"""<p>Traslado ≤2 h. Salida mañana post-Rodeno o mediodía.</p>
+<p><em>{P['esc']}</em> — pueblo minero de la Cuencas Mineras, provincia de Teruel (cerca de Andorra, Teruel).</p>
 {btns([("Google · Albarracín → Escucha", gmaps_dir(*ALB, *ESC), "g")])}""",
         (
             spot("Parking N-420 borde Escucha", 40.762, -1.068,
@@ -218,7 +250,7 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d4", "Día 4 · Martes 18", "Escucha → Morella · ~130 km · ~2 h",
+        "d4", "Día 4 · Martes 18", f"{P['esc']} → {P['mor']} · ~130 km · ~2 h",
         f"""<p>Traslado ~2 h (límite). Salida temprano.</p>
 {btns([("Google · Escucha → Morella", gmaps_dir(*ESC, *MOR), "g")])}""",
         (
@@ -237,7 +269,7 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d5", "Día 5 · Miércoles 19", "Morella · Ports de Morella",
+        "d5", "Día 5 · Miércoles 19", f"{P['mor']} · Ports de Morella",
         "<p><strong>Día estrella senderismo.</strong> Sin traslado.</p>",
         spot("Misma base D4", 40.621, -0.095, "Repetir parking N-232 si funcionó.", ""),
         """<ul><li>#6766 CCP</li><li>Camping Sant Cristòfol (emergencia)</li></ul>""",
@@ -251,7 +283,7 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d6", "Día 6 · Jueves 20", "Morella · segundo día Ports o pueblo",
+        "d6", "Día 6 · Jueves 20", f"{P['mor']} · segundo día Ports o pueblo",
         "<p>Sin traslado. Lluvia posible (~3 mm) — bosque OK.</p>",
         spot("Base Morella (D4/D5)", 40.621, -0.095, "Misma pernocta.", ""),
         """<ul><li>#6766 · Camping emergencia</li></ul>""",
@@ -263,7 +295,7 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d7", "Día 7 · Viernes 21", "Morella → Sierra Espadán (Veo) · ~80 km · ~1,5 h",
+        "d7", "Día 7 · Viernes 21", f"{P['mor']} → {P['veo']} · ~80 km · ~1,5 h",
         f"""<p>Traslado ≤2 h hacia Castellón interior montañoso.</p>
 {btns([("Google · Morella → Alcudia de Veo", gmaps_dir(*MOR, *VEO), "g")])}""",
         (
@@ -282,7 +314,7 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d8", "Día 8 · Sábado 22", "Sierra Espadán",
+        "d8", "Día 8 · Sábado 22", f"Sierra Espadán · {P['veo']}",
         "<p>Local. Calor subiendo (AppMax ~34) — solo mañana.</p>",
         spot("Base Veo/Aín", 39.948, -0.278, "Misma noche.", "Calor mediodía"),
         """<ul><li>Camping Altomira</li></ul>""",
@@ -293,9 +325,9 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d9", "Día 9 · Domingo 23", "Hacia Catalunya · tramo ≤2 h",
+        "d9", "Día 9 · Domingo 23", f"Hacia Catalunya · {P['mon']} · tramo ≤2 h",
         f"""<p>Acercamiento a Teià en saltos ≤2 h. Objetivo: ~2 h conducción max.</p>
-{btns([("Ejemplo · Veo → Montanejos", gmaps_dir(-0.280, 39.950, -0.517, 40.067), "g")])}""",
+{btns([("Google · Veo → Montanejos", gmaps_dir(*VEO, *MON), "g")])}""",
         (
             spot("Montanejos / Embalse Arenoso borde", 40.058, -0.524,
                  "Zona termal/río, parkings amplios — satélite: sin salida lejos del pueblo.",
@@ -310,9 +342,9 @@ def build_days() -> str:
     ))
 
     parts.append(day_card(
-        "d10", "Día 10 · Lunes 24", "→ Teià · ~4–5 h",
+        "d10", "Día 10 · Lunes 24", f"→ {P['teia']} · ~4–5 h",
         f"""<p><strong>Tramo largo permitido</strong> (vuelta a casa).</p>
-{btns([("Google · Montanejos → Teià", gmaps_dir(-0.517, 40.067, *TEIA), "g"),
+{btns([("Google · Montanejos → Teià", gmaps_dir(*MON, *TEIA), "g"),
        ("Google · Veo → Teià", gmaps_dir(*VEO, *TEIA), "g")])}""",
         "<p><strong>Llegada a casa.</strong> Sin pernocta en ruta.</p>",
         "<p>—</p>",
@@ -325,18 +357,20 @@ def build_days() -> str:
 
 
 def live_summary() -> str:
-    return """
+    return f"""
 <section class="section live-plan" id="plan-rapido">
 <h2>Plan activo · 15–24 agosto 2026</h2>
 <div class="card prose">
 <div class="warn"><strong>Reglas:</strong> Teià loop · tramos ≤2 h (solo D1 y D10 ~5 h) · perras en todas las visitas · hike si sensación &lt;25°C · dormir vía <strong>Google Maps</strong> (P4N = emergencia).</div>
-<div class="callout"><strong>Eje:</strong> Albarracín → Escucha (minas) → Morella/Ports → Sierra Espadán → Teià. <em>Navarra/Irati excluido</em> (incompatible con regla 2 h).</div>
+<div class="callout"><strong>Eje:</strong> {P['alb']} → {P['esc']} (minas) → {P['mor']}/Ports → {P['veo']} → {P['teia']}. <em>Navarra/Irati excluido</em> (incompatible con regla 2 h).</div>
+<p>{btns([("🗺️ Ruta Google Maps · loop completo", GMAPS_LOOP, "g")])}</p>
+<p style="font-size:.85rem;color:var(--muted)">Paradas: {P['teia']} → {P['alb']} → {P['esc']} → {P['mor']} → {P['veo']} → {P['mon']} → {P['teia']}</p>
 <ol>
-<li><strong>15–16</strong> Albarracín / Rodeno</li>
-<li><strong>17</strong> Escucha patrimonio minero</li>
-<li><strong>18–20</strong> Morella / Ports (días estrella)</li>
-<li><strong>21–22</strong> Sierra Espadán</li>
-<li><strong>23–24</strong> vuelta Teià</li>
+<li><strong>15–16</strong> {P['alb']} / Rodeno</li>
+<li><strong>17</strong> {P['esc']} patrimonio minero</li>
+<li><strong>18–20</strong> {P['mor']} / Ports (días estrella)</li>
+<li><strong>21–22</strong> {P['veo']} (Sierra Espadán)</li>
+<li><strong>23–24</strong> {P['mon']} → vuelta {P['teia']}</li>
 </ol>
 </div></section>"""
 
@@ -377,7 +411,6 @@ def day_nav() -> str:
 
 
 def render_spain_guide() -> str:
-    ruta_gmaps = gmaps_dir(*TEIA, *ALB)  # simplified; full loop manual
     return f"""<!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -397,8 +430,11 @@ def render_spain_guide() -> str:
 <section class="hero">
 <div class="chips"><span class="chip">Sensación &lt;25°C</span><span class="chip">GMaps first</span><span class="chip">≤2 h tramos</span><span class="chip">Minas · gastro · Ports</span><span class="chip">Perras siempre</span></div>
 <h1>Albarracín · Escucha · Morella · Espadán</h1>
-<p class="lead">Loop fresco interior: minas de carbón, pinares de rodeno, Ports de Morella y Sierra Espadán. Cada día con la misma estructura: ruta, dormir, campings, distancias, visitas, meteo.</p>
-{btns([("Google · inicio Teià → Albarracín", gmaps_dir(*TEIA, *ALB), "g")])}
+<p class="lead">Loop fresco interior: minas de carbón (Escucha, Teruel), pinares de rodeno, Ports de Morella (Castellón) y Sierra Espadán. Cada día con la misma estructura: ruta, dormir, campings, distancias, visitas, meteo.</p>
+{btns([
+    ("🗺️ Ruta completa · Google Maps", GMAPS_LOOP, "g"),
+    ("Google · primer tramo Teià → Albarracín", gmaps_dir(*TEIA, *ALB), "g"),
+])}
 </section>
 {live_summary()}
 {gmaps_howto()}

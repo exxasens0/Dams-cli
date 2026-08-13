@@ -1,11 +1,11 @@
-dia,fecha,tramo,km_aprox,min_aprox,base,gmaps_sleep_1,lat,lon,camping_fallback,visita_estrella,perros
-1,2026-08-15,Teia-Albarracin,280,300,Albarracin,Tejeria Guadalaviar,40.412,-1.443,Camping Albarracin,Llegada pueblo,OK
-2,2026-08-16,local,0,0,Albarracin,Rodeno acceso,40.450,-1.380,#390083,Pinares Rodeno AM,OK atado
-3,2026-08-17,Albarracin-Escucha,90,90,Escucha,N420 borde,40.762,-1.068,Museo CC,Minas exterior,confirmar mina
-4,2026-08-18,Escucha-Morella,130,120,Morella,N232 mirador,40.621,-0.095,#6766,Murallas,OK exterior
-5,2026-08-19,local,0,0,Morella,N232 mirador,40.621,-0.095,#6766,Ports Morella,OK
-6,2026-08-20,local,0,0,Morella,N232 mirador,40.621,-0.095,#6766,Ports dia 2,OK
-7,2026-08-21,Morella-Veo,80,90,Espadan,Cami vell Veo,39.948,-0.278,Altomira,Traslado,OK
-8,2026-08-22,local,0,0,Espadan,Cami vell Veo,39.948,-0.278,Altomira,Veo-Ain AM,OK
-9,2026-08-23,hacia Catalunya,120,120,Montanejos,Arenoso borde,40.058,-0.524,camping,Puente,OK
-10,2026-08-24,Teia,450,300,Casa,,,,,Vuelta,OK
+dia,fecha,tramo,km_aprox,min_aprox,base,provincia,gmaps_sleep_1,lat,lon,camping_fallback,visita_estrella,perros
+1,2026-08-15,Teia-Albarracin,280,300,Albarracin,Teruel,Tejeria Guadalaviar,40.412,-1.443,Camping Albarracin,Llegada pueblo,OK
+2,2026-08-16,local,0,0,Albarracin,Teruel,Rodeno acceso,40.450,-1.380,#390083,Pinares Rodeno AM,OK atado
+3,2026-08-17,Albarracin-Escucha,90,90,Escucha,Teruel,N420 borde,40.762,-1.068,Museo CC,Minas exterior,confirmar mina
+4,2026-08-18,Escucha-Morella,130,120,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Murallas,OK exterior
+5,2026-08-19,local,0,0,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Ports Morella,OK
+6,2026-08-20,local,0,0,Morella,Castellon,N232 mirador,40.621,-0.095,#6766,Ports dia 2,OK
+7,2026-08-21,Morella-Veo,80,90,Alcudia de Veo,Castellon,Cami vell Veo,39.948,-0.278,Altomira,Traslado,OK
+8,2026-08-22,local,0,0,Alcudia de Veo,Castellon,Cami vell Veo,39.948,-0.278,Altomira,Veo-Ain AM,OK
+9,2026-08-23,hacia Catalunya,120,120,Montanejos,Castellon,Arenoso borde,40.058,-0.524,camping,Puente,OK
+10,2026-08-24,Teia,450,300,Teia,Barcelona,,,,,Vuelta,OK
