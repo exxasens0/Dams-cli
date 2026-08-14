@@ -198,7 +198,8 @@ DAYS = [
             "⚡ Llegar al parking a las 6:30–7:00 en agosto para encontrar plaza. "
             "🍽️ Mediodía (~14h): conducir a El Arrebol (~35 km, 35 min). "
             "🐾 Tarde: piscina para perros + zona de suelta + restaurante pet-friendly. "
-            "📋 Reserva El Arrebol #109671 — fecha modificada a 19/08→20/08. "
+            "📋 Reserva El Arrebol #109671 · Parcela Estándar · 19/08→20/08 (salida 12:00h). "
+            "💶 Total: 47€ (35€ parcela + 6€ adulto + 6€ dos perras). Depósito pagado: 14,10€. Pendiente en entrada: 32,90€. "
             "☎️ 974 57 95 57 · info@campingelarrebol.com."
         ),
         planb="Si el desnivel da respeto: solo subir hasta el Refugio Canal de Ip (~8 km, ~600 m) y volver. "
@@ -228,8 +229,9 @@ DAYS = [
             "El monasterio de <strong>Siresa</strong> (3 km) es el más antiguo de Aragón (s.IX)."
         ),
         observaciones=(
+            "⏰ Salida El Arrebol a las 12:00h (checkout). Drive ~65 km, ~1h10 → llegar Oza ~13:30h. "
             "Jue 20: único día fresco de toda la semana aragonesa (~21°C sensación en Oza). "
-            "Pernocta en el área forestal Oza: 42.840, -0.738 — buscar en P4N zona. "
+            "Hike Aguas Tuertas tarde (14h–17h) — fácil, sin presión de tiempo. "
             "Hike desde el parking terminal del asfalto (42.862, -0.742): de ahí 4 km a los meandros. "
             "Aguas Tuertas: terreno llano, agua en el río, las perras van sueltas. "
             "Siresa (3 km desde Oza): 20 min, vale la parada. Hecho pueblo (10 km) para avituallamiento."
