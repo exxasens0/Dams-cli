@@ -246,30 +246,43 @@ DAYS = [
     ),
     dict(
         day=5, date="2026-08-21",
-        zona="Foz de Biniés → Jaca → Embalse Yesa",
-        # Pernocta: borde Embalse Yesa, margen sur
-        parking_name="Borde Embalse Yesa (margen sur, cerca N-240)",
-        parking_lat=42.609, parking_lon=-1.061,
-        drive_from="Oza → Jaca (~55 km) → Yesa (~45 km)", drive_km="~100 km", drive_h="~1h30",
-        # Trailhead: Foz de Biniés (parada en ruta, 2 km antes de llegar a Biniés pueblo)
+        zona="Foz de Biniés → Jaca → Borde Río Aragón",
+        # Pernocta opción 1: P4N #82683 (Artieda, borde río Aragón) — más natural pero acceso justo para 7m
+        # Pernocta opción 2: P4N #26522 (Yesa, Monasterio de Leyre) — fácil acceso, cultural, recomendado AC grande
+        # Pernocta opción 3: P4N #552933 (Yesa, borde río) — solo 2 plazas, mosquitos+++
+        parking_name="P4N #82683 · Artieda · Borde Río Aragón",
+        parking_lat=42.6031, parking_lon=-0.9834,
+        p4n_id=82683,
+        p4n_alts=[
+            (26522,  "P4N #26522 · Monasterio Leyre (Yesa)", 42.6367, -1.1727),
+            (552933, "P4N #552933 · Yesa · Borde Río (2 plazas)", 42.6109, -1.2179),
+        ],
+        drive_from="Borda Bisaltico → Foz Biniés → Jaca → Artieda/Yesa", drive_km="~100 km", drive_h="~1h30",
+        # Trailhead: Foz de Biniés (parada en ruta)
         hike="Foz de Biniés (opcional AM, parada en ruta)", hike_lat=42.694, hike_lon=-0.909,
         hike_km="4 km", hike_dif="Fácil",
         hike_desn="~80 m", hike_h="1,5 h",
         hike_parking="Parking junto a Biniés pueblo (A-1603, km 2 · se llega antes de Jaca)",
+        hike_from_overnight="Foz de Biniés está en ruta (no es desvío desde la noche anterior)",
         concurrencia="Alta Jaca agosto · Baja Foz",
-        interes=["Foz de Biniés (gargantas kársticas)","Ansó medieval","Jaca catedral románica","Ciudadela Jaca","Embalse Yesa"],
+        interes=["Foz de Biniés (gargantas kársticas)","Jaca catedral románica","Ciudadela Jaca","Monasterio de Leyre","Río Aragón"],
         historia=(
             "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón. Su "
             "<strong>catedral románica</strong> (1063) es la primera románica de España. "
-            "<strong>Ansó</strong> conserva el traje típico ansotano, uno de los más llamativos "
-            "de España. La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río "
-            "Veral, accesible por pasarela de madera sin desnivel."
+            "La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río Veral, "
+            "accesible por pasarela de madera sin desnivel. "
+            "El <strong>Monasterio de Leyre</strong> (s.XI), refugio benedictino al pie de la Sierra de Leyre, "
+            "es uno de los más importantes de Navarra — canto gregoriano diario a las 19h."
         ),
         observaciones=(
-            "Día de lluvia (~16–21 mm) → ideal para conducción y cultura urbana. "
-            "Foz de Biniés: si el tiempo lo permite a primera hora (pasarela fácil, 1,5 h, perros OK, "
-            "desvío -10 km desde la ruta principal). Jaca: catedral exterior + ciudadela exterior. "
-            "Pernocta Yesa: P4N zona 42.609, -1.061 — varios spots borde embalse y río Aragón."
+            "Día de lluvia (~16–21 mm) → ideal para conducción y cultura. "
+            "Foz de Biniés AM (pasarela fácil, 1,5 h, perros OK, desvío ~10 km). "
+            "Jaca: catedral exterior + ciudadela exterior (perros no entran al museo). "
+            "📍 Pernocta preferida: P4N #82683 Artieda (borde río, plano, 10 plazas) "
+            "⚠️ ACCESO JUSTO para 7m: camino pedregoso estrecho — ver el camino andando primero. "
+            "Legalidad Artieda: reviews contradictorios (GC multó a uno, otros sin problema). "
+            "📍 Alternativa A: P4N #26522 Monasterio Leyre (acceso fácil, inclinado, no shade). "
+            "📍 Alternativa B: P4N #552933 Yesa río (solo 2 plazas, mosquitos+++, ramas bajas)."
         ),
         planb="Jaca: catedral + ciudadela + mercado cubierto · café bajo porches.",
     ),
@@ -499,7 +512,7 @@ def _drive_url(d: dict) -> str:
     if n==2: return gmaps_dir(*SPOT1,*VILLANUA)
     if n==3: return gmaps_dir(*VILLANUA,*ARREBOL)
     if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)  # El Arrebol → Borda Bisaltico (fin en 42.840,-0.738 = Oza area)
-    if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
+    if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)  # Borda Bisaltico area → Yesa/Artieda area
     if n==6: return gmaps_dir(*YESA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
     if n==8: return gmaps_dir(*IRABIA,*ORBA_NIGHT)
@@ -630,10 +643,18 @@ def day_card(d:dict)->str:
 <p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">{camp_desc}</p>
 {camping_btns}</div>"""
     else:
+        alts_html = ""
+        if d.get("p4n_alts"):
+            alt_btns = "".join(
+                f'<div style="margin-top:.3rem">{btn(f"🔁 {label}", p4n_place(pid), "o")}'
+                f'{btn("🗺️ Nav", gmaps_pin(lat,lon), "g")}</div>'
+                for pid, label, lat, lon in d["p4n_alts"]
+            )
+            alts_html = f'<div style="margin-top:.5rem;font-size:.78rem;color:var(--muted)">Alternativas si no hay sitio:</div>{alt_btns}'
         parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
 <p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">Navegación en coche al parking (no pin suelto).</p>
 {btn("Conducir aquí (Google)", gmaps_pin(d['parking_lat'],d['parking_lon']), "g")}
-{btn("Ficha P4N" if d.get("p4n_id") else "P4N zona", p4n_url_for(d), "o")}</div>"""
+{btn("Ficha P4N" if d.get("p4n_id") else "P4N zona", p4n_url_for(d), "o")}{alts_html}</div>"""
 
     # hike section
     if d["hike"]=="—":
