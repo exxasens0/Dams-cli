@@ -128,21 +128,21 @@ DAYS = [
     ),
     dict(
         day=2, date="2026-08-18",
-        zona="Búnkeres Línea P (AM) · Villanúa (noche)",
-        # Pernocta: P4N #135785 Villanúa (borde río, gratuito, cualquier tamaño AC)
-        parking_name="P4N #135785 · Villanúa · 7 Calle Piscinas (borde río)",
-        parking_lat=42.784, parking_lon=-0.566,
-        p4n_id=135785,
-        drive_from="Canfranc Estación → Villanúa (tras el hike)", drive_km="~5 km", drive_h="~8 min",
+        zona="Búnkeres Línea P (AM) · Candanchú (noche)",
+        # Pernocta: P4N #532128 Candanchú (estación de esquí, 1.520 m, gratuito, fresco)
+        parking_name="P4N #532128 · Candanchú · Parking estación de esquí (1.520 m)",
+        parking_lat=42.7867, parking_lon=-0.5360,
+        p4n_id=532128,
+        drive_from="Canfranc Estación → Candanchú (tras el hike)", drive_km="~11 km", drive_h="~12 min",
         # Trailhead: Canfranc Estación pueblo
         hike="Ruta de los Búnkeres – Línea P Canfranc", hike_lat=42.750, hike_lon=-0.525,
         hike_km="9,6 km", hike_dif="Fácil",
         hike_desn="~320 m", hike_h="2,5–3 h",
         hike_parking="Canfranc Estación pueblo (junto a la estación internacional de tren)",
         wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
-        hike_from_overnight="~11 km · 15 min del overnight (P4N #285213 → Canfranc Estación)",
+        hike_from_overnight="~11 km · 12 min del P4N #532128 Candanchú a Canfranc Estación",
         concurrencia="Baja (ruta poco conocida)",
-        interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Río Aragón","Villanúa pueblo"],
+        interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Río Aragón","Candanchú a 1.520 m"],
         historia=(
             "La <strong>Línea P</strong> ('P' de Pirineos) fue el mayor proyecto de ingeniería militar "
             "de la España franquista: entre 1944 y 1957 se construyeron cientos de búnkeres de hormigón "
@@ -154,56 +154,54 @@ DAYS = [
         ),
         observaciones=(
             "D1 exigente (ibones + Malacara, 580 m). D2 = ruta fácil e histórica. "
-            "🥾 Mañana: Búnkeres desde Canfranc Estación (~11 km del overnight, 15 min en camper). "
+            "🥾 Mañana: Búnkeres desde Canfranc Estación (~11 km del overnight, 12 min en camper). "
             "Bosque Picauvé + 12+ búnkeres Núcleo 111 + mirador estación. Fácil, perros OK. "
-            "Tras el hike: conducir 5 km a Villanúa · P4N #135785 (borde río, gratuito, nivelado). "
-            "Villanúa: pueblo tranquilo con bares y tiendas. Cerca de la Cueva de las Güixas. "
-            "D3 mañana: ibón de Ip desde Canfranc pueblo (~10 km, 12 min) + luego El Arrebol."
+            "Tras el hike: subir 11 km a Candanchú · P4N #532128 (gratuito, 18 plazas, 1.520 m, fresco). "
+            "Sin servicios — vaciar en Canfranc Estación antes de subir. "
+            "Normas: sin toldos ni mesas fuera. Puerta no hay, abierto todo el año. "
+            "D3 mañana: Canal Roya desde Parking Anglasé (~5 km al sur del overnight)."
         ),
-        planb="Paseo Villanúa · borde río Aragón · Cueva de las Güixas (si tienen visitas).",
+        planb="Paseo en Candanchú · vista hacia frontera · bar de la estación.",
     ),
     dict(
         day=3, date="2026-08-19",
-        zona="Ibón de Ip (AM) · Camping El Arrebol (tarde)",
+        zona="Canal Roya · GR-11 (AM) · Camping El Arrebol (tarde)",
         # Pernocta: Camping El Arrebol (reserva #109671 modificada a 19→20 ago)
         parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
         parking_lat=42.5645, parking_lon=-0.5098,
         camping_url="https://www.campingelarrebol.com",
         camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-19&checkout=2026-08-20&guestAges=18,18#additional_concepts",
-        drive_from="Villanúa → Canfranc pueblo (hike) → El Arrebol", drive_km="~35 km", drive_h="~35 min",
-        # Trailhead: parking Canfranc pueblo (cruzar Puente de Arriba sobre el río Aragón)
-        hike="Ibón de Ip circular (Canfranc pueblo)", hike_lat=42.745, hike_lon=-0.521,
-        hike_km="~16 km", hike_dif="Moderado",
-        hike_desn="~1.086 m", hike_h="~5 h",
-        hike_parking="Parking Canfranc pueblo · cruzar Puente de Arriba sobre el río Aragón (~10 km de Villanúa, 12 min)",
-        wikiloc_url="https://es.wikiloc.com/rutas-senderismo/circular-al-ibon-de-ip-119496015",
-        hike_from_overnight="~10 km · 12 min del overnight (P4N #135785 Villanúa → Canfranc pueblo)",
-        concurrencia="Media (menos conocido que Anayet)",
-        interes=["Ibón de Ip (2.112 m)","Circo de Collarada","Refugio Canal de Ip","Valle del Aragón","Canfranc pueblo"],
+        drive_from="Parking Anglasé (hike) → El Arrebol", drive_km="~40 km", drive_h="~40 min",
+        # Trailhead: Parking de Anglasé (N-330 entre Canfranc-Estación y Candanchú, antes de Rioseta)
+        hike="Canal Roya – La Rinconada (GR-11)", hike_lat=42.770, hike_lon=-0.505,
+        hike_km="14 km", hike_dif="Moderado",
+        hike_desn="~520 m", hike_h="4–4,5 h",
+        hike_parking="Parking Anglasé (N-330, entre Canfranc-Estación y Rioseta, ~5 km al sur del overnight Candanchú)",
+        wikiloc_url="https://senderosturisticos.turismodearagon.com/ruta/ficha/148",
+        hike_from_overnight="~5 km · 8 min al sur del P4N #532128 Candanchú (N-330 hacia Canfranc)",
+        concurrencia="Media (GR-11 conocido pero no masificado)",
+        interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX"],
         historia=(
-            "El <strong>Ibón de Ip</strong> se asienta a 2.112 m al pie del <strong>Circo de Collarada</strong>, "
-            "el pico más alto de la Jacetania (2.886 m). La subida sigue el <strong>Barranco de Ip</strong> por dos "
-            "laderas distintas — La Solana (sur, bosque de pinos) y La Besera (norte, más solitaria) — "
-            "que se combinan en un circular clásico del valle del Aragón. Mucho menos conocido que los ibones "
-            "de Anayet o Astún, lo que significa silencio real incluso en agosto. "
-            "El pueblo de <strong>Canfranc</strong> (no la estación) conserva el trazado medieval y la "
-            "iglesia de la Asunción, muy distinto al núcleo ferroviario de Canfranc Estación."
+            "La <strong>Canal Roya</strong> es un valle de origen glaciar por el que discurre la etapa 12 del "
+            "<strong>GR-11</strong>, el sendero transpirenaico de Hondarribia a Cadaqués. "
+            "El camino pasa junto a la <strong>Fondería de Anglasé</strong>, restos de una fundería de cobre "
+            "y hierro activa en los siglos XVIII–XIX para abastecer a las poblaciones del valle. "
+            "Al fondo del valle, el <strong>Plano de la Rinconada</strong> (1.870 m) es un circo glaciar "
+            "cerrado por las paredes del imponente <strong>Pico de Anayet</strong> (2.545 m), volcán extinto "
+            "cuya chimenea forma una de las siluetas más características de todo el Pirineo."
         ),
         observaciones=(
-            "⚠️ Desnivel considerable: ~1.086 m en 16 km — salir muy temprano (7:00 h máximo). "
-            "Ruta técnicamente fácil (no hay pasos expuestos ni cadenas) pero físicamente exigente. "
-            "Circular: subir por La Solana (bosque, más sombreada) · bajar por La Besera. "
-            "Agua en los barrancos del camino — las perras pueden refrescarse en ruta. "
-            "Parking pequeño en Canfranc pueblo (cruzar el puente sobre el río). "
-            "⚡ Llegar al parking a las 6:30–7:00 en agosto para encontrar plaza. "
-            "🍽️ Mediodía (~14h): conducir a El Arrebol (~35 km, 35 min). "
+            "Salir temprano del P4N Candanchú (7:00 h) y conducir 5 km al sur hasta Parking Anglasé. "
+            "Seguir las marcas del GR-11 todo el recorrido — bien señalizado. "
+            "Cruces de río con pasos entre piedras — las perras se refrescan en ruta. "
+            "🍽️ Al terminar (~12-13h): conducir a El Arrebol (~40 km, 40 min). "
             "🐾 Tarde: piscina para perros + zona de suelta + restaurante pet-friendly. "
             "📋 Reserva El Arrebol #109671 · Parcela Estándar · 19/08→20/08 (salida 12:00h). "
-            "💶 Total: 47€ (35€ parcela + 6€ adulto + 6€ dos perras). Depósito pagado: 14,10€. Pendiente en entrada: 32,90€. "
+            "💶 Total: 47€ (35€ parcela + 6€ adulto + 6€ dos perras). Depósito: 14,10€. Pendiente: 32,90€. "
             "☎️ 974 57 95 57 · info@campingelarrebol.com."
         ),
-        planb="Si el desnivel da respeto: solo subir hasta el Refugio Canal de Ip (~8 km, ~600 m) y volver. "
-              "Igualmente bonito. Tarde en El Arrebol piscina perros.",
+        planb="Canal Roya se puede acortar volviendo desde el Refugio de Lacuars (~10 km, ~300 m). "
+              "Tarde en El Arrebol igual.",
     ),
     dict(
         day=4, date="2026-08-20",
@@ -215,6 +213,7 @@ DAYS = [
         parking_lat=42.754, parking_lon=-0.738,
         camping_url="https://bordabisaltico.com/camping-valle-hecho-junto-selva-oza-pirineos/",
         camping_booking="https://bordabisaltico.com/situacion-y-contacto/",
+        p4n_backup=227980,  # Plan B: gratuito, legalmente discutido pero tolerable
         drive_from="El Arrebol → Hecho → Borda Bisaltico (via Jaca)", drive_km="~62 km", drive_h="~1h10",
         # Trailhead: parking terminal del Valle de Oza (fin del asfalto), ~10 km al norte del camping
         hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
@@ -618,11 +617,12 @@ def day_card(d:dict)->str:
             camp_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 El Arrebol · piscina perros · reserva #109671</span>'
         else:
             # Borda Bisaltico: sin reservas, llamar antes
+            p4n_backup_btn = (f'\n{btn("🆘 Plan B: P4N #227980", p4n_place(d["p4n_backup"]), "o")}' if d.get("p4n_backup") else "")
             camping_btns = btns([
                 ("Conducir aquí (Google)", gmaps_pin(d["parking_lat"], d["parking_lon"]), "g"),
                 ("Web Borda Bisaltico", d["camping_url"], "o"),
                 ("Contacto / ¿Queda plaza?", d["camping_booking"], "p"),
-            ])
+            ]) + p4n_backup_btn
             camp_desc = "Sin reservas · llamar 3 días antes: 974 34 89 40 / 696 981 816 · check-in desde 12h · perros OK"
             camp_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🏕️ Borda Bisaltico · sin reserva · perros OK</span>'
         parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
@@ -646,7 +646,7 @@ def day_card(d:dict)->str:
         th_note = ("<em style='font-size:.8rem;color:var(--muted)'>Trailhead = pernocta, no hay que mover la camper.</em>"
                    if same_as_night else
                    f"<em style='font-size:.8rem;color:var(--muted)'>{esc(hp)}</em>")
-        wl_btn = (f'\n{btn("📍 Wikiloc · ruta completa", d["wikiloc_url"], "o")}' if d.get("wikiloc_url") else "")
+        wl_btn = (f'\n{btn("📍 Ruta oficial · GR-11 Canal Roya" if "senderistos" in d["wikiloc_url"] or "senderosturisticos" in d["wikiloc_url"] else "📍 Wikiloc · ruta completa", d["wikiloc_url"], "o")}' if d.get("wikiloc_url") else "")
         hike_html = f"""<p><strong>{esc(d['hike'])}</strong> · {dif_badge(d['hike_dif'])} · \
 {esc(d['hike_km'])} · {esc(d['hike_desn'])} desnivel · {esc(d['hike_h'])}</p>
 {th_note}
