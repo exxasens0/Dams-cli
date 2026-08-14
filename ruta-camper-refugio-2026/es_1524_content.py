@@ -23,9 +23,9 @@ JACA   = (-0.549,   42.568)
 ARREBOL= (-0.5098,  42.5645)  # Camping El Arrebol · N-330 km 643 · Jaca
 VILLANUA= (-0.566,   42.784)   # P4N #135785 · Villanúa · 7 Calle Piscinas (borde río)
 
-# Anayet area (Valle de Tena, distinto valle que Astún)
-PORTALET_TH = (-0.370,  42.791)  # Parking El Portalet trailhead (Anayet hike)
-FORMIGAL_NIGHT = (-0.347, 42.776) # Near Sallent de Gállego / Formigal (overnight D3)
+# Additional route stops
+ANSO   = (-0.821,   42.759)  # Ansó pueblo (pueblo más bonito de España)
+BINIES = (-0.909,   42.694)  # Foz de Biniés / Biniés pueblo
 
 # Trailheads (lat, lon) para gmaps_pin (uso interno)
 TH_ESTANES  = (42.796, -0.459)  # Astún ski base → Ibón de Estanes
@@ -180,7 +180,7 @@ DAYS = [
         wikiloc_url="https://senderosturisticos.turismodearagon.com/ruta/ficha/148",
         hike_from_overnight="~5 km · 8 min al sur del P4N #532128 Candanchú (N-330 hacia Canfranc)",
         concurrencia="Media (GR-11 conocido pero no masificado)",
-        interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX"],
+        interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX","Villanúa (de paso)","Ciudadela de Jaca"],
         historia=(
             "La <strong>Canal Roya</strong> es un valle de origen glaciar por el que discurre la etapa 12 del "
             "<strong>GR-11</strong>, el sendero transpirenaico de Hondarribia a Cadaqués. "
@@ -188,14 +188,21 @@ DAYS = [
             "y hierro activa en los siglos XVIII–XIX para abastecer a las poblaciones del valle. "
             "Al fondo del valle, el <strong>Plano de la Rinconada</strong> (1.870 m) es un circo glaciar "
             "cerrado por las paredes del imponente <strong>Pico de Anayet</strong> (2.545 m), volcán extinto "
-            "cuya chimenea forma una de las siluetas más características de todo el Pirineo."
+            "cuya chimenea forma una de las siluetas más características de todo el Pirineo. "
+            "La <strong>Ciudadela de Jaca</strong> (s.XVI) es una de las mejores fortalezas abaluartadas "
+            "de Europa, con forma de estrella pentagonal, aún activa como cuartel — foso, puente levadizo "
+            "y museo de miniaturas militares. Entrada 5€, visita ~2 h."
         ),
         observaciones=(
             "Salir temprano del P4N Candanchú (7:00 h) y conducir 5 km al sur hasta Parking Anglasé. "
             "Seguir las marcas del GR-11 todo el recorrido — bien señalizado. "
             "Cruces de río con pasos entre piedras — las perras se refrescan en ruta. "
-            "🍽️ Al terminar (~12-13h): conducir a El Arrebol (~40 km, 40 min). "
-            "🐾 Tarde: piscina para perros + zona de suelta + restaurante pet-friendly. "
+            "🏘️ De camino a El Arrebol pasáis por <strong>Villanúa</strong> — parada opcional 15-20 min "
+            "(pueblo tranquilo, cerca de la Cueva de las Güixas). "
+            "🍽️ Al llegar (~13-14h): check-in El Arrebol, comer, instalarse. "
+            "🏰 Tarde libre (16-18h): <strong>Ciudadela de Jaca</strong> (5€, ~2h visita) — a 5 km del camping. "
+            "Perros no entran al museo pero sí pasean por el foso exterior. "
+            "🐾 Noche: piscina para perros + zona de suelta + restaurante pet-friendly. "
             "📋 Reserva El Arrebol #109671 · Parcela Estándar · 19/08→20/08 (salida 12:00h). "
             "💶 Total: 47€ (35€ parcela + 6€ adulto + 6€ dos perras). Depósito: 14,10€. Pendiente: 32,90€. "
             "☎️ 974 57 95 57 · info@campingelarrebol.com."
@@ -222,16 +229,21 @@ DAYS = [
         hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~10 km al norte del camping)",
         hike_from_overnight="~10 km · 12 min al norte del camping (seguir la carretera del valle hasta el final)",
         concurrencia="Media",
-        interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX","Boca del Infierno"],
+        interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX","Boca del Infierno","Hecho (arquitectura pirenaica)"],
         historia=(
             "<strong>Aguas Tuertas</strong> ('aguas torcidas') es una pradera alpina glaciar a 1640 m "
             "donde el río Aragón Subordán forma meandros imposibles en terreno llano. "
             "<strong>Selva de Oza</strong> es un hayedo-pinar de gran valor ecológico; el Valle de Hecho "
             "conserva el <strong>cheso</strong>, dialecto aragonés con ~1.500 hablantes. "
-            "El monasterio de <strong>Siresa</strong> (3 km) es el más antiguo de Aragón (s.IX)."
+            "El monasterio de <strong>Siresa</strong> (3 km) es el más antiguo de Aragón (s.IX). "
+            "El pueblo de <strong>Hecho</strong> conserva el trazado y la arquitectura pirenaica tradicional: "
+            "casas de piedra con tejados de losa, chimeneas troncocónicas y balcones de madera. "
+            "Tiene un singular museo de escultura contemporánea al aire libre repartido por sus calles."
         ),
         observaciones=(
             "⏰ Salida El Arrebol 12:00h (checkout) → Borda Bisaltico ~62 km, ~1h10. "
+            "🏘️ De camino, paráis en <strong>Hecho pueblo</strong> (justo antes de Borda Bisaltico, 9 km) — "
+            "callejeo 20-30 min por su casco de arquitectura pirenaica y el museo de escultura al aire libre. "
             "Check-in camping desde las 12h (coincide bien con la salida de El Arrebol). "
             "Jue 20: único día fresco de toda la semana (~21°C sensación en Oza). "
             "Dejar la camper en Borda Bisaltico y conducir 10 km más al norte hasta el trailhead. "
@@ -246,7 +258,7 @@ DAYS = [
     ),
     dict(
         day=5, date="2026-08-21",
-        zona="Foz de Biniés → Jaca → Borde Río Aragón",
+        zona="Ansó (pueblo más bonito) → Foz de Biniés → Jaca → Borde Río Aragón",
         # Pernocta opción 1: P4N #82683 (Artieda, borde río Aragón) — más natural pero acceso justo para 7m
         # Pernocta opción 2: P4N #26522 (Yesa, Monasterio de Leyre) — fácil acceso, cultural, recomendado AC grande
         # Pernocta opción 3: P4N #552933 (Yesa, borde río) — solo 2 plazas, mosquitos+++
@@ -257,34 +269,39 @@ DAYS = [
             (26522,  "P4N #26522 · Monasterio Leyre (Yesa)", 42.6367, -1.1727),
             (552933, "P4N #552933 · Yesa · Borde Río (2 plazas)", 42.6109, -1.2179),
         ],
-        drive_from="Borda Bisaltico → Foz Biniés → Jaca → Artieda/Yesa", drive_km="~100 km", drive_h="~1h30",
+        drive_from="Borda Bisaltico → Ansó → Foz Biniés → Jaca → Artieda/Yesa", drive_km="~125 km", drive_h="~2h15",
         # Trailhead: Foz de Biniés (parada en ruta)
         hike="Foz de Biniés (opcional AM, parada en ruta)", hike_lat=42.694, hike_lon=-0.909,
         hike_km="4 km", hike_dif="Fácil",
         hike_desn="~80 m", hike_h="1,5 h",
         hike_parking="Parking junto a Biniés pueblo (A-1603, km 2 · se llega antes de Jaca)",
-        hike_from_overnight="Foz de Biniés está en ruta (no es desvío desde la noche anterior)",
-        concurrencia="Alta Jaca agosto · Baja Foz",
-        interes=["Foz de Biniés (gargantas kársticas)","Jaca catedral románica","Ciudadela Jaca","Monasterio de Leyre","Río Aragón"],
+        hike_from_overnight="Foz de Biniés está en ruta, tras la parada en Ansó",
+        concurrencia="Alta Ansó/Jaca agosto · Baja Foz",
+        interes=["Ansó (pueblo más bonito de España)","Traje típico ansotano","Foz de Biniés (gargantas kársticas)","Jaca catedral románica","Monasterio de Leyre"],
         historia=(
-            "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón. Su "
-            "<strong>catedral románica</strong> (1063) es la primera románica de España. "
-            "La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río Veral, "
-            "accesible por pasarela de madera sin desnivel. "
-            "El <strong>Monasterio de Leyre</strong> (s.XI), refugio benedictino al pie de la Sierra de Leyre, "
-            "es uno de los más importantes de Navarra — canto gregoriano diario a las 19h."
+            "<strong>Ansó</strong> está reconocido como uno de los <strong>pueblos más bonitos de España</strong>: "
+            "callejuelas empedradas, casas de piedra con escudos nobiliarios y el <strong>traje típico ansotano</strong>, "
+            "uno de los más llamativos de la Península — las mujeres solteras llevaban la toca hacia adelante, "
+            "las casadas hacia atrás. El pueblo estuvo aislado durante siglos y desarrolló una cultura propia, "
+            "con museo etnológico en la iglesia de San Pedro. "
+            "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón; su catedral románica (1063) "
+            "es la primera de España (ciudadela ya visitada D3). "
+            "La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río Veral, accesible por "
+            "pasarela de madera sin desnivel."
         ),
         observaciones=(
             "Día de lluvia (~16–21 mm) → ideal para conducción y cultura. "
-            "Foz de Biniés AM (pasarela fácil, 1,5 h, perros OK, desvío ~10 km). "
-            "Jaca: catedral exterior + ciudadela exterior (perros no entran al museo). "
+            "🏘️ Mañana: parada en <strong>Ansó</strong> (~30 km desde Borda Bisaltico) — paseo por el casco "
+            "medieval, museo etnológico, tiendas de artesanía. 1-1,5 h. "
+            "Foz de Biniés después (pasarela fácil, 1,5 h, perros OK). "
+            "Jaca: si no visitasteis la ciudadela D3, aprovechad de paso (catedral exterior siempre libre). "
             "📍 Pernocta preferida: P4N #82683 Artieda (borde río, plano, 10 plazas) "
             "⚠️ ACCESO JUSTO para 7m: camino pedregoso estrecho — ver el camino andando primero. "
             "Legalidad Artieda: reviews contradictorios (GC multó a uno, otros sin problema). "
             "📍 Alternativa A: P4N #26522 Monasterio Leyre (acceso fácil, inclinado, no shade). "
             "📍 Alternativa B: P4N #552933 Yesa río (solo 2 plazas, mosquitos+++, ramas bajas)."
         ),
-        planb="Jaca: catedral + ciudadela + mercado cubierto · café bajo porches.",
+        planb="Ansó y Jaca bajo cubierto: museo etnológico Ansó · catedral y mercado Jaca.",
     ),
     dict(
         day=6, date="2026-08-22",
@@ -512,7 +529,7 @@ def _drive_url(d: dict) -> str:
     if n==2: return gmaps_dir(*SPOT1,*VILLANUA)
     if n==3: return gmaps_dir(*VILLANUA,*ARREBOL)
     if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)  # El Arrebol → Borda Bisaltico (fin en 42.840,-0.738 = Oza area)
-    if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)  # Borda Bisaltico area → Yesa/Artieda area
+    if n==5: return gmaps_route([OZA_NIGHT, ANSO, BINIES, JACA, YESA])  # Borda Bisaltico → Ansó → Foz Biniés → Jaca → Yesa/Artieda
     if n==6: return gmaps_dir(*YESA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
     if n==8: return gmaps_dir(*IRABIA,*ORBA_NIGHT)
@@ -596,8 +613,13 @@ def day_card(d:dict)->str:
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
                      f"{btns([('El Arrebol → Borda Bisaltico (conducir)', gmaps_dir(*ARREBOL,*OZA_NIGHT), 'g')])}")
     elif n==5:
-        ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
-                     f"{btns([('Oza → Jaca', gmaps_dir(*OZA_NIGHT,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
+        d5_btns = btns([
+            ('Borda Bisaltico → Ansó', gmaps_dir(*OZA_NIGHT,*ANSO), 'g'),
+            ('Ansó → Foz Biniés', gmaps_dir(*ANSO,*BINIES), 'g'),
+            ('Foz Biniés → Jaca → Yesa', gmaps_route([BINIES,JACA,YESA]), 'g'),
+        ])
+        ruta_html = (f"<p>Borda Bisaltico → Ansó (parada pueblo) → Foz de Biniés → Jaca → Artieda/Yesa (~125 km total).</p>"
+                     f"{d5_btns}")
     elif n==6:
         ruta_html = (f"<p>Yesa → Ochagavía (~90 km, ~1h15). Entrada al Pirineo navarro.</p>"
                      f"{btns([('Yesa → Ochagavía (conducir)', gmaps_dir(*YESA,*OCH), 'g')])}")
@@ -719,6 +741,7 @@ def render_spain_guide()->str:
 <a class="btn btn-p" href="#resumen">Resumen</a>
 <a class="btn btn-g" href="#d1">Días</a>
 <a class="btn btn-o" href="#como-dormir">Dormir</a>
+<a class="btn" href="#opcionales">+ Excursiones</a>
 </div>
 </header>
 {day_nav()}
@@ -774,6 +797,43 @@ Selva de Irati · Valle del Roncal. Vuelta miércoles 26. Hike moderado, perras 
 
 <section class="section" id="dias"><h2>Día a día detallado</h2>
 {days_html}
+</section>
+
+<section class="section" id="opcionales">
+<h2>🗺️ Excursiones opcionales (fuera del eje principal)</h2>
+<div class="warn">
+Estos sitios están a 60–100 km del eje Jaca–Hecho–Ansó–Navarra y no encajan en los tramos ≤2h
+sin sacrificar un día ya reservado (El Arrebol, Borda Bisaltico, Aguas Tuertas). Se documentan
+aquí por si os sobra un día o preferís sustituir alguno de los días fijos.
+</div>
+
+<div class="card">
+<h3 style="margin-top:0;color:var(--pine)">Valle de Tena (Panticosa · Sallent · Lanuza)</h3>
+<p style="font-size:.85rem;color:var(--muted)">Desde Jaca: ~59 km · ~55 min por Biescas</p>
+<div class="spot"><strong>Balneario y Pasarelas de Panticosa</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Pasarelas de madera sobre el río Caldarés, cascadas encajonadas. Entrada ~4€/persona. Fácil, corto, perros OK.</p></div>
+<div class="spot"><strong>Ibón de Piedrafita</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Lago accesible junto a la carretera, con el Bosque del Betato alrededor. Paseo fácil, ideal para parada corta con perras.</p></div>
+<div class="spot"><strong>Sallent de Gállego y Lanuza</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Sallent: casco medieval con puente sobre el Gállego. Lanuza: pueblo reconstruido junto al embalse, muy fotogénico pero pequeño — 20-30 min de visita basta.</p></div>
+{btns([("Cómo llegar desde Jaca", gmaps_dir(*JACA, -0.317, 42.831), "g")])}
+<p style="font-size:.78rem;color:var(--muted)">Para incorporarlo: sustituiría el día de Canal Roya (D3) o requeriría un día extra de viaje.</p>
+</div>
+
+<div class="card">
+<h3 style="color:var(--pine)">Sobrarbe (Aínsa · Boltaña · Broto · Cañón de Añisclo)</h3>
+<p style="font-size:.85rem;color:var(--muted)">Desde Jaca: ~80 km / ~1h20 hasta Aínsa (Boltaña y Broto muy cerca)</p>
+<div class="spot"><strong>Aínsa</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Casco medieval amurallado, plaza porticada de piedra, una de las villas mejor conservadas del Pirineo. Mirador sobre la confluencia Cinca-Ara.</p></div>
+<div class="spot"><strong>Broto</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Pueblo de piedra a la entrada de Ordesa, buena opción para comer — varios restaurantes con terraza junto al río Ara.</p></div>
+<div class="spot"><strong>Ruta circular de San Úrbez (Cañón de Añisclo)</strong>
+<p style="margin:.25rem 0;font-size:.85rem">~2 km · ~30 m desnivel · Fácil · 45 min–1h. Ermita rupestre s.VIII, puente románico, Cascada del Aso. "Cañones espectaculares" — dentro del Parque Nacional de Ordesa, perros con correa obligatoria. Parking pequeño en temporada alta.</p></div>
+<div class="spot"><strong>Boltaña</strong>
+<p style="margin:.25rem 0;font-size:.85rem">Cocapital del Sobrarbe junto a Aínsa, casco antiguo sobre el río Ara.</p></div>
+{btns([("Cómo llegar desde Jaca", gmaps_dir(*JACA, 0.135, 42.416), "g")])}
+<p style="font-size:.78rem;color:var(--muted)">Para incorporarlo: día completo dedicado (ida+vuelta desde Jaca ~160 km) o pernocta en la zona, sustituyendo un día del tramo navarro.</p>
+</div>
 </section>
 
 <details class="archive wrap"><summary>Versiones anteriores del itinerario (archivo)</summary>
