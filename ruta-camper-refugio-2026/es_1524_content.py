@@ -208,19 +208,22 @@ DAYS = [
     dict(
         day=4, date="2026-08-20",
         zona="Selva de Oza · Aguas Tuertas ⭐",
-        # Pernocta: área forestal Selva de Oza
-        parking_name="Área forestal Selva de Oza (borde pinar, Valle de Hecho)",
-        parking_lat=42.840, parking_lon=-0.738,
-        # p4n_id: sin ID confirmado → usa search centrado en el spot
-        drive_from="El Arrebol → Oza via Jaca → Hecho", drive_km="~65 km", drive_h="~1h10",
-        # Trailhead: parking terminal del Valle de Oza (fin del asfalto), 2,5 km más al norte
+        # Pernocta: Camping Borda Bisaltico (Valle de Hecho, 9 km de Hecho hacia Oza)
+        # Plan B: P4N #227980 (42.7705,-0.7424) — gratuito, zona discutida legalmente, forestal dijo que está
+        #         fuera del parque pero la pernocta sigue prohibida en Aragón según reglamento.
+        parking_name="Camping Borda Bisaltico · Ctra. Gabardito km 2 · Valle de Hecho",
+        parking_lat=42.754, parking_lon=-0.738,
+        camping_url="https://bordabisaltico.com/camping-valle-hecho-junto-selva-oza-pirineos/",
+        camping_booking="https://bordabisaltico.com/situacion-y-contacto/",
+        drive_from="El Arrebol → Hecho → Borda Bisaltico (via Jaca)", drive_km="~62 km", drive_h="~1h10",
+        # Trailhead: parking terminal del Valle de Oza (fin del asfalto), ~10 km al norte del camping
         hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
         hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
-        hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~2,5 km al norte de la pernocta)",
-        hike_from_overnight="~2,5 km · 5 min al norte del overnight (fin del asfalto Valle Oza)",
+        hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~10 km al norte del camping)",
+        hike_from_overnight="~10 km · 12 min al norte del camping (seguir la carretera del valle hasta el final)",
         concurrencia="Media",
-        interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX"],
+        interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX","Boca del Infierno"],
         historia=(
             "<strong>Aguas Tuertas</strong> ('aguas torcidas') es una pradera alpina glaciar a 1640 m "
             "donde el río Aragón Subordán forma meandros imposibles en terreno llano. "
@@ -229,14 +232,18 @@ DAYS = [
             "El monasterio de <strong>Siresa</strong> (3 km) es el más antiguo de Aragón (s.IX)."
         ),
         observaciones=(
-            "⏰ Salida El Arrebol a las 12:00h (checkout). Drive ~65 km, ~1h10 → llegar Oza ~13:30h. "
-            "Jue 20: único día fresco de toda la semana aragonesa (~21°C sensación en Oza). "
-            "Hike Aguas Tuertas tarde (14h–17h) — fácil, sin presión de tiempo. "
-            "Hike desde el parking terminal del asfalto (42.862, -0.742): de ahí 4 km a los meandros. "
-            "Aguas Tuertas: terreno llano, agua en el río, las perras van sueltas. "
-            "Siresa (3 km desde Oza): 20 min, vale la parada. Hecho pueblo (10 km) para avituallamiento."
+            "⏰ Salida El Arrebol 12:00h (checkout) → Borda Bisaltico ~62 km, ~1h10. "
+            "Check-in camping desde las 12h (coincide bien con la salida de El Arrebol). "
+            "Jue 20: único día fresco de toda la semana (~21°C sensación en Oza). "
+            "Dejar la camper en Borda Bisaltico y conducir 10 km más al norte hasta el trailhead. "
+            "Hike Aguas Tuertas tarde (14h–17h) — terreno llano, agua en el río, perras sueltas. "
+            "Siresa (3 km de Oza): monasterio s.IX, 20 min, vale la parada. "
+            "⚠️ Sin reservas para parcelas — llamad 3 días antes para consultar ocupación: "
+            "☎️ 974 34 89 40 / 696 981 816. Puerta cerrada 00:00–08:30h. "
+            "🆘 Plan B si lleno: P4N #227980 (42.7705,-0.7424) — zona discutida, forestal confirmó fuera "
+            "del parque pero pernocta reglamentariamente prohibida en Aragón (discretion advised)."
         ),
-        planb="Paseo borde río Aragón Subordán en Oza · sombra garantizada.",
+        planb="Paseo borde río Aragón Subordán en Oza · sombra garantizada · Siresa monasterio.",
     ),
     dict(
         day=5, date="2026-08-21",
@@ -492,7 +499,7 @@ def _drive_url(d: dict) -> str:
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
     if n==2: return gmaps_dir(*SPOT1,*VILLANUA)
     if n==3: return gmaps_dir(*VILLANUA,*ARREBOL)
-    if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)
+    if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)  # El Arrebol → Borda Bisaltico (fin en 42.840,-0.738 = Oza area)
     if n==5: return gmaps_dir(*OZA_NIGHT,*YESA)
     if n==6: return gmaps_dir(*YESA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
@@ -573,9 +580,9 @@ def day_card(d:dict)->str:
                      f"Tras el hike (~5 h): conducir a El Arrebol (~35 km, 35 min) para comer.</p>"
                      f"{btns([('Villanúa → Canfranc pueblo trailhead', gmaps_dir(*VILLANUA,*ARREBOL), 'g')])}")
     elif n==4:
-        ruta_html = (f"<p>El Arrebol → Oza vía Jaca → Hecho (~65 km, ~1h10). "
+        ruta_html = (f"<p>El Arrebol → Camping Borda Bisaltico vía Jaca → Hecho (~62 km, ~1h10). "
                      f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('El Arrebol → Oza (conducir)', gmaps_dir(*ARREBOL,*OZA_NIGHT), 'g')])}")
+                     f"{btns([('El Arrebol → Borda Bisaltico (conducir)', gmaps_dir(*ARREBOL,*OZA_NIGHT), 'g')])}")
     elif n==5:
         ruta_html = (f"<p>Día de transición: Oza → Jaca (~55 km · 45 min) → Yesa (~45 km · 45 min).</p>"
                      f"{btns([('Oza → Jaca', gmaps_dir(*OZA_NIGHT,*JACA), 'g'), ('Jaca → Yesa', gmaps_dir(*JACA,*YESA), 'g')])}")
@@ -599,15 +606,28 @@ def day_card(d:dict)->str:
 
     # parking section
     if d.get("camping_url"):
-        camping_btns = btns([
-            ("Conducir aquí (Google)", gmaps_pin(d["parking_lat"], d["parking_lon"]), "g"),
-            ("Web El Arrebol", d["camping_url"], "o"),
-            ("Reservar parcela", d["camping_booking"], "p"),
-        ])
-        camping_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 Camping pet-friendly · piscina perros</span>'
+        n_day = d["day"]
+        if n_day == 3:
+            # El Arrebol: piscina perros, reserva confirmada
+            camping_btns = btns([
+                ("Conducir aquí (Google)", gmaps_pin(d["parking_lat"], d["parking_lon"]), "g"),
+                ("Web El Arrebol", d["camping_url"], "o"),
+                ("Reserva confirmada", d["camping_booking"], "p"),
+            ])
+            camp_desc = "Perros sin suplemento · 2 perras gratis · piscina perros · restaurante pet-friendly"
+            camp_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 El Arrebol · piscina perros · reserva #109671</span>'
+        else:
+            # Borda Bisaltico: sin reservas, llamar antes
+            camping_btns = btns([
+                ("Conducir aquí (Google)", gmaps_pin(d["parking_lat"], d["parking_lon"]), "g"),
+                ("Web Borda Bisaltico", d["camping_url"], "o"),
+                ("Contacto / ¿Queda plaza?", d["camping_booking"], "p"),
+            ])
+            camp_desc = "Sin reservas · llamar 3 días antes: 974 34 89 40 / 696 981 816 · check-in desde 12h · perros OK"
+            camp_badge = '<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🏕️ Borda Bisaltico · sin reserva · perros OK</span>'
         parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
-{camping_badge}
-<p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">Perros gratis en bungalows · +3€/noche en parcelas · máx 2 perros · perros en el restaurante</p>
+{camp_badge}
+<p style="margin:.25rem 0;font-size:.82rem;color:var(--muted)">{camp_desc}</p>
 {camping_btns}</div>"""
     else:
         parking_html = f"""<div class="spot"><strong>{esc(d['parking_name'])}</strong>
