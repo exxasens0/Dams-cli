@@ -22,6 +22,10 @@ ISA        = (-0.919,  42.855)  # Isaba, borde río Esca
 JACA   = (-0.549,   42.568)
 ARREBOL= (-0.5098,  42.5645)  # Camping El Arrebol · N-330 km 643 · Jaca
 VILLANUA= (-0.566,   42.784)   # P4N #135785 · Villanúa · 7 Calle Piscinas (borde río)
+CANDANCHU = (-0.5360, 42.7867)  # P4N #532128 · Candanchú estación (1.520 m)
+ARTIEDA = (-0.9834, 42.6031)   # P4N #82683 · Artieda borde Río Aragón
+ANGLASE = (-0.505,  42.770)    # Parking Anglasé · Canal Roya trailhead
+BORDA   = (-0.738,  42.754)    # Camping Borda Bisaltico · Valle de Hecho
 
 # Additional route stops
 ANSO   = (-0.821,   42.759)  # Ansó pueblo (pueblo más bonito de España)
@@ -76,7 +80,7 @@ def p4n_url_for(d: dict) -> str:
         return p4n_place(d["p4n_id"])
     return p4n(d["parking_lat"], d["parking_lon"])
 
-GMAPS_LOOP = gmaps_route([TEIA, SPOT1, OZA_NIGHT, OCH, ISA, TEIA])
+GMAPS_LOOP = gmaps_route([TEIA, SPOT1, CANDANCHU, ARREBOL, BORDA, ARTIEDA, OCH, IRABIA, ORBA_NIGHT, ISA, TEIA])
 
 def btn(label,url,kind="g")->str:
     cls={"g":"btn btn-g","o":"btn btn-o","w":"btn btn-w","p":"btn btn-p"}.get(kind,"btn")
@@ -133,14 +137,14 @@ DAYS = [
         parking_name="P4N #532128 · Candanchú · Parking estación de esquí (1.520 m)",
         parking_lat=42.7867, parking_lon=-0.5360,
         p4n_id=532128,
-        drive_from="Canfranc Estación → Candanchú (tras el hike)", drive_km="~11 km", drive_h="~12 min",
+        drive_from="Canfranc Estación → Candanchú (tras el hike)", drive_km="~9 km", drive_h="~10 min",
         # Trailhead: Canfranc Estación pueblo
         hike="Ruta de los Búnkeres – Línea P Canfranc", hike_lat=42.750, hike_lon=-0.525,
         hike_km="9,6 km", hike_dif="Fácil",
         hike_desn="~320 m", hike_h="2,5–3 h",
         hike_parking="Canfranc Estación pueblo (junto a la estación internacional de tren)",
         wikiloc_url="https://es.wikiloc.com/rutas-senderismo/ruta-de-los-bunkeres-estacion-de-canfranc-149355386",
-        hike_from_overnight="~11 km · 12 min del P4N #532128 Candanchú a Canfranc Estación",
+        hike_from_overnight="~9 km · 10 min del P4N #532128 Candanchú a Canfranc Estación",
         concurrencia="Baja (ruta poco conocida)",
         interes=["Búnkeres Línea P (1944–57)","Bosque Picauvé","Mirador Estación Canfranc","Río Aragón","Candanchú a 1.520 m"],
         historia=(
@@ -154,12 +158,12 @@ DAYS = [
         ),
         observaciones=(
             "D1 exigente (ibones + Malacara, 580 m). D2 = ruta fácil e histórica. "
-            "🥾 Mañana: Búnkeres desde Canfranc Estación (~11 km del overnight, 12 min en camper). "
+            "🥾 Mañana: Búnkeres desde Canfranc Estación (~9 km del overnight, 10 min en camper). "
             "Bosque Picauvé + 12+ búnkeres Núcleo 111 + mirador estación. Fácil, perros OK. "
-            "Tras el hike: subir 11 km a Candanchú · P4N #532128 (gratuito, 18 plazas, 1.520 m, fresco). "
+            "Tras el hike: subir ~9 km a Candanchú · P4N #532128 (gratuito, 18 plazas, 1.520 m, fresco). "
             "Sin servicios — vaciar en Canfranc Estación antes de subir. "
             "Normas: sin toldos ni mesas fuera. Puerta no hay, abierto todo el año. "
-            "D3 mañana: Canal Roya desde Parking Anglasé (~5 km al sur del overnight)."
+            "D3 mañana: Canal Roya desde Parking Anglasé (~6 km al sur del overnight)."
         ),
         planb="Paseo en Candanchú · vista hacia frontera · bar de la estación.",
     ),
@@ -171,14 +175,14 @@ DAYS = [
         parking_lat=42.5645, parking_lon=-0.5098,
         camping_url="https://www.campingelarrebol.com",
         camping_booking="https://booking.campingelarrebol.com/bookingForm?idProduct=3&checkin=2026-08-19&checkout=2026-08-20&guestAges=18,18#additional_concepts",
-        drive_from="Parking Anglasé (hike) → El Arrebol", drive_km="~40 km", drive_h="~40 min",
+        drive_from="Parking Anglasé (hike) → El Arrebol", drive_km="~27 km", drive_h="~27 min",
         # Trailhead: Parking de Anglasé (N-330 entre Canfranc-Estación y Candanchú, antes de Rioseta)
         hike="Canal Roya – La Rinconada (GR-11)", hike_lat=42.770, hike_lon=-0.505,
         hike_km="14 km", hike_dif="Moderado",
         hike_desn="~520 m", hike_h="4–4,5 h",
-        hike_parking="Parking Anglasé (N-330, entre Canfranc-Estación y Rioseta, ~5 km al sur del overnight Candanchú)",
+        hike_parking="Parking Anglasé (N-330, entre Canfranc-Estación y Rioseta, ~6 km al sur del overnight Candanchú)",
         wikiloc_url="https://senderosturisticos.turismodearagon.com/ruta/ficha/148",
-        hike_from_overnight="~5 km · 8 min al sur del P4N #532128 Candanchú (N-330 hacia Canfranc)",
+        hike_from_overnight="~6 km · 8 min al sur del P4N #532128 Candanchú (N-330 hacia Canfranc)",
         concurrencia="Media (GR-11 conocido pero no masificado)",
         interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX","Villanúa (de paso)","Ciudadela de Jaca"],
         historia=(
@@ -194,13 +198,14 @@ DAYS = [
             "y museo de miniaturas militares. Entrada 5€, visita ~2 h."
         ),
         observaciones=(
-            "Salir temprano del P4N Candanchú (7:00 h) y conducir 5 km al sur hasta Parking Anglasé. "
-            "Seguir las marcas del GR-11 todo el recorrido — bien señalizado. "
+            "⚠️ Sensación prevista ~29°C — salir del P4N Candanchú a las 7:00 y conducir ~6 km al sur "
+            "hasta Parking Anglasé; acabar el hike antes de las 12:00. "
+            "Seguir las marcas del GR-11 — bien señalizado. "
             "Cruces de río con pasos entre piedras — las perras se refrescan en ruta. "
-            "🏘️ De camino a El Arrebol pasáis por <strong>Villanúa</strong> — parada opcional 15-20 min "
-            "(pueblo tranquilo, cerca de la Cueva de las Güixas). "
-            "🍽️ Al llegar (~13-14h): check-in El Arrebol, comer, instalarse. "
-            "🏰 Tarde libre (16-18h): <strong>Ciudadela de Jaca</strong> (5€, ~2h visita) — a 5 km del camping. "
+            "🏘️ De camino a El Arrebol (~27 km · ~27 min) pasáis por <strong>Villanúa</strong> — "
+            "parada opcional 15-20 min (Cueva de las Güixas). "
+            "🍽️ Al llegar (~13-14h): check-in El Arrebol, comer, sombra/AC. "
+            "🏰 Tarde libre (16-18h, con sombra): <strong>Ciudadela de Jaca</strong> (5€, ~2h) — a 5 km. "
             "Perros no entran al museo pero sí pasean por el foso exterior. "
             "🐾 Noche: piscina para perros + zona de suelta + restaurante pet-friendly. "
             "📋 Reserva El Arrebol #109671 · Parcela Estándar · 19/08→20/08 (salida 12:00h). "
@@ -221,13 +226,13 @@ DAYS = [
         camping_url="https://bordabisaltico.com/camping-valle-hecho-junto-selva-oza-pirineos/",
         camping_booking="https://bordabisaltico.com/situacion-y-contacto/",
         p4n_backup=227980,  # Plan B: gratuito, legalmente discutido pero tolerable
-        drive_from="El Arrebol → Hecho → Borda Bisaltico (via Jaca)", drive_km="~62 km", drive_h="~1h10",
-        # Trailhead: parking terminal del Valle de Oza (fin del asfalto), ~10 km al norte del camping
+        drive_from="El Arrebol → Hecho → Borda Bisaltico", drive_km="~52 km", drive_h="~1 h",
+        # Trailhead: parking terminal del Valle de Oza (fin del asfalto), ~13 km al norte del camping
         hike="Aguas Tuertas", hike_lat=42.862, hike_lon=-0.742,
         hike_km="8 km", hike_dif="Fácil",
         hike_desn="~200 m", hike_h="2,5 h",
-        hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~10 km al norte del camping)",
-        hike_from_overnight="~10 km · 12 min al norte del camping (seguir la carretera del valle hasta el final)",
+        hike_parking="Parking terminal Valle de Oza / Borda Betés (fin del asfalto, ~13 km al norte del camping)",
+        hike_from_overnight="~13 km · ~30 min al norte del camping (carretera del valle; tramo lento)",
         concurrencia="Media",
         interes=["Meandros imposibles de Aguas Tuertas","Río Aragón Subordán","Hayedo-pinar Oza","Siresa s.IX","Boca del Infierno","Hecho (arquitectura pirenaica)"],
         historia=(
@@ -241,12 +246,12 @@ DAYS = [
             "Tiene un singular museo de escultura contemporánea al aire libre repartido por sus calles."
         ),
         observaciones=(
-            "⏰ Salida El Arrebol 12:00h (checkout) → Borda Bisaltico ~62 km, ~1h10. "
-            "🏘️ De camino, paráis en <strong>Hecho pueblo</strong> (justo antes de Borda Bisaltico, 9 km) — "
+            "⏰ Salida El Arrebol 12:00h (checkout) → Borda Bisaltico ~52 km, ~1 h. "
+            "🏘️ De camino, paráis en <strong>Hecho pueblo</strong> (justo antes de Borda Bisaltico) — "
             "callejeo 20-30 min por su casco de arquitectura pirenaica y el museo de escultura al aire libre. "
             "Check-in camping desde las 12h (coincide bien con la salida de El Arrebol). "
-            "Jue 20: único día fresco de toda la semana (~21°C sensación en Oza). "
-            "Dejar la camper en Borda Bisaltico y conducir 10 km más al norte hasta el trailhead. "
+            "Jue 20: día fresco (~22°C sensación en Oza) con chubascos posibles. "
+            "Dejar la camper en Borda Bisaltico y conducir ~13 km / ~30 min al norte hasta el trailhead. "
             "Hike Aguas Tuertas tarde (14h–17h) — terreno llano, agua en el río, perras sueltas. "
             "Siresa (3 km de Oza): monasterio s.IX, 20 min, vale la parada. "
             "⚠️ Sin reservas para parcelas — llamad 3 días antes para consultar ocupación: "
@@ -258,7 +263,7 @@ DAYS = [
     ),
     dict(
         day=5, date="2026-08-21",
-        zona="Ansó (pueblo más bonito) → Foz de Biniés → Jaca → Borde Río Aragón",
+        zona="Ansó (pueblo más bonito) → Foz de Biniés → Artieda / Yesa",
         # Pernocta opción 1: P4N #82683 (Artieda, borde río Aragón) — más natural pero acceso justo para 7m
         # Pernocta opción 2: P4N #26522 (Yesa, Monasterio de Leyre) — fácil acceso, cultural, recomendado AC grande
         # Pernocta opción 3: P4N #552933 (Yesa, borde río) — solo 2 plazas, mosquitos+++
@@ -269,39 +274,38 @@ DAYS = [
             (26522,  "P4N #26522 · Monasterio Leyre (Yesa)", 42.6367, -1.1727),
             (552933, "P4N #552933 · Yesa · Borde Río (2 plazas)", 42.6109, -1.2179),
         ],
-        drive_from="Borda Bisaltico → Ansó → Foz Biniés → Jaca → Artieda/Yesa", drive_km="~125 km", drive_h="~2h15",
+        drive_from="Borda Bisaltico → Ansó → Foz Biniés → Artieda/Yesa", drive_km="~68 km", drive_h="~2h35",
         # Trailhead: Foz de Biniés (parada en ruta)
         hike="Foz de Biniés (opcional AM, parada en ruta)", hike_lat=42.694, hike_lon=-0.909,
         hike_km="4 km", hike_dif="Fácil",
         hike_desn="~80 m", hike_h="1,5 h",
-        hike_parking="Parking junto a Biniés pueblo (A-1603, km 2 · se llega antes de Jaca)",
-        hike_from_overnight="Foz de Biniés está en ruta, tras la parada en Ansó",
-        concurrencia="Alta Ansó/Jaca agosto · Baja Foz",
-        interes=["Ansó (pueblo más bonito de España)","Traje típico ansotano","Foz de Biniés (gargantas kársticas)","Jaca catedral románica","Monasterio de Leyre"],
+        hike_parking="Parking junto a Biniés pueblo (A-1603)",
+        hike_from_overnight="Foz de Biniés está en ruta (~40 km · ~1h35 desde Borda vía Ansó)",
+        concurrencia="Alta Ansó agosto · Baja Foz",
+        interes=["Ansó (pueblo más bonito de España)","Traje típico ansotano","Foz de Biniés (gargantas kársticas)","Monasterio de Leyre"],
         historia=(
             "<strong>Ansó</strong> está reconocido como uno de los <strong>pueblos más bonitos de España</strong>: "
             "callejuelas empedradas, casas de piedra con escudos nobiliarios y el <strong>traje típico ansotano</strong>, "
             "uno de los más llamativos de la Península — las mujeres solteras llevaban la toca hacia adelante, "
             "las casadas hacia atrás. El pueblo estuvo aislado durante siglos y desarrolló una cultura propia, "
             "con museo etnológico en la iglesia de San Pedro. "
-            "<strong>Jaca</strong> (820 m) fue la primera capital del Reino de Aragón; su catedral románica (1063) "
-            "es la primera de España (ciudadela ya visitada D3). "
             "La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río Veral, accesible por "
-            "pasarela de madera sin desnivel."
+            "pasarela de madera sin desnivel. "
+            "(Ciudadela de Jaca ya visitada en D3 — no hace falta volver atrás hacia Jaca antes de Yesa.)"
         ),
         observaciones=(
-            "Día de lluvia (~16–21 mm) → ideal para conducción y cultura. "
-            "🏘️ Mañana: parada en <strong>Ansó</strong> (~30 km desde Borda Bisaltico) — paseo por el casco "
+            "Día de transición fresco (~23°C sensación). "
+            "🏘️ Mañana: parada en <strong>Ansó</strong> (~18 km · ~30 min desde Borda Bisaltico) — paseo por el casco "
             "medieval, museo etnológico, tiendas de artesanía. 1-1,5 h. "
-            "Foz de Biniés después (pasarela fácil, 1,5 h, perros OK). "
-            "Jaca: si no visitasteis la ciudadela D3, aprovechad de paso (catedral exterior siempre libre). "
+            "Foz de Biniés después (~23 km · ~1h05 desde Ansó; pasarela fácil, 1,5 h, perros OK). "
+            "Luego directo a Artieda/Yesa (~25 km · ~40 min) — sin desvío a Jaca (ahorra ~80 km). "
             "📍 Pernocta preferida: P4N #82683 Artieda (borde río, plano, 10 plazas) "
             "⚠️ ACCESO JUSTO para 7m: camino pedregoso estrecho — ver el camino andando primero. "
             "Legalidad Artieda: reviews contradictorios (GC multó a uno, otros sin problema). "
             "📍 Alternativa A: P4N #26522 Monasterio Leyre (acceso fácil, inclinado, no shade). "
             "📍 Alternativa B: P4N #552933 Yesa río (solo 2 plazas, mosquitos+++, ramas bajas)."
         ),
-        planb="Ansó y Jaca bajo cubierto: museo etnológico Ansó · catedral y mercado Jaca.",
+        planb="Ansó bajo cubierto: museo etnológico · café pueblo · Foz corta si llueve.",
     ),
     dict(
         day=6, date="2026-08-22",
@@ -309,7 +313,7 @@ DAYS = [
         # Pernocta: fuera del casco medieval (la camper no cabe dentro)
         parking_name="Borde río Zatoia / salida norte Ochagavía (fuera casco)",
         parking_lat=42.908, parking_lon=-1.082,
-        drive_from="Yesa → Ochagavía (~90 km)", drive_km="~90 km", drive_h="~1h15",
+        drive_from="Artieda/Yesa → Ochagavía", drive_km="~60 km", drive_h="~1h05",
         # Trailhead: puente medieval (entrada al sendero Zatoia, 500 m del overnight)
         hike="Sendero Río Zatoia", hike_lat=42.906, hike_lon=-1.067,
         hike_km="6 km", hike_dif="Fácil",
@@ -329,7 +333,8 @@ DAYS = [
             "Coordenadas pernocta sugeridas: 42.908, -1.082 (norte del pueblo, borde prado). "
             "El sendero del Zatoia arranca desde el puente medieval (500 m andando desde la camper). "
             "Río Zatoia: agua limpia y fría, perfecto para las perras. "
-            "Avituallamiento: hay supermercado en Ochagavía. Queso Roncal: comprar aquí."
+            "⚠️ Tormenta posible (~19 mm) — acortar Zatoia si truena; casco + queso bajo cubierta. "
+            "Avituallamiento: supermercado en Ochagavía. Queso Roncal: comprar aquí."
         ),
         planb="Casco medieval Ochagavía · tiendas de queso Roncal · paseo río bajo la lluvia.",
     ),
@@ -339,7 +344,7 @@ DAYS = [
         # Pernocta: Casas de Irati / área de aparcamiento Irabia
         parking_name="Casas de Irati · Área Irabia (fin de pista forestal asfaltada)",
         parking_lat=42.929, parking_lon=-1.015,
-        drive_from="Ochagavía → Irabia (~15 km pista forestal ancha)", drive_km="~15 km", drive_h="~20 min",
+        drive_from="Ochagavía → Irabia (pista forestal ancha)", drive_km="~8 km", drive_h="~17 min",
         # Trailhead: mismo parking (el hike circular empieza aquí)
         hike="Circular hayedo-abetal de Irati", hike_lat=42.929, hike_lon=-1.012,
         hike_km="9 km", hike_dif="Fácil-Moderado",
@@ -355,11 +360,11 @@ DAYS = [
             "La selva alberga urogallos, corzos, jabalíes y, ocasionalmente, oso pardo."
         ),
         observaciones=(
-            "La pista forestal Ochagavía → Irabia es amplia (ancho OK para Sunlight 600). "
+            "La pista forestal Ochagavía → Irabia es amplia (~8 km · ~17 min; OK para Sunlight 600). "
             "El hike circular empieza y termina en el mismo parking donde dormís. "
-            "Entrar pronto (antes de 9h): la selva se vacía aunque el parking esté lleno. "
-            "Perros con correa — zona ZEPA sensible para urogallo. "
-            "Agua: río Irati nace aquí, cristalino y frío."
+            "⚠️ Tormenta fuerte posible (~43 mm) — el hayedo aguanta bien la lluvia; evitar crestas/Abodi. "
+            "Entrar pronto (antes de 9h). Perros con correa — ZEPA sensible para urogallo. "
+            "Agua: río Irati cristalino y frío."
         ),
         planb="Paseo borde embalse Irabia bajo lluvia (el hayedo con niebla es impresionante).",
     ),
@@ -369,7 +374,7 @@ DAYS = [
         # Pernocta: norte de Orbaitzeta, borde río Irati (aguas arriba de las ruinas)
         parking_name="Norte Orbaitzeta · borde río Irati (aguas arriba ruinas)",
         parking_lat=42.979, parking_lon=-1.231,
-        drive_from="Irabia → Orbaitzeta (~20 km pista forestal)", drive_km="~20 km", drive_h="~30 min",
+        drive_from="Irabia → Orbaitzeta (pista / carreteras locales)", drive_km="~40 km", drive_h="~50 min",
         # Trailhead: parking habilitado junto a las ruinas (1 km al norte de la pernocta)
         hike="Senda Río Irati / Ruinas Orbaitzeta", hike_lat=42.985, hike_lon=-1.240,
         hike_km="7 km", hike_dif="Fácil",
@@ -386,9 +391,10 @@ DAYS = [
             "edificios de 3 pisos cubiertos de hiedra, fraguas, canales hidráulicos. Visita libre."
         ),
         observaciones=(
-            "⚠️ Día de mayor lluvia del viaje (~34 mm posibles). "
-            "Plan A (seco): senda río Irati aguas arriba + ruinas Orbaitzeta. "
-            "Plan B (lluvia): las ruinas están bajo hayedo denso — visita perfecta con lluvia. "
+            "⚠️ Día cálido (~29°C sensación) — hike AM temprano o bajo hayedo. "
+            "Traslado Irabia → Orbaitzeta ~40 km · ~50 min. "
+            "Plan A: senda río Irati aguas arriba + ruinas Orbaitzeta. "
+            "Plan B (calor/lluvia): las ruinas están bajo hayedo denso — visita perfecta con sombra. "
             "Zona muy remota y tranquila. Pernocta: buscar en P4N zona 42.979, -1.231."
         ),
         planb="Ruinas Fábrica de Armas Orbaitzeta · bosque cubierto · café pueblo Garralda (12 km).",
@@ -399,7 +405,7 @@ DAYS = [
         # Pernocta: sur de Isaba, borde río Esca (junto al camping municipal o aguas abajo)
         parking_name="Sur Isaba · borde río Esca (junto a Camping El Ferial o aguas abajo)",
         parking_lat=42.853, parking_lon=-0.919,
-        drive_from="Orbaitzeta → Isaba (~35 km)", drive_km="~35 km", drive_h="~45 min",
+        drive_from="Orbaitzeta → Isaba", drive_km="~57 km", drive_h="~1h05",
         # Trailhead: pasarela al sur del pueblo (senda Esca), ~500 m al sur del overnight
         hike="Senda Río Esca (Isaba sur)", hike_lat=42.848, hike_lon=-0.919,
         hike_km="8 km", hike_dif="Fácil",
@@ -416,7 +422,8 @@ DAYS = [
             "Pico de Anie (2463 m)."
         ),
         observaciones=(
-            "Último día en Navarra. Senda del Esca: plana, sombreada, perfecta para perras. "
+            "Último día en Navarra · traslado ~57 km · ~1h05. "
+            "⚠️ Tormenta/granizo posible (~23 mm) — Senda del Esca corta si empeora. "
             "La pasarela de inicio está a ~500 m al sur de la pernocta — no necesitáis mover la camper. "
             "Isaba tiene queso Roncal en varias tiendas — comprar para llevar a casa. "
             "Circo de Belagua (si tiempo mejora): 14 km A/R, moderado, arranca 8 km al norte de Isaba."
@@ -428,7 +435,7 @@ DAYS = [
         zona="Vuelta a Teià",
         parking_name="Teià — casa",
         parking_lat=41.498, parking_lon=2.319,
-        drive_from="Isaba → Teià (~435 km)", drive_km="~435 km", drive_h="5–6 h",
+        drive_from="Isaba → Teià", drive_km="~412 km", drive_h="~5h20",
         hike="—", hike_lat=None, hike_lon=None,
         hike_km="—", hike_dif="—", hike_desn="—", hike_h="—",
         hike_parking="",
@@ -437,10 +444,10 @@ DAYS = [
         historia="",
         observaciones=(
             "Salir antes de las 8:00 para evitar el calor de costa. "
-            "Costa mediterránea en agosto: sensación ~30°C+ — interior camper 35°C+ al sol. "
+            "Costa mediterránea en agosto: sensación ~30°C — interior camper 35°C+ al sol. "
             "Paradas solo en áreas de servicio con sombra o gasolineras con zona arbolada. "
-            "AC encendido para las perras. "
-            "Ruta recomendada: Pamplona → Zaragoza → Lleida → Barcelona."
+            "AC encendido para las perras. Ruta: Pamplona → Zaragoza → Lleida → Barcelona. "
+            "Total ~412 km · ~5h20 (OSRM; sumad paradas)."
         ),
         planb="—",
     ),
@@ -526,11 +533,11 @@ def crowd_span(c:str)->str:
 def _drive_url(d: dict) -> str:
     n = d["day"]
     if n==1: return gmaps_dir(*TEIA,*SPOT1)
-    if n==2: return gmaps_dir(*SPOT1,*VILLANUA)
-    if n==3: return gmaps_dir(*VILLANUA,*ARREBOL)
-    if n==4: return gmaps_dir(*ARREBOL,*OZA_NIGHT)  # El Arrebol → Borda Bisaltico (fin en 42.840,-0.738 = Oza area)
-    if n==5: return gmaps_route([OZA_NIGHT, ANSO, BINIES, JACA, YESA])  # Borda Bisaltico → Ansó → Foz Biniés → Jaca → Yesa/Artieda
-    if n==6: return gmaps_dir(*YESA,*OCH)
+    if n==2: return gmaps_dir(*SPOT1,*CANDANCHU)  # Astún overnight → Candanchú (tras Búnkeres)
+    if n==3: return gmaps_dir(*ANGLASE,*ARREBOL)  # post-hike Anglasé → El Arrebol
+    if n==4: return gmaps_dir(*ARREBOL,*BORDA)  # El Arrebol → Borda Bisaltico
+    if n==5: return gmaps_route([BORDA, ANSO, BINIES, ARTIEDA])  # sin desvío a Jaca
+    if n==6: return gmaps_dir(*ARTIEDA,*OCH)
     if n==7: return gmaps_dir(*OCH,*IRABIA)
     if n==8: return gmaps_dir(*IRABIA,*ORBA_NIGHT)
     if n==9: return gmaps_dir(*ORBA_NIGHT,*ISA)
@@ -601,39 +608,45 @@ def day_card(d:dict)->str:
                      f"Primer hike completo: <strong>lunes 17 por la mañana</strong>.</p>"
                      f"{btns([('Dom 16 · Teià → P4N #285213 (conducir)', gmaps_dir(*TEIA,*SPOT1), 'g')])}")
     elif n==2:
-        ruta_html = (f"<p>🥾 Búnkeres desde Canfranc Estación (~11 km del overnight). "
-                     f"Tras el hike: 5 km hasta P4N #135785 Villanúa (borde río).</p>"
-                     f"{btns([('P4N #285213 → Villanúa (conducir)', gmaps_dir(*SPOT1,*VILLANUA), 'g')])}")
+        ruta_html = (f"<p>🥾 Búnkeres desde Canfranc Estación (~9 km · 10 min del overnight Candanchú). "
+                     f"Tras el hike: subir a P4N #532128 Candanchú (1.520 m).</p>"
+                     f"{btns([('Canfranc Estación → Candanchú (conducir)', gmaps_dir(-0.525,42.750,*CANDANCHU), 'g')])}")
     elif n==3:
-        ruta_html = (f"<p>🥾 Ibón de Ip: salir de Villanúa hacia Canfranc pueblo (~10 km, 12 min). "
-                     f"Tras el hike (~5 h): conducir a El Arrebol (~35 km, 35 min) para comer.</p>"
-                     f"{btns([('Villanúa → Canfranc pueblo trailhead', gmaps_dir(*VILLANUA,*ARREBOL), 'g')])}")
+        d3_btns = btns([
+            ("Candanchú → Anglasé", gmaps_dir(*CANDANCHU, *ANGLASE), "g"),
+            ("Anglasé → El Arrebol", gmaps_dir(*ANGLASE, *ARREBOL), "g"),
+        ])
+        ruta_html = (
+            "<p>🥾 Canal Roya desde Parking Anglasé (~6 km · 8 min desde Candanchú). "
+            "Tras el hike: Anglasé → El Arrebol (~27 km · ~27 min) para comer + piscina perros.</p>"
+            + d3_btns
+        )
     elif n==4:
-        ruta_html = (f"<p>El Arrebol → Camping Borda Bisaltico vía Jaca → Hecho (~62 km, ~1h10). "
-                     f"Jue 20 es el día más fresco de toda la semana aragonesa — <strong>día estrella</strong>.</p>"
-                     f"{btns([('El Arrebol → Borda Bisaltico (conducir)', gmaps_dir(*ARREBOL,*OZA_NIGHT), 'g')])}")
+        ruta_html = (f"<p>El Arrebol → Camping Borda Bisaltico vía Hecho (~52 km, ~1 h). "
+                     f"Jue 20 fresco (~22°C) — <strong>día estrella</strong> Aguas Tuertas.</p>"
+                     f"{btns([('El Arrebol → Borda Bisaltico (conducir)', gmaps_dir(*ARREBOL,*BORDA), 'g')])}")
     elif n==5:
         d5_btns = btns([
-            ('Borda Bisaltico → Ansó', gmaps_dir(*OZA_NIGHT,*ANSO), 'g'),
+            ('Borda Bisaltico → Ansó', gmaps_dir(*BORDA,*ANSO), 'g'),
             ('Ansó → Foz Biniés', gmaps_dir(*ANSO,*BINIES), 'g'),
-            ('Foz Biniés → Jaca → Yesa', gmaps_route([BINIES,JACA,YESA]), 'g'),
+            ('Foz Biniés → Artieda', gmaps_dir(*BINIES,*ARTIEDA), 'g'),
         ])
-        ruta_html = (f"<p>Borda Bisaltico → Ansó (parada pueblo) → Foz de Biniés → Jaca → Artieda/Yesa (~125 km total).</p>"
+        ruta_html = (f"<p>Borda → Ansó (pueblo) → Foz de Biniés → Artieda/Yesa (~68 km · ~2h35; sin desvío a Jaca).</p>"
                      f"{d5_btns}")
     elif n==6:
-        ruta_html = (f"<p>Yesa → Ochagavía (~90 km, ~1h15). Entrada al Pirineo navarro.</p>"
-                     f"{btns([('Yesa → Ochagavía (conducir)', gmaps_dir(*YESA,*OCH), 'g')])}")
+        ruta_html = (f"<p>Artieda/Yesa → Ochagavía (~60 km, ~1h05). Entrada al Pirineo navarro.</p>"
+                     f"{btns([('Artieda → Ochagavía (conducir)', gmaps_dir(*ARTIEDA,*OCH), 'g')])}")
     elif n==7:
-        ruta_html = (f"<p>Mover camper Ochagavía → Casas de Irati/Irabia (~15 km pista forestal ancha, OK para Sunlight 600).</p>"
+        ruta_html = (f"<p>Mover camper Ochagavía → Casas de Irati/Irabia (~8 km · ~17 min, pista ancha OK Sunlight 600).</p>"
                      f"{btns([('Ochagavía → Casas de Irati (conducir)', gmaps_dir(*OCH,*IRABIA), 'g')])}")
     elif n==8:
-        ruta_html = (f"<p>Irabia → Orbaitzeta (~20 km, continua la pista forestal).</p>"
+        ruta_html = (f"<p>Irabia → Orbaitzeta (~40 km · ~50 min).</p>"
                      f"{btns([('Irabia → Orbaitzeta (conducir)', gmaps_dir(*IRABIA,*ORBA_NIGHT), 'g')])}")
     elif n==9:
-        ruta_html = (f"<p>Orbaitzeta → Isaba (~35 km, ~45 min). Último cambio de base.</p>"
+        ruta_html = (f"<p>Orbaitzeta → Isaba (~57 km · ~1h05). Último cambio de base.</p>"
                      f"{btns([('Orbaitzeta → Isaba (conducir)', gmaps_dir(*ORBA_NIGHT,*ISA), 'g')])}")
     elif n==10:
-        ruta_html = (f"<p><strong>Vuelta a casa.</strong> ~435 km, 5–6 h. Salir antes de las 8:00.</p>"
+        ruta_html = (f"<p><strong>Vuelta a casa.</strong> ~412 km · ~5h20. Salir antes de las 8:00.</p>"
                      f"{btns([('Isaba → Teià (conducir)', gmaps_dir(*ISA,*TEIA), 'g')])}")
     else:
         ruta_html = "<p>Sin traslado — misma base.</p>"
