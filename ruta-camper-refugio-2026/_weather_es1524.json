@@ -52,11 +52,11 @@
       "day": 3,
       "date": "2026-08-19",
       "place": "Candanchu",
-      "place_label": "Canal Roya · Candanchú / Anglasé (Huesca)",
+      "place_label": "Canal Roya AM (~29°C) · El Arrebol PM (~36°C)",
       "lat": 42.77,
       "lon": -0.505,
       "available": true,
-      "summary_es": "Llovizna débil",
+      "summary_es": "Llovizna débil (montaña) · valle muy caluroso",
       "t_max": 29.3,
       "t_min": 18.1,
       "app_max": 28.9,
@@ -65,9 +65,9 @@
       "precip_prob": 69.0,
       "uv_max": 6.65,
       "tips": [
-        "⚠️ Sensación ~29°C en Canal Roya — hike solo 7:00–12:00; tarde El Arrebol con sombra/AC.",
-        "Chubascos posibles (~70% prob.) — llevar capa.",
-        "Ciudadela de Jaca: mejor a última hora / sombra."
+        "⚠️ Hike Canal Roya 7:00–12:00 (sensación ~29°C). Tarde El Arrebol ~36°C / sensación ~33°C — no quedarse en la parcela al sol.",
+        "Plan A: Pozas Garcipollera (~9 km · ~9 min, agua helada + sombra). Plan B: Puente San Miguel (~5 km).",
+        "Piscina perros El Arrebol ~20-21h. Ciudadela solo si nublado (plan C)."
       ]
     },
     {

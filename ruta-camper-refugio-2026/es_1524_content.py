@@ -26,6 +26,8 @@ CANDANCHU = (-0.5360, 42.7867)  # P4N #532128 · Candanchú estación (1.520 m)
 ARTIEDA = (-0.9834, 42.6031)   # P4N #82683 · Artieda borde Río Aragón
 ANGLASE = (-0.505,  42.770)    # Parking Anglasé · Canal Roya trailhead
 BORDA   = (-0.738,  42.754)    # Camping Borda Bisaltico · Valle de Hecho
+GARCIPOLLERA = (-0.5472, 42.6274)  # Calle Valle Garcipollera · Castiello (acceso pozas Puente Viejo)
+SAN_MIGUEL   = (-0.5622, 42.5743)  # Puente San Miguel · badinas río Aragón (Jaca)
 
 # Additional route stops
 ANSO   = (-0.821,   42.759)  # Ansó pueblo (pueblo más bonito de España)
@@ -169,7 +171,7 @@ DAYS = [
     ),
     dict(
         day=3, date="2026-08-19",
-        zona="Canal Roya · GR-11 (AM) · Camping El Arrebol (tarde)",
+        zona="Canal Roya (AM) · Pozas Garcipollera (PM) · El Arrebol",
         # Pernocta: Camping El Arrebol (reserva #109671 modificada a 19→20 ago)
         parking_name="Camping El Arrebol · N-330 km 643 · Jaca",
         parking_lat=42.5645, parking_lon=-0.5098,
@@ -184,7 +186,7 @@ DAYS = [
         wikiloc_url="https://senderosturisticos.turismodearagon.com/ruta/ficha/148",
         hike_from_overnight="~6 km · 8 min al sur del P4N #532128 Candanchú (N-330 hacia Canfranc)",
         concurrencia="Media (GR-11 conocido pero no masificado)",
-        interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX","Villanúa (de paso)","Ciudadela de Jaca"],
+        interes=["Canal Roya (valle glaciar GR-11)","Refugio de Lacuars","La Rinconada (circo glaciar, 1.870 m)","Anayet de telón de fondo","Antigua Fondería Anglasé s.XIX","Villanúa (de paso)","Pozas de la Garcipollera (Puente Viejo)","Puente San Miguel · badinas río Aragón","Ciudadela de Jaca (plan C)"],
         historia=(
             "La <strong>Canal Roya</strong> es un valle de origen glaciar por el que discurre la etapa 12 del "
             "<strong>GR-11</strong>, el sendero transpirenaico de Hondarribia a Cadaqués. "
@@ -193,27 +195,38 @@ DAYS = [
             "Al fondo del valle, el <strong>Plano de la Rinconada</strong> (1.870 m) es un circo glaciar "
             "cerrado por las paredes del imponente <strong>Pico de Anayet</strong> (2.545 m), volcán extinto "
             "cuya chimenea forma una de las siluetas más características de todo el Pirineo. "
-            "La <strong>Ciudadela de Jaca</strong> (s.XVI) es una de las mejores fortalezas abaluartadas "
-            "de Europa, con forma de estrella pentagonal, aún activa como cuartel — foso, puente levadizo "
-            "y museo de miniaturas militares. Entrada 5€, visita ~2 h."
+            "Por la tarde, las <strong>Pozas de la Garcipollera</strong> (Badinas del Puente Viejo, Castiello de Jaca) "
+            "se forman en el río Ijuez bajo el acueducto de piedra del Canal de Jaca: triple poza de agua helada "
+            "y sombra de ribera, a ~9 km del camping. El <strong>Puente San Miguel</strong> (s.XV, BIC) cruza el "
+            "Aragón al oeste de Jaca; hay badinas a su pie. La <strong>Ciudadela de Jaca</strong> (s.XVI) queda "
+            "como plan C si nublado — 5€, ~2 h; perros en el foso exterior, no en el museo."
         ),
         observaciones=(
-            "⚠️ Sensación prevista ~29°C — salir del P4N Candanchú a las 7:00 y conducir ~6 km al sur "
-            "hasta Parking Anglasé; acabar el hike antes de las 12:00. "
-            "Seguir las marcas del GR-11 — bien señalizado. "
-            "Cruces de río con pasos entre piedras — las perras se refrescan en ruta. "
+            "⚠️ Dos climas el mismo día: hike Canal Roya sensación ~29°C; valle de Jaca / El Arrebol "
+            "<strong>~36°C</strong> (sensación ~33°C). No quedarse en la parcela al sol por la tarde. "
+            "Salir del P4N Candanchú a las 7:00, ~6 km al sur hasta Parking Anglasé; acabar el hike antes de las 12:00. "
+            "Seguir las marcas del GR-11. Cruces de río con pasos entre piedras — las perras se refrescan en ruta. "
             "🏘️ De camino a El Arrebol (~27 km · ~27 min) pasáis por <strong>Villanúa</strong> — "
             "parada opcional 15-20 min (Cueva de las Güixas). "
-            "🍽️ Al llegar (~13-14h): check-in El Arrebol, comer, sombra/AC. "
-            "🏰 Tarde libre (16-18h, con sombra): <strong>Ciudadela de Jaca</strong> (5€, ~2h) — a 5 km. "
-            "Perros no entran al museo pero sí pasean por el foso exterior. "
-            "🐾 Noche: piscina para perros + zona de suelta + restaurante pet-friendly. "
+            "🍽️ ~13-14h: check-in El Arrebol, comer rápido y salir. "
+            "💧 <strong>Plan A tarde (16-19h): Pozas de la Garcipollera</strong> — triple poza bajo acueducto, "
+            "río Ijuez, agua helada, sombra de árboles. ~9 km · ~9 min desde El Arrebol "
+            "(Calle del Valle de la Garcipollera, Castiello). Parking en el desvío / apartadero de asfalto "
+            "(no bajar la camper por la pista de piedras: se quedan furgos atascadas). "
+            "15-20 min a pie hasta las pozas. Calzado de río, toallas; llegar pronto para coger sombra. "
+            "Perros OK con correa. "
+            "🔄 <strong>Plan B (más cerca): Puente San Miguel</strong> — ~5 km · ~8 min, badinas del Aragón "
+            "con sombra. Menos espectacular, muy práctico si hay prisa o cansancio. "
+            "🏰 <strong>Plan C (solo nublado): Ciudadela de Jaca</strong> (5€, ~2h) — a ~5 km. "
+            "Perros no entran al museo; sí al foso exterior. "
+            "🐾 Noche: piscina para perros El Arrebol mejor ~20-21h, cuando baje el calor. "
             "📋 Reserva El Arrebol #109671 · Parcela Estándar · 19/08→20/08 (salida 12:00h). "
             "💶 Total: 47€ (35€ parcela + 6€ adulto + 6€ dos perras). Depósito: 14,10€. Pendiente: 32,90€. "
             "☎️ 974 57 95 57 · info@campingelarrebol.com."
         ),
         planb="Canal Roya se puede acortar volviendo desde el Refugio de Lacuars (~10 km, ~300 m). "
-              "Tarde en El Arrebol igual.",
+              "Si tormenta: saltar las pozas y quedarse en El Arrebol (sombra/AC + piscina perros al atardecer). "
+              "Si solo nubes: Ciudadela de Jaca (5€, ~2h).",
     ),
     dict(
         day=4, date="2026-08-20",
@@ -291,7 +304,7 @@ DAYS = [
             "con museo etnológico en la iglesia de San Pedro. "
             "La <strong>Foz de Biniés</strong> es un cañón kárstico excavado por el río Veral, accesible por "
             "pasarela de madera sin desnivel. "
-            "(Ciudadela de Jaca ya visitada en D3 — no hace falta volver atrás hacia Jaca antes de Yesa.)"
+            "(Ciudadela de Jaca es plan C en D3 si nublado; no hace falta volver a Jaca antes de Yesa.)"
         ),
         observaciones=(
             "Día de transición fresco (~23°C sensación). "
@@ -615,10 +628,15 @@ def day_card(d:dict)->str:
         d3_btns = btns([
             ("Candanchú → Anglasé", gmaps_dir(*CANDANCHU, *ANGLASE), "g"),
             ("Anglasé → El Arrebol", gmaps_dir(*ANGLASE, *ARREBOL), "g"),
+            ("El Arrebol → Pozas Garcipollera", gmaps_dir(*ARREBOL, *GARCIPOLLERA), "g"),
+            ("El Arrebol → Puente San Miguel", gmaps_dir(*ARREBOL, *SAN_MIGUEL), "g"),
         ])
         ruta_html = (
-            "<p>🥾 Canal Roya desde Parking Anglasé (~6 km · 8 min desde Candanchú). "
-            "Tras el hike: Anglasé → El Arrebol (~27 km · ~27 min) para comer + piscina perros.</p>"
+            "<p>🥾 AM: Canal Roya desde Parking Anglasé (~6 km · 8 min desde Candanchú). "
+            "Tras el hike: Anglasé → El Arrebol (~27 km · ~27 min) — check-in y comida. "
+            "💧 PM fresco: <strong>Pozas Garcipollera</strong> (~9 km · ~9 min, agua helada + sombra). "
+            "Plan B: Puente San Miguel (~5 km · ~8 min). "
+            "Noche: piscina perros El Arrebol (~20-21h).</p>"
             + d3_btns
         )
     elif n==4:
@@ -716,7 +734,7 @@ def day_card(d:dict)->str:
     hist_html = f"<p>{d['historia']}</p>" if d["historia"] else ""
 
     # concurrencia
-    obs_html = f"<p>{esc(d['observaciones'])}</p>" if d["observaciones"] else ""
+    obs_html = f"<p>{d['observaciones']}</p>" if d["observaciones"] else ""
     crowd_html = f"<p>Concurrencia esperada: {crowd_span(d['concurrencia'])}</p>"
 
     # plan B
