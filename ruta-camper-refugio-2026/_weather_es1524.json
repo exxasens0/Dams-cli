@@ -1,0 +1,228 @@
+{
+  "fetched_at": "2026-08-15T16:52:08.812483+00:00",
+  "source": "Open-Meteo best_match",
+  "attribution": "https://open-meteo.com/",
+  "route_note": "Dom16noche→Astún·D1 Astún·D2 Candanchú·D3 CanalRoya+Arrebol·D4 Oza·D5 Ansó+Yesa·D6-9 Navarra·D10 Teià",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-08-17",
+      "place": "Astun",
+      "place_label": "Astún · Parking carretera / base estación (Huesca)",
+      "lat": 42.8091,
+      "lon": -0.5121,
+      "available": true,
+      "summary_es": "Nublado",
+      "t_max": 21.1,
+      "t_min": 10.5,
+      "app_max": 21.0,
+      "app_min": 9.0,
+      "precip_mm": 0.0,
+      "precip_prob": 0.0,
+      "uv_max": 7.15,
+      "tips": [
+        "D1 hike ibones Astún (AM). Sensación ~21°C — fresco.",
+        "OK temperatura (≤25°C).",
+        "Día seco · cielo nublado."
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-18",
+      "place": "Candanchu",
+      "place_label": "Candanchú · Búnkeres Canfranc (Huesca)",
+      "lat": 42.7867,
+      "lon": -0.536,
+      "available": true,
+      "summary_es": "Mayormente despejado",
+      "t_max": 25.6,
+      "t_min": 12.1,
+      "app_max": 24.5,
+      "app_min": 8.2,
+      "precip_mm": 0.0,
+      "precip_prob": 0.0,
+      "uv_max": 7.3,
+      "tips": [
+        "D2 Búnkeres AM + noche Candanchú 1.520 m.",
+        "OK temperatura (≤25°C).",
+        "Día seco · mayormente despejado."
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-19",
+      "place": "Candanchu",
+      "place_label": "Canal Roya AM (~29°C) · El Arrebol PM (~36°C)",
+      "lat": 42.77,
+      "lon": -0.505,
+      "available": true,
+      "summary_es": "Llovizna débil (montaña) · valle muy caluroso",
+      "t_max": 29.3,
+      "t_min": 18.1,
+      "app_max": 28.9,
+      "app_min": 17.0,
+      "precip_mm": 1.2,
+      "precip_prob": 69.0,
+      "uv_max": 6.65,
+      "tips": [
+        "⚠️ Hike Canal Roya 7:00–12:00 (sensación ~29°C). Tarde El Arrebol ~36°C / sensación ~33°C — no quedarse en la parcela al sol.",
+        "Plan A: Pozas Garcipollera (~9 km · ~9 min, agua helada + sombra). Plan B: Puente San Miguel (~5 km).",
+        "Piscina perros El Arrebol ~20-21h. Ciudadela solo si nublado (plan C)."
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-08-20",
+      "place": "Oza",
+      "place_label": "Selva de Oza · Aguas Tuertas (Huesca)",
+      "lat": 42.822,
+      "lon": -0.717,
+      "available": true,
+      "summary_es": "Chubascos débiles",
+      "t_max": 21.4,
+      "t_min": 11.9,
+      "app_max": 21.9,
+      "app_min": 8.5,
+      "precip_mm": 5.7,
+      "precip_prob": 65.0,
+      "uv_max": 6.55,
+      "tips": [
+        "D4 Aguas Tuertas · día fresco (~22°C sensación).",
+        "OK temperatura (≤25°C).",
+        "Chubascos posibles (~6 mm · 65%) — plan B borde río Oza."
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-08-21",
+      "place": "Anso",
+      "place_label": "Ansó · Foz de Biniés · transición (Huesca)",
+      "lat": 42.759,
+      "lon": -0.821,
+      "available": true,
+      "summary_es": "Llovizna débil",
+      "t_max": 23.5,
+      "t_min": 13.3,
+      "app_max": 23.0,
+      "app_min": 10.9,
+      "precip_mm": 0.6,
+      "precip_prob": 63.0,
+      "uv_max": 6.95,
+      "tips": [
+        "D5 Ansó + Foz Biniés → Artieda/Yesa (transición Navarra).",
+        "OK temperatura (≤25°C).",
+        "Poca lluvia prevista · posible llovizna (prob. alta)."
+      ]
+    },
+    {
+      "day": 6,
+      "date": "2026-08-22",
+      "place": "Ochagavia",
+      "place_label": "Ochagavía · Valle de Salazar (Navarra)",
+      "lat": 42.906,
+      "lon": -1.079,
+      "available": true,
+      "summary_es": "Tormenta",
+      "t_max": 16.8,
+      "t_min": 10.7,
+      "app_max": 17.9,
+      "app_min": 9.2,
+      "precip_mm": 19.2,
+      "precip_prob": 34.0,
+      "uv_max": 2.15,
+      "tips": [
+        "D6 Ochagavía · fresco (~18°C) pero tormenta posible (~19 mm).",
+        "OK temperatura (≤25°C).",
+        "Priorizar casco / Zatoia corto si truena."
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-08-23",
+      "place": "Irati",
+      "place_label": "Selva de Irati · Embalse Irabia (Navarra)",
+      "lat": 42.929,
+      "lon": -1.015,
+      "available": true,
+      "summary_es": "Tormenta",
+      "t_max": 23.7,
+      "t_min": 12.5,
+      "app_max": 25.1,
+      "app_min": 12.3,
+      "precip_mm": 43.2,
+      "precip_prob": 52.0,
+      "uv_max": 0.55,
+      "tips": [
+        "⚠️ D7 Irati: tormenta fuerte posible (~43 mm) — hayedo OK bajo lluvia; evitar crestas.",
+        "Sensación ~25°C (límite) — hike AM temprano.",
+        "UV bajo por nubosidad."
+      ]
+    },
+    {
+      "day": 8,
+      "date": "2026-08-24",
+      "place": "Orbaitzeta",
+      "place_label": "Orbaitzeta · Río Irati (Navarra)",
+      "lat": 42.979,
+      "lon": -1.231,
+      "available": true,
+      "summary_es": "Llovizna débil",
+      "t_max": 27.7,
+      "t_min": 16.6,
+      "app_max": 29.2,
+      "app_min": 17.4,
+      "precip_mm": 0.3,
+      "precip_prob": 35.0,
+      "uv_max": 5.55,
+      "tips": [
+        "⚠️ Sensación ~29°C en Orbaitzeta — hike AM / sombra en hayedo.",
+        "Poca lluvia prevista (mejor que el modelo anterior).",
+        "Ruinas Fábrica de Armas: buen plan bajo cubierta de bosque."
+      ]
+    },
+    {
+      "day": 9,
+      "date": "2026-08-25",
+      "place": "Isaba",
+      "place_label": "Isaba · Valle del Roncal (Navarra)",
+      "lat": 42.856,
+      "lon": -0.921,
+      "available": true,
+      "summary_es": "Tormenta con granizo",
+      "t_max": 22.1,
+      "t_min": 13.3,
+      "app_max": 23.6,
+      "app_min": 12.9,
+      "precip_mm": 23.1,
+      "precip_prob": 32.0,
+      "uv_max": 6.65,
+      "tips": [
+        "D9 Isaba · tormenta/granizo posible (~23 mm).",
+        "OK temperatura (≤25°C) en valle.",
+        "Senda Esca corta si el tiempo empeora."
+      ]
+    },
+    {
+      "day": 10,
+      "date": "2026-08-26",
+      "place": "Teia",
+      "place_label": "Teià · vuelta a casa (Barcelona)",
+      "lat": 41.498,
+      "lon": 2.319,
+      "available": true,
+      "summary_es": "Nublado",
+      "t_max": 28.5,
+      "t_min": 23.1,
+      "app_max": 30.3,
+      "app_min": 25.5,
+      "precip_mm": 0.0,
+      "precip_prob": 29.0,
+      "uv_max": 6.65,
+      "tips": [
+        "Solo conducción · costa ~30°C sensación.",
+        "Salir antes de las 8:00 · AC para perras.",
+        "Día seco en Teià."
+      ]
+    }
+  ]
+}

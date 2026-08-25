@@ -1,0 +1,623 @@
+{
+  "meta": {
+    "weather_source": "Open-Meteo best_match (Météo-France / DWD / ECMWF según zona)",
+    "weather_fetched_at": "2026-08-05T11:25:32.217757+00:00",
+    "weather_attribution": "https://open-meteo.com/ (CC BY 4.0)",
+    "opinions_note": "Síntesis de Park4Night, OT oficiales, Visorando, Campercontact y prensa vanlife (ago 2026)."
+  },
+  "days": {
+    "1": {
+      "weather": {
+        "day": 1,
+        "date": "2026-08-06",
+        "place": "Ax-les-Thermes",
+        "lat": 42.7194,
+        "lon": 1.8393,
+        "available": true,
+        "weather_code": 3,
+        "summary_es": "Nublado",
+        "t_max": 27.1,
+        "t_min": 18.0,
+        "precip_mm": 0.0,
+        "precip_prob": 5,
+        "wind_max": 10.6,
+        "uv_max": 6.4,
+        "timezone": "Europe/Paris",
+        "elevation": 726.0,
+        "tips": []
+      },
+      "opinions": [
+        "P4N #297295 Savignac: noches tranquilas 2025–26; campanas de iglesia posibles.",
+        "P4N #94127 Orgeix: sitio idílico junto al río, pero hay avisos de parking reservado al centro ecuestre / carteles anti-camping — verificad al llegar.",
+        "P4N #22287 Tournals: muy valorado en 2026; acceso estrecho y a veces 1 noche / cable.",
+        "Ayuntamiento Ax: prohibido dormir en el pueblo y En Castel 18h–6h; aire oficial Norte (Av. Delcassé) y Parc d'Espagne de pago sin servicios."
+      ],
+      "alternatives": [
+        {
+          "title": "Camping Malazéou (Savignac)",
+          "why": "Si P4N os falla: 4★ río, perros, piscina verano, ~10 min Ax. Plan B confort.",
+          "url": "https://axlesthermes.wellness-sport-camping.com/"
+        },
+        {
+          "title": "Aire oficial Ax (entrada Norte)",
+          "why": "Servicios agua/elec; más urbana/ruidosa que Tournals. Alternativa legal clara.",
+          "url": "https://www.mairie-ax.fr/camping-car"
+        },
+        {
+          "title": "Parc d'Espagne (piscina)",
+          "why": "Pitches con arceau, mayo–sept, sin agua/luz. Solo si queréis estar en el pueblo.",
+          "url": "https://www.mairie-ax.fr/camping-car"
+        }
+      ]
+    },
+    "2": {
+      "weather": {
+        "day": 2,
+        "date": "2026-08-07",
+        "place": "Orgeix / Ax",
+        "lat": 42.7067,
+        "lon": 1.8698,
+        "available": true,
+        "weather_code": 0,
+        "summary_es": "Despejado",
+        "t_max": 29.0,
+        "t_min": 15.5,
+        "precip_mm": 0.0,
+        "precip_prob": 23,
+        "wind_max": 8.7,
+        "uv_max": 7.4,
+        "timezone": "Europe/Paris",
+        "elevation": 826.0,
+        "tips": []
+      },
+      "opinions": [
+        "Orgeix Payssière divide opiniones: 5★ ‘paraíso río + foodtruck’ vs 1★ ‘reservado clientela’.",
+        "Camping Les Ioules (#20472): reseñas 2026 muy buenas (río, limpio); plan seguro si el picnic está lleno.",
+        "Orlu D22 (#22280): calma fuera de temporada; en agosto más delicado. No entrar en reserva Orlu con perras."
+      ],
+      "alternatives": [
+        {
+          "title": "Pistas sombra Tournals / Bonascre",
+          "why": "Si Orgeix no convence: 6–8 km bosque sin Orlu, siesta en cota.",
+          "url": "https://park4night.com/es/place/22287"
+        },
+        {
+          "title": "Visorando Ax–Orgeix (recorte)",
+          "why": "Acortad el track si calor/tormenta; quedáos en ribera.",
+          "url": "https://www.visorando.com/randonnee-d-ax-les-thermes-a-orgeix/"
+        },
+        {
+          "title": "Malazéou + shuttle Ax",
+          "why": "Base confort y paseo corto pueblo/termas sin mover el van.",
+          "url": "https://www.vanlifemag.fr/campingsetapes/le-malazeou-camping-carvaneige-a-ax-les-thermes-dans-les-pyrenees/99853"
+        }
+      ]
+    },
+    "3": {
+      "weather": {
+        "day": 3,
+        "date": "2026-08-08",
+        "place": "Guzet / Aulus",
+        "lat": 42.7876,
+        "lon": 1.3008,
+        "available": true,
+        "weather_code": 80,
+        "summary_es": "Chubascos débiles",
+        "t_max": 27.2,
+        "t_min": 15.9,
+        "precip_mm": 4.9,
+        "precip_prob": 75,
+        "wind_max": 9.0,
+        "uv_max": 7.4,
+        "timezone": "Europe/Paris",
+        "elevation": 1513.0,
+        "tips": [
+          "Lluvia probable: plan B bosque/pueblo; evita crestas.",
+          "Riesgo tormenta: decisión meteo 7:00; bajad de cresta antes de 14 h."
+        ]
+      },
+      "opinions": [
+        "Guzet #24616: noches 2026 ‘tranquila con vistas a Aulus’ — spot estrella Couserans.",
+        "Ustou D68 #40904: bien en verano; en invierno se llena de esquiadores por la mañana.",
+        "Montagnou #82429: camping con vistas al macizo; alternativa si parking Guzet saturado."
+      ],
+      "alternatives": [
+        {
+          "title": "Base Bethmale (#200908 / #6527)",
+          "why": "Si preferís lago al atardecer en vez de Guzet; relocad a Ars al día 4.",
+          "url": "https://park4night.com/es/place/6527"
+        },
+        {
+          "title": "Camping Coulédous (Aulus)",
+          "why": "Municipal todo el año, río Garbet, cerca termas — plan B pueblo.",
+          "url": "https://www.camping-aulus-couledous.com/"
+        },
+        {
+          "title": "Aire municipal Aulus (centro)",
+          "why": "Cerca del Garbet; más gente que Guzet pero legal y práctica.",
+          "url": "https://www.campingcardhotes.fr/aire-aulus-les-bains-533"
+        }
+      ]
+    },
+    "4": {
+      "weather": {
+        "day": 4,
+        "date": "2026-08-09",
+        "place": "Aulus / Cascade d'Ars",
+        "lat": 42.7875,
+        "lon": 1.3382,
+        "available": true,
+        "weather_code": 80,
+        "summary_es": "Chubascos débiles",
+        "t_max": 29.8,
+        "t_min": 19.3,
+        "precip_mm": 6.0,
+        "precip_prob": 76,
+        "wind_max": 13.9,
+        "uv_max": 7.4,
+        "timezone": "Europe/Paris",
+        "elevation": 755.0,
+        "tips": [
+          "Lluvia probable: plan B bosque/pueblo; evita crestas.",
+          "Riesgo tormenta: decisión meteo 7:00; bajad de cresta antes de 14 h."
+        ]
+      },
+      "opinions": [
+        "Cascade d'Ars: AllTrails ~4,7/5 pero muchos la marcan difícil si subís al étang; versión familia = solo cascada baja (~5 km / +260 m).",
+        "Aulus Jouges #4258: agradecen a la commune; parking inclinado y disputado por coches a la sombra en agosto.",
+        "Cagateille: solo día (#51675 ban noche). Desde Guzet ~28 min — excepción al criterio ≤15 min."
+      ],
+      "alternatives": [
+        {
+          "title": "Ars ‘cascada baja’ solamente",
+          "why": "Si meteo/chubascos o piernas: ida-vuelta corta ombrée sin crestas.",
+          "url": "https://randobase.fr/massifs/pyrenees/cascades-ars-ariege/"
+        },
+        {
+          "title": "Coulédous + paseo pueblo Aulus",
+          "why": "Día térmico suave: termas/pueblo si tormenta en altura.",
+          "url": "https://auluslesbains.com/vivre-a-aulus/camping-municipal/"
+        },
+        {
+          "title": "Saltar Cagateille",
+          "why": "Priorizad Ars (cumple ≤15 min). Cagateille solo si cielo estable y aceptáis el traslado.",
+          "url": "https://es.wikiloc.com/rutas-senderismo/cascade-dars-3147596"
+        }
+      ]
+    },
+    "5": {
+      "weather": {
+        "day": 5,
+        "date": "2026-08-10",
+        "place": "Entraygues-sur-Truyère",
+        "lat": 44.6472,
+        "lon": 2.5675,
+        "available": true,
+        "weather_code": 45,
+        "summary_es": "Niebla",
+        "t_max": 32.5,
+        "t_min": 18.5,
+        "precip_mm": 0.0,
+        "precip_prob": 41,
+        "wind_max": 10.3,
+        "uv_max": 6.0,
+        "timezone": "Europe/Paris",
+        "elevation": 250.0,
+        "tips": [
+          "Calor: siesta 12–17 h en cota/sombra; hike temprano."
+        ]
+      },
+      "opinions": [
+        "Aire Lot / Pont Notre Dame: muy alabada 2025–26 (río, centro a pie); bémols = basura de otros y borne a veces caprichosa (jetons mairie).",
+        "Faubourg #208568: noche calma pero arco ~2,05 m — medid el Sunlight.",
+        "Val de Saures: camping limpio, río, piscina incluida en temporada; plan B confort."
+      ],
+      "alternatives": [
+        {
+          "title": "Aire Pont Notre Dame (#415568)",
+          "why": "Si Faubourg lleno/arco bajo: más plazas, misma vibra río.",
+          "url": "https://park4night.com/es/place/415568"
+        },
+        {
+          "title": "Camping Val de Saures",
+          "why": "Si aire saturada en agosto: playa Lot + servicios.",
+          "url": "https://entraygues.fr/informations-touristiques/"
+        },
+        {
+          "title": "Acortar visita Entraygues",
+          "why": "Día puente: no lo convertáis en sightseeing eterno; priorizad llegar fresco a Lioran mañana.",
+          "url": "https://www.terresdaveyron.com/sejourner/dormir/campings/borne-de-service-camping-car-entraygues-sur-truyere-fr-5279989/"
+        }
+      ]
+    },
+    "6": {
+      "weather": {
+        "day": 6,
+        "date": "2026-08-11",
+        "place": "Le Lioran",
+        "lat": 45.0828,
+        "lon": 2.7503,
+        "available": true,
+        "weather_code": 3,
+        "summary_es": "Nublado",
+        "t_max": 28.9,
+        "t_min": 14.0,
+        "precip_mm": 0.0,
+        "precip_prob": 12,
+        "wind_max": 13.0,
+        "uv_max": 7.2,
+        "timezone": "Europe/Paris",
+        "elevation": 1234.0,
+        "tips": []
+      },
+      "opinions": [
+        "Combe Nègre #13709: ‘calma entre abetos’, punto de agua; base ideal Lioran (calor).",
+        "Camping des Blats: familia, río Cère, ~7 km Lioran — muy bien valorado agosto 2026.",
+        "St-Jacques D67 #42476: vistas; algún aviso de excrementos / fuego prohibido.",
+        "Bec/Téton: CANCELADO — Parc des Volcans chiens interdits même en laisse."
+      ],
+      "alternatives": [
+        {
+          "title": "Blats (#6003) primero",
+          "why": "Si Combe Nègre llena o sin ganas de nature dry: servicios + calma.",
+          "url": "https://www.cantal-destination.com/fiche/camping-des-blats/"
+        },
+        {
+          "title": "Paseo bosque Font de Cère",
+          "why": "Aclimatación con perras; no ir hacia Bec/Téton.",
+          "url": "https://www.lelioran.com/"
+        },
+        {
+          "title": "Actividades estación Lioran",
+          "why": "Teleférico Plomb / paseo corto (confirmar perros en taquilla).",
+          "url": "https://www.lelioran.com/"
+        }
+      ]
+    },
+    "7": {
+      "weather": {
+        "day": 7,
+        "date": "2026-08-12",
+        "place": "Puy Mary / Lioran",
+        "lat": 45.110,
+        "lon": 2.675,
+        "available": true,
+        "weather_code": 2,
+        "summary_es": "Parcialmente nublado",
+        "t_max": 29.6,
+        "t_min": 19.4,
+        "precip_mm": 0.0,
+        "precip_prob": 2,
+        "wind_max": 10.3,
+        "uv_max": 7.15,
+        "timezone": "Europe/Paris",
+        "elevation": 1588.0,
+        "tips": []
+      },
+      "opinions": [
+        "CANCELADO Bec/Téton: ficha oficial Parc des Volcans — chiens interdits même tenus en laisse (estives/privado).",
+        "Puy Mary: senda amueblada OK con perro en correa; no atravesar estives (bons gestes Grand Site).",
+        "Navettas: preguntad peso/perros; CC restringido de día en Pas de Peyrol."
+      ],
+      "alternatives": [
+        {
+          "title": "Puy Mary (senda + correa)",
+          "why": "Belvedere volcánico legal con perras; ~30–45 min A/R desde Peyrol.",
+          "url": "https://www.puymary.fr/les-bons-gestes/"
+        },
+        {
+          "title": "Télésiège / Plomb + paseo",
+          "why": "Subida mecánica y caminar suave; confirmar perros en taquilla.",
+          "url": "https://www.lelioran.com/"
+        },
+        {
+          "title": "Bosque Combe Nègre 6–10 km",
+          "why": "Sombra, perras OK, sin cresta prohibida.",
+          "url": "https://park4night.com/es/place/13709"
+        }
+      ]
+    },
+    "8": {
+      "weather": {
+        "day": 8,
+        "date": "2026-08-13",
+        "place": "Salers",
+        "lat": 45.1378,
+        "lon": 2.4939,
+        "available": true,
+        "weather_code": 2,
+        "summary_es": "Parcialmente nublado",
+        "t_max": 27.4,
+        "t_min": 22.1,
+        "precip_mm": 0.0,
+        "precip_prob": 18,
+        "wind_max": 7.6,
+        "uv_max": 6.45,
+        "timezone": "Europe/Paris",
+        "elevation": 945.0,
+        "tips": []
+      },
+      "opinions": [
+        "Ferme Fouey: OT + Campercontact ~4,7/5 — acogida Marcel/Yves, queso, trata; gratis. Algunos: WC no de noche / ruido ventilación / luces trata 6h.",
+        "Llamad/avisad: no es un aire anónimo; turismo lento y responsable.",
+        "St-Bonnet #144306: calma municipal; pasar por fromagerie."
+      ],
+      "alternatives": [
+        {
+          "title": "St-Bonnet estadio (#144306)",
+          "why": "Si Fouey lleno o demasiado ‘granja’: hierba municipal cerca.",
+          "url": "https://park4night.com/es/place/144306"
+        },
+        {
+          "title": "Camping Moulin du Teinturier",
+          "why": "Servicios + sombra (ojo: reseñas 2026 sobre poda de árboles).",
+          "url": "https://park4night.com/es/place/114179"
+        },
+        {
+          "title": "Piste Verte sin Salers mediodía",
+          "why": "Si pueblo saturado: priorizad vía verde y Salers al atardecer.",
+          "url": "https://tourisme-sumene-artense.com/activites/velo/la-piste-verte/"
+        }
+      ]
+    },
+    "9": {
+      "weather": {
+        "day": 9,
+        "date": "2026-08-14",
+        "place": "Salers",
+        "lat": 45.1378,
+        "lon": 2.4939,
+        "available": true,
+        "weather_code": 0,
+        "summary_es": "Despejado",
+        "t_max": 28.0,
+        "t_min": 21.3,
+        "precip_mm": 0.0,
+        "precip_prob": 29,
+        "wind_max": 10.5,
+        "uv_max": 7.05,
+        "timezone": "Europe/Paris",
+        "elevation": 945.0,
+        "tips": []
+      },
+      "opinions": [
+        "Salers a mediodía en agosto = embudo: OT y foros coinciden en temprano o tarde.",
+        "Fouey sigue siendo la base más citada para van + queso del entorno.",
+        "La Montagnoune: boucle corta ideal calor; no hace falta gran cresta."
+      ],
+      "alternatives": [
+        {
+          "title": "Maison de la Salers + degustación",
+          "why": "Si el casco histórico satura: museo/queso fuera del embudo de calles.",
+          "url": "https://www.salers-tourisme.fr/"
+        },
+        {
+          "title": "Bocage rural en coche corto",
+          "why": "Pistas sombra lejos del basalt village si masificación.",
+          "url": "https://es.wikiloc.com/rutas/senderismo/francia/auvergne-rhone-alpes/salers"
+        },
+        {
+          "title": "Mudanza temprana hacia Aubrac",
+          "why": "Si Salers no os gusta: adelantad Déroc y ganad frescura meseta.",
+          "url": "https://park4night.com/es/place/5073"
+        }
+      ]
+    },
+    "10": {
+      "weather": {
+        "day": 10,
+        "date": "2026-08-15",
+        "place": "Nasbinals / Déroc",
+        "lat": 44.6476,
+        "lon": 3.0649,
+        "available": true,
+        "weather_code": 0,
+        "summary_es": "Despejado",
+        "t_max": 27.1,
+        "t_min": 19.0,
+        "precip_mm": 0.0,
+        "precip_prob": 29,
+        "wind_max": 18.2,
+        "uv_max": 6.95,
+        "timezone": "Europe/Paris",
+        "elevation": 1224.0,
+        "tips": []
+      },
+      "opinions": [
+        "Déroc #5073: 5★ agosto 2026 ‘perfecto noche + paseos’; dog-friendly en reseñas antiguas.",
+        "Buron du Ché #48703: marco salvaje; restaurante a veces cerrado; moscas en reseñas primavera.",
+        "Marchastel #90343: calma noche, más paso de día."
+      ],
+      "alternatives": [
+        {
+          "title": "Solo cascada a pie desde #5073",
+          "why": "Si cansancio traslado: 10–20 min a pie y listo.",
+          "url": "https://fr.wikipedia.org/wiki/Cascade_du_D%C3%A9roc"
+        },
+        {
+          "title": "Nasbinals pueblo + aligot",
+          "why": "Plan B cultural/gastro si viento en meseta.",
+          "url": "https://www.google.com/maps/search/?api=1&query=Nasbinals"
+        },
+        {
+          "title": "Evitar #98143",
+          "why": "Privado + perros prohibidos — no improviséis ‘nature’ ahí.",
+          "url": "https://park4night.com/es/place/98143"
+        }
+      ]
+    },
+    "11": {
+      "weather": {
+        "day": 11,
+        "date": "2026-08-16",
+        "place": "Nasbinals / Aubrac",
+        "lat": 44.662,
+        "lon": 3.048,
+        "available": true,
+        "weather_code": 0,
+        "summary_es": "Despejado",
+        "t_max": 25.3,
+        "t_min": 16.4,
+        "precip_mm": 0.0,
+        "precip_prob": 27,
+        "wind_max": 19.0,
+        "uv_max": 4.65,
+        "timezone": "Europe/Paris",
+        "elevation": 1172.0,
+        "tips": []
+      },
+      "opinions": [
+        "Aubrac: viento frecuente; patous en GR65 — protocolo estricto.",
+        "Déroc sigue siendo el ancla; Nasbinals = turismo Compostela en agosto.",
+        "Salhiens: lago más tranquilo que el pueblo si buscáis agua/foto."
+      ],
+      "alternatives": [
+        {
+          "title": "Bucle corto Déroc (Visorando)",
+          "why": "Si viento/patous: cascada y vuelta, sin meseta abierta larga.",
+          "url": "https://www.visorando.com/randonnee-nasbinals-cascade-du-deroc/"
+        },
+        {
+          "title": "Lac des Salhiens",
+          "why": "Alternativa paisaje agua sin GR masificado.",
+          "url": "https://www.google.com/maps/search/?api=1&query=Lac+des+Salhiens"
+        },
+        {
+          "title": "Día descanso camper",
+          "why": "Meseta + calor/viento: legitimad siesta y salida corta 18 h.",
+          "url": "https://park4night.com/es/place/5073"
+        }
+      ]
+    },
+    "12": {
+      "weather": {
+        "day": 12,
+        "date": "2026-08-17",
+        "place": "Formiguères",
+        "lat": 42.585,
+        "lon": 2.1,
+        "available": true,
+        "weather_code": 2,
+        "summary_es": "Parcialmente nublado",
+        "t_max": 26.6,
+        "t_min": 12.7,
+        "precip_mm": 0.0,
+        "precip_prob": 52,
+        "wind_max": 9.6,
+        "uv_max": 7.1,
+        "timezone": "Europe/Paris",
+        "elevation": 1562.0,
+        "tips": [
+          "Lluvia probable: plan B bosque/pueblo; evita crestas."
+        ]
+      },
+      "opinions": [
+        "Matemale: aire Camping-Car Park 40 plazas + servicios; otra zona no aménagée ~3€/día. Fuera = prohibido.",
+        "#294842: calma lago, barrera ~2,0–2,2 m — medid el van.",
+        "La Devèze / Calmazeille: buenas notas 2026; Formiguères = base clásica Capcir."
+      ],
+      "alternatives": [
+        {
+          "title": "Camping-Car Park Matemale",
+          "why": "Si nature llena o barrera: servicios wifi/elec reserva online.",
+          "url": "https://www.pyrenees-catalanes.net/fr/sortir-et-decouvrir/lespace-loisirs-du-lac-de-matemale"
+        },
+        {
+          "title": "Camping du Lac Matemale",
+          "why": "Confort (spa/chalets) si tras largo traslado queréis ducha segura.",
+          "url": "https://www.camping-lac-matemale.com/"
+        },
+        {
+          "title": "Aire Les Angles (Pla Del Mir)",
+          "why": "Plan B Capcir asfaltada + navettes estación.",
+          "url": "https://www.pyrenees-cerdagne.com/planifier/sejourner/aires-de-camping-cars"
+        }
+      ]
+    },
+    "13": {
+      "weather": {
+        "day": 13,
+        "date": "2026-08-18",
+        "place": "Lac de Matemale",
+        "lat": 42.5655,
+        "lon": 2.1044,
+        "available": true,
+        "weather_code": 3,
+        "summary_es": "Nublado",
+        "t_max": 24.5,
+        "t_min": 11.4,
+        "precip_mm": 0.0,
+        "precip_prob": 32,
+        "wind_max": 10.9,
+        "uv_max": 3.8,
+        "timezone": "Europe/Paris",
+        "elevation": 1533.0,
+        "tips": []
+      },
+      "opinions": [
+        "Lago Matemale = pilar turístico Capcir: baño Ourson, paseos fáciles, masificación posible agosto.",
+        "P4N lago: noches ‘vue parfaite’ agosto 2026; altura limitada.",
+        "Camporells: bonito pero Difficile — fuera de criterio perras/fácil."
+      ],
+      "alternatives": [
+        {
+          "title": "Boucle Visorando desde el lago",
+          "why": "Si no queréis coche: caminad desde #294842.",
+          "url": "https://www.visorando.com/randonnee-boucle-depuis-le-lac-de-matemale/"
+        },
+        {
+          "title": "Lac de l'Olive (Formiguères)",
+          "why": "Alternativa hike fácil si Matemale saturado.",
+          "url": "https://es.wikiloc.com/rutas-senderismo/formigueres-lac-de-lolive-111344412"
+        },
+        {
+          "title": "Quesos Capcir (Calmadou / Pérarnaud)",
+          "why": "Plan B gastronómico si meteo gris.",
+          "url": "https://www.google.com/maps/search/?api=1&query=Le+Calmadou+Formigu%C3%A8res"
+        }
+      ]
+    },
+    "14": {
+      "weather": {
+        "day": 14,
+        "date": "2026-08-19",
+        "place": "Formiguères → Teià (salida)",
+        "lat": 42.585,
+        "lon": 2.1,
+        "available": true,
+        "weather_code": 2,
+        "summary_es": "Parcialmente nublado",
+        "t_max": 18.6,
+        "t_min": 11.2,
+        "precip_mm": 0.0,
+        "precip_prob": 46,
+        "wind_max": 13.9,
+        "uv_max": 1.65,
+        "timezone": "Europe/Paris",
+        "elevation": 1562.0,
+        "tips": []
+      },
+      "opinions": [
+        "Regreso Cerdanya: Puigcerdà es la parada café/compra más citada; evitar rodeos Andorranos si cansancio.",
+        "Formiguères mañana fresca típica a 1500 m — buen momento para cerrar depósito agua."
+      ],
+      "alternatives": [
+        {
+          "title": "Parada Puigcerdà centro",
+          "why": "Café + paseo corto sin alargar mucho el regreso.",
+          "url": "https://www.google.com/maps/search/?api=1&query=Puigcerd%C3%A0+centro"
+        },
+        {
+          "title": "Bellver de Cerdanya",
+          "why": "Si queréis pueblo más tranquilo que Puigcerdà.",
+          "url": "https://www.google.com/maps/search/?api=1&query=Bellver+de+Cerdanya"
+        },
+        {
+          "title": "Directo N260 / AP-7",
+          "why": "Si meteo fea o cansancio: sin sightseeing, casa.",
+          "url": "https://www.google.com/maps/dir/Formigu%C3%A8res,+France/Tei%C3%A0,+Spain"
+        }
+      ]
+    }
+  }
+}

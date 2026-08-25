@@ -1,0 +1,54 @@
+{
+  "fetched_at": "2026-08-25T08:30:00",
+  "source": "Open-Meteo",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-08-27",
+      "place": "Saldes",
+      "place_label": "Saldes (~1.200 m) · pernocta",
+      "t_min": 13.4,
+      "t_max": 24.1,
+      "app_max": 24.5,
+      "precip_mm": 0.0,
+      "precip_prob": 28,
+      "tips": [
+        "Valle de Bagà más caluroso (~30°C) — subid a Saldes para pernoctar.",
+        "Tarde: paseo corto por Bagà a la sombra; no quedaros en parcela al sol.",
+        "Reservad camping con antelación (agosto, pocas parcelas camper)."
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-08-28",
+      "place": "Empedrats",
+      "place_label": "Cal Cerdanyola / Empedrats (~920 m)",
+      "t_min": 14.0,
+      "t_max": 24.7,
+      "app_max": 24.1,
+      "precip_mm": 0.0,
+      "precip_prob": 22,
+      "tips": [
+        "Día estrella: Empedrats + Cua de Cavall — sensación ~24°C, ideal.",
+        "Salir 7:00–7:30 desde Saldes (~25 min hasta Cal Cerdanyola).",
+        "Parque Natural Cadí-Moixeró: perros con correa obligatoria cerca de rebaños."
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-08-29",
+      "place": "Gresolet",
+      "place_label": "Mirador Gresolet / Saldes",
+      "t_min": 10.4,
+      "t_max": 21.9,
+      "app_max": 20.8,
+      "precip_mm": 0.0,
+      "precip_prob": 0,
+      "tips": [
+        "Sábado fresco — buen día para Mirador de Gresolet y vuelta a Teià.",
+        "Salida temprano (~8:00) para llegar a Teià antes del calor de costa.",
+        "Teià → Saldes ~2 h · Saldes → Teià ~2 h (sin paradas largas)."
+      ]
+    }
+  ]
+}

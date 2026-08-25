@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Ruta camper recondito Park4Night 6-19 ago 2026</name>
+    <description>Prioridad: van/camper, cesped/sombra, sin servicios, lejos de masas AC.</description>
+    <Style id="stop"><IconStyle><scale>1.1</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+    <Style id="p4n"><IconStyle><scale>1.05</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon></IconStyle></Style>
+    <Style id="via"><IconStyle><scale>0.9</IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href></Icon></IconStyle></Style>
+    <Folder>
+      <name>Etapas</name>
+      <Placemark><name>00 Teia</name><styleUrl>#stop</styleUrl><Point><coordinates>2.3210,41.4980,0</coordinates></Point></Placemark>
+      <Placemark><name>01 Ax</name><styleUrl>#stop</styleUrl><Point><coordinates>1.8393,42.7194,0</coordinates></Point></Placemark>
+      <Placemark><name>02 Foix via</name><styleUrl>#via</styleUrl><Point><coordinates>1.6060,42.9650,0</coordinates></Point></Placemark>
+      <Placemark><name>03 Seix Couserans</name><styleUrl>#stop</styleUrl><Point><coordinates>1.2000,42.8640,0</coordinates></Point></Placemark>
+      <Placemark><name>04 Entraygues zona</name><styleUrl>#stop</styleUrl><Point><coordinates>2.5670,44.6460,0</coordinates></Point></Placemark>
+      <Placemark><name>05 Le Lioran</name><styleUrl>#stop</styleUrl><Point><coordinates>2.7500,45.0820,0</coordinates></Point></Placemark>
+      <Placemark><name>06 Salers zona</name><styleUrl>#stop</styleUrl><Point><coordinates>2.4940,45.1380,0</coordinates></Point></Placemark>
+      <Placemark><name>07 Aubrac Nasbinals</name><styleUrl>#stop</styleUrl><Point><coordinates>3.0000,44.6620,0</coordinates></Point></Placemark>
+      <Placemark><name>08 Formigueres</name><styleUrl>#stop</styleUrl><Point><coordinates>2.1000,42.6300,0</coordinates></Point></Placemark>
+    </Folder>
+    <Folder>
+      <name>P4N reconditos prioridad</name>
+      <Placemark>
+        <name>P4N 22287 Tournals van-only</name>
+        <description>Nature CC no. https://park4night.com/fr/place/22287</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.8216,42.7056,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 24616 Guzet</name>
+        <description>https://park4night.com/fr/place/24616</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.3008,42.7876,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 51675 Cagateille van CHECK ban noche</name>
+        <description>https://park4night.com/fr/place/51675</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>1.2876,42.7562,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 13709 Combe Negre sombra</name>
+        <description>https://park4night.com/fr/place/13709</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.7330,45.0849,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 144306 St-Bonnet hierba</name>
+        <description>https://park4night.com/fr/place/144306</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.4521,45.1600,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 98143 Aubrac nature (backup)</name>
+        <description>Backup solo si perros OK. Prioridad #5073. https://park4night.com/fr/place/98143</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>3.0531,44.6227,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>P4N 2547 Formigueres tierra/lago</name>
+        <description>https://park4night.com/fr/place/2547</description>
+        <styleUrl>#p4n</styleUrl>
+        <Point><coordinates>2.0711,42.6241,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+    <Placemark>
+      <name>Trazado etapas</name>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          2.3210,41.4980,0
+          1.8393,42.7194,0
+          1.6060,42.9650,0
+          1.2000,42.8640,0
+          2.5670,44.6460,0
+          2.7500,45.0820,0
+          2.4940,45.1380,0
+          3.0000,44.6620,0
+          2.1000,42.6300,0
+          2.3210,41.4980,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
