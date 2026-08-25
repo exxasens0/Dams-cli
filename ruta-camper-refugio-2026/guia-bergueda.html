@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Escapada Berguedà · Pedraforca · 27–29 ago 2026</title>
+<style>
+:root{--bg:#f2eee4;--ink:#1a221c;--muted:#4d5c52;--card:#fffdf8;--pine:#1b4a3b;--clay:#9a5528;--line:#d7cdbc;--shadow:0 10px 24px rgba(26,34,28,.08);--sec:#e8efe9;--red:#a33;--gold:#7a5a00}
+*{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;overflow-wrap:anywhere;word-break:break-word}
+.wrap{max-width:720px;margin:0 auto;padding:0 .85rem 5.5rem}
+.chrome{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.98);border-bottom:1px solid var(--line)}
+.top-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.35rem;padding:.45rem 0 .15rem}
+.brand{font-weight:800;color:var(--pine);font-size:.92rem}
+.brand small{display:none;font-size:.68rem;font-weight:400;color:var(--muted)}
+@media(min-width:520px){.brand small{display:block}}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.45rem .75rem;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-p{background:var(--pine);color:#fff;border-color:var(--pine)}.btn-g{background:#eef4ee}.btn-o{background:#fff3e6}
+.btns{display:flex;flex-wrap:wrap;gap:.35rem;margin:.35rem 0}
+.hero{padding:1rem 0 .5rem}.hero h1{font-size:1.35rem;margin:.25rem 0;color:var(--pine)}
+.lead{color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.45rem}
+.chip{font-size:.68rem;font-weight:700;background:var(--sec);color:var(--pine);padding:.2rem .5rem;border-radius:999px}
+.section{margin:1.4rem 0}.section>h2{color:var(--pine);border-bottom:2px solid var(--clay);padding-bottom:.3rem;font-size:1.15rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem .95rem;margin:.7rem 0}
+.warn{background:#fff4e6;border-left:4px solid var(--clay);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.callout{background:var(--sec);padding:.6rem .8rem;border-radius:8px;margin:.55rem 0}
+.day-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:.25rem;padding:.35rem 0 .5rem}
+@media(min-width:640px){.day-nav{grid-template-columns:repeat(11,1fr)}}
+.day-nav a{font-size:.72rem;text-align:center;min-height:38px;display:flex;align-items:center;justify-content:center;padding:.35rem .1rem;border-radius:6px;text-decoration:none;color:var(--pine);font-weight:700;background:var(--card);border:1px solid var(--line)}
+.badge{display:inline-block;padding:.12rem .45rem;border-radius:999px;font-size:.68rem;font-weight:700}
+.dif-f{background:#d4edda;color:#155724}.dif-m{background:#fff3cd;color:#856404}
+.crowd-b{color:#155724;font-weight:700}.crowd-m{color:#856404;font-weight:700}.crowd-a{color:var(--red);font-weight:700}
+.wx-ok{color:var(--pine);font-weight:700}.wx-warn{color:var(--red);font-weight:700}
+.sum-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.75rem .85rem;margin:.65rem 0}
+.sum-card .k{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sum-card h3{margin:.15rem 0 .4rem;font-size:1.02rem;color:var(--pine)}
+.sum-card .row{display:grid;grid-template-columns:4.6rem 1fr;gap:.15rem .4rem;font-size:.86rem;margin:.12rem 0}
+.sum-card .row b{color:var(--muted);font-weight:600;font-size:.75rem}
+.day-card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:1.3rem 0;overflow:hidden}
+.day-card-head{background:var(--pine);color:#fff;padding:.9rem 1rem}
+.day-card-head h3{margin:0;font-size:1.05rem}
+.day-card-head .sub{opacity:.9;font-size:.8rem;margin-top:.2rem}
+.day-sec{padding:.75rem .9rem;border-top:1px solid var(--line)}
+.day-sec h4{margin:0 0 .4rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--clay)}
+.day-sec.ruta{background:#f8faf8}.day-sec.parking{background:#f5f8f5}.day-sec.hike{background:#f0f8f0}
+.day-sec.historia{background:#fffbf3}.day-sec.obs{background:#fafafa}.day-sec.meteo{background:#f0f6fa}.day-sec.planb{background:#fff8f0}
+.spot{margin:.35rem 0;padding:.5rem .65rem;background:var(--sec);border-radius:8px;font-size:.88rem}
+.spot strong{display:block;color:var(--pine);margin-bottom:.15rem}
+.wx-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;font-size:.84rem}
+.wx-grid>div{background:#e8f4fb;padding:.4rem .5rem;border-radius:6px}
+.wx-grid em{display:block;font-size:.68rem;color:var(--muted);font-style:normal}
+.wx-grid strong{display:block}
+.foot{padding:1.3rem 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+.fab{position:fixed;bottom:.8rem;right:.8rem;display:flex;gap:.3rem;z-index:60}
+details.archive{margin:1.2rem 0}details.archive summary{cursor:pointer;font-weight:700;color:var(--muted)}
+</style>
+</head><body>
+<div class="chrome"><div class="wrap">
+<header class="top-in">
+<div class="brand">Berguedà · Pedraforca<small>27–29 ago · camper + 2 perras · Teià</small></div>
+<div class="btns">
+<a class="btn btn-p" href="#resumen">Resumen</a>
+<a class="btn btn-g" href="#d1">Días</a>
+<a class="btn btn-o" href="#campings">Campings</a>
+</div>
+</header>
+<nav class="day-nav"><a href="#d1">E1</a><a href="#d2">E2</a><a href="#d3">E3</a></nav>
+</div></div>
+<main class="wrap">
+<section class="hero">
+<div class="chips">
+<span class="chip">Jue 27 llegada</span>
+<span class="chip">Vie 28 Empedrats ⭐</span>
+<span class="chip">Sáb 29 Gresolet</span>
+<span class="chip">≤25°C</span>
+</div>
+<h1>Berguedà · Pedraforca</h1>
+<p class="lead">Escapada 2 noches desde Teià. Frescura de prepirineo (~24°C), ruta estrella Empedrats + Cua de Cavall, postal del Pedraforca en Gresolet. Camper + perros.</p>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.086,1.865|42.23,1.67|42.268,1.815|42.238,1.701&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop completo</a><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Reservar wecamp</a></div>
+</section>
+
+<section class="section" id="resumen">
+<h2>Resumen · 3 días</h2>
+
+<p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=41.498,2.319&amp;waypoints=42.086,1.865|42.23,1.67|42.268,1.815|42.238,1.701&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Loop escapada</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.23,1.67&amp;waypoints=42.086,1.865&amp;travelmode=driving" target="_blank" rel="noopener">Teià → Saldes</a></div></p>
+<article class="sum-card" id="e1">
+<div class="k"><a href="#d1">E1</a></div>
+<h3>jueves 27 ago · Teià → Bagà → Saldes (Pedraforca)</h3>
+<div class="row"><b>Km</b><span>~145 km · ~2 h</span></div>
+<div class="row"><b>Pernocta</b><span>wecamp Pedraforca · B-400 km 13,5 · Saldes</span></div>
+<div class="row"><b>Ruta</b><span>Bagà casco medieval (paseo PM) · <span class="badge dif-f">Fácil</span> · ~2 km · 45 min</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-m">Media</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">24°C</span> · 0 mm (28%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.23,1.67&amp;waypoints=42.086,1.865&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-p" href="#d1">Detalle</a><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Web camping</a><a class="btn btn-o" href="https://miradoralpedraforca.cat/" target="_blank" rel="noopener">Mirador al Pedraforca (alternativa)</a></div>
+</article><article class="sum-card" id="e2">
+<div class="k"><a href="#d2">E2 ⭐</a></div>
+<h3>viernes 28 ago · Camí dels Empedrats · Salt de la Cua de Cavall ⭐</h3>
+<div class="row"><b>Km</b><span>~18 km · ~25 min</span></div>
+<div class="row"><b>Pernocta</b><span>wecamp Pedraforca (misma noche)</span></div>
+<div class="row"><b>Ruta</b><span>Empedrats + Salt de la Cua de Cavall (PR-C 125) · <span class="badge dif-m">Moderado</span> · ~8,5 km i/v · 3–3,5 h</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-m">Media</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">24°C</span> · 0 mm (22%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.23,1.67&amp;destination=42.268,1.815&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-p" href="#d2">Detalle</a><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Web camping</a></div>
+</article><article class="sum-card" id="e3">
+<div class="k"><a href="#d3">E3</a></div>
+<h3>sábado 29 ago · Mirador de Gresolet · vuelta Teià</h3>
+<div class="row"><b>Km</b><span>~145 km · ~2 h + parada</span></div>
+<div class="row"><b>Pernocta</b><span>Salida wecamp → Teià</span></div>
+<div class="row"><b>Ruta</b><span>Mirador de Gresolet (Pedraforca) · <span class="badge dif-f">Fácil</span> · ~1 km i/v · 30–40 min</span></div>
+<div class="row"><b>Gente</b><span><span class="crowd-a">Media-alta</span></span></div>
+<div class="row"><b>Clima</b><span><span class="wx-ok">21°C</span> · 0 mm (0%)</span></div>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.23,1.67&amp;destination=41.498,2.319&amp;waypoints=42.238,1.701&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a><a class="btn btn-p" href="#d3">Detalle</a></div>
+</article>
+<p style="font-size:.75rem;color:var(--muted)">Open-Meteo 2026-08-25 · ⭐ E2 día estrella (Empedrats).</p>
+
+</section>
+
+<section class="section" id="campings">
+<h2>🅿️ Pernocta camper (reservar)</h2>
+<div class="card">
+<h3 style="margin-top:0;color:var(--pine)">wecamp Pedraforca · Saldes</h3>
+<p style="font-size:.88rem">B-400 km 13,5 · parcelas con electricidad · piscina · perros admitidos. ~200 plazas pero reservar en agosto.</p>
+<div class="btns"><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Reservar wecamp</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.23,1.67&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a></div>
+</div>
+<div class="card">
+<h3 style="margin-top:0;color:var(--pine)">Mirador al Pedraforca · Saldes (alternativa)</h3>
+<p style="font-size:.88rem">Camping pequeño (~9 parcelas camper) · pet-friendly · vistas al Pedraforca. Reservar imprescindible.</p>
+<div class="btns"><a class="btn btn-o" href="https://miradoralpedraforca.cat/" target="_blank" rel="noopener">Web camping</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.086,1.865&amp;destination=42.225,1.625&amp;travelmode=driving" target="_blank" rel="noopener">Conducir</a></div>
+</div>
+<div class="warn">⚠️ Al hacer check-in, comprobad <strong>nivelación y sombra</strong> de la parcela antes de pagar extras. Exigir cambio si no es habitable.</div>
+</section>
+
+<section class="section" id="dias"><h2>Día a día</h2>
+<article class="day-card" id="d1">
+<div class="day-card-head"><h3>E1 · jueves 27 ago · Teià → Bagà → Saldes (Pedraforca)</h3><div class="sub">Teià → Bagà → Saldes · ~145 km</div></div>
+<section class="day-sec ruta"><h4>🚐 Ruta del día</h4><p>Salida desde <strong>Teià</strong> (~145 km · ~2 h). Parada en <strong>Bagà</strong> (comer + casco medieval). Subida a <strong>Saldes</strong> para pernoctar en el camping.</p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=41.498,2.319&amp;destination=42.086,1.865&amp;travelmode=driving" target="_blank" rel="noopener">Teià → Bagà</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.086,1.865&amp;destination=42.23,1.67&amp;travelmode=driving" target="_blank" rel="noopener">Bagà → wecamp Saldes</a></div></section>
+<section class="day-sec parking"><h4>🅿️ Parking · pernocta</h4><div class="spot"><strong>wecamp Pedraforca · B-400 km 13,5 · Saldes</strong>
+<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 wecamp Pedraforca · perros OK</span>
+<p style="font-size:.82rem;margin:.35rem 0">Alternativa: <a href="https://miradoralpedraforca.cat/" target="_blank" rel="noopener">Mirador al Pedraforca (alternativa)</a> (~9 parcelas camper, reservar ya).</p>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.23,1.67&amp;travelmode=driving" target="_blank" rel="noopener">Conducir al camping</a><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Reservar wecamp</a></div></div></section>
+<section class="day-sec hike"><h4>🥾 Excursión del día</h4><p><strong>Bagà casco medieval (paseo PM)</strong> · <span class="badge dif-f">Fácil</span> · ~2 km · ~50 m desnivel · 45 min</p>
+<em style="font-size:.8rem;color:var(--muted)">Aparcar en Bagà y caminar por el casco</em>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.086,1.865&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Navegar al trailhead</a></div><p style="font-size:.82rem;color:var(--muted)">Interés: <strong>Portal del Regomir (s. XIII)</strong>, <strong>Plaça Porxada</strong>, <strong>Muralla y torre</strong>, <strong>Museo Càmara Obscura (opcional)</strong></p></section>
+<section class="day-sec historia"><h4>🏛️ Historia y contexto</h4><p>Bagà fue capital del antiguo <strong>Berga de Bagà</strong>, señorío de los Cabrera. El casco medieval conserva la muralla, el portal del Regomir y la plaza porticada. Desde aquí partían las masoverías hacia el Cadí-Moixeró y las rutas de contrabando hacia la Cerdanya.</p></section>
+<section class="day-sec obs"><h4>👥 Observaciones</h4><p>🚐 Salid de Teià ~10:00–11:00 para llegar a mediodía. Parada en Bagà 1–1,5 h (comer + paseo con perros por el casco). Subid a <strong>Saldes</strong> (~25 min) para pernoctar más fresco (~1.200 m vs ~770 m en Bagà). 🐾 <strong>wecamp Pedraforca</strong>: perros admitidos (suplemento posible). Alternativa pequeña: <strong>Mirador al Pedraforca</strong> — solo ~9 parcelas camper, reservar con antelación. ⚠️ Comprobad nivelación de parcela al llegar (como en El Arrebol: exigir cambio si no es habitable).</p><p>Concurrencia: <span class="crowd-m">Media</span></p></section>
+<section class="day-sec meteo"><h4>🌡️ Meteo del día</h4><div class="wx-grid">
+<div><em>Zona</em><strong style="font-size:.78rem">Saldes (~1.200 m) · pernocta</strong></div>
+<div><em>Temp día</em><strong>13–24°C</strong></div>
+<div><em>Sensación máx</em><strong class="wx-ok">24°C</strong></div>
+<div><em>Lluvia</em><strong>0.0 mm · 28%</strong></div>
+</div><ul style="margin:.4rem 0;padding-left:1.2rem;font-size:.83rem"><li>Valle de Bagà más caluroso (~30°C) — subid a Saldes para pernoctar.</li><li>Tarde: paseo corto por Bagà a la sombra; no quedaros en parcela al sol.</li><li>Reservad camping con antelación (agosto, pocas parcelas camper).</li></ul>
+<p style="font-size:.72rem;color:var(--muted);margin:.3rem 0 0">Open-Meteo · 2026-08-25 · confirmar a las 7:00</p></section>
+<section class="day-sec planb"><h4>🌧️ Plan B</h4><p><strong>Plan B:</strong> Si lluvia: quedaros en el camping (piscina/spa wecamp) o museo de Bagà.</p></section>
+</article><article class="day-card" id="d2">
+<div class="day-card-head"><h3>E2 · viernes 28 ago · Camí dels Empedrats · Salt de la Cua de Cavall ⭐</h3><div class="sub">Saldes → Cal Cerdanyola (trailhead) · ~18 km</div></div>
+<section class="day-sec ruta"><h4>🚐 Ruta del día</h4><p>🥾 Día estrella: <strong>Empedrats + Cua de Cavall</strong> desde Cal Cerdanyola. Salida temprano desde el camping (~25 min en coche).</p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.23,1.67&amp;destination=42.268,1.815&amp;travelmode=driving" target="_blank" rel="noopener">Saldes → Cal Cerdanyola</a><a class="btn btn-o" href="https://ca.wikiloc.com/rutes-senderisme/salt-de-la-cua-de-cavall-baga-empedrats-15344646" target="_blank" rel="noopener">Wikiloc · Cua de Cavall</a><a class="btn btn-o" href="https://ca.wikiloc.com/rutes-senderisme/cal-cerdanyolaaula-de-natura-la-salle-bullidor-de-la-llet-els-empedrats-refugi-sant-jordi-circular-9685192" target="_blank" rel="noopener">Wikiloc · circular Empedrats</a></div></section>
+<section class="day-sec parking"><h4>🅿️ Parking · pernocta</h4><div class="spot"><strong>wecamp Pedraforca (misma noche)</strong>
+<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 wecamp Pedraforca · perros OK</span>
+
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.23,1.67&amp;travelmode=driving" target="_blank" rel="noopener">Conducir al camping</a><a class="btn btn-o" href="https://wecamp.net/destinos/pedraforca" target="_blank" rel="noopener">Reservar wecamp</a></div></div></section>
+<section class="day-sec hike"><h4>🥾 Excursión del día</h4><p><strong>Empedrats + Salt de la Cua de Cavall (PR-C 125)</strong> · <span class="badge dif-m">Moderado</span> · ~8,5 km i/v · ~350 m desnivel · 3–3,5 h</p>
+<em style="font-size:.8rem;color:var(--muted)">Cal Cerdanyola / Aula de Natura La Salle — pista desde Bagà→Gisclareny</em>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.268,1.815&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Navegar al trailhead</a></div>
+<a class="btn btn-o" href="https://ca.wikiloc.com/rutes-senderisme/salt-de-la-cua-de-cavall-baga-empedrats-15344646" target="_blank" rel="noopener">📍 Wikiloc</a><p style="font-size:.82rem;color:var(--muted)">Interés: <strong>Bullidor de la Llet (cascada)</strong>, <strong>Gorges dels Empedrats</strong>, <strong>Salt de la Cua de Cavall</strong>, <strong>Paredes de conglomerado</strong></p></section>
+<section class="day-sec historia"><h4>🏛️ Historia y contexto</h4><p>El <strong>Camí dels Empedrats</strong> era la ruta histórica entre Bagà y la Cerdanya, cruzando el río a pie en tramos de roca («empedrats»). El Bullidor de la Llet y la Cua de Cavall son saltos de agua en el Parque Natural del Cadí-Moixeró.</p></section>
+<section class="day-sec obs"><h4>👥 Observaciones</h4><p>⏰ Salida <strong>7:00–7:30</strong> — volver ~12:00–13:00 antes de calor/tormenta. Acceso: Bagà → Gisclareny → antes del pont de Sant Joan, pista a la derecha hacia Cal Cerdanyola (Aula de Natura La Salle). Parking en la casa de colonias. Tras cruzar el pont sobre el riu dels Empedrats, PR-C 125 (marques blanc/groc). Cruces de río sobre piedras — las perras se mojan; llevar toalla. 🐾 Perros con <strong>correa</strong> en parque natural; sueltos solo donde no haya ganado. PM libre: piscina wecamp o pozas del río Saldes (cerca del camping).</p><p>Concurrencia: <span class="crowd-m">Media</span></p></section>
+<section class="day-sec meteo"><h4>🌡️ Meteo del día</h4><div class="wx-grid">
+<div><em>Zona</em><strong style="font-size:.78rem">Cal Cerdanyola / Empedrats (~920 m)</strong></div>
+<div><em>Temp día</em><strong>14–25°C</strong></div>
+<div><em>Sensación máx</em><strong class="wx-ok">24°C</strong></div>
+<div><em>Lluvia</em><strong>0.0 mm · 22%</strong></div>
+</div><ul style="margin:.4rem 0;padding-left:1.2rem;font-size:.83rem"><li>Día estrella: Empedrats + Cua de Cavall — sensación ~24°C, ideal.</li><li>Salir 7:00–7:30 desde Saldes (~25 min hasta Cal Cerdanyola).</li><li>Parque Natural Cadí-Moixeró: perros con correa obligatoria cerca de rebaños.</li></ul>
+<p style="font-size:.72rem;color:var(--muted);margin:.3rem 0 0">Open-Meteo · 2026-08-25 · confirmar a las 7:00</p></section>
+<section class="day-sec planb"><h4>🌧️ Plan B</h4><p><strong>Plan B:</strong> Lluvia/tormenta: ruta corta por Bagà o visita a la mina de Cercs / Museu de la Ciència y de la Tècnica de Catalunya (cerca de Manresa, ~45 min).</p></section>
+</article><article class="day-card" id="d3">
+<div class="day-card-head"><h3>E3 · sábado 29 ago · Mirador de Gresolet · vuelta Teià</h3><div class="sub">Saldes → Gresolet → Teià · ~145 km</div></div>
+<section class="day-sec ruta"><h4>🚐 Ruta del día</h4><p>Mañana: <strong>Mirador de Gresolet</strong> (postal del Pedraforca). Vuelta directa a Teià (~2 h).</p><div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.23,1.67&amp;destination=42.238,1.701&amp;travelmode=driving" target="_blank" rel="noopener">Saldes → Mirador Gresolet</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.238,1.701&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Gresolet → Teià</a><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;origin=42.238,1.701&amp;destination=42.255,1.655&amp;travelmode=driving" target="_blank" rel="noopener">Parada Gósol</a></div></section>
+<section class="day-sec parking"><h4>🅿️ Parking · pernocta</h4><div class="spot"><strong>Salida wecamp → Teià</strong>
+<span style="background:#d4edda;color:#155724;font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:999px">🐾 wecamp Pedraforca · perros OK</span>
+
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=41.498,2.319&amp;travelmode=driving" target="_blank" rel="noopener">Conducir al camping</a></div></div></section>
+<section class="day-sec hike"><h4>🥾 Excursión del día</h4><p><strong>Mirador de Gresolet (Pedraforca)</strong> · <span class="badge dif-f">Fácil</span> · ~1 km i/v · ~80 m desnivel · 30–40 min</p>
+<em style="font-size:.8rem;color:var(--muted)">Parking Mirador de Gresolet (B-400, junto a Saldes/Gósol)</em>
+<div class="btns"><a class="btn btn-g" href="https://www.google.com/maps/dir/?api=1&amp;destination=42.238,1.701&amp;travelmode=driving" target="_blank" rel="noopener">🗺️ Navegar al trailhead</a></div><p style="font-size:.82rem;color:var(--muted)">Interés: <strong>Vista clásica del Pedraforca (Enamorats + Pollegó)</strong>, <strong>Gósol pueblo (opcional, 10 min)</strong>, <strong>Compra quesos/embutidos Berguedà</strong></p></section>
+<section class="day-sec historia"><h4>🏛️ Historia y contexto</h4><p>El <strong>Pedraforca</strong> (2.506 m) es el emblema del Berguedà: dos cimas (Enamorats y Pollegó Superior) unidas por un collado en forma de «forca». El mirador de Gresolet ofrece la postal más fotografiada sin subir a alta montaña.</p></section>
+<section class="day-sec obs"><h4>👥 Observaciones</h4><p>⏰ Mirador ~8:00–9:00 (parking se llena en agosto). Paseo corto, ideal con perros. Opcional: parada en <strong>Gósol</strong> (pueblo de Picasso) 15 min. Vuelta directa a Teià ~2 h por C-16 / C-58. Parada sombra cada ~90 min si hace calor en el Llobregat.</p><p>Concurrencia: <span class="crowd-a">Media-alta</span></p></section>
+<section class="day-sec meteo"><h4>🌡️ Meteo del día</h4><div class="wx-grid">
+<div><em>Zona</em><strong style="font-size:.78rem">Mirador Gresolet / Saldes</strong></div>
+<div><em>Temp día</em><strong>10–22°C</strong></div>
+<div><em>Sensación máx</em><strong class="wx-ok">21°C</strong></div>
+<div><em>Lluvia</em><strong>0.0 mm · 0%</strong></div>
+</div><ul style="margin:.4rem 0;padding-left:1.2rem;font-size:.83rem"><li>Sábado fresco — buen día para Mirador de Gresolet y vuelta a Teià.</li><li>Salida temprano (~8:00) para llegar a Teià antes del calor de costa.</li><li>Teià → Saldes ~2 h · Saldes → Teià ~2 h (sin paradas largas).</li></ul>
+<p style="font-size:.72rem;color:var(--muted);margin:.3rem 0 0">Open-Meteo · 2026-08-25 · confirmar a las 7:00</p></section>
+<section class="day-sec planb"><h4>🌧️ Plan B</h4><p><strong>Plan B:</strong> Si niebla en Gresolet: ir directo a Teià; parada en Manresa o Montserrat (solo mirador desde abajo).</p></section>
+</article>
+</section>
+
+<section class="section" id="reglas">
+<h2>Reglas del viaje</h2>
+<div class="card">
+<div class="warn"><strong>Perras:</strong> correa en Parque Natural Cadí-Moixeró; sueltos solo sin ganado.</div>
+<ul style="font-size:.9rem;padding-left:1.3rem">
+<li>Hikes 7:00–13:00 — tarde libre o piscina</li>
+<li>Patous / rebaños: correa obligatoria</li>
+<li>Empedrats: cruces de río — calzado que se pueda mojar</li>
+</ul>
+</div>
+</section>
+
+<footer class="foot wrap">
+<p><strong>Escapada Berguedà · Pedraforca</strong> · 27–29 agosto 2026 · Open-Meteo</p>
+<p>Guía principal Pirineo: <code>guia-movil.html</code></p>
+</footer>
+</main>
+<div class="fab">
+<a class="btn btn-p" href="#resumen">Resumen</a>
+<a class="btn" href="#d2">E2 ⭐</a>
+</div>
+</body></html>

@@ -2,6 +2,18 @@
 
 **No uses** `raw.githubusercontent.com` ni el enlace de GitHub al archivo: sale el código fuente, no la página.
 
+## Escapada Berguedà · Pedraforca (27–29 ago 2026)
+
+Generar: `python3 bergueda_escapada_content.py` → `guia-bergueda.html`
+
+Vista previa (sustituir `COMMIT` por el hash actual tras push):
+
+https://htmlpreview.github.io/?https://github.com/exxasens0/Dams-cli/blob/COMMIT/ruta-camper-refugio-2026/guia-bergueda.html
+
+---
+
+## Guía Pirineo principal (16–26 ago)
+
 Commit actual (D3 pozas Garcipollera + calor El Arrebol): `6504fee` (18 ago 2026).
 
 ## Opción 1 — la más fiable (1 minuto)
