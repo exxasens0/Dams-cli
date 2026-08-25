@@ -6,9 +6,11 @@
 
 Generar: `python3 bergueda_escapada_content.py` → `guia-bergueda.html`
 
-Vista previa (sustituir `COMMIT` por el hash actual tras push):
+Commit escapada Berguedà: `ecee752` (25 ago 2026).
 
-https://htmlpreview.github.io/?https://github.com/exxasens0/Dams-cli/blob/COMMIT/ruta-camper-refugio-2026/guia-bergueda.html
+https://htmlpreview.github.io/?https://github.com/exxasens0/Dams-cli/blob/ecee752/ruta-camper-refugio-2026/guia-bergueda.html
+
+CDN: https://cdn.jsdelivr.net/gh/exxasens0/Dams-cli@ecee752/ruta-camper-refugio-2026/guia-bergueda.html
 
 ---
 
